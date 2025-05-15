@@ -8,11 +8,14 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\spk;
+use App\Models\jampelajaran;
 use App\Models\peraturan;
 use App\Models\sskk;
 use App\Models\agendaskk;
 use App\Models\pesertapelatihan;
+use App\Models\contohsurat;
 use App\Models\permenteri;
+use App\Models\subklasifikasi;
 use App\Models\perpemerintah;
 use App\Models\perpresiden;
 use App\Models\keputusanmenteri;
@@ -112,6 +115,7 @@ use App\Models\agendapelatihan;
 use App\Models\subhargadiv1;
 use App\Models\subhargadiv1bahan;
 use App\Models\subhargadiv1peralatan;
+
 
 // hsp harga divisi 2
 use App\Models\hsppaket2;
@@ -243,18 +247,38 @@ headerberanda::create([
             'name'  => 'Sigit Septiadi',
             'username' => 'Sigit',
             'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitseptiadi1@gmail.com',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitseptiadi99@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
         User::create([
+            'id'  => 50,
+            'name'  => 'Fitrah Fauzi Nusantara',
+            'username' => 'Fitrah',
+            'statusadmin_id' => '3',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitseptiadi5@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);
+
+        User::create([
+            'id'  => 2,
+            'name'  => 'Anex Fachrian, ST. MT',
+            'username' => 'Anex',
+            'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sipjakiblora@gmail.com',
+            'password' => bcrypt('adminadmin321')
+        ]);
+
+        User::create([
             'id'  => 10,
-            'name'  => 'Sigit Admin',
-            'username' => 'Sigit Admin',
-            'statusadmin_id' => '2',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitadminadmin@gmail.com',
+            'name'  => 'Admin DPUPR Kab Blora',
+            'username' => 'Admin DPUPR Kab Blora',
+            'statusadmin_id' => '1',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sipjakiblora1@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
@@ -520,16 +544,6 @@ headerberanda::create([
 
 
         User::create([
-            'id'  => 2,
-            'name'  => 'Anex Fachrian, ST. MT',
-            'username' => 'Anex',
-            'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/foto4.png',
-            'email' => 'sipjakiblora@gmail.com',
-            'password' => bcrypt('adminadmin321')
-        ]);
-
-        User::create([
             'id'  => 3,
             'name'  => 'Miftahunnuril Anam',
             'username' => 'Anam',
@@ -544,49 +558,69 @@ headerberanda::create([
             'name'  => 'Rahmat Irianto',
             'username' => 'Sup Pabrik',
             'statusadmin_id' => '3',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitpekerja@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
         User::create([
             'id'  => 5,
-            'name'  => 'Sigit Septiadi',
+            'name'  => 'Sigit Supplier Peralatan',
             'username' => 'Sup Peralatan ',
             'statusadmin_id' => '4',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitsupp_pabrik@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
         User::create([
             'id'  => 6,
-            'name'  => 'Sigit Septiadi',
+            'name'  => 'Sigit Supp Bangunan',
             'username' => 'Sup Bangunan',
             'statusadmin_id' => '5',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitsupp_peralatan@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
         User::create([
             'id'  => 7,
-            'name'  => 'Sigit Septiadi',
+            'name'  => 'LSP Penerbit Blora',
             'username' => 'LSP Penerbit',
-            'statusadmin_id' => '6',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'statusadmin_id' => '7',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitsupp_tokobangunan@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
         User::create([
             'id'  => 8,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Operator',
+            'name'  => 'Operator LSP 2',
+            'username' => 'Operator LSP',
             'statusadmin_id' => '7',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitlpspenerbit@gmail.com',
             'password' => bcrypt('adminadmin123$$')
+        ]);
+
+        User::create([
+            'id'  => 90,
+            'name'  => 'Operator LSP 3',
+            'username' => 'Operator LSP 3',
+            'statusadmin_id' => '7',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitlpspenerbit500@gmail.com',
+            'password' => bcrypt('adminadmin123$$1')
+        ]);
+
+        User::create([
+            'id'  => 97,
+            'name'  => 'Operator LSP 4',
+            'username' => 'Operator LSP 4',
+            'statusadmin_id' => '7',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitlpspenerbit2@gmail.com',
+            'password' => bcrypt('adminadmin123$$2')
         ]);
 
         User::create([
@@ -594,7 +628,7 @@ headerberanda::create([
             'name'  => 'Sigit Septiadi',
             'username' => 'Dinas DPUPR Blora',
             'statusadmin_id' => '8',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitoperator@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -604,7 +638,7 @@ headerberanda::create([
             'name'  => 'Chaerul Umam',
             'username' => 'Chaerul Umam',
             'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'chaerulumam@gmail.com',
             'password' => bcrypt('umamadnmin123$$')
         ]);
@@ -614,12 +648,30 @@ headerberanda::create([
             'name'  => 'Maryana Indah',
             'username' => 'maryanaindah',
             'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'maryananindah@gmail.com',
             'password' => bcrypt('indahadnmin123$$')
         ]);
 
+        User::create([
+            'id'  => 38,
+            'name'  => 'Bina Konstruksi Nusantara',
+            'username' => 'bkn',
+            'statusadmin_id' => '7',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'bkn@gmail.com',
+            'password' => bcrypt('bknadmin123$$')
+        ]);
 
+        User::create([
+            'id'  => 39,
+            'name'  => 'Manajemen Konstruksi Nusantara',
+            'username' => 'bkn',
+            'statusadmin_id' => '7',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'mkn@gmail.com',
+            'password' => bcrypt('mknadmin123$$$$')
+        ]);
 
 
         // =================================================================
@@ -836,8 +888,6 @@ profiljakonpersonil::create([
 ]);
 
 
-
-// makan
 //======================== ===================================================================================
 tupoksi::create([
     'judul' => 'Tupoksi Dan Program Jasa Konstruksi',
@@ -850,10 +900,13 @@ tupoksi::create([
 
 // MAS JAKI DATA JASA KONSTRUKSI
 //======================== ===================================================================================
+
+
+
 bujkkontraktor::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 1, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'Mandra Kanta Unggul',
     'alamat' => 'Desa Tawangrejo 003/005 Kunduran Kab. Blora Jawa Tengah',
     'no_telepon' => '082324908547',
@@ -951,7 +1004,7 @@ bujkkontraktorsub::create([
 bujkkontraktor::create([
     'id' => 2, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 2, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'Ramai Jaya Bumi',
     'alamat' => 'Jl. Gajah Mada No. 24A 000/000 Cepu Kab. Blora Jawa Tengah',
     'no_telepon' => '02965104662',
@@ -1310,7 +1363,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 3, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 3, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TRIBAKTI BINTANG SEJAHTERA',
     'alamat' => 'BERAN 001/003 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -1408,7 +1461,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 4, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 4, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'DIZA PERMATA HATI',
     'alamat' => 'DESA BANDUNGROJO RT. 001 RW. 001, Ngawen,Kab. Blora',
     'no_telepon' => '082138576435',
@@ -1582,7 +1635,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 5, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 5, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TUNGGAL GUNA KARYA',
     'alamat' => 'DESA GENENG 003/001 Jepon Kab. Blora Jawa Tengah',
     'no_telepon' => '082314931935',
@@ -1744,7 +1797,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 6, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 6, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TRI GRAHA MEGAH JAYA',
     'alamat' => 'DESA PATALAN 003/005 Kab. Blora Jawa Tengah',
     'no_telepon' => '081325225577',
@@ -1905,7 +1958,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 7, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 7, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'BERKAH HPL MANDIRI',
     'alamat' => 'DESA PENGKOLREJO 001/004 Japah Kab. Blora Jawa Tengah',
     'no_telepon' => '08122607371',
@@ -1988,7 +2041,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 8, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 8, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'KARYA DWI PUTRI',
     'alamat' => 'DESA TODANAN, Desa/Kelurahan Todanan, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085212848598',
@@ -2123,7 +2176,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 9, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 9, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'CV. DHA YASA MULIA',
     'alamat' => 'DUKUH KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81326704319',
@@ -2180,7 +2233,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 10, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 10, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'RASI SINAR RAYA',
     'alamat' => 'DK. KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085218340935',
@@ -13047,7 +13100,7 @@ sumberdana::create([
 
 allskktenagakerjablora::create([
     'agendaskk_id'            => 1,
-    'user_id'                       => 1,
+    'user_id'                => 1,
     'jabatankerja_id' => '1',
     'tempatlahir' => 'Bojonegoro',
     'ttl' => '1989-04-14',
@@ -13061,7 +13114,7 @@ allskktenagakerjablora::create([
     'tahunlulus' => '2007',
     'tahunpilihan_id' => 5,
     'uploadktp' => 'https://drive.google.com/open?id=1N_6cVJ44YPAzK8Kr5qCQuiCfSXTkB9n6',
-    'uploadfoto' => 'https://drive.google.com/open?id=1FNHTKVU6oowro4CJlzLpj3FG-YdRi6ki',
+    'uploadfoto' => 'assets/00_masjaki/images/maskotjakon.png',
     'uploadijazah' => 'https://drive.google.com/open?id=14IoOuj_gp6LDGGnsrha11DARikUWnDHe',
     'uploadpengalaman' => 'https://drive.google.com/open?id=1rWXn8FTSBirY94dqrT-T8au7R5bWaFrL',
     'uploadnpwp' => 'https://drive.google.com/open?id=1-3gPp9RYiRCWu1fjqskNzdIFtnzFcBH4',
@@ -13069,9 +13122,40 @@ allskktenagakerjablora::create([
     'namaasosiasi' => 'Perorangan',
     'punyaskk' => 'TIDAK',
     'punyasiki' => 'TIDAK',
-    'siappatuh' => 'BERSEDIA',
-    'verifikasipu' => 'LULUS',
-    'verifikasilps' => 'LULUS',
+    'siappatuh' => 'YA',
+    'portalpupr' => 'YA',
+    'verifikasipu' => null,
+    'verifikasilps' => false,
+]);
+
+allskktenagakerjablora::create([
+    'agendaskk_id'            => 1,
+    'user_id'                => 50,
+    'jabatankerja_id' => '1',
+    'tempatlahir' => 'Bojonegoro',
+    'ttl' => '1989-04-14',
+    'jeniskelamin' => 'Laki-laki',
+    'nik' => '3522251404890001',
+    'alamat' => 'RT 5 RW 7 dukuh cepu kidul,kelurahan cepu,kec.cepu,kab.blora,jateng',
+    'notelepon' => '087730573343',
+    'email' => 'arifwahyudicc548@gmail.com',
+    'jenjangpendidikan_id' => 3,
+    'namasekolah_id' => 23,
+    'tahunlulus' => '2007',
+    'tahunpilihan_id' => 5,
+    'uploadktp' => 'https://drive.google.com/open?id=1N_6cVJ44YPAzK8Kr5qCQuiCfSXTkB9n6',
+    'uploadfoto' => 'assets/00_masjaki/images/maskotjakon.png',
+    'uploadijazah' => 'https://drive.google.com/open?id=14IoOuj_gp6LDGGnsrha11DARikUWnDHe',
+    'uploadpengalaman' => 'https://drive.google.com/open?id=1rWXn8FTSBirY94dqrT-T8au7R5bWaFrL',
+    'uploadnpwp' => 'https://drive.google.com/open?id=1-3gPp9RYiRCWu1fjqskNzdIFtnzFcBH4',
+    'uploaddaftarriwayathidup' => 'https://drive.google.com/open?id=1plhsgum_GVs_HLtVu--Ke7bku8eKfDEU',
+    'namaasosiasi' => 'Perorangan',
+    'punyaskk' => 'TIDAK',
+    'punyasiki' => 'TIDAK',
+    'siappatuh' => 'YA',
+    'portalpupr' => 'YA',
+    'verifikasipu' => null,
+    'verifikasilps' => false,
 ]);
 
 allskktenagakerjablora::create([
@@ -13090,7 +13174,7 @@ allskktenagakerjablora::create([
     'tahunlulus' => '2007',
     'tahunpilihan_id' => 5,
     'uploadktp' => 'https://drive.google.com/open?id=1N_6cVJ44YPAzK8Kr5qCQuiCfSXTkB9n6',
-    'uploadfoto' => 'https://drive.google.com/open?id=1FNHTKVU6oowro4CJlzLpj3FG-YdRi6ki',
+    'uploadfoto' => 'assets/00_masjaki/images/maskotjakon.png',
     'uploadijazah' => 'https://drive.google.com/open?id=14IoOuj_gp6LDGGnsrha11DARikUWnDHe',
     'uploadpengalaman' => 'https://drive.google.com/open?id=1rWXn8FTSBirY94dqrT-T8au7R5bWaFrL',
     'uploadnpwp' => 'https://drive.google.com/open?id=1-3gPp9RYiRCWu1fjqskNzdIFtnzFcBH4',
@@ -13098,13 +13182,14 @@ allskktenagakerjablora::create([
     'namaasosiasi' => 'Perorangan',
     'punyaskk' => 'TIDAK',
     'punyasiki' => 'TIDAK',
-    'siappatuh' => 'BERSEDIA',
-    'verifikasipu' => 'LULUS',
-    'verifikasilps' => 'TIDAK LULUS',
+   'siappatuh' => 'YA',
+    'portalpupr' => 'YA',
+    'verifikasipu' => null,
+    'verifikasilps' => false,
 ]);
 
 allskktenagakerjablora::create([
-    'agendaskk_id'            => 1,
+    'agendaskk_id'            => 2,
     'user_id'                       => 3,
     'jabatankerja_id' => 1,
     'tempatlahir' => 'Bojonegoro',
@@ -13119,7 +13204,7 @@ allskktenagakerjablora::create([
     'tahunlulus' => '2007',
     'tahunpilihan_id' => 5,
     'uploadktp' => 'https://drive.google.com/open?id=1N_6cVJ44YPAzK8Kr5qCQuiCfSXTkB9n6',
-    'uploadfoto' => 'https://drive.google.com/open?id=1FNHTKVU6oowro4CJlzLpj3FG-YdRi6ki',
+    'uploadfoto' => 'assets/00_masjaki/images/maskotjakon.png',
     'uploadijazah' => 'https://drive.google.com/open?id=14IoOuj_gp6LDGGnsrha11DARikUWnDHe',
     'uploadpengalaman' => 'https://drive.google.com/open?id=1rWXn8FTSBirY94dqrT-T8au7R5bWaFrL',
     'uploadnpwp' => 'https://drive.google.com/open?id=1-3gPp9RYiRCWu1fjqskNzdIFtnzFcBH4',
@@ -13127,12 +13212,44 @@ allskktenagakerjablora::create([
     'namaasosiasi' => 'Perorangan',
     'punyaskk' => 'TIDAK',
     'punyasiki' => 'TIDAK',
-    'siappatuh' => 'BERSEDIA',
-    'verifikasipu' => 'TIDAK LULUS',
-    'verifikasilps' => 'TIDAK LULUS',
+   'siappatuh' => 'YA',
+    'portalpupr' => 'YA',
+    'verifikasipu' => null,
+    'verifikasilps' => false,
 ]);
 
-// fort
+
+
+allskktenagakerjablora::create([
+    'agendaskk_id' => 1,
+    'user_id' => 18,
+    'jabatankerja_id' => '1',
+    'tempatlahir' => 'Semarang',
+    'ttl' => '1993-02-12',
+    'jeniskelamin' => 'Laki-laki',
+    'nik' => '8772460430468255',
+    'alamat' => 'RT 4 RW 8 dukuh surabaya',
+    'notelepon' => '083506273516',
+    'email' => 'user20@example.com',
+    'jenjangpendidikan_id' => 5,
+    'namasekolah_id' => 17,
+    'tahunlulus' => 2023,
+    'tahunpilihan_id' => 1,
+    'uploadktp' => 'https://drive.google.com/open?id=dummy_ktp',
+    'uploadfoto' => 'assets/00_masjaki/images/maskotjakon.png',
+    'uploadijazah' => 'https://drive.google.com/open?id=dummy_ijazah',
+    'uploadpengalaman' => 'https://drive.google.com/open?id=dummy_pengalaman',
+    'uploadnpwp' => 'https://drive.google.com/open?id=dummy_npwp',
+    'uploaddaftarriwayathidup' => 'https://drive.google.com/open?id=dummy_cv',
+    'namaasosiasi' => 'Perorangan',
+    'punyaskk' => 'TIDAK',
+    'punyasiki' => 'TIDAK',
+    'siappatuh' => 'TIDAK',
+    'portalpupr' => 'YA',
+    'verifikasipu' => null,
+    'verifikasilps' => false,
+]);
+
 //======================== ===================================================================================
 // DATA NAMA SEKOLAH MAS JAKI BLORA
 namasekolah::create([
@@ -14444,7 +14561,7 @@ jenjangpendidikan::create([
 
 jenjangpendidikan::create([
     'id' => '2',
-    'jenjangpendidikan' => 'Strata 1',
+    'jenjangpendidikan' => 'Strata 1 (S1)',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -14500,7 +14617,7 @@ jenjangpendidikan::create([
 
 jenjangpendidikan::create([
     'id' => '9',
-    'jenjangpendidikan' => 'Strata 2 ',
+    'jenjangpendidikan' => 'Strata 2 (S2)',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -14533,6 +14650,14 @@ jenjangpendidikan::create([
 jenjangpendidikan::create([
     'id' => '13',
     'jenjangpendidikan' => 'SMP/Mts/Sederajat',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '14',
+    'jenjangpendidikan' => 'Strata 3 (S3)',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -15673,199 +15798,253 @@ jabatankerja::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-//======================== ===================================================================================
-// DATA ASOSIAS KABUPATEN BLORA JAWA TENGAH
-asosiasimasjaki::create([
-    'id' => '1',
-    'namaasosiasi' => 'AK3L',
+jabatankerja::create([
+    'id' => '81',
+    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Jalan Irigasi',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jabatankerja::create([
+    'id' => '82',
+    'jabatankerja' => 'Pelaksana Konstruksi Bangunan Unit Distribusi SPAM',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jabatankerja::create([
+    'id' => '83',
+    'jabatankerja' => 'Supervisor K3 Konstruksi Utama',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+// nurfi
+//======================== ===================================================================================
+// DATA ASOSIAS KABUPATEN BLORA JAWA TENGAH
+asosiasimasjaki::create([
+    'id' => '99',
+    'namaasosiasi' => 'DPUPR Kabupaten Blora',
+    'alamat' => 'Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah',
+    'pic' => null,
+    'jumlahanggota' => null,
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null,
+]);
+
+asosiasimasjaki::create([
+    'id' => '1',
+    'namaasosiasi' => 'AKOINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '2',
-    'namaasosiasi' => 'ASDAMKINDO',
+    'namaasosiasi' => 'ANDALAN SERTIFIKASI KONTRAKTOR NASIONAL (ASKONAS)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '3',
-    'namaasosiasi' => 'ASTEKINDO',
+    'namaasosiasi' => 'ASPEKINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '4',
-    'namaasosiasi' => 'ASTTATINDO',
+    'namaasosiasi' => 'ASPEKNAS',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '5',
-    'namaasosiasi' => 'ATAKI',
+    'namaasosiasi' => 'GABPEKNAS',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '6',
-    'namaasosiasi' => 'ATAKNAS',
+    'namaasosiasi' => 'GAPEKNAS',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '7',
-    'namaasosiasi' => 'ATAKSI',
+    'namaasosiasi' => 'GAPEKSINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '8',
-    'namaasosiasi' => 'GATAKI',
+    'namaasosiasi' => 'GAPENSI',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '9',
-    'namaasosiasi' => 'GATENSI',
+    'namaasosiasi' => 'INKINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '10',
-    'namaasosiasi' => 'HATSINDO',
+    'namaasosiasi' => 'Lembaga Sertifikasi INKINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '11',
-    'namaasosiasi' => 'HPJI',
+    'namaasosiasi' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '12',
-    'namaasosiasi' => 'IAKI',
+    'namaasosiasi' => 'LSBU KONSTRUKSI INDONESIA (ASPEKINDO)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '13',
-    'namaasosiasi' => 'LPJK',
+    'namaasosiasi' => 'PERKINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '14',
-    'namaasosiasi' => 'PAKKI',
+    'namaasosiasi' => 'PERKINDO,INKINDO,PERKONINDO KONSULTAN KONSTRUKSI MANDIRI',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '15',
-    'namaasosiasi' => 'PARABI',
+    'namaasosiasi' => 'PERKONINDO KONSULTAN KONSTRUKSI MANDIRI',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '16',
-    'namaasosiasi' => 'PASTALI',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '17',
-    'namaasosiasi' => 'PASTI',
+    'namaasosiasi' => 'PT PANCA SATYA JAYATAMA NUSANTARA (GABPEKNAS)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '18',
-    'namaasosiasi' => 'PERPAKOM',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '19',
-    'namaasosiasi' => 'PERTAHKINDO',
+    'namaasosiasi' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '20',
-    'namaasosiasi' => 'PERTAMA',
+    'namaasosiasi' => 'PT. SERBU KONSTRUKSI MANDIRI',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '21',
-    'namaasosiasi' => 'PERTAPIN',
+    'namaasosiasi' => 'SERTIFIKASI BADAN USAHA GABUNGAN PERUSAHAAN KONSTRUKSI NASIONAL (GAPEKSINDO)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
-asosiasimasjaki::create([
-    'id' => '22',
-    'namaasosiasi' => 'PETAKINDO',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '23',
-    'namaasosiasi' => 'PETAKOM',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '99',
-    'namaasosiasi' => 'DPUPR Kab Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
 
 
 //======================== ===================================================================================
@@ -28019,7 +28198,7 @@ paketpekerjaanmasjaki::create([
     'jeniskontrak' => 'Harga Satuan',
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
-    'bulanselesai' => 12,
+    'bulanselesai' => 13,
     'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
@@ -58842,6 +59021,9 @@ for ($i = 1; $i <= 1221; $i++) {
 // GARIS PAKET PEKERJAAN
 
 for ($i = 1; $i <= 1221; $i++) {
+    $tanggalMulai = now()->addDays(rand(1, 30)); // Menghasilkan tanggal mulai acak antara 1 hingga 30 hari setelah hari ini
+    $tanggalSelesai = $tanggalMulai->addDays(rand(30, 180)); // Menghasilkan tanggal selesai acak antara 30 hingga 180 hari setelah tanggal mulai
+
     detailsnamapaketpekerjaan::create([
         'id' => $i,
         'kecamatanblora_id' => null, // Menjaga _id tetap kosong
@@ -58849,14 +59031,14 @@ for ($i = 1; $i <= 1221; $i++) {
         'namapaket' => 'Nama Paket ' . $i, // Menggunakan format angka untuk nama paket
         'nilaikontrak' => rand(100000, 1000000), // Nilai kontrak acak antara 100000 dan 1000000
         'tanggalkontrak' => now(), // Tanggal kontrak menggunakan tanggal saat ini
-        'waktupelaksanaan' => now(), // Waktu pelaksanaan menggunakan tanggal saat ini
+        'waktupelaksanaan' => rand(100, 320),
         'terbilanghari' => 'Hari ' . $i, // Menggunakan angka untuk terbilang hari
-        'tanggalmulai' => now(), // Tanggal mulai menggunakan tanggal saat ini
+        'tanggalmulai' => $tanggalMulai, // Tanggal mulai acak
+        'tanggalselesai' => $tanggalSelesai, // Tanggal selesai acak
         'konsultanpengawas' => 'Konsultan Pengawas ' . $i, // Nama konsultan pengawas dengan angka
         'penyediajasa' => 'Penyedia Jasa ' . $i, // Nama penyedia jasa dengan angka
     ]);
 }
-
 // DATA KOSONGAN SAJA
 // for ($i = 2; $i <= 1221; $i++) {
 //     sppbj::create([
@@ -59212,72 +59394,90 @@ for ($i = 1; $i <= 1221; $i++) {
 
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
   // Definisikan array untuk pilihan acak
-  $jenisUsaha = ['Konstruksi', 'Pertanian', 'Teknologi', 'Transportasi', 'Perdagangan'];
-  $kesesuaian = ['Sesuai', 'Tidak Sesuai', 'Sangat Sesuai'];
-  $sifatUsaha = ['Aktif', 'Non-Aktif'];
-  $layananUsaha = ['Penyedia Konstruksi', 'Penyedia Jasa', 'Distributor'];
+  $jenisUsaha = ['Pekerjaan Konstruksi', 'Jasa Konsultasi Konstruksi',];
+$kesesuaian = ['Sesuai', 'Tidak Sesuai'];
+$sifatUsaha = ['Umum', 'Spesialis'];
+$layananUsaha = ['Sesuai', 'Tidak Sesuai'];
+$statusPerizinan = ['Terdaftar', 'Belum Terdaftar', 'Kadaluarsa'];
+$jumlahData = 84;
 
-  // Jumlah data yang ingin dibuat
-  $jumlahData = 100; // Jumlah data = 100
+for ($i = 1; $i <= $jumlahData; $i++) {
+    surattertibjakonusaha1::create([
+        'tertibjasakonstruksi_id' => $i,
 
-  // Membuat 100 data dengan informasi acak
-  for ($i = 1; $i <= $jumlahData; $i++) {
-      surattertibjakonusaha1::create([
-          'tertibjasakonstruksi_id' => $i,  // ID berurutan dari 1 hingga 100
-          'namapaketpekerjaan' => 'Pekerjaan ' . rand(1, 100), // Nama pekerjaan acak
-          'jenisusaha' => $jenisUsaha[array_rand($jenisUsaha)],  // Pilih acak jenis usaha
-          'kesesuaian' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian
-          'sifatusaha' => $sifatUsaha[array_rand($sifatUsaha)],  // Pilih acak status usaha
-          'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian SBU
-          'subklasifikasi' => 'Subklasifikasi ' . rand(1, 100), // Subklasifikasi acak
-          'kesesuaianklasifikasi' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian klasifikasi
-          'layananusaha' => $layananUsaha[array_rand($layananUsaha)],  // Pilih acak layanan usaha
-          'kesesuaianlayananusaha' => $kesesuaian[array_rand($kesesuaian)],  // Pilih acak kesesuaian layanan usaha
-      ]);
-  }
+        'namabadanusaha' => 'PT Contoh Usaha ' . $i,
+        'statusperizinan' => $statusPerizinan[array_rand($statusPerizinan)],
+        'nib' => 'NIB' . str_pad($i, 6, '0', STR_PAD_LEFT),
+        'waktupengawasan' => now()->subDays(rand(1, 365))->format('Y-m-d'),
+        'waktupengawasanselesai' => now()->subDays(rand(0, 365))->format('Y-m-d'),
+
+        'namapaketpekerjaan' => 'Pekerjaan ' . rand(1, 100),
+        'jenisusaha' => $jenisUsaha[array_rand($jenisUsaha)],
+        'kesesuaian' => $kesesuaian[array_rand($kesesuaian)],
+        'sifatusaha' => $sifatUsaha[array_rand($sifatUsaha)],
+        'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)],
+        'subklasifikasi_id' =>  $i,
+        'kesesuaianklasifikasi' => $kesesuaian[array_rand($kesesuaian)],
+        'layananusaha' => $jenisUsaha[array_rand($jenisUsaha)],
+        'kesesuaianlayananusaha' => $layananUsaha[array_rand($layananUsaha)],
+    ]);
+}
+
 
 
   // DATABASE TERTIB JASA KONSTRUKSI USAHA
 // Definisikan array untuk pilihan acak
-$jenisUsaha = ['Konstruksi', 'Pertanian', 'Teknologi', 'Transportasi', 'Perdagangan'];
-$kesesuaian = ['Sesuai', 'Tidak Sesuai', 'Sangat Sesuai'];
-$sifatUsaha = ['Aktif', 'Non-Aktif'];
+$jenisUsaha = ['Badan Usaha', 'Perorangan'];
+$kesesuaian = ['Sesuai', 'Tidak Sesuai'];
+$sifatUsaha = ['Kecil', 'Menengah', 'Besar'];
 $layananUsaha = ['Penyedia Konstruksi', 'Penyedia Jasa', 'Distributor'];
 
 // Jumlah data yang ingin dibuat
-$jumlahData = 100; // Jumlah data = 100
+$jumlahData = 84; // Jumlah data = 100
 
 // Membuat 100 data dengan informasi acak
 for ($i = 1; $i <= $jumlahData; $i++) {
     surattertibjakonusaha2::create([
         'tertibjasakonstruksi_id' => $i,  // ID berurutan dari 1 hingga 100
+
+        'namabadanusaha' => 'PT Contoh Usaha ' . $i,
+        'statusperizinan' => $statusPerizinan[array_rand($statusPerizinan)],
+        'nib' => 'NIB' . str_pad($i, 6, '0', STR_PAD_LEFT),
+        'waktupengawasan' => now()->subDays(rand(1, 365))->format('Y-m-d'),
+        'waktupengawasanselesai' => now()->subDays(rand(0, 365))->format('Y-m-d'),
+
         'namapaketpekerjaan' => 'Pekerjaan ' . rand(1, 100), // Nama pekerjaan acak
         'bentuk' => $jenisUsaha[array_rand($jenisUsaha)],  // Pilih acak bentuk usaha
         'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian SBU
         'syaratkualifikasi' => $sifatUsaha[array_rand($sifatUsaha)],  // Pilih acak syarat kualifikasi
-        'sbu' => 'SBU ' . rand(1, 100), // SBU acak
+        'sbu' => $kesesuaian[array_rand($kesesuaian)],  // Pilih acak syarat kualifikasi
     ]);
 }
 
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
 // Definisikan array untuk pilihan acak
-$jenisUsaha = ['Konstruksi', 'Pertanian', 'Teknologi', 'Transportasi', 'Perdagangan'];
-$kesimpulan = ['Sesuai', 'Tidak Sesuai', 'Sangat Sesuai'];
+$jenisUsaha = ['Pekerjaan Konstruksi', 'Jasa Konsultasi Konstruksi'];
+$kesimpulan = ['Tertib', 'Tidak Tertib'];
 $pjbuList = ['Muhammad Abdul Rozak', 'Siti Utifah', 'Agus Supriadi', 'Widodo', 'Arradea Murbha Ardhana'];
-$klasifikasiList = ['Kecil', 'Menengah', 'Besar'];
+$klasifikasiList = ['Segera Hadir'];
 
 // Jumlah data yang ingin dibuat
-$jumlahData = 100; // Jumlah data = 100
+$jumlahData = 84; // Jumlah data = 100
 
 // Membuat 100 data dengan informasi acak
 for ($i = 1; $i <= $jumlahData; $i++) {
     surattertibjakonusaha3::create([
         'tertibjasakonstruksi_id' => $i,  // ID berurutan dari 1 hingga 100
+
+        'namabadanusaha' => 'PT Contoh Usaha ' . $i,
+        'waktupengawasan' => now()->subDays(rand(1, 365))->format('Y-m-d'),
+        'waktupengawasanselesai' => now()->subDays(rand(0, 365))->format('Y-m-d'),
+
         'namabujk' => 'Badan Usaha ' . rand(1, 100), // Nama badan usaha acak
         'nib' => 'NIB' . rand(1000000000000, 9999999999999), // NIB acak
         'pjbu' => $pjbuList[array_rand($pjbuList)],  // Pilih acak nama PJBU
         'jenisusaha' => $jenisUsaha[array_rand($jenisUsaha)],  // Pilih acak jenis usaha
-        'klasifikasi' => $klasifikasiList[array_rand($klasifikasiList)], // Pilih acak klasifikasi
+        'subklasifikasi_id' =>  $i, // Pilih acak klasifikasi
         'nomorsertifikat' => 'Sertifikat-' . rand(1000, 9999), // Nomor sertifikat acak
         'kesimpulan' => $kesimpulan[array_rand($kesimpulan)], // Pilih acak kesimpulan
         'catatanpemeriksaan' => 'Catatan ' . rand(1, 10), // Catatan pemeriksaan acak
@@ -59287,126 +59487,60 @@ for ($i = 1; $i <= $jumlahData; $i++) {
 
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
 // Definisikan array untuk pilihan acak
-$merkProduk = ['Merk A', 'Merk B', 'Merk C', 'Merk D', 'Merk E'];
-$subVarian = ['Varian 1', 'Varian 2', 'Varian 3', 'Varian 4', 'Varian 5'];
-$sniList = ['SNI-001', 'SNI-002', 'SNI-003', 'SNI-004', 'SNI-005'];
-$simpkList = ['SIMP-K-001', 'SIMP-K-002', 'SIMP-K-003', 'SIMP-K-004', 'SIMP-K-005'];
+// $merkProduk = ['Merk A', 'Merk B', 'Merk C', 'Merk D', 'Merk E'];
+// $subVarian = ['Varian 1', 'Varian 2', 'Varian 3', 'Varian 4', 'Varian 5'];
+// $sniList = ['SNI-001', 'SNI-002', 'SNI-003', 'SNI-004', 'SNI-005'];
+// $simpkList = ['SIMP-K-001', 'SIMP-K-002', 'SIMP-K-003', 'SIMP-K-004', 'SIMP-K-005'];
 
+$status = ['Tertib', 'Belum Tertib'];
 // Jumlah data yang ingin dibuat
-$jumlahData = 100; // Jumlah data = 100
+$jumlahData = 84; // Jumlah data = 100
 
 // Membuat 100 data dengan informasi acak
 for ($i = 1; $i <= $jumlahData; $i++) {
     surattertibjakonusaha4::create([
         'tertibjasakonstruksi_id' => $i,  // ID berurutan dari 1 hingga 100
-        'namavarian' => 'Varian ' . rand(1, 100), // Nama varian acak
-        'subvarian' => $subVarian[array_rand($subVarian)],  // Pilih acak subvarian
-        'merkproduk' => $merkProduk[array_rand($merkProduk)],  // Pilih acak merk produk
-        'sertifikat' => 'Sertifikat-' . rand(1000, 9999), // Sertifikat acak
-        'sni' => $sniList[array_rand($sniList)], // Pilih acak SNI
-        'simpk' => $simpkList[array_rand($simpkList)], // Pilih acak SIMPK
+        // 'namavarian' => 'Varian ' . rand(1, 100), // Nama varian acak
+        // 'subvarian' => $subVarian[array_rand($subVarian)],  // Pilih acak subvarian
+        // 'merkproduk' => $merkProduk[array_rand($merkProduk)],  // Pilih acak merk produk
+        // 'sertifikat' => 'Sertifikat-' . rand(1000, 9999), // Sertifikat acak
+        // 'sni' => $sniList[array_rand($sniList)], // Pilih acak SNI
+        'status' => $status[array_rand($status)], // Pilih acak SIMPK
     ]);
 }
 
 
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
-materipelatihan::create([
-    'id'    => 1,
-    'agendapelatihan_id'            => 1,
-    'judulmateripelatihan'          => 'Agenda Pelatihan 1',
-    'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
-]);
+// materipelatihan::create([
+//     'id'    => 1,
+//     'agendapelatihan_id'            => 1,
+//     'judulmateripelatihan'          => 'Agenda Pelatihan 1',
+//     'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
+// ]);
 
-materipelatihan::create([
-    'id'    => 2,
-    'agendapelatihan_id'            => 1,
-    'judulmateripelatihan'          => 'Agenda Pelatihan 2',
-    'materipelatihan'          => null,
-]);
+// materipelatihan::create([
+//     'id'    => 2,
+//     'agendapelatihan_id'            => 1,
+//     'judulmateripelatihan'          => 'Agenda Pelatihan 2',
+//     'materipelatihan'          => null,
+// ]);
 
-materipelatihanskk::create([
-    'id'    => 1,
-    'agendaskk_id'            => 1,
-    'judulskk'          => 'Agenda Sertifikasi 1',
-    'materipelatihanskk'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
-]);
+// materipelatihanskk::create([
+//     'id'    => 1,
+//     'agendaskk_id'            => 1,
+//     'judulskk'          => 'Agenda Sertifikasi 1',
+//     'materipelatihanskk'          => '00_beranda/02_artikeljakon/artikeljakon.pdf',
+// ]);
 
-materipelatihanskk::create([
-    'id'    => 2,
-    'agendaskk_id'            => 2,
-    'judulskk'          => 'Agenda Sertifikasi 2',
-    'materipelatihanskk'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
-]);
+// materipelatihanskk::create([
+//     'id'    => 2,
+//     'agendaskk_id'            => 2,
+//     'judulskk'          => 'Agenda Sertifikasi 2',
+//     'materipelatihanskk'          => '00_beranda/02_artikeljakon/artikeljakon.pdf',
+// ]);
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 1,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                           => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                     => '081321455855',
-    'instansi'                      => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 2,
-    'user_id'                       => 2,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 3,
-    'user_id'                       => 3,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 2,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 3,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
-
-
 
 //==========================================================================================================
 // DATA BERITA
@@ -59618,44 +59752,426 @@ kategoripelatihan::create([
     'kategoripelatihan' => 'Sosialisasi',
 ]);
 
+
+// CONTOH PESERTA PELATIHAN
+// pesertapelatihan::create([
+//     'agendapelatihan_id' => 1,
+//     'namalengkap' => 'Miftahunnuril Anam, S.E',
+//     'jenjangpendidikan_id' => 2,
+//     'nik' => '3276021301980001',
+//     'jeniskelamin' => 'Laki-laki',
+//     'tanggallahir' => '1998-01-13',
+//     'notelepon' => '081234567890',
+//     'instansi' => 'Dinas Pendidikan Bandung',
+//     'sertifikat' => '',
+//     'verifikasi' => '',
+//     'verifikasikehadiran' => '',
+//     'terbitkansertifikat' => '',
+// ]);
+
+// BACKUP DATA PESERTA PELATIHAN
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Isko Permono',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316091303720001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1972-03-13',
+    'notelepon' => '081393944522',
+    'instansi' => 'Cv. Tiara Sinergj',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'ANDI SUSANTO',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316092104850002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1985-04-21',
+    'notelepon' => '085326505397',
+    'instansi' => 'GAPEKSINDO KAB. BLORA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Evi nur safaah',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3316107101960001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1996-01-31',
+    'notelepon' => '082247558696',
+    'instansi' => 'CV.QURATA JAYA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'NISFU LAILI AGUSTIN',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3317105708840005',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1984-08-17',
+    'notelepon' => '081228607870',
+    'instansi' => 'CV. VARIA USAHA MANDIRI',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'ARIS MUNANTO',
+    'jenjangpendidikan_id' => 1,
+    'nik' => '3316073105740001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1974-05-31',
+    'notelepon' => '082328706846',
+    'instansi' => 'UNIVERSITAS SEMARANG',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Djumiran',
+    'jenjangpendidikan_id' => 1,
+    'nik' => '3522191001820001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1982-01-10',
+    'notelepon' => '081249464506',
+    'instansi' => 'RS PKU Muhamadiyah Cepu',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Dwi giyartatik',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3316095407790006',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1979-07-14',
+    'notelepon' => '082135477542',
+    'instansi' => 'CV BUMI ABADI PRATAMA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'SUWIT, S.Ag.,S.Pd.,M.Pd.',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316021101770002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1977-01-11',
+    'notelepon' => '085226352947',
+    'instansi' => 'RS PKU Muhammadiyah Randublatung',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'ANIK TRI MURYANI',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3316094301720001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1972-01-03',
+    'notelepon' => '082223002337',
+    'instansi' => 'CV. TRIBHAKTI',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'SANTOSO',
+    'jenjangpendidikan_id' => 1,
+    'nik' => '3316092812650002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1965-12-28',
+    'notelepon' => '082210311493',
+    'instansi' => 'CV. ADHI KARYA MANDIRI',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Sukiban',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3316112402540001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1954-02-24',
+    'notelepon' => '08122901961',
+    'instansi' => 'Gapensi',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Maryana Indah Lestari',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3205270107940030',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1994-07-01',
+    'notelepon' => '081321455855',
+    'instansi' => 'CV. Makmur Jaya Sentosa',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'SUGIYATMI',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3311057110820001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1982-10-31',
+    'notelepon' => '081933242777',
+    'instansi' => 'RS PKU MUHAMMADIYAH BLORA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'MUHAMAD ANIS FAHRUDIN',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3316091403970004',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1997-03-14',
+    'notelepon' => '081234560296',
+    'instansi' => 'RSU Permata Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'YETI ROFITA',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3316094306940004',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1994-06-03',
+    'notelepon' => '081227392456',
+    'instansi' => 'CV NOGO',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'ALIF RIYANA',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3316094307930003',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1993-07-03',
+    'notelepon' => '085290691614',
+    'instansi' => 'CV CRYSTAL DESIGN',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Zaenur Rozikin',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3514130608980001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1998-08-06',
+    'notelepon' => '089683619909',
+    'instansi' => 'DPUPR KAB BLORA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Ahmad Jaedun',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316102004680002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1968-04-20',
+    'notelepon' => '08122898625',
+    'instansi' => 'Askonas',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'METI IKA KUMALASARI',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316050550820002',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1982-05-10',
+    'notelepon' => '081325457074',
+    'instansi' => 'ASPEKINDO',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Agus sunarto',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316091908800005',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1980-08-19',
+    'notelepon' => '081228576764',
+    'instansi' => 'Instansi',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Firmansyah',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316090208780001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1978-08-02',
+    'notelepon' => '081326734108',
+    'instansi' => 'DPUPR Bidang Cipta Karya',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Hendro Puji Jatmiko',
+    'jenjangpendidikan_id' => 11,
+    'nik' => '3316091503820003',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1982-03-15',
+    'notelepon' => '082137241199',
+    'instansi' => 'Perseorangan',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Yuris Ihsa Mahendra',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316092907960004',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1996-07-29',
+    'notelepon' => '082221628225',
+    'instansi' => 'CV BARATAMA KONSTRUKSI',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'ARIF BUDI SANTOSO',
+    'jenjangpendidikan_id' => 1,
+    'nik' => '3316092307810001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1981-07-23',
+    'notelepon' => '081325121364',
+    'instansi' => 'CV. LIMA KARSA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Teguh Priyanto',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316102503780003',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1978-03-25',
+    'notelepon' => '081327421757',
+    'instansi' => 'CV. Grahacipta Perkasa',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+
+// sigit ini
+
 // ===============================
 // DATA AGENDA PELATIHAN
 // ===============================
 // DATA AGENDA PELATIHAN
 agendapelatihan::create([
     'id' => 1,
-    'user_id' => 7,
-    'kategoripelatihan_id' => '1',
+    'user_id' => null,
+    'kategoripelatihan_id' => '3',
     'materipelatihan_id' => '1',
-    'namakegiatan' => 'Pelatihan Manajemen Konstruksi',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
+    'namakegiatan' => 'Sosialisasi “Membangun dengan Aman dan Profesional : Penerapan Keselamatan dan Kontrak Konstruksi',
+    'asosiasimasjaki_id' => 99,
     // 'jenjang_id' => '4',
-    'penutupan' => '2025-12-13',
-    'waktupelaksanaan' => '2025-12-15',
-    'jumlahpeserta' => 40,
-    'lokasi' => 'Jln Blora No. 10',
-    'Keterangan' => 'Pelatihan untuk meningkatkan kualitas tenaga kerja konstruksi.',
-    'isiagenda' => 'Pelatihan ini bertujuan untuk meningkatkan kemampuan manajemen konstruksi bagi tenaga kerja di bidang konstruksi. Materi yang diberikan mencakup perencanaan proyek, pengendalian biaya, dan strategi pengawasan yang efektif. Dengan pelatihan ini, diharapkan para peserta dapat lebih profesional dalam mengelola proyek konstruksi secara efisien.',
-    'foto' => '01_agendapelatihan/pelatihan.jpg',
+    'penutupan' => '2025-05-14',
+    'waktupelaksanaan' => '2025-05-15',
+    'jumlahpeserta' => 50,
+    'lokasi' => 'Azana Garden Hill Resort Blora',
+    'Keterangan' => 'Kegiatan ini bertujuan untuk meningkatkan pemahaman pelaku konstruksi mengenai standar keselamatan kerja dan penerapan kontrak yang sesuai regulasi dalam proyek pembangunan.',
+    'isiagenda' => 'Penerapan Keselamatan dan Kontrak Konstruksi',
+    'foto' => '01_berita/image.png',
+    'suratundangan' => '01_berita/Undangan_Sosialisasi_15_Mei_2025.pdf',
 ]);
-
-agendapelatihan::create([
-    'id' => 2,
-    'user_id' => 7,
-    'kategoripelatihan_id' => '2',
-    'materipelatihan_id' => '2',
-    'namakegiatan' => 'Pelatihan Ahli K3 Konstruksi',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    // 'jenjang_id' => '5',
-    'penutupan' => '2025-01-08',
-    'waktupelaksanaan' => '2025-02-10',
-    'jumlahpeserta' => 30,
-    'lokasi' => 'Balai Latihan Kerja Blora',
-    'Keterangan' => 'Pelatihan sertifikasi ahli K3 di bidang konstruksi.',
-    'isiagenda' => 'Pelatihan ini ditujukan bagi tenaga kerja konstruksi yang ingin mendapatkan sertifikasi Ahli K3. Materi meliputi identifikasi risiko kerja, prosedur keselamatan, serta penerapan standar K3 dalam proyek konstruksi. Dengan mengikuti pelatihan ini, peserta diharapkan mampu meningkatkan keselamatan dan kesehatan kerja di lingkungan konstruksi.',
-    'foto' => '01_agendapelatihan/pelatihan.jpg',
-]);
-
 
 // 'foto' => '00_dokmasjaki/03_datajakon/agendapelatihan.jpg',
 // iqlima
@@ -59679,30 +60195,138 @@ agendapelatihan::create([
 // AGENDA SKK TENAGA KERJA KONSTRUKSI
 agendaskk::create([
     'id' => 1,
-    'user_id' => 7,
-    'namakegiatan' => 'Sertifikasi Keahlian Tenaga Kerja Konstruksi Bangunan Gedung - Jenjang 4',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    'penutupan' => '2025-12-16',
-    'waktupelaksanaan' => '2025-05-15',
-    'jumlahpeserta' => 40,
-    'lokasi' => 'Jln Blora No. 10',
-    'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja konstruksi bangunan gedung.',
-    'isiagenda' => 'Peserta akan diberikan pemahaman mendalam tentang konstruksi bangunan gedung...',
+    'user_id' => 38,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Jalan - Jenjang 4',
+    'jabatankerja_id' => 5,
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 15,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Pelatihan ini ditujukan bagi peserta yang ingin memperoleh sertifikasi jenjang 4 dalam bidang pelaksanaan pekerjaan jalan.',
+    'isiagenda' => 'Kegiatan ini akan mencakup pembekalan materi teknis, studi kasus lapangan, dan uji kompetensi untuk memastikan kesiapan peserta dalam pelaksanaan pekerjaan jalan. Sertifikasi diberikan oleh asosiasi resmi setelah peserta dinyatakan lulus.',
     'foto' => '01_agendapelatihan/sertifikasi2.jpg',
 ]);
 
 agendaskk::create([
     'id' => 2,
-    'user_id' => 7,
-    'namakegiatan' => 'Sertifikasi Keterampilan Tukang Bangunan Sipil - Jenjang 6',
-    'penyelenggara' => 'Balai Jasa Konstruksi Wilayah IV Surabaya',
-    'penutupan' => '2025-01-06',
-    'waktupelaksanaan' => '2025-05-12',
-    'jumlahpeserta' => 50,
-    'lokasi' => 'Jln Raya Semarang No. 22',
-    'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja di bidang tukang bangunan sipil.',
-    'isiagenda' => 'Materi meliputi teknik pemasangan struktur beton dan perawatan bangunan...',
+    'user_id' => 38,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Irigasi - Jenjang 4',
+    'jabatankerja_id' => 81,
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Kegiatan ini merupakan bagian dari program peningkatan kapasitas tenaga kerja di sektor irigasi.',
+    'isiagenda' => 'Pelatihan akan membahas teknik pelaksanaan konstruksi irigasi, manajemen proyek, serta dilengkapi dengan uji kompetensi teknis untuk mendapatkan sertifikasi jenjang 4.',
     'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+agendaskk::create([
+    'id' => 3,
+    'user_id' => 38,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Pelaksana Konstruksi Bangunan Unit Distribusi SPAM - Jenjang 4',
+    'jabatankerja_id' => 82,
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Pelatihan ini ditujukan bagi tenaga kerja yang terlibat dalam pelaksanaan konstruksi unit distribusi Sistem Penyediaan Air Minum (SPAM) dan ingin mendapatkan sertifikasi jenjang 4.',
+    'isiagenda' => 'Materi pelatihan meliputi perencanaan teknis, metode pelaksanaan, pengendalian mutu, dan keselamatan kerja pada pembangunan unit distribusi SPAM. Di akhir pelatihan, peserta akan mengikuti uji kompetensi untuk mendapatkan sertifikat resmi.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+
+agendaskk::create([
+    'id' => 4,
+    'user_id' => 39,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Personil Keselamatan dan Kesehatan Kerja - Jenjang 4',
+    'jabatankerja_id' => 9,
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Program pelatihan ini dirancang untuk meningkatkan kompetensi personil K3 dalam pelaksanaan proyek konstruksi.',
+    'isiagenda' => 'Peserta akan mendapatkan pembekalan mengenai prinsip-prinsip K3, identifikasi potensi bahaya, mitigasi risiko, dan penerapan standar keselamatan kerja di lapangan. Sertifikasi jenjang 4 diberikan setelah peserta dinyatakan kompeten melalui uji akhir.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+agendaskk::create([
+    'id' => 5,
+    'user_id' => 38,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Gedung - Jenjang 4',
+    'jabatankerja_id' => 4,
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Pelatihan ini diperuntukkan bagi tenaga pelaksana lapangan yang menangani pembangunan gedung berskala kecil hingga menengah untuk memperoleh sertifikasi jenjang 4.',
+    'isiagenda' => 'Materi meliputi teknik pelaksanaan pekerjaan gedung, pengendalian mutu konstruksi, dan keselamatan kerja. Pelatihan diakhiri dengan uji kompetensi untuk memperoleh sertifikat sesuai jenjang yang diakui oleh asosiasi profesi.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+
+agendaskk::create([
+    'id' => 6,
+    'user_id' => 38,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Gedung Madya - Jenjang 5',
+    'jabatankerja_id' => 56,
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 20,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Program ini ditujukan bagi tenaga kerja pelaksana yang telah memiliki pengalaman dan ingin meningkatkan kompetensinya ke jenjang 5 dalam bidang pekerjaan gedung skala menengah hingga besar.',
+    'isiagenda' => 'Pelatihan mencakup perencanaan teknis, pengelolaan proyek, pengawasan pelaksanaan konstruksi gedung, serta manajemen keselamatan kerja. Peserta akan mengikuti uji kompetensi sebagai syarat memperoleh sertifikasi jenjang madya.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+
+agendaskk::create([
+    'id' => 7,
+    'user_id' => 39,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Supervisor K3 Konstruksi Utama - Jenjang 6',
+    'jabatankerja_id' => 83,
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 20,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Pelatihan ini diperuntukkan bagi tenaga kerja konstruksi yang bertanggung jawab sebagai pengawas keselamatan dan kesehatan kerja pada proyek konstruksi berskala besar.',
+    'isiagenda' => 'Peserta akan mendapatkan pelatihan mendalam tentang sistem manajemen K3, identifikasi risiko tinggi di lingkungan konstruksi, penerapan regulasi K3, serta pelaporan dan audit K3. Sertifikasi jenjang 6 diberikan bagi peserta yang lulus uji kompetensi sebagai Supervisor K3 Konstruksi Utama.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+
+
+jampelajaran::create([
+    'agendapelatihan_id' => 1, // ID agenda pelatihan
+    'materi' => 'Manajemen Proyek', // Materi pertama
+    'narasumber' => 'Ir. Budi Santoso', // Narasumber pertama
+    'jampelajaran' => 2, // Jam pelajaran pertama (misalnya 2 jam)
+]);
+
+jampelajaran::create([
+    'agendapelatihan_id' => 1, // ID agenda pelatihan
+    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
+    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
+    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
+]);
+jampelajaran::create([
+    'agendapelatihan_id' => 1, // ID agenda pelatihan
+    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
+    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
+    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
+]);
+jampelajaran::create([
+    'agendapelatihan_id' => 1, // ID agenda pelatihan
+    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
+    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
+    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
+]);
+jampelajaran::create([
+    'agendapelatihan_id' => 2, // ID agenda pelatihan
+    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
+    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
+    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
 ]);
 
 
@@ -59811,15 +60435,6 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV MANDRA KANTA UNGGUL',
     'pjbu' => 'Muhammad Abdul Rozak',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
 
 tertibjasakonstruksi::create([
@@ -59833,15 +60448,6 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADHI BAYU MUSTIKA',
     'pjbu' => 'Ny Musikawati Ningsih',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
 
 tertibjasakonstruksi::create([
@@ -59855,15 +60461,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADHI KARYA MANDIRI',
     'pjbu' => 'Santoso',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -59877,15 +60475,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADITYA JAYA PERKASA',
     'pjbu' => 'Agus Supriadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -59899,15 +60489,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ALFA',
     'pjbu' => 'Siti Utifah',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -59921,15 +60503,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANANDA',
     'pjbu' => 'Suryati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -59943,15 +60517,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANAS PUTRA PERKASA',
     'pjbu' => 'Ahmad Filter Annas',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -59965,15 +60531,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANUGERAH ABADI',
     'pjbu' => 'Widodo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -59987,15 +60545,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ARDHANA BANGUN JAYA',
     'pjbu' => 'Arradea Murbha Ardhana',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60009,15 +60559,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BAKOH SETIYANA JAYA',
     'pjbu' => 'Tegar Setieyana',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60031,15 +60573,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BARATAMA KONSTRUKSI',
     'pjbu' => 'Basuki Rahmat',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60053,15 +60587,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BLORA MITRA UTAMA',
     'pjbu' => 'Catur Oke Abriyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60075,15 +60601,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BUMI ABADI PRATAMA',
     'pjbu' => 'Setya Budi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60097,15 +60615,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. CAKRA BERLIAN',
     'pjbu' => 'Nunung Farozi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60119,15 +60629,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. CENGKIR GADING',
     'pjbu' => 'Siti Nurohmah',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60141,15 +60643,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GADA PERKASA',
     'pjbu' => 'Gagat Septyan Tyaskoro',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60163,15 +60657,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GAMA CITRA MANDIRI',
     'pjbu' => 'Agus Supriyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60185,15 +60671,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GREMA JAYA USAHA',
     'pjbu' => 'Kresti Ageng Hermawan',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60207,15 +60685,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GRIYA LARAS',
     'pjbu' => 'Sartono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60229,15 +60699,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. INDO JAYA MUSTIKA',
     'pjbu' => 'Ofvi Sigit Hermansyah',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60251,15 +60713,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. JANUR KUNING',
     'pjbu' => 'Sulistia',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60273,15 +60727,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KARINA',
     'pjbu' => 'Sri Setyorini',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60295,15 +60741,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KARSA KARYA UTAMA',
     'pjbu' => 'Anik Tri Muryani',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60317,15 +60755,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KARYA DWI PUTRI',
     'pjbu' => 'Sri Wahyuni',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60339,15 +60769,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KINAN KARYA GEMILANG',
     'pjbu' => 'Kodrat Suprayoga',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 
@@ -60362,15 +60784,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KRISNA',
     'pjbu' => 'Hendro Puji Jatmiko',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60384,15 +60798,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LIMA KARSA',
     'pjbu' => 'Ratno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60406,15 +60812,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LUGAS SEMBADA',
     'pjbu' => 'Muhammad Fuad Andrianto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60428,15 +60826,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. NOGO',
     'pjbu' => 'Sumarlan',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60450,15 +60840,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PILAR UTAMA',
     'pjbu' => 'Arif Budi Santoso',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 
@@ -60473,15 +60855,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PURNAMA JAYA',
     'pjbu' => 'Sri Wahyuni, HJ',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60495,15 +60869,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PUTRA GRAHA PERMAI',
     'pjbu' => 'Rachmat Isbandriyo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60517,15 +60883,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PUTRA JAYA MANDIRI',
     'pjbu' => 'Diyah Wahyuningsih',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60539,15 +60897,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. QURATA JAYA',
     'pjbu' => 'Puji Jayanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60561,15 +60911,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. RAFI JAYA BERKARYA',
     'pjbu' => 'Sobirin',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 
@@ -60584,15 +60926,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. RAFI PUTRA',
     'pjbu' => 'Eko Budi Cahyono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60606,15 +60940,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. RESTU BUMI MUSTIKA',
     'pjbu' => 'Sujarwo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60628,15 +60954,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SUKET IJO PERDANA',
     'pjbu' => 'Andika Rusyadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60650,15 +60968,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SURYA INDAH',
     'pjbu' => 'Sri Mukarti',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60672,15 +60982,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. TRIBHAKTI',
     'pjbu' => 'Suparmin',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60694,15 +60996,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. WAHYU PUTRA',
     'pjbu' => 'Harsono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60716,15 +61010,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADITIYA JAYA PERKASA',
     'pjbu' => 'Agus Supriadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 tertibjasakonstruksi::create([
     'id' => 43,
@@ -60737,15 +61023,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. AGENG NUGROHO',
     'pjbu' => 'Sayana',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60759,15 +61037,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. A\'LA PUTRA',
     'pjbu' => 'Suhartini',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60781,15 +61051,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANAS PUTRA PERKASA',
     'pjbu' => 'Ahmad Filter Annas',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60803,15 +61065,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANUGERAH ABADI',
     'pjbu' => 'Widodo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60825,15 +61079,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BISMA PERKASA',
     'pjbu' => 'Suwarno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60847,15 +61093,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BLORA MITRA UTAMA',
     'pjbu' => 'Catur Oke Abriyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60869,15 +61107,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. DAMAI SEJAHTERA',
     'pjbu' => 'Herlin Retno Novitasari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60891,15 +61121,6 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. DUTARIZADA KONSTRUKSI',
     'pjbu' => 'Dwi Asyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
 
 tertibjasakonstruksi::create([
@@ -60913,15 +61134,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. DWI PUTRA',
     'pjbu' => 'Meti Ika Kumalasari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60935,15 +61148,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. INDO JAVA MUSTIKA',
     'pjbu' => 'Ofvi Sigit Hermansyah',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60957,15 +61162,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. JAGAD TEKNIKA',
     'pjbu' => 'Farid Darwanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60979,15 +61176,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. JENGGALA ARUNIKA',
     'pjbu' => 'Diah Ayu Novitasari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61001,15 +61190,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KARYA LESTARI',
     'pjbu' => 'Lestari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61023,15 +61204,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KEMBAR DUA',
     'pjbu' => 'Lulut Tri Laksono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61045,15 +61218,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KINAN KARYA GEMILANG',
     'pjbu' => 'Kodrat Suprayoga',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61067,15 +61232,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LAVANYA PERDANA',
     'pjbu' => 'Sri Purwati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61089,15 +61246,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LAMAYU JATI PERKASA',
     'pjbu' => 'Supriyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61111,15 +61260,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. MEURAH INTAN',
     'pjbu' => 'Erna Safiati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61133,15 +61274,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SUMBER JAYA PERKASA RAYA',
     'pjbu' => 'Eko Richo Andriyato',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61155,15 +61288,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. WAHYU PUTRA MANDIRI',
     'pjbu' => 'Djuhadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61177,15 +61302,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. WARU BENGKONG',
     'pjbu' => 'Teguh Sutrisno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61199,15 +61316,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADHI KARYA MANDIRI',
     'pjbu' => 'Santoso',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61221,15 +61330,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANAS PUTRA PERKASA',
     'pjbu' => 'Ahmad Filter Annas',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61243,15 +61344,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANUGERAH ABADI',
     'pjbu' => 'Widodo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61265,15 +61358,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. AYUK MANDIRI',
     'pjbu' => 'Pipit Aniska Kristinawati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61287,15 +61372,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BANGUN KELUARGA',
     'pjbu' => 'Agus Cahyono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61309,15 +61386,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BASKORO BERKAH JAYA',
     'pjbu' => 'Wahyu Pratama',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61331,15 +61400,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BUMI ASRI PROPERTY',
     'pjbu' => 'Paijan',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61353,15 +61414,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. CATUR PUTRA',
     'pjbu' => 'Wiwik Andriati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61375,15 +61428,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. CIPTA MULYA JAYA',
     'pjbu' => 'Ahmad Mufaizin',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61397,15 +61442,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. DWI PUTRA',
     'pjbu' => 'Meti Ika Kumalasari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61419,15 +61456,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GRIYA PUTRA LAKSANA',
     'pjbu' => 'Dwi Agung Dewantoro Putro',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61441,15 +61470,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KENDIL MANDIRI SANTOSA',
     'pjbu' => 'Susilo Utomo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61463,15 +61484,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LIMA KARSA',
     'pjbu' => 'Ratno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61485,15 +61498,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LUMINTU JAYA',
     'pjbu' => 'Hj. Sri Kusnaningsih',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61507,15 +61512,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. MAJU JAYA',
     'pjbu' => 'Teguh Guritno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61529,15 +61526,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PUTRO SEMBODO',
     'pjbu' => 'Dwi Cahyono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61551,15 +61540,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SETIADI',
     'pjbu' => 'Haji Sudjoko',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61573,15 +61554,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SUKAJADI',
     'pjbu' => 'Markum',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61595,15 +61568,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SUKET IJO PERDANA',
     'pjbu' => 'Andika Rusyadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61617,15 +61582,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. TRIBAKTI BINTANG SEJAHTERA',
     'pjbu' => 'Askia Azamzami',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61639,16 +61596,14 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. TUNAS KARYA',
     'pjbu' => 'Sri Supriyani',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
+
+
+for ($i = 1; $i <= 94; $i++) {
+    tertibjasakonstruksi::where('id', $i)->update([
+        'tahunpelaksanaan' => '2024',
+    ]);
+}
 
 
 
@@ -67449,6 +67404,35 @@ for ($i = 1; $i <= 151; $i++) {
         'catatan2' => null,
     ]);
 }
+
+
+for ($i = 1; $i <= 112; $i++) {
+    bujkkontraktor::where('id', $i)->update([
+        'user_id' => 10,
+        'uploadberkas' => '/assets/03_datajakon/sertifikasi.pdf',
+    ]);
+}
+
+for ($i = 1; $i <= 17; $i++) {
+    bujkkonsultan::where('id', $i)->update([
+        'user_id' => 10,
+        'uploadberkas' => '/assets/03_datajakon/sertifikasi.pdf',
+    ]);
+}
+
+
+rantaipasokblora::create([
+    'distributor' => 'PT. VARIA USAHA UNIT BLORA',
+    'nib' => '-',
+    'alamat' => '-',
+    'notelepon' => '-',
+    'materialproduk' => 'SEMEN',
+    'submaterialproduk' => 'PCC',
+    'foto' => 'tokobangunan/tokobangunanblora.jpg',
+    'merkproduk' => 'Semen Indonesia',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
+]);
+
+
 
 
 
@@ -82833,6 +82817,342 @@ skktenagakerjablora::create([
 ]);
 
 
+
+for ($i = 1; $i <= 909; $i++) {
+    skktenagakerjablora::where('id', $i)->update([
+        'sertifikat' => '/assets/03_datajakon/sertifikasi.pdf',
+        'tahunbimtek' => '2024',
+    ]);
+}
+
+// BATAS BARU
+subklasifikasi::create([
+    'id' => 1,
+    'kode' => 'BG001',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Hunian Tunggal dan Koppel',
+]);
+
+subklasifikasi::create([
+    'id' => 2,
+    'kode' => 'BG002',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Multi atau Banyak Hunian',
+]);
+
+subklasifikasi::create([
+    'id' => 3,
+    'kode' => 'BG003',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Gudang dan Industri',
+]);
+
+subklasifikasi::create([
+    'id' => 4,
+    'kode' => 'BG004',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Komersial',
+]);
+
+subklasifikasi::create([
+    'id' => 5,
+    'kode' => 'BG005',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Hiburan Publik',
+]);
+
+subklasifikasi::create([
+    'id' => 6,
+    'kode' => 'BG006',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Hotel, Restoran, dan Bangunan Serupa Lainnya',
+]);
+
+subklasifikasi::create([
+    'id' => 7,
+    'kode' => 'BG007',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Pendidikan',
+]);
+
+subklasifikasi::create([
+    'id' => 8,
+    'kode' => 'BG008',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Kesehatan',
+]);
+
+subklasifikasi::create([
+    'id' => 9,
+    'kode' => 'BG009',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Gedung Lainnya',
+]);
+
+
+subklasifikasi::create([
+    'id' => 10,
+    'kode' => 'EL005',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Jaringan Transmisi Telekomunikasi dan/atau Telepon',
+]);
+
+subklasifikasi::create([
+    'id' => 11,
+    'kode' => 'EL008',
+    'pekerjaan' => 'Jasa pelaksana instalasi jaringan distribusi telekomunikasi dan/atau telepon',
+]);
+
+subklasifikasi::create([
+    'id' => 12,
+    'kode' => 'EL011',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Instalasi Elektrikal Lainnya',
+]);
+
+subklasifikasi::create([
+    'id' => 13,
+    'kode' => 'MK001',
+    'pekerjaan' => 'Jasa pelaksana konstruksi pemasangan pendingin udara (Air Conditioner), pemanas dan ventilasi',
+]);
+
+subklasifikasi::create([
+    'id' => 14,
+    'kode' => 'MK002',
+    'pekerjaan' => 'Jasa Pelaksana konstruksi Pemasangan Pipa Air (Plumbing) dalam Bangunan dan Salurannya',
+]);
+
+subklasifikasi::create([
+    'id' => 15,
+    'kode' => 'MK003',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Pemasangan Pipa Gas dalam Bangunan',
+]);
+
+subklasifikasi::create([
+    'id' => 16,
+    'kode' => 'MK004',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Insulasi dalam Bangunan',
+]);
+
+subklasifikasi::create([
+    'id' => 17,
+    'kode' => 'MK005',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Pemasangan Lift dan Tangga Berjalan',
+]);
+
+subklasifikasi::create([
+    'id' => 18,
+    'kode' => 'MK006',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Pertambangan dan Manufaktur',
+]);
+
+subklasifikasi::create([
+    'id' => 19,
+    'kode' => 'MK007',
+    'pekerjaan' => 'Jasa Pelaksana instalasi thermal, bertekanan, minyak, gas, geothermal (pekerjaan rekayasa)',
+]);
+
+subklasifikasi::create([
+    'id' => 20,
+    'kode' => 'MK008',
+    'pekerjaan' => 'Jasa pelaksana instalasi alat angkut dan alat angkat',
+]);
+
+subklasifikasi::create([
+    'id' => 21,
+    'kode' => 'MK009',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Instalasi Perpipaan, Gas, Energi (Pekerjaan Rekayasa)',
+]);
+
+subklasifikasi::create([
+    'id' => 22,
+    'kode' => 'MK010',
+    'pekerjaan' => 'Jasa pelaksana instalasi fasilitas produksi, penyimpanan minyak dan gas (pekerjaan rekayasa)',
+]);
+
+
+subklasifikasi::create([
+    'id' => 23,
+    'kode' => 'PL001',
+    'pekerjaan' => 'Jasa Penyewaan Alat Konstruksi Dan Pembongkaran Bangunan Atau Pekerjaan Sipil Lainnya Dengan Operator',
+]);
+
+subklasifikasi::create([
+    'id' => 24,
+    'kode' => 'PL003',
+    'pekerjaan' => 'Jasa Pelaksana Perakitan dan Pemasangan Konstruksi Prakabriksi untuk Konstruksi Jalan dan Jembatan Serta Rel Kereta Api',
+]);
+
+subklasifikasi::create([
+    'id' => 25,
+    'kode' => 'PL004',
+    'pekerjaan' => 'Jasa Pelaksana Perakitan dan Pemasangan Konstruksi Prakabriksi untuk Konstruksi Prasarana Sumber Daya Air, Irigasi, Dermaga, Pelabuhan, Persungaian, Pantai serta Bangunan Pengolahan Air Bersih, Limbah, dan sampah Insinerator',
+]);
+
+subklasifikasi::create([
+    'id' => 26,
+    'kode' => 'SI001',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Saluran Air, Pelabuhan, Dam, dan Prasarana Sumber Daya Air Lainnya',
+]);
+
+subklasifikasi::create([
+    'id' => 27,
+    'kode' => 'SI002',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Instalasi Pengolahan Air Minum dan Air Limbah Serta Bangunan Pengolahan Sampah',
+]);
+
+subklasifikasi::create([
+    'id' => 28,
+    'kode' => 'SI003',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Jalan Raya (kecuali jalan layang), jalan, rel kereta api, dan landas pacu bandara',
+]);
+
+subklasifikasi::create([
+    'id' => 29,
+    'kode' => 'SI004',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Pekerjaan Jembatan, Jalan Layang, Terowongan dan Subways',
+]);
+
+subklasifikasi::create([
+    'id' => 30,
+    'kode' => 'SI005',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Air Minum Jarak Jauh',
+]);
+
+subklasifikasi::create([
+    'id' => 31,
+    'kode' => 'SI006',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Air Limbah Jarak Jauh',
+]);
+
+subklasifikasi::create([
+    'id' => 32,
+    'kode' => 'SI007',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Minyak dan Gas Jarak Jauh',
+]);
+
+subklasifikasi::create([
+    'id' => 33,
+    'kode' => 'SI008',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Air Minum Lokal',
+]);
+
+subklasifikasi::create([
+    'id' => 34,
+    'kode' => 'SI009',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Air Limbah Lokal',
+]);
+
+subklasifikasi::create([
+    'id' => 35,
+    'kode' => 'SI010',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Perpipaan Minyak dan Gas Lokal',
+]);
+
+subklasifikasi::create([
+    'id' => 36,
+    'kode' => 'SI011',
+    'pekerjaan' => 'Jasa pelaksana Konstruksi bangunan stadion untuk olahraga outdoor',
+]);
+
+subklasifikasi::create([
+    'id' => 37,
+    'kode' => 'SI012',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Bangunan Fasilitas Olah Raga Indoor dan Fasilitas Rekreasi',
+]);
+
+
+subklasifikasi::create([
+    'id' => 38,
+    'kode' => 'SP001',
+    'pekerjaan' => 'Pekerjaan Penyelidikan Lapangan',
+]);
+
+subklasifikasi::create([
+    'id' => 39,
+    'kode' => 'SP002',
+    'pekerjaan' => 'Pekerjaan Pembongkaran',
+]);
+
+subklasifikasi::create([
+    'id' => 40,
+    'kode' => 'SP003',
+    'pekerjaan' => 'Pekerjaan Penyiapan dan Pematangan Tanah / Lokasi',
+]);
+
+subklasifikasi::create([
+    'id' => 41,
+    'kode' => 'SP004',
+    'pekerjaan' => 'Pekerjaan Tanah, Galian dan Timbunan',
+]);
+
+subklasifikasi::create([
+    'id' => 42,
+    'kode' => 'SP005',
+    'pekerjaan' => 'Pekerjaan Persiapan Lapangan untuk Pertambangan',
+]);
+
+subklasifikasi::create([
+    'id' => 43,
+    'kode' => 'SP007',
+    'pekerjaan' => 'Pekerjaan Pondasi, Termasuk Pemancangannya',
+]);
+
+subklasifikasi::create([
+    'id' => 44,
+    'kode' => 'SP008',
+    'pekerjaan' => 'Pekerjaan Pengeboran Sumur Air Tanah Dalam',
+]);
+
+subklasifikasi::create([
+    'id' => 45,
+    'kode' => 'SP009',
+    'pekerjaan' => 'Pekerjaan Atap dan Kedap Air (waterproofing)',
+]);
+
+subklasifikasi::create([
+    'id' => 46,
+    'kode' => 'SP010',
+    'pekerjaan' => 'Pekerjaan Beton',
+]);
+
+subklasifikasi::create([
+    'id' => 47,
+    'kode' => 'SP011',
+    'pekerjaan' => 'Pekerjaan Baja dan Pemasangannya, Termasuk Pengelasan',
+]);
+
+subklasifikasi::create([
+    'id' => 48,
+    'kode' => 'SP012',
+    'pekerjaan' => 'Pekerjaan Pemasangan Batu',
+]);
+
+subklasifikasi::create([
+    'id' => 49,
+    'kode' => 'SP013',
+    'pekerjaan' => 'Pekerjaan Konstruksi Khusus Lainnya',
+]);
+
+subklasifikasi::create([
+    'id' => 50,
+    'kode' => 'SP014',
+    'pekerjaan' => 'Pekerjaan Pengasgalan dengan Rangkaian Peralatan Khusus',
+]);
+
+subklasifikasi::create([
+    'id' => 51,
+    'kode' => 'SP015',
+    'pekerjaan' => 'Pekerjaan Lansekap/Pertamanan',
+]);
+
+
+// makanyu
+
+
+contohsurat::create([
+    'judul' => 'Contoh Pengalaman Kerja',
+    'berkas' => '/assets/00_contohsurat/01_CONTOH_PENGALAMAN_KERJA.docx',
+]);
+
+contohsurat::create([
+    'judul' => 'Contoh Pengalaman Kerja',
+    'berkas' => '/assets/00_contohsurat/02_BUKTI_KEBENARAN_DATA.docx',
+]);
+
+
+
+
+// BATAS AKHIR contoh
 //======================== ===================================================================================
 //======================== ===================================================================================
 //======================== ===================================================================================

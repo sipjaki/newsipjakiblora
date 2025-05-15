@@ -105,10 +105,10 @@ table.zebra-table {
 
       <!-- KIRI: Gambar + Breadcrumb -->
       <div class="flex items-center gap-4">
-        <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" />
+        <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" loading="lazy" />
         <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
           <span>/</span>
-          <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 16px; color:blue;">
+          <a href="#" class="font-medium text-blue-600" style="font-size: 16px; color:blue;">
             {{$title}}
           </a>
           {{-- <span>/</span>
@@ -150,7 +150,7 @@ table.zebra-table {
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
                     >
-                        <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
+                        <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;" loading="lazy">
                         {{ $title }}
                     </button>
                 </div>
@@ -165,8 +165,18 @@ table.zebra-table {
 
                             <div class="news-details-box-image">
                                 <div class="news-details-box-image-inner">
-                                    <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid" alt="img-193">
-
+                                    <div style="margin-top: 10px;">
+                                        @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                            <!-- Menampilkan gambar dari storage -->
+                                            <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
+                                        @elseif($data->foto)
+                                            <!-- Menampilkan gambar dari path luar storage -->
+                                            <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <!-- Placeholder jika tidak ada data -->
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
                                     <a href="#" class="news-details-box-date" style="font-family: 'Poppins', sans-serif;">{{ \Carbon\Carbon::parse($data->tanggal)->translatedFormat('l, d F Y') }}</a>
                                 </div><!-- news-details-box-image-inner -->
                             </div><!-- news-details-box-image -->
@@ -174,6 +184,29 @@ table.zebra-table {
                             <br><br>
                             <div class="news-details-content-box" style="margin-left: 25px;">
                                 <h4 style="font-family: 'Poppins', sans-serif;">{{$data->judulberita}}</h4>
+                                <br>
+
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <div style="width: 50%;">
+                                        @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
+                                            <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($data->foto1)
+                                            <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
+
+                                    <div style="width: 50%;">
+                                        @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
+                                            <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($data->foto2)
+                                            <img src="{{ asset($data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
+                                </div>
                                 <br>
                                 <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$data->keterangan}}
 
@@ -194,7 +227,18 @@ table.zebra-table {
 
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-img">
-                                            <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Pelatihan SKK Blora" width="200px" loading="lazy">
+                                            <div style="margin-top: 10px;">
+                                                @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                                    <!-- Menampilkan gambar dari storage -->
+                                                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @elseif($item->foto)
+                                                    <!-- Menampilkan gambar dari path luar storage -->
+                                                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @else
+                                                    <!-- Placeholder jika tidak ada data -->
+                                                    <p>Data belum diupdate</p>
+                                                @endif
+                                            </div>
                                         </div><!-- sidebar-recent-post-img -->
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">

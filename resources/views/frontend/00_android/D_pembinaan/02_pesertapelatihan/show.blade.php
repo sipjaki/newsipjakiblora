@@ -1,26 +1,67 @@
 <style>
 
-    /* Styling untuk tabel */
+        .custom-table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
+    }
+
     .custom-fl-table {
         width: 100%;
         border-collapse: collapse;
-        margin: 20px 0;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
     }
 
-    .custom-fl-table th, .custom-fl-table td {
-        padding: 12px;
-        text-align: center;
-        border: 1px solid #ddd;
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
+        vertical-align: middle;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
     }
 
     .custom-fl-table th {
-        background-color: #4CAF50;
-        color: white;
-        font-weight: bold;
+        background-color:#4ADE80;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
     }
 
     .custom-fl-table td {
-        background-color: #f9f9f9;
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.5;
+    }
+
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #f7f7f7;
+    }
+
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f7f7f7;
+    }
+
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
     }
 
     /* Styling untuk baris yang tidak memiliki materi */
@@ -211,6 +252,19 @@ h5 {
                             </div>
 <br>
 <div style="margin-bottom: 20px;">
+    <div style="margin-top: 10px; overflow: hidden; border-radius: 15px; border: 1px solid #e5e7eb;">
+        @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+            <img src="{{ asset('storage/' . $data->foto) }}" alt="Sosialisasi"
+                style="width: 100%; height: auto; display: block;" loading="lazy">
+        @elseif($data->foto)
+            <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan"
+                style="width: 100%; height: auto; display: block;" loading="lazy">
+        @else
+            <p>Data belum diupdate</p>
+        @endif
+    </div>
+
+    <br>
     <p style="font-size: 18px; font-weight: bold; color: #2c3e50; margin: 0;">
         Kegiatan Pelatihan :
         <span style="font-size: 18px; color: #2980b9; font-weight: normal;">{{$data->namakegiatan}}</span>
@@ -218,30 +272,114 @@ h5 {
 </div>
 
                             <div style="overflow-x: auto; margin-top: 15px;">
-                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
+                                <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Nama Lengkap  </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Gender </th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Instansi </th>
-                                            {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                                <i class="bi bi-hash me-1"></i> No
+                                            </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
+                                                <i class="bi bi-person-fill me-1"></i> Nama Lengkap
+                                            </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-gender-ambiguous me-1"></i> Gender
+                                            </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;">
+                                                <i class="bi bi-building me-1"></i> Instansi/Universitas/Lembaga/Perseorangan
+                                            </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:200px;">
+                                                <i class="bi bi-check2-circle me-1"></i> Status
+                                            </th>
+                                                         {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
                                         @php $start = ($datapeserta->currentPage() - 1) * $datapeserta->perPage() + 1; @endphp
-                                        @foreach ($datapeserta as $item )
-                                        <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
-                                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-transform: capitalize;">
-                                                {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
+                                        @forelse ($datapeserta as $item)
+    <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
+        <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+      <td>
+            {{ strtoupper($item->namalengkap ?? 'TIDAK ADA NAMA') }}
+        </td>
 
-                                            </td>
-                                            <td style="text-align: center;">{{$item->jeniskelamin}}</td>
-                                            <td>{{$item->instansi}}</td>
+        <td style="text-align: center;">{{$item->jeniskelamin}}</td>
+        <td style="text-align: left">{{$item->instansi}}</td>
 
-                                        </tr>
-                                        @endforeach
+        <td style="text-align: center;">
+            <div>
+                <style>
+                    .btn-belum-verifikasi-custom {
+                        background-color: #e3342f;
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        cursor: pointer;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .btn-lolos-verifikasi-custom {
+                        background-color: rgba(16, 185, 129, 0.85);
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                        cursor: not-allowed;
+                    }
+                </style>
+
+@if($item->verifikasi === null)
+<!-- BELUM DI VERIFIKASI -->
+<button type="button" onclick="openModal({{ $item->id }})"
+    style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;"
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+    onmouseout="this.style.backgroundColor='#9CA3AF'; this.style.color='white'; this.querySelector('i').style.color='white';">
+    <i class="bi bi-patch-check" style="color: white;"></i> DI VERIFIKASI
+</button>
+@elseif($item->verifikasi === 'lolos')
+<!-- LOLOS -->
+<button type="button" disabled
+    style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s; cursor: not-allowed;"
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
+    <i class="bi bi-patch-check-fill" style="font-size: 1.2rem; color: white;"></i> LOLOS
+</button>
+@elseif($item->verifikasi === 'gugur')
+<!-- GUGUR -->
+<button type="button" disabled
+    style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s; cursor: not-allowed;"
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+    onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
+    <i class="bi bi-x-circle" style="font-size: 1.2rem; color: white;"></i> GUGUR
+</button>
+@endif
+
+            </div>
+        </td>
+    </tr>
+@empty
+    <tr>
+        <td colspan="5" style="text-align: center; font-weight: bold; padding: 20px;">
+            Peserta Belum Mendaftar !!
+        </td>
+    </tr>
+@endforelse
+
                                     </tbody>
                                 </table>
                             </div>

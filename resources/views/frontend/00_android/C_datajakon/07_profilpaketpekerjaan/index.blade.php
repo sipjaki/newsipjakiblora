@@ -1,50 +1,69 @@
 <style>
     /* Gaya untuk tabel */
     .custom-table-container {
-    width: 100%;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
-    border-radius: 15px; /* Round the corners of the container */
-    border: 1px solid #ddd; /* Optional: Adds a border around the container */
-}
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
+    }
 
-.custom-fl-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 700px; /* Prevents the table from shrinking too much */
-}
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
+    }
 
-.custom-fl-table th, .custom-fl-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
+        vertical-align: middle;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
+    }
 
-.custom-fl-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-}
+    .custom-fl-table th {
+        background-color:#4ADE80;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
+    }
 
-.custom-fl-table td {
-    text-transform: capitalize;
-}
+    .custom-fl-table td {
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.5;
+    }
 
-/* Optional: Add some styles to make the scrollbar appear nicer */
-.custom-table-container::-webkit-scrollbar {
-    height: 8px;
-}
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #f7f7f7;
+    }
 
-.custom-table-container::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
-}
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f7f7f7;
+    }
 
-.custom-table-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-}
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
 
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 </style>
-
 
 @include('frontend.00_android.00_fiturmenu.header')
 
@@ -151,33 +170,58 @@
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:1500px;"> Dinas </th>
-                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:1000px;"> Jenis Pekerjaan </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:500px;"> Paket Pekerjaan  </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:1500px;"> Nama Pekerjaan</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rekap</th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:250px;"> Progress</th>
-                                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Details</th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:250px;"> Pekerjaan</th>
-                                            <th onclick="sortTable(9)" style="cursor:pointer; text-align:center; width:250px;"> SPPBJ</th>
-                                            <th onclick="sortTable(10)" style="cursor:pointer; text-align:center; width:250px;"> SPK</th>
-                                            <th onclick="sortTable(11)" style="cursor:pointer; text-align:center; width:250px;"> SSKK</th>
-                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Perjanjian Harga Satuan</th> --}}
-                                            <th onclick="sortTable(12)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
-                                        </tr>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:75px;">
+                                                <i class="bi bi-hash"></i> No
+                                            </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;">
+                                                <i class="bi bi-building"></i> Dinas
+                                            </th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-diagram-3"></i> Jenis Pekerjaan
+                                            </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-box-seam"></i> Paket Pekerjaan
+                                            </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:400px;">
+                                                <i class="bi bi-file-earmark-text"></i> Nama Pekerjaan
+                                            </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-journal-text"></i> Rekap
+                                            </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-bar-chart-line"></i> Progress
+                                            </th>
+                                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-info-circle"></i> Details
+                                            </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-briefcase"></i> Pekerjaan
+                                            </th>
+                                            <th onclick="sortTable(9)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-clipboard-check"></i> SPPBJ
+                                            </th>
+                                            <th onclick="sortTable(10)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-file-earmark-medical"></i> SPK
+                                            </th>
+                                            <th onclick="sortTable(11)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-journal-code"></i> SSKK
+                                            </th>
+                                            <th onclick="sortTable(12)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-eye"></i> View
+                                            </th>
+                                                   </tr>
                                     </thead>
                                     <tbody id="tableBody">
                                         @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
                                         @foreach ($data as $item )
                                         <tr>
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-transform: capitalize;" style="width:1500px;">{{$item->user->name}}</td>
-                                            <td style="text-align: left;" style="width:1000px;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
-                                            <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
-                                            <td style="text-align: left;" style="width:1500px;">{{$item->namapekerjaan}}</td>
+                                            <td style="text-transform: capitalize;" style="width:1500px;">{{$item->user->name ?? 'Data Belum Di Update'}}</td>
+                                            <td style="text-align: left;" style="width:1000px;">{{$item->profiljenispekerjaan->jenispekerjaan ?? 'Data Belum Di Update'}}</td>
+                                            <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan ?? 'Data Belum Di Update'}}</td>
+                                            <td style="text-align: left;" style="width:1500px;">{{$item->namapekerjaan ?? 'Data Belum Di Update' }}</td>
                                             {{-- <td style="text-align: left;">Selesai</td> --}}
-                                            <td style="text-align: left;">{{$item->bulan?->bulanrekap}}</td>
+                                            <td style="text-align: center;">{{$item->bulanrekap->bulanrekap ?? 'Data Belum Di Update' }}</td>
                                             <td style="text-align: left;">
                                                 @php
                                                     // Mendapatkan progress dalam bentuk persentase
@@ -234,7 +278,8 @@
                                                         $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
                                                         {{ $buttonText }}
                                                     </button>
@@ -252,7 +297,8 @@
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
@@ -271,7 +317,8 @@
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
@@ -291,7 +338,8 @@
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
@@ -311,7 +359,8 @@
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
@@ -340,7 +389,8 @@
 
 
                                             <td style="text-align: center" style="text-align: center;">
-                                                <a href="/resprofilpaketpekerjaan/{{$item->id}}">
+                                                <a href="/404">
+                                                {{-- <a href="/resprofilpaketpekerjaan/{{$item->id}}"> --}}
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
                                             </td>

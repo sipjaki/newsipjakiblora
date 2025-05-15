@@ -95,6 +95,8 @@ table.zebra-table {
 
     {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
+    {{-- @include('backend.00_administrator.00_baganterpisah.09_selamatdatang') --}}
+    @include('backend.00_administrator.00_baganterpisah.11_alert')
 
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">

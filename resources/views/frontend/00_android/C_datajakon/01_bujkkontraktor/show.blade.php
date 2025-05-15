@@ -1,50 +1,69 @@
 <style>
     /* Gaya untuk tabel */
     .custom-table-container {
-    width: 100%;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
-    border-radius: 15px; /* Round the corners of the container */
-    border: 1px solid #ddd; /* Optional: Adds a border around the container */
-}
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
+    }
 
-.custom-fl-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 700px; /* Prevents the table from shrinking too much */
-}
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
+    }
 
-.custom-fl-table th, .custom-fl-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
+        vertical-align: middle;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
+    }
 
-.custom-fl-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-}
+    .custom-fl-table th {
+        background-color:#4ADE80;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
+    }
 
-.custom-fl-table td {
-    text-transform: capitalize;
-}
+    .custom-fl-table td {
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.5;
+    }
 
-/* Optional: Add some styles to make the scrollbar appear nicer */
-.custom-table-container::-webkit-scrollbar {
-    height: 8px;
-}
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #f7f7f7;
+    }
 
-.custom-table-container::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
-}
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f7f7f7;
+    }
 
-.custom-table-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-}
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
 
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 </style>
-
 
 @include('frontend.00_android.00_fiturmenu.header')
 
@@ -96,35 +115,35 @@
                                     <tbody id="tableBody">
                                         {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp --}}
                                         {{-- @foreach ($subData as $item) --}}
+
                                         <tr>
-                                            <td>1</td>
-                                            <td>Nama Badan Usaha</td>
-                                            <td>{{$data->namalengkap}}</td>
+                                            <td style="width: 50px; text-align: center;">
+                                                <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2em;"></i>
+                                            </td>
+                                            <td style="width: 200px;">Nama Badan Usaha</td>
+                                            <td style="width: 400px;">{{$data->namalengkap}}</td>
                                         </tr>
 
                                         <tr>
-                                            <td>2</td>
-                                            <td>No Telepon</td>
-                                            <td>{{$data->no_telepon}}</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>3</td>
+                                            <td style="text-align: center;">
+                                                <i class="fas fa-map-marker-alt" style="color: #3B82F6; font-size: 1.2em;"></i>
+                                            </td>
                                             <td>Alamat</td>
                                             <td>{{$data->alamat}}</td>
                                         </tr>
 
                                         <tr>
-                                            <td>4</td>
+                                            <td style="text-align: center;">
+                                                <i class="fas fa-envelope" style="color: #EC4899; font-size: 1.2em;"></i>
+                                            </td>
                                             <td>Email</td>
                                             <td>{{$data->email}}</td>
                                         </tr>
-
-                                        <tr>
+                                                                                {{-- <tr>
                                             <td>5</td>
                                             <td>Nomor Induk Berusaha</td>
                                             <td>{{$data->nomorindukberusaha}}</td>
-                                        </tr>
+                                        </tr> --}}
 
                                         {{-- @endforeach --}}
 
@@ -133,17 +152,33 @@
                                 <br>
                                 <p style="font-weight: bold;">Sub Klasifikasi Layanan </p>
                                 <br>
-                                <table class="custom-fl-table" id="sortableTable">
+                                <table class="custom-fl-table" id="sortableTable" style="border-radius: 20px;">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Sub Klasifikasi Layanan  </th>
-                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;"> Kode </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> Kualifikasi </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:400px;"> Penerbit </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:350px;"> Tanggal Terbit </th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:350px;"> Masa Berlaku </th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:350px;"> Status </th>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                                <i class="bi bi-hash"></i> No
+                                            </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-list-task"></i> Sub Klasifikasi Layanan
+                                            </th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-code-square"></i> Kode
+                                            </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-award"></i> Kualifikasi
+                                            </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-person-badge"></i> Penerbit
+                                            </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-calendar-check"></i> Tanggal Terbit
+                                            </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-calendar-range"></i> Masa Berlaku
+                                            </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-check-circle"></i> Status
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">

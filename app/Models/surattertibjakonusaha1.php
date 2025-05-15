@@ -13,9 +13,29 @@ class surattertibjakonusaha1 extends Model
 
     protected $guarded = ['id'];
 
-    public function tertibjasakonstruksi()
+            public function tertibjasakonstruksi()
+            {
+                return $this->hasMany(tertibjasakonstruksi::class, 'surattertibjakonusaha1_id');
+            }
+
+    public function tandatangan1()
     {
-        return $this->hasOne(tertibjasakonstruksi::class, 'tertibjasakonstruksi_id');
+        return $this->belongsTo(tandatangan::class, 'tandatangan1_id');
+    }
+
+    public function tandatangan2()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan2_id');
+    }
+
+    public function tandatangan3()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan3_id');
+    }
+
+    public function subklasifikasi()
+    {
+        return $this->belongsTo(subklasifikasi::class, 'subklasifikasi_id');
     }
 
 }

@@ -16,9 +16,11 @@ return new class extends Migration
             $table->foreignId('materipelatihanskk_id')->nullable();
             $table->foreignId('allskktenagakerjablora_id')->nullable();
             $table->foreignId('user_id')->nullable();
+            $table->foreignId('asosiasimasjaki_id')->nullable();
+
             // $table->foreignId('jenjang_id')->nullable();
             $table->string('namakegiatan')->nullable();
-            $table->string('penyelenggara')->nullable();
+            $table->string('jabatankerja_id')->nullable();
             $table->string('penutupan')->nullable();
             $table->string('waktupelaksanaan')->nullable();
             $table->integer('jumlahpeserta')->nullable();
@@ -26,7 +28,6 @@ return new class extends Migration
             $table->string('keterangan')->nullable();
             $table->text('isiagenda')->nullable();
             $table->string('foto')->nullable();
-            $table->string('materi')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

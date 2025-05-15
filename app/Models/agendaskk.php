@@ -16,17 +16,29 @@ class agendaskk extends Model
 
     public function allskktenagakerjablora()
     {
-        return $this->belongsTo(allskktenagakerjablora::class, 'allskktenagakerjablora_id');
+        // return $this->belongsTo(allskktenagakerjablora::class, 'allskktenagakerjablora_id');
+        return $this->hasMany(allskktenagakerjablora::class);
     }
+
 
     public function user()
     {
-        return $this->belongsTo(user::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function materipelatihanskk()
     {
         return $this->belongsTo(materipelatihanskk::class, 'materipelatihanskk_id');
+    }
+
+    public function asosiasimasjaki()
+    {
+        return $this->belongsTo(asosiasimasjaki::class, 'asosiasimasjaki_id');
+    }
+
+    public function jabatankerja()
+    {
+        return $this->belongsTo(jabatankerja::class, 'jabatankerja_id');
     }
 
 }

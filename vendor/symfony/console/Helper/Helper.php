@@ -170,5 +170,9 @@ abstract class Helper implements HelperInterface
         $formatter->setDecorated($isDecorated);
 
         return $string;
+
+
     }
+
+
 }

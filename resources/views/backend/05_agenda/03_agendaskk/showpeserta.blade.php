@@ -13,6 +13,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -20,7 +22,8 @@
             <!--begin::Row-->
             <div class="row">
 
-              <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
 
             </div>
             <!--end::Row-->
@@ -30,78 +33,85 @@
 
         <br>
         <!-- Menampilkan pesan sukses -->
-
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
-
         <div class="container-fluid">
             <!--begin::Row-->
             <div class="row" style="margin-right: 10px; margin-left:10px;">
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #166534, #22C55E);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                    📌 View Sub Data Klasifikasi Layanan : {{$data->namalengkap}}
-                </div>
+                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+
 
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                 <a href="javascript:history.back()">
+<button
+    onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+    onmouseout="this.style.background='linear-gradient(135deg, #4B5563, #E5E7EB)'; this.style.color='white'; this.style.border='none';"
+    style="background: linear-gradient(135deg, #4B5563, #E5E7EB); color: white; border: none; margin-right: 10px; padding: 10px 20px;
+           border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+           transition: background 0.3s, color 0.3s, border 0.3s;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+         viewBox="0 0 16 16" style="margin-right: 8px;">
+        <path fill-rule="evenodd"
+              d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+    </svg>
+    Kembali
+</button>
 
-                    <a href="/beagendapelatihan">
-                         <button
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                         style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                         <!-- Ikon Kembali -->
-                         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+</a>
 
-                     </button>
-                     </a>
-                     <a href="/404">
-                         <button
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
-                         style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                         <!-- Ikon Kembali -->
-                         <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                         Create
-                     </button>
-                     </a>
+
+
+
                  </div>
 
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                            <table class="table table-striped">
+                            <table class="zebra-table table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10px; text-align:center;">No</th>
-                                        <th style="width: 300px; text-align:center;">Nama Lengkap</th>
-                                        {{-- <th style="width: 300px; text-align:center;">Jenjang Pendidikan</th> --}}
-                                        <th style="width: 100px; text-align:center;">Nik</th>
-                                        <th style="width: 200px; text-align:center;">Tanggal Lahir</th>
-                                        <th style="width: 200px; text-align:center;">No Telepon </th>
-                                        <th style="width: 100px; text-align:center;">Instansi</th>
-                                        <th style="width: 300px; text-align:center;">Sertifikat</th>
-                                        <th style="width: 200px; text-align:center;">Verifikasi</th>
-                                        <th style="width: 200px; text-align: center;">Aksi</th>
+                                        <th style="width: 10px; text-align:center;">
+                                            <i class="bi bi-hash" style="margin-right: 5px;"></i>No
+                                        </th>
+                                        <th style="width: 300px; text-align:center;">
+                                            <i class="bi bi-person-fill" style="margin-right: 5px;"></i>Nama Lengkap
+                                        </th>
+                                        {{-- <th style="width: 300px; text-align:center;">
+                                            <i class="bi bi-bookmark-fill" style="margin-right: 5px;"></i>Jenjang Pendidikan
+                                        </th> --}}
+                                        <th style="width: 100px; text-align:center;">
+                                            <i class="bi bi-person" style="margin-right: 5px;"></i>NIk
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Gender
+                                        </th>
+                                          <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Tanggal Lahir
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>No Telepon
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-mortarboard" style="margin-right: 5px;"></i> Jenjang Pendidikan
+                                        </th>
+                                        <th style="width: 400px; text-align:center;">
+                                            <i class="bi bi-building" style="margin-right: 5px;"></i>Universitas/Sekolah/Intansi
+                                        </th>
+                                        <th style="width: 300px; text-align:center;">
+                                            <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Sertifikat
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Lihat Peserta
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi PU
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-gear" style="margin-right: 5px;"></i>Aksi
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -116,15 +126,108 @@
                                             {{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('d F Y') }}
                                         </td>
                                         <td style="text-align: left;">{{ $item->notelepon }}</td>
-                                        <td style="text-align: left;">{{ $item->instansi }}</td>
+                                        <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan }}</td>
+                                        <td style="text-align: left;">{{ $item->namasekolah->namasekolah }}</td>
 
-                                        <td style="text-align: center; gap:10px;">
-                                            <object data="{{ asset('storage/' . $item->sertifikat) }}" type="application/pdf" width="300" height="200">
-                                                <p>Sertifikat Belum Terbit</p>
-                                            </object>
+                                        <td style="text-align: center; gap:10px;" id="status-sertifikat-{{ $item->id }}">
+                                            @if($item->sertifikat)
+                                                <p>Terbit</p>
+                                            @else
+                                                <p>Belum Terbit</p>
+                                            @endif
                                         </td>
 
-                                        <td style="text-align: center;">{{ $item->verifikasi }}</td>
+                                        <!-- Script untuk update status sertifikat -->
+                                        <script>
+                                            // Fungsi ini dipanggil setelah proses upload atau update sertifikat
+                                            function updateStatusSertifikat(id, status) {
+                                                var statusElement = document.getElementById('status-sertifikat-' + id);
+                                                if (status === 'terbit') {
+                                                    statusElement.innerHTML = '<p>Terbit</p>';
+                                                } else {
+                                                    statusElement.innerHTML = '<p>Belum Terbit</p>';
+                                                }
+                                            }
+
+                                            // Contoh panggilan JavaScript setelah upload atau update sertifikat berhasil
+                                            // updateStatusSertifikat({{ $item->id }}, 'terbit');
+                                        </script>
+
+
+
+<td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
+    <a href="{{ url('/bepesertaskkshowberkas/show/' . $item->id) }}" style="text-decoration: none;">
+        <button
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+            style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                   border-radius: 15px; font-size: 14px; cursor: pointer;
+                   display: flex; align-items: center; justify-content: center;
+                   transition: background-color 0.3s, color 0.3s;">
+            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> LIHAT PROFIL
+        </button>
+    </a>
+</td>
+<!-- Tombol Verifikasi -->
+<td style="text-align: center;">
+    @if($item->verifikasipu == null)
+        <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+            <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
+        </button>
+    @elseif($item->verifikasipu == 'dikembalikan')
+        <button type="button" disabled class="btn" style="background-color: #0400ff; color: white;">
+            <i class="bi bi-x-circle"></i> DIKEMBALIKAN
+        </button>
+    @elseif($item->verifikasipu == 'lolos')
+        <button type="button" disabled class="btn" style="background-color: #10B981; color: white;">
+            <i class="bi bi-patch-check-fill"></i> LOLOS
+        </button>
+    @endif
+</td>
+
+<!-- Modal Konfirmasi -->
+<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
+        <p style="font-size: 16px; font-weight: 600;">Apakah peserta sudah memenuhi <br> persyaratan pendaftaran?</p>
+
+        <form id="verifikasiForm" method="POST">
+            @csrf
+            @method('PUT')
+
+            <!-- Tombol Lolos -->
+            <button type="submit" name="verifikasipu" value="lolos" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;">
+                <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Lolos
+            </button>
+
+            <!-- Tombol Dikembalikan -->
+            <button type="submit" name="verifikasipu" value="dikembalikan" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+                <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Dikembalikan
+            </button>
+        </form>
+
+        <br><br>
+
+        <!-- Tombol Batal -->
+        <button type="button" onclick="closeModal()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;">
+            <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
+        </button>
+    </div>
+</div>
+
+
+<script>
+    function openModal(itemId) {
+        const form = document.getElementById("verifikasiForm");
+        form.action = `/verifikasipupesertaskk/${itemId}`;
+        document.getElementById("confirmModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("confirmModal").style.display = "none";
+    }
+</script>
+
+
 
 
                                         <td style="text-align: center;">
@@ -176,7 +279,7 @@
                                             document.getElementById('itemName').innerText = id;
 
                                             // Atur URL penghapusan
-                                            var deleteUrl = "/beagendapelatihanpeserta/delete/" + encodeURIComponent(id);
+                                            var deleteUrl = "/beagendaskkpeserta/delete/" + encodeURIComponent(id);
                                             document.getElementById('deleteForm').action = deleteUrl;
                                         }
 
@@ -201,7 +304,7 @@
 
                                 </tbody>
                             </table>
-
+<br><br>
                         </div>
                     </div>
                     <!-- /.card-body -->
@@ -216,7 +319,8 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+        </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>

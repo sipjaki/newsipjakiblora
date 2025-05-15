@@ -1,4 +1,18 @@
 <style>
+        .btn-navy {
+        background-color: navy;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
 
     /* Styling untuk tabel */
     .custom-fl-table {
@@ -184,12 +198,42 @@ h5 {
 
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
+                <div>
+                    <a href="/resdaftarpelatihanpesertaskk/create/{{$data->id}}">
+                        <button
+                        class="btn-navy"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"
+                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.querySelector('i').style.color='white'; this.style.border='none';"
+                        onclick="window.location.href='your-link-here.html'"
+                        >
+                        <i class="bi bi-person-fill" style="color: white;"></i>
+                        Daftar SKK
+                    </button>
+                </a>
+
                 <div class="container-surat">
                     <div class="header-surat">
                         <div class="header-text">
-                            <h3>AGENDA SERTIFIKASI TKK KABUPATEN BLORA </h3>
-                            <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4>
-                            <p>------------------------------------------------------------</p>
+                            <h3>AGENDA SERTIFIKASI TKK </h3>
+                            <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
+                            <p>-----------------------------------</p>
+                        </div>
+                    </div>
+
+
+                    <div class="flex justify-center">
+                        <div class="rounded-lg shadow-lg overflow-hidden w-fit">
+                            <div style="margin-top: 10px;">
+                                @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                    <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan"
+                                         style="width: 100%; max-height: 500px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                                @elseif($data->foto)
+                                    <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan"
+                                         style="width: 100%; max-height: 500px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                                @else
+                                    <p>Data belum diupdate</p>
+                                @endif
+                            </div>
                         </div>
                     </div>
 
@@ -231,14 +275,18 @@ h5 {
                             <br>
                     <div class="portfolio-details-content">
                         <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold" style="font-size: 16px;">Isi Agenda: </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
+                            <h2 class="font-semibold" style="font-size: 16px; display: flex; align-items: center; gap: 6px;">
+                                <i class="bi bi-journal-text" style="font-size: 18px;"></i> Isi Agenda:
+                            </h2>
+                        <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
                         </div>
                         <br>
 
                         <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold text-sm" style="font-size: 16px;">Keterangan : </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
+                            <h2 class="font-semibold text-sm" style="font-size: 16px; display: flex; align-items: center; gap: 6px;">
+                                <i class="bi bi-info-circle" style="font-size: 18px;"></i> Keterangan:
+                            </h2>
+                                         <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
                         </div>
 
                     </div><!-- portfolio-details-content -->

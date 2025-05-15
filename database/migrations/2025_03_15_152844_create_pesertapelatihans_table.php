@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pesertapelatihans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('agendapelatihan_id')->nullable();
-            $table->foreignId('user_id')->nullable();
+            $table->string('namalengkap')->nullable();
             // nama lengkap
             $table->foreignId('jenjangpendidikan_id')->nullable();
             $table->string('nik')->nullable();
@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('instansi')->nullable();
             $table->string('sertifikat')->nullable();
             $table->string('verifikasi')->nullable();
+            $table->boolean('verifikasikehadiran')->default(false);
+            $table->boolean('terbitkansertifikat')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

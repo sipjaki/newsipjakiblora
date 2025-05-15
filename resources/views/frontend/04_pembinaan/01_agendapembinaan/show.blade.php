@@ -134,11 +134,11 @@
          <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" />
          <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
            <span>/</span>
-           <a href="/agendapembinaan" class="font-medium text-blue-600" style="font-size: 16px;">
+           <a href="#" class="font-medium text-blue-600" style="font-size: 16px;">
              {{$title}}
            </a>
            <span>/</span>
-           <a href="/404" class="font-medium" style="font-size: 16px; color:blue;">
+           <a href="#" class="font-medium" style="font-size: 16px; color:blue;">
              Informasi Agenda Pelatihan TKK Kabupaten Blora
            </a>
          </div>
@@ -183,8 +183,6 @@
 
 
 
-
-
              <section class="news-details-section" style="background-image: url(assets/00_dokmasjaki/03_datajakon/bannerbetter.jpg);">
                 <div class="container" style="margin-top: -125px;">
                     <div class="row">
@@ -192,18 +190,34 @@
                         <div class="col-lg-8">
                             <div class="news-details-box-image">
                                 <div class="news-details-box-image-inner">
-                                    <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid" alt="img-193">
-                                    <a href="news-details.html" class="news-details-box-date">
+                                    <div style="margin-top: 10px;">
+                                        @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                            <!-- Menampilkan gambar dari storage -->
+                                            <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan"
+                                                 style="width: 100%; max-height: 900px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                                        @elseif($data->foto)
+                                            <!-- Menampilkan gambar dari path luar storage -->
+                                            <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan"
+                                                 style="width: 100%; max-height: 900px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                                        @else
+                                            <!-- Placeholder jika tidak ada data -->
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
+                                    <a href="news-details.html" class="news-details-box-date" style="background-color: red; color: white; padding: 4px 8px; border-radius: 4px;">
                                         {{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('l, d F Y') }}
                                     </a>
+
                                 </div>
                             </div>
 
                             <br><br>
 
                             <div class="news-details-content-box" style="margin-left: 25px;">
-                                <h4 style="font-family: Poppins;">{{ $data->namakegiatan }}</h4>
-                                <p style="font-family: Poppins;">{{ $data->isiagenda }}</p>
+                                <div style="font-family: Poppins; font-size: 18px;">
+                                    <h4>{{ $data->namakegiatan }}</h4>
+                                    <p>{{ $data->isiagenda }}</p>
+                                </div>
                             </div>
                         </div>
 
@@ -221,7 +235,7 @@
 
                                                 </button>
                                             </a>
-                                            <a href="/404">
+                                            <a href="/daftarpesertapelatihan/create/{{$data->id}}">
                                                 <button style="padding: 12px 24px; font-size: 16px; border-radius: 8px; background-color: navy; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                                         onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
@@ -232,76 +246,47 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <div class="sidebar-widget sidebar-widget-recent-post" style="font-family: Poppins;">
-                                    <h4 style="font-family: Poppins;">Penyelenggara</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->penyelenggara }}</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <div class="sidebar-widget" style="font-family: Poppins; font-size: 16px;">
+                                    <div class="sidebar-item">
+                                        <h4 style="font-weight: 600; margin-bottom: 10px;">Penyelenggara</h4>
+                                        <div style="display: flex; align-items: center; font-size: 16px;">
+                                            <i class="bi bi-person-circle" style="margin-right: 10px; font-size: 18px;"></i>
+                                            <p>{{ $data->asosiasimasjaki->namaasosiasi ?? 'data belum di update'}}</p>
                                         </div>
                                     </div>
 
-                                    <h4 style="font-family: Poppins;">Waktu Pelaksanaan</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="sidebar-item">
+                                        <h4 style="font-weight: 600; margin-bottom: 10px;">Waktu Pelaksanaan</h4>
+                                        <div style="display: flex; align-items: center; font-size: 16px;">
+                                            <i class="bi bi-calendar" style="margin-right: 10px; font-size: 18px;"></i>
+                                            <p>{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</p>
                                         </div>
                                     </div>
 
-                                    <h4 style="font-family: Poppins;">Lokasi</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->lokasi }}</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="sidebar-item">
+                                        <h4 style="font-weight: 600; margin-bottom: 10px;">Lokasi</h4>
+                                        <div style="display: flex; align-items: center; font-size: 16px;">
+                                            <i class="bi bi-geo-alt" style="margin-right: 10px; font-size: 18px;"></i>
+                                            <p>{{ $data->lokasi }}</p>
                                         </div>
                                     </div>
 
-                                    <h4 style="font-family: Poppins;">Jumlah Peserta</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->jumlahpeserta }} Peserta </span> </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="sidebar-item">
+                                        <h4 style="font-weight: 600; margin-bottom: 10px;">Jumlah Peserta</h4>
+                                        <div style="display: flex; align-items: center; font-size: 16px;">
+                                            <i class="bi bi-person-plus" style="margin-right: 10px; font-size: 18px;"></i>
+                                            <p>{{ $data->jumlahpeserta }} Peserta</p>
                                         </div>
                                     </div>
 
-                                    <h4 style="font-family: Poppins;">Keterangan</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->keterangan }}</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="sidebar-item">
+                                        <h4 style="font-weight: 600; margin-bottom: 10px;">Keterangan</h4>
+                                        <div style="display: flex; align-items: center; font-size: 16px;">
+                                            <i class="bi bi-file-earmark-text" style="margin-right: 10px; font-size: 18px;"></i>
+                                            <p>{{ $data->keterangan }}</p>
                                         </div>
                                     </div>
                                 </div>
-
-
 
 
                                 <div style="display: flex; justify-content: center; align-items: center;">
@@ -328,41 +313,30 @@
                                 <tr>
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
-                                    <td>
-                                        <!-- Menambahkan pengecekan apakah data materi pelatihan kosong -->
-                                        <script>
-                                            // Cek apakah file materi pelatihan ada
-                                            const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}";
-                                            const isFileAvailable = fileUrl && fileUrl !== '{{ asset('storage/') }}'; // Cek jika URL file valid atau kosong
-
-                                            if (!isFileAvailable) {
-                                                // Jika file tidak ada, tampilkan tombol merah dengan tulisan "Materi Belum Di Upload"
-                                                document.write(`
-                                                    <button class="badge"
-                                                            style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
-                                                        Materi Belum Di Upload
-                                                    </button>
-                                                `);
-                                            } else {
-                                                // Jika file ada, tampilkan tombol download
-                                                document.write(`
-                                                    <button id="sertifikat-btn" class="badge"
-                                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                                        <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                                                    </button>
-                                                `);
-                                                document.getElementById('sertifikat-btn').addEventListener('click', function() {
-                                                    const a = document.createElement('a');
-                                                    a.href = fileUrl;
-                                                    a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
-                                                    document.body.appendChild(a);
-                                                    a.click();
-                                                    document.body.removeChild(a);
-                                                });
-                                            }
-                                        </script>
+                                        <td>
+                                        @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
+                                            <!-- File ditemukan di penyimpanan -->
+                                            <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="200px"></iframe>
+                                            <a href="{{ asset('storage/' . $item->materipelatihan) }}" download
+                                                class="badge"
+                                                style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
+                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                            </a>
+                                        @elseif($item->materipelatihan)
+                                            <!-- File ada tapi bukan di storage, tampilkan dari URL langsung -->
+                                            <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                            <a href="{{ asset($item->materipelatihan) }}" download
+                                                class="badge"
+                                                style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
+                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                            </a>
+                                        @else
+                                            <!-- Tidak ada file -->
+                                            <button class="badge"
+                                                style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
+                                                Materi Belum Di Upload
+                                            </button>
+                                        @endif
                                     </td>
 
                                 </tr>

@@ -14,11 +14,19 @@ return new class extends Migration
         Schema::create('surattertibjakonusaha3s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tertibjasakonstruksi_id')->nullable()->index();
+            $table->foreignId('tandatangan1_id')->nullable()->index();
+            $table->foreignId('tandatangan2_id')->nullable()->index();
+            $table->foreignId('tandatangan3_id')->nullable()->index();
+           $table->string('namabadanusaha')->nullable();
+            $table->string('waktupengawasan')->nullable();
+            $table->string('waktupengawasanselesai')->nullable();
+            // -------------------------------------------------------------------------------------
+
             $table->string('namabujk')->nullable()->index();
             $table->string('nib')->nullable()->index();
             $table->string('pjbu')->nullable()->index();
             $table->string('jenisusaha')->nullable()->index();
-            $table->string('klasifikasi')->nullable()->index();
+            $table->foreignId('subklasifikasi_id')->nullable()->index();
             $table->string('nomorsertifikat')->nullable()->index();
             $table->string('kesimpulan')->nullable()->index();
             $table->string('catatanpemeriksaan')->nullable()->index();

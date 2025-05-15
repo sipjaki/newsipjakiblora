@@ -1,0 +1,1209 @@
+<!-- Tombol KTP -->
+<td style="text-align: center;">
+    <button class="btn btn-secondary btn-sm"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        data-bs-toggle="modal" data-bs-target="#modalKtp3">
+        <i class="fas fa-eye"></i> Lihat
+    </button>
+
+    <!-- Modal KTP -->
+    <div class="modal fade" id="modalKtp3" tabindex="-1" aria-labelledby="modalKtpLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                    <a href="#"><img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                    <span>:</span>
+                    <h5 class="modal-title" id="modalKtpLabel3">Berkas KTP</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                                            <img src="https://abgdpuprblora.com/06_krk/01_krkusaha/01_ktp/1745393042_istockphoto-91197392-1024x1024.jpg" alt="KTP" class="img-fluid">
+                                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+
+
+
+
+for ($i = 1; $i <= 17; $i++) {
+    bujkkonsultan::where('id', $i)->update([
+        'user_id' => 10,
+    ]);
+}
+
+
+
+
+
+
+
+public function bebujkkonstruksicreateklasifikasi($namalengkap)
+{
+    $bujkkontraktor = bujkkontraktor::findOrFail($namalengkap); // Cari 1 data sesuai ID
+    $user = Auth::user();
+    $asosiasimasjaki = asosiasimasjaki::all();
+
+    return view('backend.04_datajakon.01_bujkkonstruksi.createklasifikasi', [
+        'bujkkontraktornamalengkap' => $bujkkontraktor->namalengkap, // Ini dikirim ke form
+        'bujkkontraktor_id' => $bujkkontraktor->id, // Ini dikirim ke form
+        'user' => $user,
+        'asosiasimasjaki' => $asosiasimasjaki,
+        'title' => 'Create BUJK Sub Klasifikasi'
+    ]);
+}
+
+public function bebujkkonstruksicreateklasifikasicreate(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'nama_pengurus' => 'required|string|max:255',
+        'sub_klasifikasi_layanan' => 'required|string|max:255',
+        'kode' => 'required|string|max:50',
+        'kualifikasi' => 'required|string|max:255',
+        'penerbit' => 'required|string|max:255',
+        'nama_psjk' => 'required|string|max:255',
+        'sub_kualifikasi_bu' => 'required|string|max:255',
+        'tanggal_terbit' => 'required|date',
+        'tanggal_berlaku' => 'required|date',
+    ], [
+        // Pesan kesalahan custom
+        'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
+        'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
+        'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
+        'kualifikasi.required' => 'Kualifikasi harus diisi.',
+        'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
+        'penerbit.required' => 'Penerbit harus diisi.',
+        'nama_psjk.required' => 'Nama PSJK harus diisi.',
+        'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
+        'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
+    ]);
+
+    // Menyimpan data ke tabel BujkKontraktorSub
+    $bujkkontraktorSub = bujkkontraktorsub::create([
+        'bujkkontraktor_id' => $request->bujkkontraktor_id,
+        'nama_pengurus' => $validated['nama_pengurus'],
+        'sub_klasifikasi_layanan' => $validated['sub_klasifikasi_layanan'],
+        'kode' => $validated['kode'],
+        'kualifikasi' => $validated['kualifikasi'],
+        'sub_kualifikasi_bu' => $validated['sub_kualifikasi_bu'],
+        'penerbit' => $validated['penerbit'],
+        'nama_psjk' => $validated['nama_psjk'],
+        'tanggal_terbit' => $validated['tanggal_terbit'],
+        'tanggal_berlaku' => $validated['tanggal_berlaku'],
+    ]);
+
+    // Ambil bujkkontraktor_id yang baru saja disimpan
+    $bujkkontraktorId = $bujkkontraktorSub->bujkkontraktor_id;
+
+    // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
+    session()->flash('create', 'Data Sub Klasifikasi Layanan berhasil di buat.');
+
+    // Redirect ke route 'bebujkkonstruksi.showsubklasifikasi' dengan parameter bujkkontraktor_id
+    return redirect('bebujkkonstruksi');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------- -->
+
+
+<form action="{{ route('daftarpesertasertifikasiskkcreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
+                                            @csrf
+                                            <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
+                                                <br>
+
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        @php
+                                                        $inputStyle = "
+                                                            width: 100%;
+                                                            padding: 10px 14px;
+                                                            border-radius: 8px;
+                                                            border: 1px solid #ccc;
+                                                            transition: 0.3s;
+                                                            font-size: 14px;
+                                                        ";
+
+                                                        $labelStyle = "
+                                                            margin-bottom: 6px;
+                                                            font-weight: 500;
+                                                            display: block;
+                                                            text-align: left;
+                                                        ";
+
+                                                        $divStyle = "margin-bottom: 20px;";
+                                                        $iconStyle = "color: navy;";
+                                                        $errorTextStyle = "color: red; font-size: 12px; margin-top: 4px;";
+                                                    @endphp
+
+                                                        <div style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
+                                                            </label>
+                                                            <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
+                                                        </div>
+
+                                                        <div style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-building" style="color: navy;"></i> Nomor Induk Kependudukan (NIK)
+                                                            </label>
+                                                            <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
+                                                            @error('nik')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                        </div>
+
+                                                        <div class="col-md-6" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-mortarboard" style="{{ $iconStyle }}"></i> Jenjang Pendidikan
+                                                            </label>
+                                                            <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="form-select @error('jenjangpendidikan_id') is-invalid @enderror">
+                                                                <option value="">-- Pilih Jenjang Pendidikan --</option>
+                                                                @foreach($jenjangpendidikan as $item)
+                                                                    <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
+                                                                        {{ $item->jenjangpendidikan }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                            {{-- @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('jenjangpendidikan_id')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+
+                                                        </div>
+
+                                                        <!-- Jabatan Kerja -->
+                                                        <div class="col-md-6" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
+                                                            </label>
+                                                            <select name="jabatankerja_id" style="{{ $inputStyle }}" class="form-select @error('jabatankerja_id') is-invalid @enderror">
+                                                                <option value="">-- Pilih Jabatan Kerja --</option>
+                                                                @foreach($jabatankerja as $item)
+                                                                    <option value="{{ $item->id }}" {{ old('jabatankerja_id') == $item->id ? 'selected' : '' }}>
+                                                                        {{ $item->jabatankerja }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                            {{-- @error('jabatankerja_id') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('jabatankerja_id')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+
+                                                        </div>
+
+                                                        <!-- Nama Sekolah -->
+                                                        <div class="col-md-6" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-building" style="{{ $iconStyle }}"></i> Nama Sekolah
+                                                            </label>
+                                                            <select name="namasekolah_id" style="{{ $inputStyle }}" class="form-select @error('namasekolah_id') is-invalid @enderror">
+                                                                <option value="">-- Pilih Universitas/Sekolah/Instansi --</option>
+                                                                @foreach($sekolah as $item)
+                                                                    <option value="{{ $item->id }}" {{ old('namasekolah_id') == $item->id ? 'selected' : '' }}>
+                                                                        {{ $item->namasekolah }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                            Ket: Silahkan hubungi <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                                                            {{-- @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('namasekolah_id')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+
+                                                        </div>
+
+                                                        <!-- Tahun Bimtek -->
+                                                        <div class="col-md-6" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-calendar-event" style="{{ $iconStyle }}"></i> Tahun Bimtek | Isi dengan (2025)
+                                                            </label>
+                                                            <select name="tahunpilihan_id" style="{{ $inputStyle }}" class="form-select @error('tahunpilihan_id') is-invalid @enderror">
+                                                                <option value="">-- Pilih Tahun Bimtek --</option>
+                                                                @foreach($tahunbimtek as $item)
+                                                                    <option value="{{ $item->id }}" {{ old('tahunpilihan_id') == $item->id ? 'selected' : '' }}>
+                                                                        {{ $item->tahunpilihan }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                            {{-- @error('tahunpilihan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('tahunpilihan_id')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <!-- Tempat Lahir -->
+                                                            <div class="col-md-6" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
+                                                                </label>
+                                                                <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
+                                                                {{-- @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+
+                                                                @error('tempatlahir')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                                </div>
+
+                                                            <!-- Tanggal Lahir -->
+                                                            <div class="col-md-6" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-calendar" style="color: navy;"></i> Tanggal Lahir
+                                                                </label>
+                                                                <input type="date" name="ttl" style="{{ $inputStyle }}" class="@error('ttl') is-invalid @enderror" value="{{ old('ttl') }}">
+                                                                {{-- @error('ttl') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('ttl')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+
+                                                            <!-- Jenis Kelamin -->
+                                                            <div class="col-md-6" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-gender-ambiguous" style="color: navy;"></i> Jenis Kelamin
+                                                                </label>
+                                                                <select name="jeniskelamin" style="{{ $inputStyle }}" class="@error('jeniskelamin') is-invalid @enderror">
+                                                                    <option value="">-- Pilih Jenis Kelamin --</option>
+                                                                    <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                                                                    <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                                                                </select>
+                                                                {{-- @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('jeniskelamin')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+
+                                                            <!-- Nomor Telepon -->
+                                                            <div class="col-md-6" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-telephone" style="color: navy;"></i> Nomor Telepon
+                                                                </label>
+                                                                <input type="text" name="notelepon" style="{{ $inputStyle }}" class="@error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
+                                                                {{-- @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('notelepon')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+
+                                                            <!-- Email -->
+                                                            <div class="col-md-6" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-envelope" style="color: navy;"></i> Email
+                                                                </label>
+                                                                <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
+                                                                {{-- @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('email')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+
+                                                            <!-- Tahun Lulus -->
+                                                            <div class="col-md-6" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-hourglass-split" style="color: navy;"></i> Tahun Lulus
+                                                                </label>
+                                                                <input type="number" name="tahunlulus" style="{{ $inputStyle }}" class="@error('tahunlulus') is-invalid @enderror" value="{{ old('tahunlulus') }}">
+                                                                {{-- @error('tahunlulus') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('tahunlulus')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+                        <!-- Alamat -->
+                                                            <div class="col-md-12" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-house" style="color: navy;"></i> Alamat
+                                                                </label>
+                                                                <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
+                                                                {{-- @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('alamat')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-12">
+                                                        <!-- Nama Asosiasi -->
+                                                        <div style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-diagram-3" style="color: navy;"></i> Utusan
+                                                            </label>
+                                                            <input type="text" name="namaasosiasi" style="{{ $inputStyle }}" class="@error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}">
+                                                            {{-- @error('namaasosiasi') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('namaasosiasi')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                            <p>Keterangan : Badan Usaha/ Perorangan/ Instansi/ Badan Usaha</p>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <!-- Punya SKK -->
+                                                            <div class="col-md-3" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-card-checklist" style="color: navy;"></i> Apakah sebelumnya sudah pernah memiliki SKK dengan jabatan kerja yang lain ?
+
+                                                                </label>
+                                                                <select name="punyaskk" style="{{ $inputStyle }}" class="@error('punyaskk') is-invalid @enderror">
+                                                                    <option value="">-- Pilih --</option>
+                                                                    <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                                                    <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                                                </select>
+                                                                {{-- @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('punyaskk')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+
+                                                            <!-- Punya SIKI -->
+                                                            <div class="col-md-3" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-patch-check" style="color: navy;"></i> Apakah sudah memiliki akun SIKI/ akun SIMPAN PUPR ?
+                                                                </label>
+                                                                <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
+                                                                    <option value="">-- Pilih --</option>
+                                                                    <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                                                    <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                                                </select>
+                                                                {{-- @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('punyasiki')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+
+                                                            <!-- Siap Patuhi Kode Etik -->
+                                                            <div class="col-md-3" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-shield-check" style="color: navy;"></i> Siap Patuhi Kode Etik?
+                                                                </label>
+                                                                <select name="siappatuh" style="{{ $inputStyle }}" class="@error('siappatuh') is-invalid @enderror">
+                                                                    <option value="">-- Pilih --</option>
+                                                                    <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                                                    <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                                                </select>
+                                                                {{-- @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('siappatuh')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+
+                                                            <div class="col-md-3" style="{{ $divStyle }}">
+                                                                <label class="form-label" style="{{ $labelStyle }}">
+                                                                    <i class="bi bi-shield-check" style="color: navy;"></i> Apakah sudah memiliki Akun Portal Perizinan PUPR ?
+                                                                </label>
+                                                                <select name="portalpupr" style="{{ $inputStyle }}" class="@error('portalpupr') is-invalid @enderror">
+                                                                    <option value="">-- Pilih --</option>
+                                                                    <option value="Ya" {{ old('portalpupr') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                                                    <option value="Tidak" {{ old('portalpupr') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                                                </select>
+                                                                {{-- @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('portalpupr')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <br><br>
+                                                        <!-- Upload KTP -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP
+                                                            </label>
+                                                            <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
+                                                            {{-- <div class="invalid-feedback">@error('uploadktp') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadktp')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            <div id="ktpPreview" class="preview-container"></div>
+                                                        </div>
+
+                                                        <!-- Upload Foto -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah
+                                                            </label>
+                                                            <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
+                                                            {{-- <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadfoto')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                            <div id="fotoPreview" class="preview-container"></div>
+                                                        </div>
+
+                                                        <!-- Upload Ijazah -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah
+                                                            </label>
+                                                            <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
+                                                            {{-- <div class="invalid-feedback">@error('uploadijazah') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadijazah')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                            <div id="ijazahPreview" class="preview-container"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <!-- Upload Pengalaman -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            @php
+                                                            $firstItem = $datacontohsurat->sortBy('id')->first(); // ambil berdasarkan ID terkecil
+                                                            $fileDownload = null;
+
+                                                            if ($firstItem && $firstItem->berkas) {
+                                                                $path = public_path('storage/' . $firstItem->berkas);
+                                                                if (file_exists($path)) {
+                                                                    $fileDownload = asset('storage/' . $firstItem->berkas);
+                                                                } else {
+                                                                    $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
+                                                                }
+                                                            }
+                                                        @endphp
+
+                                                        <label class="form-label" style="{{ $labelStyle }}">
+                                                            <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman |
+                                                            @if ($fileDownload)
+                                                                <a href="{{ $fileDownload }}" download style="color:rgba(0, 26, 255);">
+                                                                    Contoh Pengalaman Kerja <i class="bi bi-download"></i>
+                                                                </a>
+                                                                {{-- <div style="font-size: 0.9em; color: gray;">
+                                                                    File: {{ $firstItem->berkas }}
+                                                                </div> --}}
+                                                            @else
+                                                                <span style="color: gray;">Contoh belum tersedia</span>
+                                                            @endif
+                                                        </label>
+
+                                                            <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
+                                                            {{-- <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadpengalaman')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                            <div id="pengalamanPreview" class="preview-container"></div>
+                                                        </div>
+
+                                                        <!-- Upload NPWP -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP
+                                                            </label>
+                                                            <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
+                                                            {{-- <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadnpwp')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                            <p>Ket : Wajib NPWP K3 dan Jenjang 5, 6 </p>
+                                                            <div id="npwpPreview" class="preview-container"></div>
+                                                        </div>
+
+                                                        <!-- Upload Daftar Riwayat Hidup -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup
+                                                            </label>
+                                                            <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
+                                                            {{-- <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div> --}}
+                                                            @error('uploaddaftarriwayathidup')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                            <div id="riwayatPreview" class="preview-container"></div>
+                                                        </div>
+                                                    </div>
+
+
+<div class="row">
+    <div class="col-md-4" style="{{ $divStyle }}">
+        @php
+            $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first(); // ambil data ke-2 berdasarkan ID terkecil
+            $fileDownload = null;
+
+            if ($secondItem && $secondItem->berkas) {
+                $path = public_path('storage/' . $secondItem->berkas);
+                if (file_exists($path)) {
+                    $fileDownload = asset('storage/' . $secondItem->berkas);
+                } else {
+                    $fileDownload = asset($secondItem->berkas); // fallback jika path bukan di storage
+                }
+            }
+        @endphp
+
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data |
+            @if ($fileDownload)
+                <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
+                    Contoh Surat Pernyataan <i class="bi bi-download"></i>
+                </a>
+            @else
+                <span style="color: gray;">Contoh belum tersedia</span>
+            @endif
+        </label>
+
+        <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
+        {{-- <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div> --}}
+        @error('uploadkebenarandata')
+        <div class="invalid-feedback" style="color: red; font-size: 13px;">
+            {{ $message }}
+        </div>
+    @enderror
+        <div id="kebenaranDataPreview" class="preview-container"></div>
+    </div>
+
+    </div>
+
+
+                                                    <script>
+                                                        function previewFile(previewId, input) {
+                                                            const file = input.files[0];
+                                                            const previewContainer = document.getElementById(previewId);
+                                                            previewContainer.innerHTML = '';  // Clear previous preview
+
+                                                            if (file) {
+                                                                const reader = new FileReader();
+                                                                reader.onload = function(e) {
+                                                                    const fileType = file.type.split('/')[0];
+
+                                                                    if (fileType === 'image') {
+                                                                        const imgElement = document.createElement('img');
+                                                                        imgElement.src = e.target.result;
+                                                                        imgElement.style.width = '100%';
+                                                                        imgElement.style.maxWidth = '210mm';  // A4 width
+                                                                        imgElement.style.height = 'auto';
+                                                                        previewContainer.appendChild(imgElement);
+                                                                    } else if (fileType === 'application') {
+                                                                        if (file.type === 'application/pdf') {
+                                                                            const iframe = document.createElement('iframe');
+                                                                            iframe.src = e.target.result;
+                                                                            iframe.style.width = '100%';
+                                                                            iframe.style.height = '400px';  // Adjust as needed
+                                                                            previewContainer.appendChild(iframe);
+                                                                        }
+                                                                    }
+                                                                };
+                                                                reader.readAsDataURL(file);
+                                                            }
+                                                        }
+                                                    </script>
+
+                                                    <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+
+                                                        <div class="flex justify-end">
+                                                            <button type="button" onclick="openModal()"
+                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                                            onmouseout="this.style.backgroundColor='#002a5a'; this.style.color='white';"
+                                                            style="background-color: #002a5a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+
+                                                            <!-- Ikon SVG Pensil -->
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                            viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                                        <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
+                                                        </svg>
+
+                                                            <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran </span>
+                                                        </button>
+                                                        </div>
+                                                        <!-- Modal Konfirmasi -->
+                                                        <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+                                                            <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                                                              <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
+                                                                Apakah Anda yakin data sudah benar dan ingin mengirim formulir ini?
+                                                            </p>
+
+                                                              <!-- Tombol -->
+                                                              <div style="display: flex; justify-content: center; gap: 12px;">
+                                                                <button id="confirmSubmitBtn"
+                                                                onclick="submitForm()"
+                                                                style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                                                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                                            <!-- Telegram SVG -->
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
+                                                                <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
+                                                            </svg>
+                                                            Ya
+                                                        </button>
+
+                                                        <!-- Tombol Batal dengan ikon X (SVG) -->
+                                                        <button type="button"
+                                                                onclick="closeModal()"
+                                                                style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                                                onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                                                                <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                                                            </svg>
+                                                            Batal
+                                                        </button>
+
+                                                              </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Script -->
+                                                        <script>
+                                                        function openModal() {
+                                                            const modal = document.getElementById("confirmModal");
+                                                            if (modal) modal.style.display = "flex";
+                                                        }
+
+                                                        function closeModal() {
+                                                            const modal = document.getElementById("confirmModal");
+                                                            if (modal) modal.style.display = "none";
+                                                        }
+
+                                                        </script>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+
+
+
+                                        <!-- ================================================================================================== -->
+
+
+                                        <div class="container">
+    <h4>Status Verifikasi Berkas Anda !</h4>
+    <div id="checkpoint-container" class="timeline-container"></div>
+
+    <div class="control-panel">
+        <button id="simulate-btn">Simulasi Perubahan Status</button>
+        <div class="status-info" id="current-status">Status saat ini: Verifikasi Dokumen</div>
+    </div>
+</div>
+
+ <script>
+        // Data checkpoint
+const checkpointData = [
+    {
+        id: 1,
+        name: 'Verifikasi Dokumen',
+        status: 'current',
+        time: new Date().toLocaleString(),
+        message: 'Dokumen sedang diverifikasi'
+    },
+    {
+        id: 2,
+        name: 'Verifikasi DPUPR',
+        status: 'pending',
+        time: null,
+        message: 'Menunggu verifikasi DPUPR'
+    },
+    {
+        id: 3,
+        name: 'Verifikasi LSP',
+        status: 'pending',
+        time: null,
+        message: 'Menunggu verifikasi LSP'
+    },
+    {
+        id: 4,
+        name: 'Verifikasi Kehadiran',
+        status: 'pending',
+        time: null,
+        message: 'Menunggu verifikasi kehadiran'
+    },
+    {
+        id: 5,
+        name: 'Sertifikat Terbit',
+        status: 'pending',
+        time: null,
+        message: 'Sertifikat akan diterbitkan'
+    }
+];
+
+// Render checkpoint
+function renderCheckpoints() {
+    const container = document.getElementById('checkpoint-container');
+    container.innerHTML = '';
+
+    const timeline = document.createElement('div');
+    timeline.className = 'timeline';
+
+    checkpointData.forEach((checkpoint, index) => {
+        const checkpointElement = document.createElement('div');
+        checkpointElement.className = `checkpoint ${checkpoint.status}`;
+
+        // Dot indicator
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        dot.textContent = checkpoint.id;
+
+        // Connector line
+        if (index < checkpointData.length - 1) {
+            const connector = document.createElement('div');
+            connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
+            checkpointElement.appendChild(connector);
+        }
+
+        // Content
+        const content = document.createElement('div');
+        content.className = 'checkpoint-content';
+
+        const name = document.createElement('div');
+        name.className = 'message';
+        name.textContent = checkpoint.name;
+        content.appendChild(name);
+
+        if (checkpoint.time) {
+            const time = document.createElement('div');
+            time.className = 'time';
+            time.textContent = formatTime(checkpoint.time);
+            content.appendChild(time);
+        }
+
+        checkpointElement.appendChild(dot);
+        checkpointElement.appendChild(content);
+        timeline.appendChild(checkpointElement);
+    });
+
+    container.appendChild(timeline);
+    updateCurrentStatus();
+}
+
+// Format waktu
+function formatTime(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
+}
+
+// Update status teks
+function updateCurrentStatus() {
+    const current = checkpointData.find(c => c.status === 'current') ||
+                   checkpointData.find(c => c.status === 'completed');
+    const statusInfo = document.getElementById('current-status');
+
+    if (current) {
+        statusInfo.textContent = `Status saat ini: ${current.name}`;
+
+        if (current.status === 'completed') {
+            statusInfo.textContent += ' (Selesai)';
+        }
+    }
+}
+
+// Simulasi perubahan status
+function simulateProgress() {
+    const currentIndex = checkpointData.findIndex(c => c.status === 'current');
+
+    if (currentIndex >= 0) {
+        // Ubah status current menjadi completed
+        checkpointData[currentIndex].status = 'completed';
+        checkpointData[currentIndex].time = new Date().toLocaleString();
+
+        // Jika ada checkpoint berikutnya, ubah menjadi current
+        if (currentIndex + 1 < checkpointData.length) {
+            checkpointData[currentIndex + 1].status = 'current';
+            checkpointData[currentIndex + 1].time = new Date().toLocaleString();
+        }
+    } else {
+        // Jika semua completed, reset ke awal
+        if (checkpointData.every(c => c.status === 'completed')) {
+            checkpointData.forEach((c, i) => {
+                c.status = i === 0 ? 'current' : 'pending';
+                c.time = i === 0 ? new Date().toLocaleString() : null;
+            });
+        }
+    }
+
+    renderCheckpoints();
+}
+
+// Event listener untuk tombol simulasi
+document.getElementById('simulate-btn').addEventListener('click', simulateProgress);
+
+// Inisialisasi awal
+document.addEventListener('DOMContentLoaded', () => {
+    renderCheckpoints();
+});
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td style="text-align: center;">
+    @if($item->verifikasi == false)
+        <!-- Tombol DI VERIFIKASI -->
+        <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+            <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
+        </button>
+    @elseif($item->verifikasi == 'gugur')
+        <!-- Tombol GUGUR -->
+        <button type="button" disabled class="btn" style="background-color: #EF4444; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: not-allowed;">
+            <i class="bi bi-x-circle"></i> GUGUR
+        </button>
+    @elseif($item->verifikasi == 'lolos')
+        <!-- Tombol LOLOS -->
+        <button type="button" disabled class="btn" style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: not-allowed;">
+            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+        </button>
+    @endif
+</td>
+
+<!-- Modal Konfirmasi -->
+<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+            Pilih Status Peserta:
+        </p>
+
+        <!-- Form Verifikasi -->
+        <form id="verifikasiForm" method="POST" class="d-inline">
+            @csrf
+            @method('PUT')
+
+            <!-- Tombol Lolos -->
+            <button type="submit" name="verifikasi" value="lolos" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-right: 10px;"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
+                <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Lolos
+            </button>
+
+            <!-- Tombol Gugur -->
+            <button type="submit" name="verifikasi" value="gugur" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s;"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+                onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
+                <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Gugur
+            </button>
+        </form>
+
+        <!-- Tombol Batal -->
+        <button type="button" onclick="closeModal()" style="background-color: #D1D5DB; color: black; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-left: 10px;">
+            <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
+        </button>
+    </div>
+</div>
+
+<script>
+    function openModal(itemId) {
+        const form = document.getElementById("verifikasiForm");
+        form.action = `{{ url('verifikasipesertapelatihan') }}/${itemId}`;
+        document.getElementById("confirmModal").style.display = "flex";
+    }
+
+    function closeModal() {
+        document.getElementById("confirmModal").style.display = "none";
+    }
+</script>
+
+
+
+
+
+
+
+
+<a href="/404">
+    <button
+        onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+        onmouseout="this.style.background='linear-gradient(to right, #004d00, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
+        style="background: linear-gradient(to right, #004d00, #000000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: all 0.3s ease;">
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px; fill: white; transition: fill 0.3s;" width="20" height="20" viewBox="0 0 24 24">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.07 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+        </svg>
+        Data LSP Pelaksana
+    </button>
+</a>
+
+
+
+
+
+
+                    <div class="col-md-12">
+                        <div class="cert-container">
+                            <div class="cert-header" style="text-align: center;">
+                                <!-- Logo di atas -->
+                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                                </div>
+                            </div>
+
+                            <hr class="cert-hr" style="margin-top: -5px;">
+
+                            <div class="cert-title" style="margin-top: -10px;">
+                                <h1 class="cert-h1">SERTIFIKAT</h1>
+                                <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
+                            </div>
+
+                            <div class="cert-content">
+                                <p style="text-align: center;">diberikan kepada</p>
+
+                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{ strtoupper($data->namalengkap) }}</h2>
+                                {{-- <h2 style="text-align: center; margin: 20px 0; font-size:28px;" >Miftahunnuril Anam, S.E</h2> --}}
+
+                                <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
+                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
+                                @php
+                                    $totalJam = 0;
+                                    foreach ($datapelajaran as $pelajaran) {
+                                        $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
+                                    }
+                                @endphp
+
+                                <p style="text-align: justify; text-indent: 50px; margin: 0 50px;">
+                                    Kegiatan <span class="cert-highlight">{{ $data->agendapelatihan->namakegiatan }}</span>
+                                    yang diselenggarakan oleh {{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}
+                                    pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                    di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
+                                </p>
+
+                            </div>
+
+                            <div class="cert-signature" style="margin-top: -10px;">
+                                <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
+                                <p style="margin: 0;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
+                                <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
+
+                                <div style="display: flex; justify-content: flex-end; margin-right: -125px;"> <!-- Tambah ini -->
+                                    <div style="position: relative; width: 400px; height: 100px;">
+                                        <img src="/assets/icon/ttdpahuda.png" alt="" width="250px;" style="position: absolute; top: 0; left: 0; z-index: 1;">
+                                        <img src="/assets/icon/ttdkabblora.png" alt="" width="115px;" style="position: absolute; top: 0; left: 50px; z-index: 2;">
+                                    </div>
+                                </div>
+
+
+
+                                <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
+                                {{-- <p>PEKBINA UTAMA MADYA</p> --}}
+                                <p style="margin: 0;">NIP. 19720326 200604 1 005</p>
+                            </div>
+                            <div class="ribbon-left"></div>
+                            {{-- <div class="ribbon-right"></div> --}}
+                        </div>
+                    </div>
+                        <!--end::Quick Example-->
+<br><br>
+
+                                {{-- ======================================================= --}}
+                    <div class="col-md-12">
+                        <div class="cert-container">
+                            <div class="cert-header" style="text-align: center;">
+                                <!-- Logo di atas -->
+                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                                </div>
+                            </div>
+
+                            <hr class="cert-hr" style="margin-top: -5px;">
+
+                            <div class="cert-title" style="margin-top: -10px;">
+                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
+                            </div>
+
+                            <div class="cert-content">
+                                <div class="table-container">
+                                    <table class="custom-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="font-size: 15px;" width="10%">No</th>
+                                                <th style="font-size: 15px;" width="40%">Materi</th>
+                                                <th style="font-size: 15px;" width="30%">Narasumber</th>
+                                                <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php
+                                                $totalJam = 0; // Menyimpan total jam pelajaran
+                                            @endphp
+                                            @forelse ($datapelajaran as $key => $pelajaran)
+                                            <tr class="table-row-hover">
+                                                <td style="font-size: 15px;">{{ $key + 1 }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px; text-align:center;">
+                                                    {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
+                                                </td>
+                                            </tr>
+                                            @php
+                                                $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
+                                            @endphp
+                                            @empty
+                                            <tr>
+                                                <td colspan="4">Data tidak tersedia.</td>
+                                            </tr>
+                                            @endforelse
+                                        </tbody>
+                                        <!-- Baris penjumlahan total jam pelajaran -->
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
+                                                    <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
+                                                </td>
+                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">
+                                                    {{ $totalJam }} Jam
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                    <style>
+                                        /* Styling untuk tabel */
+                                        .custom-table {
+                                            width: 100%;
+                                            border-collapse: collapse;
+                                            margin-top: 20px;
+                                            font-size: 16px;
+                                            border: 1px solid #ddd;
+                                            border-radius: 10px; /* Border radius pada luar tabel */
+                                            overflow: hidden; /* Supaya border-radius terlihat di sudut luar */
+                                        }
+
+                                        .custom-table th,
+                                        .custom-table td {
+                                            padding: 10px 20px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                        }
+
+                                        /* Gradasi hijau dan emas untuk header */
+                                        .custom-table thead tr th {
+                                            background: linear-gradient(135deg, #4caf50, #ffb300); /* Gradasi hijau ke emas */
+                                            color: white;
+                                        }
+
+                                        /* Hover effect pada row */
+                                        .table-row-hover:hover {
+                                            background-color: #f7fafc;
+                                            transition: background-color 0.3s ease;
+                                        }
+
+                                        /* Styling row ganjil dan genap */
+                                        .custom-table tr:nth-child(even) {
+                                            background-color: #f9fafb;
+                                        }
+
+                                        .custom-table tr:nth-child(odd) {
+                                            background-color: #ffffff;
+                                        }
+
+                                        .custom-table td {
+                                            color: #333;
+                                        }
+                                    </style>
+                                </div>
+
+                            </div>
+
+
+                            <div class="ribbon-left">
+
+                            </div>
+                            <div class="ribbon-text">
+                                <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
+                                                                {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
+
+                                <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+                                <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                </p>
+                            </div>
+
+                            {{-- <div class="ribbon-right"></div> --}}
+                        </div>
+                    </div>
+                        <!--end::Quick Example-->
+
+
+                    </div>
+
+                    <br><br>
+                    <!-- /.card -->
+                    <!-- Button Section -->

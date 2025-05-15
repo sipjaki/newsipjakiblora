@@ -20,18 +20,19 @@ class bujkkonsultan extends Model
 
     public function asosiasimasjaki()
     {
-        return $this->belongsTo(asosiasimasjaki::class);
+        return $this->belongsTo(asosiasimasjaki::class, 'asosiasimasjaki_id');
     }
 
-    public function namaasosiasi()
-    {
-        return $this->belongsTo(daftarasosiasi::class, 'daftarasosiasi_id');
-    }
 
     public function tahunpilihan()
     {
         return $this->belongsTo(tahunpilihan::class);
     }
+
+    public function user()
+        {
+            return $this->belongsTo(User::class);
+        }
 
 
 }

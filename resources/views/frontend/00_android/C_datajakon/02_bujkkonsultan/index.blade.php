@@ -1,50 +1,69 @@
 <style>
     /* Gaya untuk tabel */
     .custom-table-container {
-    width: 100%;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
-    border-radius: 15px; /* Round the corners of the container */
-    border: 1px solid #ddd; /* Optional: Adds a border around the container */
-}
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
+    }
 
-.custom-fl-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 700px; /* Prevents the table from shrinking too much */
-}
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
+    }
 
-.custom-fl-table th, .custom-fl-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
+        vertical-align: middle;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
+    }
 
-.custom-fl-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-}
+    .custom-fl-table th {
+        background-color:#4ADE80;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
+    }
 
-.custom-fl-table td {
-    text-transform: capitalize;
-}
+    .custom-fl-table td {
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.5;
+    }
 
-/* Optional: Add some styles to make the scrollbar appear nicer */
-.custom-table-container::-webkit-scrollbar {
-    height: 8px;
-}
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #f7f7f7;
+    }
 
-.custom-table-container::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
-}
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f7f7f7;
+    }
 
-.custom-table-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-}
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
 
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 </style>
-
 
 @include('frontend.00_android.00_fiturmenu.header')
 
@@ -151,11 +170,19 @@
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Nama Badan Usaha </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;"> Alamat </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> No Telepon </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                                <i class="bi bi-sort-alpha-down"></i> No
+                                            </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-building"></i> Nama Badan Usaha
+                                            </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;">
+                                                <i class="bi bi-geo-alt"></i> Alamat
+                                            </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
+                                                <i class="bi bi-eye"></i> View
+                                            </th>
+
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -165,7 +192,7 @@
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->namalengkap)) }}</td>
                                             <td>{{$item->alamat}}</td>
-                                            <td style="text-align: center;">{{$item->no_telepon}}</td>
+                                            {{-- <td style="text-align: center;">{{$item->no_telepon}}</td> --}}
                                             <td style="text-align: center">
                                                 <a href="/resbujkkonsultan/{{$item->namalengkap}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>

@@ -18,7 +18,7 @@ Warna Latar: #007bff (Biru) create menu
 #00378a menu database
 #00378a update data
 
-#189200hijau update
+#189200hijau updateP
 
 Warna Latar: #000000 (Hitam)
 
@@ -121,7 +121,7 @@ font-family: 'Poppins', sans-serif;
 # storage gamna pdf dan lainnya
 
 
-   <div style="margin-top: 10px;">
+                                        <div style="margin-top: 10px;">
                                                 @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
                                                 <!-- Display the default iframe when the file exists in the storage -->
                                                 <iframe src="{{ asset('storage/' . $data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
@@ -218,3 +218,1156 @@ font-family: 'Poppins', sans-serif;
                         @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
                 @include('backend.00_administrator.00_baganterpisah.11_alert')
 
+
+
+
+
+
+                <!-- svg update  -->
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 384 512" fill="white" style="margin-right: 8px;">
+                                        <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM384 121.9V128H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/>
+                                    </svg>
+
+
+                                    <!-- svg kembali -->
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16" style="margin-right: 8px;">
+                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+               </svg>
+
+
+
+               <!-- ungu lembut -->
+               <!-- #8B5CF6 -->
+
+
+
+
+<!-- storage gambar -->
+
+               <div style="margin-top: 10px;">
+    @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
+        <!-- Menampilkan gambar dari storage -->
+        <img src="{{ asset('storage/' . $data->peraturan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+    @elseif($data->peraturan)
+        <!-- Menampilkan gambar dari path luar storage -->
+        <img src="{{ asset($data->peraturan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
+
+
+
+
+<section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------------------------------- -->
+ <!-- NAVBAR AVATAR MENU -->
+
+       <!--begin::Header-->
+       <nav class="app-header navbar navbar-expand bg-body">
+
+<!--begin::Container-->
+<div class="container-fluid">
+  <!--begin::Start Navbar Links-->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+        <i class="bi bi-list"></i>
+      </a>
+    </li>
+    {{-- <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Home</a></li>
+    <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contact</a></li> --}}
+  </ul>
+  <!--end::Start Navbar Links-->
+  <!--begin::End Navbar Links-->
+  <ul class="navbar-nav ms-auto">
+    <!--begin::Navbar Search-->
+    {{-- <li class="nav-item">
+      <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+        <i class="bi bi-search"></i>
+      </a>
+    </li> --}}
+    <!--end::Navbar Search-->
+    <!--begin::Messages Dropdown Menu-->
+    {{-- <li class="nav-item dropdown">
+      <a class="nav-link" data-bs-toggle="dropdown" href="#">
+        <i class="bi bi-chat-text"></i>
+        <span class="navbar-badge badge text-bg-danger">3</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+        <a href="#" class="dropdown-item">
+          <!--begin::Message-->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <img
+                src="/assets/00_administrator/dist/assets/img/user1-128x128.jpg"
+                alt="User Avatar"
+                class="img-size-50 rounded-circle me-3"
+              />
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="dropdown-item-title">
+                Brad Diesel
+                <span class="float-end fs-7 text-danger"
+                  ><i class="bi bi-star-fill"></i
+                ></span>
+              </h3>
+              <p class="fs-7">Call me whenever you can...</p>
+              <p class="fs-7 text-secondary">
+                <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
+              </p>
+            </div>
+          </div>
+          <!--end::Message-->
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">
+          <!--begin::Message-->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <img
+                src="/assets/00_administrator/dist/assets/img/user8-128x128.jpg"
+                alt="User Avatar"
+                class="img-size-50 rounded-circle me-3"
+              />
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="dropdown-item-title">
+                John Pierce
+                <span class="float-end fs-7 text-secondary">
+                  <i class="bi bi-star-fill"></i>
+                </span>
+              </h3>
+              <p class="fs-7">I got your message bro</p>
+              <p class="fs-7 text-secondary">
+                <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
+              </p>
+            </div>
+          </div>
+          <!--end::Message-->
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">
+          <!--begin::Message-->
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <img
+                src="/assets/00_administrator/dist/assets/img/user3-128x128.jpg"
+                alt="User Avatar"
+                class="img-size-50 rounded-circle me-3"
+              />
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="dropdown-item-title">
+                Nora Silvester
+                <span class="float-end fs-7 text-warning">
+                  <i class="bi bi-star-fill"></i>
+                </span>
+              </h3>
+              <p class="fs-7">The subject goes here</p>
+              <p class="fs-7 text-secondary">
+                <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
+              </p>
+            </div>
+          </div>
+          <!--end::Message-->
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+      </div>
+    </li> --}}
+    <!--end::Messages Dropdown Menu-->
+    <!--begin::Notifications Dropdown Menu-->
+    {{-- <li class="nav-item dropdown">
+      <a class="nav-link" data-bs-toggle="dropdown" href="#">
+        <i class="bi bi-bell-fill"></i>
+        <span class="navbar-badge badge text-bg-warning">15</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+        <span class="dropdown-item dropdown-header">15 Notifications</span>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">
+          <i class="bi bi-envelope me-2"></i> 4 new messages
+          <span class="float-end text-secondary fs-7">3 mins</span>
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">
+          <i class="bi bi-people-fill me-2"></i> 8 friend requests
+          <span class="float-end text-secondary fs-7">12 hours</span>
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">
+          <i class="bi bi-file-earmark-fill me-2"></i> 3 new reports
+          <span class="float-end text-secondary fs-7">2 days</span>
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item dropdown-footer"> See All Notifications </a>
+      </div>
+    </li> --}}
+    <!--end::Notifications Dropdown Menu-->
+    <!--begin::Fullscreen Toggle-->
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-lte-toggle="fullscreen">
+        <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
+        <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none"></i>
+      </a>
+    </li>
+    <!--end::Fullscreen Toggle-->
+    <!--begin::User Menu Dropdown-->
+    <li class="nav-item dropdown user-menu">
+      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+        <img
+        src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar"
+          class="user-image rounded-circle shadow"
+          alt="User Image"
+        />
+        <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+        <!--begin::User Image-->
+        <li class="user-header text-bg-success">
+          <img
+            src="{{ asset('storage/' . Auth::user()->avatar) }}"
+            class="rounded-circle shadow"
+            alt="User Image"
+          />
+          <p>
+            {{ Auth::user()->name }}
+            <small style="color: navy;">{{ Auth::user()->statusadmin->statusadmin }}</small>
+          </p>
+        </li>
+        <!--end::User Image-->
+        <!--begin::Menu Body-->
+        <!--end::Menu Body-->
+        <!--begin::Menu Footer-->
+        <li class="user-footer">
+          {{-- <a href="#" class="btn btn-default btn-flat">Profile</a> --}}
+          {{-- <a href="/logout" class="btn btn-default btn-flat float-end">Logout</a> --}}
+          <form action="{{ url('/logout') }}" method="POST" class="float-end">
+            @csrf
+            <button type="submit" class="btn btn-default btn-flat">
+                <i class="bi bi-door-open"></i> Logout
+            </button>
+        </form>
+
+
+        </li>
+        <!--end::Menu Footer-->
+      </ul>
+    </li>
+    <!--end::User Menu Dropdown-->
+  </ul>
+  <!--end::End Navbar Links-->
+</div>
+<!--end::Container-->
+</nav>
+<!--end::Header-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .fl-table {
+        margin-top: 15px;
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 10px;
+        table-layout: fixed;
+    }
+
+    .fl-table th, .fl-table td {
+        text-align: center;
+        padding: 12px 10px;
+        vertical-align: middle;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    /* Spesifik lebar kolom */
+    .fl-table th:nth-child(1), .fl-table td:nth-child(1) { width: 50px; }   /* No */
+    .fl-table th:nth-child(2), .fl-table td:nth-child(2) { width: 140px; }  /* Kode */
+    .fl-table th:nth-child(3), .fl-table td:nth-child(3) { width: 350px; text-align: left; }  /* Pekerjaan */
+    .fl-table th:nth-child(4), .fl-table td:nth-child(4) { width: 80px; }   /* Satuan */
+    .fl-table th:nth-child(5), .fl-table td:nth-child(5) { width: 60px; }   /* Rp */
+    .fl-table th:nth-child(6), .fl-table td:nth-child(6) { width: 150px; text-align: right; } /* Besaran */
+
+    .fl-table thead {
+        background-color: #374151;
+        color: white;
+    }
+
+    .fl-table tbody tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .fl-table tbody tr:nth-child(even) {
+        background-color: #e6e6e6;
+    }
+
+    .fl-table tbody tr:hover {
+        background-color: #d0d0d0;
+    }
+</style>
+
+
+
+
+
+                                                <td style="text-align: center">
+                                                <a href="/datajakon/asosiasikonstruksi/{{$item->daftarasosiasi}}">
+                                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+                                                </a>
+                                            </td>
+
+
+
+
+                                            <td style="text-align: center">
+                                                <a href="/datajakon/asosiasikonsultan/{{$item->asosiasimasjaki->namaasosiasi}}">
+                                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+                                                </a>
+                                            </td>
+
+
+
+
+                                            Route::get('/datajakon/asosiasikonstruksi/{namaasosiasi}', [BujkkontraktorController::class, 'asosiasikonstruksishow']);
+Route::get('/datajakon/asosiasikonsultan/{namaasosiasi}', [BujkkontraktorController::class, 'asosiasikonsultanshow']);
+
+
+
+
+
+
+
+menu kembali
+
+
+<button
+                onclick="window.history.back();"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+
+                <!-- Ikon Kembali -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     viewBox="0 0 16 16" style="margin-right: 8px;">
+                    <path fill-rule="evenodd"
+                          d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                </svg>
+                Kembali
+            </button>
+
+
+
+
+
+
+            doenload excel
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+   <script>
+    function exportTableToExcel(tableID, filename = '') {
+        var table = document.getElementById(tableID);
+        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
+        return XLSX.writeFile(wb, filename + '.xlsx');
+    }
+    </script>
+
+<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_bujkkonstruksi')"
+                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                         onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
+                         style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;"
+                         >
+                            <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
+                        </button>
+
+
+
+
+id="tabelAsosiasi"
+
+
+
+
+
+
+<td style="text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <a href="/bepekerjaandetails/{{$item->id}}"
+           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
+           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+        </a>
+    </div>
+</td>
+
+<td style="text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <a href="/bedetailspekerjaan/{{$item->id}}"
+           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
+           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+        </a>
+    </div>
+</td>
+
+<td style="text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <a href="/bedetailsspk/{{$item->id}}"
+           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
+           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+        </a>
+    </div>
+</td>
+
+<td style="text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <a href="/bedetailsskk/{{$item->id}}"
+           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
+           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+        </a>
+    </div>
+</td>
+
+<td style="text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <a href="/bedetailsskk/{{$item->id}}"
+           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
+           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+        </a>
+    </div>
+</td>
+
+
+
+
+Route::get('/bebujkkonstruksi/createsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasi'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasi');
+Route::post('/bebujkkonstruksi/createsubklasifikasi/create', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasicreate'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasicreate');
+
+
+
+// CREATE DATA SUB KLASIFIKASI
+public function bebujkkonstruksicreateklasifikasi($namalengkap)
+{
+    $bujkkontraktor = bujkkontraktor::findOrFail($namalengkap); // Cari 1 data sesuai ID
+    $user = Auth::user();
+    $asosiasimasjaki = asosiasimasjaki::all();
+
+    return view('backend.04_datajakon.01_bujkkonstruksi.createklasifikasi', [
+        'bujkkontraktornamalengkap' => $bujkkontraktor->namalengkap, // Ini dikirim ke form
+        'bujkkontraktor_id' => $bujkkontraktor->id, // Ini dikirim ke form
+        'user' => $user,
+        'asosiasimasjaki' => $asosiasimasjaki,
+        'title' => 'Create BUJK Sub Klasifikasi'
+    ]);
+}
+
+public function bebujkkonstruksicreateklasifikasicreate(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'nama_pengurus' => 'required|string|max:255',
+        'sub_klasifikasi_layanan' => 'required|string|max:255',
+        'kode' => 'required|string|max:50',
+        'kualifikasi' => 'required|string|max:255',
+        'penerbit' => 'required|string|max:255',
+        'nama_psjk' => 'required|string|max:255',
+        'sub_kualifikasi_bu' => 'required|string|max:255',
+        'tanggal_terbit' => 'required|date',
+        'tanggal_berlaku' => 'required|date',
+    ], [
+        // Pesan kesalahan custom
+        'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
+        'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
+        'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
+        'kualifikasi.required' => 'Kualifikasi harus diisi.',
+        'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
+        'penerbit.required' => 'Penerbit harus diisi.',
+        'nama_psjk.required' => 'Nama PSJK harus diisi.',
+        'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
+        'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
+    ]);
+
+    // Menyimpan data ke tabel BujkKontraktorSub
+    $bujkkontraktorSub = bujkkontraktorsub::create([
+        'bujkkontraktor_id' => $request->bujkkontraktor_id,
+        'nama_pengurus' => $validated['nama_pengurus'],
+        'sub_klasifikasi_layanan' => $validated['sub_klasifikasi_layanan'],
+        'kode' => $validated['kode'],
+        'kualifikasi' => $validated['kualifikasi'],
+        'sub_kualifikasi_bu' => $validated['sub_kualifikasi_bu'],
+        'penerbit' => $validated['penerbit'],
+        'nama_psjk' => $validated['nama_psjk'],
+        'tanggal_terbit' => $validated['tanggal_terbit'],
+        'tanggal_berlaku' => $validated['tanggal_berlaku'],
+    ]);
+
+    // Ambil bujkkontraktor_id yang baru saja disimpan
+    $bujkkontraktorId = $bujkkontraktorSub->bujkkontraktor_id;
+
+    // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
+    session()->flash('create', 'Data Sub Klasifikasi Layanan berhasil di buat.');
+
+    // Redirect ke route 'bebujkkonstruksi.showsubklasifikasi' dengan parameter bujkkontraktor_id
+    return redirect('bebujkkonstruksi');
+}
+
+
+
+
+
+
+
+if ($request->hasFile('sertifikat')) {
+        $file = $request->file('sertifikat');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('03_datajakon/02_sertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke database
+        $validatedData['sertifikat'] = '03_datajakon/02_sertifikasi/' . $namaFile;
+    }
+
+
+
+
+    <div class="mb-3">
+                                            <label class="form-label" for="uploadberkas">
+                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Upload Berkas
+                                            </label>
+                                            <input type="file" id="uploadberkas" name="uploadberkas"
+                                                class="form-control @error('uploadberkas') is-invalid @enderror"
+                                                onchange="previewFile('uploadberkas', 'previewFoto')" />
+
+                                            <div class="mt-2">
+                                                <!-- Preview Image or PDF -->
+                                                <div id="previewContainer">
+                                                    <img id="previewFoto"
+                                                        src="{{ old('uploadberkas') ? asset('03_datajakon/01_sertifikasi/' . old('uploadberkas')) : '' }}"
+                                                        style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
+
+                                                    <canvas id="pdfPreview" style="display: none; max-width: 100%; max-height: 200px; margin-top: 10px;"></canvas>
+                                                </div>
+                                            </div>
+
+                                            @error('uploadberkas')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+                                        <script>
+                                            function previewFile(inputId, previewId) {
+                                                var file = document.getElementById(inputId).files[0];
+                                                var previewContainer = document.getElementById('previewContainer');
+                                                var imgPreview = document.getElementById(previewId);
+                                                var pdfPreview = document.getElementById('pdfPreview');
+
+                                                // Reset previous previews
+                                                imgPreview.style.display = 'none';
+                                                pdfPreview.style.display = 'none';
+
+                                                if (file) {
+                                                    var reader = new FileReader();
+
+                                                    // Check if the file is a PDF
+                                                    if (file.type === 'application/pdf') {
+                                                        // Display PDF preview
+                                                        reader.onload = function(e) {
+                                                            var pdfData = e.target.result;
+                                                            pdfjsLib.getDocument({data: pdfData}).promise.then(function(pdf) {
+                                                                pdf.getPage(1).then(function(page) {
+                                                                    var canvas = document.getElementById('pdfPreview');
+                                                                    var context = canvas.getContext('2d');
+
+                                                                    // Ukuran A4 dalam mm
+                                                                    var a4Width = 210;  // A4 width in mm
+                                                                    var a4Height = 297; // A4 height in mm
+
+                                                                    // Convert A4 size to pixels (1mm = 3.7795275591 pixels)
+                                                                    var a4WidthPx = a4Width * 3.7795275591;
+                                                                    var a4HeightPx = a4Height * 3.7795275591;
+
+                                                                    // Calculate scale to fit PDF to A4 size in pixels
+                                                                    var scale = Math.min(a4WidthPx / page.getViewport({scale: 1}).width, a4HeightPx / page.getViewport({scale: 1}).height);
+
+                                                                    var viewport = page.getViewport({scale: scale});
+                                                                    canvas.height = viewport.height;
+                                                                    canvas.width = viewport.width;
+
+                                                                    // Render the page into the canvas context
+                                                                    page.render({canvasContext: context, viewport: viewport}).promise.then(function() {
+                                                                        pdfPreview.style.display = 'block';
+                                                                    });
+                                                                });
+                                                            });
+                                                        };
+                                                        reader.readAsArrayBuffer(file); // Read the PDF file
+                                                    } else {
+                                                        // Display image preview (if it's not a PDF)
+                                                        reader.onloadend = function() {
+                                                            imgPreview.src = reader.result;
+                                                            imgPreview.style.display = 'block';
+                                                        };
+                                                        reader.readAsDataURL(file); // Read the image file
+                                                    }
+                                                }
+                                            }
+                                        </script>
+
+
+
+
+
+
+<div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+                                <div class="flex justify-end">
+                                    <button type="button" onclick="openModal()"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                    onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
+                                    style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+
+                                    <!-- Ikon SVG Pensil -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                               </svg>
+                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                </button>
+                                </div>
+                                <!-- Modal Konfirmasi -->
+                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+                                        Apakah Anda ingin menambahkan data?
+                                    </p>
+
+                                      <!-- Tombol -->
+                                      <div style="display: flex; justify-content: center; gap: 12px;">
+                                        <button id="confirmSubmitBtn"
+                                        onclick="submitForm()"
+                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <!-- Telegram SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
+                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
+                                    </svg>
+                                    Ya
+                                </button>
+
+                                <!-- Tombol Batal dengan ikon X (SVG) -->
+                                <button type="button"
+                                        onclick="closeModal()"
+                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                                    </svg>
+                                    Batal
+                                </button>
+
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <!-- Script -->
+                                <script>
+                                function openModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "flex";
+                                }
+
+                                function closeModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "none";
+                                }
+
+                                </script>
+
+
+
+
+
+<!-- / -->
+
+<td style="text-align: center;">
+            <button class="btn btn-secondary btn-sm"
+                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                data-bs-toggle="modal" data-bs-target="#modalKtp3">
+                <i class="fas fa-eye"></i> Lihat
+            </button>
+
+            <!-- Modal KTP -->
+            <div class="modal fade" id="modalKtp3" tabindex="-1" aria-labelledby="modalKtpLabel3" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <a href="#"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                            <a href="#"><img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                            <span>:</span>
+                            <h5 class="modal-title" id="modalKtpLabel3">Sertifikat</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div style="margin-top: 10px;">
+                                @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
+                                <!-- Display the default iframe when the file exists in the storage -->
+                                <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @elseif($item->sertifikat)
+                                <!-- Display the iframe with the updated file -->
+                                <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @else
+                                <!-- Optional: Show a placeholder if there's no file available -->
+                                <p>Data belum diupdate</p>
+                            @endif
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+
+
+
+                                    <div style="margin-top: 10px;">
+                                                @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
+                                                <!-- Display the default iframe when the file exists in the storage -->
+                                                <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @elseif($item->materipelatihan)
+                                                <!-- Display the iframe with the updated file -->
+                                                <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @else
+                                                <!-- Optional: Show a placeholder if there's no file available -->
+                                                <p>Data belum diupdate</p>
+                                            @endif
+
+                                            </div>
+
+
+
+
+
+
+
+
+                    <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
+                        <a href="{{ url('/bebujkkonstruksi/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
+                            <button
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+                                style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                                       border-radius: 15px; font-size: 14px; cursor: pointer;
+                                       display: flex; align-items: center; justify-content: center;
+                                       transition: background-color 0.3s, color 0.3s;">
+                                <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+                            </button>
+                        </a>
+                    </td>
+
+
+
+
+
+
+                    public function beagendapelatihanmateri($id)
+        {
+                $dataagendapelatihan = agendapelatihan::where('id', $id)->first();
+                // Ambil data user saat ini
+                $user = Auth::user();
+
+                if (!$dataagendapelatihan) {
+                    // Tangani jika kegiatan tidak ditemukan
+                    return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+                }
+
+                // Menggunakan paginate() untuk pagination
+                $subdata = materipelatihan::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
+
+            // Ambil data user saat ini
+            $user = Auth::user();
+            return view('backend.05_agenda.01_agendapelatihan.01_daftarmateri.index', [
+                'title' => 'Daftar Materi Agenda Pelatihan',
+                'data' => $dataagendapelatihan,
+                'subdata' => $subdata,
+                'user' => $user,
+            ]);
+        }
+
+
+
+
+
+        <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+                            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+                            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="75">75</option>
+                                <option value="100">100</option>
+                                <option value="150">150</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="2000">2000</option>
+                            </select>
+                        </div>
+
+
+                        <script>
+                                  function updateEntries() {
+                                let selectedValue = document.getElementById("entries").value;
+                                let url = new URL(window.location.href);
+                                url.searchParams.set("perPage", selectedValue);
+                                window.location.href = url.toString();
+                            }
+                        </script>
+
+
+<div style="position: relative; display: inline-block; margin-right:10px;">
+                            <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                        </div>
+
+<script>
+                        function searchTable() {
+                            let input = document.getElementById("searchInput").value;
+
+                            fetch(`/betertibjakonusaha?search=${encodeURIComponent(input)}`, {
+                                headers: {
+                                    'X-Requested-With': 'XMLHttpRequest'
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                document.querySelector("#tableBody").innerHTML = data.html;
+                            })
+                            .catch(error => console.error("Error fetching search results:", error));
+                        }
+
+</script>
+
+
+
+
+
+
+
+                    <button
+                        onclick="exportTableToExcel('daftarPeserta', 'Data Peserta {{$data->namakegiatan}}')"
+                        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+                        onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
+                        style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
+                               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                               transition: background 0.3s, color 0.3s, border 0.3s;">
+                        <i class="bi bi-file-earmark-excel-fill" style="margin-right: 8px; font-size: 16px;"></i> Download Excel
+                    </button>
+
+
+
+
+
+<a href="/bepesertapelatihanindex" style="text-decoration: none;">
+    <button
+        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+        onmouseout="this.style.background='linear-gradient(135deg, #4B5563, #E5E7EB)'; this.style.color='white'; this.style.border='none';"
+        style="background: linear-gradient(135deg, #4B5563, #E5E7EB); color: white; border: none; padding: 10px 20px;
+               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+               transition: background 0.3s, color 0.3s, border 0.3s; margin-left:10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+             viewBox="0 0 16 16" style="margin-right: 8px;">
+            <path fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+        </svg>
+        Kembali
+    </button>
+</a>
+
+
+
+
+
+<a href="/bepesertapelatihanindex" style="text-decoration: none;">
+    <button
+        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+        onmouseout="this.style.background='linear-gradient(135deg, #4B5563, #E5E7EB)'; this.style.color='white'; this.style.border='none';"
+        style="background: linear-gradient(135deg, #4B5563, #E5E7EB); color: white; border: none; padding: 10px 20px;
+               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+               transition: background 0.3s, color 0.3s, border 0.3s; margin-left:10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+             viewBox="0 0 16 16" style="margin-right: 8px;">
+            <path fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+        </svg>
+        Kembali
+    </button>
+</a>
+
+
+
+
+
+
+     <div class="z-10" style="margin-top:25px; background-color: rgba(255, 255, 255, 0.6); border-radius: 10px; padding: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
+                {{$title}}
+            </h1>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ------------- -->
+                 <div id="sertifikat-content">
+
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+
+                            <div class="col-md-12" style="height:250px;">
+                                <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
+                                    <div style="transform: scale(0.3); transform-origin: top left;">
+                                        <div class="cert-container">
+                                            <div class="cert-header" style="text-align: center;">
+                                                <!-- Logo di atas -->
+                                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                                                </div>
+                                            </div>
+
+                                            <hr class="cert-hr" style="margin-top: -5px;">
+
+                                            <div class="cert-title" style="margin-top: -10px;">
+                                                <h1 class="cert-h1">SERTIFIKAT</h1>
+                                                <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
+                                            </div>
+
+                                            <div class="cert-content" style="margin-top: -20p`x;">
+                                                <p style="text-align: center; margin-top:-20px;">diberikan kepada</p>
+
+                                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{ strtoupper($data->namalengkap) }}</h2>
+                                                {{-- <h2 style="text-align: center; margin: 20px 0; font-size:28px;" >Miftahunnuril Anam, S.E</h2> --}}
+
+                                                <h3 class="cert-h3" style="text-align: center; margin-top:-20px;">Sebagai</h3>
+                                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
+                                                @php
+                                                    $totalJam = 0;
+                                                    foreach ($datapelajaran as $pelajaran) {
+                                                        $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
+                                                    }
+                                                @endphp
+
+                                                <p style="text-align: justify; text-indent: 50px; margin: 0 50px;">
+                                                    Kegiatan <span class="cert-highlight">{{ $data->agendapelatihan->namakegiatan }}</span>
+                                                    yang diselenggarakan oleh {{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}
+                                                    pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                                    di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
+                                                </p>
+
+                                            </div>
+
+                                            <div class="cert-signature" style="margin-top: -10px;">
+                                                <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
+                                                <p style="margin: 0;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
+                                                <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
+
+                                                <div style="display: flex; justify-content: flex-end; margin-right: -125px;"> <!-- Tambah ini -->
+                                                    <div style="position: relative; width: 400px; height: 100px;">
+                                                        <img src="/assets/icon/ttdpahuda.png" alt="" width="250px;" style="position: absolute; top: 0; left: 0; z-index: 1;">
+                                                        <img src="/assets/icon/ttdkabblora.png" alt="" width="115px;" style="position: absolute; top: 0; left: 50px; z-index: 2;">
+                                                    </div>
+                                                </div>
+
+                                                <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
+                                                {{-- <p>PEKBINA UTAMA MADYA</p> --}}
+                                                <p style="margin: 0;">NIP. 19720326 200604 1 005</p>
+                                            </div>
+                                            <div class="ribbon-left"></div>
+                                            {{-- <div class="ribbon-right"></div> --}}
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            </div>
+
+
+                            {{-- -------- --}}
+
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+
+                            <div class="col-md-12" style="height:250px;">
+                                <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
+                                    <div style="transform: scale(0.3); transform-origin: top left;">
+                                        <div class="cert-container">
+                            <div class="cert-header" style="text-align: center;">
+                                <!-- Logo di atas -->
+                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                                </div>
+                            </div>
+
+                            <hr class="cert-hr" style="margin-top: -5px;">
+
+                            <div class="cert-title" style="margin-top: -10px;">
+                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
+                            </div>
+
+                            <div class="cert-content">
+                                <div class="table-container">
+                                    <table class="custom-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="font-size: 15px;" width="10%">No</th>
+                                                <th style="font-size: 15px;" width="40%">Materi</th>
+                                                <th style="font-size: 15px;" width="30%">Narasumber</th>
+                                                <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php
+                                                $totalJam = 0; // Menyimpan total jam pelajaran
+                                            @endphp
+                                            @forelse ($datapelajaran as $key => $pelajaran)
+                                            <tr class="table-row-hover">
+                                                <td style="font-size: 15px;">{{ $key + 1 }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px; text-align:center;">
+                                                    {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
+                                                </td>
+                                            </tr>
+                                            @php
+                                                $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
+                                            @endphp
+                                            @empty
+                                            <tr>
+                                                <td colspan="4">Data tidak tersedia.</td>
+                                            </tr>
+                                            @endforelse
+                                        </tbody>
+                                        <!-- Baris penjumlahan total jam pelajaran -->
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
+                                                    <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
+                                                </td>
+                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">
+                                                    {{ $totalJam }} Jam
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="ribbon-left">
+
+                            </div>
+                            <div class="ribbon-text">
+                                <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
+                                                                {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
+
+                                <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+                                <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                </p>
+                            </div>
+
+                            {{-- <div class="ribbon-right"></div> --}}
+                        </div>

@@ -21,17 +21,27 @@ class agendapelatihan extends Model
 
     public function pesertapelatihan()
     {
-        return $this->belongsTo(pesertapelatihan::class);
+        return $this->hasMany(pesertapelatihan::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 
     public function materipelatihan()
     {
         return $this->belongsTo(materipelatihan::class);
+    }
+
+    public function asosiasimasjaki()
+    {
+        return $this->belongsTo(asosiasimasjaki::class, 'asosiasimasjaki_id');
+    }
+
+    public function jampelajaran()
+    {
+        return $this->belongsTo(jampelajaran::class, 'jampelajaran_id');
     }
 
 

@@ -18,9 +18,10 @@ return new class extends Migration
             $table->foreignId('kategoripelatihan_id')->nullable();
             $table->foreignId('pesertapelatihan_id')->nullable();
             $table->foreignId('user_id')->nullable();
+            $table->foreignId('jampelajaran_id')->nullable();
             // -------------------------------------------------------------------------
             $table->string('namakegiatan')->nullable();
-            $table->string('penyelenggara')->nullable();
+            $table->foreignId('asosiasimasjaki_id')->nullable();
             $table->date('penutupan')->nullable();
             $table->date('waktupelaksanaan')->nullable();
             $table->integer('jumlahpeserta')->nullable();
@@ -28,7 +29,8 @@ return new class extends Migration
             $table->string('keterangan')->nullable();
             $table->text('isiagenda')->nullable();
             $table->string('foto')->nullable();
-            $table->string('materi')->nullable();
+            $table->string('barcodepelatihan')->nullable();
+            $table->string('suratundangan')->nullable(); // ini belm di masukan ke dalam create dan update dan show
             $table->softDeletes();
             $table->timestamps();
         });

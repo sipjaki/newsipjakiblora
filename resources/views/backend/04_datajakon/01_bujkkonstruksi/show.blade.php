@@ -14,6 +14,9 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -21,7 +24,8 @@
             <!--begin::Row-->
             <div class="row">
 
-              <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
 
             </div>
             <!--end::Row-->
@@ -30,15 +34,6 @@
         </div>
 
         <br>
-        <!-- Menampilkan pesan sukses -->
-
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
-
             <!-- Menyertakan FontAwesome untuk ikon -->
 
         <div class="container-fluid">
@@ -47,30 +42,9 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        <div style="
-                        margin-bottom:10px;
-                        font-weight: 900;
-                        font-size: 16px;
-                        text-align: center;
-                        background: linear-gradient(135deg, #1f50f1, #1f50f1);
-                        color: white;
-                        padding: 10px 25px;
-                        border-radius: 10px;
-                        display: inline-block;
-                        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                        width: 100%;
-                    ">
-                        📌 Halaman Update : {{$title}}
-
-                    </div>
+                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
 
                            {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/bebujkkonstruksi">
@@ -79,7 +53,10 @@
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
                     style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                     <!-- Ikon Kembali -->
-                    <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16" style="margin-right: 8px;">
+                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+               </svg>
                     Kembali
                 </button>
             </a>
@@ -103,10 +80,15 @@
 
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Asosiasi
+                                            <label class="form-label" for="asosiasimasjaki">
+                                                <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Asosiasi
                                             </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control" value="{{ $data->asosiasimasjaki->namaasosiasi }}" />
+                                            <input type="text" id="asosiasimasjaki" name="asosiasimasjaki" class="form-control"
+                                            value="{{ $data->asosiasimasjaki->namaasosiasi ?? 'Data Belum Di Update' }}"
+                                            style="background-color: #000080; color: white; border: 1px solid #000080; padding: 6px 10px; font-size: 14px; border-radius: 4px; transition: none;"
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';" />
+
                                         </div>
 
 
@@ -207,6 +189,7 @@
                         <!--end::Quick Example-->
 
                     </div>
+                    <br><br>
                     <!-- /.card -->
                     <!-- Button Section -->
 
@@ -221,7 +204,8 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+        </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>

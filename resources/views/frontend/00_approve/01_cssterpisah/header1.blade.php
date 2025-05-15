@@ -1,4 +1,7 @@
+
 <style>
+
+
     /* Adjust margin between the menu items */
 li.has-dropdown {
     margin-bottom: 5px;  /* Decreases the gap between the dropdowns */
@@ -11,7 +14,7 @@ ul.list-unstyled {
 </style>
 
 <header class="header">
-    <div class="topbar" style="background: #2ECC71; padding: 5px 0; border-radius: 15px;">
+    {{-- <div class="topbar" style="background: #2ECC71; padding: 5px 0; border-radius: 15px;">
         <div class="topbar-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 20px; border-radius: 15px;">
 
             <!-- Info Berjalan (Pembungkus Border Radius) -->
@@ -35,12 +38,12 @@ ul.list-unstyled {
             </div>
 
         </div>
-    </div>
+    </div> --}}
 
 
 	<div class="main-menu sticky-header" style="background: #1d1d1b">
     <br>
-                <div class="header-container" style="margin-bottom:-25px; margin-top:-20px;">
+                <div class="header-container" style="margin-bottom:-25px; margin-top:-10px;">
                     <img src="/assets/icon/logokabupatenblora.png" alt="Logo PUPR" class="header-logo" width="20%" loading="lazy">
                     <img src="/assets/icon/pupr.png" alt="Logo PUPR" class="header-logo" width="20%" loading="lazy">
                     <div class="header-text">
@@ -137,7 +140,7 @@ ul.list-unstyled {
 
 		<div class="main-menu-inner" style="margin-bottom:-15px;">
 			<div class="main-menu-left">
-				<div class="navigation" style="margin-left: 200px;">
+				<div class="navigation" style="margin-left: 50px;">
 					<ul class="main-menu-list list-unstyled">
 
 <li>
@@ -215,7 +218,7 @@ ul.list-unstyled {
             </ul>
         </li>
         <li><a href="/beritajakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Berita Jakon</a></li>
-        <li><a href="/404" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
+        <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
     </ul>
 </li>
 
@@ -230,8 +233,8 @@ ul.list-unstyled {
             </a>
             <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
                 <li><a href="/datajakon/bujkkontraktor" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">BUJK Konstruksi</a></li>
-                <li><a href="/datajakon/bujkkonsultan" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">BUJK Konsultan</a></li>
-                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Asosiasi Konstruksi</a></li>
+                <li><a href="/datajakon/bujkkonsultan" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">BUJK Konsultasi Konstruksi</a></li>
+                <li><a href="/datajakon/asosiasimasjaki" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Asosiasi Konstruksi</a></li>
                 <li><a href="/datajakon/statistikabujkblora" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Data Statistik BUJK</a></li>
             </ul>
         </li>
@@ -360,6 +363,27 @@ ul.list-unstyled {
                                 <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Toko Bangunan Kab Blora</a></li>
                             </ul>
                         </li>
+
+
+                        <li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+        DATA STATISTIK
+    </a>
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 250px;">
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">BU Jasa Konstrksi</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Tenaga Kerja Konstruksi</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Profil Paket Pekerjaan</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Tertib Usaha Jakon</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Tertib Usaha Pemanfaatan</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Tertib Usaha Penyelenggaraan</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Kecelakaan Kerja</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">AHSP Konstruksi Umum</a></li>
+                            </ul>
+                        </li>
+
+
+
+
 
 					</ul><!-- main-menu-list -->
 				</div><!--navigation-->

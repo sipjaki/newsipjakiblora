@@ -14,6 +14,7 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -21,7 +22,8 @@
             <!--begin::Row-->
             <div class="row">
 
-              <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
 
             </div>
             <!--end::Row-->
@@ -32,13 +34,6 @@
         <br>
         <!-- Menampilkan pesan sukses -->
 
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
-
             <!-- Menyertakan FontAwesome untuk ikon -->
 
         <div class="container-fluid">
@@ -47,22 +42,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        <div style="
-                        margin-bottom:10px;
-                        font-weight: 900;
-                        font-size: 16px;
-                        text-align: center;
-                        background: linear-gradient(135deg, #1f50f1, #1f50f1);
-                        color: white;
-                        padding: 10px 25px;
-                        border-radius: 10px;
-                        display: inline-block;
-                        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                        width: 100%;
-                    ">
-                        📌 Halaman Update : {{$title}}
-
-                    </div>
+                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
 
                            {{-- ======================================================= --}}
         {{-- ALERT --}}
@@ -79,7 +59,10 @@
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
                     style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                     <!-- Ikon Kembali -->
-                    <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16" style="margin-right: 8px;">
+                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+               </svg>
                     Kembali
                 </button>
             </a>
@@ -150,14 +133,24 @@
                                                 <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
                                             </label>
                                             <div class="form-control" style="border: none;">
-                                                @if ($data->berkas)
-                                                    <!-- Tombol untuk membuka modal -->
-                                                    <button type="button" class="btn btn-primary" id="btnBerkas">
-                                                        Lihat Berkas
-                                                    </button>
+
+                                                <div style="margin-top: 10px;">
+                                                    @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
+                                                    <!-- Display the default iframe when the file exists in the storage -->
+                                                    <iframe src="{{ asset('storage/' . $data->berkas) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                @elseif($data->berkas)
+                                                    <!-- Display the iframe with the updated file -->
+                                                    <iframe src="{{ asset($data->berkas) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                 @else
-                                                    <p>No Berkas available</p>
+                                                    <!-- Optional: Show a placeholder if there's no file available -->
+                                                    <p>Data belum diupdate</p>
                                                 @endif
+
+                                                </div>
+
+
+
+
                                             </div>
                                         </div>
 
@@ -218,6 +211,19 @@
                                                 @else
                                                     <p>No Photo</p>
                                                 @endif
+
+                                                <div style="margin-top: 10px;">
+                                                    @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
+                                                        <!-- Menampilkan gambar dari storage -->
+                                                        <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    @elseif($data->foto1)
+                                                        <!-- Menampilkan gambar dari path luar storage -->
+                                                        <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    @else
+                                                        <!-- Placeholder jika tidak ada data -->
+                                                        <p>Data belum diupdate</p>
+                                                    @endif
+                                                </div>
                                             </div>
                                         </div>
 
@@ -226,12 +232,16 @@
                                             <label class="form-label" for="foto1">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 2
                                             </label>
-                                            <div class="form-control" style="border: none;">
-                                                @if ($data->foto2)
-                                                    <!-- Memperbesar gambar -->
-                                                    <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 1" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
+                                            <div style="margin-top: 10px;">
+                                                @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
+                                                    <!-- Menampilkan gambar dari storage -->
+                                                    <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @elseif($data->foto2)
+                                                    <!-- Menampilkan gambar dari path luar storage -->
+                                                    <img src="{{ asset($data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                 @else
-                                                    <p>No Photo</p>
+                                                    <!-- Placeholder jika tidak ada data -->
+                                                    <p>Data belum diupdate</p>
                                                 @endif
                                             </div>
                                         </div>
@@ -242,12 +252,18 @@
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 3
                                             </label>
                                             <div class="form-control" style="border: none;">
-                                                @if ($data->foto3)
-                                                    <!-- Memperbesar gambar -->
-                                                    <img src="{{ asset('storage/' . $data->foto3) }}" alt="Foto 2" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
-                                                @else
-                                                    <p>No Photo</p>
-                                                @endif
+                                                <div style="margin-top: 10px;">
+                                                    @if($data->foto3 && file_exists(public_path('storage/' . $data->foto3)))
+                                                        <!-- Menampilkan gambar dari storage -->
+                                                        <img src="{{ asset('storage/' . $data->foto3) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    @elseif($data->foto3)
+                                                        <!-- Menampilkan gambar dari path luar storage -->
+                                                        <img src="{{ asset($data->foto3) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    @else
+                                                        <!-- Placeholder jika tidak ada data -->
+                                                        <p>Data belum diupdate</p>
+                                                    @endif
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -278,7 +294,8 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+                </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>

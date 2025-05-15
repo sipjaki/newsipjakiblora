@@ -13,6 +13,7 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -116,7 +117,7 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+        </main>
       <!--end::App Main-->
     </div>
     </div>

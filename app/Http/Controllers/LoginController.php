@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\LoginConfirmationMail;
+use App\Models\statusadmin;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+
+use Illuminate\Support\Facades\Hash;
 
 
 class LoginController extends Controller
@@ -19,6 +23,43 @@ class LoginController extends Controller
         return view('backend.00_loginakun.01_login.index',[
             'title' => 'Silahkan Login !',
         ]);
+    }
+
+    public function register()
+    {
+        $datastatusadmin = statusadmin::whereIn('id', [3, 4, 5, 6])->get();
+
+        return view('register.index', [
+            'statusadmin' => $datastatusadmin,
+            'title' => 'Register Mas Jaki !',
+        ]);
+    }
+
+    public function registernew(Request $request)
+    {
+        // Validasi input dari form
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users,username',
+            'statusadmin_id' => 'required|string',
+            'phone_number' => 'required|string|max:15',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        // Menyimpan data user baru
+        $user = new User();
+        $user->name = $validated['name'];
+        $user->username = $validated['username'];
+        $user->statusadmin_id = $validated['statusadmin_id'];
+        $user->phone_number = $validated['phone_number'];
+        $user->email = $validated['email'];
+        $user->avatar = 'default.jpg'; // Default avatar, bisa diubah sesuai kebutuhan
+        $user->password = Hash::make($validated['password']);
+        $user->save();
+
+        // Redirect atau beri notifikasi
+        return redirect('/login')->with('success', 'Akun berhasil dibuat, silakan login!');
     }
 
     // public function authenticate(Request $request)
@@ -119,5 +160,144 @@ public function authenticate(Request $request)
     }
 
 
+// DAFTAR AKUN MASUK MAS JAKI BLORA
+
+public function allakun(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = User::query();
+
+    if ($search) {
+        $query->where('name', 'LIKE', "%{$search}%")
+              ->orWhere('username', 'LIKE', "%{$search}%")
+              ->orWhere('phone_number', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhere('avatar', 'LIKE', "%{$search}%")
+              ->orWhereHas('statusadmin', function ($q) use ($search) {
+                  $q->where('statusadmin', 'LIKE', "%{$search}%");
+              });
+    }
+
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.13_daftarakun.01_semuaakun.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.13_daftarakun.01_semuaakun.index', [
+        'title' => 'Daftar Semua Akun',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+
+public function allsemuaakun($name)
+{
+// Cari item berdasarkan judul
+$entry = User::where('name', $name)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/allakun')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+
+return redirect()->back()->with('error', 'Item not found');
+}
+
+
+
+
+
+public function akuncreate()
+{
+
+    $data = statusadmin::all();
+
+    return view('backend.13_daftarakun.01_semuaakun.create',[
+        'title' => 'Buat Akun !',
+        'data' => $data,
+
+    ]);
+}
+
+public function akuncreatenew(Request $request)
+{
+    $validatedData = $request->validate([
+        'statusadmin_id' => 'required|string',
+        'name'           => 'required|string|max:255',
+        'username'       => 'required|string|max:255',
+        'phone_number'   => 'required|string|max:255',
+        'email'          => 'required|email|unique:users,email',
+        'avatar'         => 'required|image|mimes:jpeg,png,jpg|max:2048',
+    ], [
+        'statusadmin_id.required' => 'Status Admin wajib dipilih!',
+        'name.required'           => 'Nama wajib diisi!',
+        'username.required'       => 'Username wajib diisi!',
+        'phone_number.required'   => 'Nomor HP wajib diisi!',
+        'email.required'          => 'Email wajib diisi!',
+        'email.unique'            => 'Email sudah terdaftar!',
+        'avatar.required'            => 'Avatar harus berupa gambar!',
+        'avatar.image'            => 'Avatar harus berupa gambar!',
+        'avatar.mimes'            => 'Avatar harus berupa file JPEG, JPG, atau PNG!',
+    ]);
+
+    // Default avatar jika tidak diunggah
+    $avatarPath = 'assets/abgblora/logo/iconabgblora.png';
+
+    // Simpan avatar jika diupload
+    if ($request->hasFile('avatar')) {
+        $file = $request->file('avatar');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('00_user/akun');
+
+        // Buat folder jika belum ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        // Pindahkan file ke direktori tujuan
+        $file->move($tujuanPath, $namaFile);
+
+        $avatarPath = '00_user/akun/' . $namaFile;
+    }
+
+    // Simpan user ke database
+    User::create([
+        'statusadmin_id' => $validatedData['statusadmin_id'],
+        'name'           => $validatedData['name'],
+        'username'       => $validatedData['username'],
+        'phone_number'   => $validatedData['phone_number'],
+        'email'          => $validatedData['email'],
+        'avatar'         => $avatarPath,
+        'password'       => bcrypt('password123'), // ganti dengan sistem password sesungguhnya
+    ]);
+
+    session()->flash('create', 'Data pengguna berhasil dibuat!');
+    return redirect('/allakun'); // sesuaikan route tujuan
+}
+
+
+public function forgotpassword()
+    {
+
+        return view('register.forgotpassword',[
+            'title' => 'Forgot Password !',
+        ]);
+    }
 
 }

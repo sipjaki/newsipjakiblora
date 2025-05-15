@@ -27,6 +27,9 @@ use App\Http\Controllers\AllskktenagakerjabloraController;
 use App\Http\Controllers\PaketpekerjaanmasjakiController;
 use App\Http\Controllers\PesertapelatihanController;
 use App\Http\Controllers\AndroidVersionController;
+use App\Http\Controllers\DownloadExcelController;
+use App\Http\Controllers\VerifikasiController;
+use App\Models\tertibjasakonstruksi;
 // MAS JAKI
 
 // atas
@@ -45,6 +48,13 @@ use Illuminate\Support\Facades\Auth;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// ------------------------- FRONTEND HALAMAN SERTIFIKAT ANDROID  --------------------------
+Route::get('/sertifikat', [AndroidVersionController::class, 'sertifikatindex']);
+Route::get('/sertifikatpelatihan', [AndroidVersionController::class, 'sertifikatpelatihan']);
+Route::get('/sertifikattkk', [AndroidVersionController::class, 'sertifikattkk']);
+Route::post('/carisertifikat', [AndroidVersionController::class, 'carisertifikat'])->name('cari.sertifikat');
+
 
 // ------------------------- FRONTEND HALAMAN UTAMA MAS JAKI BLORA  --------------------------
 Route::get('/resberita', [BeritajakonController::class, 'androidberita']);
@@ -94,8 +104,10 @@ Route::get('/resbujkkonsultan', [AndroidVersionController::class, 'menubujkkonsu
 Route::get('/resbujkkonsultan/{namalengkap}', [AndroidVersionController::class, 'menubujkkonsultandetails']);
 
 // MENU DATA ASOSIASI MAS JAKI ------------------------------------------------
-// Route::get('/resbujkkonsultan', [AndroidVersionController::class, 'menubujkkonsultan']);
-// Route::get('/resbujkkonsultan/{namalengkap}', [AndroidVersionController::class, 'menubujkkonsultandetails']);
+Route::get('/reasasosiasimasjaki', [AndroidVersionController::class, 'menuasosiasimasjaki']);
+Route::get('/reasasosiasimasjaki/asosiasikonstruksi/{id}', [AndroidVersionController::class, 'reasasosiasimasjakikontraktor']);
+Route::get('/reasasosiasimasjaki/asosiasikonsultan/{id}', [AndroidVersionController::class, 'reasasosiasimasjakikonsultan']);
+
 
 // MENU DATA TKK DPUPR BLORA
 // Route::get('/resbujkkonsultan', [AndroidVersionController::class, 'menubujkkonsultan']);
@@ -142,6 +154,10 @@ Route::get('/resagendapelatihan/{namakegiatan}', [AndroidVersionController::clas
 Route::get('/respesertapelatihan', [AndroidVersionController::class, 'respesertapelatihan']);
 Route::get('/respelatihanpeserta/{namakegiatan}', [AndroidVersionController::class, 'menurespelatihanpeserta']);
 
+// DAFTAR PESERTA PELATIHAN MENU ANDROID
+Route::get('/resdaftarpelatihanpeserta/create/{id}', [AndroidVersionController::class, 'resdaftarpelatihanpeserta'])->name('resdaftarpelatihanpeserta');
+Route::post('/resdaftarpelatihanpeserta/createpeserta/new', [AndroidVersionController::class, 'resdaftarpelatihanpesertanew'])->name('resdaftarpelatihanpesertanew');
+
 // MENU 3 AGENDA TKK KONSTRUKSI KAB BLORA ------------------------------------------------
 Route::get('/resagendatkk', [AndroidVersionController::class, 'menuresagendatkk']);
 Route::get('/resagendatkk/{namakegiatan}', [AndroidVersionController::class, 'menuresagendatkkdetails']);
@@ -149,10 +165,13 @@ Route::get('/respelatihanskk/{namakegiatan}', [AndroidVersionController::class, 
 Route::get('/respesertaskk', [AndroidVersionController::class, 'menurespesertaskk']);
 Route::get('/resskkpeserta/{namakegiatan}', [AndroidVersionController::class, 'menuresskkpeserta']);
 
-// Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
-// Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 
-// makanyu
+// nurfie
+Route::get('/resdaftarpelatihanpesertaskk/create/{id}', [AndroidVersionController::class, 'resdaftarpelatihanpesertaskk'])->middleware('auth')->name('resdaftarpelatihanpesertaskk');
+
+
+// Route::post('/resdaftarpelatihanpesertaskk/createpeserta/new', [AndroidVersionController::class, 'resdaftarpelatihanpesertanew'])->name('resdaftarpelatihanpesertanew');
+
 
 // ================================================ MENU E. PENGAWASAN
 // MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
@@ -430,6 +449,8 @@ Route::get('/datajakon/profilpaketpekerjaan/{id}', [PaketpekerjaanmasjakiControl
 // ---------------------- MENU 1 AGENDA PELATIHAN  -----------------------------------------------------
 Route::get('/agendapembinaan', [PembinaanController::class, 'index']);
 Route::get('/agendapembinaan/{namakegiatan}', [PembinaanController::class, 'namakegiatandaftar']);
+// Route::get('/agendapembinaan/{id}', [PembinaanController::class, 'namakegiatandaftar'])->name('agendapembinaan');
+
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 2 DAFTAR PESERTA PELATIHAN  -----------------------------------------------------
@@ -706,7 +727,10 @@ Route::get('/bebujkjakon', [BujkkontraktorController::class, 'bebujkjakon'])->mi
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bebujkkonstruksi', [BujkkontraktorController::class, 'bebujkkonstruksi'])->middleware('auth');
 Route::get('/bebujkkonstruksi/show/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksishow'])->middleware('auth');
-Route::get('/bebujkkonstruksi/showsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasi'])->middleware('auth');
+Route::get('/bebujkkonstruksi/showsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasi'])->middleware('auth')->name('bebujkkonstruksi.showsubklasifikasi');
+
+Route::get('/bebujkkonstruksi/createsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasi'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasi');
+Route::post('/bebujkkonstruksi/createsubklasifikasi/create', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasicreate'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasicreate');
 
 Route::get('/bebujkkonstruksi/update/{id}', [BujkkontraktorController::class, 'bebujkkonstruksiupdate'])->middleware('auth')->name('update.bebujkkonstruksiupdate');
 Route::post('/bebujkkonstruksi/updatecreate/{id}', [BujkkontraktorController::class, 'bebujkkonstruksicreateupdate'])->middleware('auth')->name('update.bebujkkonstruksicreateupdate');
@@ -714,7 +738,7 @@ Route::get('/bebujkkonstruksi/create', [BujkkontraktorController::class, 'bebujk
 Route::post('/bebujkkonstruksi/createnew', [BujkkontraktorController::class, 'bebujkkonstruksicreatenew'])->middleware('auth')->name('create.bebujkkonstruksicreatenew');
 
 Route::delete('/bebujkkonstruksi/delete/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksidelete'])->middleware('auth');
-Route::delete('/bebujkkonstruksiklasifikasi/delete/{id}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasidelete'])->middleware('auth');
+Route::delete('/bebujkkonstruksiklasifikasi/delete/{id}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasidelete'])->middleware('auth')->name('bebujkkonstruksiklasifikasi.delete');
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 2 BUJK KONSULTASI KONSTRUKSI   -----------------------------------------------------
@@ -723,15 +747,27 @@ Route::get('/bebujkkonsultan', [BujkkonsultanController::class, 'bebujkkonsultan
 Route::get('/bebujkkonsultan/show/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshow'])->middleware('auth');
 Route::get('/bebujkkonsultan/showsubklasifikasi/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshowklasifikasi'])->middleware('auth');
 
+Route::get('/bebujkkonsultan/createsubklasifikasi/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultancreateklasifikasi'])->middleware('auth')->name('bebujkkonsultan.createklasifikasi');
+Route::post('/bebujkkonsultan/createsubklasifikasi/create', [BujkkonsultanController::class, 'bebujkkonsultancreateklasifikasicreate'])->middleware('auth')->name('bebujkkonsultan.createklasifikasicreate');
+
+Route::get('/bebujkkonsultan/update/{id}', [BujkkonsultanController::class, 'bebujkkonsultanupdate'])->middleware('auth')->name('update.bebujkkonsultanupdate');
+Route::post('/bebujkkonsultan/updatecreate/{id}', [BujkkonsultanController::class, 'bebujkkonsultancreateupdate'])->middleware('auth')->name('update.bebujkkonsultancreate');
+Route::get('/bebujkkonsultan/create', [BujkkonsultanController::class, 'bebujkkonsultancreate'])->middleware('auth')->name('create.bebujkkonsultancreate');
+Route::post('/bebujkkonsultan/createnew', [BujkkonsultanController::class, 'bebujkkonsultancreatenew'])->middleware('auth')->name('create.bebujkkonsultancreatenew');
+
 Route::delete('/bebujkkonsultan/delete/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshowdelete'])->middleware('auth');
-Route::delete('/bebujkkonsultanklasifikasi/delete/{id}', [BujkkonsultanController::class, 'bebujkkonsultanshowklasifikasidelete'])->middleware('auth');
+Route::delete('/bebujkkonsultanklasifikasi/delete/{id}', [BujkkonsultanController::class, 'bebujkkonsultanshowklasifikasidelete'])->middleware('auth')->name('bebujkkonsultanklasifikasi.delete');
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 3 DATA ASOSIASI JASA KONSTRUKSI   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beasosiasi', [BujkkontraktorController::class, 'beasosiasi'])->middleware('auth');
+Route::get('/beasosiasi/create', [BujkkontraktorController::class, 'beasosiasicreate'])->middleware('auth');
+Route::post('/beasosiasi/createnew', [BujkkontraktorController::class, 'beasosiasicreatenew'])->middleware('auth')->name('create.asosiasimasjakicreatenew');
 Route::get('/beasosiasi/show/{namaasosiasi}', [BujkkontraktorController::class, 'beasosiasishow'])->middleware('auth');
-Route::delete('/beasosiasi/delete/{id}', [BujkkontraktorController::class, 'beasosiasidelete'])->middleware('auth');
+Route::delete('/beasosiasi/delete/{namaasosiasi}', [BujkkontraktorController::class, 'beasosiasidelete'])->middleware('auth');
+Route::get('/beasosiasi/update/{id}', [BujkkontraktorController::class, 'beasosiasiupdate'])->middleware('auth')->name('beasosiasiupdate');
+Route::post('/beasosiasi/updatecreate/{id}', [BujkkontraktorController::class, 'beasosiasiupdatecreate'])->middleware('auth')->name('beasosiasiupdatecreate');
 // ___________________________________________________________________________________________________________________________________
 
 
@@ -742,6 +778,8 @@ Route::delete('/beasosiasi/delete/{id}', [BujkkontraktorController::class, 'beas
 Route::get('/beskkdpupr', [SkktenagakerjabloraController::class, 'beskkdpupr'])->middleware('auth');
 Route::get('/beskkdpupr/show/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprshow'])->middleware('auth');
 Route::delete('/beskkdpupr/delete/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprdelete'])->middleware('auth');
+Route::get('/beskkdpupr/update/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprupdate'])->middleware('auth');
+Route::post('/beskkdpupr/updatecreate/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprupdatecreate'])->middleware('auth')->name('update.beskkdpuprupdate');
 // ___________________________________________________________________________________________________________________________________
 
 // ________________________________________________________________________________________________________________
@@ -750,14 +788,44 @@ Route::delete('/beskkdpupr/delete/{nama}', [SkktenagakerjabloraController::class
 Route::get('/beskkallblora', [SkktenagakerjabloraController::class, 'beskkall'])->middleware('auth');
 Route::get('/beskkallblora/show/{nama}', [SkktenagakerjabloraController::class, 'beskkallshow'])->middleware('auth');
 Route::delete('/beskkallblora/delete/{nama}', [SkktenagakerjabloraController::class, 'beskkalldelete'])->middleware('auth');
+Route::get('/beskkallblora/update/{nama}', [SkktenagakerjabloraController::class, 'beskkallbloraupdate'])->middleware('auth');
+Route::post('/beskkallblora/updatecreate/{id}', [SkktenagakerjabloraController::class, 'beskkallbloracreateupdate'])->middleware('auth')->name('update.beallskkupdate');
+Route::get('/beskkallblora/create', [SkktenagakerjabloraController::class, 'beskkallbloracreate'])->middleware('auth');
+Route::post('/beskkallblora/createnew', [SkktenagakerjabloraController::class, 'beskkallbloracreatenew'])->middleware('auth')->name('create.beallskkcreate');
 // ___________________________________________________________________________________________________________________________________
 
 // ________________________________________________________________________________________________________________
 // ---------------------- MENU 3 PROFIL PAKET PEKERJAAN -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bepaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaan'])->middleware('auth');
+Route::get('/bepaketpekerjaan/showsurat/{id}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaanshowsurat'])->middleware('auth');
+
+
+// BELUM DI BUATKAN
+// Route::get('/bebujkkonstruksi/createsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasi'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasi');
+// Route::post('/bebujkkonstruksi/createsubklasifikasi/create', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasicreate'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasicreate');
+
+// HAK AKSES PRIBADI ATAU DINAS
+Route::get('/bepaketpekerjaandinas', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaandinas'])->middleware('auth');
+
+
+
+
 Route::get('/bepaketpekerjaan/show/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaanshow'])->middleware('auth');
 Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaandelete'])->middleware('auth');
+
+// SURAT SURAT PROFIL PAKET PEKERJAAN
+Route::get('/bepekerjaandetails/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaandetails'])->middleware('auth');
+
+Route::get('/bedetailspekerjaan/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaansurat2'])->middleware('auth');
+
+Route::get('/bedetailsspk/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaansurat3'])->middleware('auth');
+
+Route::get('/bedetailsskk/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaansurat4'])->middleware('auth');
+
+Route::get('/bedetailsuratperjanjianpekerjaan/{id}', [PaketpekerjaanmasjakiController::class, 'besuratperjanjianpekerjaansurat5'])->middleware('auth');
+
+
 // ___________________________________________________________________________________________________________________________________
 
 
@@ -765,35 +833,172 @@ Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [Paketpekerjaanmasjaki
 // ---------------------- MENU 01 AGENDA PELATIHAN   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beagendapelatihan', [PembinaanController::class, 'beagendapelatihan'])->middleware('auth');
-Route::get('/beagendapelatihanpeserta/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshowpeserta'])->middleware('auth');
+Route::get('/beagendapelatihanpeserta/show/{id}', [PembinaanController::class, 'beagendapelatihanshowpeserta'])->middleware('auth');
+
 Route::get('/beagendapelatihan/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshow'])->middleware('auth');
 Route::delete('/beagendapelatihanpeserta/delete/{id}', [PembinaanController::class, 'beagendapelatihanpesertadelete'])->middleware('auth');
 Route::delete('/beagendapelatihan/delete/{namakegiatan}', [PembinaanController::class, 'beagendapelatihandelete'])->middleware('auth');
+
+Route::get('/beagendapelatihan/update/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanupdate'])->middleware('auth')->name('beagendapelatihanupdate');
+Route::post('/beagendapelatihan/updatecreate/{id}', [PembinaanController::class, 'beagendapelatihanupdatecreate'])->middleware('auth')->name('update.beagendapelatihancreate');
+
+Route::get('/beagendapelatihan/create', [PembinaanController::class, 'beagendapelatihancreate'])->middleware('auth')->name('beagendapelatihancreate');
+Route::post('/beagendapelatihan/createnew', [PembinaanController::class, 'beagendapelatihancreatenew'])->middleware('auth')->name('beagendapelatihancreatenew');
+
+Route::get('/beagendapelatihanmateri/{id}', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth')->name('beagendapelatihanmateri');
+Route::delete('/beagendapelatihanmateri/delete/{id}', [PembinaanController::class, 'beagendapelatihanmateridelete'])->middleware('auth')->name('beagendapelatihanmateridelete');
+
+// ROUTE PENGAMBILAN DATA ID
+Route::get('/beagendapelatihanmateri/createmateri/{id}', [PembinaanController::class, 'beagendapelatihanmatericreate'])->middleware('auth')->name('beagendapelatihanmatericreate');
+Route::post('/beagendapelatihanmateri/createmateri/new', [PembinaanController::class, 'beagendapelatihanmatericreatenew'])->middleware('auth')->name('beagendapelatihanmatericreatenew');
+
+
+// Route::get('/beagendapelatihanmateri', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth');
+
+
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 02 PESERTA PELATIHAN   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
+Route::get('/bepesertapelatihanindex', [PesertapelatihanController::class, 'bepesertapelatihanindex'])->middleware('auth');
 Route::get('/bepesertapelatihan', [PesertapelatihanController::class, 'bepesertapelatihan'])->middleware('auth');
 Route::get('/bepesertapelatihan/show/{name}', [PesertapelatihanController::class, 'bepesertapelatihanshow'])->middleware('auth');
 Route::delete('/bepesertapelatihan/delete/{id}', [PesertapelatihanController::class, 'bepesertapelatihandelete'])->middleware('auth');
+
+// Route::get('/bepesertapelatihansertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertapelatihansertifikat'])->middleware('auth')->name('bepesertauploadsertifikat.show');
+
+Route::get('/bepesertapelatihansertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertapelatihansertifikat'])
+    ->middleware('auth')
+    ->name('bepesertauploadsertifikat.show');
+
+Route::get('/bepesertapuploadsertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikat'])->middleware('auth')->name('bepesertauploadsertifikat.show1');
+Route::get('/bepesertapuploadsertifikatres/show/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatandroid'])->name('bepesertauploadsertifikat.show2');
+
+Route::post('/bepesertapuploadsertifikat/create/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatupload'])->middleware('auth')->name('bepesertauploadsertifikatupload');
+
+Route::get('/bepelatihanjampelajaran/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajaran'])->middleware('auth')->name('bepelatihanjampelajaran');
+
+Route::delete('/bepelatihanjampelajaran/delete/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajarandelete'])->middleware('auth')->name('bepelatihanjampelajarandelete');
+
+Route::get('/bepelatihanjampelajaran/createjam/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajarancreate'])->middleware('auth')->name('bepelatihanjampelajarantenagakerja');
+Route::post('/bepelatihanjampelajaran/createjam/create', [PesertapelatihanController::class, 'bepelatihanjampelajarancreatenew'])->middleware('auth')->name('bepelatihanjampelajarantenagakerjacreate');
+
+// saat ini
+
+// HAK AKSES AKUN LSP PENERBIT UNTUK PELATIHAN DAN SKK
+Route::get('/beakseslsppenerbit', [PesertapelatihanController::class, 'beakseslsppenerbit'])->middleware('auth');
+
+// HAK AKSES PESERTA UNTK DAFTAR
+
+Route::get('/daftarpesertapelatihan/create/{id}', [PesertapelatihanController::class, 'daftarpesertapelatihan'])->name('daftarpesertapelatihan');
+Route::post('/daftarpesertapelatihan/createmateri/new', [PesertapelatihanController::class, 'daftarpesertapelatihancreatenew'])->name('daftarpesertapelatihancreatenew');
+
+
+
+
 // ___________________________________________________________________________________________________________________________________
 
 
 // ---------------------- MENU 03 AGENDA SKK MAS JAKI BLORA JAWA TENGAH    -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
-Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk'])->middleware('auth');
-Route::get('/beagendaskkpeserta/show/{namakegiatan}', [PembinaanController::class, 'beagendaskkpeserta'])->middleware('auth');
-Route::get('/beagendaskk/show/{namakegiatan}', [PembinaanController::class, 'beagendaskkshow'])->middleware('auth');
-Route::delete('/beagendaskkpeserta/delete/{id}', [PembinaanController::class, 'beagendaskkdeletepeserta'])->middleware('auth');
-Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class, 'beagendaskkdelete'])->middleware('auth');
+// Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk'])->middleware('auth');
+// Route::get('/beagendaskkpeserta/show/{namakegiatan}', [PembinaanController::class, 'beagendaskkpeserta'])->middleware('auth');
+// Route::get('/beagendaskk/show/{namakegiatan}', [PembinaanController::class, 'beagendaskkshow'])->middleware('auth');
+// Route::delete('/beagendaskkpeserta/delete/{id}', [PembinaanController::class, 'beagendaskkdeletepeserta'])->middleware('auth');
+// Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class, 'beagendaskkdelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________
 
+Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk'])->middleware('auth');
+Route::get('/beagendaskkmateri/{id}', [PembinaanController::class, 'beagendaskkmateri'])->middleware('auth')->name('beagendaskkmateri');
+
+Route::delete('/beagendaskkmateri/delete/{namakegiatan}', [PembinaanController::class, 'beagendaskkmateridelete'])->middleware('auth');
+Route::delete('/beagendaskkpeserta/delete/{id}', [PembinaanController::class, 'beagendaskkpesertadelete'])->middleware('auth');
+
+Route::get('/beagendaskk/show/{namakegiatan}', [PembinaanController::class, 'beagendaskkshow'])->middleware('auth');
+Route::get('/beagendaskk/update/{namakegiatan}', [PembinaanController::class, 'beagendaskkupdate'])->middleware('auth')->name('beagendaskkupdate');
+
+Route::post('/beagendaskk/updatecreate/{id}', [PembinaanController::class, 'beagendaskkupdatecreate'])->middleware('auth')->name('update.beagendaskkcreate');
+
+Route::get('/beagendaskk/create', [PembinaanController::class, 'beagendaskkcreate'])->middleware('auth')->name('beagendaskkcreate');
+Route::post('/beagendaskk/createnew', [PembinaanController::class, 'beagendaskkcreatenew'])->middleware('auth')->name('beagendaskkcreatenew');
+
+Route::delete('/beagendaskkmateriskk/delete/{id}', [PembinaanController::class, 'beagendaskkmaterideleteskk'])->middleware('auth')->name('beagendaskkmaterideleteskk');
+
+Route::get('/daftarpesertasertifikasiskk/create/{id}', [AgendaskkController::class, 'daftarpesertasertifikasiskknew'])->middleware('auth')->name('daftarpesertasertifikasiskk');
+Route::post('/daftarpesertasertifikasiskk/createpeserta/new', [AgendaskkController::class, 'daftarpesertasertifikasiskkcreatenew'])->middleware('auth')->name('daftarpesertasertifikasiskkcreatenew');
+Route::post('/daftarpesertasertifikasiskk2/createpeserta2/new', [AgendaskkController::class, 'daftarpesertasertifikasiskkcreatenew2'])->middleware('auth')->name('daftarpesertasertifikasiskkcreatenew2');
+
+Route::post('/daftarpesertasertifikasiskkt/createmateri/new', [AgendaskkController::class, 'daftarpesertasertifikasiskkcreateskkt'])->middleware('auth')->name('daftarpesertasertifikasiskkawalan');
+
+
+Route::get('/beagendaskkpeserta/show/{id}', [PembinaanController::class, 'beagendaskkpesertashow'])->middleware('auth');
+Route::get('/bepesertaskkshowberkas/show/{id}', [PembinaanController::class, 'bepesertaskkshowberkas'])->middleware('auth');
+
+
+Route::get('/beagendaskkdatapeserta', [PembinaanController::class, 'beagendaskkdatapeserta'])->middleware('auth');
+
+Route::get('/beskkdatapesertajumlah/show/{id}', [AgendaskkController::class, 'beskkdatapesertajumlah'])->middleware('auth')->name('beskkdatapesertasertifikatupload');
+
+
+Route::get('/beakseslsppenerbitskk', [PembinaanController::class, 'beakseslsppenerbitskk'])->middleware('auth');
+
+// nurfi
+// ROUTE PENGAMBILAN DATA ID
+// PEKERJAANINI
+
+Route::get('/beagendaskkmateri/createmateri/{id}', [PembinaanController::class, 'beagendaskkmatericreate'])->middleware('auth')->name('beagendaskkmatericreate');
+Route::post('/beagendaskkmateri/createmateri/new', [PembinaanController::class, 'beagendaskkmatericreatenew'])->middleware('auth')->name('beagendaskkmatericreatenew');
 
 
 
 
+// ROUTE UNTUK VERIFIKASI BOOLEADN
+Route::put('/verifikasipesertapelatihan/{id}', [VerifikasiController::class, 'verifikasipesertapelatihan'])->middleware('auth')->name('verifikasi.updatepesertapelatihan');
+Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikasikehadiran'])->middleware('auth')->name('verifikasikehadiran');
+
+Route::put('/verifikasipesertasertifikasi/{id}', [VerifikasiController::class, 'verifikasipesertasertifikasinew'])->middleware('auth')->name('verifikasipesertasertifikasi');
 
 
+Route::post('/verifikasiktp/{id}', [VerifikasiController::class, 'verifikasiktp'])->middleware('auth')->name('validasi.ktp');
+
+Route::put('/verifikasikehadiranlsp/{id}', [VerifikasiController::class, 'verifikasikehadiranlsp'])->name('verifikasilsp.update');
+
+Route::put('/verifikasikehadiranlsphadir/{id}', [VerifikasiController::class, 'verifikasikehadiranlsphadir'])->name('verifikasikehadiranlsp');
+Route::put('/terbitkansertifikat/{id}', [VerifikasiController::class, 'terbitkansertifikat'])->name('terbitkan.sertifikat');
+
+Route::put('/verifikasipupesertaskk/{id}', [VerifikasiController::class, 'verifikasipupesertaskk'])->middleware('auth')->name('verifikasipupesertaskk');
+
+
+// ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
+// ___________________________________________________________________________________________________________________________________
+Route::get('/betertibjakonusaha', [TertibjasakonstruksiController::class, 'betertibjakonusaha'])->middleware('auth')->name('bertertibjakonusaha');
+Route::delete('/betertibjakonusaha/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahadelete'])->middleware('auth');
+
+Route::get('/betertibjakonusaha/create', [TertibjasakonstruksiController::class, 'betertibjakonusahacreate'])->middleware('auth')->name('betertibjakonusahacreate');
+Route::post('/betertibjakonusaha/createnew', [TertibjasakonstruksiController::class, 'betertibjakonusahacreatenew'])->middleware('auth')->name('betertibjakonusahacreatenew');
+
+Route::get('/betertibjakonusaha/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahaupdate'])->middleware('auth')->name('betertibjakonusahaupdate');
+Route::post('/betertibjakonusaha/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahaupdatecreate'])->middleware('auth')->name('betertibjakonusahaupdatecreate');
+
+// SURAT DUKUNG TERTIB JAKON USAHA
+Route::get('/betertibjakonusahasurat1/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1'])->middleware('auth')->name('betertibjakonusahasurat1');
+
+// PEMBUATAN SURAT 1
+Route::get('/betertibjakonusahasurat1/create/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1'])->middleware('auth')->name('betertibjakonusahasurat1');
+Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1create'])->middleware('auth')->name('betertibjakonusahasurat1create');
+
+
+
+
+// MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
+// PEKERJAANINI
+// ROUTE UNTUK DAFTAR AKUN
+
+Route::get('/allakun', [LoginController::class, 'allakun'])->middleware('auth');
+Route::delete('/allsemuaakun/delete/{name}', [LoginController::class, 'allsemuaakun'])->middleware('auth');
+Route::get('/akuncreate', [LoginController::class, 'akuncreate'])->middleware('auth');
+
+Route::post('/akuncreatenew/createnew', [LoginController::class, 'akuncreatenew'])->middleware('auth')->name('akuncreatenew');
 
 
 
@@ -978,11 +1183,19 @@ Route::post('/settingstatusadmin/{id}', [SettingmenuController::class, 'deletest
 ->middleware('auth')
 ->name('delete.statusadmin');
 
+Route::get('/daftar', [LoginController::class, 'register'])->name('login')->middleware('guest');
+Route::post('/daftarnew', [LoginController::class, 'registernew'])->name('login');
+Route::get('/forgotpassword', [LoginController::class, 'forgotpassword'])->name('login')->middleware('guest');
 
-Route::get('/masuk', [LoginController::class, 'loginmasuk'])->name('login')->middleware('guest');
+Route::get('/login', [LoginController::class, 'loginmasuk'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+
+
+
+// CONTROLLER DOWNLOAD
+Route::get('/asosiasi/export', [DownloadExcelController::class, 'exportasosiasi'])->name('asosiasi.export');
 
 require __DIR__.'/auth.php';
 

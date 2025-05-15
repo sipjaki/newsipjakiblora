@@ -71,7 +71,7 @@ class paketpekerjaanmasjaki extends Model
             return $this->belongsTo(User::class, 'user_id');
         }
 
-            public function bulan()
+            public function bulanrekap()
             {
                 return $this->belongsTo(bulanrekap::class, 'bulanrekap_id');
             }

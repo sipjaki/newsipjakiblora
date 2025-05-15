@@ -16,6 +16,71 @@
     margin: 5px 0; /* Memberikan jarak antar elemen */
 }
 
+/* Gaya untuk tabel */
+    .custom-table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
+    }
+
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
+    }
+
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
+        vertical-align: middle;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
+    }
+
+    .custom-fl-table th {
+        background-color:#4ADE80;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .custom-fl-table td {
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.5;
+    }
+
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #f7f7f7;
+    }
+
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f7f7f7;
+    }
+
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
 .table-identitas {
     width: 100%;
     border-collapse: collapse;
@@ -154,15 +219,19 @@ h5 {
                     </div>
 
                     <br>
-                    <h4 style="font-weight:bold;">IDENTITAS TENAGA KERJA KONSTRUKSI </h4>
-                    <table class="table-identitas">
+                    <h4 style="font-weight:bold;">
+                        <i class="bi bi-person-fill me-2"></i> IDENTITAS TENAGA KERJA KONSTRUKSI
+                    </h4>
+                    <div style="overflow-x: auto;">
+                        <table class="custom-fl-table">
                         {{-- @foreach ($dataidentitasopd as $item) --}}
                         <tr>
-                            <td class="label">1</td>
-                            <td class="label">Nama Lengkap</td>
-                            <td class="colon">:</td>
-                            <td>{{$data->nama}}</td>
+                            <td class="label" style="width: 5%;">1</td>
+                            <td class="label" style="width: 20%;">Nama Lengkap</td>
+                            <td class="colon" style="width: 5%;">:</td>
+                            <td style="width: 70%;">{{$data->nama}}</td>
                         </tr>
+
                         <tr>
                             <td class="label">2</td>
                             <td class="label">Alamat </td>
@@ -263,6 +332,7 @@ h5 {
 
                     </table>
 
+                </div>
                 </div>
 
             </div>

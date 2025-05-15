@@ -15,6 +15,7 @@ return new class extends Migration
                 $table->id();
                 $table->foreignId('bujkkonsultansub_id')->nullable()->index();
                 $table->foreignId('asosiasimasjaki_id')->nullable()->index();
+                $table->foreignId('user_id')->nullable()->index();
                 $table->string('namalengkap', 255)->nullable();
                 $table->text('alamat')->nullable();
                 $table->string('no_telepon', 20)->nullable();
@@ -25,6 +26,7 @@ return new class extends Migration
                 $table->date('tanggal')->nullable();
                 $table->string('nama_notaris', 255)->nullable();
                 $table->string('no_pengesahan', 100)->nullable();
+                $table->string('uploadberkas', 100)->nullable();
                 $table->softDeletes();
                 $table->timestamps();
 

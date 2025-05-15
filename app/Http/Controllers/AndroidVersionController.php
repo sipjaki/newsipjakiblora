@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Models\agendapelatihan;
 use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
+use App\Models\asosiasimasjaki;
 use App\Models\strukturdinas;
 use App\Models\pesertapelatihan;
 use App\Models\materipelatihanskk;
@@ -35,8 +37,12 @@ use App\Models\bujkkontraktor;
 use App\Models\bujkkontraktorsub;
 use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
+use App\Models\contohsurat;
 use App\Models\informasisurattertibpenyelenggaraan;
+use App\Models\jabatankerja;
+use App\Models\jenjangpendidikan;
 use App\Models\materipelatihan;
+use App\Models\namasekolah;
 use App\Models\skktenagakerjablora;
 use App\Models\paketpekerjaanmasjaki;
 use App\Models\surattertibjakonpemanfaatan1;
@@ -50,6 +56,7 @@ use App\Models\surattertibjakonpenyelenggaraan3;
 use App\Models\surattertibjakonpenyelenggaraan4;
 use App\Models\surattertibjakonpenyelenggaraan5;
 use App\Models\surattertibjakonpenyelenggaraan6;
+use App\Models\tahunpilihan;
 use App\Models\tertibjakonpemanfaatan;
 use App\Models\tertibjakonpenyelenggaraan;
 use App\Models\User;
@@ -151,6 +158,95 @@ class AndroidVersionController extends Controller
         }
 
 
+// DATA ASOSIASI JASA KONSTRUKSI
+public function menuasosiasimasjaki(Request $request)
+{
+    $user = auth()->user();
+    $search = $request->input('search');
+    $perPage = 10;
+
+    // Query asosiasi, tambahkan pengecualian untuk id = 99
+    $queryAsosiasi = asosiasimasjaki::withCount(['bujkkontraktor', 'bujkkonsultan'])
+                        ->where('id', '!=', 99); // <--- tambahkan ini
+
+    if ($search) {
+        $queryAsosiasi->where('namaasosiasi', 'like', '%' . $search . '%');
+    }
+
+    $dataAsosiasi = $queryAsosiasi->get()
+        ->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'namaasosiasi' => $item->namaasosiasi,
+                'jumlah_penggunaan1' => $item->bujkkontraktor_count,
+                'jumlah_penggunaan2' => $item->bujkkonsultan_count,
+            ];
+        });
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.C_datajakon.03_asosiasimasjaki.partials.table', compact('dataAsosiasi'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.C_datajakon.03_asosiasimasjaki.index', [
+        'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
+        'user' => $user,
+        'data' => $dataAsosiasi,
+        'search' => $search,
+    ]);
+}
+
+
+public function reasasosiasimasjakikontraktor($id)
+{
+    // Cari asosiasi berdasarkan namaasosiasi
+    $asosiasi = asosiasimasjaki::where('id', $id)->first();
+
+    // Jika asosiasi tidak ditemukan, tampilkan 404
+    if (!$asosiasi) {
+        return abort(404, 'Asosiasi tidak ditemukan');
+    }
+
+    $user = Auth::user();
+        // Ambil semua data dari tabel bujkkontraktor berdasarkan asosiasi_id
+        $databujkkontraktor = bujkkontraktor::where('asosiasimasjaki_id', $asosiasi->id)->get(['id', 'namalengkap', 'no_telepon']);
+        // $databujkkontraktorpaginate = bu::where('asosiasimasjaki_id', $asosiasi->id)->paginate(15);
+
+
+        // Return ke view dengan format yang diminta
+        return view('frontend.00_android.C_datajakon.03_asosiasimasjaki.konstruksishow', [
+            'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
+            'user' => $user,
+            'data' => $databujkkontraktor,
+       ]);
+    }
+
+    public function reasasosiasimasjakikonsultan($id)
+{
+    // Cari asosiasi berdasarkan namaasosiasi
+    $asosiasi = asosiasimasjaki::where('id', $id)->first();
+
+    // Jika asosiasi tidak ditemukan, tampilkan 404
+    if (!$asosiasi) {
+        return abort(404, 'Asosiasi tidak ditemukan');
+    }
+
+    $user = Auth::user();
+        // Ambil semua data dari tabel bujkkontraktor berdasarkan asosiasi_id
+        $databujkkontraktor = bujkkonsultan::where('asosiasimasjaki_id', $asosiasi->id)->get(['id', 'namalengkap', 'no_telepon']);
+        // $databujkkontraktorpaginate = bu::where('asosiasimasjaki_id', $asosiasi->id)->paginate(15);
+
+
+        // Return ke view dengan format yang diminta
+        return view('frontend.00_android.C_datajakon.03_asosiasimasjaki.konsultanshow', [
+            'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
+            'user' => $user,
+            'data' => $databujkkontraktor,
+       ]);
+    }
+
+
         public function menubujkkontraktor(Request $request)
         {
             $perPage = $request->input('perPage', 10);
@@ -161,7 +257,8 @@ class AndroidVersionController extends Controller
             if ($search) {
                 $query->where('namalengkap', 'LIKE', "%{$search}%")
                       ->orWhere('alamat', 'LIKE', "%{$search}%")
-                      ->orWhere('no_telepon', 'LIKE', "%{$search}%");
+                    //   ->orWhere('no_telepon', 'LIKE', "%{$search}%")
+                      ;
             }
 
             $data = $query->paginate($perPage);
@@ -219,7 +316,8 @@ class AndroidVersionController extends Controller
             if ($search) {
                 $query->where('namalengkap', 'LIKE', "%{$search}%")
                       ->orWhere('alamat', 'LIKE', "%{$search}%")
-                      ->orWhere('no_telepon', 'LIKE', "%{$search}%");
+                    //   ->orWhere('no_telepon', 'LIKE', "%{$search}%")
+                      ;
             }
 
             $data = $query->paginate($perPage);
@@ -614,7 +712,7 @@ class AndroidVersionController extends Controller
 
 
         return view('frontend.00_android.D_pembinaan.02_pesertapelatihan.index', [
-            'title' => 'Agenda Pelatihan Jasa Konstruksi Kab Blora',
+            'title' => 'Daftar Peserta Pelatihan Jasa Konstruksi Kab Blora',
             'data' => $data,
             'perPage' => $perPage,
             'search' => $search,
@@ -631,7 +729,8 @@ class AndroidVersionController extends Controller
         $perPage = $request->input('perPage', 50);
         $search = $request->input('search');
 
-        $query = pesertapelatihan::query();
+        $query = pesertapelatihan::query()->orderByDesc('created_at');
+        $datapesertapelatihan = $query->paginate($perPage);
 
         if ($search) {
             $query->where('jeniskelamin', 'LIKE', "%{$search}%")
@@ -641,9 +740,7 @@ class AndroidVersionController extends Controller
                   });
 
         }
-
-        $datapesertapelatihan = $query->paginate($perPage);
-
+        $datapesertapelatihan = $query->orderByDesc('created_at')->paginate($perPage);
         if ($request->ajax()) {
             return response()->json([
                 'html' => view('frontend.00_android.D_pembinaan.02_pesertapelatihan.partials.table', compact('data'))->render()
@@ -658,11 +755,10 @@ class AndroidVersionController extends Controller
         }
 
         $user = Auth::user();
-
-            $datapesertapelatihan = pesertapelatihan::where('agendapelatihan_id', $agendapelatihan->id)
-                        ->select(['id', 'user_id', 'jeniskelamin', 'instansi', 'jenjangpendidikan_id', 'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi' ])
-                        ->paginate(25);
-
+        $datapesertapelatihan = pesertapelatihan::where('agendapelatihan_id', $agendapelatihan->id)
+        ->select(['id', 'namalengkap', 'jeniskelamin', 'instansi', 'jenjangpendidikan_id', 'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi'])
+        ->orderByDesc('created_at')
+        ->paginate(25);
         $dataagendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
         // $datauser = user::all();
 
@@ -671,7 +767,7 @@ class AndroidVersionController extends Controller
 
 
         return view('frontend.00_android.D_pembinaan.02_pesertapelatihan.show', [
-            'title' => 'Daftar Peserta Agenda ',
+            'title' => 'Daftar Peserta Agenda Pelatihan',
             'data' => $dataagendapelatihan,
             'datapeserta' => $datapesertapelatihan,
             'perPage' => $perPage,
@@ -1131,4 +1227,189 @@ public function menureskecelakaankerja(Request $request)
         ]);
         }
 
+// MENU DAFTAR PELATIHAN VERSI ANDROID
+public function resdaftarpelatihanpeserta($id)
+{
+    $dataagendapelatihan = agendapelatihan::findOrFail($id); // Cari 1 data sesuai ID
+    $datajenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
+    $user = Auth::user();
+
+    return view('frontend.00_android.D_pembinaan.01_agendapelatihan.daftarpeserta', [
+        'agendapelatihannamakegiatan' => $dataagendapelatihan->namakegiatan, // Ini dikirim ke form
+        'agendapelatihan_id' => $dataagendapelatihan->id, // Ini dikirim ke form
+        'user' => $user,
+        'jenjangpendidikan' => $datajenjangpendidikan,
+        'title' => 'Form Daftar Peserta Pelatihan'
+    ]);
 }
+
+
+public function resdaftarpelatihanpesertanew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'namalengkap' => 'required|string|max:255',
+        'nik' => 'required|regex:/^\d{16}$/|size:16',
+        'tanggallahir' => 'required|date',
+        'notelepon' => 'required|string|max:15',
+        'jenjangpendidikan_id' => 'required|string',
+        'jeniskelamin' => 'required|string',
+        'instansi' => 'required|string|max:255',
+        'sertifikat' => 'nullable|mimes:pdf|max:10240',
+    ], [
+        // Pesan kesalahan custom
+            'namalengkap.required' => 'Nama Lengkap harus diisi.',
+            'nik.required' => 'NIK harus terdiri dari 16 digit.',
+            'nik.regex' => 'NIK harus terdiri dari 16 digit angka.',
+            'nik.size' => 'NIK harus terdiri dari tepat 16 digit.',
+            'tanggallahir.required' => 'Tanggal Lahir harus diisi.',
+            'notelepon.required' => 'Nomor Telepon harus diisi.',
+            'jenjangpendidikan_id.required' => 'Jenjang Pendidikan harus dipilih.',
+            'jeniskelamin.required' => 'Jenis Kelamin harus dipilih.',
+            'instansi.required' => 'Instansi/Universitas/Lembaga/Perseorangan harus diisi.',
+            'sertifikat.mimes' => 'File sertifikat harus dalam format PDF.',
+            'sertifikat.max' => 'File sertifikat maksimal 10 MB.',
+    ]);
+
+    // Menyimpan file sertifikat jika ada
+    if ($request->hasFile('sertifikat')) {
+        $file = $request->file('sertifikat');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('04_pembinaan/03_sertifikatpelatihan');
+
+        // Membuat folder tujuan jika belum ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        // Memindahkan file ke folder tujuan
+        $file->move($tujuanPath, $namaFile);
+
+        // Menyimpan path file sertifikat
+        $sertifikatPath = '04_pembinaan/03_sertifikatpelatihan/' . $namaFile;
+    }
+
+    // Menyimpan data ke tabel PesertaPelatihan
+    pesertapelatihan::create([
+        'agendapelatihan_id' => $request->agendapelatihan_id,
+        'namalengkap' => $validated['namalengkap'],
+        'nik' => $validated['nik'],
+        'tanggallahir' => $validated['tanggallahir'],
+        'notelepon' => $validated['notelepon'],
+        'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
+        'jeniskelamin' => $validated['jeniskelamin'],
+        'instansi' => $validated['instansi'],
+        'sertifikat' => $sertifikatPath ?? null,
+    ]);
+
+    // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
+    session()->flash('daftarpelatihanandroid', 'Formulir Berhasil di Kirim ! Silahkan untuk menunggu verifikasi DPUPR.');
+
+    // Redirect ke route yang sesuai setelah menyimpan data
+    return redirect('/respesertapelatihan');
+}
+
+
+public function resdaftarpelatihanpesertaskk($id)
+{
+    $dataagendaskk = agendaskk::findOrFail($id);
+    $datajenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
+    $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
+    $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
+    $datatahunbimtek = tahunpilihan::orderBy('tahunpilihan', 'asc')->get();
+    $datacontohsurat = contohsurat::orderBy('berkas', 'asc')->get();
+    $user = Auth::user();
+
+    return view('frontend.00_android.D_pembinaan.03_agendatkk.daftarpeserta', [
+        'agendaskknamakegiatan' => $dataagendaskk->namakegiatan,
+        'agendaskk_id' => $dataagendaskk->id,
+        'namalengkap' => $user->name,
+        'user_id' => $user->id,
+        'user' => $user,
+        'jenjangpendidikan' => $datajenjangpendidikan,
+        'jabatankerja' => $datajabatankerja,
+        'sekolah' => $datasekolah,
+        'tahunbimtek' => $datatahunbimtek,
+        'datacontohsurat' => $datacontohsurat,
+        'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi'
+    ]);
+}
+
+
+
+// DOWNLOADN SERTIFIKAT
+
+   public function sertifikatindex()
+    {
+        $user = Auth::user();
+
+        return view('frontend.00_android.Z_menudepan.03_sertifikat.index', [
+        'title' => 'Download Sertifikat',
+        'user' => $user,
+    ]);
+    }
+
+   public function sertifikatpelatihan()
+    {
+        $user = Auth::user();
+        $datapesertapelatihan = pesertapelatihan::all();
+
+        return view('frontend.00_android.Z_menudepan.03_sertifikat.sertifikatpelatihan', [
+        'title' => 'Download Sertifikat Pelatihan',
+        'data' => $datapesertapelatihan,
+        'user' => $user,
+    ]);
+    }
+
+
+    public function carisertifikat(Request $request)
+    {
+        $nik = $request->nik;
+
+        $data = pesertapelatihan::with('agendapelatihan')
+            ->where('nik', $nik)
+            ->get();
+
+        if ($data->count() > 0) {
+            return response()->json([
+                'success' => true,
+                'data' => $data
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
+
+//     public function carisertifikat(Request $request)
+// {
+//     $nik = $request->input('nik');
+
+//     // Debug: Cek apakah NIK diterima
+//     \Log::info('NIK yang diterima: ' . $nik);
+
+//     $data = pesertapelatihan::with('agendapelatihan')
+//             ->where('nik', $nik)
+//             ->get();
+
+//     // Debug: Cek hasil query
+//     \Log::info('Jumlah data ditemukan: ' . $data->count());
+
+//     if ($data->isEmpty()) {
+//         return response()->json([
+//             'success' => false,
+//             'message' => 'Data tidak ditemukan untuk NIK ini'
+//         ]);
+//     }
+
+//     return response()->json([
+//         'success' => true,
+//         'data' => $data,
+//         'message' => 'Data ditemukan'
+//     ]);
+// }
+}
+
+

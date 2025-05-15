@@ -222,7 +222,7 @@ table.zebra-table {
                     </div>
 
                     <!-- No Telepon -->
-                    <div class="flex flex-col gap-2 w-full">
+                    {{-- <div class="flex flex-col gap-2 w-full">
                         <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
                             <!-- Icon Phone -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
@@ -235,7 +235,7 @@ table.zebra-table {
                         <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
                             placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
                             style="margin-top: -15px; font-family: Poppins;" value="{{$data->no_telepon}}" readonly>
-                    </div>
+                    </div> --}}
 
                     <!-- Email -->
                     <div class="flex flex-col gap-2 w-full">
@@ -254,7 +254,7 @@ table.zebra-table {
                     </div>
 
                     <!-- Nomor Induk Berusaha -->
-                    <div class="flex flex-col gap-2 w-full">
+                    {{-- <div class="flex flex-col gap-2 w-full">
                         <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
                             <!-- Icon Document Number -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
@@ -267,7 +267,7 @@ table.zebra-table {
                         <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
                             placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
                             style="margin-top: -15px; font-family: Poppins;" value="{{$data->nomorindukberusaha}}" readonly>
-                    </div>
+                    </div> --}}
 
                 </div>
 

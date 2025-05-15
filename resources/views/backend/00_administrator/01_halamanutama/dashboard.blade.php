@@ -1,3 +1,197 @@
+<style>
+    /* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* Timeline Container */
+.timeline-container {
+    padding: 20px 0;
+    position: relative;
+    overflow-x: auto;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    min-width: 800px;
+    position: relative;
+}
+
+/* Checkpoint Styles */
+.checkpoint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Dot Indicator */
+.dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.checkpoint.completed .dot {
+    background-color: #00AA5B; /* Hijau Tokopedia */
+    box-shadow: 0 0 0 4px rgba(0, 170, 91, 0.2);
+}
+
+.checkpoint.current .dot {
+    background-color: #00AA5B;
+    box-shadow: 0 0 0 4px rgba(0, 170, 91, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+.checkpoint.pending .dot {
+    background-color: #E0E0E0;
+    color: #999;
+}
+
+/* Connector Line */
+.connector {
+    position: absolute;
+    height: 3px;
+    top: 11px;
+    left: 60%;
+    right: -40%;
+    background-color: #E0E0E0;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.connector.active {
+    background-color: #00AA5B;
+}
+
+/* Checkpoint Content */
+.checkpoint-content {
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 5px;
+}
+
+.time {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+    min-height: 18px;
+}
+
+.message {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.checkpoint.completed .message,
+.checkpoint.current .message {
+    color: #00AA5B;
+    font-weight: 600;
+}
+
+/* Control Panel */
+.control-panel {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+button {
+    background-color: #00AA5B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #008a4a;
+}
+
+.status-info {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 170, 91, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 170, 91, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 170, 91, 0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        min-width: auto;
+    }
+
+    .checkpoint {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .dot {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+
+    .connector {
+        display: none;
+    }
+
+    .checkpoint-content {
+        text-align: left;
+        margin-top: 0;
+    }
+}
+</style>
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -13,16 +207,17 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-
-              <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
-
-
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
             </div>
             <!--end::Row-->
           </div>
@@ -46,6 +241,157 @@
               <!-- Info boxes -->
 
 {{-- atas  --}}
+
+@can('pekerja')
+
+<div class="row">
+    <!-- Baris 1: 3 kolom -->
+    <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="info-box"
+             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
+            <!-- Icon dan Angka -->
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
+{{$jumlahKegiatan}} <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                </h4>
+            </span>
+            <!-- Konten -->
+            <div class="info-box-content" style="padding: 10px 20px;">
+                <span class="info-box-icon" style="margin-right: 10px;">
+                    <i class="bi bi-tools" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
+                </span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Kegiatan Konstruksi</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="info-box"
+             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
+            <!-- Icon dan Angka -->
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
+                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                </h4>
+            </span>
+            <!-- Konten -->
+            <div class="info-box-content" style="padding: 10px 20px;">
+                <span class="info-box-icon" style="margin-right: 10px;">
+                    <i class="bi bi-arrow-repeat" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
+                </span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Permohonan Di Kembalikan</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="info-box"
+             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
+            <!-- Icon dan Angka -->
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
+                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                </h4>
+            </span>
+            <!-- Konten -->
+            <div class="info-box-content" style="padding: 10px 20px;">
+                <span class="info-box-icon" style="margin-right: 10px;">
+                    <i class="bi bi-check-circle" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
+                </span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Verifikasi DPUPR</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Baris 2: 2 kolom -->
+    <div class="col-md-6 col-sm-6 col-12 mb-4">
+        <div class="info-box"
+             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
+            <!-- Icon dan Angka -->
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
+                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                </h4>
+            </span>
+            <!-- Konten -->
+            <div class="info-box-content" style="padding: 10px 20px;">
+                <span class="info-box-icon" style="margin-right: 10px;">
+                    <i class="bi bi-check2-circle" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
+                </span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">LOLOS LSP</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-12 mb-4">
+        <div class="info-box"
+             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
+            <!-- Icon dan Angka -->
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
+                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                </h4>
+            </span>
+            <!-- Konten -->
+            <div class="info-box-content" style="padding: 10px 20px;">
+                <span class="info-box-icon" style="margin-right: 10px;">
+                    <i class="bi bi-file-earmark-check" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
+                </span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Sertifikat Terbit</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Animasi Zoom Out */
+    .animated-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        margin-bottom: 10px;
+        text-decoration: none;
+        background-color: #bdc3c7; /* Background abu-abu */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Efek Zoom Out saat hover */
+    .info-box:hover .animated-number {
+        transform: scale(1.1); /* Zoom out effect */
+    }
+
+    /* Memberikan efek transisi latar belakang */
+    .info-box:hover {
+        background: linear-gradient(45deg, #27ae60, #f39c12);
+        color: black;
+    }
+
+    .info-box:hover .info-box-text,
+    .info-box:hover .animated-number {
+        color: black;
+    }
+
+    .info-box-icon h4 {
+        margin-bottom: 0; /* Menghapus margin bawah dari h4 */
+        margin-right: 25px; /* Menghapus margin bawah dari h4 */
+        margin-left: 25px; /* Menghapus margin bawah dari h4 */
+    }
+
+    /* Styling tambahan untuk konten info-box */
+    .info-box-content {
+        padding: 10px;
+    }
+</style>
+
+@endcan
+
+@can('super_admin')
 
 {{-- -------------------------------------------------------- --}}
               <div class="row">
@@ -779,9 +1125,13 @@
               <!--end::Row-->
             </div>
             <!--end::Container-->
+            @endcan
           </div>
+
+
           <!--end::App Content-->
-      </main>
+            </section>
+        </main>
       <!--end::App Main-->
 
 

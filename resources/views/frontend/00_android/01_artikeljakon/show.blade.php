@@ -21,7 +21,18 @@
             </nav>
             <div class="w-full h-full absolute bg-white overflow-hidden">
                 <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
-                <img src="{{asset('storage/' . $data->foto1)}}" class="w-full h-full object-cover" alt="cover">
+                <div style="margin-top: 10px;">
+                    @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
+                        <!-- Menampilkan gambar dari storage -->
+                        <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;" loading="lazy">
+                    @elseif($data->foto1)
+                        <!-- Menampilkan gambar dari path luar storage -->
+                        <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;" loading="lazy">
+                    @else
+                        <!-- Placeholder jika tidak ada data -->
+                        <p>Data belum diupdate</p>
+                    @endif
+                </div>
             </div>
         </div>
         <div class="flex flex-col z-30">
@@ -34,6 +45,19 @@
                         <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
                             {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
                             <img src="{{asset('storage/' . $data->user->avatar)}}" class="w-full h-full object-cover" alt="photo">
+
+                            <div style="margin-top: 10px;">
+                                @if($data->user->avatar && file_exists(public_path('storage/' . $data->user->avatar)))
+                                    <!-- Menampilkan gambar dari storage -->
+                                    <img src="{{ asset('storage/' . $data->user->avatar) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                @elseif($data->user->avatar)
+                                    <!-- Menampilkan gambar dari path luar storage -->
+                                    <img src="{{ asset($data->user->avatar) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                @else
+                                    <!-- Placeholder jika tidak ada data -->
+                                    <p>Data belum diupdate</p>
+                                @endif
+                            </div>
                         </div>
                         <div class="flex gap-1 items-center">
                             <p class="font-semibold text-sm">{{$data->user->name}}</p>
@@ -50,39 +74,101 @@
                 <div class="flex flex-col gap-[10px] p-5 rounded-[20px] bg-[#F6ECE2]">
                     {{-- <h2 class="font-semibold text-sm">Mereka Senang dan Bahagia</h2> --}}
                     <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
-                        <img src="{{asset('storage/' . $data->foto2)}}" class="w-full h-full object-cover" alt="thumbnail">
+                        <div style="margin-top: 10px;">
+                            @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
+                                <!-- Menampilkan gambar dari storage -->
+                                <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;" loading="lazy">
+                            @elseif($data->foto2)
+                                <!-- Menampilkan gambar dari path luar storage -->
+                                <img src="{{ asset($data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;" loading="lazy">
+                            @else
+                                <!-- Placeholder jika tidak ada data -->
+                                <p>Data belum diupdate</p>
+                            @endif
+                        </div>
                     </div>
                     <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
-                        <img src="{{asset('storage/' . $data->foto3)}}" class="w-full h-full object-cover" alt="thumbnail">
+                        <div style="margin-top: 10px;">
+                            @if($data->foto3 && file_exists(public_path('storage/' . $data->foto3)))
+                                <!-- Menampilkan gambar dari storage -->
+                                <img src="{{ asset('storage/' . $data->foto3) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;" loading="lazy">
+                            @elseif($data->foto3)
+                                <!-- Menampilkan gambar dari path luar storage -->
+                                <img src="{{ asset($data->foto3) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;" loading="lazy">
+                            @else
+                                <!-- Placeholder jika tidak ada data -->
+                                <p>Data belum diupdate</p>
+                            @endif
+                        </div>
                     </div>
                     {{-- <p class="text-sm leading-[26px]">{!!$data->keterangan!!}</p> --}}
                 </div>
+
+
                 <div class="flex flex-col gap-[2px]">
                     <h2 class="font-semibold text-sm">Keterangan : </h2>
                     <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->keterangan!!}</p>
                     <br>
-                    <div class="ml-auto">
-                        <button id="sertifikat-btn" class="badge"
-                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                            <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                        </button>
-                    </div>
                 </div>
 
+                <div class="flex flex-col gap-[2px] mt-2">
+                    @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
+                        <!-- Tombol aktif dengan file dari storage -->
+                        <div class="ml-auto">
+                            <button id="sertifikat-btn" class="badge"
+                                style="background-color: navy; color: white; border: none; transition: 0.3s; padding:20px 20px; font-size: 13px; border-radius:5px;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                <i class="fas fa-download" style="margin-right:5px;"></i><span style="font-family: 'Poppins', sans-serif;">Download .pdf</span>
+                            </button>
+                        </div>
 
-        <script>
-            document.getElementById('sertifikat-btn').addEventListener('click', function() {
-                const fileUrl = "{{ asset('storage/' . $data->berkas) }}"; // URL file yang ingin diunduh
-                const a = document.createElement('a');
-                a.href = fileUrl;
-                a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            });
-            </script>
+                        <script>
+                            document.getElementById('sertifikat-btn').addEventListener('click', function () {
+                                const fileUrl = "{{ asset('storage/' . $data->berkas) }}";
+                                const a = document.createElement('a');
+                                a.href = fileUrl;
+                                a.download = '';
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                            });
+                        </script>
+
+                    @elseif($data->berkas)
+                        <!-- Tombol aktif dengan file dari path publik -->
+                        <div class="ml-auto">
+                            <button id="sertifikat-btn" class="badge"
+                                style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                            </button>
+                        </div>
+
+                        <script>
+                            document.getElementById('sertifikat-btn').addEventListener('click', function () {
+                                const fileUrl = "{{ asset($data->berkas) }}";
+                                const a = document.createElement('a');
+                                a.href = fileUrl;
+                                a.download = '';
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                            });
+                        </script>
+
+                    @else
+                        <!-- Tombol disable jika tidak ada file -->
+                        <div class="ml-auto">
+                            <button class="badge" disabled
+                                style="background-color: gray; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; cursor: not-allowed;">
+                                <i class="fas fa-download" style="margin-right:5px;"></i> File belum tersedia
+                            </button>
+                        </div>
+                    @endif
+                </div>
+
 
             </div>
         </div>

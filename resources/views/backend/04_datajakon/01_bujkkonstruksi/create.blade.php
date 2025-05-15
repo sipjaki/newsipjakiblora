@@ -13,6 +13,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -20,8 +22,8 @@
             <!--begin::Row-->
             <div class="row">
 
-              <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
-
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
             </div>
             <!--end::Row-->
           </div>
@@ -29,16 +31,6 @@
         </div>
 
         <br>
-        <!-- Menampilkan pesan sukses -->
-
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
-
-            <!-- Menyertakan FontAwesome untuk ikon -->
 
         <div class="container-fluid">
             <!--begin::Row-->
@@ -46,39 +38,23 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        <div style="
-                            margin-bottom: 10px;
-                            font-weight: 900;
-                            font-size: 16px;
-                            text-align: center;
-                            background: linear-gradient(135deg, #D5006D, #4CAF50); /* Fuchsia ke Hijau */
-                            color: white;
-                            padding: 10px 25px;
-                            border-radius: 10px;
-                            display: inline-block;
-                            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                            width: 100%;
-                        ">
-                            📌 Halaman Tambah Data : {{$title}}
-                        </div>
+                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
                     </div>
 
                            {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/beartikeljakon">
+                <a href="/bebujkkonstruksi">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
                     style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                     <!-- Ikon Kembali -->
-                    <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16" style="margin-right: 8px;">
+                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+               </svg>
                     Kembali
                 </button>
             </a>
@@ -97,19 +73,30 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Asosiasi Masjaki -->
+                                     <!-- User ID (Hidden) -->
+                                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+
+                                                <!-- Tampilkan Nama Admin -->
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="user_id_display">
+                                                        <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Administrator
+                                                    </label>
+                                                    <input type="text" id="user_id_display" class="form-control" value="{{ $user->name }}" disabled>
+                                                </div>
+
                                         <div class="mb-3">
-                                            <label class="form-label" for="daftarasosiasi_id">
+                                            <label class="form-label" for="asosiasimasjaki_id">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Asosiasi Jasa Konstruksi
                                             </label>
-                                            <select id="daftarasosiasi_id" name="daftarasosiasi_id" class="form-control @error('daftarasosiasi_id') is-invalid @enderror">
+                                            <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
                                                 <option value="" disabled selected>Pilih Asosiasi</option>
                                                 @foreach($asosiasimasjaki as $asosiasi)
-                                                    <option value="{{ $asosiasi->id }}" {{ old('daftarasosiasi_id') == $asosiasi->id ? 'selected' : '' }}>
+                                                    <option value="{{ $asosiasi->id }}" {{ old('asosiasimasjaki_id') == $asosiasi->id ? 'selected' : '' }}>
                                                         {{ $asosiasi->namaasosiasi }}
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            @error('daftarasosiasi_id')
+                                            @error('asosiasimasjaki_id')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -117,7 +104,7 @@
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
                                             <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Badan Usaha
                                             </label>
                                             <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}" />
                                             @error('namalengkap')
@@ -141,7 +128,7 @@
                                             <label class="form-label" for="no_telepon">
                                                 <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> Nomor Telepon
                                             </label>
-                                            <input type="text" id="no_telepon" name="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon') }}" />
+                                            <input type="number" id="no_telepon" name="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon') }}" />
                                             @error('no_telepon')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -163,7 +150,7 @@
                                             <label class="form-label" for="nomorindukberusaha">
                                                 <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> Nomor Induk Berusaha
                                             </label>
-                                            <input type="text" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control @error('nomorindukberusaha') is-invalid @enderror" value="{{ old('nomorindukberusaha') }}" />
+                                            <input type="number" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control @error('nomorindukberusaha') is-invalid @enderror" value="{{ old('nomorindukberusaha') }}" />
                                             @error('nomorindukberusaha')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -229,6 +216,92 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label" for="uploadberkas">
+                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Upload Berkas
+                                            </label>
+                                            <input type="file" id="uploadberkas" name="uploadberkas"
+                                                class="form-control @error('uploadberkas') is-invalid @enderror"
+                                                onchange="previewFile('uploadberkas', 'previewFoto')" />
+
+                                            <div class="mt-2">
+                                                <!-- Preview Image or PDF -->
+                                                <div id="previewContainer">
+                                                    <img id="previewFoto"
+                                                        src="{{ old('uploadberkas') ? asset('03_datajakon/01_sertifikasi/' . old('uploadberkas')) : '' }}"
+                                                        style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
+
+                                                    <canvas id="pdfPreview" style="display: none; max-width: 100%; max-height: 200px; margin-top: 10px;"></canvas>
+                                                </div>
+                                            </div>
+
+                                            @error('uploadberkas')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+                                        <script>
+                                            function previewFile(inputId, previewId) {
+                                                var file = document.getElementById(inputId).files[0];
+                                                var previewContainer = document.getElementById('previewContainer');
+                                                var imgPreview = document.getElementById(previewId);
+                                                var pdfPreview = document.getElementById('pdfPreview');
+
+                                                // Reset previous previews
+                                                imgPreview.style.display = 'none';
+                                                pdfPreview.style.display = 'none';
+
+                                                if (file) {
+                                                    var reader = new FileReader();
+
+                                                    // Check if the file is a PDF
+                                                    if (file.type === 'application/pdf') {
+                                                        // Display PDF preview
+                                                        reader.onload = function(e) {
+                                                            var pdfData = e.target.result;
+                                                            pdfjsLib.getDocument({data: pdfData}).promise.then(function(pdf) {
+                                                                pdf.getPage(1).then(function(page) {
+                                                                    var canvas = document.getElementById('pdfPreview');
+                                                                    var context = canvas.getContext('2d');
+
+                                                                    // Ukuran A4 dalam mm
+                                                                    var a4Width = 210;  // A4 width in mm
+                                                                    var a4Height = 297; // A4 height in mm
+
+                                                                    // Convert A4 size to pixels (1mm = 3.7795275591 pixels)
+                                                                    var a4WidthPx = a4Width * 3.7795275591;
+                                                                    var a4HeightPx = a4Height * 3.7795275591;
+
+                                                                    // Calculate scale to fit PDF to A4 size in pixels
+                                                                    var scale = Math.min(a4WidthPx / page.getViewport({scale: 1}).width, a4HeightPx / page.getViewport({scale: 1}).height);
+
+                                                                    var viewport = page.getViewport({scale: scale});
+                                                                    canvas.height = viewport.height;
+                                                                    canvas.width = viewport.width;
+
+                                                                    // Render the page into the canvas context
+                                                                    page.render({canvasContext: context, viewport: viewport}).promise.then(function() {
+                                                                        pdfPreview.style.display = 'block';
+                                                                    });
+                                                                });
+                                                            });
+                                                        };
+                                                        reader.readAsArrayBuffer(file); // Read the PDF file
+                                                    } else {
+                                                        // Display image preview (if it's not a PDF)
+                                                        reader.onloadend = function() {
+                                                            imgPreview.src = reader.result;
+                                                            imgPreview.style.display = 'block';
+                                                        };
+                                                        reader.readAsDataURL(file); // Read the image file
+                                                    }
+                                                }
+                                            }
+                                        </script>
+
                                     </div>
                                     <!-- End Right Column -->
                                 </div>
@@ -236,17 +309,85 @@
                             </div>
                             <!-- end::Body -->
 
-                            <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-                                <button type="submit" style="background-color: #007bff; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
-                                    <i class="fa fa-pencil" style="margin-right: 8px;"></i> Create
+                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+                                <div class="flex justify-end">
+                                    <button type="button" onclick="openModal()"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                    onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
+                                    style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+
+                                    <!-- Ikon SVG Pensil -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                               </svg>
+                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
                                 </button>
+                                </div>
+                                <!-- Modal Konfirmasi -->
+                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+                                        Apakah Anda ingin menambahkan data?
+                                    </p>
+
+                                      <!-- Tombol -->
+                                      <div style="display: flex; justify-content: center; gap: 12px;">
+                                        <button id="confirmSubmitBtn"
+                                        onclick="submitForm()"
+                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <!-- Telegram SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
+                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
+                                    </svg>
+                                    Ya
+                                </button>
+
+                                <!-- Tombol Batal dengan ikon X (SVG) -->
+                                <button type="button"
+                                        onclick="closeModal()"
+                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                                    </svg>
+                                    Batal
+                                </button>
+
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <!-- Script -->
+                                <script>
+                                function openModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "flex";
+                                }
+
+                                function closeModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "none";
+                                }
+
+                                </script>
+
                             </div>
+
+
                         </form>
 
                                                      </div>
                         <!--end::Quick Example-->
-
                     </div>
+
+
+                    <br><br>
+
                     <!-- /.card -->
                     <!-- Button Section -->
 
@@ -261,10 +402,14 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+
+        </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
+
+

@@ -103,6 +103,9 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -110,7 +113,8 @@
             <!--begin::Row-->
             <div class="row">
 
-              <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
 
             </div>
             <!--end::Row-->
@@ -119,15 +123,6 @@
         </div>
 
         <br>
-        <!-- Menampilkan pesan sukses -->
-
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
-
             <!-- Menyertakan FontAwesome untuk ikon -->
 
         <div class="container-fluid">
@@ -136,8 +131,11 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
+
+                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+
                         <h2 class="card-title" style="color: black;">
-                            Data Details :
+                            Profil Paket Pekerjaan :
                             <button class="btn btn-success"
                                     style="background-color: #1d643b; border-color: #1d643b; font-weight: bold; padding: 10px 20px;
                                            border-radius: 5px; font-size: 16px; margin-right: 10px;"
@@ -148,117 +146,57 @@
                         </h2>
                         <button id="status-{{ $data->id }}" class="btn btn-sm"></button>
 
-                        <script>
+                        {{-- <script>
                             function updateStatus() {
-                                let now = new Date().getTime();
-                                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($data->bulanselesai)->format('Y-m-d H:i:s') }}").getTime();
-                                let statusButton = document.getElementById("status-{{ $data->id }}");
+                                const now = new Date().getTime();
+                                const tanggalSelesai = new Date("{{ \Carbon\Carbon::parse($data->bulanselesai)->format('Y-m-d H:i:s') }}").getTime();
+                                const statusButton = document.getElementById("status-{{ $data->id }}");
 
-                                // CSS yang digunakan pada tombol
-                                let buttonStyle = "font-weight: bold; padding: 10px 20px; border-radius: 5px; font-size: 16px; margin-right: 10px;";
+                                const buttonStyle = "font-weight: bold; padding: 10px 20px; border-radius: 5px; font-size: 16px; margin-right: 10px;";
 
-                                if (now > tanggalHabis) {
-                                    statusButton.innerText = "ON PROGRESS";
-                                    statusButton.setAttribute("style", buttonStyle + " background-color: blue; border-color: blue; color: white;"); // Set to red for "TIDAK BERLAKU"
-                                    statusButton.className = "btn btn-primary btn-sm"; // Update class for 'danger' status
+                                if (now < tanggalSelesai) {
+                                    // Masih ON PROGRESS
+                                    statusButton.innerHTML = `<i class="bi bi-hourglass-split" style="margin-right: 5px;"></i>ON PROGRESS`;
+                                    statusButton.setAttribute("style", buttonStyle + " background-color: navy; border-color: navy; color: white;");
+                                    statusButton.className = "btn btn-primary btn-sm";
 
-                                    // Hover effect: keep background white on hover
-                                    statusButton.onmouseover = function() {
+                                    statusButton.onmouseover = function () {
                                         statusButton.style.backgroundColor = '#ffffff';
-                                        statusButton.style.color = '#000000'; // Color becomes black when hovered
-                                        statusButton.style.borderColor = 'blue'; // Keep red border
+                                        statusButton.style.color = '#000000';
+                                        statusButton.style.borderColor = 'navy';
                                     };
-                                    statusButton.onmouseout = function() {
-                                        statusButton.style.backgroundColor = 'blue';
-                                        statusButton.style.color = 'white'; // Keep white text when mouse out
-                                        statusButton.style.borderColor = 'blue'; // Keep red border
+                                    statusButton.onmouseout = function () {
+                                        statusButton.style.backgroundColor = 'navy';
+                                        statusButton.style.color = 'white';
+                                        statusButton.style.borderColor = 'navy';
                                     };
                                 } else {
-                                    statusButton.innerText = "SELESAI";
+                                    // Sudah SELESAI
+                                    statusButton.innerHTML = `<i class="bi bi-check-circle-fill" style="margin-right: 5px;"></i>SELESAI`;
                                     statusButton.setAttribute("style", buttonStyle + " background-color: #1d643b; border-color: #1d643b; color: white;");
-                                    statusButton.className = "btn btn-success btn-sm"; // Update class for 'success' status
+                                    statusButton.className = "btn btn-success btn-sm";
 
-                                    // Hover effect: keep background white on hover
-                                    statusButton.onmouseover = function() {
+                                    statusButton.onmouseover = function () {
                                         statusButton.style.backgroundColor = '#ffffff';
-                                        statusButton.style.color = '#000000'; // Color becomes black when hovered
-                                        statusButton.style.borderColor = '#1d643b'; // Keep original border color
+                                        statusButton.style.color = '#000000';
+                                        statusButton.style.borderColor = '#1d643b';
                                     };
-                                    statusButton.onmouseout = function() {
+                                    statusButton.onmouseout = function () {
                                         statusButton.style.backgroundColor = '#1d643b';
-                                        statusButton.style.color = 'white'; // Keep white text when mouse out
-                                        statusButton.style.borderColor = '#1d643b'; // Keep original border color
+                                        statusButton.style.color = 'white';
+                                        statusButton.style.borderColor = '#1d643b';
                                     };
                                 }
                             }
 
-                            // Jalankan pertama kali saat halaman dimuat
                             updateStatus();
-
-                            // Update setiap 1 detik untuk realtime
                             setInterval(updateStatus, 1000);
-                        </script>
+                        </script> --}}
 
                     </div>
 
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-item" id="item-1" class="{{ $data->prosespaket->persiapan === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Persiapan</div>
-                            </div>
-                            <div class="timeline-item" id="item-2" class="{{ $data->prosespaket->pengadaan === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Pengadaan</div>
-                            </div>
-                            <div class="timeline-item" id="item-3" class="{{ $data->prosespaket->pelaksanaan === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Pelaksanaan</div>
-                            </div>
-                            <div class="timeline-item" id="item-4" class="{{ $data->prosespaket->pemeliharaan === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Pemeliharaan</div>
-                            </div>
-                            <div class="timeline-item" id="item-5" class="{{ $data->prosespaket->paketselesai === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Paket Selesai</div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-    // Ambil semua item timeline
-    const items = document.querySelectorAll('.timeline-item');
 
-    // Fungsi untuk menambahkan kelas active pada item tertentu
-    function activateItem(index) {
-        items[index].classList.add('active');
-    }
-
-    // Simulasi keluaran data atau event yang mengaktifkan item
-    setTimeout(function() {
-        activateItem(0); // Mengaktifkan item pertama
-    }, 1000);
-
-    setTimeout(function() {
-        activateItem(1); // Mengaktifkan item kedua
-    }, 2000);
-
-    setTimeout(function() {
-        activateItem(2); // Mengaktifkan item ketiga
-    }, 3000);
-
-    setTimeout(function() {
-        activateItem(3); // Mengaktifkan item keempat
-    }, 4000);
-
-    setTimeout(function() {
-        activateItem(4); // Mengaktifkan item kelima
-    }, 5000);
-});
-
-                    </script>
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-6">
@@ -324,7 +262,7 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-file-earmark-ruled" style="margin-right: 8px; color: navy;"></i>Nilai Kontrak
                                                 </label>
-                                                <input class="form-control" value="{{$data->nilaikontrak}}" readonly/>
+                                                <input class="form-control" value="Rp {{ number_format($data->nilaikontrak, 0, ',', '.') }},00" readonly/>
                                             </div>
 
                                             <div class="mb-3">
@@ -341,60 +279,34 @@
                                                 <input class="form-control" value="{{$data->karakteristikkontrak}}" readonly/>
                                             </div>
 
-                                            <div class="mb-3">
+                                            {{-- <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-event-fill" style="margin-right: 8px; color: navy;"></i>Mulai
                                                 </label>
-                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanmulai)->translatedFormat('d F Y') }}" readonly/>
+                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanmulai)->format('d/m/Y') }}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i>Selesai
                                                 </label>
-                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanselesai)->translatedFormat('d F Y') }}" readonly/>
-                                            </div>
+                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanselesai)->format('d/m/Y') }}" readonly/>
+                                            </div> --}}
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-pie-chart-fill" style="margin-right: 8px; color: navy;"></i>Progress Pekerjaan
+                                                    <i class="bi bi-bar-chart-fill" style="margin-right: 8px; color: navy;"></i>Progress Pekerjaan
                                                 </label>
-
-                                                <!-- Progress bar -->
-                                                <div style="width: 100%; background-color: #ddd; border-radius: 10px; height: 20px; position: relative;">
-                                                    <!-- Teks persentase yang ditimpa di atas progress bar -->
-                                                    <div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; color: black; font-weight: bold;">
-                                                        {{$data->progress}}%
-                                                    </div>
-                                                    <!-- Progress bar yang berubah warna berdasarkan persentase -->
-                                                    <div
-                                                        style="width: {{$data->progress}}%;
-                                                               background-color:
-                                                               @if($data->progress < 25)
-                                                                   red;
-                                                               @elseif($data->progress < 50)
-                                                                   orange;
-                                                               @elseif($data->progress < 75)
-                                                                   lightblue;
-                                                               @elseif($data->progress < 100)
-                                                                   lightgreen;
-                                                               @else
-                                                                   green;
-                                                               @endif
-                                                               height: 100%;
-                                                               border-radius: 10px;">
-                                                    </div>
-                                                </div>
-
                                                 <!-- Input with readonly to show the value -->
-                                                <input class="form-control mt-2" value="{{$data->progress}}%" readonly/>
+                                                <input class="form-control mt-2" value="{{ $data->progress }}%" readonly/>
                                             </div>
+
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-house-door-fill" style="margin-right: 8px; color: navy;"></i>Dinas
                                                 </label>
-                                                <input class="form-control" value="{{$data->dinas}}" readonly/>
+                                                <input class="form-control" value="{{$data->user->name}}" readonly/>
                                             </div>
                                         </div>
 
@@ -416,20 +328,26 @@
                             onmouseout="this.style.backgroundColor='#22C55E'; this.style.color='white';"
                             style="background-color: #22C55E; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                             <!-- Ikon Kembali -->
-                            <i class="fa fa-file" style="margin-right: 8px;"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 384 512" fill="white" style="margin-right: 8px;">
+                                <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM384 121.9V128H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/>
+                            </svg>
                             Update
                         </button>
                         </a>
-                        <a href="/bepaketpekerjaan">
-                            <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                            style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Kembali -->
-                            <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
-                            Kembali
-                        </button>
-                    </a>
+                        <button
+                        onclick="history.back();"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                        <!-- Ikon Kembali -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path fill-rule="evenodd"
+                                d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+                        </svg>
+                        Kembali
+                    </button>
+
                 </div>
 
                     </div>
@@ -443,7 +361,8 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+            </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>

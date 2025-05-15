@@ -1,4 +1,18 @@
 <style>
+    .btn-navy {
+        background-color: navy;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
 
     /* Styling untuk tabel */
     .custom-fl-table {
@@ -185,13 +199,43 @@ h5 {
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
                 <div class="container-surat">
+                    <div>
+                        <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
+                            <button
+                            class="btn-navy"
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"
+                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.querySelector('i').style.color='white'; this.style.border='none';"
+                            onclick="window.location.href='your-link-here.html'"
+                            >
+                            <i class="bi bi-person-fill" style="color: white;"></i>
+                            Daftar Pelatihan
+                        </button>
+                    </a>
+                    </div>
                     <div class="header-surat">
                         <div class="header-text">
-                            <h3>AGENDA PELATIHAN TKK KABUPATEN BLORA </h3>
-                            <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4>
-                            <p>------------------------------------------------------------</p>
+                            <h3>AGENDA PEMBINAAN JASA KONSTRUKSI</h3>
+                            <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
+                            {{-- <p>----------------------------</p> --}}
                         </div>
                     </div>
+
+             <!-- Container agar elemen di tengah secara horizontal tanpa jarak atas-bawah -->
+             <div class="flex justify-center">
+                <div class="rounded-lg shadow-lg overflow-hidden w-fit">
+                    <div style="margin-top: 10px;">
+                        @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                            <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan"
+                                 style="width: 100%; max-height: 500px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                        @elseif($data->foto)
+                            <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan"
+                                 style="width: 100%; max-height: 500px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                        @else
+                            <p>Data belum diupdate</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
 
                     <br>
                     <h4 style="font-weight:bold;">I. INFORMASI AGENDA PELATIHAN </h4>
@@ -213,13 +257,13 @@ h5 {
                             <td class="label">3</td>
                             <td class="label">Waktu Pelaksanaan</td>
                             <td class="colon">:</td>
-                            <td>{{$data->waktupelaksanaan}}</td>
+                            <td>{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</td>
                         </tr>
                         <tr>
                             <td class="label">4</td>
                             <td class="label">Penyelenggara</td>
                             <td class="colon">:</td>
-                            <td>{{$data->penyelenggara}}</td>
+                            <td>{{$data->asosiasimasjaki->namaasosiasi ?? '-'}}</td>
                         </tr>
                         <tr>
                             <td class="label">5</td>
@@ -233,18 +277,77 @@ h5 {
                             <td class="colon">:</td>
                             <td>{{$data->jumlahpeserta}}</td>
                         </tr>
+                        <tr>
+                            <td class="label">7</td>
+                            <td class="label">Undangan dan Daftar Peserta yg diundang </td>
+                            <td class="colon">:</td>
+                            <td>
+                                <div style="margin-top: 10px; text-align: center;">
+                                    @if($data->suratundangan && file_exists(public_path('storage/' . $data->suratundangan)))
+                                        <iframe src="{{ asset('storage/' . $data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                        <br>
+                                        <a href="{{ asset('storage/' . $data->suratundangan) }}" download
+                                           style="
+                                               display: inline-block;
+                                               margin-top: 10px;
+                                               padding: 10px 25px;
+                                               background: linear-gradient(45deg, #FFD700, #28a745); /* Emas ke hijau */
+                                               color: white;
+                                               text-decoration: none;
+                                               border-radius: 8px;
+                                               font-weight: bold;
+                                               transition: all 0.3s ease;
+                                           "
+                                           onmouseover="this.style.background='white'; this.style.color='black';"
+                                           onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #28a745)'; this.style.color='white';"
+                                        >
+                                           ⬇️ Download File
+                                        </a>
+
+                                    @elseif($data->suratundangan)
+                                        <iframe src="{{ asset($data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                        <br>
+                                        <a href="{{ asset($data->suratundangan) }}" download
+                                           style="
+                                               display: inline-block;
+                                               margin-top: 10px;
+                                               padding: 10px 25px;
+                                               background: linear-gradient(45deg, #FFD700, #28a745);
+                                               color: white;
+                                               text-decoration: none;
+                                               border-radius: 8px;
+                                               font-weight: bold;
+                                               transition: all 0.3s ease;
+                                           "
+                                           onmouseover="this.style.background='white'; this.style.color='black';"
+                                           onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #28a745)'; this.style.color='white';"
+                                        >
+                                           ⬇️ Download File
+                                        </a>
+
+                                    @else
+                                        <p>Data belum diupdate</p>
+                                    @endif
+                                </div>
+                            </td>
+
+                        </tr>
                     </table>
                             <br>
                     <div class="portfolio-details-content">
                         <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold" style="font-size: 16px;">Isi Agenda: </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
+                            <h2 class="font-semibold" style="font-size: 16px; display: flex; align-items: center; gap: 6px;">
+                                <i class="bi bi-journal-text" style="font-size: 18px;"></i> Isi Agenda:
+                            </h2>
+                                         <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
                         </div>
                         <br>
 
                         <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold text-sm" style="font-size: 16px;">Keterangan : </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
+                            <h2 class="font-semibold text-sm" style="font-size: 16px; display: flex; align-items: center; gap: 6px;">
+                                <i class="bi bi-info-circle" style="font-size: 18px;"></i> Keterangan :
+                            </h2>
+                                                        <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
                         </div>
 
                     </div><!-- portfolio-details-content -->
@@ -275,42 +378,30 @@ h5 {
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
                                     <td>
-                                        <!-- Menambahkan pengecekan apakah data materi pelatihan kosong -->
-                                        <script>
-                                            // Cek apakah file materi pelatihan ada
-                                            const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}";
-                                            const isFileAvailable = fileUrl && fileUrl !== '{{ asset('storage/') }}'; // Cek jika URL file valid atau kosong
-
-                                            if (!isFileAvailable) {
-                                                // Jika file tidak ada, tampilkan tombol merah dengan tulisan "Materi Belum Di Upload"
-                                                document.write(`
-                                                    <button class="badge"
-                                                            style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
-                                                        Materi Belum Di Upload
-                                                    </button>
-                                                `);
-                                            } else {
-                                                // Jika file ada, tampilkan tombol download
-                                                document.write(`
-                                                    <button id="sertifikat-btn" class="badge"
-                                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                                        <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                                                    </button>
-                                                `);
-                                                document.getElementById('sertifikat-btn').addEventListener('click', function() {
-                                                    const a = document.createElement('a');
-                                                    a.href = fileUrl;
-                                                    a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
-                                                    document.body.appendChild(a);
-                                                    a.click();
-                                                    document.body.removeChild(a);
-                                                });
-                                            }
-                                        </script>
+                                        @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
+                                            <!-- File ditemukan di penyimpanan -->
+                                            <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="200px"></iframe>
+                                            <a href="{{ asset('storage/' . $item->materipelatihan) }}" download
+                                                class="badge"
+                                                style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
+                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                            </a>
+                                        @elseif($item->materipelatihan)
+                                            <!-- File ada tapi bukan di storage, tampilkan dari URL langsung -->
+                                            <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                            <a href="{{ asset($item->materipelatihan) }}" download
+                                                class="badge"
+                                                style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
+                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                            </a>
+                                        @else
+                                            <!-- Tidak ada file -->
+                                            <button class="badge"
+                                                style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
+                                                Materi Belum Di Upload
+                                            </button>
+                                        @endif
                                     </td>
-
                                 </tr>
                                 @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
                                 @endforeach

@@ -14,8 +14,24 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <!--begin::App Content Header-->
-        <div class="app-content-header">
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;">        <div class="app-content-header">
+
+            <div class="app-content-header">
+                <!--begin::Container-->
+                <div class="container-fluid">
+                    <!--begin::Row-->
+                    <div class="row">
+
+                        @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+
+                      </div>
+              <!--end::Row-->
+            </div>
+            <!--end::Container-->
+          </div>
+
+            <div class="card-header">
+
           <!--begin::Container-->
           @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
@@ -221,7 +237,8 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+        </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>

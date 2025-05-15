@@ -184,11 +184,21 @@ table.zebra-table {
                 <table class="zebra-table fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
                         <tr>
-                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center;"> Nama Lengkap </th>
-                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center;"> Gender </th>
-                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;"> Instansi </th>
-                            {{-- <th style="text-align:center; width:100px;"> View </th> --}}
+                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                <i class="bi bi-list-ol me-1"></i> No
+                            </th>
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:450px;">
+                                <i class="bi bi-person-fill me-1"></i> Nama Lengkap
+                            </th>
+                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;">
+                                <i class="bi bi-gender-ambiguous me-1"></i> Gender
+                            </th>
+                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:250px;" >
+                                <i class="bi bi-building me-1"></i> Instansi/Universitas/Lembaga/Perseorangan/BUJK
+                            </th>
+                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;">
+                                <i class="bi bi-check2-circle me-1"></i> Verifikasi
+                            </th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -197,14 +207,50 @@ table.zebra-table {
                         <tr>
                             <td style="text-align: center;">{{ $loop->index + 1 }}</td>
 
-                            <td style="text-transform: capitalize;">
-                                {{-- {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }} --}}
-                                {{$item->user->name}}
-                            </td>
+                        <td>
+                            {{ strtoupper($item->namalengkap ?? 'TIDAK ADA NAMA') }}
+                        </td>
+
                             {{-- <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->user->name)) }}</td> --}}
                             {{-- <td>{{$item->user->name}}</td> --}}
                             <td>{{$item->jeniskelamin}}</td>
                             <td style="text-align: center;">{{$item->instansi}}</td>
+
+                            <td style="text-align: center;">
+
+                                    @if($item->verifikasi === null)
+                                    <!-- BELUM DI VERIFIKASI -->
+                                    <button type="button" onclick="openModal({{ $item->id }})"
+                                        style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+                                        display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                                        transition: 0.3s;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+                                        onmouseout="this.style.backgroundColor='#9CA3AF'; this.style.color='white'; this.querySelector('i').style.color='white';">
+                                        <i class="bi bi-patch-check" style="color: white;"></i> DI VERIFIKASI
+                                    </button>
+                                    @elseif($item->verifikasi === 'lolos')
+                                    <!-- LOLOS -->
+                                    <button type="button" disabled
+                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+                                        display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                                        transition: 0.3s; cursor: not-allowed;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
+                                        <i class="bi bi-patch-check-fill" style="font-size: 1.2rem; color: white;"></i> LOLOS
+                                    </button>
+                                    @elseif($item->verifikasi === 'gugur')
+                                    <!-- GUGUR -->
+                                    <button type="button" disabled
+                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+                                        display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                                        transition: 0.3s; cursor: not-allowed;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
+                                        <i class="bi bi-x-circle" style="font-size: 1.2rem; color: white;"></i> GUGUR
+                                    </button>
+                                    @endif
+                                </td>
+
                         </tr>
                         @endforeach
                     </tbody>

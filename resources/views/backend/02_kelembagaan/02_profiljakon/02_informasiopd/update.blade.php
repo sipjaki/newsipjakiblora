@@ -13,6 +13,7 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;">
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -37,14 +38,13 @@
             <div class="row" style="margin-right: 10px; margin-left:10px;">
                 <!-- /.card -->
                 <div class="card mb-4">
+                    <div class="card-header">
 
                     @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                            {{-- ======================================================= --}}
         {{-- ALERT --}}
 
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
 
 
         <div class="card card-primary card-outline mb-6">
@@ -308,7 +308,8 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+            </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>

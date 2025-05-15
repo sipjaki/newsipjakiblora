@@ -22,9 +22,13 @@
             </a> --}}
         </nav>
 
-        <div class="z-10" style="margin-top:25px;">
-            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;" >Mas Jaki Blora <br> Sistem Informasi Pembina Jasa Konstruksi</h1>
+        <div class="z-10" style="margin-top:25px; background-color: rgba(255, 255, 255, 0.6); border-radius: 10px; padding: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
+                Mas Jaki Blora <br> Sistem Informasi Pembina Jasa Konstruksi
+            </h1>
         </div>
+
+
         <br><br><br><br><br>
         <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 15px; margin-bottom:100px;">
             {{-- <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="350px" loading="lazy"> --}}
@@ -184,7 +188,19 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="details.html">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="{{asset('storage/' . $item->foto)}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+
+                                <div style="margin-top: 10px;">
+                                    @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                        <!-- Menampilkan gambar dari storage -->
+                                        <img src="{{ asset('storage/' . $item->foto) }}" alt="Pelatihan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @elseif($item->foto)
+                                        <!-- Menampilkan gambar dari path luar storage -->
+                                        <img src="{{ asset($item->foto) }}" alt="Pelatihan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @else
+                                        <!-- Placeholder jika tidak ada data -->
+                                        <p>Data belum diupdate</p>
+                                    @endif
+                                </div>
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -213,7 +229,7 @@
                                     <i class="fas fa-times-circle"></i> Ditutup
                                 </button>
                             @else
-                                <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
+                                <a href="/resagendapelatihan/{{$item->namakegiatan}}" style="text-decoration: none;">
                                     <button style="
                                     background-color: #006b1b;
                                     color: white;
@@ -276,7 +292,7 @@
                                     <i class="fas fa-times-circle"></i> Ditutup
                                 </button>
                             @else
-                                <a href="/agendaskk/{{$menu->namakegiatan}}" style="text-decoration: none;">
+                                <a href="/resagendatkk/{{$menu->namakegiatan}}" style="text-decoration: none;">
                                     <button style="
                                     background-color: #00098d;
                                     color: white;
@@ -394,6 +410,7 @@
                 <img src="/assets/icon/pupr.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
+
             <div class="flex flex-col gap-4 mt-[14px] px-4">
                 @foreach ($dataartikel->take(2) as $item)
                 <a href="/resartikeljakon" class="card">

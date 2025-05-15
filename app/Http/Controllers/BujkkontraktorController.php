@@ -30,58 +30,30 @@ class BujkkontraktorController extends Controller
         ]);
     }
 
-    public function asosiasimasjaki(Request $request)
+    public function asosiasimasjaki()
     {
+        $user = auth()->user(); // atau sesuaikan dapetin $user dari mana
 
-        $databujkkontraktor = bujkkontraktor::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
-        ->groupBy('asosiasimasjaki_id')
-        ->with('namaasosiasi') // Pastikan ada relasi ke tabel asosiasi
-        ->get();
-
-        $databujkkonsultan = bujkkonsultan::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
-        ->groupBy('asosiasimasjaki_id')
-        ->with('namaasosiasi') // Pastikan ada relasi ke tabel asosiasi
-        ->get();
-
-        $perPage = $request->input('perPage', 15);
-        $search = $request->input('search');
-
-        $user = Auth::user();
-        // $data = asosiasimasjaki::paginate(15);
-
-        $databujkkontraktorpaginate = bujkkontraktor::paginate(15);
-        $databujkkonsultanpaginate = bujkkonsultan::paginate(15);
-
-        $query = bujkkonsultan::query();
-        $query = bujkkontraktor::query();
-
-        if ($search) {
-            $query->where('namaasosiasi', 'LIKE', "%{$search}%");
-                //   ->orWhere('alamat', 'LIKE', "%{$search}%")
-                //   ->orWhere('email', 'LIKE', "%{$search}%")
-                //   ->orWhere('nib', 'LIKE', "%{$search}%");
-        }
-
-        $data = $query->paginate($perPage);
-
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('frontend.03_masjaki_jakon.05_asosiasimasjaki.partials.table', compact('data'))->render()
-            ]);
-        }
+        $data = asosiasimasjaki::where('id', '!=', 99)
+            ->withCount(['bujkkontraktor', 'bujkkonsultan'])
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'nama_asosiasi' => $item->namaasosiasi,
+                    'jumlah_penggunaan1' => $item->bujkkontraktor_count,
+                    'jumlah_penggunaan2' => $item->bujkkonsultan_count,
+                ];
+            });
 
         return view('frontend.03_masjaki_jakon.05_asosiasimasjaki.index', [
             'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
-            'user' => $user, // Mengirimkan data paginasi ke view
-            'data' => $data, // Mengirimkan data paginasi ke view
-            'perPage' => $perPage,
-            'search' => $search,
-            'databujkkontraktor' => $databujkkontraktor,
-            'databujkkontraktorpaginate' => $databujkkontraktorpaginate,
-            'databujkkonsultanpaginate' => $databujkkonsultanpaginate,
-            'databujkkonsultan' => $databujkkonsultan,
+            'user' => $user,
+            'data' => $data,
         ]);
     }
+
+
+
 
     // MENU BACKEND JASA KONSTRUKSI
     // ------------------------------------------------------------------------------------------------
@@ -97,7 +69,7 @@ class BujkkontraktorController extends Controller
 
             }
 
-            $data = $query->paginate($perPage);
+            $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
             if ($request->ajax()) {
                 return response()->json([
@@ -113,6 +85,66 @@ class BujkkontraktorController extends Controller
             ]);
         }
 
+        public function beasosiasicreate(Request $request)
+        {
+            $user = auth()->user(); // atau sesuaikan dapetin $user dari mana
+            $data = asosiasimasjaki::all();
+
+            return view('backend.04_datajakon.03_asosiasimasjaki.create', [
+                'title' => 'Asosiasi Mas Jaki Blora',
+                'data' => $data,
+                'user' => $user,
+                // 'search' => $search
+            ]);
+        }
+
+
+        public function beasosiasicreatenew(Request $request)
+{
+    // Validasi input form
+    $validated = $request->validate([
+        'namaasosiasi' => 'required|string|max:255',
+        'alamat' => 'required|string|max:255',
+        'notelepon' => 'required|string',
+        'pic' => 'required|string|max:255',
+        'jumlahanggota' => 'required|integer|min:1',
+    ], [
+        'namaasosiasi.required' => 'Nama asosiasi tidak boleh kosong.',
+        'namaasosiasi.string' => 'Nama asosiasi harus berupa teks.',
+        'namaasosiasi.max' => 'Nama asosiasi tidak boleh lebih dari 255 karakter.',
+
+        'alamat.required' => 'Alamat tidak boleh kosong.',
+        'alamat.string' => 'Alamat harus berupa teks.',
+        'alamat.max' => 'Alamat tidak boleh lebih dari 255 karakter.',
+
+        'notelepon.required' => 'Nomor telepon tidak boleh kosong.',
+        'notelepon.string' => 'Nomor telepon harus berupa teks.',
+        'notelepon.regex' => 'Nomor telepon harus berisi angka dan panjang 7-15 digit.',
+
+        'pic.required' => 'PIC tidak boleh kosong.',
+        'pic.string' => 'PIC harus berupa teks.',
+        'pic.max' => 'PIC tidak boleh lebih dari 255 karakter.',
+
+        'jumlahanggota.required' => 'Jumlah anggota tidak boleh kosong.',
+        'jumlahanggota.integer' => 'Jumlah anggota harus berupa angka.',
+        'jumlahanggota.min' => 'Jumlah anggota minimal 1.',
+    ]);
+
+    // Menyimpan data ke dalam database asosiasimasjaki setelah divalidasi
+    asosiasimasjaki::create([
+        'namaasosiasi' => $validated['namaasosiasi'],
+        'alamat' => $validated['alamat'],
+        'notelepon' => $validated['notelepon'],
+        'pic' => $validated['pic'],
+        'jumlahanggota' => $validated['jumlahanggota'],
+    ]);
+
+    session()->flash('create', 'Data Berhasil Dibuat!');
+
+    return redirect('/beasosiasi');
+}
+
+
         // BACKEND ASOSIASI SHOW
 
         public function beasosiasishow($namaasosiasi)
@@ -126,6 +158,19 @@ class BujkkontraktorController extends Controller
             'data' => $datasosiasi,
         ]);
         }
+
+        public function beasosiasiupdate($id)
+        {
+            $datasosiasi = asosiasimasjaki::where('id', $id)->first();
+        // Ambil data user saat ini
+            $user = Auth::user();
+
+        return view('backend.04_datajakon.03_asosiasimasjaki.update', [
+            'title' => 'Update Data Asosiasi Mas Jaki',
+            'data' => $datasosiasi,
+        ]);
+        }
+
 
         public function beasosiasidelete($namaasosiasi)
             {
@@ -163,7 +208,8 @@ class BujkkontraktorController extends Controller
         $query->where('namalengkap', 'LIKE', "%{$search}%")
               ->orWhere('alamat', 'LIKE', "%{$search}%")
               ->orWhere('email', 'LIKE', "%{$search}%")
-              ->orWhere('no_telepon', 'LIKE', "%{$search}%");
+            //   ->orWhere('no_telepon', 'LIKE', "%{$search}%")
+              ;
     }
 
     $data = $query->paginate($perPage);
@@ -319,7 +365,7 @@ public function bebujkkonstruksi(Request $request)
             });
     }
 
-    $data = $query->paginate($perPage);
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
     if ($request->ajax()) {
         return response()->json([
@@ -357,12 +403,9 @@ public function bebujkkonstruksicreate()
 // -------------------- CREATE MENU JABATAN FUNGSIONAL   ----------------------
 public function bebujkkonstruksicreatenew(Request $request)
 {
-    // Ambil data asosiasi dari database untuk digunakan di form
-    $asosiasimasjaki = asosiasimasjaki::all();
-
     // Validasi input form
     $validatedData = $request->validate([
-        'asosiasimasjaki_id' => 'required|integer|exists:asosiasimasjaki,id',
+        'asosiasimasjaki_id' => 'required|integer',
         'namalengkap' => 'required|string|max:255',
         'alamat' => 'required|string',
         'no_telepon' => 'required|string|max:255',
@@ -373,6 +416,7 @@ public function bebujkkonstruksicreatenew(Request $request)
         'tanggal' => 'required|date',
         'nama_notaris' => 'required|string|max:255',
         'no_pengesahan' => 'required|string|max:255',
+        'uploadberkas' => 'required|mimes:pdf',
     ], [
         'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
@@ -385,15 +429,37 @@ public function bebujkkonstruksicreatenew(Request $request)
         'tanggal.required' => 'Tanggal wajib diisi!',
         'nama_notaris.required' => 'Nama Notaris wajib diisi!',
         'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
+        'uploadberkas.required' => 'Berkas wajib diunggah!',
+        'uploadberkas.mimes' => 'Berkas harus berupa file PDF!',
     ]);
 
-    // Mengambil ID pertama dari BujkkontraktorSub
+    // Ambil ID default dari sub kontraktor (pastikan tidak null di DB!)
     $bujkkontraktorsub_id = bujkkonsultansub::first()->id;
 
-    // Menyimpan data ke dalam tabel bujkkontraktor
+    // Ambil ID user yang sedang login
+    $user_id = Auth::user()->id;
+
+    if ($request->hasFile('uploadberkas')) {
+        $file = $request->file('uploadberkas');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('03_datajakon/02_sertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke database
+        $validatedData['uploadberkas'] = '03_datajakon/02_sertifikasi/' . $namaFile;
+    }
+
+    // Simpan ke DB
     Bujkkontraktor::create([
-        'bujkkontraktorsub_id' => $bujkkontraktorsub_id, // ID dari kontraktor sub
-        'asosiasimasjaki_id' => $asosiasimasjaki, // Asosiasi yang dipilih
+        'user_id' => $user_id, // Menyimpan user_id berdasarkan login
+        'bujkkontraktorsub_id' => $bujkkontraktorsub_id,
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'],
         'namalengkap' => $validatedData['namalengkap'],
         'alamat' => $validatedData['alamat'],
         'no_telepon' => $validatedData['no_telepon'],
@@ -404,12 +470,10 @@ public function bebujkkonstruksicreatenew(Request $request)
         'tanggal' => $validatedData['tanggal'],
         'nama_notaris' => $validatedData['nama_notaris'],
         'no_pengesahan' => $validatedData['no_pengesahan'],
+        'uploadberkas' => $validatedData['uploadberkas'],
     ]);
 
-    // Flash session untuk menampilkan pesan sukses
     session()->flash('create', 'Data Berhasil Dibuat!');
-
-    // Redirect ke halaman yang sesuai
     return redirect('/bebujkkonstruksi');
 }
 
@@ -426,6 +490,75 @@ return view('backend.04_datajakon.01_bujkkonstruksi.show', [
     'data' => $databujkkontraktor,
 ]);
 }
+
+
+// CREATE DATA SUB KLASIFIKASI
+public function bebujkkonstruksicreateklasifikasi($namalengkap)
+{
+    $bujkkontraktor = bujkkontraktor::findOrFail($namalengkap); // Cari 1 data sesuai ID
+    $user = Auth::user();
+    $asosiasimasjaki = asosiasimasjaki::all();
+
+    return view('backend.04_datajakon.01_bujkkonstruksi.createklasifikasi', [
+        'bujkkontraktornamalengkap' => $bujkkontraktor->namalengkap, // Ini dikirim ke form
+        'bujkkontraktor_id' => $bujkkontraktor->id, // Ini dikirim ke form
+        'user' => $user,
+        'asosiasimasjaki' => $asosiasimasjaki,
+        'title' => 'Create BUJK Sub Klasifikasi'
+    ]);
+}
+
+public function bebujkkonstruksicreateklasifikasicreate(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'nama_pengurus' => 'required|string|max:255',
+        'sub_klasifikasi_layanan' => 'required|string|max:255',
+        'kode' => 'required|string|max:50',
+        'kualifikasi' => 'required|string|max:255',
+        'penerbit' => 'required|string|max:255',
+        'nama_psjk' => 'required|string|max:255',
+        'sub_kualifikasi_bu' => 'required|string|max:255',
+        'tanggal_terbit' => 'required|date',
+        'tanggal_berlaku' => 'required|date',
+    ], [
+        // Pesan kesalahan custom
+        'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
+        'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
+        'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
+        'kualifikasi.required' => 'Kualifikasi harus diisi.',
+        'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
+        'penerbit.required' => 'Penerbit harus diisi.',
+        'nama_psjk.required' => 'Nama PSJK harus diisi.',
+        'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
+        'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
+    ]);
+
+    // Menyimpan data ke tabel BujkKontraktorSub
+    $bujkkontraktorSub = bujkkontraktorsub::create([
+        'bujkkontraktor_id' => $request->bujkkontraktor_id,
+        'nama_pengurus' => $validated['nama_pengurus'],
+        'sub_klasifikasi_layanan' => $validated['sub_klasifikasi_layanan'],
+        'kode' => $validated['kode'],
+        'kualifikasi' => $validated['kualifikasi'],
+        'sub_kualifikasi_bu' => $validated['sub_kualifikasi_bu'],
+        'penerbit' => $validated['penerbit'],
+        'nama_psjk' => $validated['nama_psjk'],
+        'tanggal_terbit' => $validated['tanggal_terbit'],
+        'tanggal_berlaku' => $validated['tanggal_berlaku'],
+    ]);
+
+    // Ambil bujkkontraktor_id yang baru saja disimpan
+    $bujkkontraktorId = $bujkkontraktorSub->bujkkontraktor_id;
+
+    // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
+    session()->flash('create', 'Data Sub Klasifikasi Layanan berhasil di buat.');
+
+    // Redirect ke route 'bebujkkonstruksi.showsubklasifikasi' dengan parameter bujkkontraktor_id
+    return redirect('bebujkkonstruksi');
+}
+
+
 
 
 // DATA SHOW SUB KLASIFIKASI LAYANAN
@@ -463,7 +596,7 @@ public function bebujkkonstruksiupdate($id)
         'data' => $jakonkonstruksi,
         'user' => $user,
         'asosiasimasjakiList' => $asosiasimasjakiList,
-        'title' => 'Update BUJK Kontraktor'
+        'title' => 'Update BUJK Konstruksi'
     ]);
 }
 
@@ -475,7 +608,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
         // 'bujkkontraktorsub_id' => 'required|string|max:255', // Validasi untuk ID kontraktor
-        'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id', // Validasi untuk ID asosiasi
+        'asosiasimasjaki_id' => 'required|integer', // Validasi untuk ID asosiasi
         'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
         'alamat' => 'required|string', // Validasi untuk Alamat
         'no_telepon' => 'required|string|max:255', // Validasi untuk No Telepon
@@ -486,6 +619,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
         'tanggal' => 'required|date', // Validasi untuk Tanggal
         'nama_notaris' => 'required|string|max:255', // Validasi untuk Nama Notaris
         'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
+        'uploadberkas' => 'required|mimes:pdf',
     ], [
 
         'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
@@ -501,6 +635,9 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
         'tanggal.date' => 'Format Tanggal tidak valid!',
         'nama_notaris.required' => 'Nama Notaris wajib diisi!',
         'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
+        'uploadberkas.required' => 'Berkas wajib diunggah!',
+        'uploadberkas.mimes' => 'Berkas harus berupa file PDF!',
+
     ]);
 
     // Cari data strukturdinas berdasarkan nilai 'judul'
@@ -508,6 +645,22 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
 
     // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
 
+
+    if ($request->hasFile('uploadberkas')) {
+        $file = $request->file('uploadberkas');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('03_datajakon/02_sertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke database
+        $validatedData['uploadberkas'] = '03_datajakon/02_sertifikasi/' . $namaFile;
+    }
     // Proses update setelah data tervalidasi
     $jakonkontraktor->update([
         'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'] ?? $jakonkontraktor->asosiasimasjaki_id, // Jika asosiasimasjaki_id tidak ada, gunakan data sebelumnya
@@ -521,6 +674,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
         'tanggal' => $validatedData['tanggal'] ?? $jakonkontraktor->tanggal, // Jika tanggal tidak ada, gunakan data sebelumnya
         'nama_notaris' => $validatedData['nama_notaris'] ?? $jakonkontraktor->nama_notaris, // Jika nama_notaris tidak ada, gunakan data sebelumnya
         'no_pengesahan' => $validatedData['no_pengesahan'] ?? $jakonkontraktor->no_pengesahan, // Jika no_pengesahan tidak ada, gunakan data sebelumnya
+        'uploadberkas' => $validatedData['uploadberkas'] ?? $jakonkontraktor->uploadberkas, // Jika no_pengesahan tidak ada, gunakan data sebelumnya
     ]);
     // Flash session untuk menampilkan pesan sukses
     session()->flash('update', 'Data Berhasil Diupdate!');
@@ -557,29 +711,78 @@ return redirect()->back()->with('error', 'Item not found');
 
 public function bebujkkonstruksiklasifikasidelete($id)
 {
-// Cari item berdasarkan judul
-$entry = bujkkontraktorsub::where('id', $id)->first();
+    $entry = bujkkontraktorsub::where('id', $id)->first();
 
-if ($entry) {
-// Jika ada file header yang terdaftar, hapus dari storage
-// if (Storage::disk('public')->exists($entry->header)) {
-    //     Storage::disk('public')->delete($entry->header);
-// }
+    if ($entry) {
+        // Kalau ada file yang mau dihapus, bisa aktifkan bagian ini
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
 
-// Hapus entri dari database
+        $parentId = $entry->bujkkontraktor_id;
+        $entry->delete();
 
-$parentId = $entry->bujkkontraktor_id; // Sesuaikan dengan nama kolom di database
-$entry->delete();
+        // Pakai session()->flash supaya konsisten dengan create
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect('/bebujkkonstruksi');
+    }
 
-return redirect('/bebujkkonstruksi')->with('delete', 'Data Berhasil Dihapus!');
-
+    // Kalau tidak ketemu, flash error
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
 }
 
-return redirect()->back()->with('error', 'Item not found');
+
+
+public function beasosiasiupdatecreate(Request $request, $id)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'namaasosiasi'   => 'required|string|max:255',
+        'alamat'         => 'required|string|max:255',
+        'notelepon'      => 'required|string|max:20',
+        'pic'            => 'required|string|max:255',
+        'jumlahanggota'  => 'required|integer|min:0',
+    ], [
+        'namaasosiasi.required'   => 'Nama asosiasi wajib diisi.',
+        'namaasosiasi.string'     => 'Nama asosiasi harus berupa teks.',
+        'namaasosiasi.max'        => 'Nama asosiasi tidak boleh lebih dari 255 karakter.',
+
+        'alamat.required'         => 'Alamat wajib diisi.',
+        'alamat.string'           => 'Alamat harus berupa teks.',
+        'alamat.max'              => 'Alamat tidak boleh lebih dari 255 karakter.',
+
+        'notelepon.required'      => 'Nomor telepon wajib diisi.',
+        'notelepon.string'        => 'Nomor telepon harus berupa teks.',
+        'notelepon.max'           => 'Nomor telepon tidak boleh lebih dari 20 karakter.',
+
+        'pic.required'            => 'Nama PIC wajib diisi.',
+        'pic.string'              => 'Nama PIC harus berupa teks.',
+        'pic.max'                 => 'Nama PIC tidak boleh lebih dari 255 karakter.',
+
+        'jumlahanggota.required' => 'Jumlah anggota wajib diisi.',
+        'jumlahanggota.integer'  => 'Jumlah anggota harus berupa angka.',
+        'jumlahanggota.min'      => 'Jumlah anggota tidak boleh kurang dari 0.',
+    ]);
+
+
+    // Ambil data asosiasi berdasarkan ID
+    $asosiasi = asosiasimasjaki::findOrFail($id);
+
+    // Update data
+    $asosiasi->update([
+        'namaasosiasi'   => $validated['namaasosiasi'],
+        'alamat'         => $validated['alamat'],
+        'notelepon'      => $validated['notelepon'],
+        'pic'            => $validated['pic'],
+        'jumlahanggota'  => $validated['jumlahanggota'],
+    ]);
+
+    // Redirect atau response
+    session()->flash('update', 'Data Berhasil Di Update!');
+
+    return redirect('/beasosiasi');
 }
 
-
-
 }
-
 

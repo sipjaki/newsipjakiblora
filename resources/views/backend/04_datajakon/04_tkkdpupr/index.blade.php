@@ -33,14 +33,17 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-     <!--begin::App Content Header-->
-     <div class="app-content-header">
+
+       <!--begin::App Content Header-->
+       <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+       <div class="app-content-header">
        <!--begin::Container-->
        <div class="container-fluid">
          <!--begin::Row-->
          <div class="row">
 
-           <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+            @include('backend.00_administrator.00_baganterpisah.11_alert')
 
          </div>
          <!--end::Row-->
@@ -50,120 +53,16 @@
 
      <!-- Menampilkan pesan sukses -->
 <br>
-     {{-- ======================================================= --}}
-     {{-- ALERT --}}
-
-     @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-     {{-- ======================================================= --}}
-
      <div class="container-fluid">
          <!--begin::Row-->
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
-             <div class="card mb-4">
-                <div class="card-header">
-                    <div style="
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #0010a3, #0010a3);
-                    color: white;
-                    padding: 8px 10px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                ">
-                    ⚙️ Setting Database
-                </div>
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Database -->
-                                <i class="fa fa-database" style="margin-right: 8px;"></i>
-                                Universitas/Sekolah/Instansi
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Pendidikan -->
-                                <i class="fa fa-graduation-cap" style="margin-right: 8px;"></i>
-                                Jenjang Pendidikan
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Pekerjaan -->
-                                <i class="fa fa-briefcase" style="margin-right: 8px;"></i>
-                                Jabatan Kerja
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Level -->
-                                <i class="fa fa-level-up" style="margin-right: 8px;"></i>
-                                Jenjang
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon LPS -->
-                                <i class="fa fa-university" style="margin-right: 8px;"></i>
-                                LPS Penerbit
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Jurusan -->
-                                <i class="fa fa-bookmark" style="margin-right: 8px;"></i>
-                                Jurusan
-                            </button>
-                        </a>
-
-                     </div>
-                 </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #166534, #166534);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                    📌 Halaman : {{$title}}
-                </div>
+                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+
+
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
@@ -194,7 +93,7 @@
 
                                 </script>
 
-                         <a href="/404">
+                         {{-- <a href="/404">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
@@ -203,31 +102,33 @@
                              <i class="fa fa-plus" style="margin-right: 8px;"></i>
                              Create
                          </button>
-                         </a>
+                         </a> --}}
                      </div>
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<table class="table table-striped">
+<table class="zebra-table table-striped">
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
          <th style="width: 400px; text-align:center;">Nama Lengkap</th>
          <th style="width: 400px; text-align:center;">Alamat </th>
-         <th style="width: 100px; text-align:center;">Tahun Lulus</th>
-         <th style="width: 300px; text-align:center;">Asosiasi</th>
+         <th style="width: 250px; text-align:center;">Tahun Lulus Sekolah</th>
+         <th style="width: 250px; text-align:center;">Tahun Anggaran</th>
+         <th style="width: 300px; text-align:center;">Penyelenggara</th>
          <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
-         <th style="width: 100px; text-align:center;">Pendidikan</th>
+         <th style="width: 150px; text-align:center;">Pendidikan</th>
          <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
          <th style="width: 100px; text-align:center;">Jenjang</th>
-         <th style="width: 400px; text-align:center;">LPS Penerbit</th>
+         <th style="width: 400px; text-align:center;">LSP Penerbit</th>
          <th style="width: 200px; text-align:center;">Jurusan</th>
          <th style="width: 200px; text-align:center;">Tanggal Terbit</th>
          <th style="width: 200px; text-align:center;">Tanggal Habis</th>
          <th style="width: 200px; text-align:center;">Masa Berlaku</th>
          <th style="width: 200px; text-align:center;">Status Terbit</th>
+         <th style="width: 200px; text-align:center;">Sertifikat</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
@@ -235,22 +136,121 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->nama}}</td>
-         <td style="text-align: left;">{{$item->alamat}}</td>
-         <td style="text-align: center;">{{$item->tahunlulus}}</td>
-         <td style="text-align: center;">
+         <td style="text-align: left;">
+            @if($item->nama)
+                {{$item->nama}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+        <td style="text-align: left;">
+            @if($item->alamat)
+                {{$item->alamat}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+        <td style="text-align: center;">
+            @if($item->tahunlulus)
+                {{$item->tahunlulus}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+        <td style="text-align: center;">
+            @if($item->tahunbimtek)
+                {{$item->tahunbimtek}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
             @if($item->asosiasimasjaki)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
             @else
                 <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
             @endif
         </td>
-        <td style="text-align: left;">{{$item->namasekolah->namasekolah}}</td>
-         <td style="text-align: center;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-         <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
-         <td style="text-align: center;">{{$item->jenjang->jenjang}}</td>
-         <td style="text-align: left;">{{$item->lpspenerbit->lpspenerbit}}</td>
-         <td style="text-align: left;">{{$item->jurusan->jurusan}}</td>
+        <td style="text-align: left;">
+            @if (!empty($item->namasekolah?->namasekolah))
+                {{ $item->namasekolah->namasekolah }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
+            @if (!empty($item->jenjangpendidikan?->jenjangpendidikan))
+                {{ $item->jenjangpendidikan->jenjangpendidikan }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if (!empty($item->jabatankerja?->jabatankerja))
+                {{ $item->jabatankerja->jabatankerja }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
+            @if (!empty($item->jenjang?->jenjang))
+                {{ $item->jenjang->jenjang }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if (!empty($item->lpspenerbit?->lpspenerbit))
+                {{ $item->lpspenerbit->lpspenerbit }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if (!empty($item->jurusan?->jurusan))
+                {{ $item->jurusan->jurusan }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalterbit)->translatedFormat('l, d F Y') }}</td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalhabis)->translatedFormat('l, d F Y') }}</td>
 
@@ -280,13 +280,57 @@
             setInterval(updateStatus, 1000);
         </script>
 
-         <td style="text-align: center;">{{$item->statusterbit}}</td>
+<td style="text-align: center; text-transform: uppercase;">{{$item->statusterbit}}</td>
+
+
+<td style="text-align: center;">
+    <button class="btn btn-secondary btn-sm"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        data-bs-toggle="modal" data-bs-target="#modalKtp3">
+        <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+
+    </button>
+
+    <!-- Modal KTP -->
+    <div class="modal fade" id="modalKtp3" tabindex="-1" aria-labelledby="modalKtpLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                    <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                    <span>:</span>
+                    <h5 class="modal-title" id="modalKtpLabel3">Sertifikat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div style="margin-top: 10px;">
+                        @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
+                        <!-- Display the default iframe when the file exists in the storage -->
+                        <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="600px"></iframe>
+                    @elseif($item->sertifikat)
+                        <!-- Display the iframe with the updated file -->
+                        <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="600px"></iframe>
+                    @else
+                        <!-- Optional: Show a placeholder if there's no file available -->
+                        <p>Data belum diupdate</p>
+                    @endif
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</td>
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/beskkdpupr/show/{{$item->nama}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a>
-             <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+             <a href="/beskkdpupr/update/{{$item->nama}}" class="btn btn-sm btn-warning me-2" title="Update">
                  <i class="bi bi-pencil-square"></i>
              </a>
              <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
@@ -307,6 +351,7 @@
 
                  @include('backend.00_administrator.00_baganterpisah.07_paginations')
 
+                 <br><br>
                  <br><br>
 
 
@@ -356,12 +401,13 @@
          <!-- /.col -->
      </div>
      <!--end::Row-->
-     </div>
+    </div>
+</section>
                <!--end::Container-->
      <!--end::App Content Header-->
      <!--begin::App Content-->
        <!--end::App Content-->
-   </main>
+    </main>
    <!--end::App Main-->
  </div>
  </div>
