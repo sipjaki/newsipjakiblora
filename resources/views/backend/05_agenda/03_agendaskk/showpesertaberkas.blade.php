@@ -159,7 +159,7 @@
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                  <a href="{{ url('/beagendaskkpeserta/show/' . $id_agendaskk) }}">
+           <a href="{{ url()->previous() }}">
     <button
         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
         onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
