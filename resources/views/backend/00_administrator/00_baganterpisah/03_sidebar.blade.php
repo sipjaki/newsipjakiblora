@@ -278,11 +278,8 @@
                 </a>
                 </li>
 
-
-
-
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/hakaksespekerjaskk" class="nav-link">
                   <i class="nav-icon bi bi-folder2-open" style="color: white"></i> <!-- Berkas Anda -->
                   <p style="color: white">
                     Berkas Anda

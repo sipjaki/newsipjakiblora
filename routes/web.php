@@ -28,6 +28,7 @@ use App\Http\Controllers\PaketpekerjaanmasjakiController;
 use App\Http\Controllers\PesertapelatihanController;
 use App\Http\Controllers\AndroidVersionController;
 use App\Http\Controllers\DownloadExcelController;
+use App\Http\Controllers\HakAksesController;
 use App\Http\Controllers\VerifikasiController;
 use App\Models\tertibjasakonstruksi;
 // MAS JAKI
@@ -166,7 +167,6 @@ Route::get('/respesertaskk', [AndroidVersionController::class, 'menurespesertask
 Route::get('/resskkpeserta/{namakegiatan}', [AndroidVersionController::class, 'menuresskkpeserta']);
 
 
-// nurfie
 Route::get('/resdaftarpelatihanpesertaskk/create/{id}', [AndroidVersionController::class, 'resdaftarpelatihanpesertaskk'])->middleware('auth')->name('resdaftarpelatihanpesertaskk');
 
 
@@ -942,13 +942,12 @@ Route::get('/beskkdatapesertajumlah/show/{id}', [AgendaskkController::class, 'be
 
 Route::get('/beakseslsppenerbitskk', [PembinaanController::class, 'beakseslsppenerbitskk'])->middleware('auth');
 
-// nurfi
-// ROUTE PENGAMBILAN DATA ID
-// PEKERJAANINI
-
 Route::get('/beagendaskkmateri/createmateri/{id}', [PembinaanController::class, 'beagendaskkmatericreate'])->middleware('auth')->name('beagendaskkmatericreate');
 Route::post('/beagendaskkmateri/createmateri/new', [PembinaanController::class, 'beagendaskkmatericreatenew'])->middleware('auth')->name('beagendaskkmatericreatenew');
 
+// HAK AKSES PEKERJA
+
+Route::get('/hakaksespekerjaskk', [HakAksesController::class, 'agendaskkpeserta'])->middleware('auth');
 
 
 
