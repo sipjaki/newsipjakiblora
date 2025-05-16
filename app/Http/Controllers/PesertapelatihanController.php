@@ -145,7 +145,7 @@ public function bepesertapelatihanindex(Request $request)
 // PesertapelatihanController.php
 public function bepesertapelatihansertifikat(Request $request, $id)
 {
-    $perPage = $request->input('perPage', 50);
+    $perPage = $request->input('perPage', 200);
     $search = $request->input('search');
 
     $agendapelatihan = agendapelatihan::findOrFail($id);
