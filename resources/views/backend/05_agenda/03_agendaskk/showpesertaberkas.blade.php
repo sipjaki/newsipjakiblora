@@ -573,7 +573,7 @@
         <tr>
            <td style="text-align: center;">
     @if(strtolower($datapeserta->punyaskk) == 'ya')
-        <button class="badge-kembali" style="text-align: center;">YA</button>
+        <button class="badge-success" style="text-align: center;">YA</button>
     @elseif(strtolower($datapeserta->punyaskk) == 'tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
@@ -582,7 +582,7 @@
 </td>
            <td style="text-align: center;">
     @if(strtolower($datapeserta->portalpupr) == 'ya')
-        <button class="badge-kembali" style="text-align: center;">YA</button>
+        <button class="badge-success" style="text-align: center;">YA</button>
     @elseif(strtolower($datapeserta->portalpupr) == 'tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
@@ -592,7 +592,7 @@
 
 <td style="text-align: center;">
     @if(strtolower($datapeserta->punyasiki) == 'ya')
-        <button class="badge-kembali" style="text-align: center;">YA</button>
+        <button class="badge-success" style="text-align: center;">YA</button>
     @elseif(strtolower($datapeserta->punyasiki) == 'tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
@@ -602,7 +602,7 @@
 
 <td style="text-align: center;">
     @if(strtolower($datapeserta->siappatuh) == 'ya')
-        <button class="badge-kembali" style="text-align: center;">YA</button>
+        <button class="badge-success" style="text-align: center;">YA</button>
     @elseif(strtolower($datapeserta->siappatuh) == 'tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
