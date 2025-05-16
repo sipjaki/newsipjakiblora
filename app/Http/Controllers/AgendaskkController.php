@@ -394,6 +394,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:5048',
         'uploadijazah' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
         'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadnpwp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
         'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
         'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
 
@@ -544,6 +545,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:5048',
         'uploadijazah' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
         'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadnpwp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
         'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
         'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
 
