@@ -126,6 +126,9 @@ table.zebra-table {
 
     </div>
   </div>
+            @auth
+                <h5>Selamat datang, {{ auth()->user()->name }}! Silakan mendaftar.</h5>
+            @endauth
 
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
@@ -160,6 +163,8 @@ table.zebra-table {
                         </div>
 
                         <!-- Judul dan Data Lebar -->
+
+
                         <div style="display: flex; flex-direction: column; flex-grow: 1; padding-left: 10px;">
                             <strong style="font-size: 15px;">{{ $title }}</strong>
                             <span style="font-size: 15px;">{{ $agendaskknamakegiatan }}</span>
