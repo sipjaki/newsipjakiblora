@@ -158,7 +158,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
         <th style="width: 75px; text-align:center; vertical-align: middle;">
             <i class="bi bi-hash"></i> No
           </th>
-          <th style="width: 250px; text-align:center; vertical-align: middle;">
+          <th style="width: 500px; text-align:center; vertical-align: middle;">
             <i class="bi bi-journal-bookmark"></i> Nama Kegiatan
           </th>
 
