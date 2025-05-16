@@ -95,7 +95,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
 <!-- Tombol Data LSP Pelaksana -->
 
-<a href="/404">
+{{-- <a href="/404">
     <button
         onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
         onmouseout="this.style.background='linear-gradient(to right, #004d00, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
@@ -106,7 +106,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
         </svg>
         Data LSP Pelaksana
     </button>
-</a>
+</a> --}}
 
                      </div>
                  </div>
