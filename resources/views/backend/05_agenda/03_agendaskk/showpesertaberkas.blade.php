@@ -844,7 +844,7 @@
                                             </th>
                                     </tr>
                                     <tr>
-                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 4 x 6 </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4 </th>
                                         <th class="text-center">
                                             <button class="btn btn-secondary btn-sm"
                                                 style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -895,7 +895,10 @@
                                                 </div>
                                             </th>
                                     </tr>
+                                    <tr>
                                         <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
+                                    </tr>
+
                                         <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
                                         <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
                                         {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
