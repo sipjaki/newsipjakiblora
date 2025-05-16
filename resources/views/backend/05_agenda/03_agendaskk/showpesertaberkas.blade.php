@@ -1147,11 +1147,9 @@
 
                                         <!-- Ikon SVG Pensil -->
 
-                                    <div class="text-end mt-4">
                                         <button type="submit" class="btn btn-primary" style="padding: 10px 20px; border-radius: 8px;">
-                                            <i class="bi bi-save"></i>
+                                            <i class="bi bi-save">Simpan Validasi</i>
                                         </button>
-                                    </div>
 
                                     </button>
                                     </div>
