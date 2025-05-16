@@ -286,7 +286,7 @@
                                         @empty
                                     <div class="col-12">
     <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert" style="background-color: #fff3cd; border-color: #ffeeba; height: 40px;">
-        <div class="marquee-text">
+        <div class="marquee-text" style="height:100px;">
             <i class="bi bi-exclamation-circle"></i> Materi Belum di Upload DPUPR Kab Blora
         </div>
     </div>
