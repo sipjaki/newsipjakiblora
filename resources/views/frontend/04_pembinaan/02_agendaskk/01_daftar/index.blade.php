@@ -403,8 +403,8 @@ table.zebra-table {
                                     </label>
                                     <select name="punyaskk" style="{{ $inputStyle }}" class="@error('punyaskk') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('punyaskk') == 'ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('punyaskk') == 'tidak' ? 'selected' : '' }}>Tidak</option>
+                                        <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                     @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
@@ -416,8 +416,8 @@ table.zebra-table {
                                     </label>
                                     <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('punyasiki') == 'ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('punyasiki') == 'tidak' ? 'selected' : '' }}>Tidak</option>
+                                        <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                     @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
@@ -429,8 +429,8 @@ table.zebra-table {
                                     </label>
                                     <select name="siappatuh" style="{{ $inputStyle }}" class="@error('siappatuh') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('siappatuh') == 'ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('siappatuh') == 'tidak' ? 'selected' : '' }}>Tidak</option>
+                                        <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                     @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
@@ -441,8 +441,8 @@ table.zebra-table {
                                     </label>
                                     <select name="portalpupr" style="{{ $inputStyle }}" class="@error('portalpupr') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('portalpupr') == 'ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('portalpupr') == 'tidak' ? 'selected' : '' }}>Tidak</option>
+                                        <option value="Ya" {{ old('portalpupr') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('portalpupr') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                     @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
@@ -928,8 +928,8 @@ function previewFile(previewId, input) {
             <form id="nikRegistrationForm" action="{{ route('daftarpesertasertifikasiskkcreatenew2') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
-
-                {{-- <div class="col-md-6" style="{{ $divStyle }} display: flex; gap: 20px;" id="upload_skk_section">
+<div class="col-md-6" style="{{ $divStyle }} display: flex; gap: 20px;" id="upload_skk_section">
+    <!-- Bagian Upload kiri -->
     <div style="flex: 1; min-width: 0;">
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
@@ -938,8 +938,9 @@ function previewFile(previewId, input) {
         accept="application/pdf"
         style="{{ $inputStyle }}"
         class="form-control @error('skkanda') is-invalid @enderror">
+        {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small> --}}
         @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div> --}}
+    </div>
 
     <!-- Bagian Preview kanan -->
 </div>
@@ -1251,28 +1252,23 @@ function previewFile(previewId, input) {
 <div class="row">
 <br><br>
 <!-- Upload KTP -->
-<!-- Upload KTP -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP | .pdf, jpg, jpeg, png | Max 5MB
+        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP | .pdf,jpg,jpeg,png | Max 5MB
     </label>
-    <input type="file" name="uploadktp"
-        class="form-control @error('uploadktp') is-invalid @enderror"
-        accept="application/pdf,image/*" onchange="previewFile(this)">
+    <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
     <div class="invalid-feedback">@error('uploadktp') {{ $message }} @enderror</div>
-    <div class="preview-container"></div>
+    <div id="ktpPreview" class="preview-container"></div>
 </div>
 
-<!-- Upload Pas Foto -->
+<!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3x4 Background Merah | jpg, jpeg, png | Max 5MB
+        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah <br> jpg,jpeg,png | Max 5MB
     </label>
-    <input type="file" name="uploadfoto"
-        class="form-control @error('uploadfoto') is-invalid @enderror"
-        accept="image/*" onchange="previewFile(this)">
+    <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
     <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
-    <div class="preview-container"></div>
+    <div id="fotoPreview" class="preview-container"></div>
 </div>
 
 <!-- Upload Ijazah -->
@@ -1280,33 +1276,51 @@ function previewFile(previewId, input) {
     <label class="form-label text-start" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah | .pdf | Max 5MB
     </label>
-    <input type="file" name="uploadijazah"
-        class="form-control @error('uploadijazah') is-invalid @enderror"
-        accept="application/pdf,image/*" onchange="previewFile(this)">
+    <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
     <div class="invalid-feedback">@error('uploadijazah') {{ $message }} @enderror</div>
-    <div class="preview-container"></div>
+    <div id="ijazahPreview" class="preview-container"></div>
+</div>
 </div>
 
+<div class="row">
 <!-- Upload Pengalaman -->
 <div class="col-md-4" style="{{ $divStyle }}">
+    {{-- @php
+    $firstItem = $datacontohsurat->sortBy('id')->first(); // ambil berdasarkan ID terkecil
+    $fileDownload = null;
+
+    if ($firstItem && $firstItem->berkas) {
+        $path = public_path('storage/' . $firstItem->berkas);
+        if (file_exists($path)) {
+            $fileDownload = asset('storage/' . $firstItem->berkas);
+        } else {
+            $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
+        }
+    }
+    @endphp --}}
+
+
     @php
-        $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
-    @endphp
-    <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf | Max 5MB <br>
-        @if ($fileDownload)
-            <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
-                Contoh Pengalaman Kerja <i class="bi bi-download"></i>
-            </a>
-        @else
-            <span style="color: gray;">Contoh belum tersedia</span>
+    $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
+@endphp
+
+<label class="form-label text-start" style="{{ $labelStyle }}">
+<i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf | Max 5MB
+@if ($fileDownload) <br>
+<a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
+    Contoh Pengalaman Kerja <i class="bi bi-download"></i>
+</a>
+{{-- <div style="font-size: 0.9em; color: gray;">
+    File: {{ $firstItem->berkas }}
+</div> --}}
+    @else
+        <span style="color: gray;">Contoh belum tersedia</span>
         @endif
     </label>
-    <input type="file" name="uploadpengalaman"
-        class="form-control @error('uploadpengalaman') is-invalid @enderror"
-        accept="application/pdf,image/*" onchange="previewFile(this)">
+
+    <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
     <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
-    <div class="preview-container"></div>
+    <div id="pengalamanPreview" class="preview-container"></div>
 </div>
 
 <!-- Upload NPWP -->
@@ -1314,30 +1328,27 @@ function previewFile(previewId, input) {
     <label class="form-label text-start" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP | .pdf | Max 5MB
     </label>
-    <input type="file" name="uploadnpwp"
-        class="form-control @error('uploadnpwp') is-invalid @enderror"
-        accept="application/pdf,image/*" onchange="previewFile(this)">
+    <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
     <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
     <p>Ket : Wajib NPWP K3 dan Jenjang 5, 6 </p>
-    <div class="preview-container"></div>
+    <div id="npwpPreview" class="preview-container"></div>
 </div>
 
-<!-- Upload CV / Daftar Riwayat Hidup -->
+<!-- Upload Daftar Riwayat Hidup -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-start" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup | .pdf | Max 5MB
     </label>
-    <input type="file" name="uploaddaftarriwayathidup"
-        class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror"
-        accept="application/pdf,image/*" onchange="previewFile(this)">
+    <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
     <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div>
-    <div class="preview-container"></div>
+    <div id="riwayatPreview" class="preview-container"></div>
+</div>
 </div>
 
-<!-- Upload Surat Kebenaran Data -->
+<div class="row" style="margin-top: -20px;">
 <div class="col-md-4" style="{{ $divStyle }}">
     @php
-        $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first();
+        $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first(); // ambil data ke-2 berdasarkan ID terkecil
         $fileDownload = null;
 
         if ($secondItem && $secondItem->berkas) {
@@ -1345,13 +1356,13 @@ function previewFile(previewId, input) {
             if (file_exists($path)) {
                 $fileDownload = asset('storage/' . $secondItem->berkas);
             } else {
-                $fileDownload = asset($secondItem->berkas);
+                $fileDownload = asset($secondItem->berkas); // fallback jika path bukan di storage
             }
         }
     @endphp
 
     <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB <br>
+        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
         @if ($fileDownload)
             <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
                 Contoh Surat Pernyataan <i class="bi bi-download"></i>
@@ -1360,42 +1371,40 @@ function previewFile(previewId, input) {
             <span style="color: gray;">Contoh belum tersedia</span>
         @endif
     </label>
-    <input type="file" name="uploadkebenarandata"
-        class="form-control @error('uploadkebenarandata') is-invalid @enderror"
-        accept="application/pdf,image/*" onchange="previewFile(this)">
+
+    <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
     <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div>
-    <div class="preview-container"></div>
+    <div id="kebenaranDataPreview" class="preview-container"></div>
 </div>
 
-<!-- SCRIPT UNTUK PREVIEW -->
+</div>
+
 <script>
-function previewFile(input) {
+function previewFile(previewId, input) {
     const file = input.files[0];
-    const previewContainer = input.parentElement.querySelector('.preview-container');
-    previewContainer.innerHTML = '';
+    const previewContainer = document.getElementById(previewId);
+    previewContainer.innerHTML = '';  // Clear previous preview
 
     if (file) {
         const reader = new FileReader();
-        reader.onload = function (e) {
-            const fileType = file.type;
+        reader.onload = function(e) {
+            const fileType = file.type.split('/')[0];
 
-            if (fileType.startsWith('image/')) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.style.width = '100%';
-                img.style.maxWidth = '210mm';
-                img.style.height = 'auto';
-                previewContainer.appendChild(img);
-            } else if (fileType === 'application/pdf') {
-                const iframe = document.createElement('iframe');
-                iframe.src = e.target.result;
-                iframe.style.width = '100%';
-                iframe.style.height = '400px';
-                previewContainer.appendChild(iframe);
-            } else {
-                const message = document.createElement('p');
-                message.textContent = 'Preview tidak tersedia untuk format ini.';
-                previewContainer.appendChild(message);
+            if (fileType === 'image') {
+                const imgElement = document.createElement('img');
+                imgElement.src = e.target.result;
+                imgElement.style.width = '100%';
+                imgElement.style.maxWidth = '210mm';  // A4 width
+                imgElement.style.height = 'auto';
+                previewContainer.appendChild(imgElement);
+            } else if (fileType === 'application') {
+                if (file.type === 'application/pdf') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = e.target.result;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px';  // Adjust as needed
+                    previewContainer.appendChild(iframe);
+                }
             }
         };
         reader.readAsDataURL(file);
