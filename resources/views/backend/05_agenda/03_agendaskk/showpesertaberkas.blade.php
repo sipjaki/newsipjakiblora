@@ -896,25 +896,8 @@
                                             </th>
                                     </tr>
                                     <tr>
-                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
-                                    </tr>
-
-                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
-                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
-                                        {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
-                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
-                                        {{-- <th style="width: 300px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th> --}}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                {{-- @foreach ($subdata as $datapeserta ) --}}
-                                    <tr class="align-middle">
-                                        {{-- <td style="text-align: center;">{{ $loop->iteration }}</td> --}}
-
-
-                                        {{-- berkas 2  --}}
-                                        {{-- berkas 3 ijazzah --}}
-                                            <td class="text-center">
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah  </th>
+                                        <th style="text-center">
                                                 <button class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -951,11 +934,26 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </td>
+                                        </th>
+                                            <th class="text-center">
+                                              <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_ijazah" value="sesuai"
+                                                    {{ $datapeserta->validasi_ijazah == 'sesuai' ? 'checked' : '' }} />
+                                                    Sesuai
+                                                </label>
 
-
-                                            {{-- berkas 4 pengalaman --}}
-                                            <td class="text-center">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_ijazah" value="tidak_sesuai"
+                                                    {{ $datapeserta->validasi_ijazah == 'tidak_sesuai' ? 'checked' : '' }} />
+                                                    Tidak Sesuai
+                                                </label>
+                                                </div>
+                                            </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
+                                        <th>
                                                 <button class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -992,11 +990,26 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </td>
+                                        </th>
+                                            <th class="text-center">
+                                              <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_pengalaman" value="sesuai"
+                                                    {{ $datapeserta->validasi_pengalaman == 'sesuai' ? 'checked' : '' }} />
+                                                    Sesuai
+                                                </label>
 
-{{-- berkas 5 kebenaran daa  --}}
-
-                                            <td class="text-center">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_ijazah" value="tidak_sesuai"
+                                                    {{ $datapeserta->validasi_pengalaman == 'tidak_sesuai' ? 'checked' : '' }} />
+                                                    Tidak Sesuai
+                                                </label>
+                                                </div>
+                                            </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
+                                        <th style="text-center;">
                                                 <button class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -1033,12 +1046,27 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </td>
+                                        </th>
+                                          <th class="text-center">
+                                              <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_kebenarandata" value="sesuai"
+                                                    {{ $datapeserta->validasi_kebenarandata == 'sesuai' ? 'checked' : '' }} />
+                                                    Sesuai
+                                                </label>
 
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_kebenarandata" value="tidak_sesuai"
+                                                    {{ $datapeserta->validasi_kebenarandata == 'tidak_sesuai' ? 'checked' : '' }} />
+                                                    Tidak Sesuai
+                                                </label>
+                                                </div>
+                                            </th>
+                                    </tr>
 
-
-                                                <!-- Modal NPWP -->
-                                                <td class="text-center">
+                                    <tr>
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
+                                        <th style="text-center;">
                                                     <button class="btn btn-secondary btn-sm"
                                                         style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -1075,8 +1103,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                            <td class="text-center">
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
+                                            <th class="text-center;">
                                                 <button class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -1110,12 +1141,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </td>
 
+                                            </th>
                                     </tr>
-                                        {{-- @endforeach --}}
 
-                                </tbody>
+                                </thead>
                             </table>
                             <br><br><br>
                         </div>
