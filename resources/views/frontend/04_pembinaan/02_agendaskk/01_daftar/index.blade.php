@@ -928,28 +928,24 @@ function previewFile(previewId, input) {
             <form id="nikRegistrationForm" action="{{ route('daftarpesertasertifikasiskkcreatenew2') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
-<div class="col-md-6" style="{{ $divStyle }} display: flex; gap: 20px;" id="upload_skk_section">
-    <!-- Bagian Upload kiri -->
-    <div style="flex: 1; min-width: 0;">
-        <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
-        </label>
-        <input type="file" name="skkanda" id="skkanda"
-        accept="application/pdf"
-        style="{{ $inputStyle }}"
-        class="form-control @error('skkanda') is-invalid @enderror">
-        {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small> --}}
-        @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
+<div class="row" style="{{ $divStyle }}">
+  <!-- Upload di kiri (6 kolom) -->
+  <div class="col-md-6">
+    <label class="form-label" style="{{ $labelStyle }}">
+      <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
+    </label>
+    <input type="file" name="skkanda" id="skkanda"
+           accept="application/pdf"
+           style="{{ $inputStyle }}"
+           class="form-control @error('skkanda') is-invalid @enderror">
+    @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
+  </div>
 
-    <!-- Bagian Preview kanan -->
-</div>
-
-<div class="col-md-6" style="{{ $divStyle }} display: flex; gap: 20px;">
-    <div id="preview_pdf" style="flex: 1; display: none; margin-top: 24px;">
-        <label style="font-weight: bold;">Preview SKK:</label>
-        <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
-    </div>
+  <!-- Preview di kanan (6 kolom) -->
+  <div class="col-md-6" id="preview_pdf" style="display: none; margin-top: 24px;">
+    <label style="font-weight: bold;">Preview SKK:</label>
+    <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
+  </div>
 </div>
 
 <div class="card-body">
