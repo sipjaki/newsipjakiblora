@@ -1,4 +1,24 @@
 <style>
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    will-change: transform;
+    animation: marquee-left 12s linear infinite;
+    left: 100%;
+}
+
+@keyframes marquee-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+</style>
+
+<style>
     .btn-suspend {
         background-color: orange;
         color: white;
@@ -264,13 +284,16 @@
 
                                     </tr>
                                         @empty
-                                      <div class="col-12">
-                                            <marquee behavior="scroll" direction="left" scrollamount="6">
-                                                <div class="alert alert-warning text-center mb-0" role="alert" style="background-color: #fff3cd; border-color: #ffeeba;">
-                                                    <i class="bi bi-exclamation-circle"></i> Materi Belum di Upload DPUPR Kab Blora
-                                                </div>
-                                            </marquee>
-                                        </div>
+                                    <div class="col-12">
+    <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert" style="background-color: #fff3cd; border-color: #ffeeba; height: 40px;">
+        <div class="marquee-text">
+            <i class="bi bi-exclamation-circle"></i> Materi Belum di Upload DPUPR Kab Blora
+        </div>
+    </div>
+</div>
+
+
+
                                         @endforelse
 
                                 </tbody>
