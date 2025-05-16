@@ -173,7 +173,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             <i class="bi bi-building"></i> LSP Penerbit
           </th>
           <th style="width: 250px; text-align:center; vertical-align: middle;">
-            <i class="bi bi-award"></i> Asosiasi
+            <i class="bi bi-award"></i> Penyelenggara
           </th>
           <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-journal-bookmark"></i> Nama Kegiatan
@@ -187,31 +187,31 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
           <th style="width: 100px; text-align:center; vertical-align: middle;">
             <i class="bi bi-check-circle"></i> Status
           </th>
-          <th style="width: 200px; text-align:center; vertical-align: middle;">
+          {{-- <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-person-plus"></i> Jumlah Peserta
-          </th>
-          <th style="width: 250px; text-align:center; vertical-align: middle;">
+          </th> --}}
+          {{-- <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-geo-alt"></i> Lokasi
-          </th>
-          <th style="width: 250px; text-align:center; vertical-align: middle;">
+          </th> --}}
+          {{-- <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-info-circle"></i> Keterangan
-          </th>
-          <th style="width: 600px; text-align:center; vertical-align: middle;">
+          </th> --}}
+          {{-- <th style="width: 600px; text-align:center; vertical-align: middle;">
             <i class="bi bi-card-text"></i> Isi Agenda
-          </th>
+          </th> --}}
           <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-image"></i> Foto
           </th>
           <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-list-ul"></i> Daftar Materi
           </th>
-          <th style="width: 200px; text-align:center; vertical-align: middle;">
+          {{-- <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-people-fill"></i> Peserta
-          </th>
+          </th> --}}
 
-          <th style="width: 200px; text-align:center; vertical-align: middle;">
+          {{-- <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-tools"></i> Aksi
-          </th>
+          </th> --}}
 
      </tr>
  </thead>
@@ -252,10 +252,10 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             setInterval(updateStatus, 1000);
         </script>
 
-        <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
-         <td style="text-align: left;">{{$item->lokasi}}</td>
+        {{-- <td style="text-align: center;">{{$item->jumlahpeserta}}</td> --}}
+         {{-- <td style="text-align: left;">{{$item->lokasi}}</td> --}}
          <td style="text-align: left;">{{$item->keterangan}}</td>
-         <td style="text-align: left;">{{$item->isiagenda}}</td>
+         {{-- <td style="text-align: left;">{{$item->isiagenda}}</td> --}}
          <td style="text-align: center; gap:10px;">
             <div style="margin-top: 10px;">
                 @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
@@ -285,38 +285,6 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             </a>
         </td>
 
-        <td style="text-align: center; vertical-align: middle;">
-            <a href="{{ url('/beagendaskkpeserta/show/' . $item->id) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 20px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           transition: background-color 0.3s, color 0.3s;
-                           display: inline-flex; align-items: center;">
-                 <span style="display: inline-flex; align-items: center;">
-                    <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
-                    {{ $item->allskktenagakerjablora_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota
-                </span>
-                </button>
-            </a>
-        </td>
-
-
-         <td style="text-align: center; vertical-align: middle;">
-             <a href="/beagendaskk/show/{{$item->namakegiatan}}" class="btn btn-sm btn-info me-2" title="Show">
-                 <i class="bi bi-eye"></i>
-             </a>
-             <a href="/beagendaskk/update/{{$item->namakegiatan}}" class="btn btn-sm btn-warning me-2" title="Update">
-                 <i class="bi bi-pencil-square"></i>
-             </a>
-             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
-                   data-bs-toggle="modal" data-bs-target="#deleteModal"
-                   data-judul="{{ $item->namakegiatan }}"
-                   onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>
-            </a>
-         </td>
 
         </tr>
 
