@@ -179,9 +179,20 @@ table.zebra-table {
 
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd;">
-        <div style="width: 100%; background-color: #f0f0f0; padding: 10px; overflow: hidden;">
-            <p class="scrolling-text"><span style="color: red">Perhatian : </span> Jika Saudara kembali ke halaman ini setelah mendaftar, maka pendaftaran Saudara gagal. Silakan periksa data dan dokumen Saudara, lalu ulangi kembali !.</p>
+      <div style="width: 100%; background-color: #f0f0f0; padding: 10px; overflow: hidden;">
+    @auth
+        <div style="color: green; font-weight: bold; margin-bottom: 5px;">
+            Selamat datang, {{ auth()->user()->name }}! Silakan mendaftar.
         </div>
+    @endauth
+
+    <p class="scrolling-text">
+        <span style="color: red; font-weight: bold;">Perhatian:</span>
+        Jika Saudara kembali ke halaman ini setelah mendaftar, maka pendaftaran Saudara gagal.
+        Silakan periksa data dan dokumen Saudara, lalu ulangi kembali!
+    </p>
+</div>
+
 <br>
         <style>
         .scrolling-text {
