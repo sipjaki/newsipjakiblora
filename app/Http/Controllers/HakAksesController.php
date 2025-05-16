@@ -15,16 +15,16 @@ public function agendaskkpeserta(Request $request)
 {
     $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
-
-    // Ambil ID user yang sedang login
     $userId = Auth::id();
 
-    // Query awal: ambil data agenda milik user login + jumlah peserta
     $query = agendaskk::withCount('allskktenagakerjablora')
-                ->where('user_id', $userId) // Hanya data milik user login
+                // Hanya tampilkan agenda yang memiliki peserta dengan user_id akun login
+                ->whereHas('allskktenagakerjablora', function ($q) use ($userId) {
+                    $q->where('user_id', $userId);
+                })
                 ->orderBy('created_at', 'desc');
 
-    // Jika ada pencarian
+    // Pencarian
     if ($search) {
         $query->where(function ($q) use ($search) {
             $q->where('namakegiatan', 'LIKE', "%{$search}%")
@@ -40,17 +40,14 @@ public function agendaskkpeserta(Request $request)
         });
     }
 
-    // Paginate hasil query
     $data = $query->paginate($perPage);
 
-    // Jika request via AJAX (misalnya untuk filter atau search)
     if ($request->ajax()) {
         return response()->json([
             'html' => view('backend.15_hakakses.01_pekerja.01_agendaskk.daftarkegiatan', compact('data'))->render()
         ]);
     }
 
-    // Tampilkan view default
     return view('backend.15_hakakses.01_pekerja.01_agendaskk.daftarkegiatan', [
         'title' => 'Daftar Kegiatan SKK Saudara',
         'data' => $data,
