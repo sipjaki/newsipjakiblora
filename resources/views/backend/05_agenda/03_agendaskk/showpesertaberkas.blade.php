@@ -1146,9 +1146,9 @@
 
                                     <!-- Ikon SVG Pensil -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-     fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-  <path d="M8 0a2 2 0 0 1 2 2v2h3.5A1.5 1.5 0 0 1 15 5.5v8A2.5 2.5 0 0 1 12.5 16h-9A2.5 2.5 0 0 1 1 13.5v-11A2.5 2.5 0 0 1 3.5 0H8zm0 1H3.5A1.5 1.5 0 0 0 2 2.5V6h12V5.5A.5.5 0 0 0 13.5 5H10V2a1 1 0 0 0-1-1H8zm-2 7a1 1 0 0 1 1 1v1.5H9V9a1 1 0 0 1 2 0v3a.5.5 0 0 1-.5.5H5.5a.5.5 0 0 1-.5-.5V9a1 1 0 0 1 1-1z"/>
-</svg>
+                                fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path d="M8 0a2 2 0 0 1 2 2v2h3.5A1.5 1.5 0 0 1 15 5.5v8A2.5 2.5 0 0 1 12.5 16h-9A2.5 2.5 0 0 1 1 13.5v-11A2.5 2.5 0 0 1 3.5 0H8zm0 1H3.5A1.5 1.5 0 0 0 2 2.5V6h12V5.5A.5.5 0 0 0 13.5 5H10V2a1 1 0 0 0-1-1H8zm-2 7a1 1 0 0 1 1 1v1.5H9V9a1 1 0 0 1 2 0v3a.5.5 0 0 1-.5.5H5.5a.5.5 0 0 1-.5-.5V9a1 1 0 0 1 1-1z"/>
+                            </svg>
 
                                     <span style="font-family: 'Poppins', sans-serif;">Simpan Validasi</span>
                                 </button>

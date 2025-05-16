@@ -159,4 +159,44 @@ public function terbitkanSertifikat($id)
     return redirect("/beagendaskkpeserta/show/{$agendaId}");
 }
 
+
+
+
+public function validasidokumenpesertaskk(Request $request, $id)
+{
+    // Validasi input wajib
+    $request->validate([
+        'validasi_ktp' => 'required|in:sesuai,tidak_sesuai',
+        'validasi_foto' => 'required|in:sesuai,tidak_sesuai',
+        'validasi_ijazah' => 'required|in:sesuai,tidak_sesuai',
+        'validasi_pengalaman' => 'required|in:sesuai,tidak_sesuai',
+        'validasi_kebenarandata' => 'required|in:sesuai,tidak_sesuai',
+        'validasi_npwp' => 'required|in:sesuai,tidak_sesuai',
+        'validasi_daftarriwayathidup' => 'required|in:sesuai,tidak_sesuai',
+    ]);
+
+    // Cari peserta berdasarkan ID
+    $item = allskktenagakerjablora::findOrFail($id);
+
+    // Simpan data
+    $item->update([
+        'validasi_ktp' => $request->validasi_ktp,
+        'validasi_foto' => $request->validasi_foto,
+        'validasi_ijazah' => $request->validasi_ijazah,
+        'validasi_pengalaman' => $request->validasi_pengalaman,
+        'validasi_kebenarandata' => $request->validasi_kebenarandata,
+        'validasi_npwp' => $request->validasi_npwp,
+        'validasi_daftarriwayathidup' => $request->validasi_daftarriwayathidup,
+    ]);
+
+    // Ambil ID agenda untuk redirect
+    $agendaId = $item->agendaskk_id;
+
+    // Kirimkan flash message ke session
+    session()->flash('validasiberkasskk', 'Validasi Berkas Berhasil' );
+
+    // Redirect ke halaman detail agenda peserta
+    return redirect("/beagendaskkpeserta/show/{$agendaId}");
+}
+
 }
