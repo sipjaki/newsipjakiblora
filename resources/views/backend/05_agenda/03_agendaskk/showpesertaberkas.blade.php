@@ -554,43 +554,52 @@
 
 <div class="halaman-kedua">
 
-    <h5 style="color: navy; font-weight:800;">III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
+    <h5 style="color: navy; font-weight:800; font-size:16px;">III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <table class="zebra-table table-striped">
         <tr>
-            <td style="text-align: center;">Nama Asosiasi</td>
-            <td style="text-align: center;">{{$datapeserta->namaasosiasi}}</td>
+            <td style="text-align: center; font-size:16px;">Nama Asosiasi</td>
+            <td style="text-align: center; font-size:16px;">{{$datapeserta->namaasosiasi}}</td>
         </tr>
     </table>
 
     <table class="zebra-table table-striped">
         <tr>
-            <td style="text-align: center;">MEMPUNYAI SKK ?</td>
-            <td style="text-align: center;">MEMPUNYAI AKUN SIKI/ E-SIMPAN ?</td>
-            <td style="text-align: center;">BERSEDIA MEMATUHI PERATURAN</td>
+            <td style="text-align: center; font-size:16px;">MEMPUNYAI SKK ?</td>
+            <td style="text-align: center; font-size:16px;">MEMPUNYAI AKUN SIKI/ E-SIMPAN ?</td>
+            <td style="text-align: center; font-size:16px;">BERSEDIA MEMATUHI PERATURAN</td>
         </tr>
         <tr>
-            <td style="text-align: center;">
-                @if($datapeserta->punyaskk)
-                    <button class="badge-kembali" style="text-align: center;">PUNYA</button>
-                @else
-                    <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK PUNYA</button>
-                @endif
-            </td>
-            <td style="text-align: center;">
-                @if($datapeserta->punyasiki)
-                    <button class="badge-kembali" style="text-align: center;">YA</button>
-                @else
-                    <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
-                @endif
-            </td>
-            <td style="text-align: center;">
-                @if($datapeserta->siappatuh)
-                    <button class="badge-kembali" style="text-align: center;">BERSEDIA</button>
-                @else
-                    <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK BERSEDIA</button>
-                @endif
-            </td>
+           <td style="text-align: center;">
+    @if(strtolower($datapeserta->punyaskk) == 'ya')
+        <button class="badge-kembali" style="text-align: center;">YA</button>
+    @elseif(strtolower($datapeserta->punyaskk) == 'tidak')
+        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
+    @else
+        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
+    @endif
+</td>
+
+<td style="text-align: center;">
+    @if(strtolower($datapeserta->punyasiki) == 'ya')
+        <button class="badge-kembali" style="text-align: center;">YA</button>
+    @elseif(strtolower($datapeserta->punyasiki) == 'tidak')
+        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
+    @else
+        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
+    @endif
+</td>
+
+<td style="text-align: center;">
+    @if(strtolower($datapeserta->siappatuh) == 'ya')
+        <button class="badge-kembali" style="text-align: center;">YA</button>
+    @elseif(strtolower($datapeserta->siappatuh) == 'tidak')
+        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
+    @else
+        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
+    @endif
+</td>
+
 
         </tr>
 
