@@ -929,29 +929,32 @@ function previewFile(previewId, input) {
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 <div class="col-md-6" style="{{ $divStyle }} display: flex; gap: 20px;" id="upload_skk_section">
-  <!-- Bagian Upload kiri -->
-  <div style="flex: 1; min-width: 0;">
-    <label class="form-label" style="{{ $labelStyle }}">
-      <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
-    </label>
-    <input type="file" name="skkanda" id="skkanda"
-           accept="application/pdf"
-           style="{{ $inputStyle }}"
-           class="form-control @error('skkanda') is-invalid @enderror">
-    {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small> --}}
-    @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
-  </div>
+    <!-- Bagian Upload kiri -->
+    <div style="flex: 1; min-width: 0;">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
+        </label>
+        <input type="file" name="skkanda" id="skkanda"
+        accept="application/pdf"
+        style="{{ $inputStyle }}"
+        class="form-control @error('skkanda') is-invalid @enderror">
+        {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small> --}}
+        @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    </div>
 
-  <!-- Bagian Preview kanan -->
-  <div id="preview_pdf" style="flex: 1; display: none; margin-top: 24px;">
-    <label style="font-weight: bold;">Preview SKK:</label>
-    <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
-  </div>
+    <!-- Bagian Preview kanan -->
 </div>
 
-                <div class="card-body">
+<div class="col-md-6" style="{{ $divStyle }} display: flex; gap: 20px;">
+    <div id="preview_pdf" style="flex: 1; display: none; margin-top: 24px;">
+        <label style="font-weight: bold;">Preview SKK:</label>
+        <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
+    </div>
+</div>
 
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;">
+<div class="card-body">
+
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;">
                         <hr style="width: 100%; max-width: 1200px; margin: 0;">
                         <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden; max-width: 800px;">
                             <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
