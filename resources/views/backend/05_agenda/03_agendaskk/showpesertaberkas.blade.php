@@ -682,14 +682,14 @@
     <div style="display: flex; justify-content: flex-end; padding: 10px;">
       <a href="javascript:history.back()">
     <button class="download-btn" style="margin-right: 10px; font-size:16px;">
-        <i class="bi bi-arrow-left" style="margin-right: 10px;"></i> Kembali
+        <i class="bi bi-arrow-left" style="margin-right: 10px;"></i><span style="font-size: 16px;"> Kembali</span>
     </button>
 </a>
 
 
         <!-- Tombol Download PDF -->
 <button id="downloadPDF" class="download-btn font-size:16px;" >
-    <i class="bi bi-download" style="margin-right: 10px;"></i> Download PDF
+    <i class="bi bi-download" style="margin-right: 10px;"></i> <span style="font-size: 16px;">Download PDF</span>
 </button>
 
     </div>
@@ -1262,10 +1262,10 @@
 
                         <div class="d-flex justify-content-between mt-4">
                             {{-- <a href="{{ route('admin.peserta.index') }}" class="btn btn-secondary"> --}}
-                                <i class="bi bi-arrow-left"></i> Kembali
+                                <i class="bi bi-arrow-left"></i> <span>Kembali</span>
                             </a>
                             <button type="submit" class="btn btn-success">
-                                <i class="bi bi-check-circle"></i> Simpan Validasi
+                                <i class="bi bi-check-circle"></i><span> Simpan Validasi</span>
                             </button>
                         </div>
                     </form>
