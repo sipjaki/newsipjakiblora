@@ -144,18 +144,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
                                 </script>
 
-                      <a href="/beagendaskk/create">
-    <button
-        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
-        onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
-        style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px;
-               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-               transition: background 0.3s, color 0.3s, border 0.3s;">
-        <!-- Ikon Plus -->
-        <i class="fa fa-plus" style="margin-right: 8px;"></i>
-        Create
-    </button>
-</a>
+
 
                      </div>
                  </div>
@@ -202,7 +191,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
           <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-image"></i> Foto
           </th>
-          <th style="width: 300px; text-align:center; vertical-align: middle;">
+          <th style="width: 150px; text-align:center; vertical-align: middle;">
             <i class="bi bi-list-ul"></i> Daftar Materi
           </th>
           {{-- <th style="width: 200px; text-align:center; vertical-align: middle;">
