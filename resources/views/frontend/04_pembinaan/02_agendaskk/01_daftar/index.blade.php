@@ -942,7 +942,7 @@ function previewFile(previewId, input) {
   </div>
 
   <!-- Kolom Preview SKK (kanan) -->
-  <div class="col-md-6">
+  {{-- <div class="col-md-6">
     <div id="preview_pdf" style="display: none; margin-top: 10px; margin-bottom: 400px; ">
       <label style="font-weight: bold;">Preview SKK:</label>
       <iframe id="pdf_preview_frame"
@@ -951,7 +951,7 @@ function previewFile(previewId, input) {
               style="border: 1px solid #ccc; border-radius: 6px;">
       </iframe>
     </div>
-  </div>
+  </div> --}}
 </div>
 
 <script>
