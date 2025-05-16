@@ -944,7 +944,7 @@ function previewFile(previewId, input) {
   <!-- Preview di kanan (6 kolom) -->
 
 </div>
-<div class="col-md-6" id="preview_pdf" style="display: none; margin-top: 24px; margin-bottom: 300px;">
+<div class="col-md-6" id="preview_pdf" style="display: none; margin-top: 24px; margin-bottom: 1300px;">
   <label style="font-weight: bold;">Preview SKK:</label>
   <iframe
     id="pdf_preview_frame"
