@@ -1047,7 +1047,7 @@ public function beagendaskkpesertashow(Request $request, $id)
 
     // Pastikan agenda pelatihan dengan ID ini ada
     $dataagendaskk = agendaskk::findOrFail($id);
-    $id = agendaskk::findOrFail($id);
+    // $id = agendaskk::findOrFail($id);
 
     // Ambil user login saat ini
     $user = Auth::user();
