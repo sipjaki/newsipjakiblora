@@ -572,18 +572,18 @@
         </tr>
         <tr>
            <td style="text-align: center;">
-    @if(strtolower($datapeserta->punyaskk) == 'ya')
+    @if(strtolower($datapeserta->punyaskk) == 'Ya')
         <button class="badge-success" style="text-align: center;">YA</button>
-    @elseif(strtolower($datapeserta->punyaskk) == 'tidak')
+    @elseif(strtolower($datapeserta->punyaskk) == 'Tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
         <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
     @endif
 </td>
            <td style="text-align: center;">
-    @if(strtolower($datapeserta->portalpupr) == 'ya')
+    @if(strtolower($datapeserta->portalpupr) == 'Ya')
         <button class="badge-success" style="text-align: center;">YA</button>
-    @elseif(strtolower($datapeserta->portalpupr) == 'tidak')
+    @elseif(strtolower($datapeserta->portalpupr) == 'Tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
         <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
@@ -591,9 +591,9 @@
 </td>
 
 <td style="text-align: center;">
-    @if(strtolower($datapeserta->punyasiki) == 'ya')
+    @if(strtolower($datapeserta->punyasiki) == 'Ya')
         <button class="badge-success" style="text-align: center;">YA</button>
-    @elseif(strtolower($datapeserta->punyasiki) == 'tidak')
+    @elseif(strtolower($datapeserta->punyasiki) == 'Tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
         <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
@@ -601,9 +601,9 @@
 </td>
 
 <td style="text-align: center;">
-    @if(strtolower($datapeserta->siappatuh) == 'ya')
+    @if(strtolower($datapeserta->siappatuh) == 'Ya')
         <button class="badge-success" style="text-align: center;">YA</button>
-    @elseif(strtolower($datapeserta->siappatuh) == 'tidak')
+    @elseif(strtolower($datapeserta->siappatuh) == 'Tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
         <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
