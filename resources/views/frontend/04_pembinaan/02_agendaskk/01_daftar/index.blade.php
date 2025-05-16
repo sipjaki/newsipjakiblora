@@ -928,31 +928,28 @@ function previewFile(previewId, input) {
             <form id="nikRegistrationForm" action="{{ route('daftarpesertasertifikasiskkcreatenew2') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
-<div class="row" style="{{ $divStyle }}">
-  <!-- Upload di kiri -->
+<div class="row">
+  <!-- Kolom Upload SKK -->
   <div class="col-md-6">
-    <label class="form-label" style="{{ $labelStyle }}">
-      <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
+    <label class="form-label">
+      <i class="bi bi-upload"></i> Upload SKK Anda
     </label>
     <input type="file" name="skkanda" id="skkanda"
            accept="application/pdf"
-           style="{{ $inputStyle }}"
            class="form-control @error('skkanda') is-invalid @enderror">
     @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
   </div>
 
-  <!-- Preview di kanan -->
-  <div class="col-md-6" id="preview_pdf" style="display: none; margin-top: 24px;">
+  <!-- Kolom Preview SKK -->
+  <div class="col-md-6" id="preview_pdf" style="display: none;">
     <label style="font-weight: bold;">Preview SKK:</label>
-    <iframe
-      id="pdf_preview_frame"
-      width="100%"
-      height="400px"
-      style="border: 1px solid #ccc; border-radius: 6px;">
+    <iframe id="pdf_preview_frame"
+            width="100%"
+            height="400px"
+            style="border: 1px solid #ccc; border-radius: 6px;">
     </iframe>
   </div>
 </div>
-
 
 
 <div class="card-body">
