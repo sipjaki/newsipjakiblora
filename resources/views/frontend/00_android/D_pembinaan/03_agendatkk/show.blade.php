@@ -221,9 +221,10 @@ h5 {
                     </div>
 
 
+                    <div class="flex items-center justify-center">
                      <button
       class="text-white text-lg font-semibold px-10 py-5 rounded-2xl transition duration-300 flex items-center gap-3 shadow-lg"
-      style="background: linear-gradient(to right, #FFD700, #32CD32); border: none; padding: 10px; 20px;"
+      style="background: linear-gradient(to right, #FFD700, #32CD32); border: none; padding: 10px; 20px; "
       onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='2px solid #006400';"
       onmouseout="this.style.background='linear-gradient(to right, #FFD700, #32CD32)'; this.style.color='white'; this.querySelector('i').style.color='white'; this.style.border='none';"
       onclick="window.location.href='your-link-here.html'"
@@ -231,6 +232,7 @@ h5 {
       <i class="bi bi-person-fill" style="color: white; font-size: 1.5rem;"></i>
       Formulir Pendaftaran
     </button>
+        </div>
 
                     <div class="flex justify-center">
                         <div class="rounded-lg shadow-lg overflow-hidden w-fit">
