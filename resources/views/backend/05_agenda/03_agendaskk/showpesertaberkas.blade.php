@@ -660,7 +660,7 @@
             <tr>
                 <td style="width: 45%;"></td>
                 <td style="width: 55%; border-bottom: 2px solid black; text-align: center; font-size:16px;">
-                    ANEX FACHRIAN, S.T., M.T
+                    MOHAMAD ARIF HIDAYAT, ST
                 </td>
             </tr>
             <tr>
@@ -827,13 +827,19 @@
                                                 </div>
                                             </div>
                                             <th class="text-center">
-                                                @if($datapeserta->validasi_ktp == 'sesuai')
-                                                    <span class="badge bg-success">✅ Sesuai</span>
-                                                @elseif($datapeserta->validasi_ktp == 'tidak_sesuai')
-                                                    <span class="badge bg-danger">❌ Tidak Sesuai</span>
-                                                @else
-                                                    <span class="badge bg-secondary">Belum Divalidasi</span>
-                                                @endif
+                                              <div style="display: flex; justify-content: center; gap: 20px;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                                                    <input type="radio" name="validasi_ktp" value="sesuai"
+                                                    {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }} />
+                                                    Sesuai
+                                                </label>
+
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                                                    <input type="radio" name="validasi_ktp" value="tidak_sesuai"
+                                                    {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }} />
+                                                    Tidak Sesuai
+                                                </label>
+                                                </div>
                                             </th>
                                     </th>
                                     <tr>
