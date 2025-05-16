@@ -342,7 +342,7 @@
                         <div class="page" style="page-break-after: always;">
                             <div class="col-md-12" style="height:250px;">
                                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
-                                    <div style="transform: scale(0.3); transform-origin: top left;">
+                                    {{-- <div style="transform: scale(0.3); transform-origin: top left;"> --}}
                                         <div class="cert-container">
                                             <div class="cert-header" style="text-align: center;">
                                                 <!-- Logo di atas -->
@@ -405,7 +405,7 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                {{-- </div> --}}
                             </div>
                             </div>
 
@@ -550,37 +550,26 @@
 function downloadPDF() {
     const element = document.getElementById('sertifikatPdf');
 
-    // Original A4 dimensions (297mm × 210mm)
-    const originalWidth = 297;
-    const originalHeight = 210;
-
-    // Scale factor (5x enlargement)
-    const scaleFactor = 5;
-
-    // Calculate scaled dimensions
-    const scaledWidth = originalWidth * scaleFactor;
-    const scaledHeight = originalHeight * scaleFactor;
-
-    // Force scaled dimensions before capture
-    element.style.width = scaledWidth + 'mm';
-    element.style.height = scaledHeight + 'mm';
+    // Force A4 dimensions before capture
+    element.style.width = '297mm';
+    element.style.height = '210mm';
     element.style.margin = '0';
     element.style.padding = '0';
     element.style.overflow = 'hidden';
 
-    // Calculate pixel dimensions (scaled dimensions at 96dpi)
-    const widthPx = scaledWidth * 3.78;  // mm to px
-    const heightPx = scaledHeight * 3.78; // mm to px
+    // Calculate exact pixel dimensions (297mm × 210mm at 96dpi)
+    const widthPx = 1122;  // 297mm × 3.78px/mm
+    const heightPx = 793;   // 210mm × 3.78px/mm
 
     const opt = {
         margin: [0, 0, 0, 0],
-        filename: 'sertifikat_pelatihan_5x.pdf',
+        filename: 'sertifikat_pelatihan.pdf',
         image: {
             type: 'jpeg',
             quality: 1  // Maximum quality
         },
         html2canvas: {
-            scale: 1,  // Keep scale at 1 since we're handling scaling via dimensions
+            scale: 1,  // Changed from 5 to 1 for better precision
             width: widthPx,
             height: heightPx,
             windowWidth: widthPx,
@@ -595,9 +584,9 @@ function downloadPDF() {
         },
         jsPDF: {
             unit: 'mm',
-            format: [originalWidth, originalHeight], // Final output remains A4
+            format: [297, 210],
             orientation: 'landscape',
-            compress: false
+            compress: false  // Disable compression for better quality
         }
     };
 
@@ -606,12 +595,7 @@ function downloadPDF() {
         html2pdf()
             .set(opt)
             .from(element)
-            .save()
-            .then(() => {
-                // Reset element size after conversion
-                element.style.width = originalWidth + 'mm';
-                element.style.height = originalHeight + 'mm';
-            });
+            .save();
     }, 300);
 }
 </script>
