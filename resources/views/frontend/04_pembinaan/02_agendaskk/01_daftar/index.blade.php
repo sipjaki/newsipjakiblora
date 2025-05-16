@@ -928,22 +928,7 @@ function previewFile(previewId, input) {
             <form id="nikRegistrationForm" action="{{ route('daftarpesertasertifikasiskkcreatenew2') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
-<div class="col-md-6" style="{{ $divStyle }} display: flex; gap: 20px;" id="upload_skk_section">
-    <!-- Bagian Upload kiri -->
-    <div style="flex: 1; min-width: 0;">
-        <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
-        </label>
-        <input type="file" name="skkanda" id="skkanda"
-        accept="application/pdf"
-        style="{{ $inputStyle }}"
-        class="form-control @error('skkanda') is-invalid @enderror">
-        {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small> --}}
-        @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
 
-    <!-- Bagian Preview kanan -->
-</div>
 
 <div class="col-md-6" style="{{ $divStyle }} display: flex; gap: 20px;">
     <div id="preview_pdf" style="flex: 1; display: none; margin-top: 24px;">
