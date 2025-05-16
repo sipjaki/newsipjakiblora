@@ -158,7 +158,7 @@
                                 </thead>
                                 <tbody>
 
-                                @forelse ($subData as $item)
+                                @forelse ($subdata as $item)
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->judulskk }}</td>
