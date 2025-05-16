@@ -1091,7 +1091,8 @@ public function beagendaskkpesertashow(Request $request, $id)
         'datapeserta' => $datapesertaskk,
         'perPage' => $perPage,
         'search' => $search,
-        'user' => $user
+        'user' => $user,
+        'id' => $id
     ]);
 }
 
