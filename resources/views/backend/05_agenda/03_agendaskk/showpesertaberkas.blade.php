@@ -558,7 +558,7 @@
     {{-- <h5>KEPALA DINAS</h5> --}}
     <table class="zebra-table table-striped">
         <tr>
-            <td style="text-align: center; font-size:16px;">Nama Asosiasi</td>
+            <td style="text-align: center; font-size:16px;">Nama Utusan</td>
             <td style="text-align: center; font-size:16px;">{{$datapeserta->namaasosiasi}}</td>
         </tr>
     </table>
@@ -567,6 +567,7 @@
         <tr>
             <td style="text-align: center; font-size:16px;">MEMPUNYAI SKK ?</td>
             <td style="text-align: center; font-size:16px;">MEMPUNYAI AKUN SIKI/ E-SIMPAN ?</td>
+            <td style="text-align: center; font-size:16px;">MEMPUNYAI PORTAL PUPR ?</td>
             <td style="text-align: center; font-size:16px;">BERSEDIA MEMATUHI PERATURAN</td>
         </tr>
         <tr>
@@ -574,6 +575,15 @@
     @if(strtolower($datapeserta->punyaskk) == 'ya')
         <button class="badge-kembali" style="text-align: center;">YA</button>
     @elseif(strtolower($datapeserta->punyaskk) == 'tidak')
+        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
+    @else
+        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
+    @endif
+</td>
+           <td style="text-align: center;">
+    @if(strtolower($datapeserta->portalpupr) == 'ya')
+        <button class="badge-kembali" style="text-align: center;">YA</button>
+    @elseif(strtolower($datapeserta->portalpupr) == 'tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
         <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
