@@ -826,22 +826,23 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </th>
                                             <th class="text-center">
-                                              <div style="display: flex; justify-content: center; gap: 20px;">
-                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                                              <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
                                                     <input type="radio" name="validasi_ktp" value="sesuai"
                                                     {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }} />
                                                     Sesuai
                                                 </label>
 
-                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
                                                     <input type="radio" name="validasi_ktp" value="tidak_sesuai"
                                                     {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }} />
                                                     Tidak Sesuai
                                                 </label>
                                                 </div>
                                             </th>
-                                    </th>
+                                    </tr>
                                     <tr>
                                         <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah </th>
                                     </tr>
