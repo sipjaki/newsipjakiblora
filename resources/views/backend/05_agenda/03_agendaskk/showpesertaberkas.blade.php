@@ -1146,10 +1146,12 @@
                                         style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
 
                                         <!-- Ikon SVG Pensil -->
-
-                                        <button type="submit" class="btn btn-primary" style="padding: 10px 20px; border-radius: 8px;">
-                                            <i class="bi bi-save">Simpan Validasi</i>
-                                        </button>
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+     class="bi bi-save" viewBox="0 0 16 16" style="margin-right: 8px;">
+  <path d="M8.5 1.5v5h-1v-5H5v5H4V1.5A1.5 1.5 0 0 1 5.5 0h5A1.5 1.5 0 0 1 12 1.5v5h-1v-5h-2.5z"/>
+  <path d="M1 4.5V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4.5L13.5 3h-11L1 4.5zM3 4h10l.5.5V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4.5L3 4z"/>
+</svg>
+<span style="font-family: 'Poppins', sans-serif;">Simpan Validasi</span>
 
                                     </button>
                                     </div>
