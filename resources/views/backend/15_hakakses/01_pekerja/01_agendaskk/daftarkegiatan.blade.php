@@ -1,4 +1,25 @@
 <style>
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    will-change: transform;
+    animation: marquee-left 8s linear infinite;
+    left: 0;
+}
+
+@keyframes marquee-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+</style>
+
+
+<style>
     table {
      table-layout: fixed;
      width: 100%;
@@ -205,7 +226,8 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
      </tr>
  </thead>
  <tbody id="tableBody">
-     @foreach ($data as $item )
+     @forelse ($data as $item)
+
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{$item->user->name}}</td>
@@ -276,7 +298,17 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
         </tr>
 
-     @endforeach
+     @empty
+
+             <div class="col-12">
+  <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert" style="background-color: #fff3cd; border-color: #ffeeba; height: 50px; line-height: 50px; padding-left: 10px;">
+    <div class="marquee-text" style="height: 50px; line-height: 50px;">
+      <i class="bi bi-exclamation-circle"></i> <span style="color: red;"> Saudara Belum Menguti Agenda Sertifikasi !! </span>
+    </div>
+  </div>
+</div>
+
+     @endforelse
  </tbody>
 </table>
                      </div>
