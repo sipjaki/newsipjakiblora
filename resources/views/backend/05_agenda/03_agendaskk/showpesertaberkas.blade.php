@@ -1136,15 +1136,21 @@
                         </div>
                     </div>
 
-                  <div class="mb-3" style="margin-top: -50px;">
+                    @can('super_admin', 'admin')
+
+
+                    <div class="mb-3" style="margin-top: -50px;">
                         <label for="catatanvalidasi" class="form-label">Catatan Validasi</label>
                         <textarea name="catatanvalidasi" id="catatanvalidasi" class="form-control"
-                            rows="4" style="resize: vertical; width: 100%;"
-                            placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $datapeserta->catatanvalidasi ?? '') }}</textarea>
+                        rows="4" style="resize: vertical; width: 100%;"
+                        placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $datapeserta->catatanvalidasi ?? '') }}</textarea>
                     </div>
 
+                    @endcan
 
                 </td>
+
+                @can('super_admin', 'admin')
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
@@ -1213,6 +1219,9 @@
                                     }
 
                                     </script>
+
+
+                @endcan
 
 </form>
 
