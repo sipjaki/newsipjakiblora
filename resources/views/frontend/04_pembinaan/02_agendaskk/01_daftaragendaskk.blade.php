@@ -208,6 +208,9 @@ table.zebra-table {
                                     <i class="bi bi-info-circle"></i> Keterangan
                                 </th>
                                 <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
+                                    <i class="bi bi-info-circle"></i> Poster
+                                </th>
+                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
                                     <i class="bi bi-pencil-square"></i> Pendaftaran
                                 </th>
                                                                 </tr>
@@ -237,6 +240,20 @@ table.zebra-table {
 
                             <td>{{ $item->lokasi ?? 'Data Belum Diupdate' }}</td>
                             <td>{{ $item->keterangan ?? 'Data Belum Diupdate' }}</td>
+                            <td>
+<div style="margin-top: 10px;">
+    @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+        <!-- Menampilkan gambar dari storage -->
+        <img src="{{ asset('storage/' . $item->foto) }}" alt="Poster Agenda SKK" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+    @elseif($item->foto)
+        <!-- Menampilkan gambar dari path luar storage -->
+        <img src="{{ asset($item->foto) }}" alt="Poster Agenda SKK" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
+                            </td>
 
                             <td style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px;">
                                 @php
