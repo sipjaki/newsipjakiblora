@@ -535,37 +535,49 @@
 
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 function downloadPDF() {
-    // Element sertifikat
     const element = document.getElementById('sertifikatPdf');
 
-    // Opsi untuk html2pdf
+    // Pastikan element memiliki ukuran A4 landscape
+    element.style.width = '297mm';
+    element.style.height = '210mm';
+    element.style.margin = '0';
+    element.style.padding = '0';
+    element.style.overflow = 'hidden';
+
     const opt = {
-        margin: [0, 0, 0, 0],
-        filename: 'sertifikat_pelatihan.pdf',
+        margin: 0, // NO margin
+        filename: 'sertifikat.pdf',
         image: {
             type: 'jpeg',
-            quality: 0.98
+            quality: 1 // Kualitas maksimal
         },
         html2canvas: {
-            scale: 2, // Skala 2 untuk kualitas baik
-            logging: false,
-            useCORS: true,
-            allowTaint: true,
+            scale: 3, // Skala lebih tinggi untuk presisi
             scrollX: 0,
-            scrollY: 0
+            scrollY: 0,
+            windowWidth: 1123, // 297mm in pixels (297*3.78)
+            windowHeight: 794, // 210mm in pixels (210*3.78)
+            ignoreElements: (element) => {
+                // Abaikan elemen yang tidak perlu
+                return element.id === 'ignore-me';
+            }
         },
         jsPDF: {
             unit: 'mm',
-            format: [297, 210], // A4 landscape (297mm x 210mm)
+            format: [297, 210], // A4 landscape
             orientation: 'landscape',
-            compress: true
+            hotfixes: ['px_scaling'] // Fix pixel scaling
         }
     };
 
-    // Generate PDF
-    html2pdf().set(opt).from(element).save();
+    // Generate dengan timeout untuk memastikan render selesai
+    setTimeout(() => {
+        html2pdf()
+            .set(opt)
+            .from(element)
+            .save();
+    }, 500);
 }
 </script>
