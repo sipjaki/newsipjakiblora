@@ -264,11 +264,13 @@
 
                                     </tr>
                                         @empty
-                                          <div class="col-12">
-                                                <div class="alert alert-warning text-center" role="alert">
+                                      <div class="col-12">
+                                            <marquee behavior="scroll" direction="left" scrollamount="6">
+                                                <div class="alert alert-warning text-center mb-0" role="alert" style="background-color: #fff3cd; border-color: #ffeeba;">
                                                     <i class="bi bi-exclamation-circle"></i> Materi Belum di Upload DPUPR Kab Blora
                                                 </div>
-                                            </div>
+                                            </marquee>
+                                        </div>
                                         @endforelse
 
                                 </tbody>
