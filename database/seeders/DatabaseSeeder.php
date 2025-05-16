@@ -273,6 +273,26 @@ headerberanda::create([
         ]);
 
         User::create([
+            'id'  => 53,
+            'name'  => 'Muhammad Yusuf Zaqi Efendi, SE',
+            'username' => 'Zaqi',
+            'statusadmin_id' => '2',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sipjakibloramasjaki1@gmail.com',
+            'password' => bcrypt('adminadminmasjaki')
+        ]);
+
+        User::create([
+            'id'  => 54,
+            'name'  => 'Maretha Riantiarni, SE',
+            'username' => 'Maretha',
+            'statusadmin_id' => '2',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sipjakibloramasjaki2@gmail.com',
+            'password' => bcrypt('adminadmin$$masjaki')
+        ]);
+
+        User::create([
             'id'  => 10,
             'name'  => 'Admin DPUPR Kab Blora',
             'username' => 'Admin DPUPR Kab Blora',
