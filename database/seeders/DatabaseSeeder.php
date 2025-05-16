@@ -59938,7 +59938,7 @@ pesertapelatihan::create([
     'instansi' => 'CV. TRIBHAKTI',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -59954,7 +59954,7 @@ pesertapelatihan::create([
     'instansi' => 'CV. LIMA KARSA',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -59969,7 +59969,7 @@ pesertapelatihan::create([
     'instansi' => 'UNIVERSITAS SEMARANG',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60014,7 +60014,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR (Bidang Bina Marga)',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60060,7 +60060,7 @@ pesertapelatihan::create([
     'instansi' => 'Klinik Utama Citra Mulia',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60075,7 +60075,7 @@ pesertapelatihan::create([
     'instansi' => 'PT bhakti tama persada',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60090,7 +60090,7 @@ pesertapelatihan::create([
     'instansi' => 'Sekretariat Daerah Kab. Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60106,7 +60106,7 @@ pesertapelatihan::create([
     'instansi' => 'RS PKU Muhamadiyah Cepu',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60121,7 +60121,7 @@ pesertapelatihan::create([
     'instansi' => 'RS Citra Mulia Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60136,7 +60136,7 @@ pesertapelatihan::create([
     'instansi' => 'CV BUMI ABADI PRATAMA',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60151,7 +60151,7 @@ pesertapelatihan::create([
     'instansi' => 'CV.QURATA JAYA',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60166,7 +60166,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kabupaten Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => true,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60181,7 +60181,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Bidang Cipta Karya',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60196,7 +60196,7 @@ pesertapelatihan::create([
     'instansi' => 'Cv.Gada perkasa',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60211,7 +60211,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR (Bidang Bina Marga)',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60241,7 +60241,7 @@ pesertapelatihan::create([
     'instansi' => 'Perseorangan',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60257,7 +60257,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kabupaten Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60272,7 +60272,7 @@ pesertapelatihan::create([
     'instansi' => 'Cv. Tiara Sinergj',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60287,7 +60287,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kabupaten Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => true,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60302,7 +60302,7 @@ pesertapelatihan::create([
     'instansi' => 'CV RAFI JAYA BERKARYA',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60317,7 +60317,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kabupaten Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => true,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60348,7 +60348,7 @@ pesertapelatihan::create([
     'instansi' => 'CV. Makmur Jaya Sentosa',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60378,7 +60378,7 @@ pesertapelatihan::create([
     'instansi' => 'ASPEKINDO',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60409,7 +60409,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kabupaten Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60424,7 +60424,7 @@ pesertapelatihan::create([
     'instansi' => 'RSU Permata Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60485,7 +60485,7 @@ pesertapelatihan::create([
     'instansi' => 'CV. VARIA USAHA MANDIRI',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60500,7 +60500,7 @@ pesertapelatihan::create([
     'instansi' => 'CV.KEDUNG JAYA',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60530,7 +60530,7 @@ pesertapelatihan::create([
     'instansi' => 'Sekretariat Daerah Kabupaten Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60545,7 +60545,7 @@ pesertapelatihan::create([
     'instansi' => 'Sekretariat Daerah Kab. Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60561,7 +60561,7 @@ pesertapelatihan::create([
     'instansi' => 'CV. ADHI KARYA MANDIRI',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60576,7 +60576,7 @@ pesertapelatihan::create([
     'instansi' => 'Semar Beton Perkasa Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60591,7 +60591,7 @@ pesertapelatihan::create([
     'instansi' => 'CV',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60606,7 +60606,7 @@ pesertapelatihan::create([
     'instansi' => 'RS PKU MUHAMMADIYAH BLORA',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60621,7 +60621,7 @@ pesertapelatihan::create([
     'instansi' => 'Gapensi',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60637,7 +60637,7 @@ pesertapelatihan::create([
     'instansi' => 'RS PKU Muhammadiyah Randublatung',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60652,7 +60652,7 @@ pesertapelatihan::create([
     'instansi' => 'CV. Grahacipta Perkasa',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60667,7 +60667,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kabupaten Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => true,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60682,7 +60682,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kabupaten Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60697,7 +60697,7 @@ pesertapelatihan::create([
     'instansi' => 'PT. BHAKTI TAMA PERSADA',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60713,7 +60713,7 @@ pesertapelatihan::create([
     'instansi' => 'Sekretariat Daerah Kab.Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => 'HADIR',
+    'verifikasikehadiran' => true,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60728,7 +60728,7 @@ pesertapelatihan::create([
     'instansi' => 'CV NOGO',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60758,7 +60758,7 @@ pesertapelatihan::create([
     'instansi' => 'Dinkesda.blira',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60773,7 +60773,7 @@ pesertapelatihan::create([
     'instansi' => 'CV BARATAMA KONSTRUKSI',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
