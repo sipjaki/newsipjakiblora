@@ -93,7 +93,7 @@ public function agendaskkpesertaberkas(Request $request)
         ]);
     }
 
-    return view('backend.15_hakakses.01_pekerja.01_agendaskk.02_berkas.index', [
+    return view('backend.15_hakakses.01_pekerja.02_berkas.index', [
         'title' => 'Berkas Pendaftaran Saudara',
         'data' => $data,
         'perPage' => $perPage,
