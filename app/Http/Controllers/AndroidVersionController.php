@@ -726,7 +726,7 @@ public function reasasosiasimasjakikontraktor($id)
 
             public function menurespelatihanpeserta(Request $request, $namakegiatan)
     {
-        $perPage = $request->input('perPage', 50);
+        $perPage = $request->input('perPage', 100);
         $search = $request->input('search');
 
         $query = pesertapelatihan::query()->orderByDesc('created_at');
