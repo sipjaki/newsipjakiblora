@@ -59908,7 +59908,7 @@ pesertapelatihan::create([
     'instansi' => 'PT. Bhakti Tama persada, Tuban',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -60627,7 +60627,7 @@ pesertapelatihan::create([
 
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 9,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'SUWIT, S.Ag.,S.Pd.,M.Pd.',
     'jenjangpendidikan_id' => 9,
     'nik' => '3316021101770002',
@@ -60642,7 +60642,7 @@ pesertapelatihan::create([
 ]);
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 9,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'Teguh Priyanto',
     'jenjangpendidikan_id' => 9,
     'nik' => '3316102503780003',
@@ -60657,7 +60657,7 @@ pesertapelatihan::create([
 ]);
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 2,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'Tresilia Diah Silviati',
     'jenjangpendidikan_id' => 2,
     'nik' => '3316096704990003',
@@ -60672,7 +60672,7 @@ pesertapelatihan::create([
 ]);
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 2,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'Wahyu Benyamin Arivin',
     'jenjangpendidikan_id' => 2,
     'nik' => '3316092302800001',
@@ -60687,7 +60687,7 @@ pesertapelatihan::create([
 ]);
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 2,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'WARSITO, ST',
     'jenjangpendidikan_id' => 2,
     'nik' => '3522103103730001',
@@ -60703,7 +60703,7 @@ pesertapelatihan::create([
 
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 9,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'Widyaningsih, S.Pt, MM',
     'jenjangpendidikan_id' => 9,
     'nik' => '3316094805740005',
@@ -60718,7 +60718,7 @@ pesertapelatihan::create([
 ]);
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 4,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'YETI ROFITA',
     'jenjangpendidikan_id' => 4,
     'nik' => '3316094306940004',
@@ -60733,7 +60733,7 @@ pesertapelatihan::create([
 ]);
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 2,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'YULFA INTAN YURAIDA',
     'jenjangpendidikan_id' => 2,
     'nik' => '3316097110900001',
@@ -60748,7 +60748,7 @@ pesertapelatihan::create([
 ]);
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 9,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'Yuni andari',
     'jenjangpendidikan_id' => 9,
     'nik' => '3316095506670004',
@@ -60763,7 +60763,7 @@ pesertapelatihan::create([
 ]);
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 2,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'Yuris Ihsa Mahendra',
     'jenjangpendidikan_id' => 2,
     'nik' => '3316092907960004',
@@ -60778,7 +60778,7 @@ pesertapelatihan::create([
 ]);
 
 pesertapelatihan::create([
-    'agendapelatihan_id' => 2,
+    'agendapelatihan_id' => 1,
     'namalengkap' => 'Zaenur Rozikin',
     'jenjangpendidikan_id' => 2,
     'nik' => '3514130608980001',
