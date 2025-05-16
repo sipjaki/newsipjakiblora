@@ -950,9 +950,13 @@ Route::post('/beagendaskkmateri/createmateri/new', [PembinaanController::class, 
 Route::get('/hakaksespekerjaskk', [HakAksesController::class, 'agendaskkpeserta'])->middleware('auth');
 Route::get('/hakaksespekerjaberkas', [HakAksesController::class, 'agendaskkpesertaberkas'])->middleware('auth');
 
+// VERIFIKASI BERKAS PESERTA SKK
+Route::put('/validasidokumenpesertaskk/{id}', [VerifikasiController::class, 'validasidokumenpesertaskk'])->middleware('auth')->name('validasidokumenpesertaskk');
+
 
 
 // ROUTE UNTUK VERIFIKASI BOOLEADN
+
 Route::put('/verifikasipesertapelatihan/{id}', [VerifikasiController::class, 'verifikasipesertapelatihan'])->middleware('auth')->name('verifikasi.updatepesertapelatihan');
 Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikasikehadiran'])->middleware('auth')->name('verifikasikehadiran');
 

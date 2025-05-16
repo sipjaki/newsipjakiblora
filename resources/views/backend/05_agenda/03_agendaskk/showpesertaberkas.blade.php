@@ -766,7 +766,9 @@
 
 <hr>
 
-
+<form action="{{ route('validasidokumenpesertaskk', $datapeserta->id) }}" method="POST">
+    @csrf
+    @method('PUT')
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
@@ -1164,6 +1166,14 @@
                     </div>
 
 
+                <button type="submit" class="btn btn-primary" style="padding: 10px 20px; border-radius: 8px;">
+                    Simpan Validasi
+                </button>
+            </td>
+
+</form>
+
+
 <!-- Modal untuk preview dokumen -->
 
 <script>
@@ -1212,32 +1222,3 @@
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
-
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const today = new Date(); // Dapatkan tanggal hari ini
-            const masaBerlakuElements = document.querySelectorAll('.masa-berlaku'); // Pilih semua td yang memiliki kelas masa-berlaku
-
-            masaBerlakuElements.forEach(function (element) {
-                const masaBerlaku = element.getAttribute('data-masaberlaku'); // Ambil data masa berlaku
-                const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
-
-                // Cek jika masa berlaku kosong
-                if (!masaBerlaku || masaBerlaku === '') {
-                    button.classList.add('btn-suspend'); // Tambahkan class untuk suspend
-                    button.textContent = 'SUSPEND';
-                } else {
-                    const masaBerlakuDate = new Date(masaBerlaku); // Jika ada, ubah menjadi tanggal
-
-                    // Cek jika masa berlaku sudah lewat
-                    if (masaBerlakuDate < today) {
-                        button.classList.add('btn-expired'); // Warna merah jika tidak berlaku
-                        button.textContent = 'TIDAK BERLAKU';
-                    } else {
-                        button.classList.add('btn-active'); // Warna hijau jika masih berlaku
-                        button.textContent = 'BERLAKU';
-                    }
-                }
-            });
-        });
-    </script>
