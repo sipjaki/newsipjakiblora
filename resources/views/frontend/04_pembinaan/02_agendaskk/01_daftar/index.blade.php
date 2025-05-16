@@ -942,7 +942,9 @@ function previewFile(previewId, input) {
   </div>
 
   <!-- Preview di kanan (6 kolom) -->
-  <div class="col-md-6" id="preview_pdf" style="display: none; margin-top: 24px; margin-bottom: 300px;">
+
+</div>
+<div class="col-md-6" id="preview_pdf" style="display: none; margin-top: 24px; margin-bottom: 300px;">
   <label style="font-weight: bold;">Preview SKK:</label>
   <iframe
     id="pdf_preview_frame"
@@ -952,7 +954,6 @@ function previewFile(previewId, input) {
   </iframe>
 </div>
 
-</div>
 
 <div class="card-body">
 
