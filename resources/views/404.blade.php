@@ -42,8 +42,12 @@
     <div class="w-full min-h-screen md:w-1/2 bg-gradient-to-b from-gray-900/90 to-gray-900/95 p-10 flex">
       <div class="w-full text-center my-auto">
         <h1 class="font-bold text-5xl font-Comforter-Brush text-amber-500 mb-10 mt-10 md:text-right">Coming Soon</h1>
-
-        <h6 class="font-Montserrat font-bold uppercase text-4xl md:text-5xl lg:text-3xl mb-14 md:-mr-20 text-white md:text-left">Dinas Pekerjaan Umum dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah<span class="text-white/70 md:-mr-20"></span></h6>
+<h6 class="font-Montserrat font-bold uppercase text-4xl md:text-xl lg:text-3xl mb-14 md:-mr-20 text-white md:text-left">
+  Website Sedang Dalam Perawatan (Under Maintenance)<br>
+  Dinas Pekerjaan Umum dan Penataan Ruang <br>
+  Kabupaten Blora Provinsi Jawa Tengah
+  <span class="text-white/70 md:-mr-20"></span>
+</h6>
 
         <div>
             <style>
