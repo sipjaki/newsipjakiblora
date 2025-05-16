@@ -220,15 +220,16 @@ h5 {
                         </div>
                     </div>
 
-                    <button
-                        id="daftarButton"
-                        class="bg-gradient-to-r from-yellow-400 via-green-500 to-green-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300"
-                        onmouseover="hoverEffect(this)"
-                        onmouseout="resetEffect(this)"
-                        >
-                        FORMULIR PENDAFTARAN
-                        </button>
 
+                        <button
+                        class="btn-navy"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"
+                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.querySelector('i').style.color='white'; this.style.border='none';"
+                        onclick="window.location.href='your-link-here.html'"
+                        >
+                        <i class="bi bi-person-fill" style="color: white;"></i>
+                        Formulir Pendaftaran
+                    </button>
 
                     <div class="flex justify-center">
                         <div class="rounded-lg shadow-lg overflow-hidden w-fit">
