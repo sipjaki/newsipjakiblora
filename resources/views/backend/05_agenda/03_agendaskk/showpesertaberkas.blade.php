@@ -744,6 +744,7 @@
         });
     });
 </script>
+<hr>
 
 
                     <!-- /.card-header -->
