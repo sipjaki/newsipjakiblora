@@ -303,16 +303,6 @@ headerberanda::create([
         ]);
 
         User::create([
-            'id'  => 7,
-            'name'  => 'LSP Penerbit Blora',
-            'username' => 'LSP Penerbit',
-            'statusadmin_id' => '7',
-            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'sigitsupp_tokobangunan@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
-
-        User::create([
             'id'  => 9,
             'name'  => 'Sigit Septiadi',
             'username' => 'Dinas DPUPR Blora',
