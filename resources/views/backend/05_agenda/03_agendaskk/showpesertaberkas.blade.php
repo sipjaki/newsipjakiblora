@@ -677,23 +677,15 @@
 
     </table>
 
- </div>
+    </div>
 
-<div style="display: flex; justify-content: flex-end; padding: 10px;">
-  <a href="javascript:history.back()">
-    <button class="download-btn" style="margin-right: 10px; font-size:16px;">
-      <i class="bi bi-arrow-left" style="margin-right: 10px;"></i>
-      <span style="font-size: 16px;">Kembali</span>
-    </button>
-  </a>
+    <div style="display: flex; justify-content: flex-end; padding: 10px;">
+                <!-- Tombol Download PDF -->
+<button id="downloadPDF" class="download-btn font-size:16px;" >
+    <i class="bi bi-download" style="margin-right: 10px;"></i> <span style="font-size: 16px;">Download PDF</span>
+</button>
 
-  <!-- Tombol Download PDF -->
-  <button id="downloadPDF" class="download-btn" style="font-size:16px;">
-    <i class="bi bi-download" style="margin-right: 10px;"></i>
-    <span style="font-size: 16px;">Download PDF</span>
-  </button>
-</div>
-
+    </div>
 
     <style>
         .download-btn {
