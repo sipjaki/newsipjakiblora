@@ -145,7 +145,7 @@ class PembinaanController extends Controller
 
     public function daftarpesertapelatihanshow(Request $request, $namakegiatan)
     {
-        $perPage = $request->input('perPage', 25);
+        $perPage = $request->input('perPage', 200);
         $search = $request->input('search');
 
         // Cari agenda pelatihan berdasarkan nama kegiatan
