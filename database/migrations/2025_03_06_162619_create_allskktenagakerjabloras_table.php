@@ -45,6 +45,15 @@ return new class extends Migration
                     $table->string('portalpupr')->nullable();
                     $table->string('siappatuh')->nullable();
                     $table->string('sertifikat')->nullable();
+
+                    $table->string('validasi_ktp')->nullable();
+
+                    $table->string('validasi_foto')->nullable();
+                    $table->string('validasi_ijazah')->nullable();
+                    $table->string('validasi_pengalaman')->nullable();
+                    $table->string('validasi_kebenarandata')->nullable();
+                    $table->string('validasi_npwp')->nullable();
+                    $table->string('validasi_daftarriwayathidup')->nullable();
                     // $table->boolean('verifikasiktp')->default(false);
                     $table->string('verifikasipu')->nullable();
                     $table->boolean('verifikasilps')->default(false);
