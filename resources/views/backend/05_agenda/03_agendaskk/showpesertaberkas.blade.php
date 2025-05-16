@@ -1135,7 +1135,8 @@
                             <br><br><br>
                         </div>
                     </div>
-                        <div class="mb-3">
+
+                        <div class="mb-3" style="margin-top: -50px;">
                             <label for="catatanvalidasi" class="form-label">Catatan Validasi</label>
                             <input type="textarea" name="catatanvalidasi" id="catatanvalidasi" class="form-control"
                                 value="{{ old('catatanvalidasi', $datapeserta->catatanvalidasi ?? '') }}"
