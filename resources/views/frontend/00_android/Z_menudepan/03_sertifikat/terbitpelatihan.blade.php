@@ -550,8 +550,8 @@ function downloadPDF() {
     // Clone and position the element
     const elementClone = element.cloneNode(true);
     elementClone.style.position = 'absolute';
-    elementClone.style.left = '-175px';
-    elementClone.style.top = '-350px';
+    elementClone.style.left = '-125px';
+    elementClone.style.top = '-300px';
     elementClone.style.margin = '0';
     elementClone.style.padding = '0';
 
