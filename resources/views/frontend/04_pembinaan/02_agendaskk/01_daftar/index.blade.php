@@ -130,12 +130,11 @@ table.zebra-table {
 
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
-        <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
-            <div style="display: flex; justify-content: center; margin-bottom: -20px;">
-
-                   @auth
+         @auth
                 <h5>Selamat datang, {{ auth()->user()->name }}! Silakan mendaftar.</h5>
             @endauth
+        <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
+            <div style="display: flex; justify-content: center; margin-bottom: -20px;">
                 <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
                     <button type="button" style="
                         display: flex;
