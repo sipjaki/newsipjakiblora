@@ -929,7 +929,7 @@ function previewFile(previewId, input) {
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 <div class="row" style="{{ $divStyle }}">
-  <!-- Upload di kiri (6 kolom) -->
+  <!-- Upload di kiri -->
   <div class="col-md-6">
     <label class="form-label" style="{{ $labelStyle }}">
       <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
@@ -941,18 +941,18 @@ function previewFile(previewId, input) {
     @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
   </div>
 
-  <!-- Preview di kanan (6 kolom) -->
+  <!-- Preview di kanan -->
+  <div class="col-md-6" id="preview_pdf" style="display: none; margin-top: 24px;">
+    <label style="font-weight: bold;">Preview SKK:</label>
+    <iframe
+      id="pdf_preview_frame"
+      width="100%"
+      height="400px"
+      style="border: 1px solid #ccc; border-radius: 6px;">
+    </iframe>
+  </div>
+</div>
 
-</div>
-<div class="col-md-6" id="preview_pdf" style="display: none; margin-top: 24px; margin-bottom: 1300px;">
-  <label style="font-weight: bold;">Preview SKK:</label>
-  <iframe
-    id="pdf_preview_frame"
-    width="100%"
-    height="400px"
-    style="border: 1px solid #ccc; border-radius: 6px; margin-bottom: 300px;">
-  </iframe>
-</div>
 
 
 <div class="card-body">
