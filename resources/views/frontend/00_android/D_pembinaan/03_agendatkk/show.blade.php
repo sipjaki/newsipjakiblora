@@ -216,7 +216,11 @@ h5 {
                         <div class="header-text">
                             <h3>AGENDA SERTIFIKASI TKK </h3>
                             <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
-                            <p>-----------------------------------</p>
+                            <div class="flex justify-center">
+                            <button class="bg-gradient-to-r from-yellow-400 via-green-500 to-green-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300 hover:bg-white hover:text-black">
+                                FORMULIR PENDAFTARAN
+                            </button>
+                            </div>
                         </div>
                     </div>
 
