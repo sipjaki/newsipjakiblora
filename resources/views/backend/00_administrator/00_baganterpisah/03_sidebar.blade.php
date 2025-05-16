@@ -289,7 +289,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="/dashboard" class="nav-link">
+                <a href="/hakaksespekerjaberkas" class="nav-link">
                   <i class="nav-icon bi bi-graph-up" style="color: white"></i> <!-- Status -->
                   <p style="color: white">
                     Status Pendaftaran

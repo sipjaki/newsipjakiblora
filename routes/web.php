@@ -948,6 +948,7 @@ Route::post('/beagendaskkmateri/createmateri/new', [PembinaanController::class, 
 // HAK AKSES PEKERJA
 
 Route::get('/hakaksespekerjaskk', [HakAksesController::class, 'agendaskkpeserta'])->middleware('auth');
+Route::get('/hakaksespekerjaberkas', [HakAksesController::class, 'agendaskkpesertaberkas'])->middleware('auth');
 
 
 
