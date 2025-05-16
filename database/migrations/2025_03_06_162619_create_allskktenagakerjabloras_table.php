@@ -45,6 +45,7 @@ return new class extends Migration
                     $table->string('portalpupr')->nullable();
                     $table->string('siappatuh')->nullable();
                     $table->string('sertifikat')->nullable();
+                    $table->string('catatanvalidasi')->nullable();
 
                     $table->string('validasi_ktp')->nullable();
 
