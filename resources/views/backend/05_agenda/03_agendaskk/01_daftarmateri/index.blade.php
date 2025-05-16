@@ -5,7 +5,7 @@
     white-space: nowrap;
     position: absolute;
     will-change: transform;
-    animation: marquee-left 4s linear infinite;
+    animation: marquee-left 8s linear infinite;
     left: 0;
 }
 
