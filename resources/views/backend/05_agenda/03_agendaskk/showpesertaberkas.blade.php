@@ -1000,7 +1000,7 @@
                                                 </label>
 
                                                 <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
-                                                    <input type="radio" name="validasi_ijazah" value="tidak_sesuai"
+                                                    <input type="radio" name="validasi_pengalaman" value="tidak_sesuai"
                                                     {{ $datapeserta->validasi_pengalaman == 'tidak_sesuai' ? 'checked' : '' }} />
                                                     Tidak Sesuai
                                                 </label>
@@ -1104,6 +1104,22 @@
                                                     </div>
                                                 </div>
                                         </th>
+
+                                        <th class="text-center">
+                                              <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_npwp" value="sesuai"
+                                                    {{ $datapeserta->validasi_npwp == 'sesuai' ? 'checked' : '' }} />
+                                                    Sesuai
+                                                </label>
+
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_npwp" value="tidak_sesuai"
+                                                    {{ $datapeserta->validasi_npwp == 'tidak_sesuai' ? 'checked' : '' }} />
+                                                    Tidak Sesuai
+                                                </label>
+                                                </div>
+                                            </th>
                                     </tr>
                                     <tr>
                                         <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
@@ -1141,9 +1157,23 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </th>
-                                    </tr>
+                                            <th class="text-center">
+                                              <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_daftarriwayathidup" value="sesuai"
+                                                    {{ $datapeserta->validasi_daftarriwayathidup == 'sesuai' ? 'checked' : '' }} />
+                                                    Sesuai
+                                                </label>
+
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_daftarriwayathidup" value="tidak_sesuai"
+                                                    {{ $datapeserta->validasi_daftarriwayathidup == 'tidak_sesuai' ? 'checked' : '' }} />
+                                                    Tidak Sesuai
+                                                </label>
+                                                </div>
+                                            </th>
+                                            <tr>
 
                                 </thead>
                             </table>
