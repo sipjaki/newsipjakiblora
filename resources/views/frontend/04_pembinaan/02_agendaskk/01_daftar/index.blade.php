@@ -403,8 +403,8 @@ table.zebra-table {
                                     </label>
                                     <select name="punyaskk" style="{{ $inputStyle }}" class="@error('punyaskk') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                        <option value="Ya" {{ old('punyaskk') == 'ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('punyaskk') == 'tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                     @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
@@ -416,8 +416,8 @@ table.zebra-table {
                                     </label>
                                     <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                        <option value="Ya" {{ old('punyasiki') == 'ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('punyasiki') == 'tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                     @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
@@ -429,8 +429,8 @@ table.zebra-table {
                                     </label>
                                     <select name="siappatuh" style="{{ $inputStyle }}" class="@error('siappatuh') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                        <option value="Ya" {{ old('siappatuh') == 'ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('siappatuh') == 'tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                     @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
@@ -441,8 +441,8 @@ table.zebra-table {
                                     </label>
                                     <select name="portalpupr" style="{{ $inputStyle }}" class="@error('portalpupr') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('portalpupr') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('portalpupr') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                        <option value="Ya" {{ old('portalpupr') == 'ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('portalpupr') == 'tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
                                     @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
