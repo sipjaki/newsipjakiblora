@@ -745,6 +745,21 @@
     });
 </script>
 <hr>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <button style="
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    background-color: #374151;
+    color: white;
+    cursor: pointer;
+    ">
+    Validasi Dokumen Saudara
+  </button>
+</div>
+
+<hr>
 
 
                     <!-- /.card-header -->
