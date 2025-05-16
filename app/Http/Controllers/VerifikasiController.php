@@ -164,7 +164,7 @@ public function terbitkanSertifikat($id)
 
 public function validasidokumenpesertaskk(Request $request, $id)
 {
-    // Validasi input wajib
+    // Validasi input wajib & opsional
     $request->validate([
         'validasi_ktp' => 'required|in:sesuai,tidak_sesuai',
         'validasi_foto' => 'required|in:sesuai,tidak_sesuai',
@@ -173,6 +173,7 @@ public function validasidokumenpesertaskk(Request $request, $id)
         'validasi_kebenarandata' => 'required|in:sesuai,tidak_sesuai',
         'validasi_npwp' => 'required|in:sesuai,tidak_sesuai',
         'validasi_daftarriwayathidup' => 'required|in:sesuai,tidak_sesuai',
+        'catatanvalidasi' => 'nullable|string|max:255', // ← tambahkan validasi catatan
     ]);
 
     // Cari peserta berdasarkan ID
@@ -187,13 +188,14 @@ public function validasidokumenpesertaskk(Request $request, $id)
         'validasi_kebenarandata' => $request->validasi_kebenarandata,
         'validasi_npwp' => $request->validasi_npwp,
         'validasi_daftarriwayathidup' => $request->validasi_daftarriwayathidup,
+        'catatanvalidasi' => $request->catatanvalidasi, // ← simpan catatan
     ]);
 
     // Ambil ID agenda untuk redirect
     $agendaId = $item->agendaskk_id;
 
     // Kirimkan flash message ke session
-    session()->flash('validasiberkasskk', 'Validasi Berkas Berhasil' );
+    session()->flash('validasiberkasskk', 'Validasi Berkas Berhasil');
 
     // Redirect ke halaman detail agenda peserta
     return redirect("/beagendaskkpeserta/show/{$agendaId}");
