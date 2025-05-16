@@ -337,7 +337,7 @@
 
                         <div id="sertifikatPdf" style="width: 100%;">
 
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+<div class="hidden w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
                         <div class="page" style="page-break-after: always;">
                             <div class="col-md-12" style="height:250px;">
