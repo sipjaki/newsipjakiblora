@@ -845,23 +845,7 @@
                                     </tr>
                                     <tr>
                                         <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah </th>
-                                    </tr>
-                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
-                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
-                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
-                                        {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
-                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
-                                        {{-- <th style="width: 300px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th> --}}
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                {{-- @foreach ($subdata as $datapeserta ) --}}
-                                    <tr class="align-middle">
-                                        {{-- <td style="text-align: center;">{{ $loop->iteration }}</td> --}}
-
-
-                                        {{-- berkas 2  --}}
-                                        <td class="text-center">
+                                        <th class="text-center">
                                             <button class="btn btn-secondary btn-sm"
                                                 style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                 onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -894,9 +878,38 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </th>
+                                            <th class="text-center">
+                                              <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_foto" value="sesuai"
+                                                    {{ $datapeserta->validasi_foto == 'sesuai' ? 'checked' : '' }} />
+                                                    Sesuai
+                                                </label>
+
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_foto" value="tidak_sesuai"
+                                                    {{ $datapeserta->validasi_foto == 'tidak_sesuai' ? 'checked' : '' }} />
+                                                    Tidak Sesuai
+                                                </label>
+                                                </div>
+                                            </th>
+                                    </tr>
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
+                                        {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
+                                        <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
+                                        {{-- <th style="width: 300px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th> --}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {{-- @foreach ($subdata as $datapeserta ) --}}
+                                    <tr class="align-middle">
+                                        {{-- <td style="text-align: center;">{{ $loop->iteration }}</td> --}}
 
 
+                                        {{-- berkas 2  --}}
                                         {{-- berkas 3 ijazzah --}}
                                             <td class="text-center">
                                                 <button class="btn btn-secondary btn-sm"
