@@ -257,7 +257,7 @@ class PembinaanController extends Controller
 
     public function beagendapelatihanshowpeserta(Request $request, $id)
     {
-        $perPage = $request->input('perPage', 50);
+        $perPage = $request->input('perPage', 200);
         $search = $request->input('search');
 
         // Pastikan agenda pelatihan dengan ID ini ada
