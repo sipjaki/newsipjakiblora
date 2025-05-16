@@ -682,6 +682,8 @@
 
                         </div>
                     </div>
+                    </div>
+                    </div>
 
                        <div class="col-md-12">
     <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
