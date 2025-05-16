@@ -131,7 +131,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/beagendaskk?search=${input}`)
+                            fetch(`/hakaksespekerjaskk?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -144,18 +144,6 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
                                 </script>
 
-                      <a href="/beagendaskk/create">
-    <button
-        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
-        onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
-        style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px;
-               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-               transition: background 0.3s, color 0.3s, border 0.3s;">
-        <!-- Ikon Plus -->
-        <i class="fa fa-plus" style="margin-right: 8px;"></i>
-        Create
-    </button>
-</a>
 
                      </div>
                  </div>
