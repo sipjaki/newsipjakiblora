@@ -1093,7 +1093,7 @@ public function beagendaskkpesertashow(Request $request, $id)
         'perPage' => $perPage,
         'search' => $search,
         'user' => $user,
-        'id' => $id
+        'id_agendaskk' => $id
     ]);
 }
 
