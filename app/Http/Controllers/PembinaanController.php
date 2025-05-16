@@ -1041,6 +1041,7 @@ public function beagendaskkmaterideleteskk($id)
 
 public function beagendaskkpesertashow(Request $request, $id)
 {
+    $id_agendaskk = $id; // simpan id asli
     // Menentukan jumlah per halaman, default 50 jika tidak ada input dari request
     $perPage = $request->input('perPage', 50);
     $search = $request->input('search');
@@ -1048,7 +1049,6 @@ public function beagendaskkpesertashow(Request $request, $id)
     // Pastikan agenda pelatihan dengan ID ini ada
     $dataagendaskk = agendaskk::findOrFail($id);
     // $id = agendaskk::findOrFail($id);
-    $id_agendaskk = $id; // simpan id asli
 
 
     // Ambil user login saat ini
