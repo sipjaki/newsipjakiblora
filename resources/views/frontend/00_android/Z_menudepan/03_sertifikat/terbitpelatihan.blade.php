@@ -535,73 +535,37 @@
 
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 function downloadPDF() {
-    // Clone element sertifikat
-    const originalElement = document.getElementById('sertifikatPdf');
-    const element = originalElement.cloneNode(true);
+    // Element sertifikat
+    const element = document.getElementById('sertifikatPdf');
 
-    // Reset transformasi dan hapus margin/padding
-    element.style.transform = 'none';
-    element.style.transformOrigin = 'unset';
-    element.style.margin = '0';
-    element.style.padding = '0';
-    element.querySelectorAll('*').forEach(el => {
-        el.style.transform = 'none';
-        el.style.transformOrigin = 'unset';
-        el.style.margin = '0';
-        el.style.padding = '0';
-    });
-
-    // Container utama dengan ukuran diperbesar
-    const container = document.createElement('div');
-    container.style.width = 'calc(297mm + 150px)'; // Tambah 150px untuk kompensasi geser kiri
-    container.style.height = 'calc(210mm + 120px)'; // Tambah 120px untuk kompensasi geser atas
-    container.style.position = 'relative';
-    container.style.overflow = 'hidden';
-
-    // Konten sertifikat dengan posisi digeser
-    const certContent = document.createElement('div');
-    certContent.style.width = '297mm';
-    certContent.style.height = '210mm';
-    certContent.style.position = 'absolute';
-    certContent.style.left = '150px'; // Geser 150px ke kanan dari container
-    certContent.style.top = '120px';  // Geser 120px ke bawah dari container
-    certContent.style.boxSizing = 'border-box';
-
-    // Pindahkan isi sertifikat
-    while(element.firstChild) {
-        certContent.appendChild(element.firstChild);
-    }
-    container.appendChild(certContent);
-
-    // Opsi html2pdf dengan pengaturan khusus
+    // Opsi untuk html2pdf
     const opt = {
-        margin: 0,
-        filename: 'sertifikat_pelatihan_blora.pdf',
+        margin: [0, 0, 0, 0],
+        filename: 'sertifikat_pelatihan.pdf',
         image: {
             type: 'jpeg',
-            quality: 1
+            quality: 0.98
         },
         html2canvas: {
-            scale: 3,
+            scale: 2, // Skala 2 untuk kualitas baik
+            logging: false,
             useCORS: true,
-            letterRendering: true,
             allowTaint: true,
             scrollX: 0,
-            scrollY: 0,
-            windowWidth: 1123, // 297mm + 150px dalam pixel
-            windowHeight: 894  // 210mm + 120px dalam pixel
+            scrollY: 0
         },
         jsPDF: {
             unit: 'mm',
-            format: 'a4',
+            format: [297, 210], // A4 landscape (297mm x 210mm)
             orientation: 'landscape',
             compress: true
         }
     };
 
     // Generate PDF
-    html2pdf().set(opt).from(container).save();
+    html2pdf().set(opt).from(element).save();
 }
 </script>
