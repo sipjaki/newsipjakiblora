@@ -208,7 +208,7 @@ table.zebra-table {
                                     <i class="bi bi-info-circle"></i> Keterangan
                                 </th>
                                 <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
-                                    <i class="bi bi-info-circle"></i> Poster
+                              <i class="bi bi-file-earmark-image"></i> Poster
                                 </th>
                                 <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
                                     <i class="bi bi-pencil-square"></i> Pendaftaran
