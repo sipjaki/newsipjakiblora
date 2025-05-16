@@ -535,37 +535,57 @@
 
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> --}}
 <script>
 function downloadPDF() {
-    // Element sertifikat
     const element = document.getElementById('sertifikatPdf');
 
-    // Opsi untuk html2pdf
+    // Force A4 dimensions before capture
+    element.style.width = '297mm';
+    element.style.height = '210mm';
+    element.style.margin = '0';
+    element.style.padding = '0';
+    element.style.overflow = 'hidden';
+
+    // Calculate exact pixel dimensions (297mm × 210mm at 96dpi)
+    const widthPx = 1122;  // 297mm × 3.78px/mm
+    const heightPx = 793;   // 210mm × 3.78px/mm
+
     const opt = {
         margin: [0, 0, 0, 0],
         filename: 'sertifikat_pelatihan.pdf',
         image: {
             type: 'jpeg',
-            quality: 0.98
+            quality: 1  // Maximum quality
         },
         html2canvas: {
-            scale: 5, // Skala 2 untuk kualitas baik
+            scale: 1,  // Changed from 5 to 1 for better precision
+            width: widthPx,
+            height: heightPx,
+            windowWidth: widthPx,
+            windowHeight: heightPx,
             logging: false,
             useCORS: true,
             allowTaint: true,
             scrollX: 0,
-            scrollY: 0
+            scrollY: 0,
+            letterRendering: true,
+            backgroundColor: '#FFFFFF'
         },
         jsPDF: {
             unit: 'mm',
-            format: [297, 210], // A4 landscape (297mm x 210mm)
+            format: [297, 210],
             orientation: 'landscape',
-            compress: true
+            compress: false  // Disable compression for better quality
         }
     };
 
-    // Generate PDF
-    html2pdf().set(opt).from(element).save();
+    // Add slight delay to ensure proper rendering
+    setTimeout(() => {
+        html2pdf()
+            .set(opt)
+            .from(element)
+            .save();
+    }, 300);
 }
 </script>
