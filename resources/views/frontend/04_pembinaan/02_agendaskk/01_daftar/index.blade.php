@@ -928,8 +928,9 @@ function previewFile(previewId, input) {
             <form id="nikRegistrationForm" action="{{ route('daftarpesertasertifikasiskkcreatenew2') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
+
 <div class="row">
-  <!-- Kolom Upload SKK -->
+  <!-- Kolom Upload SKK (kiri) -->
   <div class="col-md-6">
     <label class="form-label">
       <i class="bi bi-upload"></i> Upload SKK Anda
@@ -940,17 +941,32 @@ function previewFile(previewId, input) {
     @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
   </div>
 
-  <!-- Kolom Preview SKK -->
-  <div class="col-md-6" id="preview_pdf" style="display: none;">
-    <label style="font-weight: bold;">Preview SKK:</label>
-    <iframe id="pdf_preview_frame"
-            width="100%"
-            height="400px"
-            style="border: 1px solid #ccc; border-radius: 6px;">
-    </iframe>
+  <!-- Kolom Preview SKK (kanan) -->
+  <div class="col-md-6">
+    <div id="preview_pdf" style="display: none; margin-top: 10px;">
+      <label style="font-weight: bold;">Preview SKK:</label>
+      <iframe id="pdf_preview_frame"
+              width="100%"
+              height="400px"
+              style="border: 1px solid #ccc; border-radius: 6px;">
+      </iframe>
+    </div>
   </div>
 </div>
 
+<script>
+  document.getElementById('skkanda').addEventListener('change', function (e) {
+    const file = e.target.files[0];
+    if (file && file.type === 'application/pdf') {
+      const fileURL = URL.createObjectURL(file);
+      document.getElementById('pdf_preview_frame').src = fileURL;
+      document.getElementById('preview_pdf').style.display = 'block';
+    } else {
+      alert('Harap upload file PDF!');
+      document.getElementById('preview_pdf').style.display = 'none';
+    }
+  });
+</script>
 
 <div class="card-body">
 
