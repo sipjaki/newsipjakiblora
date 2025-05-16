@@ -16,7 +16,7 @@ body {
 .container {
     max-width: 1000px;
     margin: 30px auto;
-    padding: 20px;
+    padding: 16px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -30,7 +30,7 @@ h1 {
 
 /* Timeline Container */
 .timeline-container {
-    padding: 20px 0;
+    padding: 16px 0;
     position: relative;
     overflow-x: auto;
 }
@@ -130,7 +130,7 @@ h1 {
 .control-panel {
     margin-top: 40px;
     text-align: center;
-    padding: 20px;
+    padding: 16px;
     border-top: 1px solid #eee;
 }
 
@@ -138,7 +138,7 @@ button {
     background-color: #00AA5B;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 16px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -172,7 +172,7 @@ button:hover {
     .checkpoint {
         flex-direction: row;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         width: 100%;
     }
 
@@ -250,17 +250,17 @@ button:hover {
         <div class="info-box"
              style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
             <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
                 <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
 {{$jumlahKegiatan}} <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
                 </h4>
             </span>
             <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 20px;">
+            <div class="info-box-content" style="padding: 10px 16px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
                     <i class="bi bi-tools" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Kegiatan Konstruksi</span>
+                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Kegiatan Konstruksi</span>
             </div>
         </div>
     </div>
@@ -269,17 +269,17 @@ button:hover {
         <div class="info-box"
              style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
             <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
                 <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
                     120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
                 </h4>
             </span>
             <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 20px;">
+            <div class="info-box-content" style="padding: 10px 16px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
                     <i class="bi bi-arrow-repeat" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Permohonan Di Kembalikan</span>
+                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Permohonan Di Kembalikan</span>
             </div>
         </div>
     </div>
@@ -288,17 +288,17 @@ button:hover {
         <div class="info-box"
              style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
             <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
                 <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
                     120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
                 </h4>
             </span>
             <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 20px;">
+            <div class="info-box-content" style="padding: 10px 16px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
                     <i class="bi bi-check-circle" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Verifikasi DPUPR</span>
+                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Verifikasi DPUPR</span>
             </div>
         </div>
     </div>
@@ -310,17 +310,17 @@ button:hover {
         <div class="info-box"
              style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
             <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
                 <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
                     120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
                 </h4>
             </span>
             <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 20px;">
+            <div class="info-box-content" style="padding: 10px 16px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
                     <i class="bi bi-check2-circle" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">LOLOS LSP</span>
+                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">LOLOS LSP</span>
             </div>
         </div>
     </div>
@@ -329,17 +329,17 @@ button:hover {
         <div class="info-box"
              style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
             <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
                 <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
                     120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
                 </h4>
             </span>
             <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 20px;">
+            <div class="info-box-content" style="padding: 10px 16px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
                     <i class="bi bi-file-earmark-check" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Sertifikat Terbit</span>
+                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Sertifikat Terbit</span>
             </div>
         </div>
     </div>
@@ -355,7 +355,7 @@ button:hover {
         margin-bottom: 10px;
         text-decoration: none;
         background-color: #bdc3c7; /* Background abu-abu */
-        padding: 20px;
+        padding: 16px;
         border-radius: 8px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease-in-out;
