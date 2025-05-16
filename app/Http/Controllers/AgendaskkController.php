@@ -374,7 +374,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
 {
     // Validasi input
     $validated = $request->validate([
-        'jabatanskkanda_id' => 'nullable|string',
+        // 'jabatanskkanda_id' => 'nullable|string',
         'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
         'jenjangpendidikan_id' => 'required|string',
         'jabatankerja_id' => 'required|string',
@@ -480,7 +480,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
     try {
         // Simpan ke database
         allskktenagakerjablora::create([
-            'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
+            // 'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
             'agendaskk_id' => $request->agendaskk_id,
             'user_id' => auth()->id(),
             'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
