@@ -745,18 +745,23 @@
     });
 </script>
 <hr>
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <button style="
-    padding: 12px 24px;
-    font-size: 18px;
-    border-radius: 8px;
+
+<div style="display: flex; justify-content: center; align-items: center;">
+ <button style="
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding: 8px 16px;
     border: none;
+    border-radius: 6px;
     background-color: #374151;
     color: white;
     cursor: pointer;
-    ">
-    Validasi Dokumen Saudara
-  </button>
+  ">
+  <i class="bi bi-info-circle" style="margin-right: 8px; font-size: 16px;"></i>
+  Keterangan Validasi Dokumen Pendaftaran Saudara
+</button>
+
 </div>
 
 <hr>
