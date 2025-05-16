@@ -730,7 +730,7 @@
     cursor: pointer;
   ">
   <i class="bi bi-info-circle" style="margin-right: 8px; font-size: 16px;"></i>
-  Keterangan Validasi Dokumen Pendaftaran Saudara
+  Keterangan Validasi Dokumen Pendaftaran Saudara {{$datapeserta->verifikasipu}}
 </button>
 
 </div>
