@@ -550,26 +550,37 @@
 function downloadPDF() {
     const element = document.getElementById('sertifikatPdf');
 
-    // Force A4 dimensions before capture
-    element.style.width = '297mm';
-    element.style.height = '210mm';
+    // Original A4 dimensions (297mm × 210mm)
+    const originalWidth = 297;
+    const originalHeight = 210;
+
+    // Scale factor (5x enlargement)
+    const scaleFactor = 5;
+
+    // Calculate scaled dimensions
+    const scaledWidth = originalWidth * scaleFactor;
+    const scaledHeight = originalHeight * scaleFactor;
+
+    // Force scaled dimensions before capture
+    element.style.width = scaledWidth + 'mm';
+    element.style.height = scaledHeight + 'mm';
     element.style.margin = '0';
     element.style.padding = '0';
     element.style.overflow = 'hidden';
 
-    // Calculate exact pixel dimensions (297mm × 210mm at 96dpi)
-    const widthPx = 1122;  // 297mm × 3.78px/mm
-    const heightPx = 793;   // 210mm × 3.78px/mm
+    // Calculate pixel dimensions (scaled dimensions at 96dpi)
+    const widthPx = scaledWidth * 3.78;  // mm to px
+    const heightPx = scaledHeight * 3.78; // mm to px
 
     const opt = {
         margin: [0, 0, 0, 0],
-        filename: 'sertifikat_pelatihan.pdf',
+        filename: 'sertifikat_pelatihan_5x.pdf',
         image: {
             type: 'jpeg',
             quality: 1  // Maximum quality
         },
         html2canvas: {
-            scale: 1,  // Changed from 5 to 1 for better precision
+            scale: 1,  // Keep scale at 1 since we're handling scaling via dimensions
             width: widthPx,
             height: heightPx,
             windowWidth: widthPx,
@@ -584,9 +595,9 @@ function downloadPDF() {
         },
         jsPDF: {
             unit: 'mm',
-            format: [297, 210],
+            format: [originalWidth, originalHeight], // Final output remains A4
             orientation: 'landscape',
-            compress: false  // Disable compression for better quality
+            compress: false
         }
     };
 
@@ -595,7 +606,12 @@ function downloadPDF() {
         html2pdf()
             .set(opt)
             .from(element)
-            .save();
+            .save()
+            .then(() => {
+                // Reset element size after conversion
+                element.style.width = originalWidth + 'mm';
+                element.style.height = originalHeight + 'mm';
+            });
     }, 300);
 }
 </script>
