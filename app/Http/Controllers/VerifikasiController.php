@@ -190,13 +190,13 @@ public function validasidokumenpesertaskk(Request $request, $id)
     ]);
 
     // Ambil ID agenda untuk redirect
-    $agendaId = $item->id;
+    $agendaId = $item->agendaskk_id;
 
     // Kirimkan flash message ke session
     session()->flash('validasiberkasskk', 'Validasi Berkas Berhasil' );
 
     // Redirect ke halaman detail agenda peserta
-    return redirect("/bepesertaskkshowberkas/show/{$agendaId}");
+    return redirect("/beagendaskkpeserta/show/{$agendaId}");
 }
 
 }
