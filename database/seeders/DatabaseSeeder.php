@@ -60810,7 +60810,7 @@ agendapelatihan::create([
     'user_id' => null,
     'kategoripelatihan_id' => '3',
     'materipelatihan_id' => '1',
-    'namakegiatan' => 'Sosialisasi “Membangun dengan Aman dan Profesional : Penerapan Keselamatan dan Kontrak Konstruksi',
+    'namakegiatan' => 'Sosialisasi “Membangun dengan Aman dan Profesional : Penerapan Keselamatan dan Kontrak Konstruksi"',
     'asosiasimasjaki_id' => 99,
     // 'jenjang_id' => '4',
     'penutupan' => '2025-05-14',
@@ -60935,36 +60935,10 @@ agendaskk::create([
 
 jampelajaran::create([
     'agendapelatihan_id' => 1, // ID agenda pelatihan
-    'materi' => 'Manajemen Proyek', // Materi pertama
-    'narasumber' => 'Ir. Budi Santoso', // Narasumber pertama
+    'materi' => '"Sosialisasi “membangun Dengan Aman Dan Profesional : Penerapan Keselamatan Dan Kontrak Konstruksi"', // Materi pertama
+    'narasumber' => 'Ir. Achmad Darmawijaya MM. Pembina Jasa Konstruksi Ahli Madya BP2JK Wil. Jatim Ditjen Bina Jasa Konstruksi Kementerian PU', // Narasumber pertama
     'jampelajaran' => 2, // Jam pelajaran pertama (misalnya 2 jam)
 ]);
-
-jampelajaran::create([
-    'agendapelatihan_id' => 1, // ID agenda pelatihan
-    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
-    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
-    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
-]);
-jampelajaran::create([
-    'agendapelatihan_id' => 1, // ID agenda pelatihan
-    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
-    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
-    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
-]);
-jampelajaran::create([
-    'agendapelatihan_id' => 1, // ID agenda pelatihan
-    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
-    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
-    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
-]);
-jampelajaran::create([
-    'agendapelatihan_id' => 2, // ID agenda pelatihan
-    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
-    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
-    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
-]);
-
 
 subhargadiv2::create([
     'hspkonstruksiumum2_id' => 1,
