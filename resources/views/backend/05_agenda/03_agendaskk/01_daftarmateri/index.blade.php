@@ -1,22 +1,24 @@
+
 <style>
 .marquee-text {
     display: inline-block;
     white-space: nowrap;
     position: absolute;
     will-change: transform;
-    animation: marquee-left 5s linear infinite;
-    left: 100%;
+    animation: marquee-left 12s linear infinite;
+    left: 0;
 }
 
 @keyframes marquee-left {
     0% {
-        transform: translateX(0);
+        transform: translateX(100%);
     }
     100% {
-        transform: translateX(-200%);
+        transform: translateX(-100%);
     }
 }
 </style>
+
 
 <style>
     .btn-suspend {
@@ -284,16 +286,13 @@
 
                                     </tr>
                                         @empty
-                <div class="col-12">
+             <div class="col-12">
   <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert" style="background-color: #fff3cd; border-color: #ffeeba; height: 50px; line-height: 50px; padding-left: 10px;">
     <div class="marquee-text" style="height: 50px; line-height: 50px;">
       <i class="bi bi-exclamation-circle"></i> Materi Belum di Upload DPUPR Kab Blora
     </div>
   </div>
 </div>
-
-
-
 
                                         @endforelse
 
