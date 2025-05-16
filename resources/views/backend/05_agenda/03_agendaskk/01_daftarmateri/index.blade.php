@@ -4,7 +4,7 @@
     white-space: nowrap;
     position: absolute;
     will-change: transform;
-    animation: marquee-left 12s linear infinite;
+    animation: marquee-left 5s linear infinite;
     left: 100%;
 }
 
@@ -284,13 +284,14 @@
 
                                     </tr>
                                         @empty
-                                    <div class="col-12">
-    <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert" style="background-color: #fff3cd; border-color: #ffeeba; height: 40px;">
-        <div class="marquee-text" style="height:100px;">
-            <i class="bi bi-exclamation-circle"></i> Materi Belum di Upload DPUPR Kab Blora
-        </div>
+                <div class="col-12">
+  <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert" style="background-color: #fff3cd; border-color: #ffeeba; height: 50px; line-height: 50px; padding-left: 10px;">
+    <div class="marquee-text" style="height: 50px; line-height: 50px;">
+      <i class="bi bi-exclamation-circle"></i> Materi Belum di Upload DPUPR Kab Blora
     </div>
+  </div>
 </div>
+
 
 
 
