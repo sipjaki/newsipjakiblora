@@ -580,15 +580,6 @@
         <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
     @endif
 </td>
-           <td style="text-align: center;">
-    @if(strtolower($datapeserta->portalpupr) == 'ya')
-        <button class="badge-success" style="text-align: center;">YA</button>
-    @elseif(strtolower($datapeserta->portalpupr) == 'tidak')
-        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
-    @else
-        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
-    @endif
-</td>
 
 <td style="text-align: center;">
     @if(strtolower($datapeserta->punyasiki) == 'ya')
@@ -599,6 +590,17 @@
         <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
     @endif
 </td>
+
+           <td style="text-align: center;">
+    @if(strtolower($datapeserta->portalpupr) == 'ya')
+        <button class="badge-success" style="text-align: center;">YA</button>
+    @elseif(strtolower($datapeserta->portalpupr) == 'tidak')
+        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
+    @else
+        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
+    @endif
+</td>
+
 
 <td style="text-align: center;">
     @if(strtolower($datapeserta->siappatuh) == 'ya')
