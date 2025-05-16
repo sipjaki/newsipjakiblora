@@ -256,16 +256,16 @@
 
     <br>
 
-    <h5 style="color: navy; font-weight:800;">I. IDENTITAS PESERTA</h4>
+    <h5 style="color: navy; font-weight:800; font-size:16px;">I. IDENTITAS PESERTA</h4>
 
         <table class="zebra-table table-striped">
 
         <tr>
-            <td style="width:50px; text-align:center;">1</td>
-            <td style="width:200px; text-align:center;">Nama Lengkap</td>
-            <td style="width:50px; text-align:center;">:</td>
-            <td style="width:200px; text-align:center;">{{ ucwords(strtolower($datapeserta->user->name)) }}</td>
-            <td style="width:500px; text-align:center;">
+            <td style="width:50px; text-align:center; font-size:16px;">1</td>
+            <td style="width:200px; text-align:center; font-size:16px;">Nama Lengkap</td>
+            <td style="width:50px; text-align:center; font-size:16px;" >:</td>
+            <td style="width:200px; text-align:center; font-size:16px;">{{ ucwords(strtolower($datapeserta->user->name)) }}</td>
+            <td style="width:500px; text-align:center; font-size:16px;">
 
                 <div style="margin-top: 10px;">
                     @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
@@ -287,93 +287,93 @@
     <table class="zebra-table table-striped">
 
         <tr>
-            <td style="text-align: center;">2</td>
-            <td>Jabatan Kerja </td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->jabatankerja->jabatankerja}}</td>
+            <td style="text-align: center; font-size:16px;">2</td>
+            <td style="font-size:16px;">Jabatan Kerja </td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->jabatankerja->jabatankerja}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">3</td>
-            <td>Tempat Lahir </td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->tempatlahir}}</td>
+            <td style="text-align: center; font-size:16px;">3</td>
+            <td style="font-size:16px;">Tempat Lahir </td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->tempatlahir}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">4</td>
-            <td>Jenis Kelamin </td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->jeniskelamin}}</td>
+            <td style="text-align: center; font-size:16px;">4</td>
+            <td style="font-size:16px;">Jenis Kelamin </td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->jeniskelamin}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">5</td>
-            <td>KTP/KITAS</td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->nik}}</td>
+            <td style="text-align: center; font-size:16px;">5</td>
+            <td style="font-size:16px;">KTP/KITAS</td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->nik}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">6</td>
-            <td>Alamat</td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->alamat}}</td>
+            <td style="text-align: center; font-size:16px;" >6</td>
+            <td style="font-size:16px;">Alamat</td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->alamat}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">7</td>
-            <td>Telepon</td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->notelepon}}</td>
+            <td style="text-align: center; font-size:16px;">7</td>
+            <td style="font-size:16px;">Telepon</td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->notelepon}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">8</td>
-            <td>Email</td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->email}}</td>
+            <td style="text-align: center; font-size:16px;">8</td>
+            <td style="font-size:16px;">Email</td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->email}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">9</td>
-            <td>Jenjang Pendidikan</td>
-            <td>:</td>
-            <td>{{$datapeserta->jenjangpendidikan->jenjangpendidikan}}</td>
+            <td style="text-align: center; font-size:16px;">9</td>
+            <td style="font-size:16px;">Jenjang Pendidikan</td>
+            <td style="font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->jenjangpendidikan->jenjangpendidikan}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">10</td>
-            <td>Sekolah/Universitas</td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->namasekolah->namasekolah}}</td>
+            <td style="text-align: center; font-size:16px;">10</td>
+            <td style="font-size:16px;">Sekolah/Universitas</td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->namasekolah->namasekolah}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">11</td>
-            <td>Tahun Lulus</td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->tahunlulus}}</td>
+            <td style="text-align: center; font-size:16px;">11</td>
+            <td style="font-size:16px;">Tahun Lulus</td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->tahunlulus}}</td>
         </tr>
 
         <tr>
-            <td style="text-align: center;">12</td>
-            <td>Tahun Bimtek</td>
-            <td style="text-align: center;">:</td>
-            <td>{{$datapeserta->tahunpilihan->tahunpilihan}}</td>
+            <td style="text-align: center; font-size:16px;">12</td>
+            <td style="font-size:16px;">Tahun Bimtek</td>
+            <td style="text-align: center; font-size:16px;">:</td>
+            <td style="font-size:16px;">{{$datapeserta->tahunpilihan->tahunpilihan}}</td>
         </tr>
 
     </table>
 
     <br>
 
-    <h5 style="color: navy; font-weight:800;">II. KELENGKAPAN BERKAS PERSYARATAN PESERTA</h4>
+    <h5 style="color: navy; font-weight:800; font-size:16px;">II. KELENGKAPAN BERKAS PERSYARATAN PESERTA</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <table class="zebra-table table-striped">
         <tr>
-            <td style="text-align: center;">KTP/KITAS*</td>
-            <td style="text-align: center;">Foto</td>
-            <td style="text-align: center;">Ijazah</td>
+            <td style="text-align: center; font-size:16px;">KTP/KITAS*</td>
+            <td style="text-align: center; font-size:16px;">Foto</td>
+            <td style="text-align: center; font-size:16px;">Ijazah</td>
         </tr>
         <tr>
             <td style="text-align: center;">
