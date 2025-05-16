@@ -267,6 +267,18 @@
 
               @can('pekerja')
 
+
+                  <li class="nav-item">
+                <a href="/" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer" style="color: white"></i>
+                  <p style="color: white">
+                    Menu Android
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+              </li>
+
+
               <li class="nav-item">
                 <a href="/dashboard" class="nav-link">
                   <i class="nav-icon bi bi-graph-up" style="color: white"></i> <!-- Status -->
