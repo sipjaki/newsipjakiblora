@@ -1136,6 +1136,19 @@
                         </div>
                     </div>
 
+                    @can('pekerja')
+
+
+                    <div class="mb-3" style="margin-top: -50px;">
+                        <label for="catatanvalidasi" class="form-label">Catatan Validasi</label>
+                        <div class="form-control" style="min-height: 120px; white-space: pre-wrap; background-color: #f8f9fa;">
+                            {{ $datapeserta->catatanvalidasi ?? '-' }}
+                        </div>
+                    </div>
+
+                    @endcan
+
+
                     @can('super_admin', 'admin')
 
 
