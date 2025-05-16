@@ -448,9 +448,24 @@ ul.list-unstyled {
                     <a href="/404" class="btn-primary">
                         <i class="fas fa-user-plus"></i> Daftar
                     </a>
-                    <a href="/login" class="btn-primary">
-                        <i class="fas fa-sign-in-alt"></i> Masuk
-                    </a>
+
+@guest
+    <a href="/login" class="btn-primary">
+        <i class="fas fa-sign-in-alt"></i> Masuk
+    </a>
+@endguest
+
+@auth
+    <a href="/logout" class="btn-primary"
+       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <i class="fas fa-sign-out-alt"></i> Keluar
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+@endauth
+
                 </div>
 
 
