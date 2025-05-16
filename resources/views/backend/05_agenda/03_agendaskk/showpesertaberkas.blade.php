@@ -571,48 +571,18 @@
             <td style="text-align: center; font-size:16px;">BERSEDIA MEMATUHI PERATURAN</td>
         </tr>
         <tr>
-           <td style="text-align: center;">
+           <td style="text-align: center; font-size:16px;">
             {{$datapeserta->punyaskk}}
-    {{-- @if(strtolower($datapeserta->punyaskk) == 'Ya')
-        <button class="badge-success" style="text-align: center;">YA</button>
-    @elseif(strtolower($datapeserta->punyaskk) == 'Tidak')
-        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
-    @else
-        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
-    @endif --}}
-</td>
-
-<td style="text-align: center;">
-    @if(strtolower($datapeserta->punyasiki) == 'Ya')
-        <button class="badge-success" style="text-align: center;">YA</button>
-    @elseif(strtolower($datapeserta->punyasiki) == 'Tidak')
-        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
-    @else
-        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
-    @endif
-</td>
-
-           <td style="text-align: center;">
-    @if(strtolower($datapeserta->portalpupr) == 'Ya')
-        <button class="badge-success" style="text-align: center;">YA</button>
-    @elseif(strtolower($datapeserta->portalpupr) == 'Tidak')
-        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
-    @else
-        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
-    @endif
-</td>
-
-
-<td style="text-align: center;">
-    @if(strtolower($datapeserta->siappatuh) == 'Ya')
-        <button class="badge-success" style="text-align: center;">YA</button>
-    @elseif(strtolower($datapeserta->siappatuh) == 'Tidak')
-        <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
-    @else
-        <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
-    @endif
-</td>
-
+        </td>
+           <td style="text-align: center; font-size:16px;">
+            {{$datapeserta->punyasiki}}
+        </td>
+           <td style="text-align: center; font-size:16px;">
+            {{$datapeserta->portalpupr}}
+        </td>
+           <td style="text-align: center; font-size:16px;">
+            {{$datapeserta->siappatuh}}
+        </td>
 
         </tr>
 
