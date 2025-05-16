@@ -508,6 +508,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
             'punyaskk' => $validated['punyaskk'],
             'punyasiki' => $validated['punyasiki'],
             'siappatuh' => $validated['siappatuh'],
+            'portalpupr' => $validated['portalpupr'],
         ]);
 
         session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
@@ -659,6 +660,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
             'punyaskk' => $validated['punyaskk'],
             'punyasiki' => $validated['punyasiki'],
             'siappatuh' => $validated['siappatuh'],
+            'portalpupr' => $validated['portalpupr'],
         ]);
 
         session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
