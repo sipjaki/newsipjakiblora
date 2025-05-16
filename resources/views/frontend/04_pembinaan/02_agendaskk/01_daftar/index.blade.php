@@ -127,12 +127,10 @@ table.zebra-table {
     </div>
   </div>
 
-
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
-            <div style="display: flex; justify-content: center; margin-bottom: -20px;">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
-
+            <div style="display: flex; justify-content: center; margin-bottom: -20px;">
                 <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
                     <button type="button" style="
                         display: flex;
@@ -162,8 +160,6 @@ table.zebra-table {
                         </div>
 
                         <!-- Judul dan Data Lebar -->
-
-
                         <div style="display: flex; flex-direction: column; flex-grow: 1; padding-left: 10px;">
                             <strong style="font-size: 15px;">{{ $title }}</strong>
                             <span style="font-size: 15px;">{{ $agendaskknamakegiatan }}</span>
@@ -298,8 +294,9 @@ table.zebra-table {
                 $iconStyle = "color: navy;";
             @endphp
 
-{{-- <div class="row">
-    <div class="col-md-6" style="display: none; {{ $divStyle }}">
+<div class="row">
+    <!-- Kolom Kiri (Input Form Jabatan) -->
+    {{-- <div class="col-md-6" style="display: none; {{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
     </label>
@@ -346,7 +343,7 @@ table.zebra-table {
         @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
         {{-- Preview --}}
-        <div id="preview_pdf" style="display: none; margin-top: 10px;">
+        <div id="preview_pdf" style="display: none; margin-top: 10px; margin-bottom:-200px;">
             <label style="font-weight: bold;">Preview SKK:</label>
             <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
         </div>
@@ -703,6 +700,20 @@ table.zebra-table {
 <div class="row">
 <!-- Upload Pengalaman -->
 <div class="col-md-4" style="{{ $divStyle }}">
+    {{-- @php
+    $firstItem = $datacontohsurat->sortBy('id')->first(); // ambil berdasarkan ID terkecil
+    $fileDownload = null;
+
+    if ($firstItem && $firstItem->berkas) {
+        $path = public_path('storage/' . $firstItem->berkas);
+        if (file_exists($path)) {
+            $fileDownload = asset('storage/' . $firstItem->berkas);
+        } else {
+            $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
+        }
+    }
+    @endphp --}}
+
     @php
     $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
 @endphp
