@@ -665,7 +665,7 @@ public function beagendapelatihanmatericreatenew(Request $request)
 
 public function beagendaskk(Request $request)
 {
-    $perPage = $request->input('perPage', 5);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     // Query awal dengan relasi jumlah peserta
