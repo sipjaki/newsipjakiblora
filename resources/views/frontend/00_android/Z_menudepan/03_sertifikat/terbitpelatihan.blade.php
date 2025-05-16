@@ -536,28 +536,29 @@
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> --}}
-<style>
-    #sertifikatPdf {
-    width: 297mm;
-    height: 210mm;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-</style>
 <script>
 function downloadPDF() {
     const element = document.getElementById('sertifikatPdf');
 
-    // Force A4 dimensions before capture
-    element.style.width = '297mm';
-    element.style.height = '210mm';
-    element.style.margin = '0';
-    element.style.padding = '0';
-    element.style.overflow = 'hidden';
+    // Create a container for positioning
+    const container = document.createElement('div');
+    container.style.width = '297mm';
+    container.style.height = '210mm';
+    container.style.position = 'relative';
+    container.style.overflow = 'hidden';
 
-    // Calculate exact pixel dimensions (297mm × 210mm at 96dpi)
+    // Clone and position the element
+    const elementClone = element.cloneNode(true);
+    elementClone.style.position = 'absolute';
+    elementClone.style.left = '-100px';
+    elementClone.style.top = '-100px';
+    elementClone.style.margin = '0';
+    elementClone.style.padding = '0';
+
+    container.appendChild(elementClone);
+    document.body.appendChild(container);
+
+    // Calculate dimensions
     const widthPx = 1122;  // 297mm × 3.78px/mm
     const heightPx = 793;   // 210mm × 3.78px/mm
 
@@ -566,10 +567,10 @@ function downloadPDF() {
         filename: 'sertifikat_pelatihan.pdf',
         image: {
             type: 'jpeg',
-            quality: 1  // Maximum quality
+            quality: 1
         },
         html2canvas: {
-            scale: 1,  // Changed from 5 to 1 for better precision
+            scale: 1,
             width: widthPx,
             height: heightPx,
             windowWidth: widthPx,
@@ -586,16 +587,19 @@ function downloadPDF() {
             unit: 'mm',
             format: [297, 210],
             orientation: 'landscape',
-            compress: false  // Disable compression for better quality
+            compress: false
         }
     };
 
-    // Add slight delay to ensure proper rendering
     setTimeout(() => {
         html2pdf()
             .set(opt)
-            .from(element)
-            .save();
-    }, 300);
+            .from(container)
+            .save()
+            .then(() => {
+                // Clean up
+                document.body.removeChild(container);
+            });
+    }, 500);
 }
 </script>
