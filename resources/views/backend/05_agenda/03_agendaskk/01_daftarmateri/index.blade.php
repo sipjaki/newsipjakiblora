@@ -157,7 +157,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($subdata as $item )
+
+                                @forelse ($data as $item)
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->judulskk }}</td>
@@ -262,7 +263,13 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
+                                        @empty
+                                          <div class="col-12">
+                                                <div class="alert alert-warning text-center" role="alert">
+                                                    <i class="bi bi-exclamation-circle"></i> Materi Belum di Upload DPUPR Kab Blora
+                                                </div>
+                                            </div>
+                                        @endforelse
 
                                 </tbody>
                             </table>
