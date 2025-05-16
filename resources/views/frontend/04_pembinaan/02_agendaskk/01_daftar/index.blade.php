@@ -943,7 +943,7 @@ function previewFile(previewId, input) {
 
   <!-- Kolom Preview SKK (kanan) -->
   <div class="col-md-6">
-    <div id="preview_pdf" style="display: none; margin-top: 10px;">
+    <div id="preview_pdf" style="display: none; margin-top: 10px; margin-bottom: 400px; ">
       <label style="font-weight: bold;">Preview SKK:</label>
       <iframe id="pdf_preview_frame"
               width="100%"
