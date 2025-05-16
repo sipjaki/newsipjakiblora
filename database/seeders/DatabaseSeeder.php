@@ -252,6 +252,77 @@ headerberanda::create([
             'password' => bcrypt('adminadmin123$$')
         ]);
 
+                User::create([
+            'id'  => 2,
+            'name'  => 'Anex Fachrian, ST. MT',
+            'username' => 'Anex',
+            'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sipjakiblora@gmail.com',
+            'password' => bcrypt('adminadmin321')
+        ]);
+
+        User::create([
+            'id'  => 3,
+            'name'  => 'Miftahunnuril Anam',
+            'username' => 'Anam',
+            'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'masjakiblora@gmail.com',
+            'password' => bcrypt('adminadmin123')
+        ]);
+
+        User::create([
+            'id'  => 4,
+            'name'  => 'Rahmat Irianto',
+            'username' => 'Sup Pabrik',
+            'statusadmin_id' => '3',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitpekerja@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);
+
+        User::create([
+            'id'  => 5,
+            'name'  => 'Sigit Supplier Peralatan',
+            'username' => 'Sup Peralatan ',
+            'statusadmin_id' => '4',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitsupp_pabrik@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);
+
+        User::create([
+            'id'  => 6,
+            'name'  => 'Sigit Supp Bangunan',
+            'username' => 'Sup Bangunan',
+            'statusadmin_id' => '5',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitsupp_peralatan@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);
+
+        User::create([
+            'id'  => 7,
+            'name'  => 'LSP Penerbit Blora',
+            'username' => 'LSP Penerbit',
+            'statusadmin_id' => '7',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitsupp_tokobangunan@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);
+
+        User::create([
+            'id'  => 9,
+            'name'  => 'Sigit Septiadi',
+            'username' => 'Dinas DPUPR Blora',
+            'statusadmin_id' => '8',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitoperator@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);
+
+
         User::create([
             'id'  => 50,
             'name'  => 'Fitrah Fauzi Nusantara',
@@ -262,15 +333,6 @@ headerberanda::create([
             'password' => bcrypt('adminadmin123$$')
         ]);
 
-        User::create([
-            'id'  => 2,
-            'name'  => 'Anex Fachrian, ST. MT',
-            'username' => 'Anex',
-            'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/foto4.png',
-            'email' => 'sipjakiblora@gmail.com',
-            'password' => bcrypt('adminadmin321')
-        ]);
 
         User::create([
             'id'  => 53,
@@ -562,96 +624,6 @@ headerberanda::create([
             'password' => bcrypt('adminbppdkabblora')
         ]);
 
-
-        User::create([
-            'id'  => 3,
-            'name'  => 'Miftahunnuril Anam',
-            'username' => 'Anam',
-            'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/foto4.png',
-            'email' => 'masjakiblora@gmail.com',
-            'password' => bcrypt('adminadmin123')
-        ]);
-
-        User::create([
-            'id'  => 4,
-            'name'  => 'Rahmat Irianto',
-            'username' => 'Sup Pabrik',
-            'statusadmin_id' => '3',
-            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'sigitpekerja@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
-
-        User::create([
-            'id'  => 5,
-            'name'  => 'Sigit Supplier Peralatan',
-            'username' => 'Sup Peralatan ',
-            'statusadmin_id' => '4',
-            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'sigitsupp_pabrik@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
-
-        User::create([
-            'id'  => 6,
-            'name'  => 'Sigit Supp Bangunan',
-            'username' => 'Sup Bangunan',
-            'statusadmin_id' => '5',
-            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'sigitsupp_peralatan@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
-
-        User::create([
-            'id'  => 7,
-            'name'  => 'LSP Penerbit Blora',
-            'username' => 'LSP Penerbit',
-            'statusadmin_id' => '7',
-            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'sigitsupp_tokobangunan@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
-
-        User::create([
-            'id'  => 8,
-            'name'  => 'Operator LSP 2',
-            'username' => 'Operator LSP',
-            'statusadmin_id' => '7',
-            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'sigitlpspenerbit@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
-
-        User::create([
-            'id'  => 90,
-            'name'  => 'Operator LSP 3',
-            'username' => 'Operator LSP 3',
-            'statusadmin_id' => '7',
-            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'sigitlpspenerbit500@gmail.com',
-            'password' => bcrypt('adminadmin123$$1')
-        ]);
-
-        User::create([
-            'id'  => 97,
-            'name'  => 'Operator LSP 4',
-            'username' => 'Operator LSP 4',
-            'statusadmin_id' => '7',
-            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'sigitlpspenerbit2@gmail.com',
-            'password' => bcrypt('adminadmin123$$2')
-        ]);
-
-        User::create([
-            'id'  => 9,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Dinas DPUPR Blora',
-            'statusadmin_id' => '8',
-            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'sigitoperator@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
 
         User::create([
             'id'  => 98,
