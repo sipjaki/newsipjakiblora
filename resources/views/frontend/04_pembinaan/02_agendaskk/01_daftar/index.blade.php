@@ -134,10 +134,6 @@ table.zebra-table {
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
 
                 <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
-
-                      @auth
-                <h5>Selamat datang, {{ auth()->user()->name }}! Silakan mendaftar.</h5>
-            @endauth <br>
                     <button type="button" style="
                         display: flex;
                         flex-direction: row;
@@ -188,7 +184,9 @@ table.zebra-table {
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd;">
         <div style="width: 100%; background-color: #f0f0f0; padding: 10px; overflow: hidden;">
-            <p class="scrolling-text"><span style="color: red">Perhatian : </span> Jika Saudara kembali ke halaman ini setelah mendaftar, maka pendaftaran Saudara gagal. Silakan periksa data dan dokumen Saudara, lalu ulangi kembali !.</p>
+            <p class="scrolling-text"><span style="color: red">   @auth
+                Selamat datang, {{ auth()->user()->name }}! Silakan mendaftar.
+            @endauth Perhatian : </span> Jika Saudara kembali ke halaman ini setelah mendaftar, maka pendaftaran Saudara gagal. Silakan periksa data dan dokumen Saudara, lalu ulangi kembali !.</p>
         </div>
 <br>
         <style>
