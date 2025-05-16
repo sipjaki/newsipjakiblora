@@ -245,7 +245,7 @@
                 <ul class="nav nav-treeview">
 
                     <li class="nav-item">
-                        <a href="/" target="_blank" class="nav-link">
+                        <a href="/web" target="_blank" class="nav-link">
                           <!-- Ikon untuk Halaman Web (Rumah) -->
                           <i class="nav-icon bi bi-house-door text-warning"></i>
                           <p style="color: white;">Halaman Web</p>
@@ -268,15 +268,16 @@
               @can('pekerja')
 
 
-                  <li class="nav-item">
+                 <li class="nav-item">
                 <a href="/" class="nav-link">
-                  <i class="nav-icon bi bi-speedometer" style="color: white"></i>
-                  <p style="color: white">
+                    <i class="nav-icon bi bi-android2" style="color: white"></i>
+                    <p style="color: white">
                     Menu Android
                     <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
+                    </p>
                 </a>
-              </li>
+                </li>
+
 
 
               <li class="nav-item">
