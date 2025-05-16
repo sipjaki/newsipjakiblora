@@ -572,13 +572,14 @@
         </tr>
         <tr>
            <td style="text-align: center;">
-    @if(strtolower($datapeserta->punyaskk) == 'Ya')
+            {{$datapeserta->punyaskk}}
+    {{-- @if(strtolower($datapeserta->punyaskk) == 'Ya')
         <button class="badge-success" style="text-align: center;">YA</button>
     @elseif(strtolower($datapeserta->punyaskk) == 'Tidak')
         <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
     @else
         <button class="btn btn-warning" disabled style="text-align: center;">DATA KOSONG</button>
-    @endif
+    @endif --}}
 </td>
 
 <td style="text-align: center;">
