@@ -542,7 +542,7 @@ function downloadPDF() {
 
     // Create a container for positioning
     const container = document.createElement('div');
-    container.style.width = '277mm';
+    container.style.width = '297mm';
     container.style.height = '210mm';
     container.style.position = 'relative';
     container.style.overflow = 'hidden';
