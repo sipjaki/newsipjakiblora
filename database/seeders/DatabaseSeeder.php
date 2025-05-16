@@ -59832,7 +59832,7 @@ pesertapelatihan::create([
     'instansi' => 'Instansi',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -59847,7 +59847,7 @@ pesertapelatihan::create([
     'instansi' => 'Askonas',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
@@ -59893,7 +59893,7 @@ pesertapelatihan::create([
     'instansi' => 'GAPEKSINDO KAB. BLORA',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
+    'verifikasikehadiran' => false,
     'terbitkansertifikat' => false,
 ]);
 
