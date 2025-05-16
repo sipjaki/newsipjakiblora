@@ -826,7 +826,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </th>
+                                            <th class="text-center">
+                                                @if($datapeserta->validasi_ktp == 'sesuai')
+                                                    <span class="badge bg-success">✅ Sesuai</span>
+                                                @elseif($datapeserta->validasi_ktp == 'tidak_sesuai')
+                                                    <span class="badge bg-danger">❌ Tidak Sesuai</span>
+                                                @else
+                                                    <span class="badge bg-secondary">Belum Divalidasi</span>
+                                                @endif
+                                            </th>
                                     </th>
                                     <tr>
                                         <th style="width: 400px; text-align:center; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah </th>
