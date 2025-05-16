@@ -631,17 +631,17 @@
 
         <tr>
             <td style="width: 45%;"></td>
-            <td style="width: 55%;">DI TETAPKAN DI KABUPATEN BLORA</td>
+            <td style="width: 55%; font-size:16px;">DI TETAPKAN DI KABUPATEN BLORA</td>
         </tr>
 
         <tr>
             <td style="width: 45%;"></td>
-            <td style="width: 55%;">PADA TANGGAL {{$data->waktupelaksanaan}}</td>
+            <td style="width: 55%; font-size:16px;">PADA TANGGAL {{$data->waktupelaksanaan}}</td>
         </tr>
         <br>
         <tr>
             <td style="width: 45%;"></td>
-            <td style="width: 55%;">DINAS PEKERJAAN UMUM DAN PENAATAAN RUANG <br> SUB KOORDINATOR BIDANG BANGUNAN GEDUNG </td>
+            <td style="width: 55%; font-size:16px;">DINAS PEKERJAAN UMUM DAN PENAATAAN RUANG <br> SUB KOORDINATOR BIDANG BANGUNAN GEDUNG </td>
         </tr>
 
         <br><br>
@@ -659,7 +659,7 @@
         </tr>
             <tr>
                 <td style="width: 45%;"></td>
-                <td style="width: 55%; border-bottom: 2px solid black; text-align: center;">
+                <td style="width: 55%; border-bottom: 2px solid black; text-align: center; font-size:16px;">
                     ANEX FACHRIAN, S.T., M.T
                 </td>
             </tr>
@@ -681,14 +681,14 @@
 
     <div style="display: flex; justify-content: flex-end; padding: 10px;">
       <a href="javascript:history.back()">
-    <button class="download-btn" style="margin-right: 10px;">
+    <button class="download-btn" style="margin-right: 10px; font-size:16px;">
         <i class="bi bi-arrow-left" style="margin-right: 10px;"></i> Kembali
     </button>
 </a>
 
 
         <!-- Tombol Download PDF -->
-<button id="downloadPDF" class="download-btn">
+<button id="downloadPDF" class="download-btn font-size:16px;" >
     <i class="bi bi-download" style="margin-right: 10px;"></i> Download PDF
 </button>
 
