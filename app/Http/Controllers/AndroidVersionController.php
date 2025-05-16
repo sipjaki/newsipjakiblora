@@ -782,7 +782,7 @@ public function reasasosiasimasjakikontraktor($id)
 
         public function menuresagendatkk(Request $request)
         {
-            $perPage = $request->input('perPage', 5);
+            $perPage = $request->input('perPage', 10);
             $search = $request->input('search');
 
             $query = agendaskk::query();
