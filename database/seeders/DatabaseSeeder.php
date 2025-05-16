@@ -59773,19 +59773,94 @@ kategoripelatihan::create([
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
-    'namalengkap' => 'Isko Permono',
-    'jenjangpendidikan_id' => 2,
-    'nik' => '3316091303720001',
+    'namalengkap' => 'Abdul Mufid',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3522161707820006',
     'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1972-03-13',
-    'notelepon' => '081393944522',
-    'instansi' => 'Cv. Tiara Sinergj',
+    'tanggallahir' => '1982-07-17',
+    'notelepon' => '081334714741',
+    'instansi' => 'Dindik Kab Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Adrian Juan',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3471032506980001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1998-06-25',
+    'notelepon' => '0895392535179',
+    'instansi' => 'Bapperida Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Agus sunarto',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316091908800005',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1980-08-19',
+    'notelepon' => '081228576764',
+    'instansi' => 'Instansi',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
 ]);
 
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Ahmad Jaedun',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316102004680002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1968-04-20',
+    'notelepon' => '08122898625',
+    'instansi' => 'Askonas',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'ALIF RIYANA',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3316094307930003',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1993-07-03',
+    'notelepon' => '085290691614',
+    'instansi' => 'CV CRYSTAL DESIGN',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Alnova Rezza A',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316022811810002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1981-11-28',
+    'notelepon' => '08121759079',
+    'instansi' => 'RSUD DR R SOEPRAPTO CEPU',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
@@ -59799,37 +59874,68 @@ pesertapelatihan::create([
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
-    'namalengkap' => 'Evi nur safaah',
-    'jenjangpendidikan_id' => 3,
-    'nik' => '3316107101960001',
-    'jeniskelamin' => 'Perempuan',
-    'tanggallahir' => '1996-01-31',
-    'notelepon' => '082247558696',
-    'instansi' => 'CV.QURATA JAYA',
+    'namalengkap' => 'Andik muntaha',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3523172112840005',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1984-12-21',
+    'notelepon' => '082131588252',
+    'instansi' => 'PT. Bhakti Tama persada, Tuban',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
-    'namalengkap' => 'NISFU LAILI AGUSTIN',
-    'jenjangpendidikan_id' => 3,
-    'nik' => '3317105708840005',
+    'namalengkap' => 'ANEX FACHRIAN',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316012807810002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1981-07-28',
+    'notelepon' => '081294723391',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'ANIK TRI MURYANI',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3316094301720001',
     'jeniskelamin' => 'Perempuan',
-    'tanggallahir' => '1984-08-17',
-    'notelepon' => '081228607870',
-    'instansi' => 'CV. VARIA USAHA MANDIRI',
+    'tanggallahir' => '1972-01-03',
+    'notelepon' => '082223002337',
+    'instansi' => 'CV. TRIBHAKTI',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'ARIF BUDI SANTOSO',
+    'jenjangpendidikan_id' => 1,
+    'nik' => '3316092307810001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1981-07-23',
+    'notelepon' => '081325121364',
+    'instansi' => 'CV. LIMA KARSA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
@@ -59844,7 +59950,128 @@ pesertapelatihan::create([
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Benny Hadi Hermawan',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316092205930004',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1993-05-22',
+    'notelepon' => '082134458446',
+    'instansi' => 'DPUPR',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Budi AJar Pamungkas',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3309081608869001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1989-08-16',
+    'notelepon' => '08975079456',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Choirina Nirmala Wahida',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316075904960001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1996-04-19',
+    'notelepon' => '081226055933',
+    'instansi' => 'DPUPR (Bidang Bina Marga)',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Choirotin Uma Faroda',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316085005950001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1995-05-10',
+    'notelepon' => '087828554734',
+    'instansi' => 'Dinrumkimhub Kab. Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Danang Abdul Wahid',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316100810970001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1997-10-08',
+    'notelepon' => '0895622181025',
+    'instansi' => 'CV. Janur Kuning',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Dhinar Retno Panitis',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316106007960001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1996-07-20',
+    'notelepon' => '085655134710',
+    'instansi' => 'Klinik Utama Citra Mulia',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'DIAH RATNA NINGSIH',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3523175409920002',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1992-09-14',
+    'notelepon' => '082230617561',
+    'instansi' => 'PT bhakti tama persada',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Dianti Artiati, SE',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316055108830002',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1983-08-11',
+    'notelepon' => '081225299313',
+    'instansi' => 'Sekretariat Daerah Kab. Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 
@@ -59860,7 +60087,22 @@ pesertapelatihan::create([
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'dr. Heri Agung Yulianto,SpB',
+    'jenjangpendidikan_id' => 8,
+    'nik' => '3404062107760001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1976-07-21',
+    'notelepon' => '081226076171',
+    'instansi' => 'RS Citra Mulia Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
@@ -59875,202 +60117,37 @@ pesertapelatihan::create([
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
-    'namalengkap' => 'SUWIT, S.Ag.,S.Pd.,M.Pd.',
-    'jenjangpendidikan_id' => 9,
-    'nik' => '3316021101770002',
-    'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1977-01-11',
-    'notelepon' => '085226352947',
-    'instansi' => 'RS PKU Muhammadiyah Randublatung',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'ANIK TRI MURYANI',
-    'jenjangpendidikan_id' => 4,
-    'nik' => '3316094301720001',
-    'jeniskelamin' => 'Perempuan',
-    'tanggallahir' => '1972-01-03',
-    'notelepon' => '082223002337',
-    'instansi' => 'CV. TRIBHAKTI',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'SANTOSO',
-    'jenjangpendidikan_id' => 1,
-    'nik' => '3316092812650002',
-    'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1965-12-28',
-    'notelepon' => '082210311493',
-    'instansi' => 'CV. ADHI KARYA MANDIRI',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'Sukiban',
+    'namalengkap' => 'Evi nur safaah',
     'jenjangpendidikan_id' => 3,
-    'nik' => '3316112402540001',
-    'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1954-02-24',
-    'notelepon' => '08122901961',
-    'instansi' => 'Gapensi',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'Maryana Indah Lestari',
-    'jenjangpendidikan_id' => 2,
-    'nik' => '3205270107940030',
-    'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1994-07-01',
-    'notelepon' => '081321455855',
-    'instansi' => 'CV. Makmur Jaya Sentosa',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'SUGIYATMI',
-    'jenjangpendidikan_id' => 2,
-    'nik' => '3311057110820001',
+    'nik' => '3316107101960001',
     'jeniskelamin' => 'Perempuan',
-    'tanggallahir' => '1982-10-31',
-    'notelepon' => '081933242777',
-    'instansi' => 'RS PKU MUHAMMADIYAH BLORA',
+    'tanggallahir' => '1996-01-31',
+    'notelepon' => '082247558696',
+    'instansi' => 'CV.QURATA JAYA',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
-    'namalengkap' => 'MUHAMAD ANIS FAHRUDIN',
-    'jenjangpendidikan_id' => 3,
-    'nik' => '3316091403970004',
-    'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1997-03-14',
-    'notelepon' => '081234560296',
-    'instansi' => 'RSU Permata Blora',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'YETI ROFITA',
-    'jenjangpendidikan_id' => 4,
-    'nik' => '3316094306940004',
+    'namalengkap' => 'Fanina rahma',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316095801000002',
     'jeniskelamin' => 'Perempuan',
-    'tanggallahir' => '1994-06-03',
-    'notelepon' => '081227392456',
-    'instansi' => 'CV NOGO',
+    'tanggallahir' => '2000-01-18',
+    'notelepon' => '082332830583',
+    'instansi' => 'DPUPR Kabupaten Blora',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'ALIF RIYANA',
-    'jenjangpendidikan_id' => 4,
-    'nik' => '3316094307930003',
-    'jeniskelamin' => 'Perempuan',
-    'tanggallahir' => '1993-07-03',
-    'notelepon' => '085290691614',
-    'instansi' => 'CV CRYSTAL DESIGN',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'Zaenur Rozikin',
-    'jenjangpendidikan_id' => 2,
-    'nik' => '3514130608980001',
-    'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1998-08-06',
-    'notelepon' => '089683619909',
-    'instansi' => 'DPUPR KAB BLORA',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'Ahmad Jaedun',
-    'jenjangpendidikan_id' => 2,
-    'nik' => '3316102004680002',
-    'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1968-04-20',
-    'notelepon' => '08122898625',
-    'instansi' => 'Askonas',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'METI IKA KUMALASARI',
-    'jenjangpendidikan_id' => 2,
-    'nik' => '3316050550820002',
-    'jeniskelamin' => 'Perempuan',
-    'tanggallahir' => '1982-05-10',
-    'notelepon' => '081325457074',
-    'instansi' => 'ASPEKINDO',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'Agus sunarto',
-    'jenjangpendidikan_id' => 2,
-    'nik' => '3316091908800005',
-    'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1980-08-19',
-    'notelepon' => '081228576764',
-    'instansi' => 'Instansi',
-    'sertifikat' => null,
-    'verifikasi' => 'lolos',
-    'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
@@ -60085,7 +60162,52 @@ pesertapelatihan::create([
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Gagat septian tyaskoro',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316100509870001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1987-09-05',
+    'notelepon' => '085225026999',
+    'instansi' => 'Cv.Gada perkasa',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Gaguk Permana Aditya',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316031504890001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1989-04-15',
+    'notelepon' => '085640002306',
+    'instansi' => 'DPUPR (Bidang Bina Marga)',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Heidi Paramita',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3603284809880006',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1988-09-16',
+    'notelepon' => '08179179091',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
@@ -60100,41 +60222,407 @@ pesertapelatihan::create([
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Hetty Novitarini, ST, MM',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316094411780001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1978-11-04',
+    'notelepon' => '082325214655',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
-    'namalengkap' => 'Yuris Ihsa Mahendra',
+    'namalengkap' => 'Isko permono',
     'jenjangpendidikan_id' => 2,
-    'nik' => '3316092907960004',
+    'nik' => '3316091303720001',
     'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1996-07-29',
-    'notelepon' => '082221628225',
-    'instansi' => 'CV BARATAMA KONSTRUKSI',
+    'tanggallahir' => '1972-03-13',
+    'notelepon' => '081393944522',
+    'instansi' => 'Cv. Tiara Sinergj',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
-    'namalengkap' => 'ARIF BUDI SANTOSO',
+    'namalengkap' => 'Joko Prayitno',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316100509930001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1993-09-05',
+    'notelepon' => '082220380347',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'KRISTYANA',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3316164510850001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1985-10-05',
+    'notelepon' => '082133404228',
+    'instansi' => 'CV RAFI JAYA BERKARYA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'M. Miftahun Nurilanam, SE',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316110302910001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1991-02-03',
+    'notelepon' => '081326277717',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Maretha Riantiarni',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316096503950001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1995-03-25',
+    'notelepon' => '082135188193',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Maryana Indah Lestari',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3205270107940030',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1994-07-01',
+    'notelepon' => '081321455855',
+    'instansi' => 'CV. Makmur Jaya Sentosa',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'MASRINI, S.KM, MM',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316054407760003',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1976-07-04',
+    'notelepon' => '081390648976',
+    'instansi' => 'RSUD Dr R SOEPRAPTO CEPU',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'METI IKA KUMALASARI',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316050550820002',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1982-05-10',
+    'notelepon' => '081325457074',
+    'instansi' => 'ASPEKINDO',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Meti Ika Kumalasari',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316055005820002',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1982-05-10',
+    'notelepon' => '091325457074',
+    'instansi' => 'CV DWI PUTRA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'MOHAMAD ARIF HIDAYAT, ST',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '9104010605710002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '2025-05-06',
+    'notelepon' => '081369662822',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'MUHAMAD ANIS FAHRUDIN',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3316091403970004',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1997-03-14',
+    'notelepon' => '081234560296',
+    'instansi' => 'RSU Permata Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'MUHAMMAD SHOLEH',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3316091007790002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1979-07-10',
+    'notelepon' => '081393037572',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'MUHAMMAD YUSUF ZAQI EFENDI, SE',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3311121106920003',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1992-06-11',
+    'notelepon' => '082242848836',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'MUNTOLIP',
     'jenjangpendidikan_id' => 1,
-    'nik' => '3316092307810001',
+    'nik' => '3316111302880003',
     'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1981-07-23',
-    'notelepon' => '081325121364',
-    'instansi' => 'CV. LIMA KARSA',
+    'tanggallahir' => '1988-02-13',
+    'notelepon' => '085292250944',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'NISFU LAILI AGUSTIN',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3317105708840005',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1984-08-17',
+    'notelepon' => '081228607870',
+    'instansi' => 'CV. VARIA USAHA MANDIRI',
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
 ]);
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
+    'namalengkap' => 'NYOTO WASISTIYONO',
+    'jenjangpendidikan_id' => 1,
+    'nik' => '3316091305870004',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1987-05-13',
+    'notelepon' => '085186051357',
+    'instansi' => 'CV.KEDUNG JAYA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'PANJI DIPAJAYA',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316091811840002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1984-11-18',
+    'notelepon' => '082325133000',
+    'instansi' => 'Bapperida Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Retno Susanti, S.IP, MM.',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316126103810002',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1981-03-21',
+    'notelepon' => '0811278398',
+    'instansi' => 'Sekretariat Daerah Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Rini Setyowati, SE., MM',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316095211730001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1973-11-12',
+    'notelepon' => '082328628898',
+    'instansi' => 'Sekretariat Daerah Kab. Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'SANTOSO',
+    'jenjangpendidikan_id' => 1,
+    'nik' => '3316092812650002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1965-12-28',
+    'notelepon' => '082210311493',
+    'instansi' => 'CV. ADHI KARYA MANDIRI',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Sony Sonata',
+    'jenjangpendidikan_id' => 5,
+    'nik' => '3313091405740001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1974-05-14',
+    'notelepon' => '08122966969',
+    'instansi' => 'Semar Beton Perkasa Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Sri sukamto',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3316150808850001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1985-08-08',
+    'notelepon' => '082137241199',
+    'instansi' => 'CV',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'SUGIYATMI',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3311057110820001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1982-10-31',
+    'notelepon' => '081933242777',
+    'instansi' => 'RS PKU MUHAMMADIYAH BLORA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Sukiban',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3316112402540001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1954-02-24',
+    'notelepon' => '08122901961',
+    'instansi' => 'Gapensi',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 9,
+    'namalengkap' => 'SUWIT, S.Ag.,S.Pd.,M.Pd.',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316021101770002',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1977-01-11',
+    'notelepon' => '085226352947',
+    'instansi' => 'RS PKU Muhammadiyah Randublatung',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 9,
     'namalengkap' => 'Teguh Priyanto',
     'jenjangpendidikan_id' => 9,
     'nik' => '3316102503780003',
@@ -60145,8 +60633,150 @@ pesertapelatihan::create([
     'sertifikat' => null,
     'verifikasi' => 'lolos',
     'verifikasikehadiran' => null,
-    'terbitkansertifikat' => null,
+    'terbitkansertifikat' => false,
 ]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 2,
+    'namalengkap' => 'Tresilia Diah Silviati',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316096704990003',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1999-04-27',
+    'notelepon' => '082220369863',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 2,
+    'namalengkap' => 'Wahyu Benyamin Arivin',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316092302800001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1980-02-23',
+    'notelepon' => '081325155655',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 2,
+    'namalengkap' => 'WARSITO, ST',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3522103103730001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1973-03-31',
+    'notelepon' => '085150662024',
+    'instansi' => 'PT. BHAKTI TAMA PERSADA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 9,
+    'namalengkap' => 'Widyaningsih, S.Pt, MM',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316094805740005',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1974-05-08',
+    'notelepon' => '081227365101',
+    'instansi' => 'Sekretariat Daerah Kab.Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => 'HADIR',
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 4,
+    'namalengkap' => 'YETI ROFITA',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3316094306940004',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1994-06-03',
+    'notelepon' => '081227392456',
+    'instansi' => 'CV NOGO',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 2,
+    'namalengkap' => 'YULFA INTAN YURAIDA',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316097110900001',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '2025-05-15',
+    'notelepon' => '085226216970',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 9,
+    'namalengkap' => 'Yuni andari',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316095506670004',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1967-06-15',
+    'notelepon' => '081326650440',
+    'instansi' => 'Dinkesda.blira',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 2,
+    'namalengkap' => 'Yuris Ihsa Mahendra',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316092907960004',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1996-07-29',
+    'notelepon' => '082221628225',
+    'instansi' => 'CV BARATAMA KONSTRUKSI',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 2,
+    'namalengkap' => 'Zaenur Rozikin',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3514130608980001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1998-08-06',
+    'notelepon' => '089683619909',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => true,
+    'terbitkansertifikat' => false,
+]);
+
+
+
+
+
+
 
 
 // sigit ini
