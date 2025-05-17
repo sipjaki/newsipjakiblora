@@ -483,7 +483,7 @@ h5 {
                                 <!-- Punya SIKI -->
                                 <div class="col-md-3" style="{{ $divStyle }}">
                                     <label class="form-label" style="{{ $labelStyle }} margin-left:400px;">
-                                        <i class="bi bi-patch-check" style="color: navy;"></i> Apakah sudah memiliki akun SIKI/ akun SIMPAN PUPR ?
+                                        <i class="bi bi-patch-check" style="color: navy;"></i> Apakah sudah memiliki <br> akun SIKI/ akun SIMPAN PUPR ?
                                     </label>
                                     <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
@@ -508,7 +508,7 @@ h5 {
 
                                 <div class="col-md-3" style="{{ $divStyle }}">
                                     <label class="form-label" style="{{ $labelStyle }} margin-left:400px;">
-                                        <i class="bi bi-shield-check" style="color: navy;"></i> Apakah sudah memiliki Akun Portal Perizinan PUPR ?
+                                        <i class="bi bi-shield-check" style="color: navy;"></i> Apakah sudah memiliki Akun <br> Portal Perizinan PUPR ?
                                     </label>
                                     <select name="portalpupr" style="{{ $inputStyle }}" class="@error('portalpupr') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
