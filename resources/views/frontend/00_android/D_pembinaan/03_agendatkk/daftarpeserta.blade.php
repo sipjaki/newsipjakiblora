@@ -246,10 +246,8 @@ h5 {
     <div class="full-width-container mx-auto px-4 pb-10">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
 
-<hr>
 
-
-<div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
+<div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;" width="400px">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd;">
       <div style="width: 100%; background-color: #f0f0f0; padding: 10px; overflow: hidden;">
     @auth
