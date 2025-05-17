@@ -642,9 +642,9 @@ h5 {
                                         <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
                                     </label>
                                     <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
-                 <span style="color: navy; font-size:13px; display: block; text-align: left;">
-    Contoh : Blora
-</span>
+                 <span style="color: navy; font-size:13px; display: block; text-align: left; margin-left:400px;">
+                        Contoh : Blora
+                    </span>
                    @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
