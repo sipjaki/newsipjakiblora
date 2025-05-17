@@ -724,7 +724,7 @@ h5 {
 
                         <div class="col-12">
                             <!-- Nama Asosiasi -->
-                            <div style="{{ $divStyle }}">
+                            <div style="{{ $divStyle }} margin-top:-100px;" >
                                 <label class="form-label" style="{{ $labelStyle }}">
                                     <i class="bi bi-diagram-3" style="color: navy;"></i> Utusan
                                 </label>
