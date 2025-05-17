@@ -188,9 +188,9 @@ table.zebra-table {
                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No <span class="sort-icon">⇅</span></th>
                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center;"> Nama Lengkap</th>
                             <th onclick="sortTable(2)" style="cursor:pointer; text-align:center;"> Gender </th>
-                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;"> Instansi/Asosiasi </th>
+                            {{-- <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;"> Instansi/Asosiasi </th> --}}
                             <th onclick="sortTable(2)" style="cursor:pointer; text-align:center;"> Tahun Sertifikasi </th>
-                            <th style="text-align:center; width:100px;"> View </th>
+                            {{-- <th style="text-align:center; width:100px;"> View </th> --}}
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -205,13 +205,13 @@ table.zebra-table {
                             {{-- <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->user->name)) }}</td> --}}
                             {{-- <td>{{$item->user->name}}</td> --}}
                             <td>{{$item->jeniskelamin}}</td>
-                            <td style="text-align: center;">{{$item->namaasosiasi}}</td>
+                            {{-- <td style="text-align: center;">{{$item->namaasosiasi}}</td> --}}
                             <td style="text-align: center;">{{$item->tahunpilihan->tahunpilihan}}</td>
-                            <td style="text-align: center">
+                            {{-- <td style="text-align: center">
                                 <a href="/daftarskkblora/{{$item->nik}}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         </tr>
                         @endforeach
                     </tbody>
