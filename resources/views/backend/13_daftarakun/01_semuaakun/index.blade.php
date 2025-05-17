@@ -200,7 +200,7 @@
     @if($item->password)
         <button onclick="showTempPassword({{ $item->id }})"
                 style="background: #2196F3; color: white; padding: 5px 10px; border: none; border-radius: 4px;">
-            Generate Temporary Password
+            Generate
         </button>
     @else
         <span style="color: red;">No password set</span>
