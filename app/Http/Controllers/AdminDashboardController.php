@@ -49,6 +49,15 @@ $jumlahLolos = allskktenagakerjablora::where('user_id', $userId)
 
 $jumlahLolos = $jumlahLolos ?: 0;
 
+
+$jumlahVerifikasiLps = allskktenagakerjablora::where('user_id', $userId)
+    ->whereNotNull('agendaskk_id')
+    ->where('verifikasilps', true)
+    ->count();
+
+$jumlahVerifikasiLps = $jumlahVerifikasiLps ?: 0;
+
+
         $dataallskktenagakerjablora = allskktenagakerjablora::all();
         // return view('backend.00_adminmasjaki.01_fiturterpisah.01_dashboard', [
         return view('backend.00_administrator.01_halamanutama.dashboard', [
@@ -61,6 +70,7 @@ $jumlahLolos = $jumlahLolos ?: 0;
             'jumlahKegiatan' => $jumlahKegiatan,
             'jumlahDikembalikan' => $jumlahDikembalikan,
             'jumlahLolos' => $jumlahLolos,
+            'jumlahVerifikasiLps' => $jumlahVerifikasiLps,
             // 'jumlahQa' => $jumlahQa,  // Menambahkan jumlah data ke view
             // 'jumlahBerita' => $jumlahBerita,  // Menambahkan jumlah data ke view
             // 'jumlahAgendasertifikasi' => $jumlahAgendasertifikasi,  // Menambahkan jumlah data ke view

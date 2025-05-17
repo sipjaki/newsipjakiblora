@@ -312,7 +312,7 @@ button:hover {
             <!-- Icon dan Angka -->
             <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
                 <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
-                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                    {{$jumlahVerifikasiLps}} <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
                 </h4>
             </span>
             <!-- Konten -->
