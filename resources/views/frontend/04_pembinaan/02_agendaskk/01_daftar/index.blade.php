@@ -601,6 +601,7 @@ table.zebra-table {
                                         <i class="bi bi-envelope" style="color: navy;"></i> Email
                                     </label>
                                     <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
+                                    @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 <p style="font-size:13px; text-align: left; margin:0; color: navy;">
     Ket: Email yang akan digunakan untuk akun
     <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer" style="color: navy;">
@@ -612,7 +613,6 @@ table.zebra-table {
     </a>.
 </p>
 
-                                 @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
                                 <!-- Tahun Lulus -->
@@ -1160,6 +1160,7 @@ function previewFile(previewId, input) {
                                         <i class="bi bi-envelope" style="color: navy;"></i> Email
                                     </label>
                                     <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
+                                    @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                        <p style="font-size:13px; text-align: left; margin:0; color: navy;">
     Ket: Email yang akan digunakan untuk akun
     <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer" style="color: navy;">
@@ -1172,7 +1173,6 @@ function previewFile(previewId, input) {
 </p>
 
 
-                                    @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
                                 <!-- Tahun Lulus -->
