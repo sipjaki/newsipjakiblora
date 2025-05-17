@@ -419,7 +419,7 @@ h5 {
         <br>
         <p style="text-align: left; font-size:13px; margin:0; color:navy;"><span style="color: navy; font-size:13px;">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !!</span> </p>
         {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small> --}}
-        @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        @error('skkanda') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
 
         {{-- Preview --}}
         <div id="preview_pdf" style="display: none; margin-top: 10px; margin-bottom:65px;" style="width: 350px;">
@@ -473,7 +473,7 @@ h5 {
                                         <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                         <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
-                                    @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('punyaskk') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <!-- Punya SIKI -->
@@ -486,7 +486,7 @@ h5 {
                                         <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                         <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
-                                    @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('punyasiki') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <!-- Siap Patuhi Kode Etik -->
@@ -499,7 +499,7 @@ h5 {
                                         <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                         <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
-                                    @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('siappatuh') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <div class="col-md-3" style="{{ $divStyle }}">
@@ -511,7 +511,7 @@ h5 {
                                         <option value="Ya" {{ old('portalpupr') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                         <option value="Tidak" {{ old('portalpupr') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
-                                    @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('portalpupr') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
                                 </div>
                             </div>
 
@@ -551,7 +551,7 @@ h5 {
                                     <i class="bi bi-building" style="color: navy;"></i> Nomor Induk Kependudukan (NIK)
                                 </label>
                                 <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
-                                @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                @error('nik') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
                             </div>
 
                             <div class="row">
@@ -751,10 +751,10 @@ h5 {
 <!-- Upload KTP -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP | .pdf,jpg,jpeg,png | Max 5MB
+        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP <br> .pdf,jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
-    <div class="invalid-feedback">@error('uploadktp'){{ $message }} @enderror</div>
+    <div class="invalid-feedback">@error('uploadktp') <span style="color: red;"> {{ $message }} </span> @enderror</div>
     <div id="ktpPreview" class="preview-container"></div>
 </div>
 
@@ -1034,7 +1034,7 @@ function previewFile(previewId, input) {
                                         <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                         <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
-                                    @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('punyaskk') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <!-- Punya SIKI -->
@@ -1047,7 +1047,7 @@ function previewFile(previewId, input) {
                                         <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                         <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
-                                    @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('punyasiki') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <!-- Siap Patuhi Kode Etik -->
@@ -1060,7 +1060,7 @@ function previewFile(previewId, input) {
                                         <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                         <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
-                                    @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('siappatuh') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <div class="col-md-3" style="{{ $divStyle }}">
@@ -1072,7 +1072,7 @@ function previewFile(previewId, input) {
                                         <option value="Ya" {{ old('portalpupr') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                         <option value="Tidak" {{ old('portalpupr') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                     </select>
-                                    @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('portalpupr') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
                                 </div>
                             </div>
                             <hr>
@@ -1111,7 +1111,7 @@ function previewFile(previewId, input) {
         <i class="bi bi-building" style="color: navy;"></i> Nomor Induk Kependudukan (NIK)
     </label>
     <input type="number" name="nik" style="{{ $inputStyle }}" class="form-control @error('nik') is-invalid @enderror" value="{{ old('nik') }}">
-    @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    @error('nik') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
 </div>
 
 <div class="row">
@@ -1128,7 +1128,7 @@ function previewFile(previewId, input) {
                 </option>
             @endforeach
         </select>
-        @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        @error('jenjangpendidikan_id') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
     </div>
 
     <!-- Jabatan Kerja -->
@@ -1157,7 +1157,7 @@ function previewFile(previewId, input) {
             @endforeach
         </select>
                                        <p style="font-size: 13px; color:navy; text-align:left;">Ket: Jika Data Tidak Ada, Silahkan Klik Icon Ini <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a></p>
-        @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        @error('namasekolah_id') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
     </div>
 
 
@@ -1174,7 +1174,7 @@ function previewFile(previewId, input) {
                                             </option>
                                         @endforeach
                                     </select>
-                                    @error('tahunpilihan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('tahunpilihan_id') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
                                 </div>
                             </div>
 
@@ -1191,7 +1191,7 @@ function previewFile(previewId, input) {
                                 <span style="color: navy; font-size:13px; display: block; text-align: left;">
                             Contoh : Blora
                                 </span>
-                                    @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('tempatlahir') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
 
                                 </div>
 
@@ -1201,7 +1201,7 @@ function previewFile(previewId, input) {
                                         <i class="bi bi-calendar" style="color: navy;"></i> Tanggal Lahir
                                     </label>
                                     <input type="date" name="ttl" style="{{ $inputStyle }}" class="@error('ttl') is-invalid @enderror" value="{{ old('ttl') }}">
-                                    @error('ttl') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('ttl') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <!-- Jenis Kelamin -->
@@ -1214,7 +1214,7 @@ function previewFile(previewId, input) {
                                         <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                                         <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                                     </select>
-                                    @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('jeniskelamin') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <!-- Nomor Telepon -->
@@ -1223,7 +1223,7 @@ function previewFile(previewId, input) {
                                         <i class="bi bi-telephone" style="color: navy;"></i> Nomor Telepon
                                     </label>
                                     <input type="text" name="notelepon" style="{{ $inputStyle }}" class="@error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
-                                    @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('notelepon') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <!-- Email -->
@@ -1244,7 +1244,7 @@ function previewFile(previewId, input) {
 </p>
 
 
-                                    @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('email') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
                                 </div>
 
                                 <!-- Tahun Lulus -->
@@ -1253,7 +1253,7 @@ function previewFile(previewId, input) {
                                         <i class="bi bi-hourglass-split" style="color: navy;"></i> Tahun Lulus
                                     </label>
                                     <input type="number" name="tahunlulus" style="{{ $inputStyle }}" class="@error('tahunlulus') is-invalid @enderror" value="{{ old('tahunlulus') }}">
-                                    @error('tahunlulus') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('tahunlulus') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
                                 </div>
 <!-- Alamat -->
                                 <div class="col-md-12" style="{{ $divStyle }}">
@@ -1264,7 +1264,7 @@ function previewFile(previewId, input) {
                                    <p style="text-align: left; font-size:13px; color: navy; margin: 0;">
                                 Ket: Mohon diisi sesuai dengan alamat KTP Saudara!
                             </p>
-                                    @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    @error('alamat') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
 
                                 </div>
                             </div>
@@ -1277,7 +1277,7 @@ function previewFile(previewId, input) {
                                     <i class="bi bi-diagram-3" style="color: navy;"></i> Utusan
                                 </label>
                                 <input type="text" name="namaasosiasi" style="{{ $inputStyle }}" class="@error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}">
-                                @error('namaasosiasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                @error('namaasosiasi') <div class="invalid-feedback"><span style="color:red;">{{ $message }}</span></div> @enderror
                       <p style="font-size: 13px; color:navy;">Keterangan : Badan Usaha/ Perorangan/ Instansi, Contoh : DPUPR Kabupaten Blora</p>
                            </div>
 
@@ -1315,7 +1315,7 @@ function previewFile(previewId, input) {
         <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP <br> .pdf,jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
-    <div class="invalid-feedback">@error('uploadktp') {{ $message }} @enderror</div>
+    <div class="invalid-feedback">@error('uploadktp') <span style="color: red;"> {{ $message }}</span> @enderror</div>
     <div id="ktpPreview" class="preview-container"></div>
 </div>
 
@@ -1325,7 +1325,7 @@ function previewFile(previewId, input) {
         <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 4X6 Background <br> Merah jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
-    <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
+    <div class="invalid-feedback">@error('uploadfoto') <span style="color:red;"> {{ $message }}</span> @enderror</div>
     <div id="fotoPreview" class="preview-container"></div>
 </div>
 
@@ -1335,7 +1335,7 @@ function previewFile(previewId, input) {
         <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah | .pdf | Max 5MB
     </label>
     <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
-    <div class="invalid-feedback">@error('uploadijazah') {{ $message }} @enderror</div>
+    <div class="invalid-feedback">@error('uploadijazah') <span style="color:red;"> {{ $message }} </span> @enderror</div>
     <div id="ijazahPreview" class="preview-container"></div>
 </div>
 </div>
@@ -1377,7 +1377,7 @@ function previewFile(previewId, input) {
     </label>
 
     <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
-    <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
+    <div class="invalid-feedback">@error('uploadpengalaman') <span style="color: red;">{{ $message }}</span> @enderror</div>
     <div id="pengalamanPreview" class="preview-container"></div>
 </div>
 
@@ -1387,7 +1387,7 @@ function previewFile(previewId, input) {
         <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP <br> jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
-    <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
+    <div class="invalid-feedback">@error('uploadnpwp') <span style="color:red;"> {{ $message }} </span> @enderror</div>
     {{-- <p>Ket : Wajib NPWP K3 dan Jenjang 5, 6 </p> --}}
     <div id="npwpPreview" class="preview-container"></div>
 </div>
@@ -1398,7 +1398,7 @@ function previewFile(previewId, input) {
         <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup <br> .pdf | Max 5MB
     </label>
     <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
-    <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div>
+    <div class="invalid-feedback">@error('uploaddaftarriwayathidup') <span style="color:red;"> {{ $message }} </span> @enderror</div>
     <div id="riwayatPreview" class="preview-container"></div>
 </div>
 </div>
@@ -1432,7 +1432,7 @@ function previewFile(previewId, input) {
     </label>
 
     <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
-    <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div>
+    <div class="invalid-feedback">@error('uploadkebenarandata') <span style="color:red;"> {{ $message }} </span> @enderror</div>
     <div id="kebenaranDataPreview" class="preview-container"></div>
 </div>
 
