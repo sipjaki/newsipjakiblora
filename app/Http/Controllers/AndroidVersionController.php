@@ -1331,6 +1331,7 @@ public function resdaftarpelatihanpesertaskk($id)
         'sekolah' => $datasekolah,
         'tahunbimtek' => $datatahunbimtek,
         'datacontohsurat' => $datacontohsurat,
+        'agendaskkjabatankerja' => $datajabatankerja,
         'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi'
     ]);
 }
