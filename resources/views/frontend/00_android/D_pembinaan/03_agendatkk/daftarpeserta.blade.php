@@ -679,6 +679,7 @@ h5 {
     <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer" style="color: navy;">
         e-Simpan
     </a>
+    <br>
     atau email yang sudah terdaftar di
     <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer" style="color: navy;">
         e-Simpan
