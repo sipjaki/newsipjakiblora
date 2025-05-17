@@ -271,7 +271,7 @@ button:hover {
             <!-- Icon dan Angka -->
             <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
                 <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
-                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                    {{$jumlahDikembalikan}} <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
                 </h4>
             </span>
             <!-- Konten -->
@@ -279,7 +279,7 @@ button:hover {
                 <span class="info-box-icon" style="margin-right: 10px;">
                     <i class="bi bi-arrow-repeat" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Permohonan Di Kembalikan</span>
+                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Berkas Di Kembalikan</span>
             </div>
         </div>
     </div>
