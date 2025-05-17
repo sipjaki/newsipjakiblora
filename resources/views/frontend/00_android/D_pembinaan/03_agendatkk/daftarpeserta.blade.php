@@ -249,7 +249,7 @@ h5 {
 <br><br><br>
 
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;" width="200px">
-    <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd; width:400px; height:100px;">
+    <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd; width:400px;">
       <div style="width: 100%; background-color: #f0f0f0; padding: 10px; overflow: hidden;">
     @auth
         <div style="color: green; font-weight: bold; margin-bottom: 5px;">
@@ -306,7 +306,7 @@ h5 {
         </div>
 
         <!-- Pesan Jika Ya -->
-        <div id="yaMessage" style="display: none; margin-top: 20px; padding: 15px; background: #e7f5ff; border-radius: 6px; border-left: 4px solid #228be6; margin-bottom:200px;">
+        <div id="yaMessage" style="display: none; margin-top: 20px; padding: 15px; background: #e7f5ff; border-radius: 6px; border-left: 4px solid #228be6;">
             <p style="margin: 0; color: #1864ab; font-size: 14px;">
                 <i class="bi bi-info-circle-fill" style="margin-right: 8px;"></i>
                 Silahkan reset akun e-Simpan Anda melalui tautan berikut:
@@ -321,7 +321,6 @@ h5 {
             </p>
         </div>
 
-        <br><br><br><br><br>
         <!-- Pertanyaan SKK -->
 
 <!-- Pertanyaan SKK -->
