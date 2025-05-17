@@ -572,7 +572,7 @@ h5 {
                                 </div>
 
                        <!-- Jabatan Kerja -->
-                          <div class="col-md-6" style="{{ $divStyle }}">
+                          {{-- <div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
     </label>
@@ -580,7 +580,7 @@ h5 {
         {{ $agendaskkjabatankerja->jabatankerja }}
     </p>
     <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->id }}">
-</div>
+</div> --}}
 
 
 
@@ -1131,7 +1131,7 @@ function previewFile(previewId, input) {
     </div>
 
     <!-- Jabatan Kerja -->
-       <div class="col-md-6" style="{{ $divStyle }}">
+       {{-- <div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
     </label>
@@ -1139,7 +1139,7 @@ function previewFile(previewId, input) {
         {{ $agendaskkjabatankerja->jabatankerja }}
     </p>
     <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->id }}">
-</div>
+</div> --}}
 
     <!-- Nama Sekolah -->
     <div class="col-md-6" style="{{ $divStyle }}">
