@@ -1312,9 +1312,7 @@ public function resdaftarpelatihanpesertanew(Request $request)
 
 public function resdaftarpelatihanpesertaskk($id)
 {
-    // $dataagendaskk = agendaskk::findOrFail($id);
-    $dataagendaskk = agendaskk::with('jabatankerja')->findOrFail($id);
-
+    $dataagendaskk = agendaskk::findOrFail($id);$dataagendaskk = agendaskk::findOrFail($id);
     $datajenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
     $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
     $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
@@ -1322,13 +1320,11 @@ public function resdaftarpelatihanpesertaskk($id)
     $datacontohsurat = contohsurat::orderBy('berkas', 'asc')->get();
     $user = Auth::user();
 
-       return view('frontend.00_android.D_pembinaan.03_agendatkk.daftarpeserta', [
-
+    return view('frontend.00_android.D_pembinaan.03_agendatkk.daftarpeserta', [
+    // return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
         'agendaskknamakegiatan' => $dataagendaskk->namakegiatan,
         'agendaskk_id' => $dataagendaskk->id,
-        // 'agendaskkjabatankerja' => $dataagendaskk,
-        'agendaskkjabatankerja' => $dataagendaskk->jabatankerja,
-
+        'agendaskkjabatankerja' => $dataagendaskk,
         'namalengkap' => $user->name,
         'user_id' => $user->id,
         'user' => $user,
@@ -1337,7 +1333,6 @@ public function resdaftarpelatihanpesertaskk($id)
         'sekolah' => $datasekolah,
         'tahunbimtek' => $datatahunbimtek,
         'datacontohsurat' => $datacontohsurat,
-        'agendaskkjabatankerja' => $datajabatankerja,
         'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi'
     ]);
 }
