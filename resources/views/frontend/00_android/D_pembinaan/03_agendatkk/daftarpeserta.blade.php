@@ -469,7 +469,7 @@ h5 {
                     <div class="row">
                                 <!-- Punya SKK -->
                                 <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-card-checklist" style="color: navy;"></i> Apakah sebelumnya sudah pernah memiliki SKK dengan jabatan kerja yang lain ?
 
                                     </label>
