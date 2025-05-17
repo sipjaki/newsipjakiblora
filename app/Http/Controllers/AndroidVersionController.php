@@ -1320,9 +1320,11 @@ public function resdaftarpelatihanpesertaskk($id)
     $datacontohsurat = contohsurat::orderBy('berkas', 'asc')->get();
     $user = Auth::user();
 
-    return view('frontend.00_android.D_pembinaan.03_agendatkk.daftarpeserta', [
+       return view('frontend.00_android.D_pembinaan.03_agendatkk.daftarpeserta', [
+
         'agendaskknamakegiatan' => $dataagendaskk->namakegiatan,
         'agendaskk_id' => $dataagendaskk->id,
+        'agendaskkjabatankerja' => $dataagendaskk,
         'namalengkap' => $user->name,
         'user_id' => $user->id,
         'user' => $user,
