@@ -306,7 +306,7 @@ h5 {
         </div>
 
         <!-- Pesan Jika Ya -->
-        <div id="yaMessage" style="display: none; margin-top: 20px; padding: 15px; background: #e7f5ff; border-radius: 6px; border-left: 4px solid #228be6;">
+        <div id="yaMessage" style="display: none; margin-top: 20px; padding: 15px; background: #e7f5ff; border-radius: 6px; border-left: 4px solid #228be6; margin-bottom:200px;">
             <p style="margin: 0; color: #1864ab; font-size: 14px;">
                 <i class="bi bi-info-circle-fill" style="margin-right: 8px;"></i>
                 Silahkan reset akun e-Simpan Anda melalui tautan berikut:
