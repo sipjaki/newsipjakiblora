@@ -28,20 +28,26 @@ class AdminDashboardController extends Controller
 $userId = Auth::id();
 
 // Menghitung jumlah kegiatan yang diikuti oleh user tersebut berdasarkan user_id dan agendaskk_id
-$jumlahKegiatan = Allskktenagakerjablora::where('user_id', $userId)
+$jumlahKegiatan = allskktenagakerjablora::where('user_id', $userId)
                                        ->whereNotNull('agendaskk_id')  // Hanya yang memiliki agendaskk_id
                                        ->count();
 
 $jumlahKegiatan = $jumlahKegiatan ?: 0;
 
 
-$jumlahDikembalikan = Allskktenagakerjablora::where('user_id', $userId)
+$jumlahDikembalikan = allskktenagakerjablora::where('user_id', $userId)
     ->whereNotNull('agendaskk_id')
     ->where('verifikasipu', 'dikembalikan')
     ->count();
 
 $jumlahDikembalikan = $jumlahDikembalikan ?: 0;
 
+$jumlahLolos = allskktenagakerjablora::where('user_id', $userId)
+    ->whereNotNull('agendaskk_id')
+    ->where('verifikasipu', 'lolos')
+    ->count();
+
+$jumlahLolos = $jumlahLolos ?: 0;
 
         $dataallskktenagakerjablora = allskktenagakerjablora::all();
         // return view('backend.00_adminmasjaki.01_fiturterpisah.01_dashboard', [
@@ -54,6 +60,7 @@ $jumlahDikembalikan = $jumlahDikembalikan ?: 0;
             'registrationRate' => $registrationRate,
             'jumlahKegiatan' => $jumlahKegiatan,
             'jumlahDikembalikan' => $jumlahDikembalikan,
+            'jumlahLolos' => $jumlahLolos,
             // 'jumlahQa' => $jumlahQa,  // Menambahkan jumlah data ke view
             // 'jumlahBerita' => $jumlahBerita,  // Menambahkan jumlah data ke view
             // 'jumlahAgendasertifikasi' => $jumlahAgendasertifikasi,  // Menambahkan jumlah data ke view
