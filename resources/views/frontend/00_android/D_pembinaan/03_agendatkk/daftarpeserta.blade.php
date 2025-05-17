@@ -700,7 +700,7 @@ h5 {
                                         <i class="bi bi-house" style="color: navy;"></i> Alamat
                                     </label>
                                     <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
-                           <p style="text-align: left; font-size:13px; color: navy; margin: 0; margin-left:400px;">
+                           <p style="text-align: left; font-size:13px; color: navy; margin: 0;">
                                 Ket: Mohon diisi sesuai dengan alamat KTP Saudara !
                             </p>
                                 @error('alamat') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
