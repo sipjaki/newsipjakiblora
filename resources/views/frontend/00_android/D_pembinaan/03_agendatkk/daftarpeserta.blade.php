@@ -720,7 +720,7 @@ h5 {
                                 </label>
                                 <input type="text" name="namaasosiasi" style="{{ $inputStyle }}" class="@error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}">
                                 @error('namaasosiasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                <p style="font-size: 13px; color:navy;">Keterangan : Badan Usaha/ Perorangan/ Instansi, Contoh : DPUPR Kabupaten Blora</p>
+                                <p style="font-size: 13px; color:navy;">Keterangan : Badan Usaha/ Perorangan/ Instansi, <br> Contoh : DPUPR Kabupaten Blora</p>
 
                             </div>
 
