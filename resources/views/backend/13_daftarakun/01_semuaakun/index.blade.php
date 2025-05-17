@@ -196,34 +196,22 @@
             @endif
         </td>
 
-        <td style="text-align: left;">
+        <td>
     @if($item->password)
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <span id="password-{{ $item->id }}" style="font-family: monospace;">{{ $item->password }}</span>
-            <button onclick="copyPassword('password-{{ $item->id }}')"
-                    style="background: #f0f0f0; border: 1px solid #ddd; border-radius: 3px; padding: 2px 6px; font-size: 12px; cursor: pointer;">
-                <i class="fas fa-copy"></i> Copy
-            </button>
-        </div>
-    @else
-        <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-            Data Belum Di Update !
+        <button onclick="showTempPassword({{ $item->id }})"
+                style="background: #2196F3; color: white; padding: 5px 10px; border: none; border-radius: 4px;">
+            Generate Temporary Password
         </button>
+    @else
+        <span style="color: red;">No password set</span>
     @endif
 </td>
 
 <script>
-function copyPassword(elementId) {
-    const passwordElement = document.getElementById(elementId);
-    const passwordText = passwordElement.innerText;
-
-    navigator.clipboard.writeText(passwordText).then(() => {
-        alert('Password copied to clipboard!');
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-    });
+function showTempPassword(userId) {
+    const tempPass = Math.random().toString(36).slice(-8);
+    alert(`Temporary password for user ${userId}: ${tempPass}`);
+    // Kirim tempPass ke backend untuk di-update
 }
 </script>
 
