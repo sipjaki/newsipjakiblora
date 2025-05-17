@@ -558,7 +558,7 @@ h5 {
                                 <label class="form-label" style="{{ $labelStyle }}">
                                     <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
                                 </label>
-                                <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
+                                <input type="text" style="{{ $inputStyle }}" style="text-transform: uppercase;" class="form-control" value="{{ $namalengkap }}" readonly>
                             </div>
 
                             <div style="{{ $divStyle }}">
@@ -1116,7 +1116,7 @@ function previewFile(previewId, input) {
     <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
     </label>
-    <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
+    <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" style="text-transform: uppercase;" readonly>
 </div>
 
 <!-- NIK -->
