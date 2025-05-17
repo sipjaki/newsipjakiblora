@@ -470,7 +470,7 @@ h5 {
                                 <!-- Punya SKK -->
                                 <div class="col-md-3" style="{{ $divStyle }}">
                                     <label class="form-label text-center" style="{{ $labelStyle }} margin-left:400px;">
-                                        <i class="bi bi-card-checklist" style="color: navy;"></i> Apakah sebelumnya sudah pernah memiliki SKK <br> dengan jabatan kerja yang lain ?
+                                        <i class="bi bi-card-checklist" style="color: navy;"></i> Apakah sebelumnya sudah pernah <br> memiliki SKK dengan jabatan kerja yang lain ?
                                     </label>
                                     <select name="punyaskk" style="{{ $inputStyle }}" class="@error('punyaskk') is-invalid @enderror">
                                         <option value="">-- Pilih --</option>
