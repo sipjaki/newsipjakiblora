@@ -277,6 +277,7 @@
                 <i class="fas fa-user-tag input-icon"></i>
                 <input type="text" name="username" class="input-field" placeholder="Username" required>
                 @error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                <span style="font-size:13px; color:red;">Ket : Isi dengan Username Anda</span>
             </div>
 
             <div class="input-group">
