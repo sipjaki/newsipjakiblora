@@ -345,6 +345,16 @@ headerberanda::create([
         ]);
 
         User::create([
+            'id'  => 55,
+            'name'  => 'Miftahunnuril Anam, S.E',
+            'username' => 'Anam',
+            'statusadmin_id' => '2',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'anam.dpuprblora@gmail.com',
+            'password' => bcrypt('anam.dpuprblora')
+        ]);
+
+        User::create([
             'id'  => 10,
             'name'  => 'Admin DPUPR Kab Blora',
             'username' => 'Admin DPUPR Kab Blora',
