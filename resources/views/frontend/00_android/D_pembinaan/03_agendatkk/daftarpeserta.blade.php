@@ -425,7 +425,7 @@ h5 {
 <div class="row" style="margin-top:25px;" class="text-center;">
     <div class="col-md-6" style="{{ $divStyle }} width:350px;">
         <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Screenshot SKK Saudara | .pdf maksimal 5MB
+            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Screenshot SKK Saudara <br> .pdf maksimal 5MB
         </label>
         <input type="file" name="skkanda" id="skkanda"
                accept="application/pdf"
@@ -611,7 +611,7 @@ h5 {
                                             </option>
                                         @endforeach
                                     </select>
-                               <p style="font-size: 13px; color:navy; text-align:left;">Ket: Jika Data Tidak Ada, Silahkan Klik Icon Ini <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a></p>
+                               <p style="font-size: 13px; color:navy; text-align:left;">Ket: Jika Universitas/Sekolah Tidak Ada, Silahkan Klik Icon Ini <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a></p>
                                     @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
