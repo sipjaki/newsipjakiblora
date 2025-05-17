@@ -225,6 +225,7 @@ h5 {
                                                 white-space: normal;
                                                 word-break: break-word;
                                                 width: 100%;
+                                                max-width:300px;
                                                 text-align: left;
                                             "
                                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
