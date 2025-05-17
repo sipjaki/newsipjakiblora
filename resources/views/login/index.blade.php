@@ -14,18 +14,34 @@
             --matrix: #00FF00;
         }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(45deg, #022B1A, #064420);
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+ body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(45deg, #022B1A, #064420);
+        /* Hapus overflow: hidden */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
 
+    .login-container {
+        position: relative;
+        width: 90%;
+        max-width: 450px;
+        max-height: 90vh; /* Batasi tinggi maksimum */
+        padding: 2.5rem;
+        background: rgba(255, 255, 255, 0.97);
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        backdrop-filter: blur(15px);
+        border: 2px solid var(--accent);
+        z-index: 2;
+        margin: 20px;
+        transition: transform 0.3s ease;
+        overflow-y: auto; /* Tambahkan scroll vertikal jika diperlukan */
+    }
         /* Matrix Animation */
         .matrix-bg {
             position: fixed;
