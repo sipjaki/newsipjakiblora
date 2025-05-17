@@ -724,7 +724,7 @@ h5 {
 
                         <div class="col-12">
                             <!-- Nama Asosiasi -->
-                            <div style="{{ $divStyle }} margin-top:-100px;" >
+                            <div style="{{ $divStyle }} margin-top:-150px;" >
                                 <label class="form-label" style="{{ $labelStyle }}">
                                     <i class="bi bi-diagram-3" style="color: navy;"></i> Utusan
                                 </label>
@@ -1668,8 +1668,9 @@ window.onload = loadOldValues;
             </div>
         </div>
         </div>
-
-        @include('frontend.00_android.00_fiturmenu.keterangan')
+<div style="margin-top: -200px;">
+    @include('frontend.00_android.00_fiturmenu.keterangan')
+</div>
 
         <br><br>
 
