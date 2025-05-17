@@ -1312,7 +1312,9 @@ public function resdaftarpelatihanpesertanew(Request $request)
 
 public function resdaftarpelatihanpesertaskk($id)
 {
-    $dataagendaskk = agendaskk::findOrFail($id);
+    // $dataagendaskk = agendaskk::findOrFail($id);
+    $dataagendaskk = agendaskk::with('jabatankerja')->findOrFail($id);
+
     $datajenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
     $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
     $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
@@ -1324,7 +1326,9 @@ public function resdaftarpelatihanpesertaskk($id)
 
         'agendaskknamakegiatan' => $dataagendaskk->namakegiatan,
         'agendaskk_id' => $dataagendaskk->id,
-        'agendaskkjabatankerja' => $dataagendaskk,
+        // 'agendaskkjabatankerja' => $dataagendaskk,
+        'agendaskkjabatankerja' => $dataagendaskk->jabatankerja,
+
         'namalengkap' => $user->name,
         'user_id' => $user->id,
         'user' => $user,

@@ -574,12 +574,10 @@ h5 {
                        <!-- Jabatan Kerja -->
                             <div class="col-md-6" style="{{ $divStyle }}">
                                 <label class="form-label" style="{{ $labelStyle }}">
-                                    <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
-                                </label>
-                                <p class="form-control-plaintext" style="{{ $inputStyle }}">
-                                    {{ $agendaskkjabatankerja->jabatankerja->jabatankerja }}
-                                </p>
-                                <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->jabatankerja->id }}">
+                                    <p class="form-control-plaintext" style="{{ $inputStyle }}">
+                                        {{ $agendaskkjabatankerja->jabatankerja }}
+                                    </p>
+                                    <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->id }}">
                             </div>
 
 
@@ -1130,15 +1128,13 @@ function previewFile(previewId, input) {
     </div>
 
     <!-- Jabatan Kerja -->
-    {{-- <div class="col-md-6" style="{{ $divStyle }}">
-        <label class="form-label text-center" style="{{ $labelStyle }}">
-            <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
-        </label>
-        <p class="form-control-plaintext" style="{{ $inputStyle }}">
-            {{ $agendaskkjabatankerja->jabatankerja->jabatankerja }}
-        </p>
-        <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->jabatankerja->id }}">
-    </div> --}}
+          <div class="col-md-6" style="{{ $divStyle }}">
+                                <label class="form-label" style="{{ $labelStyle }}">
+                                    <p class="form-control-plaintext" style="{{ $inputStyle }}">
+                                        {{ $agendaskkjabatankerja->jabatankerja }}
+                                    </p>
+                                    <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->id }}">
+                            </div>
 
     <!-- Nama Sekolah -->
     <div class="col-md-6" style="{{ $divStyle }}">
