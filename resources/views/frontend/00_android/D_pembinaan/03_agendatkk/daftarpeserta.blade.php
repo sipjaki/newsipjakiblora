@@ -577,7 +577,7 @@ h5 {
         <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
     </label>
     <p class="form-control-plaintext" style="{{ $inputStyle }}">
-        {{ $agendaskkjabatankerja->jabatankerja->jabatankerja }}
+        {{ $agendaskkjabatankerja }}
     </p>
     <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->jabatankerja->id }}">
 </div>
