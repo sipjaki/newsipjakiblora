@@ -352,15 +352,26 @@ h5 {
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;" >
-                    <hr style="width: 100%; max-width: 1200px; margin: 0;">
-                    <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden; max-width: 800px;">
-                        <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
-                            Sertakan Bukti SKK Saudara !! <span style="color: red;">Silahkan Upload SKK Saudara Hanya screenshot Saja !!</span>
-                        </span>
-                    </p>
-                    <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
-                </div>
+                <style>
+                        @keyframes scroll-text {
+                            0% { transform: translateX(100%); }
+                            100% { transform: translateX(-100%); }
+                        }
+                    </style>
+
+                    <div style="width: 100%; display: flex; justify-content: center;">
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 5px; width: 100%; max-width: 1200px;">
+                            <hr style="width: 100%; margin: 0;">
+                            <div style="overflow: hidden; width: 100%; max-width: 800px;">
+                                <p style="margin: 5px 0; color: black; white-space: nowrap;">
+                                    <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
+                                        Sertakan Bukti SKK Saudara !! <span style="color: red;">Silahkan Upload SKK Saudara Hanya screenshot Saja !!</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <hr style="width: 100%; margin-bottom: 20px;">
+                        </div>
+                    </div>
 
                 @php
                 $inputStyle = "
