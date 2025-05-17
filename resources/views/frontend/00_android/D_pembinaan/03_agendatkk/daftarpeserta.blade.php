@@ -468,18 +468,21 @@ h5 {
 
                     <div class="row">
                                 <!-- Punya SKK -->
-                                <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label text-center" style="{{ $labelStyle }}">
-                                        <i class="bi bi-card-checklist" style="color: navy;"></i> Apakah sebelumnya sudah pernah memiliki SKK dengan jabatan kerja yang lain ?
+                              <div class="col-md-3 text-center" style="{{ $divStyle }}">
+                                <label class="form-label" style="{{ $labelStyle }}">
+                                    <i class="bi bi-card-checklist" style="color: navy;"></i><br>
+                                    Apakah sebelumnya sudah pernah memiliki SKK dengan jabatan kerja yang lain?
+                                </label>
+                                <select name="punyaskk" style="{{ $inputStyle }}" class="form-select @error('punyaskk') is-invalid @enderror">
+                                    <option value="">-- Pilih --</option>
+                                    <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                    <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                </select>
+                                @error('punyaskk')
+                                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                                @enderror
+                            </div>
 
-                                    </label>
-                                    <select name="punyaskk" style="{{ $inputStyle }}" class="@error('punyaskk') is-invalid @enderror">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                                    </select>
-                                    @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
 
                                 <!-- Punya SIKI -->
                                 <div class="col-md-3" style="{{ $divStyle }}">
