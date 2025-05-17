@@ -470,12 +470,12 @@ table.zebra-table {
 
 
                             <!-- Tampilan Nama Lengkap (readonly) -->
-                            {{-- <div style="{{ $divStyle }}">
+                            <div style="{{ $divStyle }}">
                                 <label class="form-label" style="{{ $labelStyle }}">
                                     <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
                                 </label>
                                 <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
-                            </div> --}}
+                            </div>
 
                             <div style="{{ $divStyle }}">
                                 <label class="form-label" style="{{ $labelStyle }}">
