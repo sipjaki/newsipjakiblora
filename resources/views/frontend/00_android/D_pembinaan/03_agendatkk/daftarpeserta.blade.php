@@ -875,6 +875,7 @@ h5 {
 
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
+        <br>
         @if ($fileDownload)
             <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
                 Contoh Surat Pernyataan <i class="bi bi-download"></i>
@@ -1433,6 +1434,7 @@ function previewFile(previewId, input) {
 
     <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
+        <br>
         @if ($fileDownload)
             <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
                 Contoh Surat Pernyataan <i class="bi bi-download"></i>
