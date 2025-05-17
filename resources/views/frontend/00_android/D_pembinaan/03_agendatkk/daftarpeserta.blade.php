@@ -257,7 +257,7 @@ h5 {
         </div>
     @endauth
 
-    <p class="scrolling-text">
+    <p>
         <span style="color: red; font-weight: bold;">Perhatian:</span>
         Jika Saudara kembali ke halaman ini setelah mendaftar, maka pendaftaran Saudara gagal.
         Silakan periksa data dan dokumen Saudara, lalu ulangi kembali!
