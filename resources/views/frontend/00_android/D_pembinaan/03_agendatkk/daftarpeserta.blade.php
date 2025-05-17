@@ -1655,6 +1655,7 @@ window.onload = loadOldValues;
                     </div>
             </div>
         </div>
+        </div>
 
         @include('frontend.00_android.00_fiturmenu.keterangan')
 
