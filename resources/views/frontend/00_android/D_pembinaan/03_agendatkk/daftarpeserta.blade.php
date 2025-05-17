@@ -370,7 +370,7 @@ h5 {
                     border: 1px solid #ccc;
                     transition: 0.3s;
                     font-size: 14px;
-                    max-width: 400px;
+                    max-width: 350px;
                 ";
                 $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block; font-size:16px; text-align:left";
                 $divStyle = "margin-bottom: 20px;";
@@ -1025,7 +1025,7 @@ function previewFile(previewId, input) {
                        <div class="row">
                                 <!-- Punya SKK -->
                                 <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-card-checklist" style="color: navy;"></i> Apakah sebelumnya sudah pernah memiliki SKK dengan jabatan kerja yang lain ?
 
                                     </label>
@@ -1039,7 +1039,7 @@ function previewFile(previewId, input) {
 
                                 <!-- Punya SIKI -->
                                 <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-patch-check" style="color: navy;"></i> Apakah sudah memiliki akun SIKI/ akun SIMPAN PUPR ?
                                     </label>
                                     <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
@@ -1052,7 +1052,7 @@ function previewFile(previewId, input) {
 
                                 <!-- Siap Patuhi Kode Etik -->
                                 <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-shield-check" style="color: navy;"></i> Siap Patuhi Kode Etik?
                                     </label>
                                     <select name="siappatuh" style="{{ $inputStyle }}" class="@error('siappatuh') is-invalid @enderror">
@@ -1064,7 +1064,7 @@ function previewFile(previewId, input) {
                                 </div>
 
                                 <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-shield-check" style="color: navy;"></i> Apakah sudah memiliki Akun Portal Perizinan PUPR ?
                                     </label>
                                     <select name="portalpupr" style="{{ $inputStyle }}" class="@error('portalpupr') is-invalid @enderror">
@@ -1099,7 +1099,7 @@ function previewFile(previewId, input) {
                             <!-- Tampilan Nama Lengkap (readonly) -->
 <!-- Nama Lengkap (readonly) -->
 <div style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
+    <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
     </label>
     <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
@@ -1107,7 +1107,7 @@ function previewFile(previewId, input) {
 
 <!-- NIK -->
 <div style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
+    <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-building" style="color: navy;"></i> Nomor Induk Kependudukan (NIK)
     </label>
     <input type="number" name="nik" style="{{ $inputStyle }}" class="form-control @error('nik') is-invalid @enderror" value="{{ old('nik') }}">
@@ -1117,7 +1117,7 @@ function previewFile(previewId, input) {
 <div class="row">
     <!-- Jenjang Pendidikan -->
     <div class="col-md-6" style="{{ $divStyle }}">
-        <label class="form-label text-start" style="{{ $labelStyle }}">
+        <label class="form-label text-center" style="{{ $labelStyle }}">
             <i class="bi bi-mortarboard" style="{{ $iconStyle }}"></i> Jenjang Pendidikan
         </label>
         <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="form-select @error('jenjangpendidikan_id') is-invalid @enderror">
@@ -1133,7 +1133,7 @@ function previewFile(previewId, input) {
 
     <!-- Jabatan Kerja -->
     {{-- <div class="col-md-6" style="{{ $divStyle }}">
-        <label class="form-label text-start" style="{{ $labelStyle }}">
+        <label class="form-label text-center" style="{{ $labelStyle }}">
             <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
         </label>
         <p class="form-control-plaintext" style="{{ $inputStyle }}">
@@ -1144,7 +1144,7 @@ function previewFile(previewId, input) {
 
     <!-- Nama Sekolah -->
     <div class="col-md-6" style="{{ $divStyle }}">
-        <label class="form-label text-start" style="{{ $labelStyle }}">
+        <label class="form-label text-center" style="{{ $labelStyle }}">
             <i class="bi bi-building" style="{{ $iconStyle }}"></i> Nama Sekolah
         </label>
         <select name="namasekolah_id" style="{{ $inputStyle }}" class="form-select @error('namasekolah_id') is-invalid @enderror">
@@ -1162,7 +1162,7 @@ function previewFile(previewId, input) {
 
                                 <!-- Tahun Bimtek -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-calendar-event" style="{{ $iconStyle }}"></i> Tahun Bimtek | Isi dengan (2025)
                                     </label>
                                     <select name="tahunpilihan_id" style="{{ $inputStyle }}" class="form-select @error('tahunpilihan_id') is-invalid @enderror">
@@ -1183,7 +1183,7 @@ function previewFile(previewId, input) {
                             <div class="row">
                                 <!-- Tempat Lahir -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
                                     </label>
                                     <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
@@ -1196,7 +1196,7 @@ function previewFile(previewId, input) {
 
                                 <!-- Tanggal Lahir -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-calendar" style="color: navy;"></i> Tanggal Lahir
                                     </label>
                                     <input type="date" name="ttl" style="{{ $inputStyle }}" class="@error('ttl') is-invalid @enderror" value="{{ old('ttl') }}">
@@ -1205,7 +1205,7 @@ function previewFile(previewId, input) {
 
                                 <!-- Jenis Kelamin -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-gender-ambiguous" style="color: navy;"></i> Jenis Kelamin
                                     </label>
                                     <select name="jeniskelamin" style="{{ $inputStyle }}" class="@error('jeniskelamin') is-invalid @enderror">
@@ -1218,7 +1218,7 @@ function previewFile(previewId, input) {
 
                                 <!-- Nomor Telepon -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-telephone" style="color: navy;"></i> Nomor Telepon
                                     </label>
                                     <input type="text" name="notelepon" style="{{ $inputStyle }}" class="@error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
@@ -1227,7 +1227,7 @@ function previewFile(previewId, input) {
 
                                 <!-- Email -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-envelope" style="color: navy;"></i> Email
                                     </label>
                                     <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
@@ -1248,7 +1248,7 @@ function previewFile(previewId, input) {
 
                                 <!-- Tahun Lulus -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-hourglass-split" style="color: navy;"></i> Tahun Lulus
                                     </label>
                                     <input type="number" name="tahunlulus" style="{{ $inputStyle }}" class="@error('tahunlulus') is-invalid @enderror" value="{{ old('tahunlulus') }}">
@@ -1256,7 +1256,7 @@ function previewFile(previewId, input) {
                                 </div>
 <!-- Alamat -->
                                 <div class="col-md-12" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                    <label class="form-label text-center" style="{{ $labelStyle }}">
                                         <i class="bi bi-house" style="color: navy;"></i> Alamat
                                     </label>
                                     <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
@@ -1272,7 +1272,7 @@ function previewFile(previewId, input) {
                         <div class="col-12">
                             <!-- Nama Asosiasi -->
                             <div style="{{ $divStyle }}">
-                                <label class="form-label text-start" style="{{ $labelStyle }}">
+                                <label class="form-label text-center" style="{{ $labelStyle }}">
                                     <i class="bi bi-diagram-3" style="color: navy;"></i> Utusan
                                 </label>
                                 <input type="text" name="namaasosiasi" style="{{ $inputStyle }}" class="@error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}">
@@ -1310,7 +1310,7 @@ function previewFile(previewId, input) {
 <br><br>
 <!-- Upload KTP -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
+    <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP | .pdf,jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
@@ -1320,7 +1320,7 @@ function previewFile(previewId, input) {
 
 <!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
+    <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah <br> jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
@@ -1330,7 +1330,7 @@ function previewFile(previewId, input) {
 
 <!-- Upload Ijazah -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
+    <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah | .pdf | Max 5MB
     </label>
     <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
@@ -1361,7 +1361,7 @@ function previewFile(previewId, input) {
     $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
 @endphp
 
-<label class="form-label text-start" style="{{ $labelStyle }}">
+<label class="form-label text-center" style="{{ $labelStyle }}">
 <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf | Max 5MB
 @if ($fileDownload) <br>
 <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
@@ -1382,7 +1382,7 @@ function previewFile(previewId, input) {
 
 <!-- Upload NPWP -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
+    <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP | jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
@@ -1393,7 +1393,7 @@ function previewFile(previewId, input) {
 
 <!-- Upload Daftar Riwayat Hidup -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
+    <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup | .pdf | Max 5MB
     </label>
     <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
@@ -1418,7 +1418,7 @@ function previewFile(previewId, input) {
         }
     @endphp
 
-    <label class="form-label text-start" style="{{ $labelStyle }}">
+    <label class="form-label text-center" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
         @if ($fileDownload)
             <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
