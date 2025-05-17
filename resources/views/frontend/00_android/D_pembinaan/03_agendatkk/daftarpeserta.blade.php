@@ -1200,7 +1200,7 @@ function previewFile(previewId, input) {
                                         <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
                                     </label>
                                     <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
-                                <span style="color: navy; font-size:13px; display: block; text-align: left; margin-left:400px;">
+                                <span style="color: navy; font-size:13px; display: block; text-align: left;">
                             Contoh : Blora
                                 </span>
                                     @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
@@ -1396,7 +1396,7 @@ function previewFile(previewId, input) {
 <!-- Upload NPWP -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP | jpg,jpeg,png | Max 5MB
+        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP <br> jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
     <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
@@ -1407,7 +1407,7 @@ function previewFile(previewId, input) {
 <!-- Upload Daftar Riwayat Hidup -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup | .pdf | Max 5MB
+        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup <br> .pdf | Max 5MB
     </label>
     <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
     <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div>
@@ -1432,7 +1432,7 @@ function previewFile(previewId, input) {
     @endphp
 
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
+        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data <br> .pdf | Max 5MB
         <br>
         @if ($fileDownload)
             <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
