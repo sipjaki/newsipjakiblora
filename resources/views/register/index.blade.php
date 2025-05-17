@@ -270,6 +270,7 @@
                 <i class="fas fa-user input-icon"></i>
                 <input type="text" name="name" class="input-field" placeholder="Nama Lengkap" required>
                 @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                <span style="font-size:13px; color:red;">Ket : Isi Nama Lengkap Sesuai Dengan KTP </span>
             </div>
 
             <div class="input-group">
