@@ -253,7 +253,7 @@ h5 {
       <div style="width: 100%; background-color: #f0f0f0; padding: 10px; overflow: hidden;">
     @auth
         <div style="color: green; font-weight: bold; margin-bottom: 5px;">
-            Selamat datang, {{ auth()->user()->name }}! Silakan mendaftar.
+            Selamat datang, {{ auth()->user()->name }}, Silakan mendaftar.
         </div>
     @endauth
 
