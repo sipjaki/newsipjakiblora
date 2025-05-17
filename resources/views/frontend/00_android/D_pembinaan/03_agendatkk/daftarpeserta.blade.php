@@ -837,7 +837,7 @@ h5 {
 <!-- Upload NPWP -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP | .pdf | Max 5MB
+        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP | jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
     <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
