@@ -1652,6 +1652,7 @@ window.onload = loadOldValues;
 
                         </div>
                     </div>
+                    </div>
             </div>
         </div>
 
