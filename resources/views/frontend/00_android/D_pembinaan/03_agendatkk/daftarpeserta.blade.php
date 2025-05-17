@@ -531,6 +531,8 @@ h5 {
                                     border: 1px solid #ccc;
                                     transition: 0.3s;
                                     font-size: 14px;
+                                    max-width: 350px;
+
                                 ";
                                 $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block; font-size:16px; text-align:left";
                                 $divStyle = "margin-bottom: 20px;";
