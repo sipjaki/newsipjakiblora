@@ -296,6 +296,7 @@
             {{ $message }}
         </div>
     @enderror
+    </div>
 
 <br>
 <div class="footer-links">
