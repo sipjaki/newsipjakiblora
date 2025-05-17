@@ -674,7 +674,7 @@ h5 {
                                         <i class="bi bi-envelope" style="color: navy;"></i> Email
                                     </label>
                                     <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
-                                <p style="font-size:13px; text-align: left; margin:0; color: navy;">
+                                <p style="font-size:13px; text-align: center; margin:0; color: navy;">
     Ket: Email yang akan digunakan untuk akun
     <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer" style="color: navy;">
         e-Simpan
