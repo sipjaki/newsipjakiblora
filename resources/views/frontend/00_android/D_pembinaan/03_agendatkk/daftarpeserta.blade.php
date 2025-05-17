@@ -1175,7 +1175,7 @@ function previewFile(previewId, input) {
     </div>
 
     <!-- Jabatan Kerja -->
-    <div class="col-md-6" style="{{ $divStyle }}">
+    {{-- <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label text-start" style="{{ $labelStyle }}">
             <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
         </label>
@@ -1183,7 +1183,7 @@ function previewFile(previewId, input) {
             {{ $agendaskkjabatankerja->jabatankerja->jabatankerja }}
         </p>
         <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->jabatankerja->id }}">
-    </div>
+    </div> --}}
 
     <!-- Nama Sekolah -->
     <div class="col-md-6" style="{{ $divStyle }}">
