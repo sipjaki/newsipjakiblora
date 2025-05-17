@@ -390,21 +390,6 @@ h5 {
 
 <div class="row">
     <!-- Kolom Kiri (Input Form Jabatan) -->
-    {{-- <div class="col-md-6" style="display: none; {{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
-    </label>
-    <select name="jabatanskkanda_id" class="form-select @error('jabatanskkanda_id') is-invalid @enderror" style="{{ $inputStyle }}">
-        <option value="">-- Pilih Jabatan --</option>
-        @foreach($jabatankerja as $jabatan)
-            <option value="{{ $jabatan->id }}" {{ old('jabatanskkanda_id', $data->jabatanskkanda_id ?? null) == $jabatan->id ? 'selected' : '' }}>
-                {{ $jabatan->jabatankerja }}
-            </option>
-        @endforeach
-    </select>
-    @error('jabatanskkanda_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-</div> --}}
-
     <!-- Kolom Kanan (Gambar) -->
     <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label" style="{{ $labelStyle }}">
@@ -587,7 +572,7 @@ h5 {
                                 </div>
 
                        <!-- Jabatan Kerja -->
-{{-- <div class="col-md-6" style="{{ $divStyle }}">
+<div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
     </label>
@@ -595,7 +580,7 @@ h5 {
         {{ $agendaskkjabatankerja->jabatankerja->jabatankerja }}
     </p>
     <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->jabatankerja->id }}">
-</div> --}}
+</div>
 
 
                                 <!-- Nama Sekolah -->
