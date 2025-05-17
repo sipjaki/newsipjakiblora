@@ -764,7 +764,7 @@ h5 {
 <!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah <br> jpg,jpeg,png | Max 5MB
+        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background <br> Merah jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
     <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
@@ -1323,7 +1323,7 @@ function previewFile(previewId, input) {
 <!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah <br> jpg,jpeg,png | Max 5MB
+        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background <br> Merah jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
     <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
