@@ -57,6 +57,15 @@ $jumlahVerifikasiLps = allskktenagakerjablora::where('user_id', $userId)
 
 $jumlahVerifikasiLps = $jumlahVerifikasiLps ?: 0;
 
+$jumlahDenganSertifikat = Allskktenagakerjablora::where('user_id', $userId)
+    ->whereNotNull('agendaskk_id')       // pastikan ada agendaskk_id
+    ->whereNotNull('sertifikat')         // pastikan sertifikat tidak null
+    ->where('sertifikat', '!=', '')      // pastikan sertifikat tidak kosong string
+    ->count();
+
+// Jika tidak ada, pastikan tetap 0
+$jumlahDenganSertifikat = $jumlahDenganSertifikat ?: 0;
+
 
         $dataallskktenagakerjablora = allskktenagakerjablora::all();
         // return view('backend.00_adminmasjaki.01_fiturterpisah.01_dashboard', [
@@ -71,6 +80,7 @@ $jumlahVerifikasiLps = $jumlahVerifikasiLps ?: 0;
             'jumlahDikembalikan' => $jumlahDikembalikan,
             'jumlahLolos' => $jumlahLolos,
             'jumlahVerifikasiLps' => $jumlahVerifikasiLps,
+            'jumlahDenganSertifikat' => $jumlahDenganSertifikat,
             // 'jumlahQa' => $jumlahQa,  // Menambahkan jumlah data ke view
             // 'jumlahBerita' => $jumlahBerita,  // Menambahkan jumlah data ke view
             // 'jumlahAgendasertifikasi' => $jumlahAgendasertifikasi,  // Menambahkan jumlah data ke view
