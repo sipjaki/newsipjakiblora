@@ -690,7 +690,7 @@ table.zebra-table {
 <!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background <br> Merah jpg,jpeg,png | Max 5MB
+        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3 X 4 Background <br> Merah jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
     <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
@@ -790,6 +790,7 @@ table.zebra-table {
 
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
+        <br>
         @if ($fileDownload)
             <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
                 Contoh Surat Pernyataan <i class="bi bi-download"></i>
