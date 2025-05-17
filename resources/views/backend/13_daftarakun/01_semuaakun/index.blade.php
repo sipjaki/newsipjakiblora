@@ -159,6 +159,7 @@
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
         <th style="width: 300px; text-align:center;"><i class="bi bi-person-fill"></i> Nama Lengkap</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-person-fill-gear"></i> Status Admin</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-person-fill-gear"></i> Password</th>
         <th style="width: 250px; text-align:center;"><i class="bi bi-person-badge-fill"></i> Username</th>
         <th style="width: 400px; text-align:center;"><i class="bi bi-phone-fill"></i> No Telepon</th>
         <th style="width: 350px; text-align:center;"><i class="bi bi-envelope-fill"></i> Email</th>
@@ -186,6 +187,18 @@
         <td style="text-align: left;">
             @if($item->statusadmin->statusadmin)
                 {{ $item->statusadmin->statusadmin }}
+            @else
+                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                    Data Belum Di Update !
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if($item->password)
+                {{ $item->password }}
             @else
                 <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
