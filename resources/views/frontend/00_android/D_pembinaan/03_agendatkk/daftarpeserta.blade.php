@@ -411,7 +411,7 @@ h5 {
 </div>
 
 <!-- Upload SKK -->
-<div class="row" style="margin-top:25px;">
+<div class="row" style="margin-top:25px;" class="text-center;">
     <div class="col-md-6" style="{{ $divStyle }} width:350px;">
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Screenshot SKK Saudara | .pdf maksimal 5MB
