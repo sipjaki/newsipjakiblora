@@ -269,10 +269,10 @@
                                             <p style="font-size: 18px; margin: 0;">{{ $data->lokasi }}</p>
                                         </div>
 
-                                        <div style="margin-bottom: 12px;">
+                                        {{-- <div style="margin-bottom: 12px;">
                                             <h5 style="margin-bottom: 4px;">Jumlah Peserta</h5>
                                             <p style="font-size: 18px; margin: 0;">{{ $data->jumlahpeserta }} Peserta</p>
-                                        </div>
+                                        </div> --}}
 
                                         <div style="margin-bottom: 12px;">
                                             <h5 style="margin-bottom: 4px;">Keterangan</h5>

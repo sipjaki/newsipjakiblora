@@ -198,9 +198,9 @@ table.zebra-table {
                                 <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
                                     <i class="bi bi-clock"></i> Waktu Pelaksanaan
                                 </th>
-                                <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;">
+                                {{-- <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;">
                                     <i class="bi bi-people-fill"></i> Jumlah Peserta
-                                </th>
+                                </th> --}}
                                 <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;">
                                     <i class="bi bi-geo-alt"></i> Lokasi
                                 </th>
@@ -234,9 +234,9 @@ table.zebra-table {
                                 {{ $item->waktupelaksanaan ? \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') : 'Data Belum Diupdate' }}
                             </td>
 
-                            <td style="text-align: center;">
+                            {{-- <td style="text-align: center;">
                                 {{ $item->jumlahpeserta ?? 'Data Belum Diupdate' }}
-                            </td>
+                            </td> --}}
 
                             <td>{{ $item->lokasi ?? 'Data Belum Diupdate' }}</td>
                             <td>{{ $item->keterangan ?? 'Data Belum Diupdate' }}</td>
