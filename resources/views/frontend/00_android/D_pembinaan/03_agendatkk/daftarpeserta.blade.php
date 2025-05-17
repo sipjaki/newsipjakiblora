@@ -412,7 +412,7 @@ h5 {
 
 <!-- Upload SKK -->
 <div class="row" style="margin-top:25px;">
-    <div class="col-md-6" style="{{ $divStyle }}">
+    <div class="col-md-6" style="{{ $divStyle }} width:350px;">
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Screenshot SKK Saudara | .pdf maksimal 5MB
         </label>
@@ -426,7 +426,7 @@ h5 {
         @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
         {{-- Preview --}}
-        <div id="preview_pdf" style="display: none; margin-top: 10px; margin-bottom:65px;">
+        <div id="preview_pdf" style="display: none; margin-top: 10px; margin-bottom:65px;" style="width: 350px;">
             <label style="font-weight: bold;">Preview SKK:</label>
             <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
         </div>
