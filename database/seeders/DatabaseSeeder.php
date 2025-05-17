@@ -348,7 +348,7 @@ headerberanda::create([
             'id'  => 55,
             'name'  => 'Miftahunnuril Anam, S.E',
             'username' => 'Anam',
-            'statusadmin_id' => '2',
+            'statusadmin_id' => '7',
             'avatar' => 'user/avatar/foto4.png',
             'email' => 'anam.dpuprblora@gmail.com',
             'password' => bcrypt('anam.dpuprblora')
