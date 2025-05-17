@@ -690,7 +690,7 @@ table.zebra-table {
 <!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3 X 4 Background <br> Merah jpg,jpeg,png | Max 5MB
+        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 4X6 Background <br> Merah jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
     <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
@@ -1250,7 +1250,7 @@ function previewFile(previewId, input) {
 <!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background <br> Merah jpg,jpeg,png | Max 5MB
+        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 4x6 Background <br> Merah jpg,jpeg,png | Max 5MB
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
     <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
