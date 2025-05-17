@@ -618,7 +618,7 @@ h5 {
                                 </div>
 
                        <!-- Jabatan Kerja -->
-<div class="col-md-6" style="{{ $divStyle }}">
+{{-- <div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
     </label>
@@ -626,7 +626,7 @@ h5 {
         {{ $agendaskkjabatankerja->jabatankerja->jabatankerja }}
     </p>
     <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja->jabatankerja->id }}">
-</div>
+</div> --}}
 
 
                                 <!-- Nama Sekolah -->
