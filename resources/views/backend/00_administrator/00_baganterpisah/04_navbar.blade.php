@@ -154,7 +154,7 @@
             <form action="{{ url('/logout') }}" method="POST" class="float-end">
 @csrf
 <button type="submit" class="btn btn-default btn-flat">
-  <i class="bi bi-door-open"></i> Logout
+  <span style="color: red;"><i class="bi bi-door-open"></i> Logout </span>
 </button>
 </form>
             <li class="nav-item dropdown user-menu">
