@@ -299,6 +299,16 @@
               </li>
 
               <li class="nav-item">
+                <a href="/downsertifikatskk" class="nav-link">
+                  <i class="nav-icon bi bi-person-circle" style="color: white"></i> <!-- Profil Anda -->
+                  <p style="color: white">
+                    Download Sertifikat
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
                 <a href="/404" class="nav-link">
                   <i class="nav-icon bi bi-person-circle" style="color: white"></i> <!-- Profil Anda -->
                   <p style="color: white">
