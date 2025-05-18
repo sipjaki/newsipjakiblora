@@ -916,7 +916,7 @@ button:hover {
                         <div id="checkpoint-container" class="timeline-container"></div>
 
                         <div class="control-panel">
-                            {{-- <button id="simulate-btn">Simulasi Perubahan Status</button> --}}
+                            <button id="simulate-btn"></button>
                             <div class="status-info" id="current-status"></div>
                         </div>
                     </div>
