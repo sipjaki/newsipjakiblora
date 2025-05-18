@@ -10,6 +10,12 @@
         }
     }
 
+     @media (max-width: 768px) {
+        .halaman-pertama {
+            display: none !important;
+        }
+    }
+
     .custom-radio {
         display: flex;
         align-items: center;
