@@ -1210,7 +1210,6 @@ button:hover {
     /* Main Timeline Container */
     .timeline-horizontal {
         display: flex;
-        justify-content: space-between;
         width: 100%;
         padding: 20px 0;
         position: relative;
@@ -1219,10 +1218,10 @@ button:hover {
     /* Each Checkpoint Wrapper */
     .checkpoint-wrapper {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Diubah ke flex-start untuk menarik ke kiri */
-        position: relative;
         flex: 1;
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     /* Container for dot and connector */
@@ -1230,10 +1229,9 @@ button:hover {
         display: flex;
         align-items: center;
         width: 100%;
-        position: relative;
     }
 
-    /* Dot Styling - Posisi diubah */
+    /* Dot Styling */
     .dot {
         width: 30px;
         height: 30px;
@@ -1244,52 +1242,35 @@ button:hover {
         font-weight: bold;
         flex-shrink: 0;
         z-index: 2;
-        position: absolute;
-        left: 15px; /* Dipindah ke kiri */
-        transform: translateX(0);
+        position: relative;
     }
 
     /* Dot Status Colors */
-    .dot.completed {
-        background-color: #4CAF50;
-        color: white;
-    }
-    .dot.rejected {
-        background-color: #f44336;
-        color: white;
-    }
-    .dot.pending {
-        background-color: #e0e0e0;
-        color: #666;
-        border: 2px solid #999;
-    }
+    .dot.completed { background-color: #4CAF50; color: white; }
+    .dot.rejected { background-color: #f44336; color: white; }
+    .dot.pending { background-color: #e0e0e0; color: #666; border: 2px solid #999; }
 
-    /* Connector Line - Diperpanjang ke kiri */
+    /* Connector Line */
     .connector {
+        flex-grow: 1;
         height: 4px;
-        width: 100%;
         background-color: #e0e0e0;
-        margin-left: 30px; /* Memberi ruang untuk dot */
+        margin: 0 -15px; /* Menghubungkan ke dot berikutnya */
     }
-    .connector.active {
-        background-color: #4CAF50;
-    }
+    .connector.active { background-color: #4CAF50; }
 
     /* Checkpoint Content */
     .checkpoint-content {
-        margin-top: 40px;
-        text-align: left; /* Diubah ke left */
-        padding: 0 10px;
+        margin-top: 10px;
+        text-align: left;
+        padding: 0 15px;
         word-wrap: break-word;
         max-width: 150px;
-        margin-left: 30px; /* Sejajar dengan connector */
     }
 
-    /* Last Checkpoint Adjustments */
-    .checkpoint-wrapper:last-child .dot {
-        left: 15px; /* Posisi konsisten dengan dot lain */
-        right: auto;
-        transform: none;
+    /* Remove connector for last item */
+    .checkpoint-wrapper:last-child .connector {
+        display: none;
     }
 
     /* Mobile Responsive */
@@ -1300,38 +1281,31 @@ button:hover {
 
         .checkpoint-wrapper {
             flex-direction: row;
-            margin-bottom: 30px;
-            align-items: flex-start;
+            margin-bottom: 20px;
+            align-items: center;
         }
 
         .dot-connector-container {
-            flex-direction: column;
+            flex-direction: row;
             width: auto;
-            margin-right: 15px;
-        }
-
-        .dot {
-            position: relative;
-            left: auto;
-            transform: none;
-            margin-bottom: 10px;
-            margin-right: 0;
+            align-items: center;
         }
 
         .connector {
-            width: 4px;
-            height: 50px;
-            margin: 5px 0 5px 15px; /* Penyesuaian untuk mobile */
+            width: 50px;
+            height: 4px;
+            margin: 0 10px;
         }
 
         .checkpoint-content {
             margin-top: 0;
-            margin-left: 20px;
-            text-align: left;
+            margin-left: 10px;
             max-width: none;
         }
     }
 </style>
+
+
 <hr>
 
 <form action="{{ route('validasidokumenpesertaskk', $datapeserta->id) }}" method="POST">
