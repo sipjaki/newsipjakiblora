@@ -169,20 +169,21 @@
 </td>
 <!-- Tombol Verifikasi -->
 <td style="text-align: center;">
-    @if($item->verifikasipu == null)
-        <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
-            <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
-        </button>
-    @elseif($item->verifikasipu == 'dikembalikan')
-        <button type="button" disabled class="btn" style="background-color: #0400ff; color: white;">
-            <i class="bi bi-x-circle"></i> DIKEMBALIKAN
-        </button>
-    @elseif($item->verifikasipu == 'lolos')
+    @if($item->verifikasipu == 'lolos')
         <button type="button" disabled class="btn" style="background-color: #10B981; color: white;">
             <i class="bi bi-patch-check-fill"></i> LOLOS
         </button>
+    @elseif($item->verifikasipu == 'dikembalikan')
+        <button type="button" onclick="openModal({{ $item->id }})" class="btn" style="background-color: #0400ff; color: white;">
+            <i class="bi bi-x-circle"></i> DIKEMBALIKAN
+        </button>
+    @else
+        <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+            <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
+        </button>
     @endif
 </td>
+
 
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
