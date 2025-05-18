@@ -975,7 +975,6 @@ button:hover {
                         </div>
                     </div>
 
-
 <script>
     // Data checkpoint - akan diupdate berdasarkan data PHP
     const checkpointData = [
@@ -1058,7 +1057,7 @@ button:hover {
         container.innerHTML = '';
 
         const timeline = document.createElement('div');
-        timeline.className = 'timeline';
+        timeline.className = 'timeline-horizontal';
 
         checkpointData.forEach((checkpoint, index) => {
             const checkpointElement = document.createElement('div');
@@ -1068,13 +1067,6 @@ button:hover {
             const dot = document.createElement('div');
             dot.className = 'dot';
             dot.textContent = checkpoint.id;
-
-            // Connector line
-            if (index < checkpointData.length - 1) {
-                const connector = document.createElement('div');
-                connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
-                checkpointElement.appendChild(connector);
-            }
 
             // Content
             const content = document.createElement('div');
@@ -1102,13 +1094,21 @@ button:hover {
                 if (checkpoint.status === 'rejected') {
                     const rejectMsg = document.createElement('div');
                     rejectMsg.className = 'reject-message';
-                    rejectMsg.textContent = 'Dikembalikan pada: ' + formatTime(checkpoint.time);
+                    rejectMsg.textContent = 'Dikembalikan: ' + formatTime(checkpoint.time);
                     content.appendChild(rejectMsg);
                 }
             }
 
             checkpointElement.appendChild(dot);
             checkpointElement.appendChild(content);
+
+            // Connector line (kecuali untuk elemen terakhir)
+            if (index < checkpointData.length - 1) {
+                const connector = document.createElement('div');
+                connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
+                checkpointElement.appendChild(connector);
+            }
+
             timeline.appendChild(checkpointElement);
         });
 
@@ -1124,7 +1124,7 @@ button:hover {
                 const date = new Date(dateString);
                 return date.toLocaleDateString('id-ID', {
                     day: 'numeric',
-                    month: 'long',
+                    month: 'short',
                     year: 'numeric',
                     hour: '2-digit',
                     minute: '2-digit'
@@ -1135,7 +1135,7 @@ button:hover {
                 const date = new Date(dateString);
                 return date.toLocaleDateString('id-ID', {
                     day: 'numeric',
-                    month: 'long',
+                    month: 'short',
                     year: 'numeric',
                     hour: '2-digit',
                     minute: '2-digit'
@@ -1176,28 +1176,32 @@ button:hover {
 </script>
 
 <style>
-    .timeline {
+    .timeline-horizontal {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
+        overflow-x: auto;
+        padding: 20px 0;
+        gap: 10px;
     }
 
     .checkpoint {
         display: flex;
-        align-items: flex-start;
-        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+        min-width: 150px;
         position: relative;
+        padding: 0 15px;
     }
 
     .dot {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        flex-shrink: 0;
+        margin-bottom: 10px;
+        z-index: 2;
     }
 
     .checkpoint.completed .dot {
@@ -1217,10 +1221,10 @@ button:hover {
 
     .connector {
         position: absolute;
-        left: 12px;
-        top: 24px;
-        width: 2px;
-        height: calc(100% + 20px);
+        top: 15px;
+        left: calc(100% - 15px);
+        width: 30px;
+        height: 2px;
         background-color: #e0e0e0;
     }
 
@@ -1229,29 +1233,35 @@ button:hover {
     }
 
     .checkpoint-content {
-        flex-grow: 1;
+        text-align: center;
+        margin-top: 10px;
     }
 
     .checkpoint-name {
         font-weight: bold;
-        margin-bottom: 4px;
+        margin-bottom: 5px;
+        white-space: nowrap;
     }
 
     .message {
         color: #555;
-        margin-bottom: 4px;
+        font-size: 0.9em;
+        margin-bottom: 5px;
+        min-height: 40px;
     }
 
     .time {
         font-size: 0.8em;
         color: #666;
+        white-space: nowrap;
     }
 
     .reject-message {
         font-size: 0.8em;
         color: #f44336;
-        margin-top: 2px;
+        margin-top: 5px;
         font-style: italic;
+        white-space: nowrap;
     }
 
     #current-status {
@@ -1260,6 +1270,25 @@ button:hover {
         padding: 10px;
         background-color: #f5f5f5;
         border-radius: 4px;
+        text-align: center;
+    }
+
+    /* Scrollbar styling for horizontal timeline */
+    .timeline-horizontal::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .timeline-horizontal::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .timeline-horizontal::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+
+    .timeline-horizontal::-webkit-scrollbar-thumb:hover {
+        background: #555;
     }
 </style>
 
