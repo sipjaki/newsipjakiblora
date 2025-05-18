@@ -1,8 +1,4 @@
 <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
         .checkpoint-container {
             display: flex;
             justify-content: space-between;
@@ -789,7 +785,7 @@
 </script>
 <hr>
 
-    <?php
+ <?php
     // Contoh data - ganti dengan data dari database Anda
     $dataPeserta = [
         'verifikasipu' => 'lolos', // bisa: 'lolos', 'dikembalikan', atau ''
