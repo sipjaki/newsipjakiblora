@@ -1,4 +1,12 @@
 <style>
+
+     @media (max-width: 768px) {
+        table.borderbaru {
+            display: none !important;
+        }
+    }
+
+
     .table-responsive {
     width: 100%;
     overflow-x: auto;
