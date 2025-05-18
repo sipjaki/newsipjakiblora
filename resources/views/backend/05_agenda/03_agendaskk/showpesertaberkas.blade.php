@@ -916,8 +916,8 @@ button:hover {
                         <div id="checkpoint-container" class="timeline-container"></div>
 
                         <div class="control-panel">
-                            <button id="simulate-btn">Simulasi Perubahan Status</button>
-                            <div class="status-info" id="current-status">Status saat ini: Verifikasi Dokumen</div>
+                            {{-- <button id="simulate-btn">Simulasi Perubahan Status</button> --}}
+                            {{-- <div class="status-info" id="current-status">Status saat ini: Verifikasi Dokumen</div> --}}
                         </div>
                     </div>
 
