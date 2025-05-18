@@ -974,6 +974,7 @@ button:hover {
                             <div class="status-info" id="current-status"></div>
                         </div>
                     </div>
+
 <script>
     // Data checkpoint - akan diupdate berdasarkan data PHP
     const checkpointData = [
@@ -1014,63 +1015,192 @@ button:hover {
         }
     ];
 
-    // [Fungsi-fungsi lainnya tetap sama seperti sebelumnya...]
-    // updateCheckpointStatus(), formatTime(), updateCurrentStatus() tetap sama
+    // Fungsi untuk mengupdate status berdasarkan data PHP
+    function updateCheckpointStatus() {
+        // Step 1 otomatis completed (hijau)
+        checkpointData[0].status = 'completed';
+        checkpointData[0].message = 'Dokumen telah diverifikasi';
 
-    // Render checkpoint dengan layout horizontal
+        // Step 2: Verifikasi Berkas berdasarkan verifikasipu
+        if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos') {
+            checkpointData[1].status = 'completed';
+            checkpointData[1].message = 'Berkas telah diverifikasi dan lolos';
+        } else if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'dikembalikan') {
+            checkpointData[1].status = 'rejected';
+            checkpointData[1].message = 'Berkas dikembalikan untuk perbaikan';
+        }
+
+        // Step 3: Verifikasi DPUPR hanya jika verifikasipu 'lolos'
+        if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos') {
+            checkpointData[2].status = 'completed';
+            checkpointData[2].message = 'Telah diverifikasi oleh DPUPR';
+        }
+
+        // Step 4: Verifikasi LSP berdasarkan verifikasilps
+        if ('<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === '1' ||
+            '<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === 'true') {
+            checkpointData[3].status = 'completed';
+            checkpointData[3].message = 'Telah diverifikasi oleh LSP';
+        }
+
+        // Step 5: Sertifikat Terbit berdasarkan verifikasihadirsertifikasi
+        if ('<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === '1' ||
+            '<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === 'true') {
+            checkpointData[4].status = 'completed';
+            checkpointData[4].message = 'Sertifikat telah diterbitkan';
+        }
+    }
+
+    // Render checkpoint
     function renderCheckpoints() {
         const container = document.getElementById('checkpoint-container');
         container.innerHTML = '';
 
         const timeline = document.createElement('div');
-        timeline.className = 'horizontal-timeline';
+        timeline.className = 'timeline-horizontal';
 
         checkpointData.forEach((checkpoint, index) => {
-            const step = document.createElement('div');
-            step.className = 'timeline-step';
+            const checkpointWrapper = document.createElement('div');
+            checkpointWrapper.className = 'checkpoint-wrapper';
 
-            // Dot/indicator
+            // Dot and connector container
+            const dotConnectorContainer = document.createElement('div');
+            dotConnectorContainer.className = 'dot-connector-container';
+
+            // Dot indicator
             const dot = document.createElement('div');
-            dot.className = `timeline-dot ${checkpoint.status}`;
+            dot.className = `dot ${checkpoint.status}`;
             dot.textContent = checkpoint.id;
-            step.appendChild(dot);
+            dotConnectorContainer.appendChild(dot);
 
-            // Connector (garis penghubung ke kanan)
+            // Connector line (except for last item)
             if (index < checkpointData.length - 1) {
                 const connector = document.createElement('div');
-                connector.className = `timeline-connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
-                step.appendChild(connector);
+                connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
+                dotConnectorContainer.appendChild(connector);
             }
 
-            // Content di bawah
+            // Content container
             const content = document.createElement('div');
-            content.className = 'timeline-content';
+            content.className = 'checkpoint-content';
 
             const name = document.createElement('div');
-            name.className = 'step-name';
+            name.className = 'checkpoint-name';
             name.textContent = checkpoint.name;
             content.appendChild(name);
 
+            // Add status message
             const message = document.createElement('div');
-            message.className = 'step-message';
+            message.className = 'message';
             message.textContent = checkpoint.message;
             content.appendChild(message);
 
-            if (checkpoint.time && checkpoint.time.trim() !== '') {
-                const time = document.createElement('div');
-                time.className = 'step-time';
-                time.textContent = formatTime(checkpoint.time) || '';
-                content.appendChild(time);
+            // Format time if available
+            if (checkpoint.time && checkpoint.time.trim() !== '' && checkpoint.time !== '0000-00-00 00:00:00') {
+                const formattedTime = formatTime(checkpoint.time);
+                if (formattedTime) {
+                    const time = document.createElement('div');
+                    time.className = 'time';
+
+                    if (checkpoint.status === 'completed') {
+                        time.textContent = `Selesai: ${formattedTime}`;
+                    } else if (checkpoint.status === 'rejected') {
+                        time.textContent = `Dikembalikan: ${formattedTime}`;
+                    } else {
+                        time.textContent = `Terakhir diperbarui: ${formattedTime}`;
+                    }
+
+                    content.appendChild(time);
+                }
             }
 
-            step.appendChild(content);
-            timeline.appendChild(step);
+            checkpointWrapper.appendChild(dotConnectorContainer);
+            checkpointWrapper.appendChild(content);
+            timeline.appendChild(checkpointWrapper);
         });
 
         container.appendChild(timeline);
         updateCurrentStatus();
     }
 
+    // Format waktu dengan validasi yang lebih robust
+    function formatTime(dateString) {
+        try {
+            if (!dateString || dateString.trim() === '' || dateString === '0000-00-00 00:00:00') {
+                return null;
+            }
+
+            // Coba parse sebagai Date object
+            const date = new Date(dateString);
+
+            // Jika hasilnya invalid date
+            if (isNaN(date.getTime())) {
+                // Coba format MySQL (YYYY-MM-DD HH:MM:SS)
+                const mysqlPattern = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/;
+                const match = dateString.match(mysqlPattern);
+
+                if (match) {
+                    const [_, year, month, day, hours, minutes, seconds] = match;
+                    const newDate = new Date(year, month - 1, day, hours, minutes, seconds);
+                    if (!isNaN(newDate.getTime())) {
+                        return newDate.toLocaleDateString('id-ID', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        });
+                    }
+                }
+                return null;
+            }
+
+            return date.toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        } catch (e) {
+            console.error('Error formatting time:', e);
+            return null;
+        }
+    }
+
+    // Update status teks
+    function updateCurrentStatus() {
+        const statusInfo = document.getElementById('current-status');
+        let currentStatus = '';
+        let currentMessage = '';
+
+        // Cari tahap terakhir yang completed atau rejected
+        for (let i = checkpointData.length - 1; i >= 0; i--) {
+            if (checkpointData[i].status === 'completed' || checkpointData[i].status === 'rejected') {
+                currentStatus = checkpointData[i].name;
+                currentMessage = checkpointData[i].message;
+                break;
+            }
+        }
+
+        // Jika tidak ada yang completed/rejected, ambil tahap pertama yang pending
+        if (!currentStatus) {
+            for (let i = 0; i < checkpointData.length; i++) {
+                if (checkpointData[i].status === 'pending') {
+                    currentStatus = checkpointData[i].name;
+                    currentMessage = checkpointData[i].message;
+                    break;
+                }
+            }
+        }
+
+        if (currentStatus) {
+            statusInfo.innerHTML = `<strong>Status saat ini:</strong> ${currentStatus}<br>
+                                  <em>${currentMessage}</em>`;
+        }
+    }
+
+    // Inisialisasi awal
     document.addEventListener('DOMContentLoaded', () => {
         updateCheckpointStatus();
         renderCheckpoints();
@@ -1078,7 +1208,7 @@ button:hover {
 </script>
 
 <style>
-    .horizontal-timeline {
+    .timeline-horizontal {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -1087,15 +1217,22 @@ button:hover {
         position: relative;
     }
 
-    .timeline-step {
+    .checkpoint-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: relative;
         flex: 1;
+        position: relative;
+        min-width: 0;
     }
 
-    .timeline-dot {
+    .dot-connector-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .dot {
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -1103,66 +1240,60 @@ button:hover {
         align-items: center;
         justify-content: center;
         font-weight: bold;
+        flex-shrink: 0;
         z-index: 2;
-        margin-bottom: 10px;
     }
 
-    .timeline-dot.completed {
+    .dot.completed {
         background-color: #4CAF50;
         color: white;
     }
 
-    .timeline-dot.rejected {
+    .dot.rejected {
         background-color: #f44336;
         color: white;
     }
 
-    .timeline-dot.pending {
+    .dot.pending {
         background-color: #e0e0e0;
         color: #666;
         border: 2px solid #999;
     }
 
-    .timeline-connector {
-        position: absolute;
-        top: 15px;
-        left: calc(50% + 15px);
-        right: -50%;
+    .connector {
         height: 4px;
+        flex-grow: 1;
         background-color: #e0e0e0;
-        z-index: 1;
+        margin: 0 5px;
     }
 
-    .timeline-connector.active {
+    .connector.active {
         background-color: #4CAF50;
     }
 
-    .timeline-step:last-child .timeline-connector {
-        display: none;
-    }
-
-    .timeline-content {
+    .checkpoint-content {
+        margin-top: 15px;
         text-align: center;
         padding: 0 10px;
-        margin-top: 10px;
-        max-width: 120px;
+        word-wrap: break-word;
+        max-width: 150px;
     }
 
-    .step-name {
+    .checkpoint-name {
         font-weight: bold;
-        font-size: 14px;
         margin-bottom: 5px;
+        font-size: 14px;
     }
 
-    .step-message {
-        font-size: 12px;
+    .message {
         color: #555;
         margin-bottom: 5px;
+        font-size: 13px;
     }
 
-    .step-time {
-        font-size: 11px;
-        color: #777;
+    .time {
+        font-size: 12px;
+        color: #666;
         font-style: italic;
     }
 
@@ -1175,35 +1306,39 @@ button:hover {
         font-size: 14px;
     }
 
-    /* Responsive untuk mobile */
     @media (max-width: 768px) {
-        .horizontal-timeline {
+        .timeline-horizontal {
             flex-direction: column;
+            align-items: flex-start;
         }
 
-        .timeline-step {
+        .checkpoint-wrapper {
             flex-direction: row;
-            align-items: flex-start;
             margin-bottom: 20px;
             width: 100%;
+            align-items: flex-start;
         }
 
-        .timeline-connector {
-            position: absolute;
-            top: 15px;
-            left: 15px;
+        .dot-connector-container {
+            width: auto;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .connector {
             width: 4px;
-            height: 60px;
+            height: 40px;
+            margin: 5px 0;
         }
 
-        .timeline-content {
+        .checkpoint-content {
             text-align: left;
-            margin-left: 40px;
+            margin-top: 0;
             max-width: none;
         }
     }
 </style>
-
 
 <hr>
 
