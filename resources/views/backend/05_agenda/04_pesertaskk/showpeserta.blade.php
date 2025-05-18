@@ -338,7 +338,7 @@
                                         </th>
 
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Hadir
+                                            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbitkan Sertifikat
                                         </th>
 
                                         <th style="width: 200px; text-align:center;">
@@ -514,12 +514,12 @@
 <td style="text-align: center;">
     @if($item->verifikasihadirsertifikasi == false)
         <button type="button" onclick="openModalVerifikasiHadirLSP({{ $item->id }})" class="btn btn-danger">
-            <i class="bi bi-x-circle"></i> Belum Diverifikasi
+            <i class="bi bi-x-circle"></i> Belum Terbit
         </button>
     @else
         <button type="button" disabled class="btn"
             style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: not-allowed;">
-            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> TERBIT
         </button>
     @endif
 </td>
@@ -528,7 +528,7 @@
 <div id="modalVerifikasiHadirLSP" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
         <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-            Apakah Peserta Sudah Bisa Dinyatakan Lolos oleh LSP?
+            Apakah anda akan menerbitkan <br> sertifikat ini ?
         </p>
 
         <!-- Form Verifikasi -->
