@@ -57,7 +57,7 @@ $jumlahVerifikasiLps = allskktenagakerjablora::where('user_id', $userId)
 
 $jumlahVerifikasiLps = $jumlahVerifikasiLps ?: 0;
 
-$jumlahDenganSertifikat = Allskktenagakerjablora::where('user_id', $userId)
+$jumlahDenganSertifikat = allskktenagakerjablora::where('user_id', $userId)
     ->whereNotNull('agendaskk_id')       // pastikan ada agendaskk_id
     ->whereNotNull('sertifikat')         // pastikan sertifikat tidak null
     ->where('sertifikat', '!=', '')      // pastikan sertifikat tidak kosong string
