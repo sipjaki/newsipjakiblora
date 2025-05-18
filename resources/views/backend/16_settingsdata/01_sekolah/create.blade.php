@@ -73,15 +73,16 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
 
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namasekolah">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Sekolah
-                                            </label>
-                                            <input type="text" id="namasekolah" name="namasekolah" class="form-control @error('namasekolah') is-invalid @enderror" value="{{ old('namasekolah') }}" />
-                                            @error('namasekolah')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="namasekolah">
+                                            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Sekolah
+                                        </label>
+                                        <input type="text" id="namasekolah" name="namasekolah" class="form-control @error('namasekolah') is-invalid @enderror" value="{{ old('namasekolah') }}" />
+                                        @error('namasekolah')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
 
                                     </div>
                                 </div>
