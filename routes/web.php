@@ -932,8 +932,15 @@ Route::post('/daftarpesertasertifikasiskk2/createpeserta2/new', [AgendaskkContro
 Route::post('/daftarpesertasertifikasiskkt/createmateri/new', [AgendaskkController::class, 'daftarpesertasertifikasiskkcreateskkt'])->middleware('auth')->name('daftarpesertasertifikasiskkawalan');
 
 
+
 Route::get('/beagendaskkpeserta/show/{id}', [PembinaanController::class, 'beagendaskkpesertashow'])->middleware('auth');
 Route::get('/bepesertaskkshowberkas/show/{id}', [PembinaanController::class, 'bepesertaskkshowberkas'])->middleware('auth');
+
+// SERTIFIKAT SKK
+
+Route::get('/besertifikatskk/{id}', [PembinaanController::class, 'besertifikatskk'])->middleware('auth');
+
+
 
 // DASHBOARD PESERTA
 Route::get('/bepesertaskkshowberkas/show/{agenda_id}/{user_id}', [PembinaanController::class, 'bepesertaskkshowberkasakunpeserta'])->middleware('auth');
