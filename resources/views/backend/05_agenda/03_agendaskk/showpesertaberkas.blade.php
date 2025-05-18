@@ -965,7 +965,7 @@ button:hover {
 
 
                     <div class="container">
-                        <h4>Status Verifikasi Berkas Anda !</h4>
+                        <h5>Status Verifikasi Berkas Anda !</h5>
                         <div id="checkpoint-container" class="timeline-container"></div>
 
                         <div class="control-panel">
