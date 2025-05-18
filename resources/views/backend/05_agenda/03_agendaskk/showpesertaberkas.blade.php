@@ -1163,13 +1163,13 @@ button:hover {
                                             </button>
 
                                             <!-- Modal KTP -->
-                                            <div class="modal fade" id="modalKTP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                            <div class="modal fade" id="modalSKK{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalSKKLbl{{ $datapeserta->id }}" aria-hidden="true">
                                                 <div class="modal-dialog modal-xl modal-dialog-centered">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
                                                             <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                            <h5 class="modal-title" id="modalKTPLbl{{ $datapeserta->id }}">Dokumen KTP</h5>
+                                                            <h5 class="modal-title" id="modalSKKLbl{{ $datapeserta->id }}">Dokumen SKK</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
                                                         <div class="modal-body text-center">
