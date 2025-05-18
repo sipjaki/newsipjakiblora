@@ -192,16 +192,16 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->namasekolah->namasekolah}}</td>
+         <td style="text-align: left;">{{$item->user->name}}</td>
 
          <td style="text-align: center; gap:10px;">
                         <div style="margin-top: 10px;">
-                                @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
+                                @if($item->allskktenagakerjablora->sertifikat && file_exists(public_path('storage/' . $item->allskktenagakerjablora->sertifikat)))
                                 <!-- Display the default iframe when the file exists in the storage -->
-                                <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @elseif($item->sertifikat)
+                                <iframe src="{{ asset('storage/' . $item->allskktenagakerjablora->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @elseif($item->allskktenagakerjablora->sertifikat)
                                 <!-- Display the iframe with the updated file -->
-                                <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                <iframe src="{{ asset($item->allskktenagakerjablora->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
                             @else
                                 <!-- Optional: Show a placeholder if there's no file available -->
                                 <p>Sertifikat Belum Terbit</p>
