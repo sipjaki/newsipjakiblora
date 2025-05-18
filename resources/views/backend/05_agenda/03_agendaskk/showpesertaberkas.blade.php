@@ -1403,6 +1403,7 @@ button:hover {
                                                             <h5 class="modal-title" id="modalKTPLbl{{ $datapeserta->id }}">Dokumen KTP</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
+
                                                       <div class="modal-body text-center">
                                                             @if ($datapeserta->uploadktp)
                                                                 @php
@@ -1441,7 +1442,6 @@ button:hover {
                                         </th>
 
                                         @can('pekerja')
-
                                         <th class="text-center">
                                             <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                             @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
@@ -1666,8 +1666,9 @@ button:hover {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </div>
                                         </th>
-                                        @can('pekerja')
+                                                @can('pekerja')
                                                     <th class="text-center">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_pengalaman === 'tidak_sesuai')
@@ -1678,7 +1679,7 @@ button:hover {
                                                             <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
                                                         @endif
                                                     </div>
-                                                </th>
+                                                    </th>
                                                 @endcan
 
                                             @canany(['super_admin', 'admin'])
