@@ -472,7 +472,7 @@
         <div id="kehadiranModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
             <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                 <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                    Apakah Peserta Sudah Bisa Dinyatakan Lolos oleh LSP?
+                    Apakah Peserta Sudah Bisa <br> Dinyatakan Lolos oleh LSP?
                 </p>
 
                 <!-- Form Verifikasi -->
@@ -483,7 +483,7 @@
                         style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s;"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
                         onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
-                        <i class="bi bi-check-circle" style="margin-right: 6px; color: white;"></i> Ya, Hadir
+                        <i class="bi bi-check-circle" style="margin-right: 6px; color: white;"></i> Ya
                     </button>
                 </form>
 
