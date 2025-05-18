@@ -572,7 +572,7 @@
                                                 <i class="bi bi-eye"></i>
                                             </a>
                                             <!-- Update Icon --> --}}
-                                            <a href="/besertifikatskk/show/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Upload Sertifikat">
+                                            <a href="/besertifikatskk/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Upload Sertifikat">
                                                 <i class="bi bi-file-earmark-arrow-up"></i>
                                             </a>
 
