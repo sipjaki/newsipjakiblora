@@ -997,21 +997,21 @@ button:hover {
             name: 'Verifikasi DPUPR',
             status: 'pending',
             time: '<?php echo isset($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
-            message: 'Menunggu verifikasi LSP'
+            message: 'Menunggu verifikasi DPUPR'
         },
         {
             id: 4,
             name: 'Verifikasi LSP',
             status: 'pending',
             time: '<?php echo isset($datapeserta->verifikasilps_time) ? $datapeserta->verifikasilps_time : "" ?>',
-            message: 'Menunggu verifikasi kehadiran'
+            message: 'Verifikasi LSP'
         },
         {
             id: 5,
             name: 'Sertifikat Terbit',
             status: 'pending',
             time: '<?php echo isset($datapeserta->verifikasihadirsertifikasi_time) ? $datapeserta->verifikasihadirsertifikasi_time : "" ?>',
-            message: 'Sertifikat akan diterbitkan'
+            message: 'Terbit'
         }
     ];
 
@@ -1024,10 +1024,10 @@ button:hover {
         // Step 2: Verifikasi Berkas berdasarkan verifikasipu
         if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos') {
             checkpointData[1].status = 'completed';
-            checkpointData[1].message = 'Berkas telah diverifikasi dan lolos';
+            checkpointData[1].message = 'Berkas lolos';
         } else if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'dikembalikan') {
             checkpointData[1].status = 'rejected';
-            checkpointData[1].message = 'Berkas dikembalikan untuk perbaikan';
+            checkpointData[1].message = 'Berkas dikembalikan';
         }
 
         // Step 3: Verifikasi DPUPR hanya jika verifikasipu 'lolos'
