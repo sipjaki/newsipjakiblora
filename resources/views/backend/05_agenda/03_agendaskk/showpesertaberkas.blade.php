@@ -1187,7 +1187,7 @@ button:hover {
                                                 </div>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="text-center">
                                             <p style="font-size: 16px; color:black;">Berkas SKK Screenshoot Saudara </p>
                                         </th>
 
