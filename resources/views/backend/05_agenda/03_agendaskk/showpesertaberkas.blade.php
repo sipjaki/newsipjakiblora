@@ -1,4 +1,11 @@
 <style>
+
+     @media (max-width: 768px) {
+        .btn-nama-peserta {
+            display: none;
+        }
+    }
+
     .custom-radio {
         display: flex;
         align-items: center;
@@ -443,20 +450,21 @@ button:hover {
 @endcan
 
 
-                <button
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#0044b1'; this.style.color='white';"
-                style="background-color: #0044b1; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+<button
+    onmouseover="this.style.background='linear-gradient(135deg, white, #c8ffc8)'; this.style.color='black';"
+    onmouseout="this.style.background='linear-gradient(135deg, #d4af37, #4CAF50)'; this.style.color='white';"
+    style="background: linear-gradient(135deg, #d4af37, #4CAF50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s;">
 
-                <!-- Ikon Arah Kiri -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                viewBox="0 0 16 16" style="margin-right: 8px;">
-                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                <path fill-rule="evenodd"
-                    d="M14 14s-1-1.5-6-1.5S2 14 2 14s1-4 6-4 6 4 6 4z"/>
-            </svg>
-                Nama Peserta : {{ $datapeserta->user->name }}
-            </button>
+    <!-- Ikon User -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        viewBox="0 0 16 16" style="margin-right: 8px;">
+        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        <path fill-rule="evenodd"
+            d="M14 14s-1-1.5-6-1.5S2 14 2 14s1-4 6-4 6 4 6 4z"/>
+    </svg>
+    Nama Peserta : {{ $datapeserta->user->name }}
+</button>
+
 
                      {{-- <a href="/beagendapelatihanmateri/createmateri/{{$datapeserta->id}}">
                         <button
