@@ -170,7 +170,7 @@
     }
 </script>
 
-                    <a href="/bepesertapelatihanindex">
+                    <a href="/beagendaskkdatapeserta">
                                     <button
                         onclick="history.back()"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
