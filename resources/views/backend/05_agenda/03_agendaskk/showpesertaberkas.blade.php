@@ -1240,7 +1240,7 @@ button:hover {
                                             </div>
                                         </th>
                                         <th class="text-center">
-                                            <p style="font-size: 16px; color:black;">Berkas SKK Screenshoot Saudara </p>
+                                            <p style="font-size: 16px; color:black;">Berkas SKK Screenshoot</p>
                                         </th>
                                     </tr>
                                     <tr>
