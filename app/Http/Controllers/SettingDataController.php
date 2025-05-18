@@ -43,4 +43,15 @@ public function settingssekolah(Request $request)
     ]);
 }
 
+    public function settingssekolahcreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.01_sekolah.create', [
+            'title' => 'Create Universitas/Sekolah',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
+
 }

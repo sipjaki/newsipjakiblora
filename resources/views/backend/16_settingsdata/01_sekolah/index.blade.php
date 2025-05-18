@@ -158,7 +158,7 @@
             </a> --}}
             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-judul="{{ $item->namalengkap }}"
+               data-judul="{{ $item->namasekolah }}"
                onclick="setDeleteUrl(this)">
                 <i class="bi bi-trash"></i>
             </a>
@@ -217,9 +217,9 @@
 
                  <script>
                  function setDeleteUrl(button) {
-                     var namalengkap = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = namalengkap;
-                     var deleteUrl = "/bebujkkonstruksi/delete/" + encodeURIComponent(namalengkap);
+                     var namasekolah = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = namasekolah;
+                     var deleteUrl = "/namasekolah/delete/" + encodeURIComponent(namasekolah);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

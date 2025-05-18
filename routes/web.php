@@ -1012,6 +1012,8 @@ Route::post('/akuncreatenew/createnew', [LoginController::class, 'akuncreatenew'
 // DATA PENGATURAN DATABASE DATA ALL
 
 Route::get('/settingssekolah', [SettingDataController::class, 'settingssekolah'])->middleware('auth');
+Route::get('/settingssekolah/create', [SettingDataController::class, 'settingssekolahcreate'])->middleware('auth');
+Route::delete('/settingssekolah/delete/{namasekolah}', [SettingDataController::class, 'settingssekolahdelete'])->middleware('auth');
 
 
 

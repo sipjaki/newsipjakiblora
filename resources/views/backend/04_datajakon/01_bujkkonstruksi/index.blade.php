@@ -151,7 +151,7 @@
                             <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
                         </button>
 
-                         <a href="/bebujkkonstruksi/create">
+                         <a href="/settingssekolah/create">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';"
