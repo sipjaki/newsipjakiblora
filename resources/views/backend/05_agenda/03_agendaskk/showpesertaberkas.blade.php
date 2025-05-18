@@ -1188,24 +1188,26 @@ button:hover {
                                             </div>
                                         </th>
 
-                                        <th class="text-center">
-                                        <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
-                                            <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
-                                            <input type="radio" name="validasi_ktp" value="sesuai"
-                                                {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }} />
-                                            Sesuai
-                                            </label>
+                                        @can('pekerja')
 
-                                            <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
-                                            <input type="radio" name="validasi_ktp" value="tidak_sesuai"
+                                        <th class="text-center">
+                                            <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_ktp" value="sesuai"
+                                                    {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }} />
+                                                    Sesuai
+                                                </label>
+
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_ktp" value="tidak_sesuai"
                                                 {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }} />
                                             Tidak Sesuai
-                                            </label>
-                                        </div>
+                                        </label>
+                                    </div>
 
-                                        <div style="margin-top: 10px; font-weight: bold; color: #333;">
-                                            @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
-                                            <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                    <div style="margin-top: 10px; font-weight: bold; color: #333;">
+                                        @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
+                                        <span style="color: red;">Silahkan Lakukan Perbaikan</span>
                                             @elseif ($datapeserta->validasi_ktp === 'sesuai')
                                             <span style="color: green;">Berkas Anda Sudah Sesuai</span>
                                             @else
@@ -1214,8 +1216,9 @@ button:hover {
                                         </div>
                                         </th>
 
+                                        @endcan
 
-                                            @can('super_admin')
+                                        @can('super_admin')
                                             <th class="text-center">
                                                 <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
                                                 <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
