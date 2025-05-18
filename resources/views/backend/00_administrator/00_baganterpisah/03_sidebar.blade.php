@@ -382,10 +382,62 @@
 
         @endcan
 
+@can('admin')
+             {{-- ===================================== MENU DATA PEMBINAAN   --}}
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <!-- Ikon untuk Pembinaan -->
+                  <i class="nav-icon bi bi-person-check" style="color: white"></i>
+                  <p style="color: white">
+                    Pembinaan
+                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                  <!-- Agenda Pelatihan -->
+                  <li class="nav-item">
+                    <a href="/beagendapelatihan" class="nav-link">
+                      <i class="nav-icon bi bi-calendar-event text-warning"></i> <!-- Ikon untuk Agenda Pelatihan -->
+                      <p style="color: white">Agenda Pelatihan</p>
+                    </a>
+                  </li>
+
+                  <!-- Peserta Pelatihan -->
+                  <li class="nav-item">
+                    <a href="/bepesertapelatihanindex" class="nav-link">
+                      <i class="nav-icon bi bi-person-lines-fill text-warning"></i> <!-- Ikon untuk Peserta Pelatihan -->
+                      <p style="color: white">Peserta Pelatihan</p>
+                    </a>
+                  </li>
+
+                  <!-- Agenda SKK -->
+                  <li class="nav-item">
+                    <a href="/beagendaskk" class="nav-link">
+                      <i class="nav-icon bi bi-calendar-check text-warning"></i> <!-- Ikon untuk Agenda SKK -->
+                      <p style="color: white">Agenda SKK</p>
+                    </a>
+                  </li>
+
+                  <!-- Peserta SKK -->
+                  <li class="nav-item">
+                    <a href="/beagendaskkdatapeserta" class="nav-link">
+                      <i class="nav-icon bi bi-person-badge text-warning"></i> <!-- Ikon untuk Peserta SKK -->
+                      <p style="color: white">Peserta SKK</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+
+
+@endcan
+
 
         {{-- DASHBOARD SUPER ADMIN --}}
 
-        @can('super_admin', 'admin')
+        @can('super_admin')
 
                 <li class="nav-header" style="color: white;">BERANDA WEB</li>
 
