@@ -1229,7 +1229,7 @@ button:hover {
         display: flex;
         align-items: center;
         width: 100%;
-        margin-left: -100px;
+        /* margin-left: -100px; */
     }
 
     /* Dot Styling */
