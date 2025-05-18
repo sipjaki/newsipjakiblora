@@ -348,7 +348,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($datapeserta as $item )
+                                @forelse ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->user->name ?? '-' }}</td>
@@ -586,7 +586,9 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
+                                          @empty
+                                                <p>Peserta belum ada yang diverifikasi DPUPR</p>
+                                            @endforelse
 
                                 </tbody>
                             </table>
