@@ -117,7 +117,7 @@ public function verifikasikehadiranlsphadir($id)
     $peserta->save();
 
     // Flash message ke session
-    session()->flash('update', 'Peserta berhasil diverifikasi hadir pelaksanaan !');
+    session()->flash('update', 'Sertifikat Berhasil Di Terbitkan !');
 
     // Redirect ke halaman peserta per agenda
     return redirect("/beskkdatapesertajumlah/show/{$agendaId}");
