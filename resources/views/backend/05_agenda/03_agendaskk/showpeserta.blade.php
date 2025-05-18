@@ -44,7 +44,7 @@
 
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                 <a href="javascript:history.back()">
+                 <a href="/beagendaskk">
 <button
     onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
     onmouseout="this.style.background='linear-gradient(135deg, #4B5563, #E5E7EB)'; this.style.color='white'; this.style.border='none';"
