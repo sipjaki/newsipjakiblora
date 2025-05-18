@@ -195,18 +195,19 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
          <td style="text-align: left;">{{$item->user->name}}</td>
 
          <td style="text-align: center; gap:10px;">
-            <div style="margin-top: 10px;">
-                @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
-                    <!-- Menampilkan gambar dari storage -->
-                    <img src="{{ asset('storage/' . $item->sertifikat) }}" alt="Gambar Peraturan" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
-                @elseif($item->sertifikat)
-                    <!-- Menampilkan gambar dari path luar storage -->
-                    <img src="{{ asset($item->sertifikat) }}" alt="Gambar Peraturan" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
-                @else
-                    <!-- Placeholder jika tidak ada data -->
-                    <p>Sertifikat Belum Terbit</p>
-                @endif
-            </div>
+                        <div style="margin-top: 10px;">
+                                @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
+                                <!-- Display the default iframe when the file exists in the storage -->
+                                <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @elseif($item->sertifikat)
+                                <!-- Display the iframe with the updated file -->
+                                <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @else
+                                <!-- Optional: Show a placeholder if there's no file available -->
+                                <p>Data belum diupdate</p>
+                            @endif
+
+                            </div>
         </td>
         </tr>
 
