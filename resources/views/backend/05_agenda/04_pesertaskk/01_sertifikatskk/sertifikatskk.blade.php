@@ -121,12 +121,13 @@
     </p>
 
     <iframe src="{{ $fileURL }}" id="pdfPreviewOld" class="w-100" height="400px"></iframe>
-@else
+    @else
     <p class="mt-2 text-muted">Sertifikat belum tersedia</p>
-@endif
+    @endif
 
     {{-- Preview untuk file baru yang dipilih --}}
 
+    <iframe id="pdfPreview" class="w-100 mt-3" height="400px" style="display: none;"></iframe>
 </div>
 
 @push('scripts')
@@ -148,7 +149,6 @@
 
                                     </div>
                                     <div class="col-md-6">
-                                    <iframe id="pdfPreview" class="w-100 mt-3" height="400px" style="display: none;"></iframe>
                                     </div>
                                 </div>
                                 <!-- End row -->
