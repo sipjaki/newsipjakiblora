@@ -1,4 +1,76 @@
 <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .checkpoint-container {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 30px auto;
+            position: relative;
+        }
+        .checkpoint-container::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #e0e0e0;
+            z-index: 0;
+        }
+        .progress-line {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            height: 3px;
+            background-color: #4CAF50;
+            z-index: 1;
+            transition: width 0.5s;
+        }
+        .checkpoint {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            color: #666;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+        .checkpoint.active {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+        .checkpoint.rejected {
+            background-color: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+        .checkpoint-label {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 12px;
+        }
+        .status-info {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+
+<style>
     .halaman-pertama {
         width: 80%;
         margin: auto;
@@ -716,232 +788,81 @@
     });
 </script>
 <hr>
-<div class="container">
-    <h4>Status Verifikasi Berkas Anda!</h4>
-    <div id="checkpoint-container" class="timeline-container"></div>
+ody>
+    <?php
+    // Contoh data - ganti dengan data dari database Anda
+    $dataPeserta = [
+        'verifikasipu' => 'lolos', // bisa: 'lolos', 'dikembalikan', atau ''
+        'verifikasilps' => true,   // boolean
+        'verifikasihadirsertifikasi' => false // boolean
+    ];
+    ?>
 
-    <div class="control-panel">
-        <div class="status-info" id="current-status">Status saat ini: Verifikasi Dokumen</div>
+    <div class="checkpoint-container">
+        <div class="progress-line" id="progressLine"></div>
+
+        <!-- Checkpoint 1: Pendaftaran -->
+        <div class="checkpoint active" id="step1">
+            <span>1</span>
+            <div class="checkpoint-label">Pendaftaran</div>
+        </div>
+
+        <!-- Checkpoint 2: Verifikasi PU -->
+        <div class="checkpoint
+            <?= ($dataPeserta['verifikasipu'] == 'lolos') ? 'active' : '' ?>
+            <?= ($dataPeserta['verifikasipu'] == 'dikembalikan') ? 'rejected' : '' ?>
+        " id="step2">
+            <span>2</span>
+            <div class="checkpoint-label">Verifikasi PU</div>
+        </div>
+
+        <!-- Checkpoint 3: Validasi PU -->
+        <div class="checkpoint <?= ($dataPeserta['verifikasipu'] == 'lolos') ? 'active' : '' ?>" id="step3">
+            <span>3</span>
+            <div class="checkpoint-label">Validasi PU</div>
+        </div>
+
+        <!-- Checkpoint 4: Verifikasi LPS -->
+        <div class="checkpoint <?= ($dataPeserta['verifikasilps']) ? 'active' : '' ?>" id="step4">
+            <span>4</span>
+            <div class="checkpoint-label">Verifikasi LPS</div>
+        </div>
+
+        <!-- Checkpoint 5: Kehadiran -->
+        <div class="checkpoint <?= ($dataPeserta['verifikasihadirsertifikasi']) ? 'active' : '' ?>" id="step5">
+            <span>5</span>
+            <div class="checkpoint-label">Kehadiran</div>
+        </div>
     </div>
-</div>
 
-<style>
-    .timeline-container {
-        display: flex;
-        justify-content: flex-start;
-        padding: 20px 0;
-        overflow-x: auto;
-    }
-
-    .timeline {
-        display: flex;
-        gap: 40px;
-    }
-
-    .checkpoint {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        min-width: 120px;
-    }
-
-    .checkpoint .dot {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 8px;
-        font-weight: bold;
-    }
-
-    .checkpoint.pending .dot {
-        background-color: #ccc;
-        color: #666;
-    }
-
-    .checkpoint.current .dot {
-        background-color: #004fce;
-    }
-
-    .checkpoint.completed .dot {
-        background-color: #2e7d32;
-    }
-
-    .checkpoint.rejected .dot {
-        background-color: red;
-    }
-
-    .checkpoint-content {
-        text-align: center;
-    }
-
-    .checkpoint .time {
-        font-size: 12px;
-        color: #666;
-        margin-top: 4px;
-    }
-
-    .connector {
-        position: absolute;
-        top: 15px;
-        left: 100%;
-        width: 40px;
-        height: 2px;
-        background-color: #ccc;
-        z-index: -1;
-    }
-
-    .connector.active {
-        background-color: #2e7d32;
-    }
-
-    .status-info {
-        margin-top: 20px;
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .control-panel {
-        margin-top: 20px;
-    }
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const datapeserta = @json($datapeserta);
-
-        const checkpointData = [
-            {
-                id: 1,
-                name: 'Verifikasi Dokumen',
-                status: 'current',
-                time: new Date().toLocaleString(),
-                message: 'Dokumen sedang diverifikasi'
-            },
-            {
-                id: 2,
-                name: 'Verifikasi DPUPR',
-                status: 'pending',
-                time: null,
-                message: 'Menunggu verifikasi DPUPR'
-            },
-            {
-                id: 3,
-                name: 'Verifikasi LSP',
-                status: 'pending',
-                time: null,
-                message: 'Menunggu verifikasi LSP'
-            },
-            {
-                id: 4,
-                name: 'Verifikasi Kehadiran',
-                status: 'pending',
-                time: null,
-                message: 'Menunggu verifikasi kehadiran'
-            },
-            {
-                id: 5,
-                name: 'Sertifikat Terbit',
-                status: 'pending',
-                time: null,
-                message: 'Sertifikat akan diterbitkan'
-            }
-        ];
-
-        function formatTime(dateString) {
-            const date = new Date(dateString);
-            return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
+    <div class="status-info">
+        <?php
+        if ($dataPeserta['verifikasipu'] == 'dikembalikan') {
+            echo "Verifikasi PU dikembalikan, silakan perbaiki data.";
+        } elseif (!$dataPeserta['verifikasihadirsertifikasi']) {
+            echo "Proses verifikasi sedang berjalan...";
+        } else {
+            echo "Selamat! Peserta telah menyelesaikan seluruh proses verifikasi.";
         }
+        ?>
+    </div>
 
-        function updateCurrentStatus() {
-            const current = checkpointData.find(c => c.status === 'current') ||
-                           checkpointData.find(c => c.status === 'completed');
-            const statusInfo = document.getElementById('current-status');
+    <script>
+        // Update progress line
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkpoints = document.querySelectorAll('.checkpoint');
+            let lastActiveIndex = 0;
 
-            if (current) {
-                statusInfo.textContent = `Status saat ini: ${current.name}`;
-                if (current.status === 'completed') {
-                    statusInfo.textContent += ' (Selesai)';
+            checkpoints.forEach((checkpoint, index) => {
+                if (checkpoint.classList.contains('active')) {
+                    lastActiveIndex = index;
                 }
-            }
-        }
-
-        function renderCheckpoints() {
-            const container = document.getElementById('checkpoint-container');
-            container.innerHTML = '';
-
-            const timeline = document.createElement('div');
-            timeline.className = 'timeline';
-
-            checkpointData.forEach((checkpoint, index) => {
-                const checkpointElement = document.createElement('div');
-                let customClass = checkpoint.status;
-
-                if (checkpoint.name === 'Verifikasi DPUPR') {
-                    if (datapeserta.verifikasipu === 'lolos') customClass = 'completed';
-                    else if (datapeserta.verifikasipu === 'dikembalikan') customClass = 'rejected';
-                }
-
-                if (checkpoint.name === 'Verifikasi LSP') {
-                    if (datapeserta.verifikasipu === 'lolos') customClass = 'completed';
-                }
-
-                if (checkpoint.name === 'Verifikasi Kehadiran') {
-                    if (datapeserta.verifikasilps === true) customClass = 'completed';
-                }
-
-                if (checkpoint.name === 'Sertifikat Terbit') {
-                    if (datapeserta.verifikasihadirsertifikasi === true) customClass = 'completed';
-                }
-
-                checkpointElement.className = `checkpoint ${customClass}`;
-
-                // Dot
-                const dot = document.createElement('div');
-                dot.className = 'dot';
-                dot.textContent = checkpoint.id;
-
-                // Connector
-                if (index < checkpointData.length - 1) {
-                    const connector = document.createElement('div');
-                    connector.className = `connector ${customClass === 'completed' ? 'active' : ''}`;
-                    checkpointElement.appendChild(connector);
-                }
-
-                // Content
-                const content = document.createElement('div');
-                content.className = 'checkpoint-content';
-
-                const name = document.createElement('div');
-                name.className = 'message';
-                name.textContent = checkpoint.name;
-                content.appendChild(name);
-
-                if (checkpoint.time) {
-                    const time = document.createElement('div');
-                    time.className = 'time';
-                    time.textContent = formatTime(checkpoint.time);
-                    content.appendChild(time);
-                }
-
-                checkpointElement.appendChild(dot);
-                checkpointElement.appendChild(content);
-                timeline.appendChild(checkpointElement);
             });
 
-            container.appendChild(timeline);
-            updateCurrentStatus();
-        }
-
-        renderCheckpoints();
-    });
-</script>
-
-
+            const progressWidth = (lastActiveIndex / (checkpoints.length - 1)) * 100;
+            document.getElementById('progressLine').style.width = progressWidth + '%';
+        });
+    </script>
 
 <hr>
 
