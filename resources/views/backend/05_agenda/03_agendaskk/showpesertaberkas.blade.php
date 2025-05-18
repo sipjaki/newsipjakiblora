@@ -1206,7 +1206,6 @@ button:hover {
         renderCheckpoints();
     });
 </script>
-
 <style>
     /* Main Timeline Container */
     .timeline-horizontal {
@@ -1234,7 +1233,7 @@ button:hover {
         position: relative;
     }
 
-    /* Dot Styling */
+    /* Dot Styling - PERUBAHAN PENTING: menghilangkan margin-right */
     .dot {
         width: 30px;
         height: 30px;
@@ -1248,33 +1247,29 @@ button:hover {
         position: absolute;
         left: calc(100% - 15px);
         transform: translateX(-50%);
-        margin-right: 100px;
     }
 
     /* Dot Status Colors */
     .dot.completed {
         background-color: #4CAF50;
         color: white;
-        margin-right: 100px;
     }
     .dot.rejected {
         background-color: #f44336;
         color: white;
-        margin-right: 100px;
     }
     .dot.pending {
         background-color: #e0e0e0;
         color: #666;
         border: 2px solid #999;
-        margin-right: 100px;
     }
 
-    /* Connector Line */
+    /* Connector Line - PERUBAHAN: menyesuaikan margin */
     .connector {
         height: 4px;
-        width: 100%;
+        width: calc(100% - 30px); /* Menyesuaikan lebar dengan dot */
         background-color: #e0e0e0;
-        margin-right: 30px;
+        margin-right: 0;
     }
     .connector.active {
         background-color: #4CAF50;
@@ -1322,7 +1317,7 @@ button:hover {
             left: auto;
             transform: none;
             margin-bottom: 10px;
-            margin-right: 100px;
+            margin-right: 0; /* Menghilangkan margin untuk mobile */
         }
 
         .connector {
@@ -1339,7 +1334,6 @@ button:hover {
         }
     }
 </style>
-
 <hr>
 
 <form action="{{ route('validasidokumenpesertaskk', $datapeserta->id) }}" method="POST">
