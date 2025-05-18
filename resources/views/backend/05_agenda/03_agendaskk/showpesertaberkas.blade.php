@@ -1095,7 +1095,7 @@ button:hover {
     function updateCheckpointStatus() {
         // Step 1 otomatis completed (hijau)
         checkpointData[0].status = 'completed';
-        checkpointData[0].message = 'Dokumen telah diverifikasi';
+        checkpointData[0].message = '';
 
         // Step 2: Verifikasi Berkas berdasarkan verifikasipu
         if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos') {
