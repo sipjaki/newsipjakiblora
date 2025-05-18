@@ -191,15 +191,15 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
      </tr>
  </thead>
  <tbody id="tableBody">
-     @forelse ($data as $item)
+     {{-- @forelse ($data as $item) --}}
+     @foreach($item->allskktenagakerjablora as $peserta)
 
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->namakegiatan}}</td>
-         <td style="text-align: left;">{{$item->allskktenagakerjablora->user->name}}</td>
+         <td style="text-align: left;">{{$peserta->namakegiatan}}</td>
+         <td style="text-align: left;">{{$peserta->user->name}}</td>
 
         <td style="text-align: center; gap:10px;">
-    @foreach($item->allskktenagakerjablora as $peserta)
         <div style="margin-top: 10px;">
             @if($peserta->sertifikat && file_exists(public_path('storage/' . $peserta->sertifikat)))
                 <img src="{{ asset('storage/' . $peserta->sertifikat) }}" alt="Sertifikat" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
@@ -214,7 +214,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
         </tr>
 
-     @empty
+     {{-- @empty
 
              <div class="col-12">
   <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert" style="background-color: #fff3cd; border-color: #ffeeba; height: 50px; line-height: 50px; padding-left: 10px;">
@@ -224,7 +224,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
   </div>
 </div>
 
-     @endforelse
+     @endforelse --}}
  </tbody>
 </table>
                      </div>
