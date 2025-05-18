@@ -15,7 +15,7 @@ class SettingDataController extends Controller
 
 public function settingssekolah(Request $request)
 {
-    $perPage = $request->input('perPage', 25);
+    $perPage = $request->input('perPage', 50);
     $search = $request->input('search');
 
     $query = namasekolah::query();
