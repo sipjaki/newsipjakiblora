@@ -1206,6 +1206,7 @@ button:hover {
         renderCheckpoints();
     });
 </script>
+
 <style>
     /* Main Timeline Container */
     .timeline-horizontal {
@@ -1247,6 +1248,7 @@ button:hover {
         position: absolute;
         left: calc(100% - 15px);
         transform: translateX(-50%);
+        margin-right: 100px;
     }
 
     /* Dot Status Colors */
