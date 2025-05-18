@@ -916,156 +916,167 @@ button:hover {
                         <div id="checkpoint-container" class="timeline-container"></div>
 
                         <div class="control-panel">
-                            <button id="simulate-btn" style="display: none;"></button>
+                             <button id="simulate-btn" style="display: none;"></button>
+
                             <div class="status-info" id="current-status"></div>
                         </div>
                     </div>
 
- <script>
-        // Data checkpoint
-const checkpointData = [
-    {
-        id: 1,
-        name: 'Dokumen Masuk',
-        status: 'current',
-        time: new Date().toLocaleString(),
-        message: 'Dokumen sedang diverifikasi'
-    },
-    {
-        id: 2,
-        name: 'Verifikasi Berkas',
-        status: 'pending',
-        time: null,
-        message: 'Menunggu verifikasi DPUPR'
-    },
-    {
-        id: 3,
-        name: 'Verifikasi DPUPR',
-        status: 'pending',
-        time: null,
-        message: 'Menunggu verifikasi LSP'
-    },
-    {
-        id: 4,
-        name: 'Verifikasi LSP',
-        status: 'pending',
-        time: null,
-        message: 'Menunggu verifikasi kehadiran'
-    },
-    {
-        id: 5,
-        name: 'Sertifikat Terbit',
-        status: 'pending',
-        time: null,
-        message: 'Sertifikat akan diterbitkan'
+<script>
+    // Data checkpoint - akan diupdate berdasarkan data PHP
+    const checkpointData = [
+        {
+            id: 1,
+            name: 'Dokumen Masuk',
+            status: 'completed', // Otomatis hijau
+            time: new Date().toLocaleString(),
+            message: 'Dokumen telah diverifikasi'
+        },
+        {
+            id: 2,
+            name: 'Verifikasi Berkas',
+            status: 'pending', // Default, akan diupdate berdasarkan verifikasipu
+            time: null,
+            message: 'Menunggu verifikasi DPUPR'
+        },
+        {
+            id: 3,
+            name: 'Verifikasi DPUPR',
+            status: 'pending', // Default, akan diupdate berdasarkan verifikasipu
+            time: null,
+            message: 'Menunggu verifikasi LSP'
+        },
+        {
+            id: 4,
+            name: 'Verifikasi LSP',
+            status: 'pending', // Default, akan diupdate berdasarkan verifikasilps
+            time: null,
+            message: 'Menunggu verifikasi kehadiran'
+        },
+        {
+            id: 5,
+            name: 'Sertifikat Terbit',
+            status: 'pending', // Default, akan diupdate berdasarkan verifikasihadirsertifikasi
+            time: null,
+            message: 'Sertifikat akan diterbitkan'
+        }
+    ];
+
+    // Fungsi untuk mengupdate status berdasarkan data PHP
+    function updateCheckpointStatus(verifikasipu, verifikasilps, verifikasihadirsertifikasi) {
+        // Step 1 otomatis completed (hijau)
+        checkpointData[0].status = 'completed';
+        checkpointData[0].time = new Date().toLocaleString();
+
+        // Step 2: Verifikasi Berkas berdasarkan verifikasipu
+        if (verifikasipu === 'lolos' || verifikasipu === 'dikembalikan') {
+            checkpointData[1].status = verifikasipu === 'lolos' ? 'completed' : 'rejected';
+            checkpointData[1].time = new Date().toLocaleString();
+        }
+
+        // Step 3: Verifikasi DPUPR hanya jika verifikasipu 'lolos'
+        if (verifikasipu === 'lolos') {
+            checkpointData[2].status = 'completed';
+            checkpointData[2].time = new Date().toLocaleString();
+        }
+
+        // Step 4: Verifikasi LSP berdasarkan verifikasilps
+        if (verifikasilps === true || verifikasilps === 'true') {
+            checkpointData[3].status = 'completed';
+            checkpointData[3].time = new Date().toLocaleString();
+        }
+
+        // Step 5: Sertifikat Terbit berdasarkan verifikasihadirsertifikasi
+        if (verifikasihadirsertifikasi === true || verifikasihadirsertifikasi === 'true') {
+            checkpointData[4].status = 'completed';
+            checkpointData[4].time = new Date().toLocaleString();
+        }
     }
-];
 
-// Render checkpoint
-function renderCheckpoints() {
-    const container = document.getElementById('checkpoint-container');
-    container.innerHTML = '';
+    // Render checkpoint
+    function renderCheckpoints() {
+        const container = document.getElementById('checkpoint-container');
+        container.innerHTML = '';
 
-    const timeline = document.createElement('div');
-    timeline.className = 'timeline';
+        const timeline = document.createElement('div');
+        timeline.className = 'timeline';
 
-    checkpointData.forEach((checkpoint, index) => {
-        const checkpointElement = document.createElement('div');
-        checkpointElement.className = `checkpoint ${checkpoint.status}`;
+        checkpointData.forEach((checkpoint, index) => {
+            const checkpointElement = document.createElement('div');
+            checkpointElement.className = `checkpoint ${checkpoint.status}`;
 
-        // Dot indicator
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        dot.textContent = checkpoint.id;
+            // Dot indicator
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.textContent = checkpoint.id;
 
-        // Connector line
-        if (index < checkpointData.length - 1) {
-            const connector = document.createElement('div');
-            connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
-            checkpointElement.appendChild(connector);
+            // Connector line
+            if (index < checkpointData.length - 1) {
+                const connector = document.createElement('div');
+                connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
+                checkpointElement.appendChild(connector);
+            }
+
+            // Content
+            const content = document.createElement('div');
+            content.className = 'checkpoint-content';
+
+            const name = document.createElement('div');
+            name.className = 'message';
+            name.textContent = checkpoint.name;
+            content.appendChild(name);
+
+            if (checkpoint.time) {
+                const time = document.createElement('div');
+                time.className = 'time';
+                time.textContent = formatTime(checkpoint.time);
+                content.appendChild(time);
+            }
+
+            checkpointElement.appendChild(dot);
+            checkpointElement.appendChild(content);
+            timeline.appendChild(checkpointElement);
+        });
+
+        container.appendChild(timeline);
+        updateCurrentStatus();
+    }
+
+    // Format waktu
+    function formatTime(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
+    }
+
+    // Update status teks
+    function updateCurrentStatus() {
+        const current = checkpointData.find(c => c.status === 'current') ||
+                       checkpointData.find(c => c.status === 'completed' || c.status === 'rejected');
+        const statusInfo = document.getElementById('current-status');
+
+        if (current) {
+            statusInfo.textContent = `Status saat ini: ${current.name}`;
+
+            if (current.status === 'completed') {
+                statusInfo.textContent += ' (Selesai)';
+            } else if (current.status === 'rejected') {
+                statusInfo.textContent += ' (Dikembalikan)';
+            }
         }
+    }
 
-        // Content
-        const content = document.createElement('div');
-        content.className = 'checkpoint-content';
+    // Inisialisasi awal
+    document.addEventListener('DOMContentLoaded', () => {
+        // Ambil data dari PHP (gunakan nilai default jika tidak ada)
+        const verifikasipu = '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>';
+        const verifikasilps = '<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>';
+        const verifikasihadirsertifikasi = '<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>';
 
-        const name = document.createElement('div');
-        name.className = 'message';
-        name.textContent = checkpoint.name;
-        content.appendChild(name);
-
-        if (checkpoint.time) {
-            const time = document.createElement('div');
-            time.className = 'time';
-            time.textContent = formatTime(checkpoint.time);
-            content.appendChild(time);
-        }
-
-        checkpointElement.appendChild(dot);
-        checkpointElement.appendChild(content);
-        timeline.appendChild(checkpointElement);
+        // Update status checkpoint berdasarkan data
+        updateCheckpointStatus(verifikasipu, verifikasilps, verifikasihadirsertifikasi);
+        renderCheckpoints();
     });
-
-    container.appendChild(timeline);
-    updateCurrentStatus();
-}
-
-// Format waktu
-function formatTime(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
-}
-
-// Update status teks
-function updateCurrentStatus() {
-    const current = checkpointData.find(c => c.status === 'current') ||
-                   checkpointData.find(c => c.status === 'completed');
-    const statusInfo = document.getElementById('current-status');
-
-    if (current) {
-        statusInfo.textContent = `Status saat ini: ${current.name}`;
-
-        if (current.status === 'completed') {
-            statusInfo.textContent += ' (Selesai)';
-        }
-    }
-}
-
-// Simulasi perubahan status
-function simulateProgress() {
-    const currentIndex = checkpointData.findIndex(c => c.status === 'current');
-
-    if (currentIndex >= 0) {
-        // Ubah status current menjadi completed
-        checkpointData[currentIndex].status = 'completed';
-        checkpointData[currentIndex].time = new Date().toLocaleString();
-
-        // Jika ada checkpoint berikutnya, ubah menjadi current
-        if (currentIndex + 1 < checkpointData.length) {
-            checkpointData[currentIndex + 1].status = 'current';
-            checkpointData[currentIndex + 1].time = new Date().toLocaleString();
-        }
-    } else {
-        // Jika semua completed, reset ke awal
-        if (checkpointData.every(c => c.status === 'completed')) {
-            checkpointData.forEach((c, i) => {
-                c.status = i === 0 ? 'current' : 'pending';
-                c.time = i === 0 ? new Date().toLocaleString() : null;
-            });
-        }
-    }
-
-    renderCheckpoints();
-}
-
-// Event listener untuk tombol simulasi
-document.getElementById('simulate-btn').addEventListener('click', simulateProgress);
-
-// Inisialisasi awal
-document.addEventListener('DOMContentLoaded', () => {
-    renderCheckpoints();
-});
-      </script>
+</script>
 
 
 <hr>
