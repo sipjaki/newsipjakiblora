@@ -721,6 +721,7 @@ public function beskkdatapesertajumlah(Request $request, $id)
             'sertifikat',
             'verifikasipu',
             'verifikasilps',
+            'verifikasihadirsertifikasi',
             'created_at'
         ]);
 
