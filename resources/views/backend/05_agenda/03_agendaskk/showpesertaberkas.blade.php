@@ -789,6 +789,81 @@
 </script>
 <hr>
 
+    <?php
+    // Contoh data - ganti dengan data dari database Anda
+    $dataPeserta = [
+        'verifikasipu' => 'lolos', // bisa: 'lolos', 'dikembalikan', atau ''
+        'verifikasilps' => true,   // boolean
+        'verifikasihadirsertifikasi' => false // boolean
+    ];
+    ?>
+
+    <div class="checkpoint-container">
+        <div class="progress-line" id="progressLine"></div>
+
+        <!-- Checkpoint 1: Pendaftaran -->
+        <div class="checkpoint active" id="step1">
+            <span>1</span>
+            <div class="checkpoint-label">Pendaftaran</div>
+        </div>
+
+        <!-- Checkpoint 2: Verifikasi PU -->
+        <div class="checkpoint
+            <?= ($dataPeserta['verifikasipu'] == 'lolos') ? 'active' : '' ?>
+            <?= ($dataPeserta['verifikasipu'] == 'dikembalikan') ? 'rejected' : '' ?>
+        " id="step2">
+            <span>2</span>
+            <div class="checkpoint-label">Verifikasi PU</div>
+        </div>
+
+        <!-- Checkpoint 3: Validasi PU -->
+        <div class="checkpoint <?= ($dataPeserta['verifikasipu'] == 'lolos') ? 'active' : '' ?>" id="step3">
+            <span>3</span>
+            <div class="checkpoint-label">Validasi PU</div>
+        </div>
+
+        <!-- Checkpoint 4: Verifikasi LPS -->
+        <div class="checkpoint <?= ($dataPeserta['verifikasilps']) ? 'active' : '' ?>" id="step4">
+            <span>4</span>
+            <div class="checkpoint-label">Verifikasi LPS</div>
+        </div>
+
+        <!-- Checkpoint 5: Kehadiran -->
+        <div class="checkpoint <?= ($dataPeserta['verifikasihadirsertifikasi']) ? 'active' : '' ?>" id="step5">
+            <span>5</span>
+            <div class="checkpoint-label">Kehadiran</div>
+        </div>
+    </div>
+
+    <div class="status-info">
+        <?php
+        if ($dataPeserta['verifikasipu'] == 'dikembalikan') {
+            echo "Verifikasi PU dikembalikan, silakan perbaiki data.";
+        } elseif (!$dataPeserta['verifikasihadirsertifikasi']) {
+            echo "Proses verifikasi sedang berjalan...";
+        } else {
+            echo "Selamat! Peserta telah menyelesaikan seluruh proses verifikasi.";
+        }
+        ?>
+    </div>
+
+    <script>
+        // Update progress line
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkpoints = document.querySelectorAll('.checkpoint');
+            let lastActiveIndex = 0;
+
+            checkpoints.forEach((checkpoint, index) => {
+                if (checkpoint.classList.contains('active')) {
+                    lastActiveIndex = index;
+                }
+            });
+
+            const progressWidth = (lastActiveIndex / (checkpoints.length - 1)) * 100;
+            document.getElementById('progressLine').style.width = progressWidth + '%';
+        });
+    </script>
+
 
 <hr>
 
