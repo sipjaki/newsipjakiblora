@@ -1393,6 +1393,7 @@ button:hover {
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah  </th>
                                         <th class="text-center">
+
                                                 <button type="button" class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -1507,7 +1508,7 @@ button:hover {
                                                 </div>
                                         </th>
                                         @can('pekerja')
-                                                <th class="text-center">
+                                                    <th class="text-center">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_pengalaman === 'tidak_sesuai')
                                                             <span style="color: red;">Silahkan Lakukan Perbaikan</span>
@@ -1518,7 +1519,7 @@ button:hover {
                                                         @endif
                                                     </div>
                                                 </th>
-                                            @endcan
+                                                @endcan
 
                                             @canany(['super_admin', 'admin'])
                                                 <th class="text-center">
