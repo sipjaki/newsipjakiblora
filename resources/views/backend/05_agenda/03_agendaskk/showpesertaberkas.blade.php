@@ -1328,7 +1328,7 @@ button:hover {
 
         .connector {
             width: 4px;
-            height: 40px;
+            height: 50px;
             margin: 5px 0;
         }
 
@@ -1336,6 +1336,7 @@ button:hover {
             text-align: left;
             margin-top: 0;
             max-width: none;
+            margin-left: 200px;
         }
     }
 </style>
