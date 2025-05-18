@@ -554,20 +554,20 @@ button:hover {
     <h5 style="color: navy; font-weight:800; font-size:16px;">I. IDENTITAS PESERTA</h4>
 
         <div class="table-responsive">
-        <table class="zebra-table table-striped">
+            <table class="zebra-table table-striped">
 
-        <tr>
-            <td style="width:50px; text-align:center; font-size:16px;">1</td>
-            <td style="width:200px; text-align:center; font-size:16px;">Nama Lengkap</td>
-            <td style="width:50px; text-align:center; font-size:16px;" >:</td>
-            <td style="width:200px; text-align:center; font-size:16px;">{{ ucwords(strtolower($datapeserta->user->name)) }}</td>
+                <tr>
+                    <td style="width:50px; text-align:center; font-size:16px;">1</td>
+                    <td style="width:200px; text-align:center; font-size:16px;">Nama Lengkap</td>
+                    <td style="width:50px; text-align:center; font-size:16px;" >:</td>
+                    <td style="width:200px; text-align:center; font-size:16px;">{{ ucwords(strtolower($datapeserta->user->name)) }}</td>
             <td style="width:500px; text-align:center; font-size:16px;">
 
                 <div style="margin-top: 10px;">
                     @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
                         <!-- Menampilkan gambar dari storage -->
                         <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Pas Foto 4 x 6 " style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                    @elseif($datapeserta->uploadfoto)
+                        @elseif($datapeserta->uploadfoto)
                         <!-- Menampilkan gambar dari path luar storage -->
                         <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Pas Foto 4 x 6 " style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                     @else
@@ -581,6 +581,7 @@ button:hover {
     </table>
 </div>
 
+<div class="table-responsive">
     <table class="zebra-table table-striped">
 
         <tr>
@@ -661,11 +662,13 @@ button:hover {
         </tr>
 
     </table>
+</div>
 
-    <br>
+<br>
 
     <h5 style="color: navy; font-weight:800; font-size:16px;">II. KELENGKAPAN BERKAS PERSYARATAN PESERTA</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
+    <div class="table-responsive">
     <table class="zebra-table table-striped">
         <tr>
             <td style="text-align: center; font-size:16px;">KTP/KITAS*</td>
@@ -845,7 +848,8 @@ button:hover {
         </tr>
 
     </table>
-<br>
+    <br>
+</div>
 
 </div>
 
