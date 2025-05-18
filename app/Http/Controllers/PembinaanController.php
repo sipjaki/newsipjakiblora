@@ -1243,18 +1243,21 @@ public function beakseslsppenerbitskk(Request $request)
     return redirect()->back()->with('error', 'Data Peserta Tidak Ditemukan.');
 }
 
+  public function besertifikatskk($id)
+    {
+        $datapesertaskk = allskktenagakerjablora::where('id', $id)->first();
 
-public function besertifikatskk($id)
-{
-    // Ambil data peserta SKK beserta relasi agendaskk
-    $datapesertaskk = allskktenagakerjablora::with(['user', 'agendaskk'])->findOrFail($id);
 
-    // Kirim data ke tampilan detail
+    // Ambil data user saat ini
+    $user = Auth::user();
+
     return view('backend.05_agenda.04_pesertaskk.01_sertifikatskk.sertifikatskk', [
+        'title' => 'Agenda Pelatihan',
         'data' => $datapesertaskk,
-        'title' => 'Detail Peserta Sertifikasi SKK'
+        'user' => $user,
     ]);
-}
+    }
+
 
 }
 
