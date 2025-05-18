@@ -1222,7 +1222,6 @@ button:hover {
                                                             <h5 class="modal-title" id="modalSKKLbl{{ $datapeserta->id }}">Dokumen SKK</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
-
                                                           <div style="margin-top: 10px;">
                                                                     @if($datapeserta->skkanda && file_exists(public_path('storage/' . $datapeserta->skkanda)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
@@ -1232,7 +1231,7 @@ button:hover {
                                                                     <iframe src="{{ asset($datapeserta->skkanda) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p>Belum Memiliki SKK</p>
                                                                 @endif
 
                                                                 </div>
