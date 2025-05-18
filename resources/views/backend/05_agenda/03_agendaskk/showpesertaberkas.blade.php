@@ -1222,17 +1222,21 @@ button:hover {
                                                             <h5 class="modal-title" id="modalSKKLbl{{ $datapeserta->id }}">Dokumen SKK</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
-                                                        <div class="modal-body text-center">
-                                                            @if($datapeserta->skkanda && file_exists(public_path('storage/' . $datapeserta->skkanda)))
-                                                                <img src="{{ asset('storage/' . $datapeserta->skkanda) }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                                                                <a href="{{ asset('storage/' . $datapeserta->skkanda) }}" class="btn btn-primary mt-2" download>Download SKK</a>
-                                                            @elseif($datapeserta->skkanda)
-                                                                <img src="{{ asset($datapeserta->skkanda) }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                                                                <a href="{{ asset($datapeserta->skkanda) }}" class="btn btn-primary mt-2" download>Download SKK</a>
-                                                            @else
-                                                                <p>Data belum diupdate</p>
-                                                            @endif
-                                                        </div>
+
+                                                          <div style="margin-top: 10px;">
+                                                                    @if($datapeserta->skkanda && file_exists(public_path('storage/' . $datapeserta->skkanda)))
+                                                                    <!-- Display the default iframe when the file exists in the storage -->
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->skkanda) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                @elseif($datapeserta->skkanda)
+                                                                    <!-- Display the iframe with the updated file -->
+                                                                    <iframe src="{{ asset($datapeserta->skkanda) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                @else
+                                                                    <!-- Optional: Show a placeholder if there's no file available -->
+                                                                    <p>Data belum diupdate</p>
+                                                                @endif
+
+                                                                </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -1240,60 +1244,6 @@ button:hover {
                                         <th class="text-center">
                                             <p style="font-size: 16px; color:black;">Berkas SKK Screenshoot Saudara </p>
                                         </th>
-
-                                        {{-- @can('pekerja')
-
-                                        <th class="text-center">
-                                            <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
-                                            @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
-                                            <span style="color: red;">Silahkan Lakukan Perbaikan</span>
-                                            @elseif ($datapeserta->validasi_ktp === 'sesuai')
-                                                <span style="color: green;">Berkas Anda Sudah Sesuai</span>
-                                            @else
-                                                <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
-                                                @endif
-                                            </div>
-                                        </th>
-                                        @endcan --}}
-
-                                            {{-- @can('super_admin')
-
-                                            <th class="text-center">
-                                                <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
-                                                    <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
-                                                        <input type="radio" name="validasi_ktp" value="sesuai"
-                                                        {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }} />
-                                                        Sesuai
-                                                    </label>
-
-                                                    <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
-                                                        <input type="radio" name="validasi_ktp" value="tidak_sesuai"
-                                                        {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }} />
-                                                        Tidak Sesuai
-                                                    </label>
-                                                </div>
-                                            </th>
-                                            @endcan --}}
-
-                                                {{-- @can('admin')
-
-                                                <th class="text-center">
-                                                    <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
-                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
-                                                    <input type="radio" name="validasi_ktp" value="sesuai"
-                                                    {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }} />
-                                                    Sesuai
-                                                </label>
-
-                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
-                                                    <input type="radio" name="validasi_ktp" value="tidak_sesuai"
-                                                    {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }} />
-                                                    Tidak Sesuai
-                                                </label>
-                                            </div>
-                                        </th>
-                                        @endcan --}}
-
                                     </tr>
                                     <tr>
                                         {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
