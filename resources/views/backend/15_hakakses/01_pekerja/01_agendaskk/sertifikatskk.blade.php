@@ -182,7 +182,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             <th style="width: 550px; text-align:center; vertical-align: middle;">
             <i class="bi bi-person-lines-fill"></i> Nama Lengkap
             </th>
-            <th style="width: 300px; text-align:center; vertical-align: middle;">
+            <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-award"></i> Sertifikat
             </th>
      </tr>
@@ -195,11 +195,33 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
          <td style="text-align: left;">{{$item->user->name}}</td>
 
          <td style="text-align: center; gap:10px;">
-                <div style="margin-top: 10px;">
+                      <div style="margin-top: 10px; overflow: auto;">
     @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
-        <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="20%" height="1131px" style="border:1px solid #ccc;"></iframe>
+        @php
+            $fileUrl = asset('storage/' . $item->sertifikat);
+        @endphp
+        <div style="transform: scale(0.75); transform-origin: top left; width: 133.33%;">
+            <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="1500px" style="border:1px solid #ccc;"></iframe>
+        </div>
+        <div class="mt-3">
+            <a href="{{ $fileUrl }}" download class="btn btn-danger">
+                <i class="bi bi-download"></i> Download Sertifikat
+            </a>
+        </div>
+
     @elseif($item->sertifikat)
-        <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="20%" height="1131px" style="border:1px solid #ccc;"></iframe>
+        @php
+            $fileUrl = asset($item->sertifikat);
+        @endphp
+        <div style="transform: scale(0.75); transform-origin: top left; width: 133.33%;">
+            <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="1500px" style="border:1px solid #ccc;"></iframe>
+        </div>
+        <div class="mt-3">
+            <a href="{{ $fileUrl }}" download class="btn btn-danger">
+                <i class="bi bi-download"></i> Download Sertifikat
+            </a>
+        </div>
+
     @else
         <p>Sertifikat Belum Terbit</p>
     @endif
