@@ -675,6 +675,7 @@ button:hover {
     @endif
 </div>
             </td>
+
             <td style="text-align: center;">
                         <div style="margin-top: 10px;">
     @if($datapeserta->uploadijazah && file_exists(public_path('storage/' . $datapeserta->uploadijazah)))
@@ -1470,13 +1471,14 @@ button:hover {
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
                                        <th class="text-center align-middle" style="display: flex; justify-content: center; align-items: center;">
-                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                data-bs-toggle="modal" data-bs-target="#modalPengalaman{{ $datapeserta->id }}">
-                                                <i class="bi bi-eye"></i> Lihat
-                                            </button>
+
+                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                    data-bs-toggle="modal" data-bs-target="#modalPengalaman{{ $datapeserta->id }}">
+                                                    <i class="bi bi-eye"></i> Lihat
+                                                </button>
 
                                                 <!-- Modal Pengalaman Kerja -->
                                                 <div class="modal fade" id="modalPengalaman{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalPengalamanLbl{{ $datapeserta->id }}" aria-hidden="true">
