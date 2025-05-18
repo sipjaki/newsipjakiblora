@@ -1004,7 +1004,7 @@ button:hover {
             name: 'Verifikasi LSP',
             status: 'pending',
             time: '<?php echo isset($datapeserta->verifikasilps_time) ? $datapeserta->verifikasilps_time : "" ?>',
-            message: 'Verifikasi LSP'
+            message: 'Menunggu Verifikasi LSP'
         },
         {
             id: 5,
