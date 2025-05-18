@@ -450,7 +450,7 @@ button:hover {
 @endcan
 
 
-<button
+<button class="btn-nama-peserta"
     onmouseover="this.style.background='linear-gradient(135deg, white, #c8ffc8)'; this.style.color='black';"
     onmouseout="this.style.background='linear-gradient(135deg, #d4af37, #4CAF50)'; this.style.color='white';"
     style="background: linear-gradient(135deg, #d4af37, #4CAF50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s;">
