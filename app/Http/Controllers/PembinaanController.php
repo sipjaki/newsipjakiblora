@@ -1261,41 +1261,46 @@ public function beakseslsppenerbitskk(Request $request)
     ]);
 }
 
-
 public function besertifikatskkputupdate(Request $request, $id)
 {
     $request->validate([
-    'sertifikat' => 'required|file|mimes:pdf|max:5120',
-        ], [
-            'sertifikat.required' => 'Sertifikat Harus Di Upload',
-            'sertifikat.file' => 'File sertifikat harus berupa file yang valid.',
-            'sertifikat.mimes' => 'File sertifikat harus berformat PDF.',
-            'sertifikat.max' => 'Ukuran file sertifikat maksimal 5 MB.',
-        ]);
+        'sertifikat' => 'required|file|mimes:pdf|max:5120',
+    ], [
+        'sertifikat.required' => 'Sertifikat harus diupload.',
+        'sertifikat.file' => 'File sertifikat harus berupa file yang valid.',
+        'sertifikat.mimes' => 'File sertifikat harus berformat PDF.',
+        'sertifikat.max' => 'Ukuran file sertifikat maksimal 5 MB.',
+    ]);
 
     $peserta = allskktenagakerjablora::findOrFail($id);
 
     if ($request->hasFile('sertifikat')) {
-        // Hapus file lama jika ada
-        if ($peserta->sertifikat && file_exists(public_path($peserta->sertifikat))) {
-            unlink(public_path($peserta->sertifikat));
+        // Hapus file lama jika ada dan file benar-benar ada
+        $oldFilePath = public_path($peserta->sertifikat);
+        if ($peserta->sertifikat && file_exists($oldFilePath)) {
+            unlink($oldFilePath);
         }
 
         // Simpan file baru ke public/04_pembinaan/04_sertifikat/01_skk
         $file = $request->file('sertifikat');
-        $filename = time() . '_' . $file->getClientOriginalName();
-
+        $filename = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
         $uploadPath = '04_pembinaan/04_sertifikat/01_skk';
+
         $file->move(public_path($uploadPath), $filename);
 
-        // Update path sertifikat di DB
+        // Update path sertifikat di DB, simpan path relatif dari public
         $peserta->sertifikat = $uploadPath . '/' . $filename;
     }
 
     $peserta->save();
 
-    return redirect()->back()->with('create', 'Sertifikat berhasil di Upload.');
+    // Redirect ke halaman daftar peserta berdasarkan agenda skk
+    // Pastikan di route itu menerima parameter agendaskk_id yang ada di $peserta
+    return redirect()->route('beskkdatapesertasertifikatupload', ['id' => $peserta->agendaskk_id])
+                     ->with('create', 'Sertifikat berhasil diupload.');
 }
+
+
 
 
 
