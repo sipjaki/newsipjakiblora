@@ -120,8 +120,8 @@ public function downsertifikatskk(Request $request)
     $data = $query->paginate($perPage);
 
     // Kirim data ke view
-    return view('backend.15_hakakses.01_pekerja.01_agendaskk.totalpesertasertifikat', [
-        'title' => 'Rekap Sertifikat SKK per Peserta',
+    return view('backend.15_hakakses.01_pekerja.01_agendaskk.sertifikatskk', [
+        'title' => 'Sertifikat SKK',
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search,
