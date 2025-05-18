@@ -1100,6 +1100,7 @@ public function beagendaskkpesertashow(Request $request, $id)
 }
 
 
+
 public function bepesertaskkshowberkas(Request $request, $id)
 {
     $user = Auth::user();
@@ -1117,6 +1118,28 @@ public function bepesertaskkshowberkas(Request $request, $id)
         'user' => $user
     ]);
 }
+
+
+public function bepesertaskkshowberkasakunpeserta($agenda_id, $user_id)
+{
+    // Pastikan agenda tersedia
+    $agenda = agendaskk::findOrFail($agenda_id);
+
+    // Ambil data peserta berdasarkan agenda_id dan user_id
+    $peserta = allskktenagakerjablora::with('user')  // jika butuh relasi user
+                ->where('agendaskk_id', $agenda_id)
+                ->where('user_id', $user_id)
+                ->firstOrFail();
+
+    // Kirim ke view
+    return view('backend.05_agenda.03_agendaskk.showberkas', [
+        'title' => 'Detail Berkas Peserta',
+        'agenda' => $agenda,
+        'peserta' => $peserta,
+        'user_id' => $user_id
+    ]);
+}
+
 
 
 public function beagendaskkdatapeserta(Request $request)
