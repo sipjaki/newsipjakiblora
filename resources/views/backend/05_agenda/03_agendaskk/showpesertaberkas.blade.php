@@ -1,4 +1,10 @@
 <style>
+    @media (max-width: 768px) {
+        .hide-on-mobile {
+            display: none !important;
+        }
+    }
+
 
      @media (max-width: 768px) {
         table.borderbaru {
@@ -965,13 +971,14 @@ button:hover {
 
     </div>
 
-    <div style="display: flex; justify-content: flex-end; padding: 10px;">
-                <!-- Tombol Download PDF -->
-<button id="downloadPDF" class="download-btn font-size:16px;" >
-    <i class="bi bi-download" style="margin-right: 10px;"></i> <span style="font-size: 16px;">Download PDF</span>
-</button>
+  <div class="hide-on-mobile" style="display: flex; justify-content: flex-end; padding: 10px;">
+    <!-- Tombol Download PDF -->
+    <button id="downloadPDF" class="download-btn font-size:16px;">
+        <i class="bi bi-download" style="margin-right: 10px;"></i>
+        <span style="font-size: 16px;">Download PDF</span>
+    </button>
+</div>
 
-    </div>
 
     <style>
         .download-btn {
