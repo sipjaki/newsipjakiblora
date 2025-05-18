@@ -1176,7 +1176,7 @@ button:hover {
                                                             @if($datapeserta->skkanda && file_exists(public_path('storage/' . $datapeserta->skkanda)))
                                                                 <img src="{{ asset('storage/' . $datapeserta->skkanda) }}" alt="KTP" style="max-width:100%; max-height:500px;">
                                                                 <a href="{{ asset('storage/' . $datapeserta->skkanda) }}" class="btn btn-primary mt-2" download>Download SKK</a>
-                                                            @elseif($datapeserta->uploadktp)
+                                                            @elseif($datapeserta->skkanda)
                                                                 <img src="{{ asset($datapeserta->skkanda) }}" alt="KTP" style="max-width:100%; max-height:500px;">
                                                                 <a href="{{ asset($datapeserta->skkanda) }}" class="btn btn-primary mt-2" download>Download SKK</a>
                                                             @else
