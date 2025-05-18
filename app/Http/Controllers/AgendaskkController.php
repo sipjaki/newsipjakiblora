@@ -678,7 +678,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
 
 public function beskkdatapesertajumlah(Request $request, $id)
 {
-    $perPage = $request->input('perPage', 50);
+    $perPage = $request->input('perPage', 100);
     $search = $request->input('search');
 
     // Pastikan agenda SKK dengan ID ini ada
