@@ -179,7 +179,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                 <th style="width: 75px; text-align:center; vertical-align: middle;">
             <i class="bi bi-hash"></i> No
             </th>
-            <th style="width: 250px; text-align:center; vertical-align: middle;">
+            <th style="width: 550px; text-align:center; vertical-align: middle;">
             <i class="bi bi-person-lines-fill"></i> Nama Lengkap
             </th>
             <th style="width: 200px; text-align:center; vertical-align: middle;">
@@ -198,10 +198,10 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                         <div style="margin-top: 10px;">
                                 @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
                                 <!-- Display the default iframe when the file exists in the storage -->
-                                <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="200px"></iframe>
                             @elseif($item->sertifikat)
                                 <!-- Display the iframe with the updated file -->
-                                <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="200px"></iframe>
                             @else
                                 <!-- Optional: Show a placeholder if there's no file available -->
                                 <p>Sertifikat Belum Terbit</p>
