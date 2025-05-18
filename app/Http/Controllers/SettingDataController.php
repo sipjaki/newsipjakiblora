@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class SettingDataController extends Controller
 {
 
-    public function index(Request $request)
+    public function settingssekolah(Request $request)
     {
         $perPage = $request->input('perPage', 25);
         $search = $request->input('search');
