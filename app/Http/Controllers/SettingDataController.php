@@ -54,19 +54,23 @@ public function settingssekolah(Request $request)
         ]);
     }
 
-    public function settingssekolahcreatenew(Request $request)
+  public function settingssekolahcreatenew(Request $request)
 {
     $request->validate([
         'namasekolah' => 'required|string|max:255|unique:namasekolah,namasekolah',
+    ], [
+        'namasekolah.required' => 'Nama sekolah tidak boleh kosong.',
+        'namasekolah.string'   => 'Nama sekolah harus berupa teks.',
+        'namasekolah.max'      => 'Nama sekolah tidak boleh lebih dari 255 karakter.',
+        'namasekolah.unique'   => 'Nama sekolah ini sudah terdaftar.',
     ]);
 
     namasekolah::create([
         'namasekolah' => $request->namasekolah,
     ]);
 
-     session()->flash('create', 'Data Berhasil di Buat!');
-        return redirect('/settingssekolah');
-
+    session()->flash('create', 'Data berhasil dibuat!');
+    return redirect('/settingssekolah');
 }
 
 }
