@@ -152,7 +152,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/hakaksespekerjaskk?search=${input}`)
+                            fetch(`/downsertifikatskk?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
