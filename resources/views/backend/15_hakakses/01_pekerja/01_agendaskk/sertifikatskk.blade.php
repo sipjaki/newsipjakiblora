@@ -192,7 +192,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->user->name}}</td>
+         <td style="text-align: left;">{{$item->namasekolah->namasekolah}}</td>
 
          <td style="text-align: center; gap:10px;">
                         <div style="margin-top: 10px;">
@@ -204,7 +204,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                                 <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
                             @else
                                 <!-- Optional: Show a placeholder if there's no file available -->
-                                <p>Data belum diupdate</p>
+                                <p>Sertifikat Belum Terbit</p>
                             @endif
 
                             </div>
