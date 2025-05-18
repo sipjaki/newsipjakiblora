@@ -917,7 +917,7 @@ button:hover {
 
                         <div class="control-panel">
                             {{-- <button id="simulate-btn">Simulasi Perubahan Status</button> --}}
-                            {{-- <div class="status-info" id="current-status">Status saat ini: Verifikasi Dokumen</div> --}}
+                            <div class="status-info" id="current-status"></div>
                         </div>
                     </div>
 
