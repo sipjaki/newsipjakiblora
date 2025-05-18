@@ -590,7 +590,7 @@
                                    <style>
     .empty-message {
         background-color: #fff3cd;
-        color: #856404;
+        color: #850404;
         border: 1px solid #ffeeba;
         padding: 15px 20px;
         border-radius: 8px;
