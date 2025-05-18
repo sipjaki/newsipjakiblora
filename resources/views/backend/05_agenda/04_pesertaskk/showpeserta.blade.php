@@ -587,7 +587,31 @@
 
                                     </tr>
                                           @empty
-                                                <p>Peserta belum ada yang diverifikasi DPUPR</p>
+                                   <style>
+    .empty-message {
+        background-color: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeeba;
+        padding: 15px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        max-width: 500px;
+        margin: 20px auto;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .empty-message i {
+        margin-right: 8px;
+    }
+</style>
+
+<p class="empty-message">
+    <i class="fas fa-exclamation-circle"></i>
+    Peserta belum ada yang diverifikasi DPUPR.
+</p>
+
                                             @endforelse
 
                                 </tbody>
