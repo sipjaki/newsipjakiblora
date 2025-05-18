@@ -1,15 +1,35 @@
 <style>
 
-       .table-responsive {
-        width: 100%;
-        overflow-x: auto;
-    }
+    .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
 
-    /* Tambahan biar lebih rapi di HP */
+/* Tabel tetap terlihat bagus */
+.zebra-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Bisa kamu ubah sesuai banyaknya kolom */
+}
+
+.zebra-table th,
+.zebra-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Tambahan untuk striping */
+.zebra-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsif khusus untuk HP */
+@media (max-width: 768px) {
     .zebra-table {
-        width: 100%;
-        min-width: 600px; /* atau lebih, tergantung kolom kamu */
+        min-width: 100%;
     }
+}
 
 
     .btn-nama-peserta {
