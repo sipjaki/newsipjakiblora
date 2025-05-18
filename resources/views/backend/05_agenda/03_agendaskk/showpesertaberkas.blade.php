@@ -10,42 +10,40 @@
     }
 
     .custom-radio input[type="radio"] {
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        cursor: pointer;
+        display: none;
     }
 
     .custom-box {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
         border: 2px solid #555;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
         position: relative;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        font-size: 16px;
     }
 
-    .custom-box::after {
+    .custom-box::before {
         content: '';
-        width: 8px;
-        height: 8px;
-        background: #000;
+        position: absolute;
         opacity: 0;
+        transform: scale(0.6);
+        color: red;
         transition: all 0.2s ease;
     }
 
-    .custom-radio input[type="radio"]:checked ~ .custom-box {
-        border-color: #000;
+    .custom-radio input[type="radio"]:checked + .custom-box::before {
+        content: '✕'; /* Tanda X */
+        opacity: 1;
+        transform: scale(1);
     }
 
-    .custom-radio input[type="radio"]:checked ~ .custom-box::after {
-        opacity: 1;
+    /* Optional hover effect */
+    .custom-radio:hover .custom-box {
+        border-color: #000;
     }
 </style>
 
