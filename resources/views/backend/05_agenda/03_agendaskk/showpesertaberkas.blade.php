@@ -1255,15 +1255,18 @@ button:hover {
     .dot.completed {
         background-color: #4CAF50;
         color: white;
+        margin-right: 100px;
     }
     .dot.rejected {
         background-color: #f44336;
         color: white;
+        margin-right: 100px;
     }
     .dot.pending {
         background-color: #e0e0e0;
         color: #666;
         border: 2px solid #999;
+        margin-right: 100px;
     }
 
     /* Connector Line */
@@ -1319,6 +1322,7 @@ button:hover {
             left: auto;
             transform: none;
             margin-bottom: 10px;
+            margin-right: 100px;
         }
 
         .connector {
