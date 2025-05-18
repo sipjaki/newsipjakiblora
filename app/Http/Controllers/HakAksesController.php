@@ -103,7 +103,7 @@ public function downsertifikatskk(Request $request)
     $userId = Auth::id();
 
     // Ambil data allskktenagakerjablora milik user login yang punya sertifikat
-    $query = allskktenagakerjablora::with(['user', 'agendaskk'])
+    $query = allskktenagakerjablora::with(['user'])
         ->where('user_id', $userId)
         ->whereNotNull('sertifikat')
         ->where('sertifikat', '!=', '');
