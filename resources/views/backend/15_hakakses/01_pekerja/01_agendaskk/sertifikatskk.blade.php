@@ -198,20 +198,20 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
          <td style="text-align: left;">{{$item->namakegiatan}}</td>
          <td style="text-align: left;">{{$item->allskktenagakerjablora->user->name}}</td>
 
-         <td style="text-align: center; gap:10px;">
-            <div style="margin-top: 10px;">
-                @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
-                    <!-- Menampilkan gambar dari storage -->
-                    <img src="{{ asset('storage/' . $item->sertifikat) }}" alt="Gambar Peraturan" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
-                @elseif($item->sertifikat)
-                    <!-- Menampilkan gambar dari path luar storage -->
-                    <img src="{{ asset($item->sertifikat) }}" alt="Gambar Peraturan" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
-                @else
-                    <!-- Placeholder jika tidak ada data -->
-                    <p>Sertifikat Belum Terbit</p>
-                @endif
-            </div>
-        </td>
+        <td style="text-align: center; gap:10px;">
+    @foreach($item->allskktenagakerjablora as $peserta)
+        <div style="margin-top: 10px;">
+            @if($peserta->sertifikat && file_exists(public_path('storage/' . $peserta->sertifikat)))
+                <img src="{{ asset('storage/' . $peserta->sertifikat) }}" alt="Sertifikat" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
+            @elseif($peserta->sertifikat)
+                <img src="{{ asset($peserta->sertifikat) }}" alt="Sertifikat" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
+            @else
+                <p>Sertifikat Belum Terbit</p>
+            @endif
+        </div>
+    @endforeach
+</td>
+
         </tr>
 
      @empty

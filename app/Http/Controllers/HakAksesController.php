@@ -100,30 +100,38 @@ public function downsertifikatskk(Request $request)
     $search = $request->input('search');
     $userId = Auth::id();
 
-    $query = agendaskk::withCount(['allskktenagakerjablora' => function ($q) use ($userId) {
-        $q->where('user_id', $userId)
-          ->whereNotNull('sertifikat')
-          ->where('sertifikat', '!=', '');
-    }])
-    ->whereHas('allskktenagakerjablora', function ($q) use ($userId) {
-        $q->where('user_id', $userId)
-          ->whereNotNull('sertifikat')
-          ->where('sertifikat', '!=', '');
-    })
-    ->orderBy('created_at', 'desc');
+    // Query dengan eager loading dan counting
+    $query = agendaskk::with(['allskktenagakerjablora' => function ($q) use ($userId) {
+            $q->where('user_id', $userId)
+              ->whereNotNull('sertifikat')
+              ->where('sertifikat', '!=', '');
+        }])
+        ->withCount(['allskktenagakerjablora' => function ($q) use ($userId) {
+            $q->where('user_id', $userId)
+              ->whereNotNull('sertifikat')
+              ->where('sertifikat', '!=', '');
+        }])
+        ->whereHas('allskktenagakerjablora', function ($q) use ($userId) {
+            $q->where('user_id', $userId)
+              ->whereNotNull('sertifikat')
+              ->where('sertifikat', '!=', '');
+        })
+        ->orderBy('created_at', 'desc');
 
-    // Pencarian
+    // Pencarian jika ada keyword
     if ($search) {
         $query->where(function ($q) use ($search) {
             $q->where('namakegiatan', 'LIKE', "%{$search}%");
         })
-        ->orWhereHas('user', function ($q) use ($search) {
+        ->orWhereHas('allskktenagakerjablora.user', function ($q) use ($search) {
             $q->where('name', 'LIKE', "%{$search}%");
         });
     }
 
+    // Pagination hasil akhir
     $data = $query->paginate($perPage);
 
+    // Cek apakah permintaan AJAX
     if ($request->ajax()) {
         return response()->json([
             'html' => view('backend.15_hakakses.01_pekerja.01_agendaskk', compact('data'))->render()
@@ -137,6 +145,7 @@ public function downsertifikatskk(Request $request)
         'search' => $search
     ]);
 }
+
 
 }
 
