@@ -192,7 +192,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
  </thead>
  <tbody id="tableBody">
      {{-- @forelse ($data as $item) --}}
-     @foreach($item->allskktenagakerjablora as $peserta)
+     @foreach($data->allskktenagakerjablora as $peserta)
 
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
