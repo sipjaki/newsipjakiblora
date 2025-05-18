@@ -386,7 +386,7 @@
         {{-- DASHBOARD SUPER ADMIN --}}
 
 
-        @can('super_admin')
+        @can('super_admin', 'admin')
 
                 <li class="nav-header" style="color: white;">BERANDA WEB</li>
 
