@@ -13,31 +13,34 @@ use Illuminate\Support\Facades\Auth;
 class SettingDataController extends Controller
 {
 
-    public function settingssekolah(Request $request)
-    {
-        $perPage = $request->input('perPage', 25);
-        $search = $request->input('search');
+public function settingssekolah(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
 
-        $query = namasekolah::query();
+    $query = namasekolah::query();
 
-        if ($search) {
-            $query->where('namasekolah', 'LIKE', "%{$search}%");
-        }
+    if ($search) {
+        $query->where('namasekolah', 'LIKE', "%{$search}%");
+    }
 
-        $data = $query->paginate($perPage);
+    // Urutkan berdasarkan abjad A-Z
+    $query->orderBy('namasekolah', 'asc');
 
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('backend.16_settingsdata.01_sekolah.partials.table', compact('data'))->render()
-            ]);
-        }
+    $data = $query->paginate($perPage);
 
-        return view('backend.16_settingsdata.01_sekolah.index', [
-            'title' => 'Daftar Universitas/Sekolah',
-            'data' => $data,
-            'perPage' => $perPage,
-            'search' => $search
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.16_settingsdata.01_sekolah.partials.table', compact('data'))->render()
         ]);
     }
+
+    return view('backend.16_settingsdata.01_sekolah.index', [
+        'title' => 'Daftar Universitas/Sekolah',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
 
 }
