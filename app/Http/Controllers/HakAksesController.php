@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\agendaskk;
+use App\Models\allskktenagakerjablora;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -102,7 +103,7 @@ public function downsertifikatskk(Request $request)
     $userId = Auth::id();
 
     // Query data dari tabel allskktenagakerjablora
-    $query = \App\Models\allskktenagakerjablora::with('user')
+    $query = allskktenagakerjablora::with('user')
         ->whereNotNull('sertifikat')
         ->where('sertifikat', '!=', '')
         ->where('user_id', $userId)
