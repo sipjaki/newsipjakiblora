@@ -86,7 +86,7 @@
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
                                             <label class="form-label" for="user_id">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;">Nama Tenaga Kerja Konstruksi</i>
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i>Nama Tenaga Kerja Konstruksi
                                             </label>
                                             <input type="text" id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id', $data->user->name) }}" />
                                             @error('user_id')
