@@ -1134,7 +1134,7 @@ public function bepesertaskkshowberkasakunpeserta($agenda_id, $user_id)
     // Kirim ke view
     return view('backend.05_agenda.03_agendaskk.showpesertaberkasbaru', [
         'title' => 'Detail Berkas Peserta',
-        'agenda' => $agenda,
+        'data' => $agenda,
         'datapeserta' => $peserta,
         'user_id' => $user_id
     ]);
