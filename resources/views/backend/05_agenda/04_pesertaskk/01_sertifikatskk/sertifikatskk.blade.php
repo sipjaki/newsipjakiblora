@@ -86,7 +86,7 @@
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
                                             <label class="form-label" for="user_id">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i>
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;">Nama Tenaga Kerja Konstruksi</i>
                                             </label>
                                             <input type="text" id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id', $data->user->name) }}" />
                                             @error('user_id')
@@ -95,37 +95,24 @@
                                         </div>
 
                                         <!-- NIP -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nip">
-                                                <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> NIP
-                                            </label>
-                                            <input type="number" id="nip" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $data->nip) }}" />
-                                            @error('nip')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                      <div class="mb-3">
+                                                <label class="form-label" for="sertifikat">
+                                                    <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> Upload Sertifikat (PDF)
+                                                </label>
+                                                <input type="file" id="sertifikat" name="sertifikat" accept="application/pdf"
+                                                    class="form-control @error('sertifikat') is-invalid @enderror">
+                                                @error('sertifikat')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
 
-                                        <!-- Tempat Tanggal Lahir -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="ttl">
-                                                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tempat Tanggal Lahir
-                                            </label>
-                                            <input type="date" id="ttl" name="ttl" class="form-control @error('ttl') is-invalid @enderror" value="{{ old('ttl', $data->ttl) }}" />
-                                            @error('ttl')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Pangkat Golongan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pangkatgolongan">
-                                                <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pangkat Golongan
-                                            </label>
-                                            <input type="text" id="pangkatgolongan" name="pangkatgolongan" class="form-control @error('pangkatgolongan') is-invalid @enderror" value="{{ old('pangkatgolongan', $data->pangkatgolongan) }}" />
-                                            @error('pangkatgolongan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                                @if ($data->sertifikat)
+                                                    <p class="mt-2">
+                                                        <a href="{{ asset('storage/' . $data->sertifikat) }}" target="_blank" class="btn btn-sm btn-success">
+                                                            <i class="bi bi-file-earmark-pdf"></i> Belum Ada Sertifikat
+                                                        </a>
+                                                    </p>
+                                                @endif
+                                            </div>
 
                                     </div>
                                     <div class="col-md-6">
