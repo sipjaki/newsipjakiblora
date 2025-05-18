@@ -1795,8 +1795,10 @@ button:hover {
 
 
                     <div class="mb-3" style="margin-top: -50px;">
-                        <label for="catatanvalidasi" class="form-label">Catatan Keterangan Berkas</label>
-                        <div class="form-control" style="min-height: 120px; white-space: pre-wrap; background-color: #f8f9fa;">
+                    <label for="catatanvalidasi" class="form-label">
+                                    <i class="bi bi-card-text me-1"></i> Catatan Keterangan Berkas
+                                </label>
+                                <div class="form-control" style="min-height: 120px; white-space: pre-wrap; background-color: #f8f9fa;">
                             {{ $datapeserta->catatanvalidasi ?? '-' }}
                         </div>
                     </div>
@@ -1808,7 +1810,10 @@ button:hover {
 
 
                     <div class="mb-3" style="margin-top: -50px;">
-                        <label for="catatanvalidasi" class="form-label">Catatan Keterangan Berkas</label>
+                        <label for="catatanvalidasi" class="form-label">
+                            <i class="bi bi-card-text me-1"></i> Catatan Keterangan Berkas
+                        </label>
+
                         <textarea name="catatanvalidasi" id="catatanvalidasi" class="form-control"
                         rows="4" style="resize: vertical; width: 100%;"
                         placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $datapeserta->catatanvalidasi ?? '') }}</textarea>
