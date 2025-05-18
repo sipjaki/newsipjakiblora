@@ -1013,7 +1013,7 @@ Route::post('/akuncreatenew/createnew', [LoginController::class, 'akuncreatenew'
 
 Route::get('/settingssekolah', [SettingDataController::class, 'settingssekolah'])->middleware('auth');
 Route::get('/settingssekolah/create', [SettingDataController::class, 'settingssekolahcreate'])->middleware('auth');
-Route::get('/settingssekolah/create/', [SettingDataController::class, 'settingssekolahcreatenew'])->middleware('auth')->name('create.settingssekolah');
+Route::get('/settingssekolah/createnew', [SettingDataController::class, 'settingssekolahcreatenew'])->middleware('auth')->name('create.settingssekolah');
 Route::delete('/settingssekolah/delete/{namasekolah}', [SettingDataController::class, 'settingssekolahdelete'])->middleware('auth');
 
 
