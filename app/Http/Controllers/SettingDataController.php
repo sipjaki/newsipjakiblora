@@ -54,4 +54,19 @@ public function settingssekolah(Request $request)
         ]);
     }
 
+    public function settingssekolahcreatenew(Request $request)
+{
+    $request->validate([
+        'namasekolah' => 'required|string|max:255|unique:namasekolah,namasekolah',
+    ]);
+
+    namasekolah::create([
+        'namasekolah' => $request->namasekolah,
+    ]);
+
+     session()->flash('create', 'Data Berhasil di Buat!');
+        return redirect('/settingssekolah');
+
+}
+
 }
