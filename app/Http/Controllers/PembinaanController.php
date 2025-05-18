@@ -1244,24 +1244,18 @@ public function beakseslsppenerbitskk(Request $request)
 }
 
 
-
 public function besertifikatskk($id)
 {
-    // Ambil data pesertapelatihan beserta relasi agendapelatihan dan jampelajaran
-    $datapesertaskk = allskktenagakerjablora::with('id')->findOrFail($id);
+    // Ambil data peserta SKK beserta relasi agendaskk
+    $datapesertaskk = allskktenagakerjablora::with(['user', 'agendaskk'])->findOrFail($id);
 
-    $user = Auth::user();
-
-    // Ambil ID agendapelatihan terkait dengan pesertapelatihan
-    $agendaskkId = optional($datapesertaskk->agendaskk)->id;
-
-    // Kirim data ke view
+    // Kirim data ke tampilan detail
     return view('backend.05_agenda.04_pesertaskk.01_sertifikatskk.sertifikatskk', [
         'data' => $datapesertaskk,
-        'user' => $user,
-        'title' => 'Upload Sertifikat SKK'
+        'title' => 'Detail Peserta Sertifikasi SKK'
     ]);
 }
+
 
 
 }
