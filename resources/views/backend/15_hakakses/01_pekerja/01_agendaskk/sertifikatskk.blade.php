@@ -179,10 +179,10 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                 <th style="width: 75px; text-align:center; vertical-align: middle;">
             <i class="bi bi-hash"></i> No
             </th>
-            <th style="width: 550px; text-align:center; vertical-align: middle;">
+            <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-person-lines-fill"></i> Nama Lengkap
             </th>
-            <th style="width: 200px; text-align:center; vertical-align: middle;">
+            <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-award"></i> Sertifikat
             </th>
      </tr>
@@ -201,7 +201,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             $fileUrl = asset('storage/' . $item->sertifikat);
         @endphp
         <div style="transform: scale(0.75); transform-origin: top left; width: 133.33%;">
-            <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="1500px" style="border:1px solid #ccc;"></iframe>
+            <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="200px" style="border:1px solid #ccc;"></iframe>
         </div>
         <div class="mt-3">
             <a href="{{ $fileUrl }}" download class="btn btn-danger">
@@ -214,7 +214,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             $fileUrl = asset($item->sertifikat);
         @endphp
         <div style="transform: scale(0.75); transform-origin: top left; width: 133.33%;">
-            <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="1500px" style="border:1px solid #ccc;"></iframe>
+            <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="200px" style="border:1px solid #ccc;"></iframe>
         </div>
         <div class="mt-3">
             <a href="{{ $fileUrl }}" download class="btn btn-danger">
