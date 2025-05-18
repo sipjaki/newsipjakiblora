@@ -1220,7 +1220,7 @@ button:hover {
     .checkpoint-wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Diubah ke flex-start untuk menarik ke kiri */
         position: relative;
         flex: 1;
     }
@@ -1233,7 +1233,7 @@ button:hover {
         position: relative;
     }
 
-    /* Dot Styling - PERUBAHAN PENTING: menghilangkan margin-right */
+    /* Dot Styling - Posisi diubah */
     .dot {
         width: 30px;
         height: 30px;
@@ -1245,8 +1245,8 @@ button:hover {
         flex-shrink: 0;
         z-index: 2;
         position: absolute;
-        left: calc(100% - 15px);
-        transform: translateX(-50%);
+        left: 15px; /* Dipindah ke kiri */
+        transform: translateX(0);
     }
 
     /* Dot Status Colors */
@@ -1264,12 +1264,12 @@ button:hover {
         border: 2px solid #999;
     }
 
-    /* Connector Line - PERUBAHAN: menyesuaikan margin */
+    /* Connector Line - Diperpanjang ke kiri */
     .connector {
         height: 4px;
-        width: calc(100% - 30px); /* Menyesuaikan lebar dengan dot */
+        width: 100%;
         background-color: #e0e0e0;
-        margin-right: 0;
+        margin-left: 30px; /* Memberi ruang untuk dot */
     }
     .connector.active {
         background-color: #4CAF50;
@@ -1278,20 +1278,18 @@ button:hover {
     /* Checkpoint Content */
     .checkpoint-content {
         margin-top: 40px;
-        text-align: center;
+        text-align: left; /* Diubah ke left */
         padding: 0 10px;
         word-wrap: break-word;
         max-width: 150px;
+        margin-left: 30px; /* Sejajar dengan connector */
     }
 
     /* Last Checkpoint Adjustments */
     .checkpoint-wrapper:last-child .dot {
-        left: auto;
-        right: 0;
+        left: 15px; /* Posisi konsisten dengan dot lain */
+        right: auto;
         transform: none;
-    }
-    .checkpoint-wrapper:last-child .connector {
-        display: none;
     }
 
     /* Mobile Responsive */
@@ -1317,13 +1315,13 @@ button:hover {
             left: auto;
             transform: none;
             margin-bottom: 10px;
-            margin-right: 0; /* Menghilangkan margin untuk mobile */
+            margin-right: 0;
         }
 
         .connector {
             width: 4px;
             height: 50px;
-            margin: 5px 0;
+            margin: 5px 0 5px 15px; /* Penyesuaian untuk mobile */
         }
 
         .checkpoint-content {
