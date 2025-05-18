@@ -2,7 +2,7 @@
 
      @media (max-width: 768px) {
         .btn-nama-peserta {
-            display: none;
+            display: none !important;
         }
     }
 
