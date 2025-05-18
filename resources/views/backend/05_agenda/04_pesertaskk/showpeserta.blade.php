@@ -42,6 +42,11 @@
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
 
 
+
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
+
+        <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
             <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
             <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
                 <option value="10">10</option>
@@ -55,6 +60,7 @@
                 <option value="1000">1000</option>
                 <option value="2000">2000</option>
             </select>
+        </div>
 
 
         <script>
@@ -67,7 +73,6 @@
         </script>
 
 
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <button
                         onclick="exportTableToExcel('daftarpesertaskk', 'Data Peserta {{$data->namakegiatan}}')"
                         onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
