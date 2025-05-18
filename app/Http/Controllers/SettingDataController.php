@@ -57,7 +57,7 @@ public function settingssekolah(Request $request)
   public function settingssekolahcreatenew(Request $request)
 {
     $request->validate([
-        'namasekolah' => 'required|string|max:255|unique',
+        'namasekolah' => 'required|string|max:255',
     ], [
         'namasekolah.required' => 'Nama sekolah tidak boleh kosong.',
         'namasekolah.string'   => 'Nama sekolah harus berupa teks.',
