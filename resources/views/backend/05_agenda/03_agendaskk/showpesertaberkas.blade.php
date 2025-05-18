@@ -1266,17 +1266,38 @@ button:hover {
                                                             <h5 class="modal-title" id="modalKTPLbl{{ $datapeserta->id }}">Dokumen KTP</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
-                                                        <div class="modal-body text-center">
-                                                            @if($datapeserta->uploadktp && file_exists(public_path('storage/' . $datapeserta->uploadktp)))
-                                                                <img src="{{ asset('storage/' . $datapeserta->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                                                                <a href="{{ asset('storage/' . $datapeserta->uploadktp) }}" class="btn btn-primary mt-2" download>Download KTP</a>
-                                                            @elseif($datapeserta->uploadktp)
-                                                                <img src="{{ asset($datapeserta->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                                                                <a href="{{ asset($datapeserta->uploadktp) }}" class="btn btn-primary mt-2" download>Download KTP</a>
-                                                            @else
-                                                                <p>Data belum diupdate</p>
-                                                            @endif
-                                                        </div>
+                                                      <div class="modal-body text-center">
+    @if ($datapeserta->uploadktp)
+        @php
+            $filePath = public_path('storage/' . $datapeserta->uploadktp);
+            $fileUrl = asset('storage/' . $datapeserta->uploadktp);
+            $fallbackUrl = asset($datapeserta->uploadktp); // Jika bukan dari storage
+            $isStorageFile = file_exists($filePath);
+            $extension = strtolower(pathinfo($datapeserta->uploadktp, PATHINFO_EXTENSION));
+        @endphp
+
+        @if ($isStorageFile)
+            @if ($extension === 'pdf')
+                <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="500px"></iframe>
+                <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
+            @else
+                <img src="{{ $fileUrl }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
+            @endif
+        @else
+            @if ($extension === 'pdf')
+                <iframe src="{{ $fallbackUrl }}" frameborder="0" width="100%" height="500px"></iframe>
+                <a href="{{ $fallbackUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
+            @else
+                <img src="{{ $fallbackUrl }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                <a href="{{ $fallbackUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
+            @endif
+        @endif
+    @else
+        <p style="color: red; font-weight: bold;">Data belum diupdate</p>
+    @endif
+</div>
+
                                                     </div>
                                                 </div>
                                             </div>
