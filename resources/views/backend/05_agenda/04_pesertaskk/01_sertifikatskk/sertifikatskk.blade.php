@@ -95,7 +95,7 @@
                                         </div>
 
                                         <!-- NIP -->
-                                    <div class="mb-3">
+<div class="mb-3">
     <label class="form-label" for="sertifikat">
         <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> Upload Sertifikat (PDF)
     </label>
@@ -105,42 +105,47 @@
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 
-    {{-- Preview jika ada file lama --}}
-  @if ($data->sertifikat)
-    @php
-        $filePath = public_path('storage/' . $data->sertifikat);
-        $fileURL = file_exists($filePath)
-            ? asset('storage/' . $data->sertifikat)
-            : asset($data->sertifikat);
-    @endphp
+    {{-- Preview file lama --}}
+    @if ($data->sertifikat)
+        @php
+            $filePath = public_path('storage/' . $data->sertifikat);
+            $fileURL = file_exists($filePath)
+                ? asset('storage/' . $data->sertifikat)
+                : asset($data->sertifikat);
+        @endphp
 
-    <p class="mt-2">
-        <a href="{{ $fileURL }}" target="_blank" class="btn btn-sm btn-success">
-            <i class="bi bi-file-earmark-pdf"></i> Lihat Sertifikat Lama
-        </a>
-    </p>
+        <p class="mt-2">
+            <a href="{{ $fileURL }}" target="_blank" class="btn btn-sm btn-success">
+                <i class="bi bi-file-earmark-pdf"></i> Lihat Sertifikat Lama
+            </a>
+        </p>
 
-    <iframe src="{{ $fileURL }}" id="pdfPreviewOld" class="w-100" height="400px"></iframe>
+        <iframe src="{{ $fileURL }}" id="pdfPreviewOld" class="w-100 mb-3" height="400px"></iframe>
     @else
-    <p class="mt-2 text-muted">Sertifikat belum tersedia</p>
+        <p class="mt-2 text-muted">Sertifikat belum tersedia</p>
     @endif
 
-    {{-- Preview untuk file baru yang dipilih --}}
-
-    <iframe id="pdfPreview" class="w-100 mt-3" height="400px" style="display: none;"></iframe>
+    {{-- Preview file baru yang dipilih --}}
+    <iframe id="pdfPreview" class="w-100" height="400px" style="display: none;"></iframe>
 </div>
 
 @push('scripts')
 <script>
+    let currentPDF = null;
+
     function previewPDF(event) {
-        const fileInput = event.target;
-        const file = fileInput.files[0];
+        const file = event.target.files[0];
         const preview = document.getElementById('pdfPreview');
 
         if (file && file.type === "application/pdf") {
-            preview.src = URL.createObjectURL(file);
+            if (currentPDF) {
+                URL.revokeObjectURL(currentPDF); // Clean up if needed
+            }
+            currentPDF = URL.createObjectURL(file);
+            preview.src = currentPDF;
             preview.style.display = 'block';
         } else {
+            preview.src = '';
             preview.style.display = 'none';
         }
     }
