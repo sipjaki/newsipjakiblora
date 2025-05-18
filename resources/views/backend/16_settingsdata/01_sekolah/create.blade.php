@@ -72,9 +72,7 @@
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
-                                        <!-- Asosiasi Masjaki -->
 
-                                        <!-- Nama Lengkap -->
                                         <div class="mb-3">
                                             <label class="form-label" for="namasekolah">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Sekolah
