@@ -1,5 +1,17 @@
 <style>
 
+       .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /* Tambahan biar lebih rapi di HP */
+    .zebra-table {
+        width: 100%;
+        min-width: 600px; /* atau lebih, tergantung kolom kamu */
+    }
+
+
     .btn-nama-peserta {
         display: block !important; /* Untuk override inline style */
     }
