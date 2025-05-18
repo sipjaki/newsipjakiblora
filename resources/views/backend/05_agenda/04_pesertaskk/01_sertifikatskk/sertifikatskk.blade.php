@@ -116,7 +116,7 @@
                                     <div class="col-md-6">
 
                                         <div id="previewContainer" class="mt-3" style="display: none;">
-        <p class="fw-bold text-success mb-2">Preview Sertifikat Baru:</p>
+        <p class="fw-bold text-success mb-2">Preview Sertifikat SKK Baru :</p>
         <iframe id="pdfPreview" class="w-100" height="400px"></iframe>
     </div>
 
