@@ -1207,6 +1207,7 @@ button:hover {
     });
 </script>
 <style>
+    /* Main Timeline Container */
     .timeline-horizontal {
         display: flex;
         justify-content: space-between;
@@ -1215,6 +1216,7 @@ button:hover {
         position: relative;
     }
 
+    /* Each Checkpoint Wrapper */
     .checkpoint-wrapper {
         display: flex;
         flex-direction: column;
@@ -1223,6 +1225,7 @@ button:hover {
         flex: 1;
     }
 
+    /* Container for dot and connector */
     .dot-connector-container {
         display: flex;
         align-items: center;
@@ -1230,6 +1233,7 @@ button:hover {
         position: relative;
     }
 
+    /* Dot Styling */
     .dot {
         width: 30px;
         height: 30px;
@@ -1241,35 +1245,46 @@ button:hover {
         flex-shrink: 0;
         z-index: 2;
         position: absolute;
-        left: calc(100% - 15px); /* Posisi dot lebih ke kanan */
+        left: calc(100% - 15px);
         transform: translateX(-50%);
     }
 
+    /* Dot Status Colors */
+    .dot.completed {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .dot.rejected {
+        background-color: #f44336;
+        color: white;
+    }
+    .dot.pending {
+        background-color: #e0e0e0;
+        color: #666;
+        border: 2px solid #999;
+    }
+
+    /* Connector Line */
     .connector {
         height: 4px;
         width: 100%;
         background-color: #e0e0e0;
-        margin-right: 30px; /* Ruang untuk dot */
+        margin-right: 30px;
     }
-
     .connector.active {
         background-color: #4CAF50;
     }
 
-    /* Warna dot tetap sama */
-    .dot.completed { background-color: #4CAF50; color: white; }
-    .dot.rejected { background-color: #f44336; color: white; }
-    .dot.pending { background-color: #e0e0e0; color: #666; border: 2px solid #999; }
-
+    /* Checkpoint Content */
     .checkpoint-content {
-        margin-top: 40px; /* Jarak dari garis ke konten */
+        margin-top: 40px;
         text-align: center;
         padding: 0 10px;
         word-wrap: break-word;
         max-width: 150px;
     }
 
-    /* Untuk wrapper terakhir */
+    /* Last Checkpoint Adjustments */
     .checkpoint-wrapper:last-child .dot {
         left: auto;
         right: 0;
@@ -1279,7 +1294,7 @@ button:hover {
         display: none;
     }
 
-    /* Responsive untuk mobile */
+    /* Mobile Responsive */
     @media (max-width: 768px) {
         .timeline-horizontal {
             flex-direction: column;
@@ -1318,7 +1333,6 @@ button:hover {
         }
     }
 </style>
-
 <hr>
 
 <form action="{{ route('validasidokumenpesertaskk', $datapeserta->id) }}" method="POST">
