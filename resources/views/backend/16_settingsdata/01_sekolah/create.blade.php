@@ -65,7 +65,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('create.bebujkkonstruksicreatenew') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('create.settingssekolah') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -73,237 +73,19 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Asosiasi Masjaki -->
-                                     <!-- User ID (Hidden) -->
-                                                <input type="hidden" name="user_id" value="{{ $user->id }}">
-
-                                                <!-- Tampilkan Nama Admin -->
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="user_id_display">
-                                                        <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Administrator
-                                                    </label>
-                                                    <input type="text" id="user_id_display" class="form-control" value="{{ $user->name }}" disabled>
-                                                </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="asosiasimasjaki_id">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Asosiasi Jasa Konstruksi
-                                            </label>
-                                            <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
-                                                <option value="" disabled selected>Pilih Asosiasi</option>
-                                                @foreach($asosiasimasjaki as $asosiasi)
-                                                    <option value="{{ $asosiasi->id }}" {{ old('asosiasimasjaki_id') == $asosiasi->id ? 'selected' : '' }}>
-                                                        {{ $asosiasi->namaasosiasi }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                            @error('asosiasimasjaki_id')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
 
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Badan Usaha
+                                            <label class="form-label" for="namasekolah">
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Sekolah
                                             </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}" />
-                                            @error('namalengkap')
+                                            <input type="text" id="namasekolah" name="namasekolah" class="form-control @error('namasekolah') is-invalid @enderror" value="{{ old('namasekolah') }}" />
+                                            @error('namasekolah')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-
-                                        <!-- Alamat -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="alamat">
-                                                <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> Alamat
-                                            </label>
-                                            <input type="text" id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old('alamat') }}" />
-                                            @error('alamat')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Nomor Telepon -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_telepon">
-                                                <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> Nomor Telepon
-                                            </label>
-                                            <input type="number" id="no_telepon" name="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon') }}" />
-                                            @error('no_telepon')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Email -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="email">
-                                                <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
-                                            </label>
-                                            <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" />
-                                            @error('email')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Nomor Induk Berusaha -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nomorindukberusaha">
-                                                <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> Nomor Induk Berusaha
-                                            </label>
-                                            <input type="number" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control @error('nomorindukberusaha') is-invalid @enderror" value="{{ old('nomorindukberusaha') }}" />
-                                            @error('nomorindukberusaha')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- PJU -->
 
                                     </div>
-                                    <!-- End Left Column -->
-
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pju">
-                                                <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> PJU
-                                            </label>
-                                            <input type="text" id="pju" name="pju" class="form-control @error('pju') is-invalid @enderror" value="{{ old('pju') }}" />
-                                            @error('pju')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                        <!-- No Akte -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_akte">
-                                                <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> No Akte
-                                            </label>
-                                            <input type="text" id="no_akte" name="no_akte" class="form-control @error('no_akte') is-invalid @enderror" value="{{ old('no_akte') }}" />
-                                            @error('no_akte')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Tanggal -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal">
-                                                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal
-                                            </label>
-                                            <input type="date" id="tanggal" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" value="{{ old('tanggal') }}" />
-                                            @error('tanggal')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Nama Notaris -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_notaris">
-                                                <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Nama Notaris
-                                            </label>
-                                            <input type="text" id="nama_notaris" name="nama_notaris" class="form-control @error('nama_notaris') is-invalid @enderror" value="{{ old('nama_notaris') }}" />
-                                            @error('nama_notaris')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- No Pengesahan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_pengesahan">
-                                                <i class="bi bi-file-earmark-check" style="margin-right: 8px; color: navy;"></i> No Pengesahan
-                                            </label>
-                                            <input type="text" id="no_pengesahan" name="no_pengesahan" class="form-control @error('no_pengesahan') is-invalid @enderror" value="{{ old('no_pengesahan') }}" />
-                                            @error('no_pengesahan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="uploadberkas">
-                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Upload Berkas
-                                            </label>
-                                            <input type="file" id="uploadberkas" name="uploadberkas"
-                                                class="form-control @error('uploadberkas') is-invalid @enderror"
-                                                onchange="previewFile('uploadberkas', 'previewFoto')" />
-
-                                            <div class="mt-2">
-                                                <!-- Preview Image or PDF -->
-                                                <div id="previewContainer">
-                                                    <img id="previewFoto"
-                                                        src="{{ old('uploadberkas') ? asset('03_datajakon/01_sertifikasi/' . old('uploadberkas')) : '' }}"
-                                                        style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
-
-                                                    <canvas id="pdfPreview" style="display: none; max-width: 100%; max-height: 200px; margin-top: 10px;"></canvas>
-                                                </div>
-                                            </div>
-
-                                            @error('uploadberkas')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-
-                                        <script>
-                                            function previewFile(inputId, previewId) {
-                                                var file = document.getElementById(inputId).files[0];
-                                                var previewContainer = document.getElementById('previewContainer');
-                                                var imgPreview = document.getElementById(previewId);
-                                                var pdfPreview = document.getElementById('pdfPreview');
-
-                                                // Reset previous previews
-                                                imgPreview.style.display = 'none';
-                                                pdfPreview.style.display = 'none';
-
-                                                if (file) {
-                                                    var reader = new FileReader();
-
-                                                    // Check if the file is a PDF
-                                                    if (file.type === 'application/pdf') {
-                                                        // Display PDF preview
-                                                        reader.onload = function(e) {
-                                                            var pdfData = e.target.result;
-                                                            pdfjsLib.getDocument({data: pdfData}).promise.then(function(pdf) {
-                                                                pdf.getPage(1).then(function(page) {
-                                                                    var canvas = document.getElementById('pdfPreview');
-                                                                    var context = canvas.getContext('2d');
-
-                                                                    // Ukuran A4 dalam mm
-                                                                    var a4Width = 210;  // A4 width in mm
-                                                                    var a4Height = 297; // A4 height in mm
-
-                                                                    // Convert A4 size to pixels (1mm = 3.7795275591 pixels)
-                                                                    var a4WidthPx = a4Width * 3.7795275591;
-                                                                    var a4HeightPx = a4Height * 3.7795275591;
-
-                                                                    // Calculate scale to fit PDF to A4 size in pixels
-                                                                    var scale = Math.min(a4WidthPx / page.getViewport({scale: 1}).width, a4HeightPx / page.getViewport({scale: 1}).height);
-
-                                                                    var viewport = page.getViewport({scale: scale});
-                                                                    canvas.height = viewport.height;
-                                                                    canvas.width = viewport.width;
-
-                                                                    // Render the page into the canvas context
-                                                                    page.render({canvasContext: context, viewport: viewport}).promise.then(function() {
-                                                                        pdfPreview.style.display = 'block';
-                                                                    });
-                                                                });
-                                                            });
-                                                        };
-                                                        reader.readAsArrayBuffer(file); // Read the PDF file
-                                                    } else {
-                                                        // Display image preview (if it's not a PDF)
-                                                        reader.onloadend = function() {
-                                                            imgPreview.src = reader.result;
-                                                            imgPreview.style.display = 'block';
-                                                        };
-                                                        reader.readAsDataURL(file); // Read the image file
-                                                    }
-                                                }
-                                            }
-                                        </script>
-
-                                    </div>
-                                    <!-- End Right Column -->
                                 </div>
                                 <!-- End row -->
                             </div>
