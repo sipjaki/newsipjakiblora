@@ -997,21 +997,21 @@ button:hover {
             name: 'Verifikasi DPUPR',
             status: 'pending',
             time: '<?php echo isset($datapeserta->verifikasipu_time) && !empty($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
-            message: 'Menunggu verifikasi LSP'
+            message: 'Menunggu verifikasi DPUPR'
         },
         {
             id: 4,
             name: 'Verifikasi LSP',
             status: 'pending',
             time: '<?php echo isset($datapeserta->verifikasilps_time) && !empty($datapeserta->verifikasilps_time) ? $datapeserta->verifikasilps_time : "" ?>',
-            message: 'Menunggu verifikasi kehadiran'
+            message: 'verifikasi LSP'
         },
         {
             id: 5,
             name: 'Sertifikat Terbit',
             status: 'pending',
             time: '<?php echo isset($datapeserta->verifikasihadirsertifikasi_time) && !empty($datapeserta->verifikasihadirsertifikasi_time) ? $datapeserta->verifikasihadirsertifikasi_time : "" ?>',
-            message: 'Sertifikat akan diterbitkan'
+            message: 'Sertifikat diterbitkan'
         }
     ];
 
