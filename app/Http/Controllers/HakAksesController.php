@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\agendaskk;
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class HakAksesController extends Controller
 {
@@ -100,52 +101,29 @@ public function downsertifikatskk(Request $request)
     $search = $request->input('search');
     $userId = Auth::id();
 
-    // Query dengan eager loading dan counting
-    $query = agendaskk::with(['allskktenagakerjablora' => function ($q) use ($userId) {
-            $q->where('user_id', $userId)
-              ->whereNotNull('sertifikat')
-              ->where('sertifikat', '!=', '');
-        }])
-        ->withCount(['allskktenagakerjablora' => function ($q) use ($userId) {
-            $q->where('user_id', $userId)
-              ->whereNotNull('sertifikat')
-              ->where('sertifikat', '!=', '');
-        }])
-        ->whereHas('allskktenagakerjablora', function ($q) use ($userId) {
-            $q->where('user_id', $userId)
-              ->whereNotNull('sertifikat')
-              ->where('sertifikat', '!=', '');
-        })
-        ->orderBy('created_at', 'desc');
+    $query = \App\Models\allskktenagakerjablora::with(['user', 'agendaskk'])
+        ->where('user_id', $userId)
+        ->whereNotNull('sertifikat')
+        ->where('sertifikat', '!=', '')
+        ->select('user_id', DB::raw('count(agendaskk_id) as total_kegiatan'))
+        ->groupBy('user_id');
 
-    // Pencarian jika ada keyword
+    // Jika ingin cari berdasarkan nama user
     if ($search) {
-        $query->where(function ($q) use ($search) {
-            $q->where('namakegiatan', 'LIKE', "%{$search}%");
-        })
-        ->orWhereHas('allskktenagakerjablora.user', function ($q) use ($search) {
+        $query->whereHas('user', function ($q) use ($search) {
             $q->where('name', 'LIKE', "%{$search}%");
         });
     }
 
-    // Pagination hasil akhir
     $data = $query->paginate($perPage);
 
-    // Cek apakah permintaan AJAX
-    if ($request->ajax()) {
-        return response()->json([
-            'html' => view('backend.15_hakakses.01_pekerja.01_agendaskk', compact('data'))->render()
-        ]);
-    }
-
-    return view('backend.15_hakakses.01_pekerja.01_agendaskk.sertifikatskk', [
-        'title' => 'Daftar Kegiatan SKK Saudara',
+    return view('backend.15_hakakses.01_pekerja.01_agendaskk.totalpesertasertifikat', [
+        'title' => 'Rekap Sertifikat SKK per Peserta',
         'data' => $data,
         'perPage' => $perPage,
-        'search' => $search
+        'search' => $search,
     ]);
 }
-
 
 }
 
