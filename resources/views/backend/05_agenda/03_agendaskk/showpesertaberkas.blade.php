@@ -1,6 +1,10 @@
 <style>
 
-     @media (max-width: 768px) {
+    .btn-nama-peserta {
+        display: block !important; /* Untuk override inline style */
+    }
+
+    @media (max-width: 768px) {
         .btn-nama-peserta {
             display: none !important;
         }
