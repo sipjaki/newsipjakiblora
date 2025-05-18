@@ -195,19 +195,16 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
          <td style="text-align: left;">{{$item->user->name}}</td>
 
          <td style="text-align: center; gap:10px;">
-                        <div style="margin-top: 10px;">
-                                @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
-                                <!-- Display the default iframe when the file exists in the storage -->
-                                <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="200px"></iframe>
-                            @elseif($item->sertifikat)
-                                <!-- Display the iframe with the updated file -->
-                                <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="200px"></iframe>
-                            @else
-                                <!-- Optional: Show a placeholder if there's no file available -->
-                                <p>Sertifikat Belum Terbit</p>
-                            @endif
+                <div style="margin-top: 10px;">
+    @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
+        <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="1131px" style="border:1px solid #ccc;"></iframe>
+    @elseif($item->sertifikat)
+        <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="1131px" style="border:1px solid #ccc;"></iframe>
+    @else
+        <p>Sertifikat Belum Terbit</p>
+    @endif
+</div>
 
-                            </div>
         </td>
         </tr>
 
