@@ -926,28 +926,28 @@ button:hover {
 const checkpointData = [
     {
         id: 1,
-        name: 'Verifikasi Dokumen',
+        name: 'Dokumen Masuk',
         status: 'current',
         time: new Date().toLocaleString(),
         message: 'Dokumen sedang diverifikasi'
     },
     {
         id: 2,
-        name: 'Verifikasi DPUPR',
+        name: 'Verifikasi Berkas',
         status: 'pending',
         time: null,
         message: 'Menunggu verifikasi DPUPR'
     },
     {
         id: 3,
-        name: 'Verifikasi LSP',
+        name: 'Verifikasi DPUPR',
         status: 'pending',
         time: null,
         message: 'Menunggu verifikasi LSP'
     },
     {
         id: 4,
-        name: 'Verifikasi Kehadiran',
+        name: 'Verifikasi LSP',
         status: 'pending',
         time: null,
         message: 'Menunggu verifikasi kehadiran'
