@@ -203,7 +203,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
         <div style="transform: scale(0.75); transform-origin: top left; width: 133.33%;">
             <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="200px" style="border:1px solid #ccc;"></iframe>
         </div>
-        <div class="mt-3">
+        <div>
             <a href="{{ $fileUrl }}" download class="btn btn-danger">
                 <i class="bi bi-download"></i> Download Sertifikat
             </a>
