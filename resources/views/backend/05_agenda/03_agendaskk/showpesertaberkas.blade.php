@@ -975,8 +975,7 @@ button:hover {
                         </div>
                     </div>
 
-
-                    <script>
+<script>
     // Data checkpoint - akan diupdate berdasarkan data PHP
     const checkpointData = [
         {
@@ -1058,25 +1057,30 @@ button:hover {
         container.innerHTML = '';
 
         const timeline = document.createElement('div');
-        timeline.className = 'timeline';
+        timeline.className = 'timeline-horizontal';
 
         checkpointData.forEach((checkpoint, index) => {
-            const checkpointElement = document.createElement('div');
-            checkpointElement.className = `checkpoint ${checkpoint.status}`;
+            const checkpointWrapper = document.createElement('div');
+            checkpointWrapper.className = 'checkpoint-wrapper';
+
+            // Dot and connector container
+            const dotConnectorContainer = document.createElement('div');
+            dotConnectorContainer.className = 'dot-connector-container';
 
             // Dot indicator
             const dot = document.createElement('div');
-            dot.className = 'dot';
+            dot.className = `dot ${checkpoint.status}`;
             dot.textContent = checkpoint.id;
+            dotConnectorContainer.appendChild(dot);
 
-            // Connector line
+            // Connector line (except for last item)
             if (index < checkpointData.length - 1) {
                 const connector = document.createElement('div');
                 connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
-                checkpointElement.appendChild(connector);
+                dotConnectorContainer.appendChild(connector);
             }
 
-            // Content
+            // Content container
             const content = document.createElement('div');
             content.className = 'checkpoint-content';
 
@@ -1085,13 +1089,13 @@ button:hover {
             name.textContent = checkpoint.name;
             content.appendChild(name);
 
-            // Tambahkan pesan status
+            // Add status message
             const message = document.createElement('div');
             message.className = 'message';
             message.textContent = checkpoint.message;
             content.appendChild(message);
 
-            // Format waktu jika ada
+            // Format time if available
             if (checkpoint.time && checkpoint.time.trim() !== '' && checkpoint.time !== '0000-00-00 00:00:00') {
                 const formattedTime = formatTime(checkpoint.time);
                 if (formattedTime) {
@@ -1110,9 +1114,9 @@ button:hover {
                 }
             }
 
-            checkpointElement.appendChild(dot);
-            checkpointElement.appendChild(content);
-            timeline.appendChild(checkpointElement);
+            checkpointWrapper.appendChild(dotConnectorContainer);
+            checkpointWrapper.appendChild(content);
+            timeline.appendChild(checkpointWrapper);
         });
 
         container.appendChild(timeline);
@@ -1204,48 +1208,63 @@ button:hover {
 </script>
 
 <style>
-    .checkpoint {
+    .timeline-horizontal {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        padding: 20px 0;
         position: relative;
-        margin-bottom: 20px;
-        padding-left: 30px;
+    }
+
+    .checkpoint-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        position: relative;
+        min-width: 0;
+    }
+
+    .dot-connector-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
     }
 
     .dot {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: bold;
+        flex-shrink: 0;
+        z-index: 2;
     }
 
-    .checkpoint.completed .dot {
+    .dot.completed {
         background-color: #4CAF50;
         color: white;
     }
 
-    .checkpoint.rejected .dot {
+    .dot.rejected {
         background-color: #f44336;
         color: white;
     }
 
-    .checkpoint.pending .dot {
+    .dot.pending {
         background-color: #e0e0e0;
         color: #666;
         border: 2px solid #999;
     }
 
     .connector {
-        position: absolute;
-        left: 11px;
-        top: 24px;
-        width: 2px;
-        height: calc(100% + 20px);
+        height: 4px;
+        flex-grow: 1;
         background-color: #e0e0e0;
+        margin: 0 5px;
     }
 
     .connector.active {
@@ -1253,30 +1272,71 @@ button:hover {
     }
 
     .checkpoint-content {
-        padding-bottom: 20px;
+        margin-top: 15px;
+        text-align: center;
+        padding: 0 10px;
+        word-wrap: break-word;
+        max-width: 150px;
     }
 
     .checkpoint-name {
         font-weight: bold;
         margin-bottom: 5px;
+        font-size: 14px;
     }
 
     .message {
         color: #555;
         margin-bottom: 5px;
+        font-size: 13px;
     }
 
     .time {
-        font-size: 0.85em;
+        font-size: 12px;
         color: #666;
         font-style: italic;
     }
 
     #current-status {
-        margin-top: 20px;
-        padding: 10px;
+        margin-top: 30px;
+        padding: 15px;
         background-color: #f5f5f5;
-        border-radius: 4px;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .timeline-horizontal {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .checkpoint-wrapper {
+            flex-direction: row;
+            margin-bottom: 20px;
+            width: 100%;
+            align-items: flex-start;
+        }
+
+        .dot-connector-container {
+            width: auto;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .connector {
+            width: 4px;
+            height: 40px;
+            margin: 5px 0;
+        }
+
+        .checkpoint-content {
+            text-align: left;
+            margin-top: 0;
+            max-width: none;
+        }
     }
 </style>
 
