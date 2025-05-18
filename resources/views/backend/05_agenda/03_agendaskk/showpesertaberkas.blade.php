@@ -1173,6 +1173,98 @@ button:hover {
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
                                                         <div class="modal-body text-center">
+                                                            @if($datapeserta->skkanda && file_exists(public_path('storage/' . $datapeserta->skkanda)))
+                                                                <img src="{{ asset('storage/' . $datapeserta->skkanda) }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                <a href="{{ asset('storage/' . $datapeserta->skkanda) }}" class="btn btn-primary mt-2" download>Download SKK</a>
+                                                            @elseif($datapeserta->uploadktp)
+                                                                <img src="{{ asset($datapeserta->skkanda) }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                <a href="{{ asset($datapeserta->skkanda) }}" class="btn btn-primary mt-2" download>Download SKK</a>
+                                                            @else
+                                                                <p>Data belum diupdate</p>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </th>
+
+                                        @can('pekerja')
+
+                                        <th class="text-center">
+                                            <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
+                                            @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
+                                            <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                            @elseif ($datapeserta->validasi_ktp === 'sesuai')
+                                                <span style="color: green;">Berkas Anda Sudah Sesuai</span>
+                                            @else
+                                                <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
+                                                @endif
+                                            </div>
+                                        </th>
+                                        @endcan
+
+                                            @can('super_admin')
+
+                                            <th class="text-center">
+                                                <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                    <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                        <input type="radio" name="validasi_ktp" value="sesuai"
+                                                        {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }} />
+                                                        Sesuai
+                                                    </label>
+
+                                                    <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                        <input type="radio" name="validasi_ktp" value="tidak_sesuai"
+                                                        {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }} />
+                                                        Tidak Sesuai
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            @endcan
+
+                                                @can('admin')
+
+                                                <th class="text-center">
+                                                    <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_ktp" value="sesuai"
+                                                    {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }} />
+                                                    Sesuai
+                                                </label>
+
+                                                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 16px; color: black;">
+                                                    <input type="radio" name="validasi_ktp" value="tidak_sesuai"
+                                                    {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }} />
+                                                    Tidak Sesuai
+                                                </label>
+                                            </div>
+                                        </th>
+                                        @endcan
+
+                                    </tr>
+                                    <tr>
+                                        {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
+                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP </th>
+                                        <th class="text-center">
+                                            <button type="button" class="btn btn-secondary btn-sm"
+                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                data-bs-toggle="modal" data-bs-target="#modalKTP{{ $datapeserta->id }}">
+                                                <i class="bi bi-eye"></i> Lihat
+                                            </button>
+
+                                            <!-- Modal KTP -->
+                                            <div class="modal fade" id="modalKTP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
+                                                            <img src="/assets/icon/pupr.png" width="25" class="me-2">
+                                                            <h5 class="modal-title" id="modalKTPLbl{{ $datapeserta->id }}">Dokumen KTP</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                        </div>
+                                                        <div class="modal-body text-center">
                                                             @if($datapeserta->uploadktp && file_exists(public_path('storage/' . $datapeserta->uploadktp)))
                                                                 <img src="{{ asset('storage/' . $datapeserta->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
                                                                 <a href="{{ asset('storage/' . $datapeserta->uploadktp) }}" class="btn btn-primary mt-2" download>Download KTP</a>
