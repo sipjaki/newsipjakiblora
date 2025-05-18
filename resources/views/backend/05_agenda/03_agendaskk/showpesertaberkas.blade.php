@@ -705,9 +705,9 @@ button:hover {
         </tr>
 
         <tr>
-            <td style="text-align: center;">Pengalaman Kerja</td>
-            <td style="text-align: center;">NPWP</td>
-            <td style="text-align: center;">Daftar Riwayat Hidup</td>
+            <td style="text-align: center; font-size:16px;">Pengalaman Kerja</td>
+            <td style="text-align: center; font-size:16px;">NPWP</td>
+            <td style="text-align: center; font-size:16px;">Daftar Riwayat Hidup</td>
         </tr>
         <tr>
             <td style="text-align: center;">
