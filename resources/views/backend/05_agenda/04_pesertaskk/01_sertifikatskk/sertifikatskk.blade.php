@@ -100,18 +100,18 @@
         <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> Upload Sertifikat (PDF)
     </label>
     <input type="file" id="sertifikat" name="sertifikat" accept="application/pdf"
-        class="form-control @error('sertifikat') is-invalid @enderror" onchange="previewPDF(event)">
+        class="form-control @error('sertifikat') is-invalid @enderror">
     @error('sertifikat')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 
-    {{-- Tampilkan Preview File Baru --}}
+    {{-- PREVIEW FILE BARU --}}
     <div id="previewContainer" class="mt-3" style="display: none;">
         <p class="fw-bold text-success mb-2">Preview Sertifikat Baru:</p>
         <iframe id="pdfPreview" class="w-100" height="400px"></iframe>
     </div>
 
-    {{-- Jika Ada File Lama --}}
+    {{-- PREVIEW FILE LAMA --}}
     @if ($data->sertifikat)
         @php
             $filePath = public_path('storage/' . $data->sertifikat);
@@ -130,14 +130,16 @@
     @endif
 </div>
 
-@push('scripts')
+{{-- TARUH SCRIPT DI BAWAH (TIDAK PAKE @push) --}}
 <script>
-    function previewPDF(event) {
-        const file = event.target.files[0];
-        const preview = document.getElementById('pdfPreview');
-        const container = document.getElementById('previewContainer');
+document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('sertifikat');
+    const preview = document.getElementById('pdfPreview');
+    const container = document.getElementById('previewContainer');
 
-        if (file && file.type === "application/pdf") {
+    fileInput.addEventListener('change', function () {
+        const file = fileInput.files[0];
+        if (file && file.type === 'application/pdf') {
             const fileURL = URL.createObjectURL(file);
             preview.src = fileURL;
             container.style.display = 'block';
@@ -145,9 +147,9 @@
             preview.src = '';
             container.style.display = 'none';
         }
-    }
+    });
+});
 </script>
-@endpush
 
 
                                     </div>
