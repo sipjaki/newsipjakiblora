@@ -939,6 +939,7 @@ Route::get('/bepesertaskkshowberkas/show/{id}', [PembinaanController::class, 'be
 // SERTIFIKAT SKK
 
 Route::get('/besertifikatskk/{id}', [PembinaanController::class, 'besertifikatskk'])->middleware('auth');
+Route::put('/besertifikatskkcreate/{id}', [PembinaanController::class, 'besertifikatskkputupdate'])->middleware('auth')->name('update.besertifikatskkputupdate');
 
 
 

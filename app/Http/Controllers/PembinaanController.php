@@ -1262,6 +1262,41 @@ public function beakseslsppenerbitskk(Request $request)
 }
 
 
+public function besertifikatskkputupdate(Request $request, $id)
+{
+    $request->validate([
+    'sertifikat' => 'nullable|file|mimes:pdf|max:5120',
+        ], [
+            'sertifikat.file' => 'File sertifikat harus berupa file yang valid.',
+            'sertifikat.mimes' => 'File sertifikat harus berformat PDF.',
+            'sertifikat.max' => 'Ukuran file sertifikat maksimal 5 MB.',
+        ]);
+
+    $peserta = allskktenagakerjablora::findOrFail($id);
+
+    if ($request->hasFile('sertifikat')) {
+        // Hapus file lama jika ada
+        if ($peserta->sertifikat && file_exists(public_path($peserta->sertifikat))) {
+            unlink(public_path($peserta->sertifikat));
+        }
+
+        // Simpan file baru ke public/04_pembinaan/04_sertifikat/01_skk
+        $file = $request->file('sertifikat');
+        $filename = time() . '_' . $file->getClientOriginalName();
+
+        $uploadPath = '04_pembinaan/04_sertifikat/01_skk';
+        $file->move(public_path($uploadPath), $filename);
+
+        // Update path sertifikat di DB
+        $peserta->sertifikat = $uploadPath . '/' . $filename;
+    }
+
+    $peserta->save();
+
+    return redirect()->back()->with('create', 'Sertifikat berhasil di Upload.');
+}
+
+
 
 }
 
