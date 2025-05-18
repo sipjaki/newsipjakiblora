@@ -342,7 +342,7 @@
                                         </th>
 
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbitkan Sertifikat
+                                            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Upload Sertifikat
                                         </th>
 
                                     </tr>
