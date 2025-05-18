@@ -553,6 +553,7 @@ button:hover {
 
     <h5 style="color: navy; font-weight:800; font-size:16px;">I. IDENTITAS PESERTA</h4>
 
+        <div class="table-responsive">
         <table class="zebra-table table-striped">
 
         <tr>
@@ -578,6 +579,7 @@ button:hover {
         </tr>
 
     </table>
+</div>
 
     <table class="zebra-table table-striped">
 
