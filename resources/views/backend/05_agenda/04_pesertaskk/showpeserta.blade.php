@@ -244,7 +244,7 @@
         onclick="history.back()"
         onmouseover="this.style.background = 'white'; this.style.color = 'black'; this.style.border = '1px solid #ccc';"
         onmouseout="this.style.background = 'linear-gradient(to right, black, white)'; this.style.color = 'black'; this.style.border = 'none';"
-        style="background: linear-gradient(to right, black, white); color: black; border: none; margin-right: 10px; padding: 10px 20px;
+        style="background: linear-gradient(to right, black, white); color: white; border: none; margin-right: 10px; padding: 10px 20px;
                border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
                transition: background 0.3s, color 0.3s, border 0.3s; text-decoration: none;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
