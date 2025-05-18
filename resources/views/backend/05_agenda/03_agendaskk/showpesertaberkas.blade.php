@@ -1257,7 +1257,7 @@ button:hover {
         height: 4px;
         background-color: #e0e0e0;
         margin: 0 -15px;
-        margin-left: -100px; /* Menghubungkan ke dot berikutnya */
+        margin-left: -120px; /* Menghubungkan ke dot berikutnya */
     }
     .connector.active { background-color: #4CAF50; }
 
