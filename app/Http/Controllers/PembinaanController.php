@@ -1244,11 +1244,9 @@ public function beakseslsppenerbitskk(Request $request)
 }
 
   public function besertifikatskk($id)
-    {
-        $datapesertaskk = allskktenagakerjablora::where('id', $id)->first();
+{
+    $datapesertaskk = allskktenagakerjablora::with('user')->findOrFail($id); // pastikan ada user-nya
 
-
-    // Ambil data user saat ini
     $user = Auth::user();
 
     return view('backend.05_agenda.04_pesertaskk.01_sertifikatskk.sertifikatskk', [
@@ -1256,8 +1254,7 @@ public function beakseslsppenerbitskk(Request $request)
         'data' => $datapesertaskk,
         'user' => $user,
     ]);
-    }
-
+}
 
 }
 

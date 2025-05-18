@@ -681,18 +681,15 @@ public function beskkdatapesertajumlah(Request $request, $id)
     $perPage = $request->input('perPage', 100);
     $search = $request->input('search');
 
-    // Pastikan agenda SKK dengan ID ini ada
     $agendaskk = agendaskk::findOrFail($id);
-
-    // Ambil user login saat ini
     $user = Auth::user();
 
-    // Ambil peserta yang hanya terkait dengan agenda SKK ini dan yang sudah diverifikasi PU
-    $query = allskktenagakerjablora::where('agendaskk_id', $id)
+    $query = allskktenagakerjablora::with('user') // untuk akses nama user langsung
+        ->where('agendaskk_id', $id)
         ->where('verifikasipu', 'lolos')
         ->select([
             'id',
-            'user_id',
+            'user_id', // ini penting agar bisa dibawa ke detail
             'agendaskk_id',
             'jenjangpendidikan_id',
             'jabatankerja_id',
@@ -725,7 +722,6 @@ public function beskkdatapesertajumlah(Request $request, $id)
             'created_at'
         ]);
 
-    // Filter pencarian (jika ada)
     if ($search) {
         $query->where(function ($q) use ($search) {
             $q->where('jeniskelamin', 'LIKE', "%{$search}%")
@@ -743,14 +739,12 @@ public function beskkdatapesertajumlah(Request $request, $id)
 
     $datapesertapelatihan = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
-    // Ajax response
     if ($request->ajax()) {
         return response()->json([
             'html' => view('backend.05_agenda.04_pesertaskk.partials.table', compact('datapesertapelatihan'))->render()
         ]);
     }
 
-    // Jumlah peserta terverifikasi di agenda SKK ini
     $jumlahPeserta = allskktenagakerjablora::where('agendaskk_id', $id)
                         ->where('verifikasipu', true)
                         ->count();
