@@ -174,7 +174,7 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: center;">{{ $item->namasekolah }}</td>
+         <td style="text-align: left;">{{ $item->namasekolah }}</td>
 
         <td style="text-align: center; vertical-align: middle;">
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
