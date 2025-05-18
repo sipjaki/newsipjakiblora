@@ -1188,7 +1188,7 @@ button:hover {
                                             </div>
                                         </th>
                                         <th>
-                                            <p>Berkas SKK Screenshoot Saudara </p>
+                                            <p style="font-size: 16px; color:black;">Berkas SKK Screenshoot Saudara </p>
                                         </th>
 
                                         {{-- @can('pekerja')
