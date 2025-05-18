@@ -1206,12 +1206,10 @@ button:hover {
         renderCheckpoints();
     });
 </script>
-
 <style>
     .timeline-horizontal {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
         width: 100%;
         padding: 20px 0;
         position: relative;
@@ -1221,15 +1219,15 @@ button:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        flex: 1;
         position: relative;
-        min-width: 0;
+        flex: 1;
     }
 
     .dot-connector-container {
         display: flex;
         align-items: center;
         width: 100%;
+        position: relative;
     }
 
     .dot {
@@ -1242,88 +1240,68 @@ button:hover {
         font-weight: bold;
         flex-shrink: 0;
         z-index: 2;
-    }
-
-    .dot.completed {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    .dot.rejected {
-        background-color: #f44336;
-        color: white;
-    }
-
-    .dot.pending {
-        background-color: #e0e0e0;
-        color: #666;
-        border: 2px solid #999;
+        position: absolute;
+        left: calc(100% - 15px); /* Posisi dot lebih ke kanan */
+        transform: translateX(-50%);
     }
 
     .connector {
         height: 4px;
-        flex-grow: 1;
+        width: 100%;
         background-color: #e0e0e0;
-        margin: 0 5px;
+        margin-right: 30px; /* Ruang untuk dot */
     }
 
     .connector.active {
         background-color: #4CAF50;
     }
 
+    /* Warna dot tetap sama */
+    .dot.completed { background-color: #4CAF50; color: white; }
+    .dot.rejected { background-color: #f44336; color: white; }
+    .dot.pending { background-color: #e0e0e0; color: #666; border: 2px solid #999; }
+
     .checkpoint-content {
-        margin-top: 15px;
+        margin-top: 40px; /* Jarak dari garis ke konten */
         text-align: center;
         padding: 0 10px;
         word-wrap: break-word;
         max-width: 150px;
     }
 
-    .checkpoint-name {
-        font-weight: bold;
-        margin-bottom: 5px;
-        font-size: 14px;
+    /* Untuk wrapper terakhir */
+    .checkpoint-wrapper:last-child .dot {
+        left: auto;
+        right: 0;
+        transform: none;
+    }
+    .checkpoint-wrapper:last-child .connector {
+        display: none;
     }
 
-    .message {
-        color: #555;
-        margin-bottom: 5px;
-        font-size: 13px;
-    }
-
-    .time {
-        font-size: 12px;
-        color: #666;
-        font-style: italic;
-    }
-
-    #current-status {
-        margin-top: 30px;
-        padding: 15px;
-        background-color: #f5f5f5;
-        border-radius: 6px;
-        text-align: center;
-        font-size: 14px;
-    }
-
+    /* Responsive untuk mobile */
     @media (max-width: 768px) {
         .timeline-horizontal {
             flex-direction: column;
-            align-items: flex-start;
         }
 
         .checkpoint-wrapper {
             flex-direction: row;
-            margin-bottom: 20px;
-            width: 100%;
+            margin-bottom: 30px;
             align-items: flex-start;
         }
 
         .dot-connector-container {
-            width: auto;
             flex-direction: column;
-            align-items: center;
+            width: auto;
             margin-right: 15px;
+        }
+
+        .dot {
+            position: relative;
+            left: auto;
+            transform: none;
+            margin-bottom: 10px;
         }
 
         .connector {
@@ -1333,10 +1311,10 @@ button:hover {
         }
 
         .checkpoint-content {
-            text-align: left;
             margin-top: 0;
+            margin-left: 20px;
+            text-align: left;
             max-width: none;
-            margin-left: 200px;
         }
     }
 </style>
