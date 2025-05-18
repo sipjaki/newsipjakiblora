@@ -1265,7 +1265,7 @@ public function beakseslsppenerbitskk(Request $request)
 public function besertifikatskkputupdate(Request $request, $id)
 {
     $request->validate([
-    'sertifikat' => 'nullable|file|mimes:pdf|max:5120',
+    'sertifikat' => 'required|file|mimes:pdf|max:5120',
         ], [
             'sertifikat.file' => 'File sertifikat harus berupa file yang valid.',
             'sertifikat.mimes' => 'File sertifikat harus berformat PDF.',
