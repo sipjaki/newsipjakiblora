@@ -95,67 +95,60 @@
                                         </div>
 
                                         <!-- NIP -->
-                                      <div class="mb-3">
-                                                <label class="form-label" for="sertifikat">
-                                                    <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> Upload Sertifikat (PDF)
-                                                </label>
-                                                <input type="file" id="sertifikat" name="sertifikat" accept="application/pdf"
-                                                    class="form-control @error('sertifikat') is-invalid @enderror">
-                                                @error('sertifikat')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
+                                    <div class="mb-3">
+    <label class="form-label" for="sertifikat">
+        <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> Upload Sertifikat (PDF)
+    </label>
+    <input type="file" id="sertifikat" name="sertifikat" accept="application/pdf"
+        class="form-control @error('sertifikat') is-invalid @enderror" onchange="previewPDF(event)">
+    @error('sertifikat')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 
-                                                @if ($data->sertifikat)
-                                                    <p class="mt-2">
-                                                        <a href="{{ asset('storage/' . $data->sertifikat) }}" target="_blank" class="btn btn-sm btn-success">
-                                                            <i class="bi bi-file-earmark-pdf"></i> Belum Ada Sertifikat
-                                                        </a>
-                                                    </p>
-                                                @endif
-                                            </div>
+    {{-- Preview jika ada file lama --}}
+  @if ($data->sertifikat)
+    @php
+        $filePath = public_path('storage/' . $data->sertifikat);
+        $fileURL = file_exists($filePath)
+            ? asset('storage/' . $data->sertifikat)
+            : asset($data->sertifikat);
+    @endphp
+
+    <p class="mt-2">
+        <a href="{{ $fileURL }}" target="_blank" class="btn btn-sm btn-success">
+            <i class="bi bi-file-earmark-pdf"></i> Lihat Sertifikat Lama
+        </a>
+    </p>
+
+    <iframe src="{{ $fileURL }}" id="pdfPreviewOld" class="w-100" height="400px"></iframe>
+@else
+    <p class="mt-2 text-muted">Sertifikat belum tersedia</p>
+@endif
+
+    {{-- Preview untuk file baru yang dipilih --}}
+
+</div>
+
+@push('scripts')
+<script>
+    function previewPDF(event) {
+        const fileInput = event.target;
+        const file = fileInput.files[0];
+        const preview = document.getElementById('pdfPreview');
+
+        if (file && file.type === "application/pdf") {
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = 'block';
+        } else {
+            preview.style.display = 'none';
+        }
+    }
+</script>
+@endpush
 
                                     </div>
                                     <div class="col-md-6">
-                                        <!-- Jabatan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="jabatan">
-                                                <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Jabatan
-                                            </label>
-                                            <input type="text" id="jabatan" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" value="{{ old('jabatan', $data->jabatan) }}" />
-                                            @error('jabatan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Perangkat Daerah -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="perangkatdaerah">
-                                                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perangkat Daerah
-                                            </label>
-                                            <input type="text" id="perangkatdaerah" name="perangkatdaerah" class="form-control @error('perangkatdaerah') is-invalid @enderror" value="{{ old('perangkatdaerah', $data->perangkatdaerah) }}" />
-                                            @error('perangkatdaerah')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Pendidikan Terakhir -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pendidikanterakhir">
-                                                <i class="bi bi-graduation-cap" style="margin-right: 8px; color: navy;"></i> Pendidikan Terakhir
-                                            </label>
-                                            <select id="pendidikanterakhir" name="pendidikanterakhir" class="form-control @error('pendidikanterakhir') is-invalid @enderror">
-                                                <option value="">Pilih Pendidikan Terakhir</option>
-                                                <option value="Strata 1" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 1' ? 'selected' : '' }}>Strata 1 (S1)</option>
-                                                <option value="Strata 2" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 2' ? 'selected' : '' }}>Strata 2 (S2)</option>
-                                                <option value="Strata 3" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 3' ? 'selected' : '' }}>Strata 3 (S3)</option>
-                                                <option value="Magister" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Magister' ? 'selected' : '' }}>Magister (S2)</option>
-                                                <option value="Doktor" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Doktor' ? 'selected' : '' }}>Doktor (S3)</option>
-                                            </select>
-                                            @error('pendidikanterakhir')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
+                                    <iframe id="pdfPreview" class="w-100 mt-3" height="400px" style="display: none;"></iframe>
                                     </div>
                                 </div>
                                 <!-- End row -->
