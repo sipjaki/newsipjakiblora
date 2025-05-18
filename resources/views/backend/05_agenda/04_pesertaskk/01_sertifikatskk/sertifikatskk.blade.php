@@ -85,11 +85,11 @@
                                     <div class="col-md-6">
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
+                                            <label class="form-label" for="user_id">
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i>
                                             </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap', $data->namalengkap) }}" />
-                                            @error('namalengkap')
+                                            <input type="text" id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id', $data->user->name) }}" />
+                                            @error('user_id')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
