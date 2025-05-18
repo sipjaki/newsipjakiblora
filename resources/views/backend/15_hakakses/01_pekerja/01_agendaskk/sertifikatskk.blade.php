@@ -180,9 +180,6 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             <i class="bi bi-hash"></i> No
             </th>
             <th style="width: 250px; text-align:center; vertical-align: middle;">
-            <i class="bi bi-clipboard-data"></i> Nama Kegiatan
-            </th>
-            <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-person-lines-fill"></i> Nama Lengkap
             </th>
             <th style="width: 200px; text-align:center; vertical-align: middle;">
@@ -195,7 +192,6 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->agendaskk->namakegiatan}}</td>
          <td style="text-align: left;">{{$item->user->name}}</td>
 
          <td style="text-align: center; gap:10px;">
