@@ -1229,6 +1229,7 @@ button:hover {
         display: flex;
         align-items: center;
         width: 100%;
+        margin-left: -100px;
     }
 
     /* Dot Styling */
@@ -1255,7 +1256,8 @@ button:hover {
         flex-grow: 1;
         height: 4px;
         background-color: #e0e0e0;
-        margin: 0 -15px; /* Menghubungkan ke dot berikutnya */
+        margin: 0 -15px;
+        margin-left: -100px; /* Menghubungkan ke dot berikutnya */
     }
     .connector.active { background-color: #4CAF50; }
 
@@ -1289,12 +1291,14 @@ button:hover {
             flex-direction: row;
             width: auto;
             align-items: center;
+            margin-left: -100px;
         }
 
         .connector {
             width: 50px;
             height: 4px;
             margin: 0 10px;
+            margin-left: -100px;
         }
 
         .checkpoint-content {
