@@ -1267,6 +1267,7 @@ public function besertifikatskkputupdate(Request $request, $id)
     $request->validate([
     'sertifikat' => 'required|file|mimes:pdf|max:5120',
         ], [
+            'sertifikat.required' => 'Sertifikat Harus Di Upload',
             'sertifikat.file' => 'File sertifikat harus berupa file yang valid.',
             'sertifikat.mimes' => 'File sertifikat harus berformat PDF.',
             'sertifikat.max' => 'Ukuran file sertifikat maksimal 5 MB.',
