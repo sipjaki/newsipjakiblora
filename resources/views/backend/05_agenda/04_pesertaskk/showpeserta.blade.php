@@ -539,7 +539,7 @@
                 style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
-                <i class="bi bi-check-circle" style="margin-right: 6px; color: white;"></i> Ya, Hadir
+                <i class="bi bi-check-circle" style="margin-right: 6px; color: white;"></i> Ya, Terbitkan
             </button>
         </form>
 
