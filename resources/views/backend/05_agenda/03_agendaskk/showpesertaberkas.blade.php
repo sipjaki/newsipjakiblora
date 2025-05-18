@@ -922,74 +922,73 @@ button:hover {
                         </div>
                     </div>
 
-<script>
+
+                    <script>
     // Data checkpoint - akan diupdate berdasarkan data PHP
     const checkpointData = [
         {
             id: 1,
             name: 'Dokumen Masuk',
-            status: 'completed', // Otomatis hijau
-            time: new Date().toLocaleString(),
+            status: 'completed',
+            time: '<?php echo isset($datapeserta->created_at) ? $datapeserta->created_at : date("Y-m-d H:i:s") ?>',
             message: 'Dokumen telah diverifikasi'
         },
         {
             id: 2,
             name: 'Verifikasi Berkas',
-            status: 'pending', // Default, akan diupdate berdasarkan verifikasipu
-            time: null,
+            status: 'pending',
+            time: '<?php echo isset($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
             message: 'Menunggu verifikasi DPUPR'
         },
         {
             id: 3,
             name: 'Verifikasi DPUPR',
-            status: 'pending', // Default, akan diupdate berdasarkan verifikasipu
-            time: null,
+            status: 'pending',
+            time: '<?php echo isset($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
             message: 'Menunggu verifikasi LSP'
         },
         {
             id: 4,
             name: 'Verifikasi LSP',
-            status: 'pending', // Default, akan diupdate berdasarkan verifikasilps
-            time: null,
+            status: 'pending',
+            time: '<?php echo isset($datapeserta->verifikasilps_time) ? $datapeserta->verifikasilps_time : "" ?>',
             message: 'Menunggu verifikasi kehadiran'
         },
         {
             id: 5,
             name: 'Sertifikat Terbit',
-            status: 'pending', // Default, akan diupdate berdasarkan verifikasihadirsertifikasi
-            time: null,
+            status: 'pending',
+            time: '<?php echo isset($datapeserta->verifikasihadirsertifikasi_time) ? $datapeserta->verifikasihadirsertifikasi_time : "" ?>',
             message: 'Sertifikat akan diterbitkan'
         }
     ];
 
     // Fungsi untuk mengupdate status berdasarkan data PHP
-    function updateCheckpointStatus(verifikasipu, verifikasilps, verifikasihadirsertifikasi) {
+    function updateCheckpointStatus() {
         // Step 1 otomatis completed (hijau)
         checkpointData[0].status = 'completed';
-        checkpointData[0].time = new Date().toLocaleString();
 
         // Step 2: Verifikasi Berkas berdasarkan verifikasipu
-        if (verifikasipu === 'lolos' || verifikasipu === 'dikembalikan') {
-            checkpointData[1].status = verifikasipu === 'lolos' ? 'completed' : 'rejected';
-            checkpointData[1].time = new Date().toLocaleString();
+        if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos' ||
+            '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'dikembalikan') {
+            checkpointData[1].status = '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos' ? 'completed' : 'rejected';
         }
 
         // Step 3: Verifikasi DPUPR hanya jika verifikasipu 'lolos'
-        if (verifikasipu === 'lolos') {
+        if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos') {
             checkpointData[2].status = 'completed';
-            checkpointData[2].time = new Date().toLocaleString();
         }
 
         // Step 4: Verifikasi LSP berdasarkan verifikasilps
-        if (verifikasilps === true || verifikasilps === 'true') {
+        if ('<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === '1' ||
+            '<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === 'true') {
             checkpointData[3].status = 'completed';
-            checkpointData[3].time = new Date().toLocaleString();
         }
 
         // Step 5: Sertifikat Terbit berdasarkan verifikasihadirsertifikasi
-        if (verifikasihadirsertifikasi === true || verifikasihadirsertifikasi === 'true') {
+        if ('<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === '1' ||
+            '<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === 'true') {
             checkpointData[4].status = 'completed';
-            checkpointData[4].time = new Date().toLocaleString();
         }
     }
 
@@ -1026,11 +1025,24 @@ button:hover {
             name.textContent = checkpoint.name;
             content.appendChild(name);
 
-            if (checkpoint.time) {
-                const time = document.createElement('div');
-                time.className = 'time';
-                time.textContent = formatTime(checkpoint.time);
-                content.appendChild(time);
+            // Format waktu jika ada
+            if (checkpoint.time && checkpoint.time.trim() !== '') {
+                try {
+                    const time = document.createElement('div');
+                    time.className = 'time';
+                    time.textContent = formatTime(checkpoint.time);
+                    content.appendChild(time);
+
+                    // Tambahkan pesan khusus untuk status rejected
+                    if (checkpoint.status === 'rejected') {
+                        const rejectMsg = document.createElement('div');
+                        rejectMsg.className = 'reject-message';
+                        rejectMsg.textContent = 'Dikembalikan pada: ' + formatTime(checkpoint.time);
+                        content.appendChild(rejectMsg);
+                    }
+                } catch (e) {
+                    console.error('Error formatting time:', e);
+                }
             }
 
             checkpointElement.appendChild(dot);
@@ -1042,10 +1054,36 @@ button:hover {
         updateCurrentStatus();
     }
 
-    // Format waktu
+    // Format waktu dengan validasi
     function formatTime(dateString) {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
+        try {
+            // Handle format MySQL (YYYY-MM-DD HH:MM:SS)
+            if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(dateString)) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('id-ID', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            }
+            // Handle format timestamp
+            else if (!isNaN(new Date(dateString).getTime())) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('id-ID', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            }
+            return dateString; // Return as-is if format tidak dikenali
+        } catch (e) {
+            console.error('Invalid date format:', dateString);
+            return 'Waktu tidak tersedia';
+        }
     }
 
     // Update status teks
@@ -1067,16 +1105,39 @@ button:hover {
 
     // Inisialisasi awal
     document.addEventListener('DOMContentLoaded', () => {
-        // Ambil data dari PHP (gunakan nilai default jika tidak ada)
-        const verifikasipu = '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>';
-        const verifikasilps = '<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>';
-        const verifikasihadirsertifikasi = '<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>';
-
-        // Update status checkpoint berdasarkan data
-        updateCheckpointStatus(verifikasipu, verifikasilps, verifikasihadirsertifikasi);
+        updateCheckpointStatus();
         renderCheckpoints();
     });
 </script>
+
+<style>
+    .checkpoint.completed .dot {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .checkpoint.rejected .dot {
+        background-color: #f44336;
+        color: white;
+    }
+    .checkpoint.pending .dot {
+        background-color: #e0e0e0;
+        color: #666;
+    }
+    .connector.active {
+        background-color: #4CAF50;
+    }
+    .time {
+        font-size: 0.8em;
+        color: #666;
+        margin-top: 4px;
+    }
+    .reject-message {
+        font-size: 0.8em;
+        color: #f44336;
+        margin-top: 2px;
+        font-style: italic;
+    }
+</style>
 
 
 <hr>
