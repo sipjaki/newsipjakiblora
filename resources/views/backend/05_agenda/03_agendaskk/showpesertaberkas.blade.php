@@ -717,161 +717,229 @@
 </script>
 <hr>
 <div class="container">
-    <h4>Status Verifikasi Berkas Anda !</h4>
+    <h4>Status Verifikasi Berkas Anda!</h4>
     <div id="checkpoint-container" class="timeline-container"></div>
 
     <div class="control-panel">
-        <button id="simulate-btn">Simulasi Perubahan Status</button>
         <div class="status-info" id="current-status">Status saat ini: Verifikasi Dokumen</div>
     </div>
 </div>
 
- <script>
-        // Data checkpoint
-const checkpointData = [
-    {
-        id: 1,
-        name: 'Verifikasi Dokumen',
-        status: 'current',
-        time: new Date().toLocaleString(),
-        message: 'Dokumen sedang diverifikasi'
-    },
-    {
-        id: 2,
-        name: 'Verifikasi DPUPR',
-        status: 'pending',
-        time: null,
-        message: 'Menunggu verifikasi DPUPR'
-    },
-    {
-        id: 3,
-        name: 'Verifikasi LSP',
-        status: 'pending',
-        time: null,
-        message: 'Menunggu verifikasi LSP'
-    },
-    {
-        id: 4,
-        name: 'Verifikasi Kehadiran',
-        status: 'pending',
-        time: null,
-        message: 'Menunggu verifikasi kehadiran'
-    },
-    {
-        id: 5,
-        name: 'Sertifikat Terbit',
-        status: 'pending',
-        time: null,
-        message: 'Sertifikat akan diterbitkan'
+<style>
+    .timeline-container {
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px 0;
+        overflow-x: auto;
     }
-];
 
-// Render checkpoint
-function renderCheckpoints() {
-    const container = document.getElementById('checkpoint-container');
-    container.innerHTML = '';
-
-    const timeline = document.createElement('div');
-    timeline.className = 'timeline';
-
-    checkpointData.forEach((checkpoint, index) => {
-        const checkpointElement = document.createElement('div');
-        checkpointElement.className = `checkpoint ${checkpoint.status}`;
-
-        // Dot indicator
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        dot.textContent = checkpoint.id;
-
-        // Connector line
-        if (index < checkpointData.length - 1) {
-            const connector = document.createElement('div');
-            connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
-            checkpointElement.appendChild(connector);
-        }
-
-        // Content
-        const content = document.createElement('div');
-        content.className = 'checkpoint-content';
-
-        const name = document.createElement('div');
-        name.className = 'message';
-        name.textContent = checkpoint.name;
-        content.appendChild(name);
-
-        if (checkpoint.time) {
-            const time = document.createElement('div');
-            time.className = 'time';
-            time.textContent = formatTime(checkpoint.time);
-            content.appendChild(time);
-        }
-
-        checkpointElement.appendChild(dot);
-        checkpointElement.appendChild(content);
-        timeline.appendChild(checkpointElement);
-    });
-
-    container.appendChild(timeline);
-    updateCurrentStatus();
-}
-
-// Format waktu
-function formatTime(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
-}
-
-// Update status teks
-function updateCurrentStatus() {
-    const current = checkpointData.find(c => c.status === 'current') ||
-                   checkpointData.find(c => c.status === 'completed');
-    const statusInfo = document.getElementById('current-status');
-
-    if (current) {
-        statusInfo.textContent = `Status saat ini: ${current.name}`;
-
-        if (current.status === 'completed') {
-            statusInfo.textContent += ' (Selesai)';
-        }
+    .timeline {
+        display: flex;
+        gap: 40px;
     }
-}
 
-// Simulasi perubahan status
-function simulateProgress() {
-    const currentIndex = checkpointData.findIndex(c => c.status === 'current');
+    .checkpoint {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        min-width: 120px;
+    }
 
-    if (currentIndex >= 0) {
-        // Ubah status current menjadi completed
-        checkpointData[currentIndex].status = 'completed';
-        checkpointData[currentIndex].time = new Date().toLocaleString();
+    .checkpoint .dot {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
 
-        // Jika ada checkpoint berikutnya, ubah menjadi current
-        if (currentIndex + 1 < checkpointData.length) {
-            checkpointData[currentIndex + 1].status = 'current';
-            checkpointData[currentIndex + 1].time = new Date().toLocaleString();
+    .checkpoint.pending .dot {
+        background-color: #ccc;
+        color: #666;
+    }
+
+    .checkpoint.current .dot {
+        background-color: #004fce;
+    }
+
+    .checkpoint.completed .dot {
+        background-color: #2e7d32;
+    }
+
+    .checkpoint.rejected .dot {
+        background-color: red;
+    }
+
+    .checkpoint-content {
+        text-align: center;
+    }
+
+    .checkpoint .time {
+        font-size: 12px;
+        color: #666;
+        margin-top: 4px;
+    }
+
+    .connector {
+        position: absolute;
+        top: 15px;
+        left: 100%;
+        width: 40px;
+        height: 2px;
+        background-color: #ccc;
+        z-index: -1;
+    }
+
+    .connector.active {
+        background-color: #2e7d32;
+    }
+
+    .status-info {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .control-panel {
+        margin-top: 20px;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const datapeserta = @json($datapeserta);
+
+        const checkpointData = [
+            {
+                id: 1,
+                name: 'Verifikasi Dokumen',
+                status: 'current',
+                time: new Date().toLocaleString(),
+                message: 'Dokumen sedang diverifikasi'
+            },
+            {
+                id: 2,
+                name: 'Verifikasi DPUPR',
+                status: 'pending',
+                time: null,
+                message: 'Menunggu verifikasi DPUPR'
+            },
+            {
+                id: 3,
+                name: 'Verifikasi LSP',
+                status: 'pending',
+                time: null,
+                message: 'Menunggu verifikasi LSP'
+            },
+            {
+                id: 4,
+                name: 'Verifikasi Kehadiran',
+                status: 'pending',
+                time: null,
+                message: 'Menunggu verifikasi kehadiran'
+            },
+            {
+                id: 5,
+                name: 'Sertifikat Terbit',
+                status: 'pending',
+                time: null,
+                message: 'Sertifikat akan diterbitkan'
+            }
+        ];
+
+        function formatTime(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
         }
-    } else {
-        // Jika semua completed, reset ke awal
-        if (checkpointData.every(c => c.status === 'completed')) {
-            checkpointData.forEach((c, i) => {
-                c.status = i === 0 ? 'current' : 'pending';
-                c.time = i === 0 ? new Date().toLocaleString() : null;
+
+        function updateCurrentStatus() {
+            const current = checkpointData.find(c => c.status === 'current') ||
+                           checkpointData.find(c => c.status === 'completed');
+            const statusInfo = document.getElementById('current-status');
+
+            if (current) {
+                statusInfo.textContent = `Status saat ini: ${current.name}`;
+                if (current.status === 'completed') {
+                    statusInfo.textContent += ' (Selesai)';
+                }
+            }
+        }
+
+        function renderCheckpoints() {
+            const container = document.getElementById('checkpoint-container');
+            container.innerHTML = '';
+
+            const timeline = document.createElement('div');
+            timeline.className = 'timeline';
+
+            checkpointData.forEach((checkpoint, index) => {
+                const checkpointElement = document.createElement('div');
+                let customClass = checkpoint.status;
+
+                if (checkpoint.name === 'Verifikasi DPUPR') {
+                    if (datapeserta.verifikasipu === 'lolos') customClass = 'completed';
+                    else if (datapeserta.verifikasipu === 'dikembalikan') customClass = 'rejected';
+                }
+
+                if (checkpoint.name === 'Verifikasi LSP') {
+                    if (datapeserta.verifikasipu === 'lolos') customClass = 'completed';
+                }
+
+                if (checkpoint.name === 'Verifikasi Kehadiran') {
+                    if (datapeserta.verifikasilps === true) customClass = 'completed';
+                }
+
+                if (checkpoint.name === 'Sertifikat Terbit') {
+                    if (datapeserta.verifikasihadirsertifikasi === true) customClass = 'completed';
+                }
+
+                checkpointElement.className = `checkpoint ${customClass}`;
+
+                // Dot
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.textContent = checkpoint.id;
+
+                // Connector
+                if (index < checkpointData.length - 1) {
+                    const connector = document.createElement('div');
+                    connector.className = `connector ${customClass === 'completed' ? 'active' : ''}`;
+                    checkpointElement.appendChild(connector);
+                }
+
+                // Content
+                const content = document.createElement('div');
+                content.className = 'checkpoint-content';
+
+                const name = document.createElement('div');
+                name.className = 'message';
+                name.textContent = checkpoint.name;
+                content.appendChild(name);
+
+                if (checkpoint.time) {
+                    const time = document.createElement('div');
+                    time.className = 'time';
+                    time.textContent = formatTime(checkpoint.time);
+                    content.appendChild(time);
+                }
+
+                checkpointElement.appendChild(dot);
+                checkpointElement.appendChild(content);
+                timeline.appendChild(checkpointElement);
             });
+
+            container.appendChild(timeline);
+            updateCurrentStatus();
         }
-    }
 
-    renderCheckpoints();
-}
-
-// Event listener untuk tombol simulasi
-document.getElementById('simulate-btn').addEventListener('click', simulateProgress);
-
-// Inisialisasi awal
-document.addEventListener('DOMContentLoaded', () => {
-    renderCheckpoints();
-});
-      </script>
-
+        renderCheckpoints();
+    });
+</script>
 
 
 
