@@ -169,37 +169,41 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
      </tr>
  </thead>
  <tbody id="tableBody">
-     @forelse ($data as $item )
-     <tr class="align-middle">
-         <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->namakegiatan}}</td>
 
-        <td style="text-align: center; vertical-align: middle;">
-            <a href="{{ url('/bepesertaskkshowberkas/show/' . $item->id) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           transition: background-color 0.3s, color 0.3s;">
-             <i class="bi bi-eye"></i> Lihat
-            </button>
-            </a>
-        </td>
+<div class="row">
+    @forelse ($data as $item)
+        @php
+            // Ambil peserta yang cocok dengan user login
+            $peserta = $item->allskktenagakerjablora->firstWhere('user_id', Auth::id());
+        @endphp
 
-        </tr>
-
-     @empty
-             <div class="col-12">
-  <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert" style="background-color: #fff3cd; border-color: #ffeeba; height: 50px; line-height: 50px; padding-left: 10px;">
-    <div class="marquee-text" style="height: 50px; line-height: 50px;">
-      <i class="bi bi-exclamation-circle"></i> <span style="color: red;"> Saudara Belum Menguti Agenda Sertifikasi !! </span>
-    </div>
-  </div>
+        @if ($peserta && $peserta->user)
+            <div class="col-md-6 mb-3">
+                <div class="card shadow-sm rounded-3 border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $item->namakegiatan }}</h5>
+                        <p class="card-text">Jumlah Peserta: {{ $item->allskktenagakerjablora_count }}</p>
+                        <a href="{{ url('/bepesertaskkshowberkas/show/' . $item->id . '/' . $peserta->user->id) }}" class="btn btn-primary btn-sm">
+                            Lihat Berkas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endif
+    @empty
+        <div class="col-12">
+            <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert"
+                 style="background-color: #fff3cd; border-color: #ffeeba; height: 50px; line-height: 50px; padding-left: 10px;">
+                <div class="marquee-text" style="height: 50px; line-height: 50px;">
+                    <i class="bi bi-exclamation-circle"></i>
+                    <span style="color: red;"> Saudara Belum Mengikuti Agenda Sertifikasi !! </span>
+                </div>
+            </div>
+        </div>
+    @endforelse
 </div>
 
-     @endforelse
- </tbody>
+</tbody>
 </table>
                      </div>
                  </div>

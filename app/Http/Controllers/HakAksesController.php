@@ -62,27 +62,19 @@ public function agendaskkpesertaberkas(Request $request)
     $search = $request->input('search');
     $userId = Auth::id();
 
-    $query = agendaskk::withCount('allskktenagakerjablora')
-                // Hanya tampilkan agenda yang memiliki peserta dengan user_id akun login
+    $query = agendaskk::with([
+                    'allskktenagakerjablora.user' // <-- tambahkan relasi user
+                ])
+                ->withCount('allskktenagakerjablora')
                 ->whereHas('allskktenagakerjablora', function ($q) use ($userId) {
                     $q->where('user_id', $userId);
                 })
                 ->orderBy('created_at', 'desc');
 
-    // Pencarian
     if ($search) {
         $query->where(function ($q) use ($search) {
             $q->where('namakegiatan', 'LIKE', "%{$search}%");
-            //   ->orWhere('penutupan', 'LIKE', "%{$search}%")
-            //   ->orWhere('waktupelaksanaan', 'LIKE', "%{$search}%")
-            //   ->orWhere('foto', 'LIKE', "%{$search}%");
         });
-        // ->orWhereHas('user', function ($q) use ($search) {
-        //     $q->where('name', 'LIKE', "%{$search}%");
-        // })
-        // ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-        //     $q->where('namaasosiasi', 'LIKE', "%{$search}%");
-        // });
     }
 
     $data = $query->paginate($perPage);
