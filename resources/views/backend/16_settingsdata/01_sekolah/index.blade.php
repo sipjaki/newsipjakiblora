@@ -127,26 +127,25 @@
                         }
 
                                 </script>
+<!-- Tombol Download Excel -->
+<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_universitas_sekolah')"
+    onmouseover="this.style.background='white'; this.style.color='black';"
+    onmouseout="this.style.background='linear-gradient(to right, #d4af37, #228B22)'; this.style.color='white';"
+    style="background: linear-gradient(to right, #d4af37, #228B22); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
+    <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
+</button>
 
-                         <button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_universitas_sekolah')"
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
-                         style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;"
-                         >
-                            <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
-                        </button>
+<!-- Tombol Create -->
+<a href="/settingssekolah/create">
+    <button
+        onmouseover="this.style.background='white'; this.style.color='black';"
+        onmouseout="this.style.background='linear-gradient(to right, #228B22, #d4af37)'; this.style.color='white';"
+        style="background: linear-gradient(to right, #228B22, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
+        <i class="fa fa-plus" style="margin-right: 8px;"></i> Create
+    </button>
+</a>
 
-                         <a href="/settingssekolah/create">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';"
-                             style="background-color: #007bff; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                             Create
-                         </button>
-                         </a>
-                     </div>
+                        </div>
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
