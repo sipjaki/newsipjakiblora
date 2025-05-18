@@ -988,68 +988,32 @@ button:hover {
         {
             id: 2,
             name: 'Verifikasi Berkas',
-            status: 'pending',
+            status: '<?php echo (isset($datapeserta->verifikasipu) && $datapeserta->verifikasipu === "lolos") ? "completed" : (isset($datapeserta->verifikasipu) && $datapeserta->verifikasipu === "dikembalikan" ? "rejected" : "pending") ?>',
             time: '<?php echo isset($datapeserta->verifikasipu_time) && !empty($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
-            message: 'Menunggu verifikasi DPUPR'
+            message: '<?php echo (isset($datapeserta->verifikasipu) && $datapeserta->verifikasipu === "lolos" ? "Berkas telah diverifikasi" : (isset($datapeserta->verifikasipu) && $datapeserta->verifikasipu === "dikembalikan" ? "Berkas dikembalikan" : "Menunggu verifikasi DPUPR") ?>'
         },
         {
             id: 3,
             name: 'Verifikasi DPUPR',
-            status: 'pending',
+            status: '<?php echo (isset($datapeserta->verifikasipu) && $datapeserta->verifikasipu === "lolos") ? "completed" : "pending" ?>',
             time: '<?php echo isset($datapeserta->verifikasipu_time) && !empty($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
-            message: 'Menunggu verifikasi DPUPR'
+            message: '<?php echo (isset($datapeserta->verifikasipu) && $datapeserta->verifikasipu === "lolos") ? "Telah diverifikasi DPUPR" : "Menunggu verifikasi LSP" ?>'
         },
         {
             id: 4,
             name: 'Verifikasi LSP',
-            status: 'pending',
+            status: '<?php echo (isset($datapeserta->verifikasilps) && ($datapeserta->verifikasilps === "1" || $datapeserta->verifikasilps === "true")) ? "completed" : "pending" ?>',
             time: '<?php echo isset($datapeserta->verifikasilps_time) && !empty($datapeserta->verifikasilps_time) ? $datapeserta->verifikasilps_time : "" ?>',
-            message: 'verifikasi LSP'
+            message: '<?php echo (isset($datapeserta->verifikasilps) && ($datapeserta->verifikasilps === "1" || $datapeserta->verifikasilps === "true")) ? "Telah diverifikasi LSP" : "Menunggu verifikasi kehadiran" ?>'
         },
         {
             id: 5,
             name: 'Sertifikat Terbit',
-            status: 'pending',
+            status: '<?php echo (isset($datapeserta->verifikasihadirsertifikasi) && ($datapeserta->verifikasihadirsertifikasi === "1" || $datapeserta->verifikasihadirsertifikasi === "true")) ? "completed" : "pending" ?>',
             time: '<?php echo isset($datapeserta->verifikasihadirsertifikasi_time) && !empty($datapeserta->verifikasihadirsertifikasi_time) ? $datapeserta->verifikasihadirsertifikasi_time : "" ?>',
-            message: 'Sertifikat diterbitkan'
+            message: '<?php echo (isset($datapeserta->verifikasihadirsertifikasi) && ($datapeserta->verifikasihadirsertifikasi === "1" || $datapeserta->verifikasihadirsertifikasi === "true")) ? "Sertifikat telah diterbitkan" : "Sertifikat akan diterbitkan" ?>'
         }
     ];
-
-    // Fungsi untuk mengupdate status berdasarkan data PHP
-    function updateCheckpointStatus() {
-        // Step 1 otomatis completed (hijau)
-        checkpointData[0].status = 'completed';
-
-        // Step 2: Verifikasi Berkas berdasarkan verifikasipu
-        if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos' ||
-            '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'dikembalikan') {
-            checkpointData[1].status = '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos' ? 'completed' : 'rejected';
-            // Update message based on status
-            checkpointData[1].message = checkpointData[1].status === 'completed'
-                ? 'Berkas telah diverifikasi'
-                : 'Berkas dikembalikan';
-        }
-
-        // Step 3: Verifikasi DPUPR hanya jika verifikasipu 'lolos'
-        if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos') {
-            checkpointData[2].status = 'completed';
-            checkpointData[2].message = 'Telah diverifikasi DPUPR';
-        }
-
-        // Step 4: Verifikasi LSP berdasarkan verifikasilps
-        if ('<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === '1' ||
-            '<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === 'true') {
-            checkpointData[3].status = 'completed';
-            checkpointData[3].message = 'Telah diverifikasi LSP';
-        }
-
-        // Step 5: Sertifikat Terbit berdasarkan verifikasihadirsertifikasi
-        if ('<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === '1' ||
-            '<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === 'true') {
-            checkpointData[4].status = 'completed';
-            checkpointData[4].message = 'Sertifikat telah diterbitkan';
-        }
-    }
 
     // Render checkpoint
     function renderCheckpoints() {
@@ -1063,10 +1027,22 @@ button:hover {
             const checkpointElement = document.createElement('div');
             checkpointElement.className = `checkpoint ${checkpoint.status}`;
 
+            // Dot and connector container
+            const dotConnectorContainer = document.createElement('div');
+            dotConnectorContainer.className = 'dot-connector-container';
+
             // Dot indicator
             const dot = document.createElement('div');
             dot.className = 'dot';
             dot.textContent = checkpoint.id;
+            dotConnectorContainer.appendChild(dot);
+
+            // Connector line (except for last element)
+            if (index < checkpointData.length - 1) {
+                const connector = document.createElement('div');
+                connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
+                dotConnectorContainer.appendChild(connector);
+            }
 
             // Content
             const content = document.createElement('div');
@@ -1083,32 +1059,27 @@ button:hover {
             message.textContent = checkpoint.message;
             content.appendChild(message);
 
-            // Format waktu jika ada
+            // Add time if available
             if (checkpoint.time && checkpoint.time.trim() !== '') {
-                const time = document.createElement('div');
-                time.className = 'time';
-                time.textContent = formatTime(checkpoint.time);
-                content.appendChild(time);
-
-                // Tambahkan pesan khusus untuk status rejected
-                if (checkpoint.status === 'rejected') {
-                    const rejectMsg = document.createElement('div');
-                    rejectMsg.className = 'reject-message';
-                    rejectMsg.textContent = 'Dikembalikan: ' + formatTime(checkpoint.time);
-                    content.appendChild(rejectMsg);
+                const formattedTime = formatTime(checkpoint.time);
+                if (formattedTime) {
+                    const time = document.createElement('div');
+                    time.className = 'time';
+                    time.textContent = formattedTime;
+                    content.appendChild(time);
                 }
             }
 
-            checkpointElement.appendChild(dot);
-            checkpointElement.appendChild(content);
-
-            // Connector line (kecuali untuk elemen terakhir)
-            if (index < checkpointData.length - 1) {
-                const connector = document.createElement('div');
-                connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
-                checkpointElement.appendChild(connector);
+            // Add rejection message if status is rejected
+            if (checkpoint.status === 'rejected' && checkpoint.time && checkpoint.time.trim() !== '') {
+                const rejectMsg = document.createElement('div');
+                rejectMsg.className = 'reject-message';
+                rejectMsg.textContent = 'Dikembalikan: ' + formatTime(checkpoint.time);
+                content.appendChild(rejectMsg);
             }
 
+            checkpointElement.appendChild(dotConnectorContainer);
+            checkpointElement.appendChild(content);
             timeline.appendChild(checkpointElement);
         });
 
@@ -1141,36 +1112,44 @@ button:hover {
                     minute: '2-digit'
                 });
             }
-            return dateString; // Return as-is if format tidak dikenali
+            return null;
         } catch (e) {
             console.error('Invalid date format:', dateString);
-            return '';
+            return null;
         }
     }
 
     // Update status teks
     function updateCurrentStatus() {
-        const current = checkpointData.find(c => c.status === 'current') ||
-                       checkpointData.reverse().find(c => c.status === 'completed' || c.status === 'rejected') ||
-                       checkpointData.find(c => c.status === 'pending');
-        const statusInfo = document.getElementById('current-status');
+        let currentStatus = '';
+        let foundStatus = false;
 
-        if (current) {
-            statusInfo.textContent = `Status saat ini: ${current.name}`;
-
-            if (current.status === 'completed') {
-                statusInfo.textContent += ' (Selesai)';
-            } else if (current.status === 'rejected') {
-                statusInfo.textContent += ' (Dikembalikan)';
-            } else if (current.status === 'pending') {
-                statusInfo.textContent += ' (Dalam proses)';
+        // Check for current or last completed/rejected status
+        for (let i = checkpointData.length - 1; i >= 0; i--) {
+            const checkpoint = checkpointData[i];
+            if (checkpoint.status === 'completed' || checkpoint.status === 'rejected') {
+                currentStatus = `Status saat ini: ${checkpoint.name} (${checkpoint.status === 'completed' ? 'Selesai' : 'Dikembalikan'})`;
+                foundStatus = true;
+                break;
             }
+        }
+
+        // If no completed/rejected found, show first pending
+        if (!foundStatus) {
+            const firstPending = checkpointData.find(c => c.status === 'pending');
+            if (firstPending) {
+                currentStatus = `Status saat ini: ${firstPending.name} (Dalam proses)`;
+            }
+        }
+
+        const statusInfo = document.getElementById('current-status');
+        if (statusInfo) {
+            statusInfo.textContent = currentStatus || 'Status tidak tersedia';
         }
     }
 
     // Inisialisasi awal
     document.addEventListener('DOMContentLoaded', () => {
-        updateCheckpointStatus();
         renderCheckpoints();
     });
 </script>
@@ -1180,16 +1159,24 @@ button:hover {
         display: flex;
         overflow-x: auto;
         padding: 20px 0;
-        gap: 10px;
+        gap: 0;
+        align-items: flex-start;
     }
 
     .checkpoint {
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-width: 150px;
+        min-width: 180px;
         position: relative;
-        padding: 0 15px;
+        padding: 0 5px;
+        flex: 1;
+    }
+
+    .dot-connector-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
     }
 
     .dot {
@@ -1200,7 +1187,7 @@ button:hover {
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        margin-bottom: 10px;
+        flex-shrink: 0;
         z-index: 2;
     }
 
@@ -1220,12 +1207,10 @@ button:hover {
     }
 
     .connector {
-        position: absolute;
-        top: 15px;
-        left: calc(100% - 15px);
-        width: 30px;
         height: 2px;
+        flex-grow: 1;
         background-color: #e0e0e0;
+        margin: 0 -1px;
     }
 
     .connector.active {
@@ -1235,12 +1220,14 @@ button:hover {
     .checkpoint-content {
         text-align: center;
         margin-top: 10px;
+        width: 100%;
+        padding: 0 10px;
     }
 
     .checkpoint-name {
         font-weight: bold;
         margin-bottom: 5px;
-        white-space: nowrap;
+        white-space: normal;
     }
 
     .message {
@@ -1248,12 +1235,14 @@ button:hover {
         font-size: 0.9em;
         margin-bottom: 5px;
         min-height: 40px;
+        white-space: normal;
     }
 
     .time {
         font-size: 0.8em;
         color: #666;
-        white-space: nowrap;
+        white-space: normal;
+        margin-bottom: 5px;
     }
 
     .reject-message {
@@ -1261,7 +1250,7 @@ button:hover {
         color: #f44336;
         margin-top: 5px;
         font-style: italic;
-        white-space: nowrap;
+        white-space: normal;
     }
 
     #current-status {
@@ -1273,7 +1262,7 @@ button:hover {
         text-align: center;
     }
 
-    /* Scrollbar styling for horizontal timeline */
+    /* Scrollbar styling */
     .timeline-horizontal::-webkit-scrollbar {
         height: 8px;
     }
