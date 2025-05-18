@@ -1245,7 +1245,7 @@ public function beakseslsppenerbitskk(Request $request)
 
   public function besertifikatskk($id)
 {
-    $datapesertaskk = allskktenagakerjablora::with('user')->findOrFail($id); // pastikan ada user-nya
+    $datapesertaskk = allskktenagakerjablora::with('user')->findOrFail($id);
 
     $user = Auth::user();
 
@@ -1255,6 +1255,7 @@ public function beakseslsppenerbitskk(Request $request)
         'user' => $user,
     ]);
 }
+
 
 }
 
