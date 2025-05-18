@@ -1187,8 +1187,11 @@ button:hover {
                                                 </div>
                                             </div>
                                         </th>
+                                        <th>
+                                            <p>Berkas SKK Screenshoot Saudara </p>
+                                        </th>
 
-                                        @can('pekerja')
+                                        {{-- @can('pekerja')
 
                                         <th class="text-center">
                                             <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
@@ -1201,9 +1204,9 @@ button:hover {
                                                 @endif
                                             </div>
                                         </th>
-                                        @endcan
+                                        @endcan --}}
 
-                                            @can('super_admin')
+                                            {{-- @can('super_admin')
 
                                             <th class="text-center">
                                                 <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
@@ -1220,9 +1223,9 @@ button:hover {
                                                     </label>
                                                 </div>
                                             </th>
-                                            @endcan
+                                            @endcan --}}
 
-                                                @can('admin')
+                                                {{-- @can('admin')
 
                                                 <th class="text-center">
                                                     <div style="display: flex; justify-content: center; gap: 20px; font-size: 16px; color: black;">
@@ -1239,7 +1242,7 @@ button:hover {
                                                 </label>
                                             </div>
                                         </th>
-                                        @endcan
+                                        @endcan --}}
 
                                     </tr>
                                     <tr>
