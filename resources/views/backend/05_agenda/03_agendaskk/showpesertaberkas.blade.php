@@ -1,4 +1,56 @@
 <style>
+    .custom-radio {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        position: relative;
+        font-size: 16px;
+        color: black;
+    }
+
+    .custom-radio input[type="radio"] {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .custom-box {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #555;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .custom-box::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        background: #000;
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+
+    .custom-radio input[type="radio"]:checked ~ .custom-box {
+        border-color: #000;
+    }
+
+    .custom-radio input[type="radio"]:checked ~ .custom-box::after {
+        opacity: 1;
+    }
+</style>
+
+
+<style>
     /* Reset dan Base Styles */
 * {
     margin: 0;
@@ -1297,7 +1349,7 @@ button:hover {
                                             </div>
                                         </th>
                                         @endcan
-
+{{--
                                             @can('super_admin')
 
                                             <th class="text-center">
@@ -1334,7 +1386,27 @@ button:hover {
                                                 </label>
                                             </div>
                                         </th>
-                                        @endcan
+                                        @endcan --}}
+
+                                        @canany(['super_admin', 'admin'])
+                                            <th class="text-center">
+                                                <div style="display: flex; justify-content: center; gap: 20px;">
+                                                    <label class="custom-radio">
+                                                        <input type="radio" name="validasi_ktp" value="sesuai"
+                                                            {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }}>
+                                                        <span class="custom-box"></span>
+                                                        Sesuai
+                                                    </label>
+
+                                                    <label class="custom-radio">
+                                                        <input type="radio" name="validasi_ktp" value="tidak_sesuai"
+                                                            {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }}>
+                                                        <span class="custom-box"></span>
+                                                        Tidak Sesuai
+                                                    </label>
+                                                </div>
+                                            </th>
+                                        @endcanany
 
                                     </tr>
                                     <tr>
