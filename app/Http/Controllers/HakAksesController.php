@@ -101,22 +101,25 @@ public function downsertifikatskk(Request $request)
     $search = $request->input('search');
     $userId = Auth::id();
 
-    $query = \App\Models\allskktenagakerjablora::with(['user', 'agendaskk'])
-        ->where('user_id', $userId)
+    // Query data dari tabel allskktenagakerjablora
+    $query = \App\Models\allskktenagakerjablora::with('user')
         ->whereNotNull('sertifikat')
         ->where('sertifikat', '!=', '')
-        ->select('user_id', DB::raw('count(agendaskk_id) as total_kegiatan'))
+        ->where('user_id', $userId)
+        ->select('user_id', DB::raw('COUNT(*) as total_kegiatan'))
         ->groupBy('user_id');
 
-    // Jika ingin cari berdasarkan nama user
+    // Jika ada pencarian berdasarkan nama user
     if ($search) {
         $query->whereHas('user', function ($q) use ($search) {
             $q->where('name', 'LIKE', "%{$search}%");
         });
     }
 
+    // Ambil hasil dengan paginasi
     $data = $query->paginate($perPage);
 
+    // Kirim data ke view
     return view('backend.15_hakakses.01_pekerja.01_agendaskk.totalpesertasertifikat', [
         'title' => 'Rekap Sertifikat SKK per Peserta',
         'data' => $data,
