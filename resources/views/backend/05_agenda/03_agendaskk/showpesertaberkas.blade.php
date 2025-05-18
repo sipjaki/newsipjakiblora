@@ -1222,7 +1222,6 @@ button:hover {
         position: relative;
         flex-direction: column;
         align-items: flex-start;
-        margin-left: -100px;
     }
 
     /* Container for dot and connector */
@@ -1284,7 +1283,6 @@ button:hover {
             flex-direction: row;
             margin-bottom: 20px;
             align-items: center;
-            margin-left: -100px;
         }
 
         .dot-connector-container {
