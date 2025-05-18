@@ -29,6 +29,7 @@ use App\Http\Controllers\PesertapelatihanController;
 use App\Http\Controllers\AndroidVersionController;
 use App\Http\Controllers\DownloadExcelController;
 use App\Http\Controllers\HakAksesController;
+use App\Http\Controllers\SettingDataController;
 use App\Http\Controllers\VerifikasiController;
 use App\Models\tertibjasakonstruksi;
 // MAS JAKI
@@ -1007,6 +1008,10 @@ Route::get('/akuncreate', [LoginController::class, 'akuncreate'])->middleware('a
 
 Route::post('/akuncreatenew/createnew', [LoginController::class, 'akuncreatenew'])->middleware('auth')->name('akuncreatenew');
 
+
+// DATA PENGATURAN DATABASE DATA ALL
+
+Route::get('/settingssekolah', [SettingDataController::class, 'settingssekolah'])->middleware('auth');
 
 
 

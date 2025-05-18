@@ -95,6 +95,21 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
 <!-- Tombol Data LSP Pelaksana -->
 
+<a href="/settingssekolah">
+    <button
+        onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+        onmouseout="this.style.background='linear-gradient(to right, #004d00, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
+        style="background: linear-gradient(to right, #004d00, #000000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: all 0.3s ease;">
+
+        <!-- Ikon Graduation Cap -->
+        <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px; fill: white; transition: fill 0.3s;" width="20" height="20" viewBox="0 0 24 24">
+            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.42 10.36L12 14l7.58-3.64L12 6.73 4.42 10.36zM12 16c-4.28 0-8 1.34-8 4v1h16v-1c0-2.66-3.72-4-8-4z"/>
+        </svg>
+
+        Universitas/Sekolah
+    </button>
+</a>
+
 <a href="/404">
     <button
         onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
