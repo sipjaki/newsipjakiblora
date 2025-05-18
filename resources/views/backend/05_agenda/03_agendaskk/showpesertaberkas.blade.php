@@ -1188,17 +1188,20 @@ button:hover {
                                             </div>
                                         </th>
 
+                                        @can('pekerja')
+
                                         <th class="text-center">
-                                        <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
+                                            <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                             @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
-                                                <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                            <span style="color: red;">Silahkan Lakukan Perbaikan</span>
                                             @elseif ($datapeserta->validasi_ktp === 'sesuai')
                                                 <span style="color: green;">Berkas Anda Sudah Sesuai</span>
                                             @else
                                                 <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
-                                            @endif
-                                        </div>
+                                                @endif
+                                            </div>
                                         </th>
+                                        @endcan
 
                                             @can('super_admin')
 
