@@ -28,11 +28,11 @@ class SettingDataController extends Controller
 
         if ($request->ajax()) {
             return response()->json([
-                'html' => view('backend.16_settingdata.01_sekolah.partials.table', compact('data'))->render()
+                'html' => view('backend.16_settingsdata.01_sekolah.partials.table', compact('data'))->render()
             ]);
         }
 
-        return view('backend.16_settingdata.01_sekolah.index', [
+        return view('backend.16_settingsdata.01_sekolah.index', [
             'title' => 'Daftar Universitas/Sekolah',
             'data' => $data,
             'perPage' => $perPage,
