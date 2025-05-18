@@ -196,12 +196,12 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
          <td style="text-align: center; gap:10px;">
                         <div style="margin-top: 10px;">
-                                @if($item->allskktenagakerjablora->sertifikat && file_exists(public_path('storage/' . $item->allskktenagakerjablora->sertifikat)))
+                                @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
                                 <!-- Display the default iframe when the file exists in the storage -->
-                                <iframe src="{{ asset('storage/' . $item->allskktenagakerjablora->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @elseif($item->allskktenagakerjablora->sertifikat)
+                                <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @elseif($item->sertifikat)
                                 <!-- Display the iframe with the updated file -->
-                                <iframe src="{{ asset($item->allskktenagakerjablora->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
                             @else
                                 <!-- Optional: Show a placeholder if there's no file available -->
                                 <p>Sertifikat Belum Terbit</p>
