@@ -962,6 +962,8 @@ button:hover {
     });
 </script>
 <hr>
+
+
                     <div class="container">
                         <h4>Status Verifikasi Berkas Anda !</h4>
                         <div id="checkpoint-container" class="timeline-container"></div>
@@ -974,7 +976,7 @@ button:hover {
                     </div>
 
 
-                    <script>
+<script>
     // Data checkpoint - akan diupdate berdasarkan data PHP
     const checkpointData = [
         {
@@ -988,28 +990,28 @@ button:hover {
             id: 2,
             name: 'Verifikasi Berkas',
             status: 'pending',
-            time: '<?php echo isset($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
+            time: '<?php echo isset($datapeserta->verifikasipu_time) && !empty($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
             message: 'Menunggu verifikasi DPUPR'
         },
         {
             id: 3,
             name: 'Verifikasi DPUPR',
             status: 'pending',
-            time: '<?php echo isset($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
+            time: '<?php echo isset($datapeserta->verifikasipu_time) && !empty($datapeserta->verifikasipu_time) ? $datapeserta->verifikasipu_time : "" ?>',
             message: 'Menunggu verifikasi LSP'
         },
         {
             id: 4,
             name: 'Verifikasi LSP',
             status: 'pending',
-            time: '<?php echo isset($datapeserta->verifikasilps_time) ? $datapeserta->verifikasilps_time : "" ?>',
+            time: '<?php echo isset($datapeserta->verifikasilps_time) && !empty($datapeserta->verifikasilps_time) ? $datapeserta->verifikasilps_time : "" ?>',
             message: 'Menunggu verifikasi kehadiran'
         },
         {
             id: 5,
             name: 'Sertifikat Terbit',
             status: 'pending',
-            time: '<?php echo isset($datapeserta->verifikasihadirsertifikasi_time) ? $datapeserta->verifikasihadirsertifikasi_time : "" ?>',
+            time: '<?php echo isset($datapeserta->verifikasihadirsertifikasi_time) && !empty($datapeserta->verifikasihadirsertifikasi_time) ? $datapeserta->verifikasihadirsertifikasi_time : "" ?>',
             message: 'Sertifikat akan diterbitkan'
         }
     ];
@@ -1023,23 +1025,30 @@ button:hover {
         if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos' ||
             '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'dikembalikan') {
             checkpointData[1].status = '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos' ? 'completed' : 'rejected';
+            // Update message based on status
+            checkpointData[1].message = checkpointData[1].status === 'completed'
+                ? 'Berkas telah diverifikasi'
+                : 'Berkas dikembalikan';
         }
 
         // Step 3: Verifikasi DPUPR hanya jika verifikasipu 'lolos'
         if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos') {
             checkpointData[2].status = 'completed';
+            checkpointData[2].message = 'Telah diverifikasi DPUPR';
         }
 
         // Step 4: Verifikasi LSP berdasarkan verifikasilps
         if ('<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === '1' ||
             '<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === 'true') {
             checkpointData[3].status = 'completed';
+            checkpointData[3].message = 'Telah diverifikasi LSP';
         }
 
         // Step 5: Sertifikat Terbit berdasarkan verifikasihadirsertifikasi
         if ('<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === '1' ||
             '<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === 'true') {
             checkpointData[4].status = 'completed';
+            checkpointData[4].message = 'Sertifikat telah diterbitkan';
         }
     }
 
@@ -1072,27 +1081,29 @@ button:hover {
             content.className = 'checkpoint-content';
 
             const name = document.createElement('div');
-            name.className = 'message';
+            name.className = 'checkpoint-name';
             name.textContent = checkpoint.name;
             content.appendChild(name);
 
+            // Add message
+            const message = document.createElement('div');
+            message.className = 'message';
+            message.textContent = checkpoint.message;
+            content.appendChild(message);
+
             // Format waktu jika ada
             if (checkpoint.time && checkpoint.time.trim() !== '') {
-                try {
-                    const time = document.createElement('div');
-                    time.className = 'time';
-                    time.textContent = formatTime(checkpoint.time);
-                    content.appendChild(time);
+                const time = document.createElement('div');
+                time.className = 'time';
+                time.textContent = formatTime(checkpoint.time);
+                content.appendChild(time);
 
-                    // Tambahkan pesan khusus untuk status rejected
-                    if (checkpoint.status === 'rejected') {
-                        const rejectMsg = document.createElement('div');
-                        rejectMsg.className = 'reject-message';
-                        rejectMsg.textContent = 'Dikembalikan pada: ' + formatTime(checkpoint.time);
-                        content.appendChild(rejectMsg);
-                    }
-                } catch (e) {
-                    console.error('Error formatting time:', e);
+                // Tambahkan pesan khusus untuk status rejected
+                if (checkpoint.status === 'rejected') {
+                    const rejectMsg = document.createElement('div');
+                    rejectMsg.className = 'reject-message';
+                    rejectMsg.textContent = 'Dikembalikan pada: ' + formatTime(checkpoint.time);
+                    content.appendChild(rejectMsg);
                 }
             }
 
@@ -1133,14 +1144,15 @@ button:hover {
             return dateString; // Return as-is if format tidak dikenali
         } catch (e) {
             console.error('Invalid date format:', dateString);
-            return 'Waktu tidak tersedia';
+            return '';
         }
     }
 
     // Update status teks
     function updateCurrentStatus() {
         const current = checkpointData.find(c => c.status === 'current') ||
-                       checkpointData.find(c => c.status === 'completed' || c.status === 'rejected');
+                       checkpointData.reverse().find(c => c.status === 'completed' || c.status === 'rejected') ||
+                       checkpointData.find(c => c.status === 'pending');
         const statusInfo = document.getElementById('current-status');
 
         if (current) {
@@ -1150,6 +1162,8 @@ button:hover {
                 statusInfo.textContent += ' (Selesai)';
             } else if (current.status === 'rejected') {
                 statusInfo.textContent += ' (Dikembalikan)';
+            } else if (current.status === 'pending') {
+                statusInfo.textContent += ' (Dalam proses)';
             }
         }
     }
@@ -1162,34 +1176,92 @@ button:hover {
 </script>
 
 <style>
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .checkpoint {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        position: relative;
+    }
+
+    .dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
     .checkpoint.completed .dot {
         background-color: #4CAF50;
         color: white;
     }
+
     .checkpoint.rejected .dot {
         background-color: #f44336;
         color: white;
     }
+
     .checkpoint.pending .dot {
         background-color: #e0e0e0;
         color: #666;
     }
+
+    .connector {
+        position: absolute;
+        left: 12px;
+        top: 24px;
+        width: 2px;
+        height: calc(100% + 20px);
+        background-color: #e0e0e0;
+    }
+
     .connector.active {
         background-color: #4CAF50;
     }
+
+    .checkpoint-content {
+        flex-grow: 1;
+    }
+
+    .checkpoint-name {
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+
+    .message {
+        color: #555;
+        margin-bottom: 4px;
+    }
+
     .time {
         font-size: 0.8em;
         color: #666;
-        margin-top: 4px;
     }
+
     .reject-message {
         font-size: 0.8em;
         color: #f44336;
         margin-top: 2px;
         font-style: italic;
     }
-</style>
 
+    #current-status {
+        margin-top: 20px;
+        font-weight: bold;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+    }
+</style>
 
 <hr>
 
@@ -1267,36 +1339,36 @@ button:hover {
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                         </div>
                                                       <div class="modal-body text-center">
-    @if ($datapeserta->uploadktp)
-        @php
-            $filePath = public_path('storage/' . $datapeserta->uploadktp);
-            $fileUrl = asset('storage/' . $datapeserta->uploadktp);
-            $fallbackUrl = asset($datapeserta->uploadktp); // Jika bukan dari storage
-            $isStorageFile = file_exists($filePath);
-            $extension = strtolower(pathinfo($datapeserta->uploadktp, PATHINFO_EXTENSION));
-        @endphp
+                                                            @if ($datapeserta->uploadktp)
+                                                                @php
+                                                                    $filePath = public_path('storage/' . $datapeserta->uploadktp);
+                                                                    $fileUrl = asset('storage/' . $datapeserta->uploadktp);
+                                                                    $fallbackUrl = asset($datapeserta->uploadktp); // Jika bukan dari storage
+                                                                    $isStorageFile = file_exists($filePath);
+                                                                    $extension = strtolower(pathinfo($datapeserta->uploadktp, PATHINFO_EXTENSION));
+                                                                @endphp
 
-        @if ($isStorageFile)
-            @if ($extension === 'pdf')
-                <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="500px"></iframe>
-                <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
-            @else
-                <img src="{{ $fileUrl }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
-            @endif
-        @else
-            @if ($extension === 'pdf')
-                <iframe src="{{ $fallbackUrl }}" frameborder="0" width="100%" height="500px"></iframe>
-                <a href="{{ $fallbackUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
-            @else
-                <img src="{{ $fallbackUrl }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                <a href="{{ $fallbackUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
-            @endif
-        @endif
-    @else
-        <p style="color: red; font-weight: bold;">Data belum diupdate</p>
-    @endif
-</div>
+                                                                @if ($isStorageFile)
+                                                                    @if ($extension === 'pdf')
+                                                                        <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="500px"></iframe>
+                                                                        <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
+                                                                    @else
+                                                                        <img src="{{ $fileUrl }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                        <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
+                                                                    @endif
+                                                                @else
+                                                                    @if ($extension === 'pdf')
+                                                                        <iframe src="{{ $fallbackUrl }}" frameborder="0" width="100%" height="500px"></iframe>
+                                                                        <a href="{{ $fallbackUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
+                                                                    @else
+                                                                        <img src="{{ $fallbackUrl }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                        <a href="{{ $fallbackUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
+                                                                    @endif
+                                                                @endif
+                                                            @else
+                                                                <p style="color: red; font-weight: bold;">Data belum diupdate</p>
+                                                            @endif
+                                                        </div>
 
                                                     </div>
                                                 </div>
