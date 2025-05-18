@@ -105,7 +105,13 @@
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 
-    {{-- Preview file lama --}}
+    {{-- Tampilkan Preview File Baru --}}
+    <div id="previewContainer" class="mt-3" style="display: none;">
+        <p class="fw-bold text-success mb-2">Preview Sertifikat Baru:</p>
+        <iframe id="pdfPreview" class="w-100" height="400px"></iframe>
+    </div>
+
+    {{-- Jika Ada File Lama --}}
     @if ($data->sertifikat)
         @php
             $filePath = public_path('storage/' . $data->sertifikat);
@@ -114,43 +120,35 @@
                 : asset($data->sertifikat);
         @endphp
 
-        <p class="mt-2">
+        <p class="mt-3">
             <a href="{{ $fileURL }}" target="_blank" class="btn btn-sm btn-success">
                 <i class="bi bi-file-earmark-pdf"></i> Lihat Sertifikat Lama
             </a>
         </p>
 
-        <iframe src="{{ $fileURL }}" id="pdfPreviewOld" class="w-100 mb-3" height="400px"></iframe>
-    @else
-        <p class="mt-2 text-muted">Sertifikat belum tersedia</p>
+        <iframe src="{{ $fileURL }}" id="pdfPreviewOld" class="w-100" height="400px"></iframe>
     @endif
-
-    {{-- Preview file baru yang dipilih --}}
-    <iframe id="pdfPreview" class="w-100" height="400px" style="display: none;"></iframe>
 </div>
 
 @push('scripts')
 <script>
-    let currentPDF = null;
-
     function previewPDF(event) {
         const file = event.target.files[0];
         const preview = document.getElementById('pdfPreview');
+        const container = document.getElementById('previewContainer');
 
         if (file && file.type === "application/pdf") {
-            if (currentPDF) {
-                URL.revokeObjectURL(currentPDF); // Clean up if needed
-            }
-            currentPDF = URL.createObjectURL(file);
-            preview.src = currentPDF;
-            preview.style.display = 'block';
+            const fileURL = URL.createObjectURL(file);
+            preview.src = fileURL;
+            container.style.display = 'block';
         } else {
             preview.src = '';
-            preview.style.display = 'none';
+            container.style.display = 'none';
         }
     }
 </script>
 @endpush
+
 
                                     </div>
                                     <div class="col-md-6">
