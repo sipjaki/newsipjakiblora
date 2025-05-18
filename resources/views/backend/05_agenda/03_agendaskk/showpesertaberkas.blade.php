@@ -1287,11 +1287,11 @@ button:hover {
                                         <th class="text-center">
                                             <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                             @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
-                                            <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
                                             @elseif ($datapeserta->validasi_ktp === 'sesuai')
-                                                <span style="color: green;">Berkas Anda Sudah Sesuai</span>
+                                                <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
                                             @else
-                                                <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
+                                                <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
                                                 @endif
                                             </div>
                                         </th>
@@ -1360,11 +1360,11 @@ button:hover {
                                                 <th class="text-center">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_foto === 'tidak_sesuai')
-                                                            <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
                                                         @elseif ($datapeserta->validasi_foto === 'sesuai')
-                                                            <span style="color: green;">Berkas Anda Sudah Sesuai</span>
+                                                            <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
                                                         @else
-                                                            <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
+                                                            <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
                                                         @endif
                                                     </div>
                                                 </th>
@@ -1437,11 +1437,11 @@ button:hover {
                                                 <th class="text-center">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_ijazah === 'tidak_sesuai')
-                                                            <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
                                                         @elseif ($datapeserta->validasi_ijazah === 'sesuai')
-                                                            <span style="color: green;">Berkas Anda Sudah Sesuai</span>
+                                                            <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
                                                         @else
-                                                            <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
+                                                            <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
                                                         @endif
                                                     </div>
                                                 </th>
@@ -1513,11 +1513,11 @@ button:hover {
                                                     <th class="text-center">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_pengalaman === 'tidak_sesuai')
-                                                            <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
                                                         @elseif ($datapeserta->validasi_pengalaman === 'sesuai')
-                                                            <span style="color: green;">Berkas Anda Sudah Sesuai</span>
+                                                            <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
                                                         @else
-                                                            <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
+                                                            <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
                                                         @endif
                                                     </div>
                                                 </th>
@@ -1588,11 +1588,11 @@ button:hover {
                                             <th class="text-center">
                                                 <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                     @if ($datapeserta->validasi_kebenarandata === 'tidak_sesuai')
-                                                        <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                                        <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
                                                     @elseif ($datapeserta->validasi_kebenarandata === 'sesuai')
-                                                        <span style="color: green;">Berkas Anda Sudah Sesuai</span>
+                                                        <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
                                                     @else
-                                                        <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
+                                                        <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
                                                     @endif
                                                 </div>
                                             </th>
@@ -1665,11 +1665,11 @@ button:hover {
                                             <th class="text-center">
                                                 <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                     @if ($datapeserta->validasi_npwp === 'tidak_sesuai')
-                                                        <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                                        <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
                                                     @elseif ($datapeserta->validasi_npwp === 'sesuai')
-                                                        <span style="color: green;">Berkas Anda Sudah Sesuai</span>
+                                                        <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
                                                     @else
-                                                        <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
+                                                        <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
                                                     @endif
                                                 </div>
                                             </th>
@@ -1737,11 +1737,11 @@ button:hover {
                                                 <th class="text-center">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_daftarriwayathidup === 'tidak_sesuai')
-                                                            <span style="color: red;">Silahkan Lakukan Perbaikan</span>
+                                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
                                                         @elseif ($datapeserta->validasi_daftarriwayathidup === 'sesuai')
-                                                            <span style="color: green;">Berkas Anda Sudah Sesuai</span>
+                                                            <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
                                                         @else
-                                                            <span style="color: orange;">Sedang Di Verifikasi DPUPR</span>
+                                                            <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
                                                         @endif
                                                     </div>
                                                 </th>
