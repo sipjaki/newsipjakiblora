@@ -195,7 +195,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->namakegiatan}}</td>
+         <td style="text-align: left;">{{$item->agendaskk->namakegiatan}}</td>
          <td style="text-align: left;">{{$item->user->name}}</td>
 
          <td style="text-align: center; gap:10px;">
