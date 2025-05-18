@@ -11,7 +11,7 @@
     }
 
      @media (max-width: 768px) {
-        .halaman-pertama {
+        .halaman-pertamaku {
             display: none !important;
         }
     }
@@ -492,7 +492,7 @@ button:hover {
 <hr>
 
 <div class="halaman-pertama">
-    <div style="text-align: center; margin-bottom: 10px;">
+    <div class="halaman-pertamaku" style="text-align: center; margin-bottom: 10px;">
     <div style="display: flex; align-items: center; justify-content: center;">
         <!-- Logo -->
         <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora"
