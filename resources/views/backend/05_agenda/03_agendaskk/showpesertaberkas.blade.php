@@ -1,11 +1,4 @@
 <style>
-
-      @media (max-width: 768px) {
-        table.borderbaru {
-            display: none !important;
-        }
-    }
-
     .table-responsive {
     width: 100%;
     overflow-x: auto;
@@ -864,6 +857,9 @@ button:hover {
 
     <h5 style="color: navy; font-weight:800; font-size:16px;">III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
+
+<div class="table-responsive">
+
     <table class="zebra-table table-striped">
         <tr>
             <td style="text-align: center; font-size:16px;">Nama Utusan</td>
@@ -871,7 +867,10 @@ button:hover {
         </tr>
     </table>
 
-    <table class="zebra-table table-striped">
+</div>
+
+<div class="table-responsive">
+<table class="zebra-table table-striped">
         <tr>
             <td style="text-align: center; font-size:16px;">MEMPUNYAI SKK ?</td>
             <td style="text-align: center; font-size:16px;">MEMPUNYAI AKUN SIKI/ E-SIMPAN ?</td>
@@ -895,7 +894,7 @@ button:hover {
         </tr>
 
     </table>
-
+</div>
     <br>
 
     <style>
