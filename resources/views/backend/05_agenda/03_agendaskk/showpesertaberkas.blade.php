@@ -1059,7 +1059,7 @@ button:hover {
             name: 'Dokumen Masuk',
             status: 'completed',
             time: '<?php echo isset($datapeserta->created_at) ? $datapeserta->created_at : date("Y-m-d H:i:s") ?>',
-            message: 'Dokumen telah diverifikasi'
+            message: ''
         },
         {
             id: 2,
