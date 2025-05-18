@@ -385,9 +385,7 @@
 
         {{-- DASHBOARD SUPER ADMIN --}}
 
-@role('super_admin|admin')
-
-        {{-- @can('super_admin', 'admin') --}}
+        @can('super_admin', 'admin')
 
                 <li class="nav-header" style="color: white;">BERANDA WEB</li>
 
@@ -1123,9 +1121,7 @@
                 </ul>
               </li>
 
-              {{-- @endcan --}}
-
-              @endrole
+              @endcan
 {{--
               <li class="nav-header" style="color: white;" >ADMINISTRATOR DATABASE</li>
 
