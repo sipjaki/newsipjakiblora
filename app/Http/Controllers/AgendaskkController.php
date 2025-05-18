@@ -689,7 +689,7 @@ public function beskkdatapesertajumlah(Request $request, $id)
 
     // Ambil peserta yang hanya terkait dengan agenda SKK ini dan yang sudah diverifikasi PU
     $query = allskktenagakerjablora::where('agendaskk_id', $id)
-        ->where('verifikasipu', true)
+        ->where('verifikasipu', 'lolos')
         ->select([
             'id',
             'user_id',
