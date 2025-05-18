@@ -1020,28 +1020,35 @@ button:hover {
     function updateCheckpointStatus() {
         // Step 1 otomatis completed (hijau)
         checkpointData[0].status = 'completed';
+        checkpointData[0].message = 'Dokumen telah diverifikasi';
 
         // Step 2: Verifikasi Berkas berdasarkan verifikasipu
-        if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos' ||
-            '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'dikembalikan') {
-            checkpointData[1].status = '<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos' ? 'completed' : 'rejected';
+        if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos') {
+            checkpointData[1].status = 'completed';
+            checkpointData[1].message = 'Berkas telah diverifikasi dan lolos';
+        } else if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'dikembalikan') {
+            checkpointData[1].status = 'rejected';
+            checkpointData[1].message = 'Berkas dikembalikan untuk perbaikan';
         }
 
         // Step 3: Verifikasi DPUPR hanya jika verifikasipu 'lolos'
         if ('<?php echo isset($datapeserta->verifikasipu) ? $datapeserta->verifikasipu : "" ?>' === 'lolos') {
             checkpointData[2].status = 'completed';
+            checkpointData[2].message = 'Telah diverifikasi oleh DPUPR';
         }
 
         // Step 4: Verifikasi LSP berdasarkan verifikasilps
         if ('<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === '1' ||
             '<?php echo isset($datapeserta->verifikasilps) ? $datapeserta->verifikasilps : "" ?>' === 'true') {
             checkpointData[3].status = 'completed';
+            checkpointData[3].message = 'Telah diverifikasi oleh LSP';
         }
 
         // Step 5: Sertifikat Terbit berdasarkan verifikasihadirsertifikasi
         if ('<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === '1' ||
             '<?php echo isset($datapeserta->verifikasihadirsertifikasi) ? $datapeserta->verifikasihadirsertifikasi : "" ?>' === 'true') {
             checkpointData[4].status = 'completed';
+            checkpointData[4].message = 'Sertifikat telah diterbitkan';
         }
     }
 
@@ -1074,27 +1081,32 @@ button:hover {
             content.className = 'checkpoint-content';
 
             const name = document.createElement('div');
-            name.className = 'message';
+            name.className = 'checkpoint-name';
             name.textContent = checkpoint.name;
             content.appendChild(name);
 
+            // Tambahkan pesan status
+            const message = document.createElement('div');
+            message.className = 'message';
+            message.textContent = checkpoint.message;
+            content.appendChild(message);
+
             // Format waktu jika ada
-            if (checkpoint.time && checkpoint.time.trim() !== '') {
-                try {
+            if (checkpoint.time && checkpoint.time.trim() !== '' && checkpoint.time !== '0000-00-00 00:00:00') {
+                const formattedTime = formatTime(checkpoint.time);
+                if (formattedTime) {
                     const time = document.createElement('div');
                     time.className = 'time';
-                    time.textContent = formatTime(checkpoint.time);
-                    content.appendChild(time);
 
-                    // Tambahkan pesan khusus untuk status rejected
-                    if (checkpoint.status === 'rejected') {
-                        const rejectMsg = document.createElement('div');
-                        rejectMsg.className = 'reject-message';
-                        rejectMsg.textContent = 'Dikembalikan pada: ' + formatTime(checkpoint.time);
-                        content.appendChild(rejectMsg);
+                    if (checkpoint.status === 'completed') {
+                        time.textContent = `Selesai: ${formattedTime}`;
+                    } else if (checkpoint.status === 'rejected') {
+                        time.textContent = `Dikembalikan: ${formattedTime}`;
+                    } else {
+                        time.textContent = `Terakhir diperbarui: ${formattedTime}`;
                     }
-                } catch (e) {
-                    console.error('Error formatting time:', e);
+
+                    content.appendChild(time);
                 }
             }
 
@@ -1107,52 +1119,80 @@ button:hover {
         updateCurrentStatus();
     }
 
-    // Format waktu dengan validasi
+    // Format waktu dengan validasi yang lebih robust
     function formatTime(dateString) {
         try {
-            // Handle format MySQL (YYYY-MM-DD HH:MM:SS)
-            if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(dateString)) {
-                const date = new Date(dateString);
-                return date.toLocaleDateString('id-ID', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                });
+            if (!dateString || dateString.trim() === '' || dateString === '0000-00-00 00:00:00') {
+                return null;
             }
-            // Handle format timestamp
-            else if (!isNaN(new Date(dateString).getTime())) {
-                const date = new Date(dateString);
-                return date.toLocaleDateString('id-ID', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
-                });
+
+            // Coba parse sebagai Date object
+            const date = new Date(dateString);
+
+            // Jika hasilnya invalid date
+            if (isNaN(date.getTime())) {
+                // Coba format MySQL (YYYY-MM-DD HH:MM:SS)
+                const mysqlPattern = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/;
+                const match = dateString.match(mysqlPattern);
+
+                if (match) {
+                    const [_, year, month, day, hours, minutes, seconds] = match;
+                    const newDate = new Date(year, month - 1, day, hours, minutes, seconds);
+                    if (!isNaN(newDate.getTime())) {
+                        return newDate.toLocaleDateString('id-ID', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        });
+                    }
+                }
+                return null;
             }
-            return dateString; // Return as-is if format tidak dikenali
+
+            return date.toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
         } catch (e) {
-            console.error('Invalid date format:', dateString);
-            return 'Waktu tidak tersedia';
+            console.error('Error formatting time:', e);
+            return null;
         }
     }
 
     // Update status teks
     function updateCurrentStatus() {
-        const current = checkpointData.find(c => c.status === 'current') ||
-                       checkpointData.find(c => c.status === 'completed' || c.status === 'rejected');
         const statusInfo = document.getElementById('current-status');
+        let currentStatus = '';
+        let currentMessage = '';
 
-        if (current) {
-            statusInfo.textContent = `Status saat ini: ${current.name}`;
-
-            if (current.status === 'completed') {
-                statusInfo.textContent += ' (Selesai)';
-            } else if (current.status === 'rejected') {
-                statusInfo.textContent += ' (Dikembalikan)';
+        // Cari tahap terakhir yang completed atau rejected
+        for (let i = checkpointData.length - 1; i >= 0; i--) {
+            if (checkpointData[i].status === 'completed' || checkpointData[i].status === 'rejected') {
+                currentStatus = checkpointData[i].name;
+                currentMessage = checkpointData[i].message;
+                break;
             }
+        }
+
+        // Jika tidak ada yang completed/rejected, ambil tahap pertama yang pending
+        if (!currentStatus) {
+            for (let i = 0; i < checkpointData.length; i++) {
+                if (checkpointData[i].status === 'pending') {
+                    currentStatus = checkpointData[i].name;
+                    currentMessage = checkpointData[i].message;
+                    break;
+                }
+            }
+        }
+
+        if (currentStatus) {
+            statusInfo.innerHTML = `<strong>Status saat ini:</strong> ${currentStatus}<br>
+                                  <em>${currentMessage}</em>`;
         }
     }
 
@@ -1164,34 +1204,81 @@ button:hover {
 </script>
 
 <style>
+    .checkpoint {
+        position: relative;
+        margin-bottom: 20px;
+        padding-left: 30px;
+    }
+
+    .dot {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
     .checkpoint.completed .dot {
         background-color: #4CAF50;
         color: white;
     }
+
     .checkpoint.rejected .dot {
         background-color: #f44336;
         color: white;
     }
+
     .checkpoint.pending .dot {
         background-color: #e0e0e0;
         color: #666;
+        border: 2px solid #999;
     }
+
+    .connector {
+        position: absolute;
+        left: 11px;
+        top: 24px;
+        width: 2px;
+        height: calc(100% + 20px);
+        background-color: #e0e0e0;
+    }
+
     .connector.active {
         background-color: #4CAF50;
     }
-    .time {
-        font-size: 0.8em;
-        color: #666;
-        margin-top: 4px;
+
+    .checkpoint-content {
+        padding-bottom: 20px;
     }
-    .reject-message {
-        font-size: 0.8em;
-        color: #f44336;
-        margin-top: 2px;
+
+    .checkpoint-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .message {
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    .time {
+        font-size: 0.85em;
+        color: #666;
         font-style: italic;
     }
-</style>
 
+    #current-status {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+    }
+</style>
 
 <hr>
 
