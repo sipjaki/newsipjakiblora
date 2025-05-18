@@ -106,7 +106,16 @@
     @enderror
 
     {{-- PREVIEW FILE BARU --}}
-    <div id="previewContainer" class="mt-3" style="display: none;">
+
+</div>
+
+{{-- TARUH SCRIPT DI BAWAH (TIDAK PAKE @push) --}}
+
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div id="previewContainer" class="mt-3" style="display: none;">
         <p class="fw-bold text-success mb-2">Preview Sertifikat Baru:</p>
         <iframe id="pdfPreview" class="w-100" height="400px"></iframe>
     </div>
@@ -128,10 +137,8 @@
 
         <iframe src="{{ $fileURL }}" id="pdfPreviewOld" class="w-100" height="400px"></iframe>
     @endif
-</div>
 
-{{-- TARUH SCRIPT DI BAWAH (TIDAK PAKE @push) --}}
-<script>
+    <script>
 document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('sertifikat');
     const preview = document.getElementById('pdfPreview');
@@ -151,9 +158,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-
-                                    </div>
-                                    <div class="col-md-6">
                                     </div>
                                 </div>
                                 <!-- End row -->
