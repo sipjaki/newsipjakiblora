@@ -1206,22 +1206,24 @@ button:hover {
         renderCheckpoints();
     });
 </script>
-<style>
+ <style>
     /* Main Timeline Container */
     .timeline-horizontal {
         display: flex;
         width: 100%;
         padding: 20px 0;
         position: relative;
+        flex-wrap: wrap;
     }
 
     /* Each Checkpoint Wrapper */
     .checkpoint-wrapper {
         display: flex;
         flex: 1;
+        min-width: 150px;
         position: relative;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     /* Container for dot and connector */
@@ -1229,7 +1231,8 @@ button:hover {
         display: flex;
         align-items: center;
         width: 100%;
-        /* margin-left: -100px; */
+        justify-content: center;
+        position: relative;
     }
 
     /* Dot Styling */
@@ -1241,33 +1244,49 @@ button:hover {
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        flex-shrink: 0;
         z-index: 2;
         position: relative;
+        flex-shrink: 0;
     }
 
     /* Dot Status Colors */
-    .dot.completed { background-color: #4CAF50; color: white; }
-    .dot.rejected { background-color: #f44336; color: white; }
-    .dot.pending { background-color: #e0e0e0; color: #666; border: 2px solid #999; }
+    .dot.completed {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .dot.rejected {
+        background-color: #f44336;
+        color: white;
+    }
+    .dot.pending {
+        background-color: #e0e0e0;
+        color: #666;
+        border: 2px solid #999;
+    }
 
     /* Connector Line */
     .connector {
-        flex-grow: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
         height: 4px;
+        width: 100%;
+        transform: translateY(-50%);
         background-color: #e0e0e0;
-        margin: 0 -15px;
-        margin-left: -140px; /* Menghubungkan ke dot berikutnya */
+        z-index: 1;
     }
-    .connector.active { background-color: #4CAF50; }
+    .connector.active {
+        background-color: #4CAF50;
+    }
 
     /* Checkpoint Content */
     .checkpoint-content {
         margin-top: 10px;
-        text-align: left;
-        padding: 0 15px;
+        text-align: center;
+        padding: 0 10px;
         word-wrap: break-word;
-        max-width: 150px;
+        max-width: 140px;
+        font-size: 14px;
     }
 
     /* Remove connector for last item */
@@ -1275,41 +1294,40 @@ button:hover {
         display: none;
     }
 
-    /* Mobile Responsive */
+    /* Responsive */
     @media (max-width: 768px) {
         .timeline-horizontal {
             flex-direction: column;
+            align-items: flex-start;
         }
 
         .checkpoint-wrapper {
             flex-direction: row;
-            margin-bottom: 20px;
             align-items: center;
+            margin-bottom: 20px;
         }
 
         .dot-connector-container {
-            flex-direction: row;
             width: auto;
-            align-items: center;
-            margin-left: -100px;
+            margin-right: 10px;
         }
 
         .connector {
+            position: static;
             width: 50px;
             height: 4px;
             margin: 0 10px;
-            margin-left: -100px;
+            transform: none;
         }
 
         .checkpoint-content {
             margin-top: 0;
             margin-left: 10px;
             max-width: none;
+            text-align: left;
         }
     }
-</style>
-
-
+  </style>
 <hr>
 
 <form action="{{ route('validasidokumenpesertaskk', $datapeserta->id) }}" method="POST">
