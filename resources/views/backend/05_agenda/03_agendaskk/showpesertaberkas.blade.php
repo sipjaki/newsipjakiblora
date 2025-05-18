@@ -1643,18 +1643,34 @@ button:hover {
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
-                                                                <div style="margin-top: 10px;">
-                                                                    @if($datapeserta->uploadnpwp && file_exists(public_path('storage/' . $datapeserta->uploadnpwp)))
-                                                                        <!-- Menampilkan gambar dari storage -->
-                                                                        <img src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                                                    @elseif($datapeserta->uploadnpwp)
-                                                                        <!-- Menampilkan gambar dari path luar storage -->
-                                                                        <img src="{{ asset($datapeserta->uploadnpwp) }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                              <div style="margin-top: 10px;">
+                                                                    @if($datapeserta->uploadnpwp)
+                                                                        @php
+                                                                            $filePath = public_path('storage/' . $datapeserta->uploadnpwp);
+                                                                            $fileUrl = asset('storage/' . $datapeserta->uploadnpwp);
+                                                                            $fallbackUrl = asset($datapeserta->uploadnpwp); // Jika bukan dari storage
+                                                                            $isStorageFile = file_exists($filePath);
+                                                                            $extension = strtolower(pathinfo($datapeserta->uploadnpwp, PATHINFO_EXTENSION));
+                                                                        @endphp
+
+                                                                        @if($isStorageFile)
+                                                                            @if($extension === 'pdf')
+                                                                                <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                            @else
+                                                                                <img src="{{ $fileUrl }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                            @endif
+                                                                        @else
+                                                                            @if($extension === 'pdf')
+                                                                                <iframe src="{{ $fallbackUrl }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                            @else
+                                                                                <img src="{{ $fallbackUrl }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                            @endif
+                                                                        @endif
                                                                     @else
-                                                                        <!-- Placeholder jika tidak ada data -->
-                                                                        <p>Data belum diupdate</p>
+                                                                        <p style="color: red; font-weight: bold;">Data belum diupdate</p>
                                                                     @endif
                                                                 </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
