@@ -236,7 +236,7 @@ h5 {
                                         @foreach ($datapeserta as $item )
                                         <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
                                             <td style="text-align: center; padding: 10px;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="padding: 10px;">{{$item->user->name}}</td>
+                                            <td style="padding: 10px; text-transform:uppercase;">{{$item->user->name}}</td>
                                             <td style="padding: 10px;">{{$item->jeniskelamin}}</td>
                                             <td style="padding: 10px;">
                                                 {{ substr($item->nik, 0, 7) . 'XXXXXXXX' }}
