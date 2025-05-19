@@ -283,14 +283,14 @@
             @csrf
 
             <div class="input-group">
-                <i class="fas fa-user input-icon"></i>
+                <i class="fas fa-user input-icon" style="margin-top:-23px;"></i>
                 <input style="text-transform: uppercase;" type="text" name="name" class="input-field" placeholder="Nama Lengkap" required>
                 @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 <span style="font-size:13px; color:red;">Ket : Isi Nama Lengkap Sesuai Dengan KTP, dan HURUF CAPITAL</span>
             </div>
 
             <div class="input-group">
-                <i class="fas fa-user-tag input-icon"></i>
+                <i class="fas fa-user-tag input-icon" style="margin-top:-23px;"></i>
                 <input type="text" name="username" class="input-field" placeholder="Username" required>
                 @error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 <span style="font-size:13px; color:red;">Ket : Isi dengan TKK-( NIK - Anda ) Contoh : TKK-331611XXX... </span>
