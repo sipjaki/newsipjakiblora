@@ -879,11 +879,8 @@ button:hover {
 
         <tr>
             <td style="text-align: center; font-size:16px;">Surat Kebenaran Data</td>
-            {{-- <td style="text-align: center; font-size:16px;">NPWP</td> --}}
-            {{-- <td style="text-align: center; font-size:16px;">Daftar Riwayat Hidup</td> --}}
         </tr>
         <tr>
-            <td>
                       <td style="text-align: center;">
                 <div style="margin-top: 10px;">
     @if($datapeserta->uploadkebenarandata && file_exists(public_path('storage/' . $datapeserta->uploadkebenarandata)))
