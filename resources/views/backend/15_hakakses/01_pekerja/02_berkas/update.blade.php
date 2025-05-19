@@ -115,25 +115,6 @@
                                             @enderror
                                         </div>
 
-                                        <!-- Penyelenggara -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="asosiasimasjaki_id">
-                                                <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Penyelenggara/Asosiasi
-                                            </label>
-                                            <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
-                                                <option value="" disabled selected>Pilih Asosiasi/Penyelenggara</option>
-                                                @foreach($dataasosiasi as $asosiasi)
-                                                    <option value="{{ $asosiasi->id }}"
-                                                        {{ old('asosiasimasjaki_id', $data->asosiasimasjaki_id) == $asosiasi->id ? 'selected' : '' }}>
-                                                        {{ $asosiasi->namaasosiasi }} <!-- Ganti nama_asosiasi sesuai dengan nama kolom di tabel asosiasimasjaki -->
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                            @error('asosiasimasjaki_id')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
 
                                         <!-- Tanggal Pelaksanaan -->
                                         <div class="mb-3">
