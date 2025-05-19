@@ -85,36 +85,71 @@
                                         <!-- Nama Kegiatan -->
                                         {{--  --}}
                                     <div class="mb-3">
-                                            <label class="form-label" for="skkanda">
-                                                <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> SKK Anda
-                                            </label>
+    <label class="form-label" for="skkanda">
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> SKK Anda
+    </label>
 
-                                            @if($data->skkanda)
-                                                @php
-                                                    $path = 'storage/' . $data->skkanda;
-                                                    $isImage = in_array(strtolower(pathinfo($path, PATHINFO_EXTENSION)), ['jpg', 'jpeg', 'png', 'gif', 'webp']);
-                                                    $fullPath = public_path($path);
-                                                @endphp
+    {{-- Preview file sebelumnya --}}
+    @if($data->skkanda)
+        @php
+            $path = 'storage/' . $data->skkanda;
+            $isImage = in_array(strtolower(pathinfo($path, PATHINFO_EXTENSION)), ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+            $fullPath = public_path($path);
+        @endphp
 
-                                                <div class="mb-2 text-center">
-                                                    @if(file_exists($fullPath))
-                                                        @if($isImage)
-                                                            <img src="{{ asset($path) }}" alt="Preview SKK" style="max-height: 300px; border: 1px solid #ccc;">
-                                                        @else
-                                                            <iframe src="{{ asset($path) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                        @endif
-                                                    @else
-                                                        <p class="text-danger">File tidak ditemukan atau telah dihapus.</p>
-                                                    @endif
-                                                </div>
-                                            @endif
+        <div class="mb-2">
+            <strong>Preview File Sebelumnya:</strong>
+            <div class="text-center mt-2">
+                @if(file_exists($fullPath))
+                    @if($isImage)
+                        <img src="{{ asset($path) }}" alt="Preview SKK" style="max-height: 300px; border: 1px solid #ccc;">
+                    @else
+                        <iframe src="{{ asset($path) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    @endif
+                @else
+                    <p class="text-danger">File tidak ditemukan atau telah dihapus.</p>
+                @endif
+            </div>
+        </div>
+    @endif
 
-                                            <input type="file" id="skkanda" name="skkanda" class="form-control @error('skkanda') is-invalid @enderror">
-                                            @error('skkanda')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+    {{-- Input file baru --}}
+    <input type="file" id="skkanda" name="skkanda" class="form-control @error('skkanda') is-invalid @enderror" onchange="previewFile(event)">
+    @error('skkanda')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 
+    {{-- Preview file baru --}}
+    <div class="mt-3" id="preview-baru" style="display: none;">
+        <strong>Preview File Baru:</strong>
+        <div id="preview-content" class="mt-2 text-center"></div>
+    </div>
+</div>
+
+{{-- Script preview file baru --}}
+<script>
+    function previewFile(event) {
+        const file = event.target.files[0];
+        const previewContainer = document.getElementById('preview-baru');
+        const previewContent = document.getElementById('preview-content');
+
+        if (file) {
+            const fileUrl = URL.createObjectURL(file);
+            const ext = file.name.split('.').pop().toLowerCase();
+
+            previewContainer.style.display = 'block';
+
+            if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+                previewContent.innerHTML = `<img src="${fileUrl}" style="max-height:300px; border:1px solid #ccc;">`;
+            } else {
+                previewContent.innerHTML = `<iframe src="${fileUrl}" frameborder="0" width="100%" height="300px"></iframe>`;
+            }
+        } else {
+            previewContainer.style.display = 'none';
+            previewContent.innerHTML = '';
+        }
+    }
+</script>
 
                                         <!-- Tanggal Pelaksanaan -->
                                         <div class="mb-3">
