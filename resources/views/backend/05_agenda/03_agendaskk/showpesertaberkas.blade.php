@@ -1432,7 +1432,7 @@ Download Berkas .zip/.rar Peserta
 
         <tr>
             <td style="width: 45%;"></td>
-            <td style="width: 55%; font-size:16px;">PADA TANGGAL {{$data->waktupelaksanaan}}</td>
+            <td style="width: 55%; font-size:16px;">PADA TANGGAL {{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y, H:i') }}</td>
         </tr>
         <br>
         <tr>
