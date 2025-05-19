@@ -798,8 +798,12 @@ table.zebra-table {
 
 <div class="col-md-4" style="{{ $divStyle }}">
     <div style="margin-top: 10px;">
-                <iframe src="/assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx" frameborder="0" width="100%" height="300px"></iframe>
-        </div>
+    <iframe
+        src="https://docs.google.com/gview?url=https://yourdomain.com/assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx&embedded=true"
+        style="width:100%; height:500px;"
+        frameborder="0">
+    </iframe>
+</div>
 
 </div>
 
