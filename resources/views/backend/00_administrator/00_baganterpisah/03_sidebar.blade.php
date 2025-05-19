@@ -447,7 +447,7 @@
 
         {{-- DASHBOARD SUPER ADMIN --}}
 
-        @can('super_admin')
+        @canany(['super_admin', 'admin'])
 
                 <li class="nav-header" style="color: white;">BERANDA WEB</li>
 
@@ -1183,7 +1183,7 @@
                 </ul>
               </li>
 
-              @endcan
+              @endcanany
 {{--
               <li class="nav-header" style="color: white;" >ADMINISTRATOR DATABASE</li>
 

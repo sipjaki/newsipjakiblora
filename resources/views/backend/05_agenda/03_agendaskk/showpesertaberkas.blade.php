@@ -2198,7 +2198,7 @@ Download Berkas .zip/.rar Peserta
 
                 </td>
 
-                @can('super_admin', 'admin')
+                @canany(['super_admin', 'admin'])
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
@@ -2269,7 +2269,7 @@ Download Berkas .zip/.rar Peserta
                                     </script>
 
 
-                @endcan
+                @endcanany
 
 </form>
 
