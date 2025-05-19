@@ -288,11 +288,11 @@
     </div>
 
     <div class="input-group" style="position: relative;">
-    <i class="fas fa-lock input-icon"></i>
+    <i class="fas fa-lock input-icon" style="margin-top: -20px;"></i>
     <input type="password" class="input-field" name="password" id="password" placeholder="Password" required>
 
     <!-- Eye icon toggle -->
-    <i class="fas fa-eye toggle-password" id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+    <i class="fas fa-eye toggle-password" id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; margin-top:-20px;"></i>
 
     @error('password')
         <div class="invalid-feedback">
