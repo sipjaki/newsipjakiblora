@@ -774,21 +774,20 @@ table.zebra-table {
 
 <div class="row" style="margin-top: -20px;">
 <div class="col-md-4" style="{{ $divStyle }}">
-       @php
+    @php
     $fileDownloaddata = asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx');
 @endphp
 
 <label class="form-label text-start" style="{{ $labelStyle }}">
     <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
     @if ($fileDownloaddata)
-        <a href="{{ $fileDownloaddata }}" target="_blank" style="color:rgb(0, 26, 255);">
+        <a href="{{ $fileDownloaddata }}" target="_blank" rel="noopener" style="color:rgb(0, 26, 255);">
             Contoh Surat Pernyataan <i class="bi bi-download"></i>
         </a>
     @else
         <span style="color: gray;">Contoh belum tersedia</span>
     @endif
 </label>
-
 
     <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
     <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div>
@@ -1343,7 +1342,7 @@ function previewFile(previewId, input) {
 <label class="form-label text-start" style="{{ $labelStyle }}">
     <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
     @if ($fileDownloaddata)
-        <a href="{{ $fileDownloaddata }}" target="_blank" style="color:rgb(0, 26, 255);">
+        <a href="{{ $fileDownloaddata }}" target="_blank" rel="noopener" style="color:rgb(0, 26, 255);">
             Contoh Surat Pernyataan <i class="bi bi-download"></i>
         </a>
     @else
