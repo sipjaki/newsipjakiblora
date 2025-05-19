@@ -941,6 +941,7 @@ Route::get('/bepesertaskkshowberkas/show/{id}', [PembinaanController::class, 'be
 Route::get('/besertifikatskk/{id}', [PembinaanController::class, 'besertifikatskk'])->middleware('auth');
 Route::put('/besertifikatskkcreate/{id}', [PembinaanController::class, 'besertifikatskkputupdate'])->middleware('auth')->name('update.besertifikatskkputupdate');
 
+Route::post('/peserta/downloadberkas/{id}', [PembinaanController::class, 'downloadSemuaBerkas'])->middleware('auth')->name('peserta.downloadSemua');
 
 
 // DASHBOARD PESERTA

@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 
+use Illuminate\Support\Str;
+use ZipArchive;
+use App\Models\allskktenagakerjablora;
+
 use App\Models\agendapelatihan;
 use App\Models\agendaskk;
-use App\Models\allskktenagakerjablora;
 use App\Models\asosiasimasjaki;
 use App\Models\jabatankerja;
 use App\Models\jenjang;
@@ -1302,6 +1305,50 @@ public function besertifikatskkputupdate(Request $request, $id)
 
 
 
+
+public function downloadSemuaBerkas($id)
+{
+    $peserta = allskktenagakerjablora::with('user')->findOrFail($id);
+
+    $namaPeserta = Str::slug($peserta->user->name);
+    $zipFileName = 'berkas_' . $namaPeserta . '.zip';
+    $zipPath = public_path('temp/' . $zipFileName);
+
+    // Buat folder temp jika belum ada
+    if (!file_exists(public_path('temp'))) {
+        mkdir(public_path('temp'), 0755, true);
+    }
+
+    $zip = new ZipArchive;
+
+    if ($zip->open($zipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE) === true) {
+        $files = [
+            '01_SKK' => $peserta->skkanda,
+            '02_KTP' => $peserta->uploadktp,
+            '03_Pas_Foto' => $peserta->uploadfoto,
+            '04_Ijazah' => $peserta->uploadijazah,
+            '05_Pengalaman' => $peserta->uploadpengalaman,
+            '06_Kebenaran_Data' => $peserta->uploadkebenarandata,
+            '07_NPWP' => $peserta->uploadnpwp,
+            '08_Daftar_Riwayat_Hidup' => $peserta->uploaddaftarriwayathidup,
+        ];
+
+        foreach ($files as $label => $relativePath) {
+            $fullPath = public_path($relativePath);
+            if ($relativePath && file_exists($fullPath)) {
+                $ext = pathinfo($relativePath, PATHINFO_EXTENSION);
+                $filename = $label . '.' . $ext;
+                $zip->addFile($fullPath, $filename);
+            }
+        }
+
+        $zip->close();
+
+        return response()->download($zipPath)->deleteFileAfterSend(true);
+    } else {
+        return back()->with('error', 'Gagal membuat file ZIP.');
+    }
+}
 
 
 }
