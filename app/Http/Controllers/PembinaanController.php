@@ -1374,83 +1374,87 @@ public function perbaikandataskk($id)
 
 // Update data existing
     public function perbaikandataskkupdate(Request $request, $id)
-    {
-        // Validasi dengan pesan kustom
-        $validator = Validator::make($request->all(), [
-            'skkanda' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-            'uploadktp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-            'uploadfoto' => 'nullable|file|mimes:jpg,jpeg,png|max:5048',
-            'uploadijazah' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-            'uploadpengalaman' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-            'uploadkebenarandata' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-            'uploadnpwp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-            'uploaddaftarriwayathidup' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-        ], [
-            'file.mimes' => 'File :attribute harus berupa format JPG, JPEG, PNG atau PDF.',
-            'file.max' => 'Ukuran file :attribute maksimal 5MB.',
-        ]);
+{
+    // Validasi dengan pesan kustom
+    $validator = Validator::make($request->all(), [
+        'skkanda' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+        'uploadktp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+        'uploadfoto' => 'nullable|file|mimes:jpg,jpeg,png|max:5048',
+        'uploadijazah' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+        'uploadpengalaman' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+        'uploadkebenarandata' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+        'uploadnpwp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+        'uploaddaftarriwayathidup' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+    ], [
+        'file.mimes' => 'File :attribute harus berupa format JPG, JPEG, PNG atau PDF.',
+        'file.max' => 'Ukuran file :attribute maksimal 5MB.',
+    ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()
-                             ->withErrors($validator)
-                             ->withInput();
+    if ($validator->fails()) {
+        return redirect()->back()
+                         ->withErrors($validator)
+                         ->withInput();
+    }
+
+    $data = allskktenagakerjablora::findOrFail($id);
+
+    $uploadPaths = [
+        'uploadktp' => '04_pembinaan/03_sertifikasi/01_uploadktp',
+        'uploadfoto' => '04_pembinaan/03_sertifikasi/02_uploadfoto',
+        'uploadijazah' => '04_pembinaan/03_sertifikasi/03_uploadijazah',
+        'uploadpengalaman' => '04_pembinaan/03_sertifikasi/04_uploadpengalaman',
+        'uploadnpwp' => '04_pembinaan/03_sertifikasi/05_uploadnpwp',
+        'uploaddaftarriwayathidup' => '04_pembinaan/03_sertifikasi/06_uploadriwayathidup',
+        'uploadkebenarandata' => '04_pembinaan/03_sertifikasi/07_uploadkebenarandata',
+        'skkanda' => '04_pembinaan/03_sertifikasi/07_skkanda',
+    ];
+
+    // Update field skkanda jika ada file upload baru
+    if ($request->hasFile('skkanda')) {
+        if ($data->skkanda && File::exists(public_path($data->skkanda))) {
+            File::delete(public_path($data->skkanda));
         }
+        $file = $request->file('skkanda');
+        $namaFile = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
+        $tujuanPath = public_path($uploadPaths['skkanda']);
+        if (!File::exists($tujuanPath)) {
+            File::makeDirectory($tujuanPath, 0777, true);
+        }
+        $file->move($tujuanPath, $namaFile);
+        $data->skkanda = $uploadPaths['skkanda'] . '/' . $namaFile;
+    }
 
-        $data = allskktenagakerjablora::findOrFail($id);
+    // Proses upload file lainnya
+    foreach ($uploadPaths as $field => $path) {
+        if ($field == 'skkanda') continue; // Sudah di-handle
 
-        $uploadPaths = [
-            'uploadktp' => '04_pembinaan/03_sertifikasi/01_uploadktp',
-            'uploadfoto' => '04_pembinaan/03_sertifikasi/02_uploadfoto',
-            'uploadijazah' => '04_pembinaan/03_sertifikasi/03_uploadijazah',
-            'uploadpengalaman' => '04_pembinaan/03_sertifikasi/04_uploadpengalaman',
-            'uploadnpwp' => '04_pembinaan/03_sertifikasi/05_uploadnpwp',
-            'uploaddaftarriwayathidup' => '04_pembinaan/03_sertifikasi/06_uploadriwayathidup',
-            'uploadkebenarandata' => '04_pembinaan/03_sertifikasi/07_uploadkebenarandata',
-            'skkanda' => '04_pembinaan/03_sertifikasi/07_skkanda',
-        ];
-
-        // Update field skkanda jika ada file upload baru
-        if ($request->hasFile('skkanda')) {
-            if ($data->skkanda && File::exists(public_path($data->skkanda))) {
-                File::delete(public_path($data->skkanda));
+        if ($request->hasFile($field)) {
+            if ($data->$field && File::exists(public_path($data->$field))) {
+                File::delete(public_path($data->$field));
             }
-            $file = $request->file('skkanda');
+
+            $file = $request->file($field);
             $namaFile = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
-            $tujuanPath = public_path($uploadPaths['skkanda']);
+
+            $tujuanPath = public_path($path);
             if (!File::exists($tujuanPath)) {
                 File::makeDirectory($tujuanPath, 0777, true);
             }
+
             $file->move($tujuanPath, $namaFile);
-            $data->skkanda = $uploadPaths['skkanda'] . '/' . $namaFile;
+
+            $data->$field = $path . '/' . $namaFile;
         }
-
-        // Proses upload file lainnya
-        foreach ($uploadPaths as $field => $path) {
-            if ($field == 'skkanda') continue; // Sudah di-handle
-
-            if ($request->hasFile($field)) {
-                if ($data->$field && File::exists(public_path($data->$field))) {
-                    File::delete(public_path($data->$field));
-                }
-
-                $file = $request->file($field);
-                $namaFile = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
-
-                $tujuanPath = public_path($path);
-                if (!File::exists($tujuanPath)) {
-                    File::makeDirectory($tujuanPath, 0777, true);
-                }
-
-                $file->move($tujuanPath, $namaFile);
-
-                $data->$field = $path . '/' . $namaFile;
-            }
-        }
-
-        $data->save();
-
-        return redirect()->back()->with('create', 'Data berhasil diperbarui!');
     }
+
+    // Reset verifikasipu jadi null otomatis
+    $data->verifikasipu = null;
+
+    $data->save();
+
+    return redirect()->back()->with('create', 'Data berhasil diperbarui!');
+}
+
 }
 
 
