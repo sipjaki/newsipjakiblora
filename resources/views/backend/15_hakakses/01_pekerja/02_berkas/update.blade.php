@@ -52,31 +52,35 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <button
+                       <a href="{{ url()->previous() }}">
+                            <button
+                        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
+                        onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
                         style="
-                            background: linear-gradient(45deg, #6b7280, #4b5563);
+                            background: linear-gradient(45deg, #6c757d, #adb5bd);
                             color: white;
-                            padding: 10px 20px;
                             border: none;
-                            border-radius: 15px;
+                            margin-right: 10px;
+                            padding: 10px 20px;
+                            border-radius: 10px;
                             font-size: 16px;
+                            font-weight: bold;
                             cursor: pointer;
                             display: inline-flex;
                             align-items: center;
                             gap: 8px;
                             transition: all 0.3s ease;
                         "
-                        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
-                        onmouseout="this.style.background='linear-gradient(45deg, #6b7280, #4b5563)'; this.style.color='white'; this.style.transform='scale(1)';"
-                        onclick="history.back();"
                         >
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            viewBox="0 0 16 16" style="margin-right: 8px;">
+                            viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
-                            d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+                                d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
                         </svg>
                         Kembali
                         </button>
+
+                        </a>
 
         </div>
         <hr>
