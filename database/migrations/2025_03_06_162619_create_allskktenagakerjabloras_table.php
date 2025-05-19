@@ -33,6 +33,7 @@ return new class extends Migration
 
                     $table->string('uploadktp')->nullable();
                     $table->string('uploadfoto')->nullable();
+
                     $table->string('uploadijazah')->nullable();
                     $table->string('uploadpengalaman')->nullable();
                     $table->string('uploadkebenarandata')->nullable();
