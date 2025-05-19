@@ -84,40 +84,41 @@
                                     <div class="col-md-6">
                                         <!-- Nama Kegiatan -->
                                         {{--  --}}
-                                   <div class="mb-3">
-                                        <label class="form-label" for="skkanda">
-                                            <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> SKK Anda
-                                        </label>
+<div class="mb-3">
+    <label class="form-label" for="skkanda">
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> SKK Anda
+    </label>
 
-                                        @if($data->skkanda)
-                                            @php
-                                                $relativePath = 'storage/' . $data->skkanda;
-                                                $fullPath = public_path($relativePath);
-                                                $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-                                                $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
-                                            @endphp
+    @if($data->skkanda)
+        @php
+            $relativePath = $data->skkanda; // path relatif dari public/
+            $fullPath = public_path($relativePath); // path lengkap
+            $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+        @endphp
 
-                                            <div class="mb-2 text-center">
-                                                @if(file_exists($fullPath))
-                                                    @if($isImage)
-                                                        <img src="{{ asset($relativePath) }}" alt="Preview Gambar" style="max-height: 300px; border: 1px solid #ccc;">
-                                                    @elseif($ext === 'pdf')
-                                                        <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                    @else
-                                                        <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
-                                                    @endif
-                                                @else
-                                                    <p class="text-danger">File lama tidak ditemukan di server.</p>
-                                                @endif
-                                            </div>
-                                        @endif
+        <div class="mb-2 text-center">
+            @if(file_exists($fullPath))
+                @if($isImage)
+                    <img src="{{ asset($relativePath) }}" alt="Preview SKK" style="max-height: 300px; border: 1px solid #ccc;">
+                @elseif($ext === 'pdf')
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                @else
+                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                @endif
+            @else
+                <p class="text-danger">File lama tidak ditemukan di server.</p>
+            @endif
+        </div>
+    @endif
 
-                                        <input type="file" id="skkanda" name="skkanda" class="form-control @error('skkanda') is-invalid @enderror">
-                                        Ket : Untuk Peserta yang belum punya SKK kosongkan saja !!
-                                        @error('skkanda')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+    <input type="file" id="skkanda" name="skkanda" class="form-control @error('skkanda') is-invalid @enderror">
+    <small class="text-muted">Ket: Untuk Peserta yang belum punya SKK, kosongkan saja.</small>
+    @error('skkanda')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
 
 <div class="mb-3">
     <label class="form-label" for="uploadktp">
@@ -148,11 +149,47 @@
     @endif
 
     <input type="file" id="uploadktp" name="uploadktp" class="form-control @error('uploadktp') is-invalid @enderror">
-    <small class="text-muted">Kosongkan jika tidak ingin mengubah file KTP.</small>
     @error('uploadktp')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+
+<div class="mb-3">
+    <label class="form-label" for="uploadfoto">
+        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload Foto
+    </label>
+
+    @if($data->uploadfoto)
+        @php
+            $relativePath = $data->uploadfoto; // path relatif dari public/
+            $fullPath = public_path($relativePath);
+            $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+        @endphp
+
+        <div class="mb-2 text-center">
+            @if(file_exists($fullPath))
+                @if($isImage)
+                    <img src="{{ asset($relativePath) }}" alt="Preview Foto" style="max-height: 300px; border: 1px solid #ccc;">
+                @elseif($ext === 'pdf')
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                @else
+                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                @endif
+            @else
+                <p class="text-danger">File lama tidak ditemukan di server.</p>
+            @endif
+        </div>
+    @endif
+
+    <input type="file" id="uploadfoto" name="uploadfoto" class="form-control @error('uploadfoto') is-invalid @enderror">
+    {{-- <small class="text-muted">Ket: Masukkan foto terbaru dengan format JPG/PNG/PDF.</small> --}}
+    @error('uploadfoto')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+
 
 
                                     </div>
