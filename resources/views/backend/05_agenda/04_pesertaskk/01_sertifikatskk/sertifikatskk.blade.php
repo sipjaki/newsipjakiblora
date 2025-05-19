@@ -51,7 +51,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
 
-                <a href="/bekepaladinas">
+                {{-- <a href="/bekepaladinas">
                     <button
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                         onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -66,7 +66,7 @@
                             Kembali
                         </span>
                     </button>
-                </a>
+                </a> --}}
         </div>
         <hr>
 
