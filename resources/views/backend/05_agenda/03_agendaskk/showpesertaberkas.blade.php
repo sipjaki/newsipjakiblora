@@ -1598,9 +1598,9 @@ button:hover {
         });
     });
 </script>
-<hr>
 
-  @can('pekerja')
+@can('pekerja')
+<hr>
 
         @if ($datapeserta->verifikasipu === 'dikembalikan')
        <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
