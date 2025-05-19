@@ -1545,29 +1545,29 @@ Download Berkas .zip/.rar Peserta
   </style>
 
   <hr>
-
-  <a href="">
-      <button
-      style="
-        background: linear-gradient(45deg, #FFD700, #28a745);
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 10px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-    "
-    onmouseover="this.style.opacity='0.9'; this.style.transform='scale(1.05)'"
-    onmouseout="this.style.opacity='1'; this.style.transform='scale(1)'"
->
-<i class="bi bi-pencil-square"></i> Perbaikan Data
-</button>
+<a href="#">
+    <button
+        style="
+            background: linear-gradient(45deg, #FFD700, #28a745);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        "
+        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
+        onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #28a745)'; this.style.color='white'; this.style.transform='scale(1)'"
+    >
+        <i class="bi bi-pencil-square"></i> Perbaikan Data
+    </button>
 </a>
+
 
 <hr>
 
