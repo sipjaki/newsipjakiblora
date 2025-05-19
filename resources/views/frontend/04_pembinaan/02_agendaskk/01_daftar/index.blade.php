@@ -774,22 +774,22 @@ table.zebra-table {
 
 <div class="row" style="margin-top: -20px;">
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
-    <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
+       @php
+    $fileDownloaddata = asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx');
+@endphp
 
-    <button type="button" onclick="downloadDocx()" style="background: none; border: none; color: rgb(0, 26, 255); text-decoration: underline; cursor: pointer;">
-        Contoh Surat Pernyataan <i class="bi bi-download"></i>
-    </button>
-</label>
 
-<script>
-    function downloadDocx() {
-        // Baru generate URL saat diklik
-        const url = "{{ asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx') }}";
-        window.location.href = url;
-    }
-</script>
-
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
+        <br>
+        @if ($fileDownloaddata)
+            <a href="{{ $fileDownloaddata }}" download style="color:rgb(0, 26, 255);">
+                Contoh Surat Pernyataan <i class="bi bi-download"></i>
+            </a>
+        @else
+            <span style="color: gray;">Contoh belum tersedia</span>
+        @endif
+    </label>
 
     <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
     <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div>
@@ -1333,29 +1333,26 @@ function previewFile(previewId, input) {
 </div>
 </div>
 
-
 <div class="row" style="margin-top: -20px;">
+<div class="col-md-4" style="{{ $divStyle }}">
+@php
+    $fileDownloaddata = asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx');
+@endphp
 
-    <div class="col-md-4" style="{{ $divStyle }}">
-<label class="form-label text-start" style="{{ $labelStyle }}">
-    <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
-
-    <button type="button" onclick="downloadDocx()" style="background: none; border: none; color: rgb(0, 26, 255); text-decoration: underline; cursor: pointer;">
-        Contoh Surat Pernyataan <i class="bi bi-download"></i>
-    </button>
-</label>
-
-<script>
-    function downloadDocx() {
-        // Baru generate URL saat diklik
-        const url = "{{ asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx') }}";
-        window.location.href = url;
-    }
-</script>
+    <label class="form-label text-start" style="{{ $labelStyle }}">
+        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
+        @if ($fileDownloaddata)
+            <a href="{{ $fileDownloaddata }}" download style="color:rgb(0, 26, 255);">
+                Contoh Surat Pernyataan <i class="bi bi-download"></i>
+            </a>
+        @else
+            <span style="color: gray;">Contoh belum tersedia</span>
+        @endif
+    </label>
 
     <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
     <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div>
-    <div id="kebenaranDataPreview" class="preview-container"></div>
+    {{-- <div id="kebenaranDataPreview" class="preview-container"></div> --}}
 </div>
 
 </div>
