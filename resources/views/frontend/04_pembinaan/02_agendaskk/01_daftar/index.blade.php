@@ -793,54 +793,12 @@ table.zebra-table {
 
     <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
     <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div>
-    <div id="kebenaranDataPreview" class="preview-container"></div>
-</div>
-
-<div class="col-md-4" style="{{ $divStyle }}">
-    <div style="margin-top: 10px;">
-    <iframe
-        src="/assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx"
-        style="width:100%; height:500px;"
-        frameborder="0">
-    </iframe>
+    {{-- <div id="kebenaranDataPreview" class="preview-container"></div> --}}
 </div>
 
 </div>
 
 </div>
-
-<script>
-function previewFile(previewId, input) {
-    const file = input.files[0];
-    const previewContainer = document.getElementById(previewId);
-    previewContainer.innerHTML = '';  // Clear previous preview
-
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const fileType = file.type.split('/')[0];
-
-            if (fileType === 'image') {
-                const imgElement = document.createElement('img');
-                imgElement.src = e.target.result;
-                imgElement.style.width = '100%';
-                imgElement.style.maxWidth = '210mm';  // A4 width
-                imgElement.style.height = 'auto';
-                previewContainer.appendChild(imgElement);
-            } else if (fileType === 'application') {
-                if (file.type === 'application/pdf') {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = e.target.result;
-                    iframe.style.width = '100%';
-                    iframe.style.height = '400px';  // Adjust as needed
-                    previewContainer.appendChild(iframe);
-                }
-            }
-        };
-        reader.readAsDataURL(file);
-    }
-}
-</script>
 
                       <div style="display: flex; justify-content: flex-end; margin-bottom:20px; margin-top:20px;">
                             <div class="flex justify-end">
@@ -1352,7 +1310,7 @@ function previewFile(previewId, input) {
 
     <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
     <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div>
-    {{-- <div id="kebenaranDataPreview" class="preview-container"></div> --}}
+    <div id="kebenaranDataPreview" class="preview-container"></div>
 </div>
 
 </div>
