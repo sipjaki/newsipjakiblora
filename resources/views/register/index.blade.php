@@ -283,18 +283,18 @@
             @csrf
 
             <div class="input-group">
-                <i class="fas fa-user input-icon" style="margin-top:-23px;"></i>
-                <input style="text-transform: uppercase;" type="text" name="name" class="input-field" placeholder="Nama Lengkap" required>
-                @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                <span style="font-size:13px; color:red;">Ket : Isi Nama Lengkap Sesuai Dengan KTP, dan HURUF CAPITAL</span>
-            </div>
+            <i class="fas fa-user input-icon" style="margin-top:-23px;"></i>
+            <input style="text-transform: uppercase;" type="text" name="name" class="input-field" placeholder="Nama Lengkap" value="{{ old('name') }}" required>
+            @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <span style="font-size:13px; color:red;">Ket : Isi Nama Lengkap Sesuai Dengan KTP, dan HURUF CAPITAL</span>
+        </div>
 
-            <div class="input-group">
-                <i class="fas fa-user-tag input-icon" style="margin-top:-23px;"></i>
-                <input type="text" name="username" class="input-field" placeholder="Username" required>
-                @error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                <span style="font-size:13px; color:red;">Ket : Isi dengan TKK-( NIK - Anda ) Contoh : TKK-331611XXX... </span>
-            </div>
+        <div class="input-group">
+            <i class="fas fa-user-tag input-icon" style="margin-top:-23px;"></i>
+            <input type="text" name="username" class="input-field" placeholder="Username" value="{{ old('username') }}" required>
+            @error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <span style="font-size:13px; color:red;">Ket : Isi dengan TKK-( NIK - Anda ) Contoh : TKK-331611XXX... </span>
+        </div>
 
             <div class="input-group">
                 <i class="fas fa-users input-icon"></i>
@@ -324,17 +324,18 @@
                 @error('statusadmin_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
 
-            <div class="input-group">
-                <i class="fas fa-phone input-icon"></i>
-                <input type="text" name="phone_number" class="input-field" placeholder="Nomor HP" required>
-                @error('phone_number') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            </div>
+          <div class="input-group">
+    <i class="fas fa-phone input-icon"></i>
+    <input type="text" name="phone_number" class="input-field" placeholder="Nomor HP" value="{{ old('phone_number') }}" required>
+    @error('phone_number') <div class="invalid-feedback">{{ $message }}</div> @enderror
+</div>
 
-            <div class="input-group">
-                <i class="fas fa-envelope input-icon"></i>
-                <input type="email" name="email" class="input-field" placeholder="Email" required>
-                @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            </div>
+<div class="input-group">
+    <i class="fas fa-envelope input-icon"></i>
+    <input type="email" name="email" class="input-field" placeholder="Email" value="{{ old('email') }}" required>
+    @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+</div>
+
             <div class="input-group position-relative">
                 <i class="fas fa-lock input-icon"></i>
                 <input type="password" id="password" name="password" class="input-field" placeholder="Password" required>
