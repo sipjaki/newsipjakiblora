@@ -1545,9 +1545,12 @@ Download Berkas .zip/.rar Peserta
   </style>
 
   <hr>
-<a href="#">
-    <button
-        style="
+
+  @can('pekerja')
+
+  <a href="#">
+      <button
+      style="
             background: linear-gradient(45deg, #FFD700, #28a745);
             color: white;
             padding: 10px 20px;
@@ -1560,13 +1563,14 @@ Download Berkas .zip/.rar Peserta
             display: inline-flex;
             align-items: center;
             gap: 8px;
-        "
+            "
         onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
         onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #28a745)'; this.style.color='white'; this.style.transform='scale(1)'"
-    >
+        >
         <i class="bi bi-pencil-square"></i> Perbaikan Data
     </button>
 </a>
+@endcan
 
 
 <hr>
