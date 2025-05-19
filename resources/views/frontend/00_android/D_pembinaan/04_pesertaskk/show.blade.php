@@ -218,7 +218,7 @@ h5 {
 </div>
 
                             <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px;">
-                                <table class="custom-fl-table" id="sortableTable" style="min-width: 1000px; border-collapse: collapse;">
+                                <table class="custom-fl-table" id="sortableTable" style="min-width: 1000px; border-collapse: collapse;" style="fixed;">
                                     <thead>
                                         <tr>
                                         <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:60px;">No</th>
