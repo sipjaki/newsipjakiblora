@@ -547,6 +547,7 @@ button:hover {
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -561,6 +562,7 @@ button:hover {
   </svg>
   Kembali
 </button>
+
 
 </a>
 
