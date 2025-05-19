@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\File;
+
 use Illuminate\Support\Str;
 use ZipArchive;
 use App\Models\allskktenagakerjablora;
@@ -1368,6 +1370,61 @@ public function perbaikandataskk($id)
 }
 
 
+// Update data existing
+    public function perbaikandataskkupdate(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'skkanda' => 'nullable|string|max:255',
+
+            'uploadktp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'uploadfoto' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
+            'uploadijazah' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'uploadpengalaman' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'uploadkebenarandata' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'uploadnpwp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'uploaddaftarriwayathidup' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+        ]);
+
+        $data = allskktenagakerjablora::findOrFail($id);
+
+        $uploadPaths = [
+            'uploadktp' => '04_pembinaan/03_sertifikasi/01_uploadktp',
+            'uploadfoto' => '04_pembinaan/03_sertifikasi/02_uploadfoto',
+            'uploadijazah' => '04_pembinaan/03_sertifikasi/03_uploadijazah',
+            'uploadpengalaman' => '04_pembinaan/03_sertifikasi/04_uploadpengalaman',
+            'uploadnpwp' => '04_pembinaan/03_sertifikasi/05_uploadnpwp',
+            'uploaddaftarriwayathidup' => '04_pembinaan/03_sertifikasi/06_uploadriwayathidup',
+            'uploadkebenarandata' => '04_pembinaan/03_sertifikasi/07_uploadkebenarandata',
+            'skkanda' => '04_pembinaan/03_sertifikasi/07_skkanda',
+        ];
+
+        $data->skkanda = $validatedData['skkanda'] ?? $data->skkanda;
+
+        foreach ($uploadPaths as $field => $path) {
+            if ($request->hasFile($field)) {
+                // Hapus file lama jika ada
+                if ($data->$field && File::exists(public_path($data->$field))) {
+                    File::delete(public_path($data->$field));
+                }
+
+                $file = $request->file($field);
+                $namaFile = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
+
+                $tujuanPath = public_path($path);
+                if (!File::exists($tujuanPath)) {
+                    File::makeDirectory($tujuanPath, 0777, true);
+                }
+
+                $file->move($tujuanPath, $namaFile);
+
+                $data->$field = $path . '/' . $namaFile;
+            }
+        }
+
+        $data->save();
+
+        return redirect()->back()->with('success', 'Data berhasil diperbarui dan file diupload!');
+    }
 
 }
 

@@ -942,6 +942,7 @@ Route::post('/peserta/downloadberkas/{id}', [PembinaanController::class, 'downlo
 
 // SAAT INI
 Route::get('/perbaikandataskk/{id}', [PembinaanController::class, 'perbaikandataskk'])->middleware('auth');
+Route::post('/perbaikandataskk/createnew/{id}', [PembinaanController::class, 'perbaikandataskkupdate'])->middleware('auth')->name('berkasperbaikandatapeserta');
 
 // DASHBOARD PESERTA
 Route::get('/bepesertaskkshowberkas/show/{agenda_id}/{user_id}', [PembinaanController::class, 'bepesertaskkshowberkasakunpeserta'])->middleware('auth');
