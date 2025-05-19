@@ -1543,10 +1543,6 @@ Download Berkas .zip/.rar Peserta
 </script>
 <hr>
 
-
-
-  <hr>
-
   @can('pekerja')
 
         @if ($datapeserta->verifikasipu === 'dikembalikan')
