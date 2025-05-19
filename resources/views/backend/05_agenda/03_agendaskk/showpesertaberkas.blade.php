@@ -2181,7 +2181,7 @@ Download Berkas .zip/.rar Peserta
                     @endcan
 
 
-                    @can('super_admin', 'admin')
+                    @canany(['super_admin', 'admin'])
 
 
                     <div class="mb-3" style="margin-top: -50px;">
@@ -2194,7 +2194,7 @@ Download Berkas .zip/.rar Peserta
                         placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $datapeserta->catatanvalidasi ?? '') }}</textarea>
                     </div>
 
-                    @endcan
+                    @endcanany
 
                 </td>
 
