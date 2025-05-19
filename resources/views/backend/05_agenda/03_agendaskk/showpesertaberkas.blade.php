@@ -1549,7 +1549,7 @@ Download Berkas .zip/.rar Peserta
        <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
   <div style="display: flex; align-items: center; gap: 15px;">
     <p style="margin: 0;">
-      Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
+      Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i> {{$datapeserta->agendaskk->namakegiatan}}
     </p>
 
     <a href="#">
