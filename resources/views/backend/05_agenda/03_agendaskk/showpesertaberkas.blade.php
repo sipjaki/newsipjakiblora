@@ -1476,35 +1476,29 @@ Download Berkas .zip/.rar Peserta
     </div>
 
   <div class="hide-on-mobile" style="display: flex; justify-content: flex-end; padding: 10px;">
-    <!-- Tombol Download PDF -->
-    <button id="downloadPDF" class="download-btn font-size:16px;">
-        <i class="bi bi-download" style="margin-right: 10px;"></i>
-        <span style="font-size: 16px;">Download PDF</span>
-    </button>
+   <button
+  id="downloadPDF"
+  style="
+    background: linear-gradient(45deg, #6c757d, #adb5bd); /* abu-abu tua ke abu-abu muda */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  "
+  onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
+  onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
+>
+  <i class="bi bi-download" style="margin-right: 5px;"></i>
+  <span>Download PDF</span>
+</button>
 </div>
-
-
-    <style>
-        .download-btn {
-            background-color: #001f3f;
-            color: white;
-            border: 2px solid #001f3f;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Efek Hover */
-        .download-btn:hover {
-            background-color: white !important;
-            color: #001f3f !important;
-            border: 2px solid #001f3f !important;
-        }
-    </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -1547,6 +1541,7 @@ Download Berkas .zip/.rar Peserta
 
         @if ($datapeserta->verifikasipu === 'dikembalikan')
        <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+
   <div style="display: flex; align-items: center; gap: 15px;">
     <p style="margin: 0;">
       Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i> {{$datapeserta->namakegiatan}}
