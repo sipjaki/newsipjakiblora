@@ -672,7 +672,7 @@ Download Berkas .zip/.rar Peserta
     <h5 style="color: navy; font-weight:800; font-size:16px;">I. IDENTITAS PESERTA</h4>
 
         <div class="table-responsive">
-            <table class="custom-fl-table table-striped">
+            <table class="zebra-table table-striped">
 
                 <tr>
                     <td style="width:50px; text-align:center; font-size:16px;">1</td>
