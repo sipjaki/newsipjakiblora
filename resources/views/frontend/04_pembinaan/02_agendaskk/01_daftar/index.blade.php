@@ -796,9 +796,41 @@ table.zebra-table {
     {{-- <div id="kebenaranDataPreview" class="preview-container"></div> --}}
 </div>
 
-</div>
 
 </div>
+
+<script>
+function previewFile(previewId, input) {
+    const file = input.files[0];
+    const previewContainer = document.getElementById(previewId);
+    previewContainer.innerHTML = '';  // Clear previous preview
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const fileType = file.type.split('/')[0];
+
+            if (fileType === 'image') {
+                const imgElement = document.createElement('img');
+                imgElement.src = e.target.result;
+                imgElement.style.width = '100%';
+                imgElement.style.maxWidth = '210mm';  // A4 width
+                imgElement.style.height = 'auto';
+                previewContainer.appendChild(imgElement);
+            } else if (fileType === 'application') {
+                if (file.type === 'application/pdf') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = e.target.result;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px';  // Adjust as needed
+                    previewContainer.appendChild(iframe);
+                }
+            }
+        };
+        reader.readAsDataURL(file);
+    }
+}
+</script>
 
                       <div style="display: flex; justify-content: flex-end; margin-bottom:20px; margin-top:20px;">
                             <div class="flex justify-end">
