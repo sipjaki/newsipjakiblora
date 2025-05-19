@@ -2282,7 +2282,7 @@ button:hover {
 
                     <div class="mb-3" style="margin-top: -50px;">
                         <label for="catatanvalidasi" class="form-label">
-                            <i class="bi bi-card-text me-1"></i> Catatan Keterangan Berkas
+                            <i class="bi bi-card-text me-1"></i> Catatan Keterangan Berkas | Max 255 Karakter
                         </label>
 
                         <textarea name="catatanvalidasi" id="catatanvalidasi" class="form-control"
