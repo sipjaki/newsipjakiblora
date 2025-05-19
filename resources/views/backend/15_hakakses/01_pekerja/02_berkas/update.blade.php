@@ -83,58 +83,35 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Nama Kegiatan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kategoripelatihan_id">
-                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Kategori Pelatihan
-                                            </label>
-                                            <select id="kategoripelatihan_id" name="kategoripelatihan_id" class="form-control @error('kategoripelatihan_id') is-invalid @enderror">
-                                                <option value="">-- Pilih Kategori --</option>
-                                                @foreach ($kategoriList as $kategori)
-                                                    <option value="{{ $kategori->id }}" {{ old('kategoripelatihan_id', $data->kategoripelatihan_id) == $kategori->id ? 'selected' : '' }}>
-                                                        {{ $kategori->kategoripelatihan }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                            @error('kategoripelatihan_id')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="user_id">
-                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> LSP Penerbit
-                                            </label>
-                                            <select id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror">
-                                                @if ($data && $data->user)
-                                                    <option value="{{ $data->user_id }}" selected>
-                                                        {{ $data->user->name }}
-                                                    </option>
-                                                @else
-                                                    <option value="">-- Pilih LSP Penerbit --</option>
-                                                @endif
-
-                                                @foreach ($lspList as $lsp)
-                                                    @if (!$data || $lsp->id != $data->user_id)
-                                                        <option value="{{ $lsp->id }}" {{ old('user_id') == $lsp->id ? 'selected' : '' }}>
-                                                            {{ $lsp->name }}
-                                                        </option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                            @error('user_id')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-
                                         {{--  --}}
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namakegiatan">
-                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
+                                    <div class="mb-3">
+                                            <label class="form-label" for="skkanda">
+                                                <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> SKK Anda
                                             </label>
-                                            <input type="text" id="namakegiatan" name="namakegiatan" class="form-control @error('namakegiatan') is-invalid @enderror" value="{{ old('namakegiatan', $data->namakegiatan) }}" />
-                                            @error('namakegiatan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+
+                                            @if($data->skkanda)
+                                                @php
+                                                    $path = 'storage/' . $data->skkanda;
+                                                    $isImage = in_array(strtolower(pathinfo($path, PATHINFO_EXTENSION)), ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+                                                    $fullPath = public_path($path);
+                                                @endphp
+
+                                                <div class="mb-2 text-center">
+                                                    @if(file_exists($fullPath))
+                                                        @if($isImage)
+                                                            <img src="{{ asset($path) }}" alt="Preview SKK" style="max-height: 300px; border: 1px solid #ccc;">
+                                                        @else
+                                                            <iframe src="{{ asset($path) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                        @endif
+                                                    @else
+                                                        <p class="text-danger">File tidak ditemukan atau telah dihapus.</p>
+                                                    @endif
+                                                </div>
+                                            @endif
+
+                                            <input type="file" id="skkanda" name="skkanda" class="form-control @error('skkanda') is-invalid @enderror">
+                                            @error('skkanda')
+                                                <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
@@ -169,49 +146,7 @@
                                             @enderror
                                         </div>
 
-                                        <!-- Penutupan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="penutupan">
-                                                <i class="bi bi-calendar-check" style="margin-right: 8px; color: navy;"></i> Penutupan
-                                            </label>
-                                            <input type="date" id="penutupan" name="penutupan" class="form-control @error('penutupan') is-invalid @enderror" value="{{ old('penutupan', $data->penutupan) }}" />
-                                            @error('penutupan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
 
-                                        <!-- Jumlah Peserta -->
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="jumlahpeserta">
-                                                        <i class="bi bi-people" style="margin-right: 8px; color: navy;"></i> Jumlah Peserta
-                                                    </label>
-                                                    <input type="number" id="jumlahpeserta" name="jumlahpeserta" class="form-control @error('jumlahpeserta') is-invalid @enderror" value="{{ old('jumlahpeserta', $data->jumlahpeserta) }}" />
-                                                    @error('jumlahpeserta')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </div>
-
-                                        <!-- Lokasi -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="lokasi">
-                                                <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Lokasi
-                                            </label>
-                                            <input type="text" id="lokasi" name="lokasi" class="form-control @error('lokasi') is-invalid @enderror" value="{{ old('lokasi', $data->lokasi) }}" />
-                                            @error('lokasi')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Keterangan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="keterangan">
-                                                <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Keterangan
-                                            </label>
-                                            <input type="text" id="keterangan" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" value="{{ old('keterangan', $data->keterangan) }}" />
-                                            @error('keterangan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
                                     </div>
 
                                     <!-- Right Column -->
@@ -227,29 +162,6 @@
                                             @enderror
                                         </div>
 
-                                        <!-- Foto -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="foto">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Kegiatan
-                                            </label>
-                                            <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" />
-                                            @error('foto')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                            <div style="margin-top: 10px;">
-                                                @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
-                                                    <!-- Menampilkan gambar dari storage -->
-                                                    <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                                @elseif($data->foto)
-                                                    <!-- Menampilkan gambar dari path luar storage -->
-                                                    <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                                @else
-                                                    <!-- Placeholder jika tidak ada data -->
-                                                    <p>Data belum diupdate</p>
-                                                @endif
-                                            </div>
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>
