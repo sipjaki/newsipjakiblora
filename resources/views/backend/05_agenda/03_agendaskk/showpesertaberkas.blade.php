@@ -2213,7 +2213,7 @@ Download Berkas .zip/.rar Peserta
 
                     <div class="mb-3" style="margin-top: -50px;">
                     <label for="catatanvalidasi" class="form-label" style="color: navy">
-                                    <i class="bi bi-card-text me-1" style="color: navy;"></i> Catatan Keterangan Berkas
+                                    <i class="bi bi-card-text me-1" style="color: navy;"></i> <span style="color: navy;">Catatan Keterangan Berkas</span>
                                 </label>
                                 <div class="form-control" style="min-height: 120px; white-space: pre-wrap; background-color: #f8f9fa;">
                             {{ $datapeserta->catatanvalidasi ?? '-' }}
