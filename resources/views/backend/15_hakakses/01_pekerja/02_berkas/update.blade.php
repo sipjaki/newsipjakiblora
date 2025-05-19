@@ -86,7 +86,7 @@
                                         {{--  --}}
 <div class="mb-3">
     <label class="form-label" for="skkanda">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> SKK Anda
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i>  Upload Screenshot SKK Saudara | .pdf maksimal 5MB
     </label>
 
     @if($data->skkanda)
@@ -119,10 +119,11 @@
     @enderror
 </div>
 
+<br>
 
 <div class="mb-3">
     <label class="form-label" for="uploadktp">
-        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload KTP
+        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload KTP | .pdf,jpg,jpeg,png | Max 5MB
     </label>
 
     @if($data->uploadktp)
@@ -154,9 +155,11 @@
     @enderror
 </div>
 
+<br>
+
 <div class="mb-3">
     <label class="form-label" for="uploadfoto">
-        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload Foto
+        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i>  Upload Pas Foto 4X6 Background Merah jpg,jpeg,png | Max 5MB
     </label>
 
     @if($data->uploadfoto)
@@ -189,9 +192,11 @@
     @enderror
 </div>
 
+<br>
+
 <div class="mb-3">
     <label class="form-label" for="uploadijazah">
-        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload Ijazah
+        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload Ijazah | .pdf | Max 5MB
     </label>
 
     @if($data->uploadijazah)
@@ -218,11 +223,13 @@
     @endif
 
     <input type="file" id="uploadijazah" name="uploadijazah" class="form-control @error('uploadijazah') is-invalid @enderror">
-    <small class="text-muted">Ket: Masukkan file ijazah terbaru dengan format JPG/PNG/PDF.</small>
+    {{-- <small class="text-muted">Ket: Masukkan file ijazah terbaru dengan format JPG/PNG/PDF.</small> --}}
     @error('uploadijazah')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+
+<br>
 
                                     </div>
 
@@ -231,7 +238,7 @@
 
                                         <div class="mb-3">
                                     <label class="form-label" for="uploadpengalaman">
-                                        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Pengalaman
+                                        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Pengalaman | .pdf | Max 5MB
                                     </label>
 
                                     @if($data->uploadpengalaman)
@@ -264,10 +271,11 @@
                                     @enderror
                                 </div>
 
+<br>
 
                                 <div class="mb-3">
     <label class="form-label" for="uploadkebenarandata">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Kebenaran Data
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
     </label>
 
     @if($data->uploadkebenarandata)
@@ -300,10 +308,10 @@
     @enderror
 </div>
 
-
+<br>
 <div class="mb-3">
     <label class="form-label" for="uploadnpwp">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload NPWP
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload NPWP | .pdf | Max 5MB
     </label>
 
     @if($data->uploadnpwp)
@@ -337,9 +345,11 @@
 </div>
 
 
+<br>
+
 <div class="mb-3">
     <label class="form-label" for="uploaddaftarriwayathidup">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Daftar Riwayat Hidup
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Daftar Riwayat Hidup | .pdf | Max 5MB
     </label>
 
     @if($data->uploaddaftarriwayathidup)
