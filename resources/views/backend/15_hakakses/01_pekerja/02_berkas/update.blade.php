@@ -113,7 +113,7 @@
     @endif
 
     <input type="file" id="skkanda" name="skkanda" class="form-control @error('skkanda') is-invalid @enderror">
-    <small class="text-muted">Ket: Untuk Peserta yang belum punya SKK, kosongkan saja.</small>
+    {{-- <small class="text-muted">Ket: Untuk Peserta yang belum punya SKK, kosongkan saja.</small> --}}
     @error('skkanda')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -302,7 +302,7 @@
     @endif
 
     <input type="file" id="uploadkebenarandata" name="uploadkebenarandata" class="form-control @error('uploadkebenarandata') is-invalid @enderror">
-    <small class="text-muted">Ket: Masukkan file kebenaran data terbaru dengan format JPG/PNG/PDF.</small>
+    {{-- <small class="text-muted">Ket: Masukkan file kebenaran data terbaru dengan format JPG/PNG/PDF.</small> --}}
     @error('uploadkebenarandata')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -338,7 +338,7 @@
     @endif
 
     <input type="file" id="uploadnpwp" name="uploadnpwp" class="form-control @error('uploadnpwp') is-invalid @enderror">
-    <small class="text-muted">Ket: Masukkan file NPWP terbaru dengan format JPG/PNG/PDF.</small>
+    {{-- <small class="text-muted">Ket: Masukkan file NPWP terbaru dengan format JPG/PNG/PDF.</small> --}}
     @error('uploadnpwp')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -376,7 +376,7 @@
     @endif
 
     <input type="file" id="uploaddaftarriwayathidup" name="uploaddaftarriwayathidup" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror">
-    <small class="text-muted">Ket: Masukkan file Daftar Riwayat Hidup terbaru dengan format JPG/PNG/PDF.</small>
+    {{-- <small class="text-muted">Ket: Masukkan file Daftar Riwayat Hidup terbaru dengan format JPG/PNG/PDF.</small> --}}
     @error('uploaddaftarriwayathidup')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
