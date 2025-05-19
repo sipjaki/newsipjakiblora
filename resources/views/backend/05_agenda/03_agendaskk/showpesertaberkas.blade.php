@@ -1568,7 +1568,7 @@ button:hover {
                                             </div>
                                         </th>
 
-                                        @can('pekerja')
+                                        @canany(['pekerja', 'lsppenerbit'])
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                             <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                             @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
@@ -1580,7 +1580,7 @@ button:hover {
                                                 @endif
                                             </div>
                                         </th>
-                                        @endcan
+                                        @endcanany
 
                                         @canany(['super_admin', 'admin'])
                                             <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1641,8 +1641,8 @@ button:hover {
                                         </th>
 
 
-                                        @can('pekerja')
-                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
+                                            @canany(['pekerja', 'lsppenerbit'])
+                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_foto === 'tidak_sesuai')
                                                             <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1653,7 +1653,7 @@ button:hover {
                                                         @endif
                                                     </div>
                                                 </th>
-                                            @endcan
+                                            @endcanany
 
                                             @canany(['super_admin', 'admin'])
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1718,8 +1718,8 @@ button:hover {
                                                 </div>
                                         </th>
 
-                                          @can('pekerja')
-                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
+                                              @canany(['pekerja', 'lsppenerbit'])
+                                          <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_ijazah === 'tidak_sesuai')
                                                             <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1730,7 +1730,7 @@ button:hover {
                                                         @endif
                                                     </div>
                                                 </th>
-                                            @endcan
+                                            @endcanany
 
                                             @canany(['super_admin', 'admin'])
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1795,8 +1795,8 @@ button:hover {
                                                 </div>
                                                 </div>
                                         </th>
-                                                @can('pekerja')
-                                                    <th class="text-center" style="background-color: #e2e8f0; color: black;">
+                                                  @canany(['pekerja', 'lsppenerbit'])
+                                                  <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_pengalaman === 'tidak_sesuai')
                                                             <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1807,7 +1807,7 @@ button:hover {
                                                         @endif
                                                     </div>
                                                     </th>
-                                                @endcan
+                                                @endcanany
 
                                             @canany(['super_admin', 'admin'])
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1870,8 +1870,8 @@ button:hover {
                                                     </div>
                                                 </div>
                                         </th>
-                                        @can('pekerja')
-                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
+                                       @canany(['pekerja', 'lsppenerbit'])
+                                             <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                 <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                     @if ($datapeserta->validasi_kebenarandata === 'tidak_sesuai')
                                                         <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1882,7 +1882,7 @@ button:hover {
                                                     @endif
                                                 </div>
                                             </th>
-                                        @endcan
+                                        @endcanany
 
                                         @canany(['super_admin', 'admin'])
                                             <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -1963,8 +1963,8 @@ button:hover {
                                                 </div>
                                         </th>
 
-                                     @can('pekerja')
-                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
+                                        @canany(['pekerja', 'lsppenerbit'])
+                                                       <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                 <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                     @if ($datapeserta->validasi_npwp === 'tidak_sesuai')
                                                         <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1975,7 +1975,7 @@ button:hover {
                                                     @endif
                                                 </div>
                                             </th>
-                                        @endcan
+                                        @endcanany
 
                                         @canany(['super_admin', 'admin'])
                                             <th class="text-center" style="background-color: #e2e8f0; color: black;">
@@ -2035,8 +2035,9 @@ button:hover {
                                                     </div>
                                                 </div>
                                             </th>
-                                         @can('pekerja')
-                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
+
+                                         @canany(['pekerja', 'lsppenerbit'])
+                                               <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_daftarriwayathidup === 'tidak_sesuai')
                                                             <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -2047,7 +2048,7 @@ button:hover {
                                                         @endif
                                                     </div>
                                                 </th>
-                                            @endcan
+                                            @endcanany
 
                                             @canany(['super_admin', 'admin'])
                                                 <th class="text-center" style="background-color: #e2e8f0; color: black;">
