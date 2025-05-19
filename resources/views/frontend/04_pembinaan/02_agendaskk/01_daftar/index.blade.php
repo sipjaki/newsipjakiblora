@@ -1324,24 +1324,14 @@ function previewFile(previewId, input) {
 
 <div class="row" style="margin-top: -20px;">
 <div class="col-md-4" style="{{ $divStyle }}">
-    @php
-        $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first(); // ambil data ke-2 berdasarkan ID terkecil
-        $fileDownload = null;
-
-        if ($secondItem && $secondItem->berkas) {
-            $path = public_path('storage/' . $secondItem->berkas);
-            if (file_exists($path)) {
-                $fileDownload = asset('storage/' . $secondItem->berkas);
-            } else {
-                $fileDownload = asset($secondItem->berkas); // fallback jika path bukan di storage
-            }
-        }
-    @endphp
+@php
+    $fileDownloaddata = asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx');
+@endphp
 
     <label class="form-label text-start" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
-        @if ($fileDownload)
-            <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
+        @if ($fileDownloaddata)
+            <a href="{{ $fileDownloaddata }}" download style="color:rgb(0, 26, 255);">
                 Contoh Surat Pernyataan <i class="bi bi-download"></i>
             </a>
         @else
