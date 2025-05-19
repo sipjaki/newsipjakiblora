@@ -1607,7 +1607,7 @@ button:hover {
 
   <div style="display: flex; align-items: center; gap: 15px;">
     <p style="margin: 0;">
-      Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i> {{$datapeserta->namakegiatan}}
+      Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i> {{$datapeserta->namasekolah->namasekolah}}
     </p>
 
     <a href="/perbaikandataskk/">
