@@ -781,9 +781,9 @@ table.zebra-table {
 <label class="form-label text-start" style="{{ $labelStyle }}">
     <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
     @if ($fileDownloaddata)
-        <a href="{{ $fileDownloaddata }}" target="_blank" rel="noopener" style="color:rgb(0, 26, 255);">
+        <button type="button" onclick="window.open('{{ $fileDownloaddata }}', '_blank')" style="background:none;border:none;color:rgb(0,26,255);text-decoration:underline;cursor:pointer">
             Contoh Surat Pernyataan <i class="bi bi-download"></i>
-        </a>
+        </button>
     @else
         <span style="color: gray;">Contoh belum tersedia</span>
     @endif
@@ -1342,9 +1342,9 @@ function previewFile(previewId, input) {
 <label class="form-label text-start" style="{{ $labelStyle }}">
     <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
     @if ($fileDownloaddata)
-        <a href="{{ $fileDownloaddata }}" target="_blank" rel="noopener" style="color:rgb(0, 26, 255);">
+        <button type="button" onclick="window.open('{{ $fileDownloaddata }}', '_blank')" style="background:none;border:none;color:rgb(0,26,255);text-decoration:underline;cursor:pointer">
             Contoh Surat Pernyataan <i class="bi bi-download"></i>
-        </a>
+        </button>
     @else
         <span style="color: gray;">Contoh belum tersedia</span>
     @endif
