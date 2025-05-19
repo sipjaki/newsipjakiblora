@@ -1547,7 +1547,7 @@ Download Berkas .zip/.rar Peserta
       Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i> {{$datapeserta->namakegiatan}}
     </p>
 
-    <a href="#">
+    <a href="/404">
       <button
         style="
           background: linear-gradient(45deg, #FFD700, #28a745);
