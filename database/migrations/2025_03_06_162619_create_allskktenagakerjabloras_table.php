@@ -49,7 +49,6 @@ return new class extends Migration
                     $table->string('catatanvalidasi')->nullable();
 
                     $table->string('validasi_ktp')->nullable();
-
                     $table->string('validasi_foto')->nullable();
                     $table->string('validasi_ijazah')->nullable();
                     $table->string('validasi_pengalaman')->nullable();

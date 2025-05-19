@@ -395,6 +395,13 @@
 
 
 <input type="hidden" name="verifikasipu" value="">
+<input type="hidden" name="validasi_ktp" value="">
+<input type="hidden" name="validasi_foto" value="">
+<input type="hidden" name="validasi_ijazah" value="">
+<input type="hidden" name="validasi_pengalaman" value="">
+<input type="hidden" name="validasi_kebenarandata" value="">
+<input type="hidden" name="validasi_npwp" value="">
+<input type="hidden" name="validasi_daftarriwayathidup" value="">
 
 
                                     </div>

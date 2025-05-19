@@ -1449,6 +1449,13 @@ public function perbaikandataskk($id)
 
     // Reset verifikasipu jadi null otomatis
     $data->verifikasipu = null;
+    $data->validasi_ktp = null;
+    $data->validasi_foto = null;
+    $data->validasi_ijazah = null;
+    $data->validasi_pengalaman = null;
+    $data->validasi_kebenarandata = null;
+    $data->validasi_npwp = null;
+    $data->validasi_daftarriwayathidup = null;
 
     $data->save();
 
