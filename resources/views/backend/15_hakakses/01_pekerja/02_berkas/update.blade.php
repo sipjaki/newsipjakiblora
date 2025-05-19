@@ -258,11 +258,120 @@
                                     @endif
 
                                     <input type="file" id="uploadpengalaman" name="uploadpengalaman" class="form-control @error('uploadpengalaman') is-invalid @enderror">
-                                    <small class="text-muted">Ket: Masukkan file pengalaman terbaru dengan format JPG/PNG/PDF.</small>
+                                    {{-- <small class="text-muted">Ket: Masukkan file pengalaman terbaru dengan format JPG/PNG/PDF.</small> --}}
                                     @error('uploadpengalaman')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
+
+
+                                <div class="mb-3">
+    <label class="form-label" for="uploadkebenarandata">
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Kebenaran Data
+    </label>
+
+    @if($data->uploadkebenarandata)
+        @php
+            $relativePath = $data->uploadkebenarandata; // path relatif dari public/
+            $fullPath = public_path($relativePath);
+            $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+        @endphp
+
+        <div class="mb-2 text-center">
+            @if(file_exists($fullPath))
+                @if($isImage)
+                    <img src="{{ asset($relativePath) }}" alt="Preview Kebenaran Data" style="max-height: 300px; border: 1px solid #ccc;">
+                @elseif($ext === 'pdf')
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                @else
+                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                @endif
+            @else
+                <p class="text-danger">File lama tidak ditemukan di server.</p>
+            @endif
+        </div>
+    @endif
+
+    <input type="file" id="uploadkebenarandata" name="uploadkebenarandata" class="form-control @error('uploadkebenarandata') is-invalid @enderror">
+    <small class="text-muted">Ket: Masukkan file kebenaran data terbaru dengan format JPG/PNG/PDF.</small>
+    @error('uploadkebenarandata')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+
+<div class="mb-3">
+    <label class="form-label" for="uploadnpwp">
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload NPWP
+    </label>
+
+    @if($data->uploadnpwp)
+        @php
+            $relativePath = $data->uploadnpwp;
+            $fullPath = public_path($relativePath);
+            $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+        @endphp
+
+        <div class="mb-2 text-center">
+            @if(file_exists($fullPath))
+                @if($isImage)
+                    <img src="{{ asset($relativePath) }}" alt="Preview NPWP" style="max-height: 300px; border: 1px solid #ccc;">
+                @elseif($ext === 'pdf')
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                @else
+                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                @endif
+            @else
+                <p class="text-danger">File lama tidak ditemukan di server.</p>
+            @endif
+        </div>
+    @endif
+
+    <input type="file" id="uploadnpwp" name="uploadnpwp" class="form-control @error('uploadnpwp') is-invalid @enderror">
+    <small class="text-muted">Ket: Masukkan file NPWP terbaru dengan format JPG/PNG/PDF.</small>
+    @error('uploadnpwp')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+
+<div class="mb-3">
+    <label class="form-label" for="uploaddaftarriwayathidup">
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Daftar Riwayat Hidup
+    </label>
+
+    @if($data->uploaddaftarriwayathidup)
+        @php
+            $relativePath = $data->uploaddaftarriwayathidup;
+            $fullPath = public_path($relativePath);
+            $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+        @endphp
+
+        <div class="mb-2 text-center">
+            @if(file_exists($fullPath))
+                @if($isImage)
+                    <img src="{{ asset($relativePath) }}" alt="Preview Daftar Riwayat Hidup" style="max-height: 300px; border: 1px solid #ccc;">
+                @elseif($ext === 'pdf')
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                @else
+                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                @endif
+            @else
+                <p class="text-danger">File lama tidak ditemukan di server.</p>
+            @endif
+        </div>
+    @endif
+
+    <input type="file" id="uploaddaftarriwayathidup" name="uploaddaftarriwayathidup" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror">
+    <small class="text-muted">Ket: Masukkan file Daftar Riwayat Hidup terbaru dengan format JPG/PNG/PDF.</small>
+    @error('uploaddaftarriwayathidup')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
 
                                     </div>
                                 </div>
