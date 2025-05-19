@@ -1351,6 +1351,24 @@ public function downloadSemuaBerkas($id)
 }
 
 
+
+public function perbaikandataskk($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $dataallskktenagakerjablora = allskktenagakerjablora::where('id', $id)->firstOrFail();
+
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.15_hakakses.01_pekerja.02_berkas.update', [
+        'data' => $dataallskktenagakerjablora,
+        'user' => $user,
+        'title' => 'Perbaikan Data Saudara !'
+    ]);
+}
+
+
+
 }
 
 

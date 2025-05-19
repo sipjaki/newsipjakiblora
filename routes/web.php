@@ -884,8 +884,6 @@ Route::delete('/bepelatihanjampelajaran/delete/{id}', [PesertapelatihanControlle
 Route::get('/bepelatihanjampelajaran/createjam/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajarancreate'])->middleware('auth')->name('bepelatihanjampelajarantenagakerja');
 Route::post('/bepelatihanjampelajaran/createjam/create', [PesertapelatihanController::class, 'bepelatihanjampelajarancreatenew'])->middleware('auth')->name('bepelatihanjampelajarantenagakerjacreate');
 
-// saat ini
-
 // HAK AKSES AKUN LSP PENERBIT UNTUK PELATIHAN DAN SKK
 Route::get('/beakseslsppenerbit', [PesertapelatihanController::class, 'beakseslsppenerbit'])->middleware('auth');
 
@@ -937,12 +935,13 @@ Route::get('/beagendaskkpeserta/show/{id}', [PembinaanController::class, 'beagen
 Route::get('/bepesertaskkshowberkas/show/{id}', [PembinaanController::class, 'bepesertaskkshowberkas'])->middleware('auth');
 
 // SERTIFIKAT SKK
-
 Route::get('/besertifikatskk/{id}', [PembinaanController::class, 'besertifikatskk'])->middleware('auth');
 Route::put('/besertifikatskkcreate/{id}', [PembinaanController::class, 'besertifikatskkputupdate'])->middleware('auth')->name('update.besertifikatskkputupdate');
 
 Route::post('/peserta/downloadberkas/{id}', [PembinaanController::class, 'downloadSemuaBerkas'])->middleware('auth')->name('peserta.downloadSemua');
 
+// SAAT INI
+Route::get('/perbaikandataskk/{id}', [PembinaanController::class, 'perbaikandataskk'])->middleware('auth');
 
 // DASHBOARD PESERTA
 Route::get('/bepesertaskkshowberkas/show/{agenda_id}/{user_id}', [PembinaanController::class, 'bepesertaskkshowberkasakunpeserta'])->middleware('auth');

@@ -1607,10 +1607,10 @@ button:hover {
 
   <div style="display: flex; align-items: center; gap: 15px;">
     <p style="margin: 0;">
-      Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i> {{$datapeserta->namasekolah->namasekolah}}
+      Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i>
     </p>
 
-    <a href="/perbaikandataskk/">
+    <a href="/perbaikandataskk/{{$datapeserta->id}}">
       <button
         style="
           background: linear-gradient(45deg, #FFD700, #28a745);
