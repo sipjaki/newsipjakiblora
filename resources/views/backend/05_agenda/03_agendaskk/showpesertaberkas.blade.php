@@ -639,7 +639,7 @@ Download Berkas .zip/.rar Peserta
                  </div>
 
                     </div>
-<hr>
+
 
                     <div class="container">
                         <h5>Status Verifikasi Berkas Anda !</h5>
@@ -1005,8 +1005,7 @@ Download Berkas .zip/.rar Peserta
         }
     }
   </style>
-
-
+<hr>
 <div class="halaman-pertama">
     <div class="halaman-pertamaku" style="text-align: center; margin-bottom: 10px;">
     <div style="display: flex; align-items: center; justify-content: center;">
