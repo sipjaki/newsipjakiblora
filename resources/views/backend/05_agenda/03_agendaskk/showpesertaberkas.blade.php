@@ -1610,7 +1610,7 @@ button:hover {
       Silahkan Lakukan Perbaikan Data <i class="bi bi-arrow-right"></i> {{$datapeserta->namakegiatan}}
     </p>
 
-    <a href="/404">
+    <a href="/perbaikandataskk/">
       <button
         style="
           background: linear-gradient(45deg, #FFD700, #28a745);

@@ -287,15 +287,34 @@
 
     </div>
 
-    <div class="input-group">
-        <i class="fas fa-lock input-icon"></i>
-        <input type="password" class="input-field" name="password" placeholder="Password" required>
+    <div class="input-group" style="position: relative;">
+    <i class="fas fa-lock input-icon"></i>
+    <input type="password" class="input-field" name="password" id="password" placeholder="Password" required>
 
-        @error('password')
+    <!-- Eye icon toggle -->
+    <i class="fas fa-eye toggle-password" id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+
+    @error('password')
         <div class="invalid-feedback">
             {{ $message }}
         </div>
     @enderror
+
+<script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function () {
+        // Toggle the type attribute
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+
+        // Toggle the eye / eye-slash icon
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+
 
 <br>
 <div class="footer-links">
