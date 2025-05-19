@@ -1504,14 +1504,14 @@ button:hover {
                                                 </div>
                                             </div>
                                         </th>
-                                        <th class="text-center">
+                                        <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                             <p style="font-size: 16px; color:black;">Berkas SKK Screenshoot</p>
                                         </th>
                                     </tr>
                                     <tr>
                                         {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
-                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP </th>
-                                        <th class="text-center">
+                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP </th>
+                                        <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                             <button type="button" class="btn btn-secondary btn-sm"
                                                 style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                 onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -1569,7 +1569,7 @@ button:hover {
                                         </th>
 
                                         @can('pekerja')
-                                        <th class="text-center">
+                                        <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                             <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                             @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
                                             <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1583,7 +1583,7 @@ button:hover {
                                         @endcan
 
                                         @canany(['super_admin', 'admin'])
-                                            <th class="text-center">
+                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                 <div style="display: flex; justify-content: center; gap: 20px;">
                                                     <label class="custom-radio">
                                                         <input type="radio" name="validasi_ktp" value="sesuai"
@@ -1604,8 +1604,8 @@ button:hover {
 
                                     </tr>
                                     <tr>
-                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4 </th>
-                                        <th class="text-center">
+                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4 </th>
+                                        <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                             <button type="button" class="btn btn-secondary btn-sm"
                                                 style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                 onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -1642,7 +1642,7 @@ button:hover {
 
 
                                         @can('pekerja')
-                                                <th class="text-center">
+                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_foto === 'tidak_sesuai')
                                                             <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1656,7 +1656,7 @@ button:hover {
                                             @endcan
 
                                             @canany(['super_admin', 'admin'])
-                                                <th class="text-center">
+                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
                                                             <input type="radio" name="validasi_foto" value="sesuai"
@@ -1677,8 +1677,8 @@ button:hover {
 
                                     </tr>
                                     <tr>
-                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah  </th>
-                                        <th class="text-center">
+                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah  </th>
+                                        <th class="text-center" style="background-color: #e2e8f0; color: black;">
 
                                                 <button type="button" class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -1719,7 +1719,7 @@ button:hover {
                                         </th>
 
                                           @can('pekerja')
-                                                <th class="text-center">
+                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_ijazah === 'tidak_sesuai')
                                                             <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1733,7 +1733,7 @@ button:hover {
                                             @endcan
 
                                             @canany(['super_admin', 'admin'])
-                                                <th class="text-center">
+                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
                                                             <input type="radio" name="validasi_ijazah" value="sesuai"
@@ -1754,8 +1754,8 @@ button:hover {
 
                                     </tr>
                                     <tr>
-                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
-                                       <th class="text-center align-middle" style="display: flex; justify-content: center; align-items: center;">
+                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
+                                       <th class="text-center align-middle" style="background-color: #e2e8f0; color: black;">
 
                                                 <button type="button" class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -1796,7 +1796,7 @@ button:hover {
                                                 </div>
                                         </th>
                                                 @can('pekerja')
-                                                    <th class="text-center">
+                                                    <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_pengalaman === 'tidak_sesuai')
                                                             <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1810,7 +1810,7 @@ button:hover {
                                                 @endcan
 
                                             @canany(['super_admin', 'admin'])
-                                                <th class="text-center">
+                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
                                                             <input type="radio" name="validasi_pengalaman" value="sesuai"
@@ -1831,8 +1831,8 @@ button:hover {
 
                                     </tr>
                                     <tr>
-                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
-                                        <th class="text-center align-middle" style="display: flex; justify-content: center; align-items: center;">
+                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
+                                        <th class="text-center align-middle" style="background-color: #e2e8f0; color: black;">
                                                 <button type="button" class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -1871,7 +1871,7 @@ button:hover {
                                                 </div>
                                         </th>
                                         @can('pekerja')
-                                            <th class="text-center">
+                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                 <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                     @if ($datapeserta->validasi_kebenarandata === 'tidak_sesuai')
                                                         <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1885,7 +1885,7 @@ button:hover {
                                         @endcan
 
                                         @canany(['super_admin', 'admin'])
-                                            <th class="text-center">
+                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                 <div style="display: flex; justify-content: center; gap: 20px;">
                                                     <label class="custom-radio">
                                                         <input type="radio" name="validasi_kebenarandata" value="sesuai"
@@ -1907,8 +1907,8 @@ button:hover {
                                     </tr>
 
                                     <tr>
-                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
-                                        <th class="text-center align-middle" style="display: flex; justify-content: center; align-items: center;">
+                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
+                                        <th class="text-center align-middle" style="background-color: #e2e8f0; color: black;">
                                                     <button type="button" class="btn btn-secondary btn-sm"
                                                         style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                         onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -1964,7 +1964,7 @@ button:hover {
                                         </th>
 
                                      @can('pekerja')
-                                            <th class="text-center">
+                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                 <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                     @if ($datapeserta->validasi_npwp === 'tidak_sesuai')
                                                         <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -1978,7 +1978,7 @@ button:hover {
                                         @endcan
 
                                         @canany(['super_admin', 'admin'])
-                                            <th class="text-center">
+                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                 <div style="display: flex; justify-content: center; gap: 20px;">
                                                     <label class="custom-radio">
                                                         <input type="radio" name="validasi_npwp" value="sesuai"
@@ -1999,8 +1999,8 @@ button:hover {
 
                                     </tr>
                                     <tr>
-                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: green; color: white;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
-                                            <th class="text-center align-middle" style="display: flex; justify-content: center; align-items: center;">
+                                        <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
+                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                 <button type="button" class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -2036,7 +2036,7 @@ button:hover {
                                                 </div>
                                             </th>
                                          @can('pekerja')
-                                                <th class="text-center">
+                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
                                                         @if ($datapeserta->validasi_daftarriwayathidup === 'tidak_sesuai')
                                                             <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
@@ -2050,7 +2050,7 @@ button:hover {
                                             @endcan
 
                                             @canany(['super_admin', 'admin'])
-                                                <th class="text-center">
+                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
                                                     <div style="display: flex; justify-content: center; gap: 20px;">
                                                         <label class="custom-radio">
                                                             <input type="radio" name="validasi_daftarriwayathidup" value="sesuai"
