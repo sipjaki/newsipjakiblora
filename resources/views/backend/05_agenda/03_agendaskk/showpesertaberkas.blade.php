@@ -142,38 +142,41 @@
         display: none;
     }
 
-    .custom-box {
-        width: 20px;
-        height: 20px;
-        border: 2px solid #555;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        transition: all 0.3s ease;
-        font-weight: bold;
-        font-size: 16px;
-    }
+    .custom-box {.custom-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 16px;
+}
 
-    .custom-box::before {
-        content: '';
-        position: absolute;
-        opacity: 0;
-        transform: scale(0.6);
-        color: red;
-        transition: all 0.2s ease;
-    }
+/* Ceklis muncul saat radio dipilih */
+.custom-box::before {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.6);
+    color: green;
+    transition: all 0.2s ease;
+}
 
-    .custom-radio input[type="radio"]:checked + .custom-box::before {
-        content: '✕'; /* Tanda X */
-        opacity: 1;
-        transform: scale(1);
-    }
+/* Tampilkan tanda centang ✔ */
+.custom-radio input[type="radio"]:checked + .custom-box::before {
+    content: '✔'; /* Tanda ceklis */
+    opacity: 1;
+    transform: scale(1);
+}
 
-    /* Optional hover effect */
-    .custom-radio:hover .custom-box {
-        border-color: #000;
-    }
+/* Efek hover opsional */
+.custom-radio:hover .custom-box {
+    border-color: #000;
+}
+
 </style>
 
 
