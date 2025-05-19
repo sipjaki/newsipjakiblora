@@ -1373,17 +1373,26 @@ public function perbaikandataskk($id)
 // Update data existing
     public function perbaikandataskkupdate(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'skkanda' => 'nullable|string|max:255',
-
-            'uploadktp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
-            'uploadfoto' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
-            'uploadijazah' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
-            'uploadpengalaman' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
-            'uploadkebenarandata' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
-            'uploadnpwp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
-            'uploaddaftarriwayathidup' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+        // Validasi dengan pesan kustom
+        $validator = Validator::make($request->all(), [
+            'skkanda' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+            'uploadktp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+            'uploadfoto' => 'nullable|file|mimes:jpg,jpeg,png|max:5048',
+            'uploadijazah' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+            'uploadpengalaman' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+            'uploadkebenarandata' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+            'uploadnpwp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+            'uploaddaftarriwayathidup' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+        ], [
+            'file.mimes' => 'File :attribute harus berupa format JPG, JPEG, PNG atau PDF.',
+            'file.max' => 'Ukuran file :attribute maksimal 5MB.',
         ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                             ->withErrors($validator)
+                             ->withInput();
+        }
 
         $data = allskktenagakerjablora::findOrFail($id);
 
@@ -1398,11 +1407,26 @@ public function perbaikandataskk($id)
             'skkanda' => '04_pembinaan/03_sertifikasi/07_skkanda',
         ];
 
-        $data->skkanda = $validatedData['skkanda'] ?? $data->skkanda;
+        // Update field skkanda jika ada file upload baru
+        if ($request->hasFile('skkanda')) {
+            if ($data->skkanda && File::exists(public_path($data->skkanda))) {
+                File::delete(public_path($data->skkanda));
+            }
+            $file = $request->file('skkanda');
+            $namaFile = time() . '_' . preg_replace('/\s+/', '_', $file->getClientOriginalName());
+            $tujuanPath = public_path($uploadPaths['skkanda']);
+            if (!File::exists($tujuanPath)) {
+                File::makeDirectory($tujuanPath, 0777, true);
+            }
+            $file->move($tujuanPath, $namaFile);
+            $data->skkanda = $uploadPaths['skkanda'] . '/' . $namaFile;
+        }
 
+        // Proses upload file lainnya
         foreach ($uploadPaths as $field => $path) {
+            if ($field == 'skkanda') continue; // Sudah di-handle
+
             if ($request->hasFile($field)) {
-                // Hapus file lama jika ada
                 if ($data->$field && File::exists(public_path($data->$field))) {
                     File::delete(public_path($data->$field));
                 }
@@ -1423,9 +1447,8 @@ public function perbaikandataskk($id)
 
         $data->save();
 
-        return redirect()->back()->with('success', 'Data berhasil diperbarui dan file diupload!');
+        return redirect()->back()->with('create', 'Data berhasil diperbarui!');
     }
-
 }
 
 
