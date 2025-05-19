@@ -119,15 +119,15 @@
                                         @enderror
                                     </div>
 
-                                    <div class="mb-3">
+<div class="mb-3">
     <label class="form-label" for="uploadktp">
         <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload KTP
     </label>
 
     @if($data->uploadktp)
         @php
-            $relativePath = 'storage/' . $data->uploadktp;
-            $fullPath = public_path($relativePath);
+            $relativePath = $data->uploadktp; // sudah relatif ke public
+            $fullPath = public_path($relativePath); // akses file langsung
             $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
             $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
         @endphp
