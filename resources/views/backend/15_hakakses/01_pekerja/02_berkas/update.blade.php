@@ -224,22 +224,45 @@
     @enderror
 </div>
 
-
-
                                     </div>
 
                                     <!-- Right Column -->
                                     <div class="col-md-6">
-                                        <!-- Isi Agenda -->
+
                                         <div class="mb-3">
-                                            <label class="form-label" for="isiagenda">
-                                                <i class="bi bi-journal-text" style="margin-right: 8px; color: navy;"></i> Isi Agenda
-                                            </label>
-                                            <textarea id="isiagenda" name="isiagenda" class="form-control @error('isiagenda') is-invalid @enderror" style="height: 300px;">{{ old('isiagenda', $data->isiagenda) }}</textarea>
-                                            @error('isiagenda')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
+                                    <label class="form-label" for="uploadpengalaman">
+                                        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Pengalaman
+                                    </label>
+
+                                    @if($data->uploadpengalaman)
+                                        @php
+                                            $relativePath = $data->uploadpengalaman; // path relatif dari public/
+                                            $fullPath = public_path($relativePath);
+                                            $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+                                            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+                                        @endphp
+
+                                        <div class="mb-2 text-center">
+                                            @if(file_exists($fullPath))
+                                                @if($isImage)
+                                                    <img src="{{ asset($relativePath) }}" alt="Preview Pengalaman" style="max-height: 300px; border: 1px solid #ccc;">
+                                                @elseif($ext === 'pdf')
+                                                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                @else
+                                                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                                                @endif
+                                            @else
+                                                <p class="text-danger">File lama tidak ditemukan di server.</p>
+                                            @endif
                                         </div>
+                                    @endif
+
+                                    <input type="file" id="uploadpengalaman" name="uploadpengalaman" class="form-control @error('uploadpengalaman') is-invalid @enderror">
+                                    <small class="text-muted">Ket: Masukkan file pengalaman terbaru dengan format JPG/PNG/PDF.</small>
+                                    @error('uploadpengalaman')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
 
                                     </div>
                                 </div>
