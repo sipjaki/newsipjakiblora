@@ -604,7 +604,8 @@ Download Berkas .zip/.rar Peserta
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-    gap: 20px;
+    gap: 8px;
+    margin-right:10px;
   "
   onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
   onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
