@@ -189,6 +189,40 @@
     @enderror
 </div>
 
+<div class="mb-3">
+    <label class="form-label" for="uploadijazah">
+        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload Ijazah
+    </label>
+
+    @if($data->uploadijazah)
+        @php
+            $relativePath = $data->uploadijazah; // path relatif dari public/
+            $fullPath = public_path($relativePath);
+            $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+        @endphp
+
+        <div class="mb-2 text-center">
+            @if(file_exists($fullPath))
+                @if($isImage)
+                    <img src="{{ asset($relativePath) }}" alt="Preview Ijazah" style="max-height: 300px; border: 1px solid #ccc;">
+                @elseif($ext === 'pdf')
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                @else
+                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                @endif
+            @else
+                <p class="text-danger">File lama tidak ditemukan di server.</p>
+            @endif
+        </div>
+    @endif
+
+    <input type="file" id="uploadijazah" name="uploadijazah" class="form-control @error('uploadijazah') is-invalid @enderror">
+    <small class="text-muted">Ket: Masukkan file ijazah terbaru dengan format JPG/PNG/PDF.</small>
+    @error('uploadijazah')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
 
 
