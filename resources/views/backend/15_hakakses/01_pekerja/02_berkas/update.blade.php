@@ -1,1 +1,1 @@
-halo ini adalah perbaikan data
+halo ini adalah perbaikan data {{$data->user->name}}
