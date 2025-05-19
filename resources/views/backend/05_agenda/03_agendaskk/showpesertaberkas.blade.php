@@ -877,6 +877,40 @@ button:hover {
 
         </tr>
 
+        <tr>
+            <td style="text-align: center; font-size:16px;">Surat Kebenaran Data</td>
+            <td>
+                      <td style="text-align: center;">
+                <div style="margin-top: 10px;">
+    @if($datapeserta->uploadkebenarandata && file_exists(public_path('storage/' . $datapeserta->uploadkebenarandata)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe
+            src="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}"
+            frameborder="0"
+            width="100%"
+            height="600px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @elseif($datapeserta->uploadkebenarandata)
+        <!-- Display the iframe with the updated file -->
+        <iframe
+            src="{{ asset($datapeserta->uploadkebenarandata) }}"
+            frameborder="0"
+            width="100%"
+            height="600px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
+            </td>
+            {{-- <td style="text-align: center; font-size:16px;">NPWP</td> --}}
+            {{-- <td style="text-align: center; font-size:16px;">Daftar Riwayat Hidup</td> --}}
+        </tr>
+
+
     </table>
     <br>
 </div>
