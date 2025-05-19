@@ -466,7 +466,30 @@ button:hover {
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-@can('super_admin', 'admin')
+@canany(['super_admin', 'admin', 'lsppenerbit'])
+
+<form action="{{ route('peserta.downloadSemua', $datapeserta->id) }}" method="POST">
+    @csrf
+    <button type="submit"
+    onmouseover="this.style.background='linear-gradient(135deg, white, #c8ffc8)'; this.style.color='black';"
+    onmouseout="this.style.background='linear-gradient(135deg, #d4af37, #4CAF50)'; this.style.color='white';"
+    style="background: linear-gradient(135deg, #d4af37, #4CAF50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s;">
+
+    <!-- Ikon Download -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+    viewBox="0 0 16 16" style="margin-right: 8px;">
+    <path d="M.5 9.9v2.6c0 .6.5 1 1 1h13c.6 0 1-.4 1-1V9.9c0-.5-.4-1-1-1s-1 .5-1 1v1.6H2.5V9.9c0-.5-.5-1-1-1s-1 .5-1 1z"/>
+    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3.182-3.182a.5.5 0 1 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.172 7.964a.5.5 0 1 0-.708.708l3.182 3.182z"/>
+</svg>
+Download Berkas .zip/.rar Peserta
+</button>
+</form>
+
+@endcanany
+
+@canany(['super_admin', 'admin'])
+
+
 
            <a href="{{ url()->previous() }}">
     <button
@@ -483,7 +506,7 @@ button:hover {
 </a>
 
 
-@endcan
+@endcanany
 
 @can('pekerja')
 
