@@ -1452,7 +1452,10 @@ public function perbaikandataskk($id)
 
     $data->save();
 
-    return redirect()->back()->with('create', 'Data berhasil diperbarui!');
+    session()->flash('create', 'Berkas Berhasil Di Perbarui !');
+    return redirect('hakaksespekerjaberkas');
+
+
 }
 
 }
