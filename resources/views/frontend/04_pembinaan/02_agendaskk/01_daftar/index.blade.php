@@ -796,6 +796,13 @@ table.zebra-table {
     <div id="kebenaranDataPreview" class="preview-container"></div>
 </div>
 
+<div class="col-md-4" style="{{ $divStyle }}">
+    <div style="margin-top: 10px;">
+                <iframe src="/assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx" frameborder="0" width="100%" height="300px"></iframe>
+        </div>
+
+</div>
+
 </div>
 
 <script>
