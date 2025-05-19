@@ -1549,6 +1549,10 @@ Download Berkas .zip/.rar Peserta
   @can('pekerja')
 
         @if ($datapeserta->verifikasipu === 'dikembalikan')
+        <p>
+                Silahkan Perbaikan Data <i class="bi bi-arrow-right"></i>
+            </p>
+
             <a href="#">
                 <button
                     style="
@@ -1571,6 +1575,7 @@ Download Berkas .zip/.rar Peserta
                     <i class="bi bi-pencil-square"></i> Perbaikan Data
                 </button>
             </a>
+
         @endif
 
 @endcan
