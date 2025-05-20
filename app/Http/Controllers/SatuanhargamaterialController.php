@@ -1863,12 +1863,14 @@ public function besatuanhargaupahpekerjaancreatenew(Request $request)
     // Simpan ke database
     satuanhargamaterial::create([
         'uraian' => $validatedData['uraian'],
+        'kode' => $validatedData['kode'],
         'satuan' => $validatedData['satuan'],
         'besaran' => $validatedData['besaran'],
+        'besaranperjam' => $validatedData['besaranperjam'],
     ]);
 
-    session()->flash('create', 'Data Satuan Harga Material Berhasil Dibuat!');
-    return redirect('/besatuanhargamaterial');
+    session()->flash('create', 'Data Satuan Harga Upah Pekerjaan Berhasil Dibuat!');
+    return redirect('/besatuanhargaupahpekerjaan');
 }
 
 
