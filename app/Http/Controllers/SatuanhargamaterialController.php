@@ -1704,14 +1704,17 @@ public function satuanhargamaterialcreatenew(Request $request)
     ]);
 
     // Simpan ke database
-    SatuanHargaMaterial::create([
+    satuanhargamaterial::create([
         'uraian' => $validatedData['uraian'],
         'satuan' => $validatedData['satuan'],
         'besaran' => $validatedData['besaran'],
     ]);
 
     // Redirect atau response sukses
-    return redirect()->back()->with('success', 'Data berhasil disimpan.');
+
+    session()->flash('create', 'Data Satuan Harga Material Berhasil Dibuat!');
+    return redirect('/besatuanhargamaterial');
+}
 }
 
 
