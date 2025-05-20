@@ -91,7 +91,7 @@
         </script>
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Bahan Material...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Upah Pekerjaan...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -105,7 +105,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/besatuanhargamaterial?search=${input}`)
+                            fetch(`/besatuanhargaupahpekerjaan?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -181,13 +181,19 @@
   <i class="bi bi-card-text"></i> Uraian
 </th>
 <th style="width: 150px; text-align:center;">
-  <i class="bi bi-upc-scan"></i> Satuan
-</th>
-<th style="width: 50px; text-align:center;">
-  Rp.
+  <i class="bi bi-upc"></i> Kode
 </th>
 <th style="width: 150px; text-align:center;">
-  <i class="bi bi-123"></i> Besaran
+  <i class="bi bi-rulers"></i> Satuan
+</th>
+<th style="width: 50px; text-align:center;">
+  <i class="bi bi-currency-dollar"></i> Rp.
+</th>
+<th style="width: 150px; text-align:center;">
+  <i class="bi bi-graph-up"></i> Besaran
+</th>
+<th style="width: 150px; text-align:center;">
+  <i class="bi bi-clock-history"></i> Besaran Per/Jam
 </th>
 <th style="width: 120px; text-align:center;">
   <i class="bi bi-tools"></i> Aksi
