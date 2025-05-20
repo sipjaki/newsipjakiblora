@@ -1838,4 +1838,38 @@ public function besatuanhargaupahpekerjaancreate()
     ]);
 }
 
+
+public function besatuanhargaupahpekerjaancreatenew(Request $request)
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'uraian' => 'required|string|max:255',
+        'kode' => 'required|string|max:255',
+        'satuan' => 'required|string|max:100',
+        'besaran' => 'required|numeric|min:0',
+        'besaranperjam' => 'required|numeric|min:0',
+    ], [
+        'uraian.required' => 'Uraian bahan material wajib diisi.',
+        'satuan.required' => 'Satuan wajib diisi.',
+        'kode.required' => 'Kode wajib diisi.',
+        'besaran.required' => 'Besaran wajib diisi.',
+        'besaran.numeric' => 'Besaran harus berupa angka.',
+        'besaran.min' => 'Besaran tidak boleh negatif.',
+        'besaranperjam.required' => 'Besaran Per/Jam wajib diisi.',
+        'besaranperjam.numeric' => 'Besaran Per/Jam harus berupa angka.',
+        'besaranperjam.min' => 'Besaran Per/Jam  tidak boleh negatif.',
+    ]);
+
+    // Simpan ke database
+    satuanhargamaterial::create([
+        'uraian' => $validatedData['uraian'],
+        'satuan' => $validatedData['satuan'],
+        'besaran' => $validatedData['besaran'],
+    ]);
+
+    session()->flash('create', 'Data Satuan Harga Material Berhasil Dibuat!');
+    return redirect('/besatuanhargamaterial');
+}
+
+
 }
