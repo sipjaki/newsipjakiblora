@@ -89,9 +89,7 @@
                     {{$jumlahStatus3}} Pekerja
                     </button>
 
-                 </div>
-
-                 <button
+                    <button
                     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
                     onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
                     style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
@@ -104,9 +102,7 @@
                     {{$jumlahStatus1}} Super Admin
                     </button>
 
-                 </div>
-
-                 <button
+                    <button
                     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
                     onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
                     style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
@@ -118,8 +114,6 @@
                     </svg>
                     {{$jumlahStatus2}} Admin
                     </button>
-
-                 </div>
 
                  <button
                     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
@@ -134,8 +128,6 @@
                     {{$jumlahStatus4}} Supp Pabrik
                     </button>
 
-                 </div>
-
                  <button
                     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
                     onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
@@ -148,8 +140,6 @@
                     </svg>
                     {{$jumlahStatus5}} Supp Peralatan
                     </button>
-
-                 </div>
 
                  <button
                     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
@@ -164,8 +154,6 @@
                     {{$jumlahStatus6}} Supp Toko Bangunan
                     </button>
 
-                 </div>
-
                  <button
                     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
                     onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
@@ -178,8 +166,6 @@
                     </svg>
                     {{$jumlahStatus7}} LSP Penerbit
                     </button>
-
-                 </div>
 
                  <button
                     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
