@@ -1816,7 +1816,7 @@ if ($entry) {
 $entry->delete();
 
 // Redirect atau memberi respons sesuai kebutuhan
-return redirect('/besatuanhargamaterial')->with('delete', 'Data Berhasil Di Hapus !');
+return redirect('/besatuanhargaupahpekerjaan')->with('delete', 'Data Berhasil Di Hapus !');
 
 }
 
