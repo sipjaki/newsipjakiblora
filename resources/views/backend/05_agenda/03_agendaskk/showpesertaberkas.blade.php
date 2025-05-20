@@ -1593,7 +1593,7 @@ button:hover {
 
         addPageContent(page1, margin).then(() => {
             addPageContent(page2, margin, true).then(() => {
-                pdf.save("{{$datapeserta->user->name}}");
+                pdf.save("{{$datapeserta->user->name ?? 'Nama Lengkap Belum Diisi'}}");
             });
         });
     });
