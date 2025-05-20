@@ -1874,4 +1874,20 @@ public function besatuanhargaupahpekerjaancreatenew(Request $request)
 }
 
 
+public function besatuanhargaupahpekerjaanupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $datasatuanhargaupahtenagakerja = satuanhargaupahtenagakerja::where('id', $id)->firstOrFail();
+
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.07_satuanharga.02_satuanhargaupah.update', [
+        'data' => $datasatuanhargaupahtenagakerja,
+        'user' => $user,
+        'title' => 'Update Daftar Harga Satuan Upah Pekerjaan'
+    ]);
+}
+
+
 }

@@ -1014,7 +1014,6 @@ Route::get('/besatuanhargamaterial', [SatuanhargamaterialController::class, 'bes
 Route::delete('/satuanhargamaterial/delete/{id}', [SatuanhargamaterialController::class, 'besatuanhargamaterialdelete'])->middleware('auth');
 
 Route::get('/besatuanhargamaterial/create', [SatuanhargamaterialController::class, 'satuanhargamaterialcreate'])->middleware('auth');
-
 Route::post('/besatuanhargamaterial/createnew', [SatuanhargamaterialController::class, 'satuanhargamaterialcreatenew'])->middleware('auth')->name('create.satuanhargamaterialcreatenew');
 
 Route::get('/besatuanhargamaterial/update/{id}', [SatuanhargamaterialController::class, 'besatuanhargamaterialupdate'])->middleware('auth');
@@ -1027,6 +1026,9 @@ Route::delete('/besatuanhargaupahpekerjaan/delete/{id}', [SatuanhargamaterialCon
 
 Route::get('/besatuanhargaupahpekerjaan/create', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaancreate'])->middleware('auth');
 Route::post('/besatuanhargaupahpekerjaan/createnew', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaancreatenew'])->middleware('auth')->name('create.besatuanhargaupahpekerjaancreatenew');
+
+Route::get('/besatuanhargaupahpekerjaan/update/{id}', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaanupdate'])->middleware('auth');
+Route::post('/besatuanhargaupahpekerjaan/updatecreate/{id}', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaanupdatecreate'])->middleware('auth')->name('update.besatuanhargaupahpekerjaanupdatecreate');
 
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
 // PEKERJAANINI
