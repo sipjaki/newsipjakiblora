@@ -1015,6 +1015,8 @@ Route::delete('/satuanhargamaterial/delete/{id}', [SatuanhargamaterialController
 
 Route::get('/satuanhargamaterial/create', [SatuanhargamaterialController::class, 'satuanhargamaterialcreate'])->middleware('auth');
 
+Route::post('/satuanhargamaterial/createnew', [BujkkontraktorController::class, 'satuanhargamaterialcreatenew'])->middleware('auth')->name('create.satuanhargamaterialcreatenew');
+
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
 // PEKERJAANINI
 // ROUTE UNTUK DAFTAR AKUN

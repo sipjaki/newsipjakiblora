@@ -45,7 +45,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/bebujkkonstruksi">
+                <a href="/besatuanhargamaterial">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -65,7 +65,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('create.bebujkkonstruksicreatenew') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('create.satuanhargamaterialcreatenew') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -78,18 +78,18 @@
                                             <label class="form-label" for="pju">
                                                 <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> Uraian Bahan Material
                                             </label>
-                                            <input type="text" id="pju" name="pju" class="form-control @error('pju') is-invalid @enderror" value="{{ old('pju') }}" />
-                                            @error('pju')
+                                            <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror" value="{{ old('uraian') }}" />
+                                            @error('uraian')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <!-- No Akte -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="no_akte">
+                                            <label class="form-label" for="satuan">
                                                 <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> Satuan
                                             </label>
-                                            <input type="text" id="no_akte" name="no_akte" class="form-control @error('no_akte') is-invalid @enderror" value="{{ old('no_akte') }}" />
-                                            @error('no_akte')
+                                            <input type="text" id="satuan" name="satuan" class="form-control @error('satuan') is-invalid @enderror" value="{{ old('satuan') }}" />
+                                            @error('satuan')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -99,8 +99,8 @@
                                             <label class="form-label" for="tanggal">
                                                 <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Besaran
                                             </label>
-                                            <input type="date" id="tanggal" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" value="{{ old('tanggal') }}" />
-                                            @error('tanggal')
+                                            <input type="number" id="besaran" name="besaran" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
+                                            @error('besaran')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
