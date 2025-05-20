@@ -178,7 +178,7 @@
   <i class="bi bi-123"></i> Besaran
 </th>
 <th style="width: 200px; text-align:center;">
-  <i class="bi bi-currency-dollar"></i> Rp.
+  Rp.
 </th>
 <th style="width: 120px; text-align:center;">
   <i class="bi bi-tools"></i> Aksi
@@ -193,7 +193,7 @@
          <td style="text-align: left;">{{ $item->uraian }}</td>
          <td style="text-align: left;">{{ $item->satuan }}</td>
          <td style="text-align: left;">Rp</td>
-         <td style="text-align: left;">{{ $item->besaran }}</td>
+        <td style="text-align: left;">{{ number_format($item->besaran, 0, ',', '.') }}</td>
 
         <td style="text-align: center; vertical-align: middle;">
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
