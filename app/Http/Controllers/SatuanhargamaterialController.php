@@ -1824,4 +1824,18 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
+public function besatuanhargaupahpekerjaancreate()
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.07_satuanharga.02_satuanhargaupah.create', [
+        // 'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        'title' => 'Create Satuan Harga Upah Pekerjaan'
+    ]);
+}
+
 }
