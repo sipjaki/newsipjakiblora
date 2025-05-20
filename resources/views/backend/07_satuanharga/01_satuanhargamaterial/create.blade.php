@@ -134,14 +134,53 @@
 
     <!-- Besaran -->
     <div class="mb-3">
-        <label class="form-label" for="besaran">
-            <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
-        </label>
-        <input type="number" id="besaran" name="besaran" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
-        @error('besaran')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+    <label class="form-label" for="besaran">
+        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
+    </label>
+    <input type="text" id="besaran" name="besaran" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
+    @error('besaran')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    const besaranInput = document.getElementById('besaran');
+
+    // Fungsi format rupiah dengan titik ribuan
+    function formatRupiah(angka) {
+        let number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split = number_string.split(','),
+            sisa = split[0].length % 3,
+            rupiah = split[0].substr(0, sisa),
+            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        if (ribuan) {
+            let separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+        return rupiah;
+    }
+
+    // Saat user mengetik di input
+    besaranInput.addEventListener('input', function(e) {
+        let cursorPosition = this.selectionStart;
+        let originalLength = this.value.length;
+
+        this.value = formatRupiah(this.value);
+
+        // Atur ulang posisi cursor supaya gak lompat aneh
+        let updatedLength = this.value.length;
+        cursorPosition = cursorPosition + (updatedLength - originalLength);
+        this.setSelectionRange(cursorPosition, cursorPosition);
+    });
+
+    // Saat form di-submit, hapus titik dari input besaran agar yang dikirim angka murni
+    document.querySelector('form').addEventListener('submit', function(e) {
+        besaranInput.value = besaranInput.value.replace(/\./g, '');
+    });
+</script>
 
 </div>
 
