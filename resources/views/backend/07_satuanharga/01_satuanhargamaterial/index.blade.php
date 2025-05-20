@@ -168,7 +168,7 @@
      <th style="width: 60px; text-align:center;">
   <i class="bi bi-hash"></i> No
 </th>
-<th style="width: 300px; text-align:center;">
+<th style="width: 500px; text-align:center;">
   <i class="bi bi-card-text"></i> Uraian
 </th>
 <th style="width: 150px; text-align:center;">
@@ -177,7 +177,7 @@
 <th style="width: 150px; text-align:center;">
   <i class="bi bi-123"></i> Besaran
 </th>
-<th style="width: 200px; text-align:center;">
+<th style="width: 50px; text-align:center;">
   Rp.
 </th>
 <th style="width: 120px; text-align:center;">
@@ -193,7 +193,7 @@
          <td style="text-align: left;">{{ $item->uraian }}</td>
          <td style="text-align: left;">{{ $item->satuan }}</td>
          <td style="text-align: left;">Rp</td>
-        <td style="text-align: left;">{{ number_format($item->besaran, 0, ',', '.') }}</td>
+        <td style="text-align: right;">{{ number_format($item->besaran, 0, ',', '.') }}</td>
 
         <td style="text-align: center; vertical-align: middle;">
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
