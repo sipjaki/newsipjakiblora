@@ -142,6 +142,10 @@
         @enderror
     </div>
 
+    <!-- Input hidden untuk dikirim ke server -->
+    <input type="hidden" id="besaran" name="besaran" value="{{ old('besaran') }}" />
+
+
 <script>
     const besaranDisplay = document.getElementById('besaran_display');
     const besaranHidden = document.getElementById('besaran');
