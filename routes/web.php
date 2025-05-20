@@ -1023,6 +1023,7 @@ Route::post('/besatuanhargamaterial/updatecreate/{id}', [SatuanhargamaterialCont
 
 // saat ini bro
 Route::get('/besatuanhargaupahpekerjaan', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaan'])->middleware('auth');
+Route::delete('/besatuanhargaupahpekerjaan/delete/{id}', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaandelete'])->middleware('auth');
 
 
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
