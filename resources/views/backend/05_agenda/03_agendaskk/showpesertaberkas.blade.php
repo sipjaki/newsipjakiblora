@@ -1106,7 +1106,7 @@ button:hover {
                     <td style="width:50px; text-align:center; font-size:16px;">1</td>
                     <td style="width:200px; text-align:center; font-size:16px;">Nama Lengkap</td>
                     <td style="width:50px; text-align:center; font-size:16px;" >:</td>
-                    <td style="width:200px; text-align:center; font-size:16px;">{{ ucwords(strtolower($datapeserta->user->name)) }}</td>
+                    <td style="width:200px; text-align:center; font-size:16px;">{{ ucwords(strtolower($datapeserta->user->name ?? 'Nama lengkap Belum Diisi')) }}</td>
             <td style="width:500px; text-align:center; font-size:16px;">
 
                 <div style="margin-top: 10px;">
