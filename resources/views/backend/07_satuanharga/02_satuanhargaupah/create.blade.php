@@ -109,23 +109,16 @@
         <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
     </label>
     <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
-        <option value="">-- Pilih Satuan --</option>
-        <option value="buah" {{ old('satuan') == 'buah' ? 'selected' : '' }}>Buah</option>
-        <option value="lembar" {{ old('satuan') == 'lembar' ? 'selected' : '' }}>Lembar</option>
-        <option value="batang" {{ old('satuan') == 'batang' ? 'selected' : '' }}>Batang</option>
-        <option value="kg" {{ old('satuan') == 'kg' ? 'selected' : '' }}>Kilogram (kg)</option>
-        <option value="liter" {{ old('satuan') == 'liter' ? 'selected' : '' }}>Liter</option>
-        <option value="m" {{ old('satuan') == 'm' ? 'selected' : '' }}>Meter (m)</option>
-        <option value="meter lari" {{ old('satuan') == 'meter lari' ? 'selected' : '' }}>Meter Lari</option>
-        <option value="m2" {{ old('satuan') == 'm2' ? 'selected' : '' }}>Meter Persegi (m²)</option>
-        <option value="m3" {{ old('satuan') == 'm3' ? 'selected' : '' }}>Meter Kubik (m³)</option>
-        <option value="set" {{ old('satuan') == 'set' ? 'selected' : '' }}>Set</option>
-        <option value="paket" {{ old('satuan') == 'paket' ? 'selected' : '' }}>Paket</option>
-        <option value="roll" {{ old('satuan') == 'roll' ? 'selected' : '' }}>Roll</option>
-        <option value="kaleng" {{ old('satuan') == 'kaleng' ? 'selected' : '' }}>Kaleng</option>
-        <option value="pasang" {{ old('satuan') == 'pasang' ? 'selected' : '' }}>Pasang</option>
-        <option value="unit" {{ old('satuan') == 'unit' ? 'selected' : '' }}>Unit</option>
-    </select>
+    <option value="">-- Pilih Satuan Upah --</option>
+    <option value="Orang/Hari" {{ old('satuan') == 'Orang/Hari' ? 'selected' : '' }}>Orang/Hari</option>
+    <option value="Orang/Bulan" {{ old('satuan') == 'Orang/Bulan' ? 'selected' : '' }}>Orang/Bulan</option>
+    <option value="Orang/Shift" {{ old('satuan') == 'Orang/Shift' ? 'selected' : '' }}>Orang/Shift</option>
+    <option value="Jam" {{ old('satuan') == 'Jam' ? 'selected' : '' }}>Jam</option>
+    <option value="Hari" {{ old('satuan') == 'Hari' ? 'selected' : '' }}>Hari</option>
+    <option value="Minggu" {{ old('satuan') == 'Minggu' ? 'selected' : '' }}>Minggu</option>
+    <option value="Bulan" {{ old('satuan') == 'Bulan' ? 'selected' : '' }}>Bulan</option>
+    <option value="Pekerjaan" {{ old('satuan') == 'Pekerjaan' ? 'selected' : '' }}>Pekerjaan</option>
+</select>
     @error('satuan')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
