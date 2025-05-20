@@ -95,7 +95,7 @@
     <!-- Uraian Bahan Material -->
     <div class="mb-3">
         <label class="form-label" for="uraian">
-            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Bahan Material
+            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Keahliaan Tenaga Kerja
         </label>
         <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror" value="{{ old('uraian') }}" />
         @error('uraian')
@@ -181,6 +181,66 @@
 
 </div>
 
+                          <div class="col-md-6">
+
+                              <div class="mb-3">
+                                <label class="form-label" for="kode">
+                                    <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Kode
+                                </label>
+                                <input type="text" id="kode" name="kode" class="form-control @error('kode') is-invalid @enderror" value="{{ old('kode') }}" />
+                                @error('kode')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+    <label class="form-label" for="besaran_view">
+        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
+    </label>
+    <input type="text" id="besaranperjam_view" class="form-control @error('besaranperjam') is-invalid @enderror" value="{{ old('besaranperjam') }}" />
+    <input type="hidden" id="besaranperjam" name="besaranperjam" value="{{ old('besaranperjam') }}">
+    @error('besaranperjam')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    const inputView = document.getElementById('besaranperjam_view');
+    const inputHidden = document.getElementById('besaranperjam');
+
+    // Format angka → ribuan
+    function formatRupiah(angka) {
+        let number_string = angka.replace(/[^,\d]/g, '').toString();
+        let split = number_string.split(',');
+        let sisa = split[0].length % 3;
+        let rupiah = split[0].substr(0, sisa);
+        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        if (ribuan) {
+            let separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        return split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+    }
+
+    // Saat diketik
+    inputView.addEventListener('input', function() {
+        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+        this.value = formatRupiah(raw);
+        inputHidden.value = raw; // angka asli disimpan ke input hidden
+    });
+
+    // Set ulang nilai hidden jika user sudah pernah isi (dari old value)
+    window.addEventListener('DOMContentLoaded', () => {
+        let oldValue = inputView.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+        inputHidden.value = oldValue;
+        inputView.value = formatRupiah(oldValue);
+    });
+</script>
+
+
+                        </div>
                                     <!-- End Right Column -->
                                 </div>
                                 <!-- End row -->
