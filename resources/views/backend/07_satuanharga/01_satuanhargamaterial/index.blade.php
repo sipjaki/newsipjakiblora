@@ -141,7 +141,7 @@
 </button>
 
 <!-- Tombol Create -->
-<a href="/satuanhargamaterial" style="text-decoration: none;">
+<a href="/besatuanhargamaterial/create" style="text-decoration: none;">
     <button
         onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
         onmouseout="this.style.background='linear-gradient(45deg, #228B22, #d4af37)'; this.style.color='white'; this.style.transform='scale(1)';"
