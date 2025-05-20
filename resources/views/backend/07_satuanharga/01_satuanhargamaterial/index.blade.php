@@ -183,7 +183,7 @@
             </a>
             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-judul="{{ $item->namasekolah }}"
+               data-judul="{{ $item->id }}"
                onclick="setDeleteUrl(this)">
                 <i class="bi bi-trash"></i>
             </a>
@@ -242,9 +242,9 @@
 
                  <script>
                  function setDeleteUrl(button) {
-                     var namasekolah = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = namasekolah;
-                     var deleteUrl = "/namasekolah/delete/" + encodeURIComponent(namasekolah);
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/satuanhargamaterial/delete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

@@ -1011,6 +1011,7 @@ Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiContr
 // MENU DATA BACKEND SATUAN HARGA DASAR MATERIAL
 // saat ini
 Route::get('/besatuanhargamaterial', [SatuanhargamaterialController::class, 'besatuanhargamaterial'])->middleware('auth');
+Route::delete('/satuanhargamaterial/delete/{id}', [SatuanhargamaterialController::class, 'besatuanhargamaterialdelete'])->middleware('auth');
 
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
 // PEKERJAANINI
