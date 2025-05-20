@@ -225,15 +225,15 @@ public function allakun(Request $request)
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search,
-        'jumlahStatus1' => $jumlahStatus1,
-        'jumlahStatus2' => $jumlahStatus2,
-        'jumlahStatus3' => $jumlahStatus3,
-        'jumlahStatus4' => $jumlahStatus4,
-        'jumlahStatus5' => $jumlahStatus5,
-        'jumlahStatus6' => $jumlahStatus6,
-        'jumlahStatus7' => $jumlahStatus7,
-        'jumlahStatus8' => $jumlahStatus8,
-        'jumlahStatus9' => $jumlahStatus9,
+        'jumlahStatus1' => $jumlahStatus1, // Super Admin
+        'jumlahStatus2' => $jumlahStatus2, // Admin
+        'jumlahStatus3' => $jumlahStatus3, // Pekerja
+        'jumlahStatus4' => $jumlahStatus4, // Supp Pabrik
+        'jumlahStatus5' => $jumlahStatus5, // Sup Peralatan
+        'jumlahStatus6' => $jumlahStatus6, // Sup Toko Bangunan
+        'jumlahStatus7' => $jumlahStatus7, // LSP Penerbit
+        'jumlahStatus8' => $jumlahStatus8, // Operator
+        'jumlahStatus9' => $jumlahStatus9, // Dinas
     ]);
 }
 

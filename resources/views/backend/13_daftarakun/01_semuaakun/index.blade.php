@@ -86,7 +86,7 @@
                         <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z"/>
                         <path fill-rule="evenodd" d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z"/>
                     </svg>
-                    Pekerja
+                    {{$jumlahStatus3}} Pekerja
                     </button>
 
                  </div>
