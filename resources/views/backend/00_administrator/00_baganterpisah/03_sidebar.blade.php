@@ -756,9 +756,9 @@
 
                   <!-- Satuan Harga Bahan -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/besatuanhargaupahpekerjaan" class="nav-link">
                       <i class="nav-icon bi bi-droplet text-warning"></i> <!-- Ikon untuk Satuan Harga Bahan -->
-                      <p style="color: white">Satuan Harga Bahan</p>
+                      <p style="color: white">Satuan Harga Upah</p>
                     </a>
                   </li>
 

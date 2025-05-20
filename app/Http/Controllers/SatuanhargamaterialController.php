@@ -1761,4 +1761,43 @@ public function besatuanhargamaterialupdatecreate(Request $request, $id)
 }
 
 
+// SATUAN HARGA UPAH PERALATAN
+
+public function besatuanhargaupahpekerjaan(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = satuanhargaupahtenagakerja::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('uraian', 'LIKE', "%{$search}%")
+              ->orWhere('kode', 'LIKE', "%{$search}%")
+              ->orWhere('satuan', 'LIKE', "%{$search}%")
+              ->orWhere('besaran', 'LIKE', "%{$search}%")
+              ->orWhere('besaranperjam', 'LIKE', "%{$search}%");
+        });
+    }
+
+    // Urut berdasarkan kolom 'uraian' dari A-Z
+    $query->orderBy('uraian', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.07_satuanharga.02_satuanhargaupah.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.07_satuanharga.02_satuanhargaupah.index', [
+        'title' => 'Daftar Satuan Harga Upah Pekerjaan',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+
 }
