@@ -944,8 +944,6 @@ Route::post('/peserta/downloadberkas/{id}', [PembinaanController::class, 'downlo
 Route::get('/perbaikandataskk/{id}', [PembinaanController::class, 'perbaikandataskk'])->middleware('auth');
 Route::post('/perbaikandataskk/createnew/{id}', [PembinaanController::class, 'perbaikandataskkupdate'])->middleware('auth')->name('berkasperbaikandatapeserta');
 
-
-
 // DASHBOARD PESERTA
 Route::get('/bepesertaskkshowberkas/show/{agenda_id}/{user_id}', [PembinaanController::class, 'bepesertaskkshowberkasakunpeserta'])->middleware('auth');
 
@@ -1008,9 +1006,7 @@ Route::get('/betertibjakonusahasurat1/create/{id}', [TertibjasakonstruksiControl
 Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1create'])->middleware('auth')->name('betertibjakonusahasurat1create');
 
 
-// MENU DATA BACKEND SATUAN HARGA DASAR MATERIAL
-// saat ini
-Route::get('/besatuanhargamaterial', [SatuanhargamaterialController::class, 'besatuanhargamaterial'])->middleware('auth');
+
 
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
 // PEKERJAANINI
