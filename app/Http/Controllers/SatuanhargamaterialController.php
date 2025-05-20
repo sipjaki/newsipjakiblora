@@ -1622,13 +1622,17 @@ public function besatuanhargamaterial(Request $request)
     $query = satuanhargamaterial::query();
 
     if ($search) {
-        $query->where('uraian', 'LIKE', "%{$search}%")
+        $query->where(function ($q) use ($search) {
+            $q->where('uraian', 'LIKE', "%{$search}%")
               ->orWhere('satuan', 'LIKE', "%{$search}%")
-              ->orWhere('besaran', 'LIKE', "%{$search}%")
-              ;
+              ->orWhere('besaran', 'LIKE', "%{$search}%");
+        });
     }
 
-    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+    // Urut berdasarkan kolom 'uraian' dari A-Z
+    $query->orderBy('uraian', 'asc');
+
+    $data = $query->paginate($perPage);
 
     if ($request->ajax()) {
         return response()->json([
@@ -1643,7 +1647,6 @@ public function besatuanhargamaterial(Request $request)
         'search' => $search
     ]);
 }
-
 
 
 }
