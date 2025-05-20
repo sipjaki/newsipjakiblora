@@ -118,20 +118,49 @@
 
                                 </script>
 <!-- Tombol Download Excel -->
+<!-- Tombol Download Excel -->
 <button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_satuanhargamaterial')"
-    onmouseover="this.style.background='white'; this.style.color='black';"
-    onmouseout="this.style.background='linear-gradient(to right, #d4af37, #228B22)'; this.style.color='white';"
-    style="background: linear-gradient(to right, #d4af37, #228B22); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
-    <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
+    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
+    onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white'; this.style.transform='scale(1)';"
+    style="
+      background: linear-gradient(45deg, #d4af37, #228B22);
+      color: white;
+      border: none;
+      margin-right: 10px;
+      padding: 10px 20px;
+      border-radius: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    ">
+    <i class="bi bi-download" style="font-size: 18px;"></i> Download Excel
 </button>
 
 <!-- Tombol Create -->
-<a href="/satuanhargamaterial/create">
+<a href="/satuanhargamaterial" style="text-decoration: none;">
     <button
-        onmouseover="this.style.background='white'; this.style.color='black';"
-        onmouseout="this.style.background='linear-gradient(to right, #228B22, #d4af37)'; this.style.color='white';"
-        style="background: linear-gradient(to right, #228B22, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
-        <i class="fa fa-plus" style="margin-right: 8px;"></i> Create
+        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
+        onmouseout="this.style.background='linear-gradient(45deg, #228B22, #d4af37)'; this.style.color='white'; this.style.transform='scale(1)';"
+        style="
+          background: linear-gradient(45deg, #228B22, #d4af37);
+          color: white;
+          border: none;
+          margin-right: 10px;
+          padding: 10px 20px;
+          border-radius: 15px;
+          font-size: 16px;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          transition: all 0.3s ease;
+          text-decoration: none;
+        ">
+        <i class="bi bi-plus-lg" style="font-size: 18px;"></i> Create
     </button>
 </a>
 
