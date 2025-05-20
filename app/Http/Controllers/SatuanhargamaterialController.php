@@ -1688,4 +1688,31 @@ public function satuanhargamaterialcreate()
     ]);
 }
 
+public function satuanhargamaterialcreatenew(Request $request)
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'uraian' => 'required|string|max:255',
+        'satuan' => 'required|string|max:100',
+        'besaran' => 'required|numeric|min:0',
+    ], [
+        'uraian.required' => 'Uraian bahan material wajib diisi.',
+        'satuan.required' => 'Satuan wajib diisi.',
+        'besaran.required' => 'Besaran wajib diisi.',
+        'besaran.numeric' => 'Besaran harus berupa angka.',
+        'besaran.min' => 'Besaran tidak boleh negatif.',
+    ]);
+
+    // Simpan ke database
+    SatuanHargaMaterial::create([
+        'uraian' => $validatedData['uraian'],
+        'satuan' => $validatedData['satuan'],
+        'besaran' => $validatedData['besaran'],
+    ]);
+
+    // Redirect atau response sukses
+    return redirect()->back()->with('success', 'Data berhasil disimpan.');
+}
+
+
 }

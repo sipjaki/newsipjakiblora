@@ -92,38 +92,41 @@
                                    <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
 
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pju">
-                                                <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> Uraian Bahan Material
-                                            </label>
-                                            <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror" value="{{ old('uraian') }}" />
-                                            @error('uraian')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                        <!-- No Akte -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="satuan">
-                                                <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> Satuan
-                                            </label>
-                                            <input type="text" id="satuan" name="satuan" class="form-control @error('satuan') is-invalid @enderror" value="{{ old('satuan') }}" />
-                                            @error('satuan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+    <!-- Uraian Bahan Material -->
+    <div class="mb-3">
+        <label class="form-label" for="uraian">
+            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Bahan Material
+        </label>
+        <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror" value="{{ old('uraian') }}" />
+        @error('uraian')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-                                        <!-- Tanggal -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal">
-                                                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Besaran
-                                            </label>
-                                            <input type="number" id="besaran" name="besaran" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
-                                            @error('besaran')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+    <!-- Satuan -->
+    <div class="mb-3">
+        <label class="form-label" for="satuan">
+            <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
+        </label>
+        <input type="text" id="satuan" name="satuan" class="form-control @error('satuan') is-invalid @enderror" value="{{ old('satuan') }}" />
+        @error('satuan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-                                    </div>
+    <!-- Besaran -->
+    <div class="mb-3">
+        <label class="form-label" for="besaran">
+            <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
+        </label>
+        <input type="number" id="besaran" name="besaran" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
+        @error('besaran')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+</div>
+
                                     <!-- End Right Column -->
                                 </div>
                                 <!-- End row -->
