@@ -1694,7 +1694,7 @@ public function satuanhargamaterialcreatenew(Request $request)
     $validatedData = $request->validate([
         'uraian' => 'required|string|max:255',
         'satuan' => 'required|string|max:100',
-        'besaran' => 'required|numeric|min:0',
+        'besaran' => 'required|string|max:255',
     ], [
         'uraian.required' => 'Uraian bahan material wajib diisi.',
         'satuan.required' => 'Satuan wajib diisi.',
