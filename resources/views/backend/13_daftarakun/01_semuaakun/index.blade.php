@@ -247,25 +247,24 @@
                                 </script>
 
 
+<!-- Tombol Download Excel -->
+<!-- Tombol Download Excel -->
+<button onclick="exportTableToExcel('tabelSemuaakun', 'data_semuaakun')"
+  onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
+  onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #4caf50)'; this.style.color='white'; this.style.transform='scale(1)'"
+  style="background: linear-gradient(45deg, #d4af37, #4caf50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+  <i class="bi bi-download"></i> Download Excel
+</button>
 
-                         <button onclick="exportTableToExcel('tabelSemuaakun', 'data_semuaakun')"
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
-                         style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;"
-                         >
-                            <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
-                        </button>
+<!-- Tombol Create -->
+<a href="/akuncreate">
+  <button onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
+    onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #4caf50)'; this.style.color='white'; this.style.transform='scale(1)'"
+    style="background: linear-gradient(45deg, #d4af37, #4caf50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+    <i class="fa fa-plus"></i> Create
+  </button>
+</a>
 
-                         <a href="/akuncreate">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';"
-                             style="background-color: #007bff; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                             Create
-                         </button>
-                         </a>
                      </div>
                  </div>
                  <!-- /.card-header -->
