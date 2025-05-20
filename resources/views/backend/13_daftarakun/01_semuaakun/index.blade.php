@@ -1,4 +1,14 @@
 <style>
+  /* Sembunyikan di layar dengan lebar max 767px (umumnya HP) */
+  @media (max-width: 767px) {
+    .hide-on-mobile {
+      display: none !important;
+    }
+  }
+</style>
+
+
+<style>
   .btn-custom {
     background: linear-gradient(45deg, #FFD700, #008000);
     color: white;
@@ -249,24 +259,22 @@
 
 <!-- Tombol Download Excel -->
 <!-- Tombol Download Excel -->
-<!-- Tombol Download Excel (hidden on mobile) -->
 <button onclick="exportTableToExcel('tabelSemuaakun', 'data_semuaakun')"
-  class="d-none d-md-inline-flex"
+  class="hide-on-mobile"
   onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
   onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #4caf50)'; this.style.color='white'; this.style.transform='scale(1)'"
-  style="background: linear-gradient(45deg, #d4af37, #4caf50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; gap: 8px; transition: all 0.3s ease;">
+  style="background: linear-gradient(45deg, #d4af37, #4caf50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
   <i class="bi bi-download"></i> Download Excel
 </button>
 
-<!-- Tombol Create (hidden on mobile) -->
-<a href="/akuncreate" class="d-none d-md-inline-flex">
+<!-- Tombol Create -->
+<a href="/akuncreate" class="hide-on-mobile">
   <button onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
     onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #4caf50)'; this.style.color='white'; this.style.transform='scale(1)'"
-    style="background: linear-gradient(45deg, #d4af37, #4caf50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; gap: 8px; transition: all 0.3s ease;">
+    style="background: linear-gradient(45deg, #d4af37, #4caf50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
     <i class="fa fa-plus"></i> Create
   </button>
 </a>
-
                      </div>
                  </div>
                  <!-- /.card-header -->
