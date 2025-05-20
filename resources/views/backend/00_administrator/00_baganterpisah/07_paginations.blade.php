@@ -77,19 +77,12 @@
 </div>
 
 <style>
-
 @media (max-width: 576px) {
-    /* Sembunyikan semua item pagination kecuali yang punya class first atau last */
-    .custom-pagination-container .custom-page-item:not(.first):not(.last) {
-        display: none !important;
-    }
-
-    /* Biar tombol first dan last enak dilihat di HP */
-    .custom-pagination-container .custom-page-link {
-        padding: 6px 12px;
-        font-size: 14px !important;
-    }
+  .custom-pagination-container .custom-page-item:not(.previous):not(.next) {
+    display: none !important;
+  }
 }
+
 
 
     /* Global Styles */
