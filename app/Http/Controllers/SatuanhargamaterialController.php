@@ -1612,6 +1612,38 @@ class SatuanhargamaterialController extends Controller
         ]);
     }
 
+// MENU BACKEND SATUAN HARGA MERTIAL
+
+public function besatuanhargamaterial(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = satuanhargamaterial::query();
+
+    if ($search) {
+        $query->where('uraian', 'LIKE', "%{$search}%")
+              ->orWhere('satuan', 'LIKE', "%{$search}%")
+              ->orWhere('besaran', 'LIKE', "%{$search}%")
+              ;
+    }
+
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.07_satuanharga.01_satuanhargamaterial.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.07_satuanharga.01_satuanhargamaterial.index', [
+        'title' => 'Daftar Satuan Harga Material',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
 
 
 }

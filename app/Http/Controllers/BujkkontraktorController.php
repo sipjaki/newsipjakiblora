@@ -339,48 +339,6 @@ public function bebujkjakon()
 //     ]);
 // }
 
-public function bebujkkonstruksi(Request $request)
-{
-    $perPage = $request->input('perPage', 15);
-    $search = $request->input('search');
-
-    $query = bujkkontraktor::query();
-
-    if ($search) {
-        $query->where('namalengkap', 'LIKE', "%{$search}%")
-              ->orWhere('alamat', 'LIKE', "%{$search}%")
-              ->orWhere('no_telepon', 'LIKE', "%{$search}%")
-              ->orWhere('email', 'LIKE', "%{$search}%")
-              ->orWhere('nomorindukberusaha', 'LIKE', "%{$search}%")
-              ->orWhere('pju', 'LIKE', "%{$search}%")
-              ->orWhere('no_akte', 'LIKE', "%{$search}%")
-              ->orWhere('tanggal', 'LIKE', "%{$search}%")
-              ->orWhere('nama_notaris', 'LIKE', "%{$search}%")
-              ->orWhere('no_pengesahan', 'LIKE', "%{$search}%")
-              ->orWhereHas('bujkkontraktorsub', function ($q) use ($search) {
-                $q->where('nama_pengurus', 'LIKE', "%{$search}%");
-            })
-            ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-                $q->where('namaasosiasi', 'LIKE', "%{$search}%");
-            });
-    }
-
-    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
-
-    if ($request->ajax()) {
-        return response()->json([
-            'html' => view('backend.04_datajakon.01_bujkkonstruksi.partials.table', compact('data'))->render()
-        ]);
-    }
-
-    return view('backend.04_datajakon.01_bujkkonstruksi.index', [
-        'title' => 'BUJK Konstruksi',
-        'data' => $data,
-        'perPage' => $perPage,
-        'search' => $search
-    ]);
-}
-
 
 
 // MENU CREATE BUJK KONTRAKTOR ===============================================================================
