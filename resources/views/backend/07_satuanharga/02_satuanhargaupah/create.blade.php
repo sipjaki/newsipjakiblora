@@ -91,146 +91,130 @@
                                     <!-- Left Column (6/12) -->
                                    <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
+                                        @php
+    // Hilangkan titik dari old value untuk hidden input (supaya validasi numeric lancar)
+    $oldBesaran = old('besaran') ? str_replace('.', '', old('besaran')) : '';
+    $oldBesaranPerJam = old('besaranperjam') ? str_replace('.', '', old('besaranperjam')) : '';
+    @endphp
 
-    <!-- Uraian Bahan Material -->
-    <div class="mb-3">
-        <label class="form-label" for="uraian">
-            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Keahliaan Tenaga Kerja
-        </label>
-        <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror" value="{{ old('uraian') }}" />
-        @error('uraian')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
+<!-- Uraian Bahan Material -->
+<div class="mb-3">
+    <label class="form-label" for="uraian">
+        <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Keahliaan Tenaga Kerja
+    </label>
+    <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror" value="{{ old('uraian') }}" />
+    @error('uraian')
+    <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
-    <!<!-- Satuan -->
+<!-- Satuan -->
 <div class="mb-3">
     <label class="form-label" for="satuan">
         <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
     </label>
     <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
-    <option value="">-- Pilih Satuan Upah --</option>
-    <option value="Orang/Hari" {{ old('satuan') == 'Orang/Hari' ? 'selected' : '' }}>Orang/Hari</option>
-    <option value="Orang/Bulan" {{ old('satuan') == 'Orang/Bulan' ? 'selected' : '' }}>Orang/Bulan</option>
-    <option value="Orang/Shift" {{ old('satuan') == 'Orang/Shift' ? 'selected' : '' }}>Orang/Shift</option>
-    <option value="Jam" {{ old('satuan') == 'Jam' ? 'selected' : '' }}>Jam</option>
-    <option value="Hari" {{ old('satuan') == 'Hari' ? 'selected' : '' }}>Hari</option>
-    <option value="Minggu" {{ old('satuan') == 'Minggu' ? 'selected' : '' }}>Minggu</option>
-    <option value="Bulan" {{ old('satuan') == 'Bulan' ? 'selected' : '' }}>Bulan</option>
-    <option value="Pekerjaan" {{ old('satuan') == 'Pekerjaan' ? 'selected' : '' }}>Pekerjaan</option>
-</select>
+        <option value="">-- Pilih Satuan Upah --</option>
+        <option value="Orang/Hari" {{ old('satuan') == 'Orang/Hari' ? 'selected' : '' }}>Orang/Hari</option>
+        <option value="Orang/Bulan" {{ old('satuan') == 'Orang/Bulan' ? 'selected' : '' }}>Orang/Bulan</option>
+        <option value="Orang/Shift" {{ old('satuan') == 'Orang/Shift' ? 'selected' : '' }}>Orang/Shift</option>
+        <option value="Jam" {{ old('satuan') == 'Jam' ? 'selected' : '' }}>Jam</option>
+        <option value="Hari" {{ old('satuan') == 'Hari' ? 'selected' : '' }}>Hari</option>
+        <option value="Minggu" {{ old('satuan') == 'Minggu' ? 'selected' : '' }}>Minggu</option>
+        <option value="Bulan" {{ old('satuan') == 'Bulan' ? 'selected' : '' }}>Bulan</option>
+        <option value="Pekerjaan" {{ old('satuan') == 'Pekerjaan' ? 'selected' : '' }}>Pekerjaan</option>
+    </select>
     @error('satuan')
-        <div class="invalid-feedback">{{ $message }}</div>
+    <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
 <!-- Besaran -->
-<!-- Besaran (view untuk user) -->
 <div class="mb-3">
     <label class="form-label" for="besaran_view">
         <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
     </label>
     <input type="text" id="besaran_view" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
-    <input type="hidden" id="besaran" name="besaran" value="{{ old('besaran') }}">
+    <input type="hidden" id="besaran" name="besaran" value="{{ $oldBesaran }}">
     @error('besaran')
+    <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+</div>
+<div class="col-md-6">
+<!-- Kode -->
+<div class="mb-3">
+    <label class="form-label" for="kode">
+        <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Kode
+    </label>
+    <input type="text" id="kode" name="kode" class="form-control @error('kode') is-invalid @enderror" value="{{ old('kode') }}" />
+    @error('kode')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
-<script>
-    const inputView = document.getElementById('besaran_view');
-    const inputHidden = document.getElementById('besaran');
-
-    // Format angka → ribuan
-    function formatRupiah(angka) {
-        let number_string = angka.replace(/[^,\d]/g, '').toString();
-        let split = number_string.split(',');
-        let sisa = split[0].length % 3;
-        let rupiah = split[0].substr(0, sisa);
-        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-        if (ribuan) {
-            let separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
-        }
-
-        return split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
-    }
-
-    // Saat diketik
-    inputView.addEventListener('input', function() {
-        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        this.value = formatRupiah(raw);
-        inputHidden.value = raw; // angka asli disimpan ke input hidden
-    });
-
-    // Set ulang nilai hidden jika user sudah pernah isi (dari old value)
-    window.addEventListener('DOMContentLoaded', () => {
-        let oldValue = inputView.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        inputHidden.value = oldValue;
-        inputView.value = formatRupiah(oldValue);
-    });
-</script>
-
-</div>
-
-                          <div class="col-md-6">
-
-                              <div class="mb-3">
-                                <label class="form-label" for="kode">
-                                    <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Kode
-                                </label>
-                                <input type="text" id="kode" name="kode" class="form-control @error('kode') is-invalid @enderror" value="{{ old('kode') }}" />
-                                @error('kode')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
+<!-- Besaran Per/Jam -->
 <div class="mb-3">
     <label class="form-label" for="besaranperjam_view">
         <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran Per/Jam
     </label>
-    <!-- Ganti type number jadi text supaya bisa diformat -->
     <input type="text" id="besaranperjam_view" class="form-control @error('besaranperjam') is-invalid @enderror" value="{{ old('besaranperjam') }}" />
-    <input type="hidden" id="besaranperjam" name="besaranperjam" value="{{ old('besaranperjam') }}">
+    <input type="hidden" id="besaranperjam" name="besaranperjam" value="{{ $oldBesaranPerJam }}">
     @error('besaranperjam')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+  <!-- End Right Column -->
+                                </div>
 
-<script>
-    const inputView = document.getElementById('besaranperjam_view');
-    const inputHidden = document.getElementById('besaranperjam');
+                                <script>
+                                    function formatRupiah(angka) {
+    let number_string = angka.replace(/[^,\d]/g, '').toString(),
+        split = number_string.split(','),
+        sisa = split[0].length % 3,
+        rupiah = split[0].substr(0, sisa),
+        ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
-    function formatRupiah(angka) {
-        let number_string = angka.replace(/[^,\d]/g, ''),
-            split = number_string.split(','),
-            sisa = split[0].length % 3,
-            rupiah = split[0].substr(0, sisa),
-            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-        if (ribuan) {
-            let separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
-        }
-
-        rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
-        return rupiah;
+    if (ribuan) {
+        let separator = sisa ? '.' : '';
+        rupiah += separator + ribuan.join('.');
     }
 
-    inputView.addEventListener('input', function() {
-        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        this.value = formatRupiah(raw);
-        inputHidden.value = raw;
-    });
+    return split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+}
 
-    window.addEventListener('DOMContentLoaded', () => {
-        let oldValue = inputView.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        inputView.value = formatRupiah(oldValue);
-        inputHidden.value = oldValue;
-    });
-</script>
-                        </div>
-                                    <!-- End Right Column -->
+// Input Besaran
+const besaranView = document.getElementById('besaran_view');
+const besaranHidden = document.getElementById('besaran');
+
+besaranView.addEventListener('input', function() {
+    let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+    this.value = formatRupiah(raw);
+    besaranHidden.value = raw;
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    let oldValue = besaranHidden.value || '';
+    besaranView.value = formatRupiah(oldValue);
+});
+
+// Input Besaran Per/Jam
+const besaranPerJamView = document.getElementById('besaranperjam_view');
+const besaranPerJamHidden = document.getElementById('besaranperjam');
+
+besaranPerJamView.addEventListener('input', function() {
+    let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+    this.value = formatRupiah(raw);
+    besaranPerJamHidden.value = raw;
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    let oldValue = besaranPerJamHidden.value || '';
+    besaranPerJamView.value = formatRupiah(oldValue);
+});
+
+                                </script>
                                 </div>
                                 <!-- End row -->
                             </div>
