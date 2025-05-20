@@ -131,8 +131,6 @@
     @enderror
 </div>
 
-<form id="formMaterial" method="POST" action="...">
-    @csrf
     <!-- Besaran (input tampilan) -->
     <div class="mb-3">
         <label class="form-label" for="besaran_display">
@@ -143,12 +141,6 @@
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
-
-    <!-- Input hidden untuk dikirim ke server -->
-    <input type="hidden" id="besaran" name="besaran" value="{{ old('besaran') }}" />
-
-    <button type="submit" class="btn btn-primary">Simpan</button>
-</form>
 
 <script>
     const besaranDisplay = document.getElementById('besaran_display');
