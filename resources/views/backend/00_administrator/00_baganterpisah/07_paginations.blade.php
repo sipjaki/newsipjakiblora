@@ -299,18 +299,19 @@
     }
 
     /* Responsive: hanya tampilkan Previous dan Next saja */
-    @media (max-width: 576px) {
-        /* Sembunyikan semua nomor halaman */
-        .custom-pagination-paginate li.custom-page-item:not(.previous):not(.next) {
-            display: none !important;
-        }
 
-        /* Buat tombol previous dan next agar tetap fleksibel */
-        .custom-pagination-paginate li.custom-page-item.previous,
-        .custom-pagination-paginate li.custom-page-item.next {
-            display: flex !important;
-        }
-    }
+@media (max-width: 576px) {
+  .custom-pagination-paginate li.custom-page-item {
+    display: none !important;
+  }
+  .custom-pagination-paginate li.custom-page-item.previous,
+  .custom-pagination-paginate li.custom-page-item.next {
+    display: flex !important;
+    background-color: #04b347 !important;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
 </style>
 
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis praesentium cum molestiae. Hic cum, dolorem architecto error qui nulla. Suscipit iste voluptates magnam accusamus est sunt, sapiente impedit a nam.
