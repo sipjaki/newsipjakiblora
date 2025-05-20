@@ -174,11 +174,11 @@
 <th style="width: 150px; text-align:center;">
   <i class="bi bi-upc-scan"></i> Satuan
 </th>
-<th style="width: 150px; text-align:center;">
-  <i class="bi bi-123"></i> Besaran
-</th>
 <th style="width: 50px; text-align:center;">
   Rp.
+</th>
+<th style="width: 150px; text-align:center;">
+  <i class="bi bi-123"></i> Besaran
 </th>
 <th style="width: 120px; text-align:center;">
   <i class="bi bi-tools"></i> Aksi
