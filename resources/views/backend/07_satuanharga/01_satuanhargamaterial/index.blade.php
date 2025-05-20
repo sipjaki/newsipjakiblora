@@ -165,12 +165,25 @@
 <table id="tabelBujkkonstruksi" class="zebra-table table-striped" >
  <thead>
      <tr>
-        <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Uraian</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Satuan</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Besaran</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Rp.</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
+     <th style="width: 60px; text-align:center;">
+  <i class="bi bi-hash"></i> No
+</th>
+<th style="width: 300px; text-align:center;">
+  <i class="bi bi-card-text"></i> Uraian
+</th>
+<th style="width: 150px; text-align:center;">
+  <i class="bi bi-upc-scan"></i> Satuan
+</th>
+<th style="width: 150px; text-align:center;">
+  <i class="bi bi-123"></i> Besaran
+</th>
+<th style="width: 200px; text-align:center;">
+  <i class="bi bi-currency-dollar"></i> Rp.
+</th>
+<th style="width: 120px; text-align:center;">
+  <i class="bi bi-tools"></i> Aksi
+</th>
+
      </tr>
  </thead>
  <tbody id="tableBody">
