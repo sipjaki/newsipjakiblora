@@ -74,7 +74,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('update.bekepaladinasupdatecreate', $data->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('update.besatuanhargamaterialcreateupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('POST') <!-- Ganti dengan PUT untuk update -->
 
@@ -82,93 +82,86 @@
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Nama Lengkap -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
-                                            </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap', $data->namalengkap) }}" />
-                                            @error('namalengkap')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                       <div class="col-md-6">
 
-                                        <!-- NIP -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nip">
-                                                <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> NIP
-                                            </label>
-                                            <input type="number" id="nip" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $data->nip) }}" />
-                                            @error('nip')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+        <!-- Uraian Bahan Material -->
+        <div class="mb-3">
+            <label class="form-label" for="uraian">
+                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Bahan Material
+            </label>
+            <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror"
+                value="{{ old('uraian', $data->uraian) }}" />
+            @error('uraian')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-                                        <!-- Tempat Tanggal Lahir -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="ttl">
-                                                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tempat Tanggal Lahir
-                                            </label>
-                                            <input type="date" id="ttl" name="ttl" class="form-control @error('ttl') is-invalid @enderror" value="{{ old('ttl', $data->ttl) }}" />
-                                            @error('ttl')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+        <!-- Satuan -->
+        <div class="mb-3">
+            <label class="form-label" for="satuan">
+                <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
+            </label>
+            <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
+                <option value="">-- Pilih Satuan --</option>
+                @php
+                    $satuanList = ['buah', 'lembar', 'batang', 'kg', 'liter', 'm', 'meter lari', 'm2', 'm3', 'set', 'paket', 'roll', 'kaleng', 'pasang', 'unit'];
+                @endphp
+                @foreach ($satuanList as $s)
+                    <option value="{{ $s }}" {{ old('satuan', $data->satuan) == $s ? 'selected' : '' }}>
+                        {{ ucfirst($s) }}
+                    </option>
+                @endforeach
+            </select>
+            @error('satuan')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-                                        <!-- Pangkat Golongan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pangkatgolongan">
-                                                <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pangkat Golongan
-                                            </label>
-                                            <input type="text" id="pangkatgolongan" name="pangkatgolongan" class="form-control @error('pangkatgolongan') is-invalid @enderror" value="{{ old('pangkatgolongan', $data->pangkatgolongan) }}" />
-                                            @error('pangkatgolongan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+        <!-- Besaran -->
+        <div class="mb-3">
+            <label class="form-label" for="besaran_view">
+                <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
+            </label>
+            <input type="text" id="besaran_view" class="form-control @error('besaran') is-invalid @enderror"
+                value="{{ old('besaran', number_format($data->besaran, 0, ',', '.')) }}" />
+            <input type="hidden" id="besaran" name="besaran" value="{{ old('besaran', $data->besaran) }}">
+            @error('besaran')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
 
-                                    </div>
-                                    <div class="col-md-6">
-                                        <!-- Jabatan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="jabatan">
-                                                <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Jabatan
-                                            </label>
-                                            <input type="text" id="jabatan" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" value="{{ old('jabatan', $data->jabatan) }}" />
-                                            @error('jabatan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
 
-                                        <!-- Perangkat Daerah -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="perangkatdaerah">
-                                                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perangkat Daerah
-                                            </label>
-                                            <input type="text" id="perangkatdaerah" name="perangkatdaerah" class="form-control @error('perangkatdaerah') is-invalid @enderror" value="{{ old('perangkatdaerah', $data->perangkatdaerah) }}" />
-                                            @error('perangkatdaerah')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+<script>
+    const inputView = document.getElementById('besaran_view');
+    const inputHidden = document.getElementById('besaran');
 
-                                        <!-- Pendidikan Terakhir -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pendidikanterakhir">
-                                                <i class="bi bi-graduation-cap" style="margin-right: 8px; color: navy;"></i> Pendidikan Terakhir
-                                            </label>
-                                            <select id="pendidikanterakhir" name="pendidikanterakhir" class="form-control @error('pendidikanterakhir') is-invalid @enderror">
-                                                <option value="">Pilih Pendidikan Terakhir</option>
-                                                <option value="Strata 1" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 1' ? 'selected' : '' }}>Strata 1 (S1)</option>
-                                                <option value="Strata 2" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 2' ? 'selected' : '' }}>Strata 2 (S2)</option>
-                                                <option value="Strata 3" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 3' ? 'selected' : '' }}>Strata 3 (S3)</option>
-                                                <option value="Magister" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Magister' ? 'selected' : '' }}>Magister (S2)</option>
-                                                <option value="Doktor" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Doktor' ? 'selected' : '' }}>Doktor (S3)</option>
-                                            </select>
-                                            @error('pendidikanterakhir')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+    function formatRupiah(angka) {
+        let number_string = angka.replace(/[^,\d]/g, '').toString();
+        let split = number_string.split(',');
+        let sisa = split[0].length % 3;
+        let rupiah = split[0].substr(0, sisa);
+        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
+        if (ribuan) {
+            let separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        return split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+    }
+
+    inputView.addEventListener('input', function () {
+        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+        this.value = formatRupiah(raw);
+        inputHidden.value = raw;
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        let oldValue = inputView.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+        inputHidden.value = oldValue;
+        inputView.value = formatRupiah(oldValue);
+    });
+</script>
                                     </div>
                                 </div>
                                 <!-- End row -->

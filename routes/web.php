@@ -1018,6 +1018,7 @@ Route::get('/besatuanhargamaterial/create', [SatuanhargamaterialController::clas
 Route::post('/besatuanhargamaterial/createnew', [SatuanhargamaterialController::class, 'satuanhargamaterialcreatenew'])->middleware('auth')->name('create.satuanhargamaterialcreatenew');
 
 Route::get('/besatuanhargamaterial/update/{id}', [SatuanhargamaterialController::class, 'besatuanhargamaterialupdate'])->middleware('auth');
+Route::post('/besatuanhargamaterial/updatecreate/{id}', [StrukturController::class, 'bekepaladinasupdatecreate'])->middleware('auth')->name('update.besatuanhargamaterialcreateupdate');
 
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
 // PEKERJAANINI
