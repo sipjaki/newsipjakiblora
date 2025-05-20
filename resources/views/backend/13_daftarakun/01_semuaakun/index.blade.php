@@ -334,7 +334,7 @@ function showTempPassword(userId) {
 }
 </script>
 
-        <td style="text-align: left;">
+        <td style="text-align: left; text-transform:uppercase;">
             @if($item->username)
                 {{ $item->username }}
             @else
