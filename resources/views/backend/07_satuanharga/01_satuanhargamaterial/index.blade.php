@@ -58,27 +58,6 @@
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
-                 <div class="card-header">
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                 <a href="/beagendaskk">
-                        <button
-                            onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                            onmouseout="this.style.background='linear-gradient(to right, #004d00, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
-                            style="background: linear-gradient(to right, #004d00, #000000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
-
-                            <!-- Ikon Calendar SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24" style="margin-right: 8px; transition: fill 0.3s;">
-                                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
-                            </svg>
-
-                            Agenda SKK
-                        </button>
-                    </a>
-
-
-                </div>
-
-                 </div>
                  <!-- /.card-header -->
                  <div class="card-header">
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
@@ -112,7 +91,7 @@
         </script>
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Universitas ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Bahan Material...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
