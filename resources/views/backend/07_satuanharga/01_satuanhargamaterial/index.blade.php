@@ -126,7 +126,7 @@
 </button>
 
 <!-- Tombol Create -->
-<a href="/settingssekolah/create">
+<a href="/satuanhargamaterial/create">
     <button
         onmouseover="this.style.background='white'; this.style.color='black';"
         onmouseout="this.style.background='linear-gradient(to right, #228B22, #d4af37)'; this.style.color='white';"

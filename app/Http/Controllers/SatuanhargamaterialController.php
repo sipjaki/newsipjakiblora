@@ -1672,4 +1672,20 @@ return redirect('/besatuanhargamaterial')->with('delete', 'Data Berhasil Di Hapu
 return redirect()->back()->with('error', 'Item not found');
 }
 
+
+
+public function satuanhargamaterialcreate()
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.07_satuanharga.01_satuanhargamaterial.create', [
+        // 'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        'title' => 'Create Satuan Harga Material'
+    ]);
+}
+
 }

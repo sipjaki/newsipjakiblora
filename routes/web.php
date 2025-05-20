@@ -1013,6 +1013,8 @@ Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiContr
 Route::get('/besatuanhargamaterial', [SatuanhargamaterialController::class, 'besatuanhargamaterial'])->middleware('auth');
 Route::delete('/satuanhargamaterial/delete/{id}', [SatuanhargamaterialController::class, 'besatuanhargamaterialdelete'])->middleware('auth');
 
+Route::get('/satuanhargamaterial/create', [SatuanhargamaterialController::class, 'satuanhargamaterialcreate'])->middleware('auth');
+
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
 // PEKERJAANINI
 // ROUTE UNTUK DAFTAR AKUN
