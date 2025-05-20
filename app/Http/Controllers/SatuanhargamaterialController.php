@@ -1861,7 +1861,7 @@ public function besatuanhargaupahpekerjaancreatenew(Request $request)
     ]);
 
     // Simpan ke database
-    satuanhargamaterial::create([
+    satuanhargaupahtenagakerja::create([
         'uraian' => $validatedData['uraian'],
         'kode' => $validatedData['kode'],
         'satuan' => $validatedData['satuan'],
