@@ -168,50 +168,47 @@ public function allakun(Request $request)
               ->orWhere('username', 'LIKE', "%{$search}%")
               ->orWhere('phone_number', 'LIKE', "%{$search}%")
               ->orWhere('email', 'LIKE', "%{$search}%")
-              ->orWhere('avatar', 'LIKE', "%{$search}%")
-              ->orWhereHas('statusadmin', function ($q2) use ($search) {
-                  $q2->where('statusadmin', 'LIKE', "%{$search}%");
-              });
+              ->orWhere('avatar', 'LIKE', "%{$search}%");
         });
     }
 
     $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
-    // Hitung jumlah user per statusadmin secara satu-satu
+    // Hitung jumlah user per statusadmin (berdasarkan id statusadmin dari 1 sampai 9)
     $jumlahStatus1 = User::whereHas('statusadmin', function ($q) {
-        $q->where('statusadmin', 1);
+        $q->where('id', 1);
     })->count();
 
     $jumlahStatus2 = User::whereHas('statusadmin', function ($q) {
-        $q->where('statusadmin', 2);
+        $q->where('id', 2);
     })->count();
 
     $jumlahStatus3 = User::whereHas('statusadmin', function ($q) {
-        $q->where('statusadmin', 3);
+        $q->where('id', 3);
     })->count();
 
     $jumlahStatus4 = User::whereHas('statusadmin', function ($q) {
-        $q->where('statusadmin', 4);
+        $q->where('id', 4);
     })->count();
 
     $jumlahStatus5 = User::whereHas('statusadmin', function ($q) {
-        $q->where('statusadmin', 5);
+        $q->where('id', 5);
     })->count();
 
     $jumlahStatus6 = User::whereHas('statusadmin', function ($q) {
-        $q->where('statusadmin', 6);
+        $q->where('id', 6);
     })->count();
 
     $jumlahStatus7 = User::whereHas('statusadmin', function ($q) {
-        $q->where('statusadmin', 7);
+        $q->where('id', 7);
     })->count();
 
     $jumlahStatus8 = User::whereHas('statusadmin', function ($q) {
-        $q->where('statusadmin', 8);
+        $q->where('id', 8);
     })->count();
 
     $jumlahStatus9 = User::whereHas('statusadmin', function ($q) {
-        $q->where('statusadmin', 9);
+        $q->where('id', 9);
     })->count();
 
     if ($request->ajax()) {
@@ -236,7 +233,6 @@ public function allakun(Request $request)
         'jumlahStatus9' => $jumlahStatus9, // Dinas
     ]);
 }
-
 
 public function allsemuaakun($name)
 {
