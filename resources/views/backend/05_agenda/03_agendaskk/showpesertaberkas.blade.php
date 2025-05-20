@@ -1500,7 +1500,7 @@ button:hover {
         <br>
         <tr>
             <td style="width: 45%;"></td>
-            <td style="width: 55%; font-size:16px;">DINAS PEKERJAAN UMUM DAN PENAATAAN RUANG <br> SUB KOORDINATOR BIDANG BANGUNAN GEDUNG </td>
+            <td style="width: 55%; font-size:16px;">DINAS PEKERJAAN UMUM DAN PENAATAAN RUANG <br>KOORDINATOR BIDANG BANGUNAN GEDUNG </td>
         </tr>
 
         <br><br>
