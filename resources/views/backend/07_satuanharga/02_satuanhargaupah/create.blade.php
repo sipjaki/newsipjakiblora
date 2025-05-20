@@ -189,7 +189,8 @@
     <label class="form-label" for="besaranperjam_view">
         <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran Per/Jam
     </label>
-    <input type="number" id="besaranperjam_view" class="form-control @error('besaranperjam') is-invalid @enderror" value="{{ old('besaranperjam') }}" />
+    <!-- Ganti type number jadi text supaya bisa diformat -->
+    <input type="text" id="besaranperjam_view" class="form-control @error('besaranperjam') is-invalid @enderror" value="{{ old('besaranperjam') }}" />
     <input type="hidden" id="besaranperjam" name="besaranperjam" value="{{ old('besaranperjam') }}">
     @error('besaranperjam')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -216,25 +217,18 @@
         return rupiah;
     }
 
-    // Saat user mengetik
     inputView.addEventListener('input', function() {
-        let raw = this.value.replace(/\D/g, ''); // hanya angka
+        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
         this.value = formatRupiah(raw);
         inputHidden.value = raw;
     });
 
-    // Saat halaman dimuat
     window.addEventListener('DOMContentLoaded', () => {
-        let oldValue = inputView.value.replace(/\D/g, '');
+        let oldValue = inputView.value.replace(/\./g, '').replace(/[^0-9]/g, '');
         inputView.value = formatRupiah(oldValue);
         inputHidden.value = oldValue;
     });
 </script>
-
-
-
-
-
                         </div>
                                     <!-- End Right Column -->
                                 </div>
