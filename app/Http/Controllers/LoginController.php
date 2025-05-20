@@ -155,7 +155,6 @@ public function authenticate(Request $request)
 
 
 // DAFTAR AKUN MASUK MAS JAKI BLORA
-
 public function allakun(Request $request)
 {
     $perPage = $request->input('perPage', 15);
@@ -164,17 +163,56 @@ public function allakun(Request $request)
     $query = User::query();
 
     if ($search) {
-        $query->where('name', 'LIKE', "%{$search}%")
+        $query->where(function($q) use ($search) {
+            $q->where('name', 'LIKE', "%{$search}%")
               ->orWhere('username', 'LIKE', "%{$search}%")
               ->orWhere('phone_number', 'LIKE', "%{$search}%")
               ->orWhere('email', 'LIKE', "%{$search}%")
               ->orWhere('avatar', 'LIKE', "%{$search}%")
-              ->orWhereHas('statusadmin', function ($q) use ($search) {
-                  $q->where('statusadmin', 'LIKE', "%{$search}%");
+              ->orWhereHas('statusadmin', function ($q2) use ($search) {
+                  $q2->where('statusadmin', 'LIKE', "%{$search}%");
               });
+        });
     }
 
     $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    // Hitung jumlah user per statusadmin secara satu-satu
+    $jumlahStatus1 = User::whereHas('statusadmin', function ($q) {
+        $q->where('statusadmin', 1);
+    })->count();
+
+    $jumlahStatus2 = User::whereHas('statusadmin', function ($q) {
+        $q->where('statusadmin', 2);
+    })->count();
+
+    $jumlahStatus3 = User::whereHas('statusadmin', function ($q) {
+        $q->where('statusadmin', 3);
+    })->count();
+
+    $jumlahStatus4 = User::whereHas('statusadmin', function ($q) {
+        $q->where('statusadmin', 4);
+    })->count();
+
+    $jumlahStatus5 = User::whereHas('statusadmin', function ($q) {
+        $q->where('statusadmin', 5);
+    })->count();
+
+    $jumlahStatus6 = User::whereHas('statusadmin', function ($q) {
+        $q->where('statusadmin', 6);
+    })->count();
+
+    $jumlahStatus7 = User::whereHas('statusadmin', function ($q) {
+        $q->where('statusadmin', 7);
+    })->count();
+
+    $jumlahStatus8 = User::whereHas('statusadmin', function ($q) {
+        $q->where('statusadmin', 8);
+    })->count();
+
+    $jumlahStatus9 = User::whereHas('statusadmin', function ($q) {
+        $q->where('statusadmin', 9);
+    })->count();
 
     if ($request->ajax()) {
         return response()->json([
@@ -186,7 +224,16 @@ public function allakun(Request $request)
         'title' => 'Daftar Semua Akun',
         'data' => $data,
         'perPage' => $perPage,
-        'search' => $search
+        'search' => $search,
+        'jumlahStatus1' => $jumlahStatus1,
+        'jumlahStatus2' => $jumlahStatus2,
+        'jumlahStatus3' => $jumlahStatus3,
+        'jumlahStatus4' => $jumlahStatus4,
+        'jumlahStatus5' => $jumlahStatus5,
+        'jumlahStatus6' => $jumlahStatus6,
+        'jumlahStatus7' => $jumlahStatus7,
+        'jumlahStatus8' => $jumlahStatus8,
+        'jumlahStatus9' => $jumlahStatus9,
     ]);
 }
 
