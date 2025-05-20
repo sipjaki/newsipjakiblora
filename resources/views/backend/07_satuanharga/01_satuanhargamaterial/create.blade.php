@@ -110,21 +110,21 @@
     </label>
     <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
         <option value="">-- Pilih Satuan --</option>
-        <option value="buah" {{ old('satuan') == 'buah' ? 'selected' : '' }}>Buah</option>
-        <option value="lembar" {{ old('satuan') == 'lembar' ? 'selected' : '' }}>Lembar</option>
-        <option value="batang" {{ old('satuan') == 'batang' ? 'selected' : '' }}>Batang</option>
-        <option value="kg" {{ old('satuan') == 'kg' ? 'selected' : '' }}>Kilogram (kg)</option>
-        <option value="liter" {{ old('satuan') == 'liter' ? 'selected' : '' }}>Liter</option>
-        <option value="m" {{ old('satuan') == 'm' ? 'selected' : '' }}>Meter (m)</option>
-        <option value="meter lari" {{ old('satuan') == 'meter lari' ? 'selected' : '' }}>Meter Lari</option>
-        <option value="m2" {{ old('satuan') == 'm2' ? 'selected' : '' }}>Meter Persegi (m²)</option>
-        <option value="m3" {{ old('satuan') == 'm3' ? 'selected' : '' }}>Meter Kubik (m³)</option>
-        <option value="set" {{ old('satuan') == 'set' ? 'selected' : '' }}>Set</option>
-        <option value="paket" {{ old('satuan') == 'paket' ? 'selected' : '' }}>Paket</option>
-        <option value="roll" {{ old('satuan') == 'roll' ? 'selected' : '' }}>Roll</option>
-        <option value="kaleng" {{ old('satuan') == 'kaleng' ? 'selected' : '' }}>Kaleng</option>
-        <option value="pasang" {{ old('satuan') == 'pasang' ? 'selected' : '' }}>Pasang</option>
-        <option value="unit" {{ old('satuan') == 'unit' ? 'selected' : '' }}>Unit</option>
+        <option value="buah" {{ old('satuan') == 'Buah' ? 'selected' : '' }}>Buah</option>
+        <option value="lembar" {{ old('satuan') == 'Lembar' ? 'selected' : '' }}>Lembar</option>
+        <option value="batang" {{ old('satuan') == 'Batang' ? 'selected' : '' }}>Batang</option>
+        <option value="kg" {{ old('satuan') == 'Kg' ? 'selected' : '' }}>Kilogram (kg)</option>
+        <option value="liter" {{ old('satuan') == 'Liter' ? 'selected' : '' }}>Liter</option>
+        <option value="m" {{ old('satuan') == 'M' ? 'selected' : '' }}>Meter (m)</option>
+        <option value="meter lari" {{ old('satuan') == 'Meter Lari' ? 'selected' : '' }}>Meter Lari</option>
+        <option value="m2" {{ old('satuan') == 'M2' ? 'selected' : '' }}>Meter Persegi (m²)</option>
+        <option value="m3" {{ old('satuan') == 'M3' ? 'selected' : '' }}>Meter Kubik (m³)</option>
+        <option value="set" {{ old('satuan') == 'Set' ? 'selected' : '' }}>Set</option>
+        <option value="paket" {{ old('satuan') == 'Paket' ? 'selected' : '' }}>Paket</option>
+        <option value="roll" {{ old('satuan') == 'Roll' ? 'selected' : '' }}>Roll</option>
+        <option value="kaleng" {{ old('satuan') == 'Kaleng' ? 'selected' : '' }}>Kaleng</option>
+        <option value="pasang" {{ old('satuan') == 'Pasang' ? 'selected' : '' }}>Pasang</option>
+        <option value="unit" {{ old('satuan') == 'Unit' ? 'selected' : '' }}>Unit</option>
     </select>
     @error('satuan')
         <div class="invalid-feedback">{{ $message }}</div>
