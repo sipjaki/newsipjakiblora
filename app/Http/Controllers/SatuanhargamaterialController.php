@@ -1714,4 +1714,20 @@ public function satuanhargamaterialcreatenew(Request $request)
     return redirect('/besatuanhargamaterial');
 }
 
+
+public function besatuanhargamaterialupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $datasatuanhargamaterial = satuanhargamaterial::where('id', $id)->firstOrFail();
+
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.07_satuanharga.01_satuanhargamaterial.update', [
+        'data' => $datasatuanhargamaterial,
+        'user' => $user,
+        'title' => 'Update Daftar Harga Material'
+    ]);
+}
+
 }

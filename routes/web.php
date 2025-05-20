@@ -1017,6 +1017,8 @@ Route::get('/besatuanhargamaterial/create', [SatuanhargamaterialController::clas
 
 Route::post('/besatuanhargamaterial/createnew', [SatuanhargamaterialController::class, 'satuanhargamaterialcreatenew'])->middleware('auth')->name('create.satuanhargamaterialcreatenew');
 
+Route::get('/besatuanhargamaterial/update/{id}', [SatuanhargamaterialController::class, 'besatuanhargamaterialupdate'])->middleware('auth')->name('update.besatuanhargamaterialupdate');
+
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
 // PEKERJAANINI
 // ROUTE UNTUK DAFTAR AKUN
