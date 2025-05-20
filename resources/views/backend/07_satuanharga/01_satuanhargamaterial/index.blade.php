@@ -126,7 +126,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/settingssekolah?search=${input}`)
+                            fetch(`/besatuanhargamaterial?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
