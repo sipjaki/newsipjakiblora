@@ -59,24 +59,7 @@
              <!-- /.card -->
              <div class="card mb-4">
                  <div class="card-header">
-                    <div style="
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #00378a, #00378a);
-                    color: white;
-                    padding: 8px 16px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    transition: all 0.3s ease;
-                    cursor: pointer;
-                "
-                onmouseover="this.style.background='white'; this.style.color='black';"
-                onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
-                    ⚙️ Setting Database
-                </div>
-
+{{--
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                     <a href="/404">
                         <button
@@ -91,7 +74,12 @@
                             Status Adminstrator
                         </button>
                     </a>
-                </div>
+                </div> --}}
+
+                 <button onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'" style="background: linear-gradient(45deg, #6c757d, #adb5bd); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/></svg>
+            Akun Pekerja
+        </button>
 
                  </div>
                  <!-- /.card-header -->
