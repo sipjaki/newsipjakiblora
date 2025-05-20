@@ -1694,7 +1694,7 @@ public function satuanhargamaterialcreatenew(Request $request)
     $validatedData = $request->validate([
         'uraian' => 'required|string|max:255',
         'satuan' => 'required|string|max:100',
-        'besaran' => 'required|string|max:255',
+        'besaran' => 'required|numeric|min:0',
     ], [
         'uraian.required' => 'Uraian bahan material wajib diisi.',
         'satuan.required' => 'Satuan wajib diisi.',
@@ -1710,9 +1710,8 @@ public function satuanhargamaterialcreatenew(Request $request)
         'besaran' => $validatedData['besaran'],
     ]);
 
-    // Redirect atau response sukses
-
     session()->flash('create', 'Data Satuan Harga Material Berhasil Dibuat!');
     return redirect('/besatuanhargamaterial');
 }
+
 }

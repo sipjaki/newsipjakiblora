@@ -132,46 +132,50 @@
 </div>
 
 <!-- Besaran -->
+<!-- Besaran (view untuk user) -->
 <div class="mb-3">
-    <label class="form-label" for="besaran">
+    <label class="form-label" for="besaran_view">
         <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
     </label>
-    <input type="text" id="besaran" name="besaran" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
+    <input type="text" id="besaran_view" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
+    <input type="hidden" id="besaran" name="besaran" value="{{ old('besaran') }}">
     @error('besaran')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
 <script>
-    const besaranInput = document.getElementById('besaran');
+    const inputView = document.getElementById('besaran_view');
+    const inputHidden = document.getElementById('besaran');
 
-    // Fungsi format rupiah: angka → string dengan titik ribuan
+    // Format angka → ribuan
     function formatRupiah(angka) {
-        let number_string = angka.replace(/[^,\d]/g, ''),
-            split = number_string.split(','),
-            sisa = split[0].length % 3,
-            rupiah = split[0].substr(0, sisa),
-            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+        let number_string = angka.replace(/[^,\d]/g, '').toString();
+        let split = number_string.split(',');
+        let sisa = split[0].length % 3;
+        let rupiah = split[0].substr(0, sisa);
+        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
         if (ribuan) {
             let separator = sisa ? '.' : '';
             rupiah += separator + ribuan.join('.');
         }
 
-        rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
-        return rupiah;
+        return split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
     }
 
-    // Saat user mengetik → format tampilan
-    besaranInput.addEventListener('input', function(e) {
-        let value = this.value.replace(/\./g, '').replace(/[^\d]/g, ''); // hanya angka
-        this.value = formatRupiah(value);
+    // Saat diketik
+    inputView.addEventListener('input', function() {
+        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+        this.value = formatRupiah(raw);
+        inputHidden.value = raw; // angka asli disimpan ke input hidden
     });
 
-    // Saat form disubmit → kirim angka asli ke backend
-    document.querySelector('form').addEventListener('submit', function() {
-        let rawValue = besaranInput.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        besaranInput.value = rawValue;
+    // Set ulang nilai hidden jika user sudah pernah isi (dari old value)
+    window.addEventListener('DOMContentLoaded', () => {
+        let oldValue = inputView.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+        inputHidden.value = oldValue;
+        inputView.value = formatRupiah(oldValue);
     });
 </script>
 
