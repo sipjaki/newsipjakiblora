@@ -312,6 +312,5 @@
     padding: 8px 15px;
     border-radius: 5px;
   }
+  }
 </style>
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis praesentium cum molestiae. Hic cum, dolorem architecto error qui nulla. Suscipit iste voluptates magnam accusamus est sunt, sapiente impedit a nam.
