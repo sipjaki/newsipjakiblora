@@ -189,7 +189,9 @@
 <th style="width: 50px; text-align:center;">Rp.
 </th>
 <th style="width: 150px; text-align:center;">
-  <i class="bi bi-graph-up"></i> Besaran
+    <i class="bi bi-graph-up"></i> Besaran
+</th>
+<th style="width: 50px; text-align:center;">Rp.
 </th>
 <th style="width: 150px; text-align:center;">
   <i class="bi bi-clock-history"></i> Besaran Per/Jam
@@ -208,7 +210,8 @@
          <td style="text-align: left;">{{ $item->kode }}</td>
          <td style="text-align: left;">{{ $item->satuan }}</td>
          <td style="text-align: center;">Rp</td>
-        <td style="text-align: right;">{{ number_format($item->besaran, 0, ',', '.') }},00</td>
+         <td style="text-align: right;">{{ number_format($item->besaran, 0, ',', '.') }},00</td>
+         <td style="text-align: center;">Rp</td>
         <td style="text-align: right;">{{ number_format($item->besaranperjam, 0, ',', '.') }},00</td>
 
         <td style="text-align: center; vertical-align: middle;">
