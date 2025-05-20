@@ -208,7 +208,7 @@
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{ $item->uraian }}</td>
          <td style="text-align: left;">{{ $item->kode }}</td>
-         <td style="text-align: left;">{{ $item->satuan }}</td>
+         <td style="text-align: center;">{{ $item->satuan }}</td>
          <td style="text-align: center;">Rp</td>
          <td style="text-align: right;">{{ number_format($item->besaran, 0, ',', '.') }},00</td>
          <td style="text-align: center;">Rp</td>
