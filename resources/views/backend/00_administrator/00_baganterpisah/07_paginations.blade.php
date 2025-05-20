@@ -75,16 +75,8 @@
         </li>
     </ul>
 </div>
-
+{{--
 <style>
-@media (max-width: 576px) {
-  .custom-pagination-container .custom-page-item:not(.previous):not(.next) {
-    display: none !important;
-  }
-}
-
-
-
     /* Global Styles */
     .custom-pagination-container * {
         font-size: 15px !important;
@@ -151,5 +143,172 @@
     .custom-pagination-info-box,
     .custom-page-link {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+</style> --}}
+
+
+<style>
+    /* Global Styles */
+    .custom-pagination-container * {
+        font-size: 15px !important;
+        box-sizing: border-box;
+    }
+
+    /* Animation Effects */
+    .custom-page-link {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-font-smoothing: subpixel-antialiased;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        color: white;
+        border: 1px solid transparent;
+    }
+
+    .custom-page-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 20%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0) 80%
+        );
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1;
+    }
+
+    .custom-page-link:hover::before {
+        left: 100%;
+    }
+
+    /* Active State Glow */
+    .custom-page-item.active .custom-page-link {
+        background-color: #16A34A;
+        border-color: #16A34A;
+        box-shadow: 0 0 15px rgba(7, 182, 71, 0.4);
+        animation: pulse-glow 2s infinite;
+    }
+
+    /* Hover Effects */
+    .custom-page-link:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        color: black !important;
+    }
+
+    /* Disabled State */
+    .custom-page-item.disabled .custom-page-link {
+        background-color: #9CA3AF !important;
+        border-color: #9CA3AF !important;
+        color: white !important;
+        pointer-events: none;
+        filter: grayscale(0.8);
+    }
+
+    /* Animations */
+    @keyframes pulse-glow {
+        0% { box-shadow: 0 0 10px rgba(0, 255, 94, 0.3); }
+        50% { box-shadow: 0 0 20px rgba(0, 255, 94, 0.3); }
+        100% { box-shadow: 0 0 10px rgba(0, 255, 94, 0.3); }
+    }
+
+    /* Smooth Transitions */
+    .custom-pagination-info-box,
+    .custom-page-link {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Pagination container styles */
+    .custom-pagination-container {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    /* Info box styles */
+    .custom-pagination-info-box {
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        background-color: #04b347;
+        border: 1px solid #04b347;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        color: white;
+        font-weight: 600;
+    }
+    .custom-pagination-info-box:hover {
+        background-color: white;
+        color: #166534;
+    }
+    .custom-pagination-info-box:hover .custom-pagination-info {
+        color: #04b347;
+    }
+
+    /* Pagination nav */
+    .custom-pagination-paginate {
+        display: flex;
+        padding-left: 0;
+        list-style: none;
+        gap: 10px;
+        margin: 0;
+    }
+
+    .custom-page-item {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Previous and Next Buttons styles */
+    .custom-page-item.previous .custom-page-link,
+    .custom-page-item.next .custom-page-link {
+        background-color: #04b347;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        border: 1px solid #04b347;
+    }
+    .custom-page-item.previous .custom-page-link:hover,
+    .custom-page-item.next .custom-page-link:hover {
+        color: black !important;
+    }
+    .custom-page-item.previous.disabled .custom-page-link,
+    .custom-page-item.next.disabled .custom-page-link {
+        background-color: #9CA3AF !important;
+        border-color: #9CA3AF !important;
+        color: white !important;
+        pointer-events: none;
+        filter: grayscale(0.8);
+    }
+
+    /* Responsive: hanya tampilkan Previous dan Next saja */
+    @media (max-width: 576px) {
+        /* Sembunyikan semua nomor halaman */
+        .custom-pagination-paginate li.custom-page-item:not(.previous):not(.next) {
+            display: none !important;
+        }
+
+        /* Buat tombol previous dan next agar tetap fleksibel */
+        .custom-pagination-paginate li.custom-page-item.previous,
+        .custom-pagination-paginate li.custom-page-item.next {
+            display: flex !important;
+        }
     }
 </style>
