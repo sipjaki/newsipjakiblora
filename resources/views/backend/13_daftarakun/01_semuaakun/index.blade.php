@@ -291,7 +291,7 @@
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
 
-        <td style="text-align: left;">
+        <td style="text-align: left; text-transform:uppercase;">
             @if($item->name)
                 {{ $item->name }}
             @else
