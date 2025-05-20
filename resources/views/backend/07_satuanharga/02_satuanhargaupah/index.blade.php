@@ -186,8 +186,7 @@
 <th style="width: 150px; text-align:center;">
   <i class="bi bi-rulers"></i> Satuan
 </th>
-<th style="width: 50px; text-align:center;">
-  <i class="bi bi-currency-dollar"></i> Rp.
+<th style="width: 50px; text-align:center;">Rp.
 </th>
 <th style="width: 150px; text-align:center;">
   <i class="bi bi-graph-up"></i> Besaran
@@ -206,9 +205,11 @@
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{ $item->uraian }}</td>
+         <td style="text-align: left;">{{ $item->kode }}</td>
          <td style="text-align: left;">{{ $item->satuan }}</td>
          <td style="text-align: center;">Rp</td>
         <td style="text-align: right;">{{ number_format($item->besaran, 0, ',', '.') }},00</td>
+        <td style="text-align: right;">{{ number_format($item->besaranperjam, 0, ',', '.') }},00</td>
 
         <td style="text-align: center; vertical-align: middle;">
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
