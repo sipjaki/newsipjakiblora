@@ -83,64 +83,94 @@
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
                                        <div class="col-md-6">
-
-        <!-- Uraian Bahan Material -->
-        <div class="mb-3">
-            <label class="form-label" for="uraian">
-                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Bahan Material
-            </label>
-            <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror"
-                value="{{ old('uraian', $data->uraian) }}" />
-            @error('uraian')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <!-- Satuan -->
-        <div class="mb-3">
-            <label class="form-label" for="satuan">
-                <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
-            </label>
-            <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
-                <option value="">-- Pilih Satuan --</option>
                 @php
-                    $satuanList = ['buah', 'lembar', 'batang', 'kg', 'liter', 'm', 'meter lari', 'm2', 'm3', 'set', 'paket', 'roll', 'kaleng', 'pasang', 'unit'];
+                    // Hilangkan titik dari old value untuk hidden input supaya validasi lancar
+                    $oldBesaran = old('besaran', $data->besaran ?? '') ? str_replace('.', '', old('besaran', $data->besaran ?? '')) : '';
+                    $oldBesaranPerJam = old('besaranperjam', $data->besaranperjam ?? '') ? str_replace('.', '', old('besaranperjam', $data->besaranperjam ?? '')) : '';
                 @endphp
-                @foreach ($satuanList as $s)
-                    <option value="{{ $s }}" {{ old('satuan', $data->satuan) == $s ? 'selected' : '' }}>
-                        {{ ucfirst($s) }}
-                    </option>
-                @endforeach
-            </select>
-            @error('satuan')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
 
-        <!-- Besaran -->
-        <div class="mb-3">
-            <label class="form-label" for="besaran_view">
-                <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
-            </label>
-            <input type="text" id="besaran_view" class="form-control @error('besaran') is-invalid @enderror"
-                value="{{ old('besaran', number_format($data->besaran, 0, ',', '.')) }}" />
-            <input type="hidden" id="besaran" name="besaran" value="{{ old('besaran', $data->besaran) }}">
-            @error('besaran')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+                <!-- Uraian Keahlian Tenaga Kerja -->
+                <div class="mb-3">
+                    <label class="form-label" for="uraian">
+                        <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Keahliaan Tenaga Kerja
+                    </label>
+                    <input type="text" id="uraian" name="uraian"
+                        class="form-control @error('uraian') is-invalid @enderror"
+                        value="{{ old('uraian', $data->uraian ?? '') }}" />
+                    @error('uraian')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <!-- Satuan -->
+                <div class="mb-3">
+                    <label class="form-label" for="satuan">
+                        <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
+                    </label>
+                    <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
+                        <option value="">-- Pilih Satuan Upah --</option>
+                        @foreach(['Orang/Hari','Orang/Bulan','Orang/Shift','Jam','Hari','Minggu','Bulan','Pekerjaan'] as $option)
+                            <option value="{{ $option }}" {{ old('satuan', $data->satuan ?? '') == $option ? 'selected' : '' }}>{{ $option }}</option>
+                        @endforeach
+                    </select>
+                    @error('satuan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <!-- Besaran -->
+                <div class="mb-3">
+                    <label class="form-label" for="besaran_view">
+                        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
+                    </label>
+                    <input type="text" id="besaran_view"
+                        class="form-control @error('besaran') is-invalid @enderror"
+                        value="{{ old('besaran', $data->besaran ?? '') }}" />
+                    <input type="hidden" id="besaran" name="besaran" value="{{ $oldBesaran }}">
+                    @error('besaran')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <!-- Kode -->
+                <div class="mb-3">
+                    <label class="form-label" for="kode">
+                        <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Kode
+                    </label>
+                    <input type="text" id="kode" name="kode"
+                        class="form-control @error('kode') is-invalid @enderror"
+                        value="{{ old('kode', $data->kode ?? '') }}" />
+                    @error('kode')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <!-- Besaran Per/Jam -->
+                <div class="mb-3">
+                    <label class="form-label" for="besaranperjam_view">
+                        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran Per/Jam
+                    </label>
+                    <input type="text" id="besaranperjam_view"
+                        class="form-control @error('besaranperjam') is-invalid @enderror"
+                        value="{{ old('besaranperjam', $data->besaranperjam ?? '') }}" />
+                    <input type="hidden" id="besaranperjam" name="besaranperjam" value="{{ $oldBesaranPerJam }}">
+                    @error('besaranperjam')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
 
 
 <script>
-    const inputView = document.getElementById('besaran_view');
-    const inputHidden = document.getElementById('besaran');
-
     function formatRupiah(angka) {
-        let number_string = angka.replace(/[^,\d]/g, '').toString();
-        let split = number_string.split(',');
-        let sisa = split[0].length % 3;
-        let rupiah = split[0].substr(0, sisa);
-        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+        let number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split = number_string.split(','),
+            sisa = split[0].length % 3,
+            rupiah = split[0].substr(0, sisa),
+            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
         if (ribuan) {
             let separator = sisa ? '.' : '';
@@ -150,19 +180,36 @@
         return split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
     }
 
-    inputView.addEventListener('input', function () {
+    // Input Besaran
+    const besaranView = document.getElementById('besaran_view');
+    const besaranHidden = document.getElementById('besaran');
+
+    besaranView.addEventListener('input', function() {
         let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
         this.value = formatRupiah(raw);
-        inputHidden.value = raw;
+        besaranHidden.value = raw;
     });
 
     window.addEventListener('DOMContentLoaded', () => {
-        let oldValue = inputView.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        inputHidden.value = oldValue;
-        inputView.value = formatRupiah(oldValue);
+        let oldValue = besaranHidden.value || '';
+        besaranView.value = formatRupiah(oldValue);
+    });
+
+    // Input Besaran Per/Jam
+    const besaranPerJamView = document.getElementById('besaranperjam_view');
+    const besaranPerJamHidden = document.getElementById('besaranperjam');
+
+    besaranPerJamView.addEventListener('input', function() {
+        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+        this.value = formatRupiah(raw);
+        besaranPerJamHidden.value = raw;
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        let oldValue = besaranPerJamHidden.value || '';
+        besaranPerJamView.value = formatRupiah(oldValue);
     });
 </script>
-                                    </div>
                                 </div>
                                 <!-- End row -->
                             </div>
