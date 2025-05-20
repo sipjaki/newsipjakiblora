@@ -118,7 +118,6 @@
 
                                 </script>
 <!-- Tombol Download Excel -->
-<!-- Tombol Download Excel -->
 <button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_satuanhargamaterial')"
     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
     onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white'; this.style.transform='scale(1)';"
@@ -130,6 +129,7 @@
       padding: 10px 20px;
       border-radius: 15px;
       font-size: 16px;
+      font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -153,6 +153,7 @@
           padding: 10px 20px;
           border-radius: 15px;
           font-size: 16px;
+          font-weight: 700;
           cursor: pointer;
           display: inline-flex;
           align-items: center;
