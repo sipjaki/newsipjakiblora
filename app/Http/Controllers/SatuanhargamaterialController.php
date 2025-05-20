@@ -1730,4 +1730,35 @@ public function besatuanhargamaterialupdate($id)
     ]);
 }
 
+public function besatuanhargamaterialupdatecreate(Request $request, $id)
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'uraian' => 'required|string|max:255',
+        'satuan' => 'required|string|max:100',
+        'besaran' => 'required|numeric|min:0',
+    ], [
+        'uraian.required' => 'Uraian bahan material wajib diisi.',
+        'satuan.required' => 'Satuan wajib diisi.',
+        'besaran.required' => 'Besaran wajib diisi.',
+        'besaran.numeric' => 'Besaran harus berupa angka.',
+        'besaran.min' => 'Besaran tidak boleh negatif.',
+    ]);
+
+    // Ambil data berdasarkan ID
+    $data = satuanhargamaterial::findOrFail($id);
+
+    // Update data
+    $data->update([
+        'uraian' => $validatedData['uraian'],
+        'satuan' => $validatedData['satuan'],
+        'besaran' => $validatedData['besaran'],
+    ]);
+
+    // Redirect atau response sukses
+    session()->flash('update', 'Data Satuan Harga Material Berhasil Diperbarui!');
+    return redirect('/besatuanhargamaterial');
+}
+
+
 }
