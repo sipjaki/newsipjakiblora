@@ -131,13 +131,11 @@
     @enderror
 </div>
 
-
-    <!-- Besaran -->
-    <div class="mb-3">
+<div class="mb-3">
     <label class="form-label" for="besaran">
         <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
     </label>
-    <input type="text" id="besaran" name="besaran" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
+    <input type="text" id="besaran" name="besaran" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" autocomplete="off" />
     @error('besaran')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -145,8 +143,8 @@
 
 <script>
     const besaranInput = document.getElementById('besaran');
+    const form = document.querySelector('form');
 
-    // Fungsi format rupiah dengan titik ribuan
     function formatRupiah(angka) {
         let number_string = angka.replace(/[^,\d]/g, '').toString(),
             split = number_string.split(','),
@@ -163,22 +161,29 @@
         return rupiah;
     }
 
-    // Saat user mengetik di input
     besaranInput.addEventListener('input', function(e) {
+        // Simpan posisi kursor
         let cursorPosition = this.selectionStart;
         let originalLength = this.value.length;
 
         this.value = formatRupiah(this.value);
 
-        // Atur ulang posisi cursor supaya gak lompat aneh
+        // Hitung perubahan panjang string dan atur ulang kursor
         let updatedLength = this.value.length;
         cursorPosition = cursorPosition + (updatedLength - originalLength);
         this.setSelectionRange(cursorPosition, cursorPosition);
     });
 
-    // Saat form di-submit, hapus titik dari input besaran agar yang dikirim angka murni
-    document.querySelector('form').addEventListener('submit', function(e) {
+    form.addEventListener('submit', function(e) {
+        // Bersihkan titik ribuan sebelum submit supaya value yang dikirim angka murni
         besaranInput.value = besaranInput.value.replace(/\./g, '');
+
+        // Optional: validasi sederhana untuk pastikan angka valid
+        if (besaranInput.value === '' || isNaN(besaranInput.value)) {
+            e.preventDefault();
+            alert('Mohon isi Besaran dengan angka yang valid!');
+            besaranInput.focus();
+        }
     });
 </script>
 
