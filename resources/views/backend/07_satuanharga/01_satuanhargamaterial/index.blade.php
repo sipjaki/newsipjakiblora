@@ -118,7 +118,7 @@
 
                                 </script>
 <!-- Tombol Download Excel -->
-<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_universitas_sekolah')"
+<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_satuanhargamaterial')"
     onmouseover="this.style.background='white'; this.style.color='black';"
     onmouseout="this.style.background='linear-gradient(to right, #d4af37, #228B22)'; this.style.color='white';"
     style="background: linear-gradient(to right, #d4af37, #228B22); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
