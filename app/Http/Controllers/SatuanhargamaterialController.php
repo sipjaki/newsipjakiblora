@@ -1716,6 +1716,3 @@ public function satuanhargamaterialcreatenew(Request $request)
     return redirect('/besatuanhargamaterial');
 }
 }
-
-
-}
