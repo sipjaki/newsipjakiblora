@@ -131,19 +131,29 @@
     @enderror
 </div>
 
-<div class="mb-3">
-    <label class="form-label" for="besaran">
-        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
-    </label>
-    <input type="text" id="besaran" name="besaran" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" autocomplete="off" />
-    @error('besaran')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
+<form id="formMaterial" method="POST" action="...">
+    @csrf
+    <!-- Besaran (input tampilan) -->
+    <div class="mb-3">
+        <label class="form-label" for="besaran_display">
+            <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
+        </label>
+        <input type="text" id="besaran_display" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" autocomplete="off" />
+        @error('besaran')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <!-- Input hidden untuk dikirim ke server -->
+    <input type="hidden" id="besaran" name="besaran" value="{{ old('besaran') }}" />
+
+    <button type="submit" class="btn btn-primary">Simpan</button>
+</form>
 
 <script>
-    const besaranInput = document.getElementById('besaran');
-    const form = document.querySelector('form');
+    const besaranDisplay = document.getElementById('besaran_display');
+    const besaranHidden = document.getElementById('besaran');
+    const form = document.getElementById('formMaterial');
 
     function formatRupiah(angka) {
         let number_string = angka.replace(/[^,\d]/g, '').toString(),
@@ -161,29 +171,34 @@
         return rupiah;
     }
 
-    besaranInput.addEventListener('input', function(e) {
-        // Simpan posisi kursor
+    function onlyNumber(value) {
+        return value.replace(/\./g, '');
+    }
+
+    // Format saat user mengetik di input display
+    besaranDisplay.addEventListener('input', function(e) {
         let cursorPosition = this.selectionStart;
         let originalLength = this.value.length;
 
         this.value = formatRupiah(this.value);
 
-        // Hitung perubahan panjang string dan atur ulang kursor
         let updatedLength = this.value.length;
         cursorPosition = cursorPosition + (updatedLength - originalLength);
         this.setSelectionRange(cursorPosition, cursorPosition);
     });
 
+    // Saat form submit, copy nilai bersih ke input hidden dan kirim
     form.addEventListener('submit', function(e) {
-        // Bersihkan titik ribuan sebelum submit supaya value yang dikirim angka murni
-        besaranInput.value = besaranInput.value.replace(/\./g, '');
+        let cleanValue = onlyNumber(besaranDisplay.value);
 
-        // Optional: validasi sederhana untuk pastikan angka valid
-        if (besaranInput.value === '' || isNaN(besaranInput.value)) {
+        if (cleanValue === '' || isNaN(cleanValue)) {
             e.preventDefault();
             alert('Mohon isi Besaran dengan angka yang valid!');
-            besaranInput.focus();
+            besaranDisplay.focus();
+            return false;
         }
+
+        besaranHidden.value = cleanValue;
     });
 </script>
 
