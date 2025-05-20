@@ -1,4 +1,50 @@
 <style>
+  .btn-custom {
+    background: linear-gradient(45deg, #FFD700, #008000);
+    color: white;
+    border: none;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-custom:hover {
+    background: white !important;
+    color: black !important;
+    transform: scale(1.05);
+  }
+
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: start;
+  }
+
+  /* Optional: Responsive font-size atau padding */
+  @media (max-width: 768px) {
+    .btn-custom {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .btn-custom {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<style>
     table {
      table-layout: fixed;
      width: 100%;
@@ -76,110 +122,96 @@
                     </a>
                 </div> --}}
 
-                 <button
-                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                    onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
-                    style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-                        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z"/>
-                        <path fill-rule="evenodd" d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z"/>
-                    </svg>
-                    {{$jumlahStatus3}} Pekerja
-                    </button>
+<div class="button-container">
 
-                    <button
-                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                    onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
-                    style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-                        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z"/>
-                        <path fill-rule="evenodd" d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z"/>
-                    </svg>
-                    {{$jumlahStatus1}} Super Admin
-                    </button>
+  <button class="btn-custom pekerja">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-person-workspace" viewBox="0 0 16 16">
+      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+      <path fill-rule="evenodd"
+        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+    </svg>
+    {{$jumlahStatus3}} Pekerja
+  </button>
 
-                    <button
-                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                    onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
-                    style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-                        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z"/>
-                        <path fill-rule="evenodd" d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z"/>
-                    </svg>
-                    {{$jumlahStatus2}} Admin
-                    </button>
+  <button class="btn-custom superadmin">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-person-workspace" viewBox="0 0 16 16">
+      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+      <path fill-rule="evenodd"
+        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+    </svg>
+    {{$jumlahStatus1}} Super Admin
+  </button>
 
-                 <button
-                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                    onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
-                    style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-                        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z"/>
-                        <path fill-rule="evenodd" d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z"/>
-                    </svg>
-                    {{$jumlahStatus4}} Supp Pabrik
-                    </button>
+  <button class="btn-custom admin">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-person-workspace" viewBox="0 0 16 16">
+      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+      <path fill-rule="evenodd"
+        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+    </svg>
+    {{$jumlahStatus2}} Admin
+  </button>
 
-                 <button
-                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                    onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
-                    style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-                        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z"/>
-                        <path fill-rule="evenodd" d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z"/>
-                    </svg>
-                    {{$jumlahStatus5}} Supp Peralatan
-                    </button>
+  <button class="btn-custom supp-pabrik">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-person-workspace" viewBox="0 0 16 16">
+      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+      <path fill-rule="evenodd"
+        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+    </svg>
+    {{$jumlahStatus4}} Supp Pabrik
+  </button>
 
-                 <button
-                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                    onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
-                    style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-                        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z"/>
-                        <path fill-rule="evenodd" d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z"/>
-                    </svg>
-                    {{$jumlahStatus6}} Supp Toko Bangunan
-                    </button>
+  <button class="btn-custom supp-peralatan">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-person-workspace" viewBox="0 0 16 16">
+      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+      <path fill-rule="evenodd"
+        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+    </svg>
+    {{$jumlahStatus5}} Supp Peralatan
+  </button>
 
-                 <button
-                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                    onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
-                    style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-                        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z"/>
-                        <path fill-rule="evenodd" d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z"/>
-                    </svg>
-                    {{$jumlahStatus7}} LSP Penerbit
-                    </button>
+  <button class="btn-custom supp-toko">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-person-workspace" viewBox="0 0 16 16">
+      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+      <path fill-rule="evenodd"
+        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+    </svg>
+    {{$jumlahStatus6}} Supp Toko Bangunan
+  </button>
 
-                 <button
-                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                    onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #008000)'; this.style.color='white'; this.style.transform='scale(1)'"
-                    style="background: linear-gradient(45deg, #FFD700, #008000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
-                        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z"/>
-                        <path fill-rule="evenodd" d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z"/>
-                    </svg>
-                    {{$jumlahStatus9}} Dinas
-                    </button>
+  <button class="btn-custom lsp-penerbit">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-person-workspace" viewBox="0 0 16 16">
+      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+      <path fill-rule="evenodd"
+        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+    </svg>
+    {{$jumlahStatus7}} LSP Penerbit
+  </button>
 
+  <button class="btn-custom dinas">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-person-workspace" viewBox="0 0 16 16">
+      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+      <path fill-rule="evenodd"
+        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+    </svg>
+    {{$jumlahStatus9}} Dinas
+  </button>
+                 </div>
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
