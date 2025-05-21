@@ -219,4 +219,19 @@ public function bepengawasanbujkupdatecreatenew(Request $request, $id)
 
 
 
+public function bepengawasanbujkcreate()
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.06_pengawasan.04_pengawasanbujk.create', [
+        // 'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        'title' => 'Create Satuan Harga Material'
+    ]);
+}
+
+
 }
