@@ -196,20 +196,23 @@
         border-bottom-left-radius: 10px;
     "></div>
 
-    <h2 style="
+    <h4 style="
         text-align: center;
         margin-bottom: 30px;
         color: #333;
         font-family: 'Arial', sans-serif;
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
-    ">Detail Admin</h2>
+    ">Akun Anda</h4>
 
     <div class="admin-avatar" style="
         text-align: center;
         margin-bottom: 20px;
     ">
-        <img src="{{ $admin->avatar ?? 'https://via.placeholder.com/150' }}" alt="Admin Avatar" style="
+      <div style="margin-top: 10px;">
+    @if($user->avatar && file_exists(public_path($user->avatar)))
+        {{-- Jika avatar ada di folder public --}}
+        <img src="{{ asset($user->avatar) }}" alt="Admin Avatar" style="
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -217,6 +220,29 @@
             object-fit: cover;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         ">
+    @elseif($user->avatar)
+        {{-- Jika avatar adalah link/path dari luar public folder --}}
+        <img src="{{ $user->avatar }}" alt="Admin Avatar" style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #D4AF37;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        ">
+    @else
+        {{-- Jika avatar tidak ada, tampilkan placeholder --}}
+        <img src="https://via.placeholder.com/150" alt="Admin Avatar" style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #D4AF37;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        ">
+    @endif
+</div>
+
     </div>
 
     <div class="form-group" style="
@@ -237,7 +263,7 @@
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 4px;
-        ">{{ $admin->statusadmin->name ?? 'N/A' }}</div>
+        ">{{ $user->statusadmin->statusadmin ?? 'N/A' }}</div>
     </div>
 
     <div class="form-group" style="
@@ -258,7 +284,7 @@
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 4px;
-        ">{{ $admin->name ?? 'N/A' }}</div>
+        ">{{ $user->name ?? 'N/A' }}</div>
     </div>
 
     <div class="form-group" style="
@@ -279,7 +305,7 @@
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 4px;
-        ">{{ $admin->username ?? 'N/A' }}</div>
+        ">{{ $user->username ?? 'N/A' }}</div>
     </div>
 
     <div class="form-group" style="
@@ -300,7 +326,7 @@
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 4px;
-        ">{{ $admin->phone_number ?? 'N/A' }}</div>
+        ">{{ $user->phone_number ?? 'N/A' }}</div>
     </div>
 
     <div class="form-group" style="
@@ -321,7 +347,7 @@
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 4px;
-        ">{{ $admin->email ?? 'N/A' }}</div>
+        ">{{ $user->email ?? 'N/A' }}</div>
     </div>
 </div>
 
