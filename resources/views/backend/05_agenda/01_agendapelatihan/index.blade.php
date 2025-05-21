@@ -1,4 +1,11 @@
 <style>
+
+    @media (max-width: 767.98px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+
     table {
      table-layout: fixed;
      width: 100%;
