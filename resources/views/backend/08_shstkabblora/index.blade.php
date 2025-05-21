@@ -248,7 +248,23 @@
 
 </table>
 <br><br><br>
-<p style="text-align: center;">{{ $title }}</p>
+<div style="text-align: center; margin: 20px 0;">
+    <button
+        style="
+            background: linear-gradient(45deg, #d4af37, #228B22);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: default;
+            transition: all 0.3s ease;
+        "
+    >
+        {{ $title }}
+    </button>
+</div>
                      </div>
                  </div>
 
