@@ -96,22 +96,25 @@
     ];
 @endphp
 
+
 <div class="row">
-    @foreach ($rupiahFields as $field => $meta)
-        <div class="col-md-6 mb-3">
-            <label class="form-label" for="{{ $field }}">
-                <i class="bi {{ $meta['icon'] }}" style="margin-right: 8px; color: navy;"></i>
-                <span style="color: navy;">{{ $meta['label'] }}</span>
-            </label>
-            <input type="text" id="{{ $field }}_view" class="form-control @error($field) is-invalid @enderror"
-                value="{{ old($field, number_format($data->$field ?? 0, 0, ',', '.')) }}">
-            <input type="hidden" id="{{ $field }}" name="{{ $field }}"
-                value="{{ old($field, (int) ($data->$field ?? 0)) }}">
-            @error($field)
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-    @endforeach
+@foreach ($rupiahFields as $field => $meta)
+    <div class="col-md-6 mb-3">
+        <label class="form-label" for="{{ $field }}_view">
+            <i class="bi {{ $meta['icon'] }}" style="margin-right: 8px; color: navy;"></i>
+            <span style="color: navy;">{{ $meta['label'] }}</span>
+        </label>
+        <input type="text" id="{{ $field }}_view"
+            class="form-control @error($field) is-invalid @enderror"
+            value="{{ old($field, number_format($data->$field ?? 0, 0, ',', '.')) }}">
+        <input type="hidden" id="{{ $field }}" name="{{ $field }}"
+            value="{{ old($field, (int) ($data->$field ?? 0)) }}">
+        @error($field)
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+@endforeach
+
 </div>
 
 <script>
