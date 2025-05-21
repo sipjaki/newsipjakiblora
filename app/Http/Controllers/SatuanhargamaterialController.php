@@ -1957,7 +1957,7 @@ public function besatuanhargaperalatan(Request $request)
         ]);
     }
 
-    return view('backend.07_satuanharga.02_satuanhargaperalatan.index', [
+    return view('backend.07_satuanharga.03_satuanhargaperalatan.index', [
         'title' => 'Daftar Satuan Harga Peralatan',
         'data' => $data,
         'perPage' => $perPage,
