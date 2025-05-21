@@ -86,7 +86,7 @@
                 @php
                     // Hilangkan titik dari old value untuk hidden input supaya validasi lancar
                     $oldBesaran = old('besaran', $data->besaran ?? '') ? str_replace('.', '', old('besaran', $data->besaran ?? '')) : '';
-                    $oldBesaranPerJam = old('besaranperjam', $data->besaranperjam ?? '') ? str_replace('.', '', old('besaranperjam', $data->besaranperjam ?? '')) : '';
+                    // $oldBesaranPerJam = old('besaranperjam', $data->besaranperjam ?? '') ? str_replace('.', '', old('besaranperjam', $data->besaranperjam ?? '')) : '';
                 @endphp
 
                 <!-- Uraian Keahlian Tenaga Kerja -->
@@ -103,13 +103,13 @@
                 </div>
 
                 <!-- Satuan -->
-                <div class="mb-3">
+              <div class="mb-3">
                     <label class="form-label" for="satuan">
                         <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
                     </label>
                     <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
-                        <option value="">-- Pilih Satuan Upah --</option>
-                        @foreach(['Orang/Hari','Orang/Bulan','Orang/Shift','Jam','Hari','Minggu','Bulan','Pekerjaan'] as $option)
+                        <option value="">-- Pilih Satuan Waktu --</option>
+                        @foreach(['Jam','Hari','Minggu','Bulan','Tahun'] as $option)
                             <option value="{{ $option }}" {{ old('satuan', $data->satuan ?? '') == $option ? 'selected' : '' }}>{{ $option }}</option>
                         @endforeach
                     </select>
@@ -117,6 +117,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
 
                 <!-- Besaran -->
                 <div class="mb-3">
@@ -147,7 +148,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-
+{{--
                 <!-- Besaran Per/Jam -->
                 <div class="mb-3">
                     <label class="form-label" for="besaranperjam_view">
@@ -160,7 +161,7 @@
                     @error('besaranperjam')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                </div>
+                </div> --}}
             </div>
 
 
