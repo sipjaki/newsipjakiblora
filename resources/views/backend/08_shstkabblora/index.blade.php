@@ -186,60 +186,60 @@
             </th>
         </tr>
     </thead>
-    <tbody>
+<tbody>
     @foreach ($data as $item)
         <tr>
-            <td><i class="bi bi-building" style="margin-right: 6px;"></i> Bangunan Kantor Tidak Sederhana</td>
+            <td><i class="bi bi-building" style="margin-right: 6px; color: navy;"></i> Bangunan Kantor Tidak Sederhana</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->bangunankantortidaksederhana, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-building-fill" style="margin-right: 6px;"></i> Bangunan Kantor Sederhana</td>
+            <td><i class="bi bi-building-fill" style="margin-right: 6px; color: navy;"></i> Bangunan Kantor Sederhana</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->bangunankantorsederhana, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-house-door" style="margin-right: 6px;"></i> Rumah Negara Tipe A</td>
+            <td><i class="bi bi-house-door" style="margin-right: 6px; color: navy;"></i> Rumah Negara Tipe A</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->rumahnegaratipea, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-house-heart" style="margin-right: 6px;"></i> Rumah Negara Tipe B</td>
+            <td><i class="bi bi-house-heart" style="margin-right: 6px; color: navy;"></i> Rumah Negara Tipe B</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->rumahnegaratipeb, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-house" style="margin-right: 6px;"></i> Rumah Negara Tipe C/D/E</td>
+            <td><i class="bi bi-house" style="margin-right: 6px; color: navy;"></i> Rumah Negara Tipe C/D/E</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->rumahnegaratipecde, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-border" style="margin-right: 6px;"></i> Pagar Rumah Depan</td>
+            <td><i class="bi bi-border" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Depan</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->pagarrumahdepan, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-border-style" style="margin-right: 6px;"></i> Pagar Rumah Belakang</td>
+            <td><i class="bi bi-border-style" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Belakang</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->pagarrumahbelakang, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-border-width" style="margin-right: 6px;"></i> Pagar Rumah Samping</td>
+            <td><i class="bi bi-border-width" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Samping</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->pagarrumahsamping, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-border-home" style="margin-right: 6px;"></i> Pagar Rumah Negara Depan</td>
+            <td><i class="bi bi-border-width" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Negara Depan</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->pagarrumahnegaradepan, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-shield-lock" style="margin-right: 6px;"></i> Pagar Rumah Negara Belakang</td>
+            <td><i class="bi bi-shield-lock" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Negara Belakang</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->pagarrumahnegarabelakang, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-shield-check" style="margin-right: 6px;"></i> Pagar Rumah Negara Samping</td>
+            <td><i class="bi bi-shield-check" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Negara Samping</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->pagarrumahnegarasamping, 2, ',', '.') }}</td>
         </tr>
