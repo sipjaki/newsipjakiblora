@@ -191,11 +191,7 @@
 <th style="width: 150px; text-align:center;">
     <i class="bi bi-graph-up"></i> Besaran
 </th>
-<th style="width: 50px; text-align:center;">Rp.
-</th>
-<th style="width: 150px; text-align:center;">
-  <i class="bi bi-clock-history"></i> Besaran Per/Jam
-</th>
+
 <th style="width: 120px; text-align:center;">
   <i class="bi bi-tools"></i> Aksi
 </th>
@@ -207,12 +203,12 @@
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{ $item->uraian }}</td>
-<td style="text-align: left;">{!! $item->kode ? $item->kode : '<button style="background-color: navy; color: white; border: none; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: default;">Data Belum Di Update</button>' !!}</td>
+<td style="text-align: center;">{!! $item->kode ? $item->kode : '<button style="background-color: navy; color: white; border: none; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: default;">Data Belum Di Update</button>' !!}</td>
          <td style="text-align: center;">{{ $item->satuan }}</td>
          <td style="text-align: center;">Rp</td>
          <td style="text-align: right;">{{ number_format($item->besaran, 0, ',', '.') }},00</td>
-         <td style="text-align: center;">Rp</td>
-        <td style="text-align: right;">{{ number_format($item->besaranperjam, 0, ',', '.') }},00</td>
+         {{-- <td style="text-align: center;">Rp</td>
+        <td style="text-align: right;">{{ number_format($item->besaranperjam, 0, ',', '.') }},00</td> --}}
 
         <td style="text-align: center; vertical-align: middle;">
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
