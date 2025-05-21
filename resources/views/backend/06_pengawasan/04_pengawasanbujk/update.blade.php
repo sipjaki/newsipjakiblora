@@ -121,7 +121,7 @@
     <label class="form-label" for="jenisperusahaan">
         <i class="bi bi-diagram-3" style="margin-right: 8px; color: navy;"></i> Jenis Perusahaan
     </label>
-    <select id="jenisperusahaan" name="jenisperusahaan" class="form-control @error('jenisperusahaan') is-invalid @enderror">
+    <select id="jenisperusahaan" name="jenisperusahaan" value="{{$data->jenisperusahaan}}" class="form-control @error('jenisperusahaan') is-invalid @enderror">
         <option value="">-- Pilih Jenis Perusahaan --</option>
         <option value="CV" {{ $data->jenisperusahaan == 'CV' ? 'selected' : '' }}>CV</option>
         <option value="PT" {{ $data->jenisperusahaan == 'PT' ? 'selected' : '' }}>PT</option>
