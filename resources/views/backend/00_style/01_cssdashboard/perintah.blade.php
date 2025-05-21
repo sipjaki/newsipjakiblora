@@ -1,4 +1,4 @@
-<script>
+{{-- <script>
 
 
     window.addEventListener('DOMContentLoaded', () => {
@@ -10,4 +10,15 @@
 
     </script>
 
+ --}}
 
+<style>
+    .jasa-konstruksi-hidden {
+  position: absolute;
+  left: -9999px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+</style>
