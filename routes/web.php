@@ -835,7 +835,7 @@ Route::put('/bepengawasanbujk/updatecreate/{id}', [PengawasanbujkController::cla
 
 
 Route::get('/bepengawasanbujk/create', [PengawasanbujkController::class, 'bepengawasanbujkcreate'])->middleware('auth');
-// Route::post('/bepengawasanbujk/createnew', [PengawasanbujkController::class, 'satuanhargamaterialcreatenew'])->middleware('auth')->name('create.satuanhargamaterialcreatenew');
+Route::post('/bepengawasanbujk/createnew', [PengawasanbujkController::class, 'bepengawasanbujkcreatenew'])->middleware('auth')->name('createpengawasanbujknew');
 
 // ======================================= MENU AGENDA PEMBINAAN  -------------------------------------------------------------
 // ---------------------- MENU 01 AGENDA PELATIHAN   -----------------------------------------------------
