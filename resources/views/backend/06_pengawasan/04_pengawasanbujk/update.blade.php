@@ -1,0 +1,294 @@
+
+@include('backend.00_administrator.00_baganterpisah.01_header')
+
+<!--begin::Body-->
+  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <!--begin::App Wrapper-->
+    <div class="app-wrapper">
+{{-- ---------------------------------------------------------------------- --}}
+
+@include('backend.00_administrator.00_baganterpisah.04_navbar')
+{{-- ---------------------------------------------------------------------- --}}
+
+      @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+
+      <!--begin::App Main-->
+      <main class="app-main">
+
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
+        <!--begin::App Content Header-->
+        <div class="app-content-header">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row">
+
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
+
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+
+        <br>
+            <!-- Menyertakan FontAwesome untuk ikon -->
+
+        <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row" style="margin-right: 10px; margin-left:10px;">
+                <!-- /.card -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+
+                           {{-- ======================================================= --}}
+        <div class="card card-primary card-outline mb-6">
+            <div style="display: flex; justify-content: flex-end; margin-top:10px;">
+                <a href="/bepengawasanbujk">
+                    <button onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #dee2e6)'; this.style.color='white'; this.style.transform='scale(1)'" style="background: linear-gradient(45deg, #6c757d, #dee2e6); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: all 0.3s ease; text-decoration: none;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/></svg>
+                        Kembali</button>
+            </a>
+        </div>
+        <hr>
+
+
+        {{-- ======================================================= --}}
+                    <div class="col-md-12">
+                        <!--begin::Quick Example-->
+                        <form  action="{{ route('updatepengwasanbujk', $data->id) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('POST') <!-- Ganti dengan PUT untuk update -->
+
+                            <!-- begin::Body -->
+                            <div class="card-body">
+
+<div class="row">
+    <div class="col-md-6">
+        <!-- Kode Proyek -->
+        <div class="mb-3">
+            <label class="form-label" for="kodeproyek">
+                <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i> Kode Proyek
+            </label>
+            <input type="text" id="kodeproyek" name="kodeproyek" class="form-control" value="{{ $data->kodeproyek }}">
+        </div>
+
+        <!-- Nama Perusahaan -->
+        <div class="mb-3">
+            <label class="form-label" for="namaperusahaan">
+                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Perusahaan
+            </label>
+            <input type="text" id="namaperusahaan" name="namaperusahaan" class="form-control" value="{{ $data->namaperusahaan }}">
+        </div>
+
+        <!-- Alamat Perusahaan -->
+        <div class="mb-3">
+            <label class="form-label" for="alamatperusahaan">
+                <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Alamat Perusahaan
+            </label>
+            <textarea id="alamatperusahaan" name="alamatperusahaan" class="form-control">{{ $data->alamatperusahaan }}</textarea>
+        </div>
+
+        <!-- Status Modal -->
+        <div class="mb-3">
+            <label class="form-label" for="statusmodal">
+                <i class="bi bi-currency-dollar" style="margin-right: 8px; color: navy;"></i> Status Modal
+            </label>
+            <input type="text" id="statusmodal" name="statusmodal" class="form-control" value="{{ $data->statusmodal }}">
+        </div>
+
+        <!-- Jenis Perusahaan -->
+        <div class="mb-3">
+            <label class="form-label" for="jenisperusahaan">
+                <i class="bi bi-diagram-3" style="margin-right: 8px; color: navy;"></i> Jenis Perusahaan
+            </label>
+            <input type="text" id="jenisperusahaan" name="jenisperusahaan" class="form-control" value="{{ $data->jenisperusahaan }}">
+        </div>
+
+        <!-- NIB -->
+        <div class="mb-3">
+            <label class="form-label" for="nib">
+                <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> NIB
+            </label>
+            <input type="text" id="nib" name="nib" class="form-control" value="{{ $data->nib }}">
+        </div>
+
+        <!-- KBLI -->
+        <div class="mb-3">
+            <label class="form-label" for="kbli">
+                <i class="bi bi-code" style="margin-right: 8px; color: navy;"></i> KBLI
+            </label>
+            <input type="text" id="kbli" name="kbli" class="form-control" value="{{ $data->kbli }}">
+        </div>
+
+        <!-- Uraian KBLI -->
+        <div class="mb-3">
+            <label class="form-label" for="uraiankbli">
+                <i class="bi bi-file-text" style="margin-right: 8px; color: navy;"></i> Uraian KBLI
+            </label>
+            <textarea id="uraiankbli" name="uraiankbli" class="form-control">{{ $data->uraiankbli }}</textarea>
+        </div>
+
+        <!-- Sektor -->
+        <div class="mb-3">
+            <label class="form-label" for="sektor">
+                <i class="bi bi-layers" style="margin-right: 8px; color: navy;"></i> Sektor
+            </label>
+            <input type="text" id="sektor" name="sektor" class="form-control" value="{{ $data->sektor }}">
+        </div>
+
+        <!-- Alamat Proyek -->
+        <div class="mb-3">
+            <label class="form-label" for="alamatproyek">
+                <i class="bi bi-geo" style="margin-right: 8px; color: navy;"></i> Alamat Proyek
+            </label>
+            <input type="text" id="alamatproyek" name="alamatproyek" class="form-control" value="{{ $data->alamatproyek }}">
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <!-- Wilayah -->
+        <div class="mb-3">
+            <label class="form-label" for="wilayah">
+                <i class="bi bi-globe" style="margin-right: 8px; color: navy;"></i> Wilayah
+            </label>
+            <input type="text" id="wilayah" name="wilayah" class="form-control" value="{{ $data->wilayah }}">
+        </div>
+
+        <!-- Luas Tanah -->
+        <div class="mb-3">
+            <label class="form-label" for="luastanah">
+                <i class="bi bi-bounding-box" style="margin-right: 8px; color: navy;"></i> Luas Tanah (m²)
+            </label>
+            <input type="number" step="0.01" id="luastanah" name="luastanah" class="form-control" value="{{ $data->luastanah }}">
+        </div>
+
+        <!-- Tenaga Kerja -->
+        <div class="mb-3">
+            <label class="form-label">
+                <i class="bi bi-people" style="margin-right: 8px; color: navy;"></i> Tenaga Kerja Indonesia (TKI)
+            </label>
+            <div class="row">
+                <div class="col">
+                    <input type="number" class="form-control" name="tki_lakilaki" placeholder="Laki-laki" value="{{ $data->tki_lakilaki }}">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" name="tki_perempuan" placeholder="Perempuan" value="{{ $data->tki_perempuan }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">
+                <i class="bi bi-people-fill" style="margin-right: 8px; color: navy;"></i> Tenaga Kerja Asing (TKA)
+            </label>
+            <div class="row">
+                <div class="col">
+                    <input type="number" class="form-control" name="tka_lakilaki" placeholder="Laki-laki" value="{{ $data->tka_lakilaki }}">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" name="tka_perempuan" placeholder="Perempuan" value="{{ $data->tka_perempuan }}">
+                </div>
+            </div>
+        </div>
+
+        <!-- Resiko -->
+        <div class="mb-3">
+            <label class="form-label" for="resiko">
+                <i class="bi bi-exclamation-triangle" style="margin-right: 8px; color: navy;"></i> Resiko
+            </label>
+            <input type="text" id="resiko" name="resiko" class="form-control" value="{{ $data->resiko }}">
+        </div>
+
+        <!-- Sumber Data -->
+        <div class="mb-3">
+            <label class="form-label" for="sumberdata">
+                <i class="bi bi-database" style="margin-right: 8px; color: navy;"></i> Sumber Data
+            </label>
+            <input type="text" id="sumberdata" name="sumberdata" class="form-control" value="{{ $data->sumberdata }}">
+        </div>
+
+        <!-- Investasi -->
+        <div class="mb-3">
+            <label class="form-label" for="investasi">
+                <i class="bi bi-cash" style="margin-right: 8px; color: navy;"></i> Investasi (Rp)
+            </label>
+            <input type="number" step="0.01" id="investasi" name="investasi" class="form-control" value="{{ $data->investasi }}">
+        </div>
+
+        <!-- Skala Usaha -->
+        <div class="mb-3">
+            <label class="form-label" for="skalausahaperusahaan">
+                <i class="bi bi-arrows-angle-expand" style="margin-right: 8px; color: navy;"></i> Skala Usaha Perusahaan
+            </label>
+            <input type="text" id="skalausahaperusahaan" name="skalausahaperusahaan" class="form-control" value="{{ $data->skalausahaperusahaan }}">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="skalausahaproyek">
+                <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Skala Usaha Proyek
+            </label>
+            <input type="text" id="skalausahaproyek" name="skalausahaproyek" class="form-control" value="{{ $data->skalausahaproyek }}">
+        </div>
+
+        <!-- Kewenangan -->
+        <div class="mb-3">
+            <label class="form-label" for="kewenangankoordinator">
+                <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Kewenangan Koordinator
+            </label>
+            <input type="text" id="kewenangankoordinator" name="kewenangankoordinator" class="form-control" value="{{ $data->kewenangankoordinator }}">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="kewenanganpengawas">
+                <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Kewenangan Pengawas
+            </label>
+            <input type="text" id="kewenanganpengawas" name="kewenanganpengawas" class="form-control" value="{{ $data->kewenanganpengawas }}">
+        </div>
+
+        <!-- PSN -->
+        <div class="mb-3">
+            <label class="form-label" for="PSN">
+                <i class="bi bi-patch-check" style="margin-right: 8px; color: navy;"></i> PSN
+            </label>
+            <input type="text" id="PSN" name="PSN" class="form-control" value="{{ $data->PSN }}">
+        </div>
+    </div>
+</div>
+
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- end::Body -->
+                        </form>
+
+
+                                                     </div>
+                        <!--end::Quick Example-->
+
+                    </div>
+                    <br><br>
+                    <!-- /.card -->
+                    <!-- Button Section -->
+
+                    </div>
+                    <!--end::Row-->
+                    </div>
+
+        </div>
+        <!--end::Row-->
+        </div>
+                  <!--end::Container-->
+        <!--end::App Content Header-->
+        <!--begin::App Content-->
+          <!--end::App Content-->
+        </section>
+        </main>
+      <!--end::App Main-->
+    </div>
+    </div>
+
+
+      @include('backend.00_administrator.00_baganterpisah.02_footer')

@@ -152,6 +152,21 @@ public function bepengawasanbujkshow($id)
     ]);
 }
 
+public function bepengawasanbujkupdatecreate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $datapengawasanbujk = pengawasanbujk::where('id', $id)->firstOrFail();
+
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.06_pengawasan.04_pengawasanbujk.update', [
+        'data' => $datapengawasanbujk,
+        'user' => $user,
+        'title' => 'Show Data Pengawasan BUJK'
+    ]);
+}
+
 
 
 }
