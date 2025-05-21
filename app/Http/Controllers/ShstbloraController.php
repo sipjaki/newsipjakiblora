@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\shstblora;
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ShstbloraController extends Controller
@@ -61,6 +61,59 @@ public function beshstkabbloraupdate($id)
     ]);
 }
 
+
+public function beshstkabbloraupdatenew(Request $request, $id)
+{
+    $request->validate([
+        'bangunankantortidaksederhana'   => 'required|numeric',
+        'bangunankantorsederhana'        => 'required|numeric',
+        'rumahnegaratipea'               => 'required|numeric',
+        'rumahnegaratipeb'               => 'required|numeric',
+        'rumahnegaratipecde'             => 'required|numeric',
+        'pagarrumahdepan'                => 'required|numeric',
+        'pagarrumahbelakang'             => 'required|numeric',
+        'pagarrumahsamping'              => 'required|numeric',
+        'pagarrumahnegaradepan'          => 'required|numeric',
+        'pagarrumahnegarabelakang'       => 'required|numeric',
+        'pagarrumahnegarasamping'        => 'required|numeric',
+    ], [
+        'required' => 'Kolom :attribute wajib diisi.',
+        'numeric' => 'Kolom :attribute harus berupa angka.',
+    ], [
+        'bangunankantortidaksederhana'   => 'Bangunan Kantor Tidak Sederhana',
+        'bangunankantorsederhana'        => 'Bangunan Kantor Sederhana',
+        'rumahnegaratipea'               => 'Rumah Negara Tipe A',
+        'rumahnegaratipeb'               => 'Rumah Negara Tipe B',
+        'rumahnegaratipecde'             => 'Rumah Negara Tipe C/D/E',
+        'pagarrumahdepan'                => 'Pagar Rumah Depan',
+        'pagarrumahbelakang'             => 'Pagar Rumah Belakang',
+        'pagarrumahsamping'              => 'Pagar Rumah Samping',
+        'pagarrumahnegaradepan'          => 'Pagar Rumah Negara Depan',
+        'pagarrumahnegarabelakang'       => 'Pagar Rumah Negara Belakang',
+        'pagarrumahnegarasamping'        => 'Pagar Rumah Negara Samping',
+    ]);
+
+    $proyek = shstblora::findOrFail($id);
+
+    $proyek->update($request->only([
+        'bangunankantortidaksederhana',
+        'bangunankantorsederhana',
+        'rumahnegaratipea',
+        'rumahnegaratipeb',
+        'rumahnegaratipecde',
+        'pagarrumahdepan',
+        'pagarrumahbelakang',
+        'pagarrumahsamping',
+        'pagarrumahnegaradepan',
+        'pagarrumahnegarabelakang',
+        'pagarrumahnegarasamping',
+    ]));
+
+
+  // Redirect atau response sukses
+    session()->flash('update', 'Data SHST Berhasil Diperbarui!');
+    return redirect('/beshstkabblora');
+}
 
 
 }

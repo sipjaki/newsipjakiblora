@@ -1019,7 +1019,7 @@ Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiContr
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------
 Route::get('/beshstkabblora', [ShstbloraController::class, 'beshstkabblora'])->middleware('auth')->name('beshstkabblora');
 Route::get('/beshstkabblora/update/{id}', [ShstbloraController::class, 'beshstkabbloraupdate'])->middleware('auth')->name('beshstkabbloraupdate');
-// Route::get('/beshstkabblora/update/{id}', [ShstbloraController::class, 'beshstkabbloraupdate'])->middleware('auth')->name('beshstkabbloraupdate');
+Route::get('/beshstkabblora/updatenew/{id}', [ShstbloraController::class, 'beshstkabbloraupdatenew'])->middleware('auth')->name('beshstkabbloraupdatenew');
 // ___________________________________________________________________________________________________________________________________
 
 // MENU DATA BACKEND SATUAN HARGA DASAR MATERIAL
