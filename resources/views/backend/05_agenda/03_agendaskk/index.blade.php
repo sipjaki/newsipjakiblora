@@ -11,7 +11,6 @@
     }
 </style>
 
-
 <style>
     table {
      table-layout: fixed;
