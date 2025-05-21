@@ -1068,6 +1068,8 @@ Route::get('/alladmin', [LoginController::class, 'alladmin'])->middleware('auth'
 Route::get('/allpekerja', [LoginController::class, 'allpekerja'])->middleware('auth');
 
 Route::get('/allsupppabrik', [LoginController::class, 'allsupppabrik'])->middleware('auth');
+
+Route::get('/allsuppperalatan', [LoginController::class, 'allsuppperalatan'])->middleware('auth');
 // DATA PENGATURAN DATABASE DATA ALL
 
 Route::get('/settingssekolah', [SettingDataController::class, 'settingssekolah'])->middleware('auth');
