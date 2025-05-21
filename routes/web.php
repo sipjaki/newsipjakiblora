@@ -1071,7 +1071,7 @@ Route::get('/allsupppabrik', [LoginController::class, 'allsupppabrik'])->middlew
 
 Route::get('/allsuppperalatan', [LoginController::class, 'allsuppperalatan'])->middleware('auth');
 
-Route::get('/allsupptokobangunan', [LoginController::class, 'allsuppperalatan'])->middleware('auth');
+Route::get('/allsupptokobangunan', [LoginController::class, 'allsupptokobangunan'])->middleware('auth');
 
 
 // DATA PENGATURAN DATABASE DATA ALL
