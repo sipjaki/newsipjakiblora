@@ -98,7 +98,8 @@
             transition: all 0.3s ease;
         "
     >
-        <i class="bi bi-edit"></i>
+    <i class="bi bi-pencil-square"></i>
+
         Update Profile
     </button>
 </a>
