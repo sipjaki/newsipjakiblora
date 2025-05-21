@@ -1140,7 +1140,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a href="/404" target="_blank" class="nav-link">
+                    <a href="/allpekerja" target="_blank" class="nav-link">
                       <i class="nav-icon bi bi-person-workspace text-warning"></i>
                       <p style="color: white;">Pekerja</p>
                     </a>
