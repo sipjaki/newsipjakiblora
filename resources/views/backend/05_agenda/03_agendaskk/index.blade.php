@@ -169,7 +169,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                                 </script>
 
                       <a href="/beagendaskk/create">
-    <button
+    <button class="responsive-button"
         onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
         onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
         style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px;
