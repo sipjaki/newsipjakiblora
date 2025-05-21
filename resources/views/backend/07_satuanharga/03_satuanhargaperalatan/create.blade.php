@@ -108,31 +108,10 @@
     @enderror
 </div>
 
-<!-- Satuan -->
-<div class="mb-3">
-    <label class="form-label" for="satuan">
-        <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
-    </label>
-    <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
-        <option value="">-- Pilih Satuan Upah --</option>
-        <option value="Orang/Hari" {{ old('satuan') == 'Orang/Hari' ? 'selected' : '' }}>Orang/Hari</option>
-        <option value="Orang/Bulan" {{ old('satuan') == 'Orang/Bulan' ? 'selected' : '' }}>Orang/Bulan</option>
-        <option value="Orang/Shift" {{ old('satuan') == 'Orang/Shift' ? 'selected' : '' }}>Orang/Shift</option>
-        <option value="Jam" {{ old('satuan') == 'Jam' ? 'selected' : '' }}>Jam</option>
-        <option value="Hari" {{ old('satuan') == 'Hari' ? 'selected' : '' }}>Hari</option>
-        <option value="Minggu" {{ old('satuan') == 'Minggu' ? 'selected' : '' }}>Minggu</option>
-        <option value="Bulan" {{ old('satuan') == 'Bulan' ? 'selected' : '' }}>Bulan</option>
-        <option value="Pekerjaan" {{ old('satuan') == 'Pekerjaan' ? 'selected' : '' }}>Pekerjaan</option>
-    </select>
-    @error('satuan')
-    <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
 <!-- Besaran -->
 <div class="mb-3">
     <label class="form-label" for="besaran_view">
-        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
+        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran Rp.
     </label>
     <input type="text" id="besaran_view" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
     <input type="hidden" id="besaran" name="besaran" value="{{ $oldBesaran }}">
@@ -151,6 +130,28 @@
     <input type="text" id="kode" name="kode" class="form-control @error('kode') is-invalid @enderror" value="{{ old('kode') }}" />
     @error('kode')
         <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+
+<!-- Satuan -->
+<div class="mb-3">
+    <label class="form-label" for="satuan">
+        <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
+    </label>
+    <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
+        <option value="">-- Pilih Satuan Upah --</option>
+        <option value="Orang/Hari" {{ old('satuan') == 'Orang/Hari' ? 'selected' : '' }}>Orang/Hari</option>
+        <option value="Orang/Bulan" {{ old('satuan') == 'Orang/Bulan' ? 'selected' : '' }}>Orang/Bulan</option>
+        <option value="Orang/Shift" {{ old('satuan') == 'Orang/Shift' ? 'selected' : '' }}>Orang/Shift</option>
+        <option value="Jam" {{ old('satuan') == 'Jam' ? 'selected' : '' }}>Jam</option>
+        <option value="Hari" {{ old('satuan') == 'Hari' ? 'selected' : '' }}>Hari</option>
+        <option value="Minggu" {{ old('satuan') == 'Minggu' ? 'selected' : '' }}>Minggu</option>
+        <option value="Bulan" {{ old('satuan') == 'Bulan' ? 'selected' : '' }}>Bulan</option>
+        <option value="Pekerjaan" {{ old('satuan') == 'Pekerjaan' ? 'selected' : '' }}>Pekerjaan</option>
+    </select>
+    @error('satuan')
+    <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
