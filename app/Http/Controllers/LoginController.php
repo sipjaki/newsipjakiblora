@@ -421,7 +421,7 @@ public function beprofileupdatecreate(Request $request, $id)
     session()->flash('create', 'Profile Berhasil Di Update !.');
 
         // Redirect ke halaman utama
-    return redirect('/');
+    return redirect('/beprofile');
 
 }
 
