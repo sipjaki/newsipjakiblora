@@ -27,6 +27,8 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('backend.00_style.00_cssdashboard.style')
+
 {{-- ---------------------------------------------------------------------- --}}
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
@@ -68,7 +70,7 @@
 
 
 <!-- Tombol Download Excel -->
-<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_shstkabupatenblora')"
+<button class="hide-on-mobile" onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_shstkabupatenblora')"
     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
     onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white'; this.style.transform='scale(1)';"
     style="
@@ -93,7 +95,7 @@
 
 <!-- Tombol Create -->
 <a href="/beshstkabblora/update/{{$item->id}}" style="text-decoration: none;">
-    <button
+    <button class="hide-on-mobile"
         onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
         onmouseout="this.style.background='linear-gradient(45deg, #228B22, #d4af37)'; this.style.color='white'; this.style.transform='scale(1)';"
         style="
