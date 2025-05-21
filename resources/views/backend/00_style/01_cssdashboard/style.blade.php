@@ -1,6 +1,11 @@
-/* Hide elemen saat layar kecil (HP) */
+<style>
+
+
+    /* Hide elemen saat layar kecil (HP) */
 @media (max-width: 767.98px) {
     .hide-on-mobile {
         display: none !important;
     }
 }
+
+</style>
