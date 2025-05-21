@@ -93,7 +93,7 @@
 
 
 <!-- Tombol Download Excel -->
-<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_bujkkonstruksi')"
+<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_pengawasanbujk')"
     onmouseover="this.style.background='white'; this.style.color='black';"
     onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white';"
     style="
