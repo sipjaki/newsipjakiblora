@@ -1168,7 +1168,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a href="/404" target="_blank" class="nav-link">
+                    <a href="/alllsppenerbit" target="_blank" class="nav-link">
                       <i class="nav-icon bi bi-journal-text text-warning"></i>
                       <p style="color: white;">LSP Penerbit</p>
                     </a>
