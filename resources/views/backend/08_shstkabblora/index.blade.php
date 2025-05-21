@@ -247,6 +247,8 @@
 </tbody>
 
 </table>
+
+<p>{{$title}}</p>
                      </div>
                  </div>
 
