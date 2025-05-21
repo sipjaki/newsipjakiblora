@@ -176,53 +176,65 @@
     <thead>
         <tr>
             <th>Pekerjaan </th>
-            <th>Besaran Rp. </th>
+            <th>Rp.</th>
+            <th>Besaran</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($data as $item)
             <tr>
                 <td>Bangunan Kantor Tidak Sederhana</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->bangunankantortidaksederhana, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Bangunan Kantor Sederhana</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->bangunankantorsederhana, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Rumah Negara Tipe A</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->rumahnegaratipea, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Rumah Negara Tipe B</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->rumahnegaratipeb, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Rumah Negara Tipe C/D/E</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->rumahnegaratipecde, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Pagar Rumah Depan</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->pagarrumahdepan, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Pagar Rumah Belakang</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->pagarrumahbelakang, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Pagar Rumah Samping</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->pagarrumahsamping, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Pagar Rumah Negara Depan</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->pagarrumahnegaradepan, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Pagar Rumah Negara Belakang</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->pagarrumahnegarabelakang, 2, ',', '.') }}</td>
             </tr>
             <tr>
                 <td>Pagar Rumah Negara Samping</td>
+                <td>Rp</td>
                 <td>{{ number_format($item->pagarrumahnegarasamping, 2, ',', '.') }}</td>
             </tr>
         @endforeach
