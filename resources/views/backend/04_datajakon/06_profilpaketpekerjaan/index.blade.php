@@ -278,10 +278,10 @@
          <td style="text-align: center;">{{$item->karakteristikkontrak}}</td>
 
          <td style="text-align: center;">
-            {{ \Carbon\Carbon::createFromDate(null, $item->bulanmulai, 1)->translatedFormat('F Y') }}
+            {{ \Carbon\Carbon::createFromDate(null, $item->bulanmulai, 1)->translatedFormat('F') }}
         </td>
         <td style="text-align: center;">
-            {{ \Carbon\Carbon::createFromDate(null, $item->bulanselesai, 1)->translatedFormat('F Y') }}
+            {{ \Carbon\Carbon::createFromDate(null, $item->bulanselesai, 1)->translatedFormat('F') }}
         </td>
 
         @php
