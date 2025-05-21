@@ -167,7 +167,7 @@
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 /> --}}
-                <span style="color: black:">{{ Auth::user()->name }}</span>
+                {{-- <span style="color: black:">{{ Auth::user()->name }}</span> --}}
               </a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
