@@ -358,4 +358,18 @@ public function forgotpassword()
     ]);
 }
 
+
+public function beprofileupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $user = User::where('id', $id)->firstOrFail();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.15_hakakses.02_profile.update', [
+        'data' => $user,
+        'title' => 'Update Akun Anda !'
+    ]);
+}
+
+
 }
