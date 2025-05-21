@@ -153,7 +153,7 @@
         padding-bottom: 10px;
     ">Update Profil Anda</h4>
 
-    <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.profile.update', $user->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
