@@ -139,6 +139,7 @@
     ">
     <i class="bi bi-download" style="font-size: 18px;"></i> Download Excel
 </button>
+@foreach ($data as $item)
 
 <!-- Tombol Create -->
 <a href="/beshstkabblora/update/{{$item->id}}" style="text-decoration: none;">
@@ -165,6 +166,8 @@
     </button>
 </a>
 
+
+@endforeach
                         </div>
                  </div>
                  <!-- /.card-header -->
