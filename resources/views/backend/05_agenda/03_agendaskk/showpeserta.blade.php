@@ -117,8 +117,14 @@
                                 @foreach ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left; text-transform:uppercase;">{{ $item->user->name ?? 'Nama Lengkap Belum Diisi' }}</td>
-                                        {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td> --}}
+                                      <td style="text-align: left; text-transform: uppercase;">
+                                                        @if($item->user->name)
+                                                            {{ $item->user->name }}
+                                                        @else
+                                                            <span style="color: red;">Nama Lengkap Belum Diisi</span>
+                                                        @endif
+                                                    </td>
+  {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td> --}}
                                         <td style="text-align: center;">{{ $item->nik }}</td>
                                         <td style="text-align: center;">{{ $item->jeniskelamin }}</td>
                                         <td style="text-align: center;">
