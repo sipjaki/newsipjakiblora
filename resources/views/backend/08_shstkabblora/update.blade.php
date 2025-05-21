@@ -80,89 +80,42 @@
 
                             <!-- begin::Body -->
                             <div class="card-body">
-                                <div class="row">
-                                    <!-- Left Column (6/12) -->
-                                       <div class="col-md-6">
                 @php
-                    // Hilangkan titik dari old value untuk hidden input supaya validasi lancar
-                    $oldBesaran = old('besaran', $data->besaran ?? '') ? str_replace('.', '', old('besaran', $data->besaran ?? '')) : '';
-                    $oldBesaranPerJam = old('besaranperjam', $data->besaranperjam ?? '') ? str_replace('.', '', old('besaranperjam', $data->besaranperjam ?? '')) : '';
-                @endphp
+    function toRaw($value) {
+        return $value ? str_replace('.', '', $value) : '';
+    }
 
-                <!-- Uraian Keahlian Tenaga Kerja -->
-                <div class="mb-3">
-                    <label class="form-label" for="uraian">
-                        <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Keahliaan Tenaga Kerja
-                    </label>
-                    <input type="text" id="uraian" name="uraian"
-                        class="form-control @error('uraian') is-invalid @enderror"
-                        value="{{ old('uraian', $data->uraian ?? '') }}" />
-                    @error('uraian')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
+    $rupiahFields = [
+        'bangunankantortidaksederhana',
+        'bangunankantorsederhana',
+        'rumahnegaratipea',
+        'rumahnegaratipeb',
+        'rumahnegaratipecde',
+        'pagarrumahdepan',
+        'pagarrumahbelakang',
+        'pagarrumahsamping',
+        'pagarrumahnegaradepan',
+        'pagarrumahnegarabelakang',
+        'pagarrumahnegarasamping'
+    ];
+@endphp
 
-                <!-- Satuan -->
-                <div class="mb-3">
-                    <label class="form-label" for="satuan">
-                        <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
-                    </label>
-                    <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
-                        <option value="">-- Pilih Satuan Upah --</option>
-                        @foreach(['Orang/Hari','Orang/Bulan','Orang/Shift','Jam','Hari','Minggu','Bulan','Pekerjaan'] as $option)
-                            <option value="{{ $option }}" {{ old('satuan', $data->satuan ?? '') == $option ? 'selected' : '' }}>{{ $option }}</option>
-                        @endforeach
-                    </select>
-                    @error('satuan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <!-- Besaran -->
-                <div class="mb-3">
-                    <label class="form-label" for="besaran_view">
-                        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
-                    </label>
-                    <input type="text" id="besaran_view"
-                        class="form-control @error('besaran') is-invalid @enderror"
-                        value="{{ old('besaran', $data->besaran ?? '') }}" />
-                    <input type="hidden" id="besaran" name="besaran" value="{{ $oldBesaran }}">
-                    @error('besaran')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-            </div>
-
-            <div class="col-md-6">
-                <!-- Kode -->
-                <div class="mb-3">
-                    <label class="form-label" for="kode">
-                        <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Kode
-                    </label>
-                    <input type="text" id="kode" name="kode"
-                        class="form-control @error('kode') is-invalid @enderror"
-                        value="{{ old('kode', $data->kode ?? '') }}" />
-                    @error('kode')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <!-- Besaran Per/Jam -->
-                <div class="mb-3">
-                    <label class="form-label" for="besaranperjam_view">
-                        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran Per/Jam
-                    </label>
-                    <input type="text" id="besaranperjam_view"
-                        class="form-control @error('besaranperjam') is-invalid @enderror"
-                        value="{{ old('besaranperjam', $data->besaranperjam ?? '') }}" />
-                    <input type="hidden" id="besaranperjam" name="besaranperjam" value="{{ $oldBesaranPerJam }}">
-                    @error('besaranperjam')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-            </div>
-
+<div class="row">
+    @foreach ($rupiahFields as $field)
+        <div class="col-md-6 mb-3">
+            <label class="form-label text-capitalize" for="{{ $field }}">
+                {{ ucwords(str_replace('_', ' ', preg_replace('/(?<!^)([A-Z])/', ' $1', $field))) }}
+            </label>
+            <input type="text" id="{{ $field }}_view" class="form-control @error($field) is-invalid @enderror"
+                value="{{ old($field, number_format($data->$field ?? 0, 0, ',', '.')) }}">
+            <input type="hidden" id="{{ $field }}" name="{{ $field }}"
+                value="{{ old($field, (int) ($data->$field ?? 0)) }}">
+            @error($field)
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    @endforeach
+</div>
 
 <script>
     function formatRupiah(angka) {
@@ -171,47 +124,32 @@
             sisa = split[0].length % 3,
             rupiah = split[0].substr(0, sisa),
             ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
         if (ribuan) {
             let separator = sisa ? '.' : '';
             rupiah += separator + ribuan.join('.');
         }
-
         return split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
     }
 
-    // Input Besaran
-    const besaranView = document.getElementById('besaran_view');
-    const besaranHidden = document.getElementById('besaran');
-
-    besaranView.addEventListener('input', function() {
-        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        this.value = formatRupiah(raw);
-        besaranHidden.value = raw;
-    });
-
     window.addEventListener('DOMContentLoaded', () => {
-        let oldValue = besaranHidden.value || '';
-        besaranView.value = formatRupiah(oldValue);
-    });
+        const fields = @json($rupiahFields);
+        fields.forEach(field => {
+            const view = document.getElementById(field + '_view');
+            const hidden = document.getElementById(field);
 
-    // Input Besaran Per/Jam
-    const besaranPerJamView = document.getElementById('besaranperjam_view');
-    const besaranPerJamHidden = document.getElementById('besaranperjam');
+            view.addEventListener('input', function () {
+                let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+                this.value = formatRupiah(raw);
+                hidden.value = raw;
+            });
 
-    besaranPerJamView.addEventListener('input', function() {
-        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        this.value = formatRupiah(raw);
-        besaranPerJamHidden.value = raw;
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-        let oldValue = besaranPerJamHidden.value || '';
-        besaranPerJamView.value = formatRupiah(oldValue);
+            // Set formatted value on load
+            view.value = formatRupiah(hidden.value);
+        });
     });
 </script>
-                                </div>
-                                <!-- End row -->
+                <!-- End row -->
+                            </div>
                             </div>
                             <!-- end::Body -->
 
