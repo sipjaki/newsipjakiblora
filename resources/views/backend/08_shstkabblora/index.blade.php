@@ -175,9 +175,9 @@
 <table id="tabelBujkkonstruksi" class="zebra-table table-striped" class="table table-bordered">
     <thead>
         <tr>
-            <th>Pekerjaan </th>
-            <th>Rp.</th>
-            <th>Besaran</th>
+            <th style="width: 400px;">Pekerjaan </th>
+            <th style="width: 75px;">Rp.</th>
+            <th style="width: 150px;">Besaran</th>
         </tr>
     </thead>
     <tbody>
