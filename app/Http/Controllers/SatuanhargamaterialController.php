@@ -2074,6 +2074,7 @@ public function besatuanhargaperalatanupdatecreate(Request $request, $id)
     ], [
         'uraian.required' => 'Uraian bahan material wajib diisi.',
         'satuan.required' => 'Satuan wajib diisi.',
+        'kode.required' => 'Kode wajib diisi.',
         'besaran.required' => 'Besaran wajib diisi.',
         'besaran.numeric' => 'Besaran harus berupa angka.',
         'besaran.min' => 'Besaran tidak boleh negatif.',
@@ -2083,7 +2084,7 @@ public function besatuanhargaperalatanupdatecreate(Request $request, $id)
     ]);
 
     // Ambil data berdasarkan ID
-    $data = satuanhargaupahtenagakerja::findOrFail($id);
+    $data = satuanhargaperalatan::findOrFail($id);
 
     // Update data
     $data->update([
