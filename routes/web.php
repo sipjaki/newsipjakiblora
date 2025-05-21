@@ -1015,6 +1015,11 @@ Route::get('/betertibjakonusahasurat1/create/{id}', [TertibjasakonstruksiControl
 Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1create'])->middleware('auth')->name('betertibjakonusahasurat1create');
 
 
+
+// ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------
+Route::get('/beshstkabblora', [ShstbloraController::class, 'beshstkabblora'])->middleware('auth')->name('beshstkabblora');
+// ___________________________________________________________________________________________________________________________________
+
 // MENU DATA BACKEND SATUAN HARGA DASAR MATERIAL
 Route::get('/besatuanhargamaterial', [SatuanhargamaterialController::class, 'besatuanhargamaterial'])->middleware('auth');
 Route::delete('/satuanhargamaterial/delete/{id}', [SatuanhargamaterialController::class, 'besatuanhargamaterialdelete'])->middleware('auth');
@@ -1040,8 +1045,6 @@ Route::get('/beprofile', [LoginController::class, 'beprofileindex'])->middleware
 Route::get('/beprofile/update/{id}', [LoginController::class, 'beprofileupdate'])->middleware('auth');
 Route::put('/beprofile/updatecreate/{id}', [LoginController::class, 'beprofileupdatecreate'])->middleware('auth')->name('admin.profile.update');
 
-
-// saat ini
 Route::get('/besatuanhargaperalatan', [SatuanhargamaterialController::class, 'besatuanhargaperalatan'])->middleware('auth');
 Route::delete('/besatuanhargaperalatan/delete/{id}', [SatuanhargamaterialController::class, 'besatuanhargaperalatandelete'])->middleware('auth');
 

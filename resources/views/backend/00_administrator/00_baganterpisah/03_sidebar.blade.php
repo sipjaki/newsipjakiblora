@@ -866,7 +866,7 @@
 
             {{-- ===================================== MENU DATA SHST BLORA   --}}
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/beshstkabblora" class="nav-link">
                     <!-- Ikon untuk SHST Kab Blora -->
                     <i class="nav-icon bi bi-file-earmark-text" style="color: white"></i> <!-- Ikon untuk SHST Kab Blora -->
                     <p style="color: white">

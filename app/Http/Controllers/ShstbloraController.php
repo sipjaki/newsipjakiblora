@@ -34,6 +34,17 @@ class ShstbloraController extends Controller
         ]);
     }
 
+// MENU BACKEND SHST KABUPATEN BLORA
+
+public function beshstkabblora()
+{
+    $user = Auth::user();
+
+    return view('backend.08_shstkabblora.index', [
+        'title' => 'Daftar Satuan Harga Dasar Tertinggi Kabupaten Blora',
+        // 'data' => $data
+    ]);
+}
 
 
 }
