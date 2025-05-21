@@ -261,33 +261,6 @@
             margin-bottom: 20px;
             padding: 15px;
             background: linear-gradient(to right, #f9f9f9, #fff);
-            border-left: 4px solid #2ECC71;
-            border-radius: 5px;
-        ">
-            <label style="
-                display: block;
-                margin-bottom: 5px;
-                font-weight: bold;
-                color: #555;
-            ">Nomor Telepon</label>
-            <input type="text" name="phone_number" value="{{ old('phone_number', $user->phone_number) }}" style="
-                width: 100%;
-                padding: 10px;
-                background: #fff;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                font-family: inherit;
-                font-size: inherit;
-            ">
-            @error('phone_number')
-                <div style="color: #e74c3c; font-size: 14px; margin-top: 5px;">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div class="form-group" style="
-            margin-bottom: 20px;
-            padding: 15px;
-            background: linear-gradient(to right, #f9f9f9, #fff);
             border-left: 4px solid #D4AF37;
             border-radius: 5px;
         ">
