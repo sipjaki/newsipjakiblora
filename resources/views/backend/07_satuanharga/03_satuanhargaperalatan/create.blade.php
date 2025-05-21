@@ -154,17 +154,6 @@
     @enderror
 </div>
 
-<!-- Besaran Per/Jam -->
-<div class="mb-3">
-    <label class="form-label" for="besaranperjam_view">
-        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran Per/Jam
-    </label>
-    <input type="text" id="besaranperjam_view" class="form-control @error('besaranperjam') is-invalid @enderror" value="{{ old('besaranperjam') }}" />
-    <input type="hidden" id="besaranperjam" name="besaranperjam" value="{{ $oldBesaranPerJam }}">
-    @error('besaranperjam')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
   <!-- End Right Column -->
                                 </div>
 
