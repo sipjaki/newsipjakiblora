@@ -171,7 +171,7 @@
  <thead>
      <tr>
        <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-upc-scan"></i> Kode Proyek</th>
+        <th style="width: 350px; text-align:center;"><i class="bi bi-upc-scan"></i> Kode Proyek</th>
         <th style="width: 250px; text-align:center;"><i class="bi bi-building"></i> Nama Perusahaan</th>
         <th style="width: 400px; text-align:center;"><i class="bi bi-geo-alt-fill"></i> Alamat Perusahaan</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-cash-coin"></i> Status Modal</th>
