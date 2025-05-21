@@ -45,7 +45,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-               <a href="/besatuanhargamaterial">
+               <a href="/besatuanhargaperalatan">
   <button
     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
     onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
