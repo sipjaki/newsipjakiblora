@@ -46,5 +46,21 @@ public function beshstkabblora()
     ]);
 }
 
+public function beshstkabbloraupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $datashstkabblora = shstblora::where('id', $id)->firstOrFail();
+
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.08_shstkabblora.update', [
+        'data' => $datashstkabblora,
+        'user' => $user,
+        'title' => 'Update SHST Kabupaten Blora'
+    ]);
+}
+
+
 
 }

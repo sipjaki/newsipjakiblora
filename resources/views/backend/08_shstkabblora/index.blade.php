@@ -141,7 +141,7 @@
 </button>
 
 <!-- Tombol Create -->
-<a href="/besatuanhargaupahpekerjaan/create" style="text-decoration: none;">
+<a href="/beshstkabblora/update/{{$item->id}}" style="text-decoration: none;">
     <button
         onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
         onmouseout="this.style.background='linear-gradient(45deg, #228B22, #d4af37)'; this.style.color='white'; this.style.transform='scale(1)';"
@@ -161,7 +161,7 @@
           transition: all 0.3s ease;
           text-decoration: none;
         ">
-        <i class="bi bi-plus-lg" style="font-size: 18px;"></i> Create
+        <i class="bi bi-plus-lg" style="font-size: 18px;"></i> Update
     </button>
 </a>
 
@@ -247,7 +247,7 @@
 </tbody>
 
 </table>
-<br><br><br>
+<br><br>
 <div style="text-align: center; margin: 20px 0;">
     <button
         style="
