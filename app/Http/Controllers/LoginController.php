@@ -489,4 +489,47 @@ public function allsuperadmin(Request $request)
 }
 
 
+public function alladmin(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    // Hanya ambil user yang statusadmin-nya memiliki id = 1
+    $query = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 2);
+    });
+
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('name', 'LIKE', "%{$search}%")
+              ->orWhere('username', 'LIKE', "%{$search}%")
+              ->orWhere('phone_number', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhere('avatar', 'LIKE', "%{$search}%");
+        });
+    }
+
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    // Hitung jumlah user dengan statusadmin id = 1
+    $jumlahStatus1 = User::whereHas('statusadmin', function ($q) {
+        $q->where('id', 1);
+    })->count();
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.13_daftarakun.03_admin.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.13_daftarakun.03_admin.index', [
+        'title' => 'Daftar Semua Akun Admin',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'jumlahStatus1' => $jumlahStatus1, // Super Admin
+    ]);
+}
+
+
 }

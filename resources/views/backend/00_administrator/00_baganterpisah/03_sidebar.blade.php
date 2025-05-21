@@ -1133,7 +1133,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a href="/404" target="_blank" class="nav-link">
+                    <a href="/alladmin" target="_blank" class="nav-link">
                       <i class="nav-icon bi bi-person-fill text-warning"></i>
                       <p style="color: white;">Admin</p>
                     </a>
