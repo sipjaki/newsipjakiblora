@@ -98,7 +98,7 @@
             transition: all 0.3s ease;
         "
     >
-        <i class="fa fa-edit"></i>
+        <i class="bi bi-edit"></i>
         Update Profile
     </button>
 </a>
