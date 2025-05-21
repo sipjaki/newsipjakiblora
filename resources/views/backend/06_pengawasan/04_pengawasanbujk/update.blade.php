@@ -158,12 +158,50 @@
         </div>
 
         <!-- Luas Tanah -->
-        <div class="mb-3">
-            <label class="form-label" for="luastanah">
-                <i class="bi bi-bounding-box" style="margin-right: 8px; color: navy;"></i> Luas Tanah (m²)
-            </label>
-            <input type="number" step="0.01" id="luastanah" name="luastanah" class="form-control" value="{{ $data->luastanah }}">
-        </div>
+       <div class="mb-3">
+    <label class="form-label" for="luastanah_view">
+        <i class="bi bi-bounding-box" style="margin-right: 8px; color: navy;"></i> Luas Tanah (m²)
+    </label>
+    <input type="text" id="luastanah_view" class="form-control @error('luastanah') is-invalid @enderror"
+        value="{{ old('luastanah', number_format($data->luastanah, 0, ',', '.')) }}" />
+    <input type="hidden" id="luastanah" name="luastanah" value="{{ old('luastanah', $data->luastanah) }}">
+    @error('luastanah')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+<script>
+    const inputLuasView = document.getElementById('luastanah_view');
+    const inputLuasHidden = document.getElementById('luastanah');
+
+    function formatRupiah(angka) {
+        let number_string = angka.replace(/[^,\d]/g, '').toString();
+        let split = number_string.split(',');
+        let sisa = split[0].length % 3;
+        let rupiah = split[0].substr(0, sisa);
+        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        if (ribuan) {
+            let separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        return split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+    }
+
+    inputLuasView.addEventListener('input', function() {
+        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+        this.value = formatRupiah(raw);
+        inputLuasHidden.value = raw;
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        let oldValue = inputLuasView.value.replace(/\./g, '').replace(/[^0-9]/g, '');
+        inputLuasHidden.value = oldValue;
+        inputLuasView.value = formatRupiah(oldValue);
+    });
+</script>
+
 
         <!-- Tenaga Kerja -->
         <div class="mb-3">
