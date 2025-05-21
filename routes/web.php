@@ -1061,6 +1061,7 @@ Route::get('/akuncreate', [LoginController::class, 'akuncreate'])->middleware('a
 
 Route::post('/akuncreatenew/createnew', [LoginController::class, 'akuncreatenew'])->middleware('auth')->name('akuncreatenew');
 
+Route::get('/allsuperadmin', [LoginController::class, 'allsuperadmin'])->middleware('auth');
 
 // DATA PENGATURAN DATABASE DATA ALL
 
