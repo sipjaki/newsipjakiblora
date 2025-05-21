@@ -67,117 +67,206 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('update.beberitajakoncreateupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
+                        <form  method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('POST') <!-- Ganti dengan PUT untuk update -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
-                                <div class="row">
-                                    <!-- Left Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Nama Asosiasi -->
 
-                                        <!-- Nama Lengkap -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="asosiasimasjaki">
-                                                <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Asosiasi
-                                            </label>
-                                            <input type="text" id="asosiasimasjaki" name="asosiasimasjaki" class="form-control"
-                                            value="{{ $data->asosiasimasjaki->namaasosiasi ?? 'Data Belum Di Update' }}"
-                                            style="background-color: #000080; color: white; border: 1px solid #000080; padding: 6px 10px; font-size: 14px; border-radius: 4px; transition: none;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';" />
+<div class="row">
+    <div class="col-md-6">
+        <!-- Kode Proyek -->
+        <div class="mb-3">
+            <label class="form-label" for="kodeproyek">
+                <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i> Kode Proyek
+            </label>
+            <input type="text" id="kodeproyek" class="form-control" value="{{ $data->kodeproyek }}" readonly />
+        </div>
 
-                                        </div>
+        <!-- Nama Perusahaan -->
+        <div class="mb-3">
+            <label class="form-label" for="namaperusahaan">
+                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Perusahaan
+            </label>
+            <input type="text" id="namaperusahaan" class="form-control" value="{{ $data->namaperusahaan }}" readonly />
+        </div>
 
+        <!-- Alamat Perusahaan -->
+        <div class="mb-3">
+            <label class="form-label" for="alamatperusahaan">
+                <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Alamat Perusahaan
+            </label>
+            <textarea id="alamatperusahaan" class="form-control" rows="2" readonly>{{ $data->alamatperusahaan }}</textarea>
+        </div>
 
-                                        <!-- Nama Lengkap -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
-                                            </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control" value="{{ $data->namalengkap }}" />
-                                        </div>
+        <!-- Status Modal -->
+        <div class="mb-3">
+            <label class="form-label" for="statusmodal">
+                <i class="bi bi-cash-stack" style="margin-right: 8px; color: navy;"></i> Status Modal
+            </label>
+            <input type="text" id="statusmodal" class="form-control" value="{{ $data->statusmodal }}" readonly />
+        </div>
 
-                                        <!-- Alamat -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="alamat">
-                                                <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> Alamat
-                                            </label>
-                                            <input type="text" id="alamat" name="alamat" class="form-control" value="{{ $data->alamat }}" />
-                                        </div>
+        <!-- Jenis Perusahaan -->
+        <div class="mb-3">
+            <label class="form-label" for="jenisperusahaan">
+                <i class="bi bi-diagram-3" style="margin-right: 8px; color: navy;"></i> Jenis Perusahaan
+            </label>
+            <input type="text" id="jenisperusahaan" class="form-control" value="{{ $data->jenisperusahaan }}" readonly />
+        </div>
 
-                                        <!-- No Telepon -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_telepon">
-                                                <i class="bi bi-phone" style="margin-right: 8px; color: navy;"></i> No Telepon
-                                            </label>
-                                            <input type="text" id="no_telepon" name="no_telepon" class="form-control" value="{{ $data->no_telepon }}" />
-                                        </div>
+        <!-- NIB -->
+        <div class="mb-3">
+            <label class="form-label" for="nib">
+                <i class="bi bi-card-heading" style="margin-right: 8px; color: navy;"></i> NIB
+            </label>
+            <input type="text" id="nib" class="form-control" value="{{ $data->nib }}" readonly />
+        </div>
 
-                                        <!-- Email -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="email">
-                                                <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
-                                            </label>
-                                            <input type="email" id="email" name="email" class="form-control" value="{{ $data->email }}" />
-                                        </div>
+        <!-- KBLI -->
+        <div class="mb-3">
+            <label class="form-label" for="kbli">
+                <i class="bi bi-list-ol" style="margin-right: 8px; color: navy;"></i> KBLI
+            </label>
+            <input type="text" id="kbli" class="form-control" value="{{ $data->kbli }}" readonly />
+        </div>
 
-                                        <!-- Nomor Induk Berusaha -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nomorindukberusaha">
-                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nomor Induk Berusaha
-                                            </label>
-                                            <input type="text" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control" value="{{ $data->nomorindukberusaha }}" />
-                                        </div>
-                                    </div>
-                                    <!-- End Left Column -->
+        <!-- Uraian KBLI -->
+        <div class="mb-3">
+            <label class="form-label" for="uraiankbli">
+                <i class="bi bi-info-square" style="margin-right: 8px; color: navy;"></i> Uraian KBLI
+            </label>
+            <textarea id="uraiankbli" class="form-control" rows="2" readonly>{{ $data->uraiankbli }}</textarea>
+        </div>
 
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- PJU -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pju">
-                                                <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> PJU
-                                            </label>
-                                            <input type="text" id="pju" name="pju" class="form-control" value="{{ $data->pju }}" />
-                                        </div>
+        <!-- Sektor -->
+        <div class="mb-3">
+            <label class="form-label" for="sektor">
+                <i class="bi bi-diagram-2-fill" style="margin-right: 8px; color: navy;"></i> Sektor
+            </label>
+            <input type="text" id="sektor" class="form-control" value="{{ $data->sektor }}" readonly />
+        </div>
 
-                                        <!-- No Akte -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_akte">
-                                                <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> No Akte
-                                            </label>
-                                            <input type="text" id="no_akte" name="no_akte" class="form-control" value="{{ $data->no_akte }}" />
-                                        </div>
+        <!-- Alamat Proyek -->
+        <div class="mb-3">
+            <label class="form-label" for="alamatproyek">
+                <i class="bi bi-geo" style="margin-right: 8px; color: navy;"></i> Alamat Proyek
+            </label>
+            <input type="text" id="alamatproyek" class="form-control" value="{{ $data->alamatproyek }}" readonly />
+        </div>
 
-                                        <!-- Tanggal -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal">
-                                                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal
-                                            </label>
-                                            <input type="date" id="tanggal" name="tanggal" class="form-control" value="{{ $data->tanggal }}" />
-                                        </div>
+        <!-- Wilayah -->
+        <div class="mb-3">
+            <label class="form-label" for="wilayah">
+                <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Wilayah
+            </label>
+            <input type="text" id="wilayah" class="form-control" value="{{ $data->wilayah }}" readonly />
+        </div>
+    </div>
 
-                                        <!-- Nama Notaris -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_notaris">
-                                                <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Nama Notaris
-                                            </label>
-                                            <input type="text" id="nama_notaris" name="nama_notaris" class="form-control" value="{{ $data->nama_notaris }}" />
-                                        </div>
+    <div class="col-md-6">
+        <!-- Luas Tanah -->
+        <div class="mb-3">
+            <label class="form-label" for="luastanah">
+                <i class="bi bi-square" style="margin-right: 8px; color: navy;"></i> Luas Tanah (m²)
+            </label>
+            <input type="text" id="luastanah" class="form-control" value="{{ $data->luastanah }}" readonly />
+        </div>
 
-                                        <!-- No Pengesahan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_pengesahan">
-                                                <i class="bi bi-file-earmark-check" style="margin-right: 8px; color: navy;"></i> No Pengesahan
-                                            </label>
-                                            <input type="text" id="no_pengesahan" name="no_pengesahan" class="form-control" value="{{ $data->no_pengesahan }}" />
-                                        </div>
+        <!-- Jumlah TKI dan TKA -->
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">
+                    <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i> TKI Laki-laki
+                </label>
+                <input type="number" class="form-control" value="{{ $data->tki_lakilaki }}" readonly />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">
+                    <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i> TKI Perempuan
+                </label>
+                <input type="number" class="form-control" value="{{ $data->tki_perempuan }}" readonly />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">
+                    <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i> TKA Laki-laki
+                </label>
+                <input type="number" class="form-control" value="{{ $data->tka_lakilaki }}" readonly />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">
+                    <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i> TKA Perempuan
+                </label>
+                <input type="number" class="form-control" value="{{ $data->tka_perempuan }}" readonly />
+            </div>
+        </div>
 
-                                    </div>
-                                    <!-- End Right Column -->
+        <!-- Risiko -->
+        <div class="mb-3">
+            <label class="form-label" for="resiko">
+                <i class="bi bi-exclamation-triangle" style="margin-right: 8px; color: navy;"></i> Risiko
+            </label>
+            <input type="text" id="resiko" class="form-control" value="{{ $data->resiko }}" readonly />
+        </div>
+
+        <!-- Sumber Data -->
+        <div class="mb-3">
+            <label class="form-label" for="sumberdata">
+                <i class="bi bi-database" style="margin-right: 8px; color: navy;"></i> Sumber Data
+            </label>
+            <input type="text" id="sumberdata" class="form-control" value="{{ $data->sumberdata }}" readonly />
+        </div>
+
+        <!-- Investasi -->
+        <div class="mb-3">
+            <label class="form-label" for="investasi">
+                <i class="bi bi-currency-dollar" style="margin-right: 8px; color: navy;"></i> Investasi (Rp)
+            </label>
+            <input type="text" id="investasi" class="form-control" value="{{ number_format($data->investasi, 2, ',', '.') }}" readonly />
+        </div>
+
+        <!-- Skala Usaha Perusahaan -->
+        <div class="mb-3">
+            <label class="form-label" for="skalausahaperusahaan">
+                <i class="bi bi-bar-chart-line" style="margin-right: 8px; color: navy;"></i> Skala Usaha Perusahaan
+            </label>
+            <input type="text" id="skalausahaperusahaan" class="form-control" value="{{ $data->skalausahaperusahaan }}" readonly />
+        </div>
+
+        <!-- Skala Usaha Proyek -->
+        <div class="mb-3">
+            <label class="form-label" for="skalausahaproyek">
+                <i class="bi bi-pie-chart" style="margin-right: 8px; color: navy;"></i> Skala Usaha Proyek
+            </label>
+            <input type="text" id="skalausahaproyek" class="form-control" value="{{ $data->skalausahaproyek }}" readonly />
+        </div>
+
+        <!-- Kewenangan Koordinator -->
+        <div class="mb-3">
+            <label class="form-label" for="kewenangankoordinator">
+                <i class="bi bi-person-gear" style="margin-right: 8px; color: navy;"></i> Kewenangan Koordinator
+            </label>
+            <input type="text" id="kewenangankoordinator" class="form-control" value="{{ $data->kewenangankoordinator }}" readonly />
+        </div>
+
+        <!-- Kewenangan Pengawas -->
+        <div class="mb-3">
+            <label class="form-label" for="kewenanganpengawas">
+                <i class="bi bi-person-check-fill" style="margin-right: 8px; color: navy;"></i> Kewenangan Pengawas
+            </label>
+            <input type="text" id="kewenanganpengawas" class="form-control" value="{{ $data->kewenanganpengawas }}" readonly />
+        </div>
+
+        <!-- PSN -->
+        <div class="mb-3">
+            <label class="form-label" for="PSN">
+                <i class="bi bi-flag" style="margin-right: 8px; color: navy;"></i> PSN (Proyek Strategis Nasional)
+            </label>
+            <input type="text" id="PSN" class="form-control" value="{{ $data->PSN }}" readonly />
+        </div>
+    </div>
+
                                 </div>
                                 <!-- End row -->
                             </div>
