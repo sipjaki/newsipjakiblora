@@ -158,9 +158,19 @@
         text-align: center;
         margin-bottom: 20px;
     ">
-      <div style="margin-top: 10px;">
-    @if($user->avatar && file_exists(public_path($user->avatar)))
-        {{-- Jika avatar ada di folder public --}}
+<div style="margin-top: 10px;">
+    @if($user->avatar && file_exists(public_path('storage/' . $user->avatar)))
+        {{-- Jika avatar ada di dalam folder storage --}}
+        <img src="{{ asset('storage/' . $user->avatar) }}" alt="Admin Avatar" style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #D4AF37;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        ">
+    @elseif($user->avatar && file_exists(public_path($user->avatar)))
+        {{-- Jika avatar ada di dalam folder public --}}
         <img src="{{ asset($user->avatar) }}" alt="Admin Avatar" style="
             width: 150px;
             height: 150px;
