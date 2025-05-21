@@ -170,22 +170,26 @@
 <table id="tabelBujkkonstruksi" class="zebra-table table-striped" >
  <thead>
      <tr>
-        <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
-        <th style="width: 250px; text-align:center;"><i class="bi bi-building"></i> Badan Usaha</th>
-        <th style="width: 400px; text-align:center;"><i class="bi bi-geo-alt-fill"></i> Alamat</th>
-        <th style="width: 350px; text-align:center;"><i class="bi bi-telephone-fill"></i> No Telepon</th>
-        <th style="width: 350px; text-align:center;"><i class="bi bi-envelope-fill"></i> Email</th>
-        <th style="width: 150px; text-align:center;"><i class="bi bi-credit-card-2-front"></i> NIB</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-person-badge-fill"></i> PJU</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-file-earmark-text"></i> No Akte</th>
-        <th style="width: 250px; text-align:center;"><i class="bi bi-calendar-date"></i> Tanggal</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-person-lines-fill"></i> Notaris</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-patch-check-fill"></i> Pengesahan</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Sub Klasifikasi</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Berkas</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-tags-fill"></i> Di Buat Oleh</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
+       <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-upc-scan"></i> Kode Proyek</th>
+        <th style="width: 250px; text-align:center;"><i class="bi bi-building"></i> Nama Perusahaan</th>
+        <th style="width: 400px; text-align:center;"><i class="bi bi-geo-alt-fill"></i> Alamat Perusahaan</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-cash-coin"></i> Status Modal</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-briefcase-fill"></i> Jenis Perusahaan</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-credit-card-2-front"></i> NIB</th>
+        <th style="width: 150px; text-align:center;"><i class="bi bi-tags-fill"></i> KBLI</th>
+        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text"></i> Uraian KBLI</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-diagram-3-fill"></i> Sektor</th>
+        <th style="width: 300px; text-align:center;"><i class="bi bi-geo-fill"></i> Alamat Proyek</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-globe-americas"></i> Wilayah</th>
+        <th style="width: 150px; text-align:center;"><i class="bi bi-exclamation-triangle-fill"></i> Resiko</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-database-fill"></i> Sumber Data</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-bar-chart-steps"></i> Skala Usaha Perusahaan</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-bar-chart-fill"></i> Skala Usaha Proyek</th>
+        <th style="width: 250px; text-align:center;"><i class="bi bi-person-workspace"></i> Kewenangan Koordinator</th>
+        <th style="width: 250px; text-align:center;"><i class="bi bi-person-check-fill"></i> Kewenangan Pengawas</th>
+        <th style="width: 100px; text-align:center;"><i class="bi bi-star-fill"></i> PSN</th>
+        <th style="width: 150px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
