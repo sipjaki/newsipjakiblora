@@ -229,7 +229,7 @@ public function bepengawasanbujkcreate()
     return view('backend.06_pengawasan.04_pengawasanbujk.create', [
         // 'data' => $jakonjabatanfungsional,
         'user' => $user,
-        'title' => 'Create Pengawasan BUJk '
+        'title' => 'Create Pengawasan BUJK '
     ]);
 }
 
