@@ -198,7 +198,7 @@
 
 
         <td style="text-align: center; vertical-align: middle;">
-            <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
+            <a href="/bepengawasanbujk/show/{{$item->id}}" class="btn btn-sm btn-info me-2" title="Show">
                 <i class="bi bi-eye"></i>
             </a>
             <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
