@@ -106,13 +106,10 @@
 
 
                         </div>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body p-0">
-                        <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        </div>
-
-
+                 </div>
+                 <!-- /.card-header -->
+                 <div class="card-body p-0">
+                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 <div class="admin-profile-container" style="
     max-width: 800px;
     margin: 30px auto;
@@ -293,6 +290,7 @@
 
 
                     </div>
+                 </div>
 
                  {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 
@@ -341,7 +339,6 @@
 
              </div>
              <!-- /.card -->
-         </div>
          </div>
          <!-- /.col -->
      </div>
