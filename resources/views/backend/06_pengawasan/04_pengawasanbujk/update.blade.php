@@ -117,15 +117,23 @@
         </div>
 
         <!-- Jenis Perusahaan -->
-        <div class="mb-3">
-            <label class="form-label" for="jenisperusahaan">
-                <i class="bi bi-diagram-3" style="margin-right: 8px; color: navy;"></i> Jenis Perusahaan
-            </label>
-            <input type="text" id="jenisperusahaan" name="jenisperusahaan" class="form-control" value="{{ $data->jenisperusahaan }}">
-        @error('jenisperusahaan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-        </div>
+      <div class="mb-3">
+    <label class="form-label" for="jenisperusahaan">
+        <i class="bi bi-diagram-3" style="margin-right: 8px; color: navy;"></i> Jenis Perusahaan
+    </label>
+    <select id="jenisperusahaan" name="jenisperusahaan" class="form-control @error('jenisperusahaan') is-invalid @enderror">
+        <option value="">-- Pilih Jenis Perusahaan --</option>
+        <option value="CV" {{ $data->jenisperusahaan == 'CV' ? 'selected' : '' }}>CV</option>
+        <option value="PT" {{ $data->jenisperusahaan == 'PT' ? 'selected' : '' }}>PT</option>
+        <option value="Firma" {{ $data->jenisperusahaan == 'Firma' ? 'selected' : '' }}>Firma</option>
+        <option value="Koperasi" {{ $data->jenisperusahaan == 'Koperasi' ? 'selected' : '' }}>Koperasi</option>
+        <option value="Perseorangan" {{ $data->jenisperusahaan == 'Perseorangan' ? 'selected' : '' }}>Perseorangan</option>
+    </select>
+    @error('jenisperusahaan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
 
         <!-- NIB -->
         <div class="mb-3">
@@ -313,27 +321,36 @@
         </div>
 
         <!-- Skala Usaha -->
-        <div class="mb-3">
-            <label class="form-label" for="skalausahaperusahaan">
-                <i class="bi bi-arrows-angle-expand" style="margin-right: 8px; color: navy;"></i> Skala Usaha Perusahaan
-            </label>
-            <input type="text" id="skalausahaperusahaan" name="skalausahaperusahaan" class="form-control" value="{{ $data->skalausahaperusahaan }}">
-                    @error('skalausahaperusahaan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+    <div class="mb-3">
+    <label class="form-label" for="skalausahaperusahaan">
+        <i class="bi bi-arrows-angle-expand" style="margin-right: 8px; color: navy;"></i> Skala Usaha Perusahaan
+    </label>
+    <select id="skalausahaperusahaan" name="skalausahaperusahaan" class="form-control @error('skalausahaperusahaan') is-invalid @enderror">
+        <option value="">-- Pilih Skala Usaha --</option>
+        <option value="Kecil" {{ $data->skalausahaperusahaan == 'Kecil' ? 'selected' : '' }}>Kecil</option>
+        <option value="Menengah" {{ $data->skalausahaperusahaan == 'Menengah' ? 'selected' : '' }}>Menengah</option>
+        <option value="Besar" {{ $data->skalausahaperusahaan == 'Besar' ? 'selected' : '' }}>Besar</option>
+    </select>
+    @error('skalausahaperusahaan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
-        </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="skalausahaproyek">
-                <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Skala Usaha Proyek
-            </label>
-            <input type="text" id="skalausahaproyek" name="skalausahaproyek" class="form-control" value="{{ $data->skalausahaproyek }}">
-                @error('skalausahaproyek')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-
-        </div>
+<div class="mb-3">
+    <label class="form-label" for="skalausahaproyek">
+        <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Skala Usaha Proyek
+    </label>
+    <select id="skalausahaproyek" name="skalausahaproyek" class="form-control @error('skalausahaproyek') is-invalid @enderror">
+        <option value="">-- Pilih Skala Usaha Proyek --</option>
+        <option value="Kecil" {{ $data->skalausahaproyek == 'Kecil' ? 'selected' : '' }}>Kecil</option>
+        <option value="Menengah" {{ $data->skalausahaproyek == 'Menengah' ? 'selected' : '' }}>Menengah</option>
+        <option value="Besar" {{ $data->skalausahaproyek == 'Besar' ? 'selected' : '' }}>Besar</option>
+    </select>
+    @error('skalausahaproyek')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
         <!-- Kewenangan -->
         <div class="mb-3">
@@ -358,17 +375,21 @@
 
         </div>
 
-        <!-- PSN -->
-        <div class="mb-3">
-            <label class="form-label" for="PSN">
-                <i class="bi bi-patch-check" style="margin-right: 8px; color: navy;"></i> PSN
-            </label>
-            <input type="text" id="PSN" name="PSN" class="form-control" value="{{ $data->PSN }}">
-                @error('PSN')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
+       <!-- PSN -->
+<div class="mb-3">
+    <label class="form-label" for="PSN">
+        <i class="bi bi-patch-check" style="margin-right: 8px; color: navy;"></i> PSN
+    </label>
+    <select id="PSN" name="PSN" class="form-control @error('PSN') is-invalid @enderror">
+        <option value="">-- Pilih --</option>
+        <option value="Ya" {{ $data->PSN == 'Ya' ? 'selected' : '' }}>Ya</option>
+        <option value="Tidak" {{ $data->PSN == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+    </select>
+    @error('PSN')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
-        </div>
     </div>
 </div>
 
