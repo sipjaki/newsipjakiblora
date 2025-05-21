@@ -2045,4 +2045,20 @@ public function besatuanhargaperalatancreatenew(Request $request)
 }
 
 
+public function besatuanhargaperalatanupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $datasatuanperalatan = satuanhargaperalatan::where('id', $id)->firstOrFail();
+
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.07_satuanharga.03_satuanhargaperalatan.update', [
+        'data' => $datasatuanperalatan,
+        'user' => $user,
+        'title' => 'Update Daftar Harga Satuan Peralatan'
+    ]);
+}
+
+
 }
