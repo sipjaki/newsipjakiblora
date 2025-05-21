@@ -1161,7 +1161,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a href="/404" target="_blank" class="nav-link">
+                    <a href="/allsupptokobangunan" target="_blank" class="nav-link">
                       <i class="nav-icon bi bi-shop text-warning"></i>
                       <p style="color: white;">Supplier Toko Bangunan</p>
                     </a>
