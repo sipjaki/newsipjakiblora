@@ -247,8 +247,8 @@
 </tbody>
 
 </table>
-
-<p>{{$title}}</p>
+<br><br><br>
+<p style="text-align: center;">{{ $title }}</p>
                      </div>
                  </div>
 
