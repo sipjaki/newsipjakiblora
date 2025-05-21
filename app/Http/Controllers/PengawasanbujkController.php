@@ -137,5 +137,21 @@ class PengawasanbujkController extends Controller
 }
 
 
+public function bepengawasanbujkshow($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $datapengawasanbujk = pengawasanbujk::where('id', $id)->firstOrFail();
+
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.06_pengawasan.04_pengawasanbujk.show', [
+        'data' => $datapengawasanbujk,
+        'user' => $user,
+        'title' => 'Show Data Pengawasan BUJK'
+    ]);
+}
+
+
 
 }
