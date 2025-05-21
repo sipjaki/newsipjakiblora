@@ -436,7 +436,7 @@ class TertibjasakonstruksiController extends Controller
 
     public function betertibjakonusaha(Request $request)
     {
-        $perPage = $request->input('perPage', 10);
+        $perPage = $request->input('perPage', 15);
         $search = $request->input('search');
 
         $query = tertibjasakonstruksi::query();
