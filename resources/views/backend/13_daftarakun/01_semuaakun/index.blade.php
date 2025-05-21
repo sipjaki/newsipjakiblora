@@ -134,16 +134,18 @@
 
 <div class="button-container">
 
-  <button class="btn-custom pekerja">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-      class="bi bi-person-workspace" viewBox="0 0 16 16">
-      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
-      <path fill-rule="evenodd"
+    <a href="/allpekerja">
+        <button class="btn-custom pekerja">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-person-workspace" viewBox="0 0 16 16">
+            <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+            <path fill-rule="evenodd"
         d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
     </svg>
     {{$jumlahStatus3}} Pekerja
-  </button>
+</button>
+</a>
 
   {{-- <button class="btn-custom superadmin">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -155,72 +157,89 @@
     </svg>
     {{$jumlahStatus1}} Super Admin
   </button> --}}
+<a href="/alladmin">
 
-  <button class="btn-custom admin">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+    <button class="btn-custom admin">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       class="bi bi-person-workspace" viewBox="0 0 16 16">
       <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
       <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
       <path fill-rule="evenodd"
-        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+      d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
     </svg>
     {{$jumlahStatus2}} Admin
-  </button>
+</button>
+</a>
 
-  <button class="btn-custom supp-pabrik">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-      class="bi bi-person-workspace" viewBox="0 0 16 16">
-      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+<a href="/allsupppabrik">
+
+    <button class="btn-custom supp-pabrik">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-person-workspace" viewBox="0 0 16 16">
+        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
       <path fill-rule="evenodd"
-        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+      d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
     </svg>
     {{$jumlahStatus4}} Supp Pabrik
-  </button>
+</button>
+</a>
 
-  <button class="btn-custom supp-peralatan">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-      class="bi bi-person-workspace" viewBox="0 0 16 16">
-      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
-      <path fill-rule="evenodd"
+<a href="/allsuppperalatan">
+
+    <button class="btn-custom supp-peralatan">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-person-workspace" viewBox="0 0 16 16">
+        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+        <path fill-rule="evenodd"
         d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
     </svg>
     {{$jumlahStatus5}} Supp Peralatan
-  </button>
+</button>
+</a>
 
-  <button class="btn-custom supp-toko">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-      class="bi bi-person-workspace" viewBox="0 0 16 16">
-      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+<a href="/allsupptokobangunan">
+
+    <button class="btn-custom supp-toko">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-person-workspace" viewBox="0 0 16 16">
+        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
       <path fill-rule="evenodd"
-        d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
+      d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
     </svg>
     {{$jumlahStatus6}} Supp Toko Bangunan
-  </button>
+</button>
+</a>
 
-  <button class="btn-custom lsp-penerbit">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-      class="bi bi-person-workspace" viewBox="0 0 16 16">
-      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
-      <path fill-rule="evenodd"
+<a href="/alllsppenerbit">
+
+    <button class="btn-custom lsp-penerbit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-person-workspace" viewBox="0 0 16 16">
+        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+        <path fill-rule="evenodd"
         d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
     </svg>
     {{$jumlahStatus7}} LSP Penerbit
-  </button>
+</button>
+</a>
 
-  <button class="btn-custom dinas">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-      class="bi bi-person-workspace" viewBox="0 0 16 16">
-      <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-      <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
-      <path fill-rule="evenodd"
+<a href="/alldinas">
+
+    <button class="btn-custom dinas">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-person-workspace" viewBox="0 0 16 16">
+        <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        <path d="M1 14s1-1 4-1 4 1 4 1v1H1v-1z" />
+        <path fill-rule="evenodd"
         d="M12.5 11a.5.5 0 0 0 0 1H13v1a1 1 0 0 0 1 1h.5a.5.5 0 0 0 0-1H14v-1a1 1 0 0 0-1-1h-.5z" />
     </svg>
     {{$jumlahStatus9}} Dinas
-  </button>
+</button>
+</a>
                  </div>
                  </div>
                  <!-- /.card-header -->
