@@ -53,7 +53,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
 
-                <a href="{{ url()->previous() }}">
+             <a href="{{ url()->previous() }}" style="text-decoration: none;">
     <button class="hide-on-mobile"
         onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
         onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #dee2e6)'; this.style.color='white'; this.style.transform='scale(1)'"
