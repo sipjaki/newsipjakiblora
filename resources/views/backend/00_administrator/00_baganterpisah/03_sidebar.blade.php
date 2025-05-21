@@ -1147,7 +1147,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a href="/404" target="_blank" class="nav-link">
+                    <a href="/allsupppabrik" target="_blank" class="nav-link">
                       <i class="nav-icon bi bi-truck-front-fill text-warning"></i>
                       <p style="color: white;">Supplier Pabrik</p>
                     </a>
