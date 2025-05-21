@@ -1,4 +1,12 @@
+
 <style>
+
+    @media (max-width: 767.98px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+
     table {
      table-layout: fixed;
      width: 100%;
@@ -93,7 +101,7 @@
 
 
 <!-- Tombol Download Excel -->
-<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_pengawasanbujk')"
+<button class="hide-on-mobile" onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_pengawasanbujk')"
     onmouseover="this.style.background='white'; this.style.color='black';"
     onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white';"
     style="
@@ -117,7 +125,7 @@
 
 <!-- Tombol Create -->
 <a href="/bepengawasanbujk/create">
-    <button
+    <button class="hide-on-mobile"
         onmouseover="this.style.background='white'; this.style.color='black';"
         onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white';"
         style="
