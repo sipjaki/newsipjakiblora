@@ -140,15 +140,12 @@
         <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
     </label>
     <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
-        <option value="">-- Pilih Satuan Upah --</option>
-        <option value="Orang/Hari" {{ old('satuan') == 'Orang/Hari' ? 'selected' : '' }}>Orang/Hari</option>
-        <option value="Orang/Bulan" {{ old('satuan') == 'Orang/Bulan' ? 'selected' : '' }}>Orang/Bulan</option>
-        <option value="Orang/Shift" {{ old('satuan') == 'Orang/Shift' ? 'selected' : '' }}>Orang/Shift</option>
+        <option value="">-- Pilih Satuan Waktu --</option>
         <option value="Jam" {{ old('satuan') == 'Jam' ? 'selected' : '' }}>Jam</option>
         <option value="Hari" {{ old('satuan') == 'Hari' ? 'selected' : '' }}>Hari</option>
         <option value="Minggu" {{ old('satuan') == 'Minggu' ? 'selected' : '' }}>Minggu</option>
         <option value="Bulan" {{ old('satuan') == 'Bulan' ? 'selected' : '' }}>Bulan</option>
-        <option value="Pekerjaan" {{ old('satuan') == 'Pekerjaan' ? 'selected' : '' }}>Pekerjaan</option>
+        <option value="Tahun" {{ old('satuan') == 'Tahun' ? 'selected' : '' }}>Tahun</option>
     </select>
     @error('satuan')
     <div class="invalid-feedback">{{ $message }}</div>
