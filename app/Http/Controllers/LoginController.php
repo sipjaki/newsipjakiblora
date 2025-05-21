@@ -337,4 +337,21 @@ public function forgotpassword()
         ]);
     }
 
+
+    // AKUN PEKERJA
+
+ public function beprofileindex()
+{
+    // Ambil user yang sedang login
+    $user = Auth::user();
+
+    // (opsional) Jika ingin cek usernya
+    // dd($user);
+
+    return view('backend.15_hakakses.02_profile.index', [
+        'title' => 'Akun Anda !',
+        'user' => $user, // kirim ke view kalau mau ditampilkan
+    ]);
+}
+
 }

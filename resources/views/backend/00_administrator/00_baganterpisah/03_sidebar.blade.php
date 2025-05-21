@@ -309,7 +309,7 @@
 </li>
 
               <li class="nav-item">
-                <a href="/404" class="nav-link">
+                <a href="/beprofile" class="nav-link">
                   <i class="nav-icon bi bi-person-circle" style="color: white"></i> <!-- Profil Anda -->
                   <p style="color: white">
                     Profil Anda

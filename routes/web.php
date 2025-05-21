@@ -1030,6 +1030,12 @@ Route::post('/besatuanhargaupahpekerjaan/createnew', [SatuanhargamaterialControl
 Route::get('/besatuanhargaupahpekerjaan/update/{id}', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaanupdate'])->middleware('auth');
 Route::post('/besatuanhargaupahpekerjaan/updatecreate/{id}', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaanupdatecreate'])->middleware('auth')->name('update.besatuanhargaupahpekerjaanupdatecreate');
 
+
+// saat ini bro
+Route::get('/beprofile', [LoginController::class, 'beprofileindex'])->middleware('auth');
+// AKUN PERSONAL PRIBADI AKUN PEKERJA
+
+
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
 // PEKERJAANINI
 // ROUTE UNTUK DAFTAR AKUN
