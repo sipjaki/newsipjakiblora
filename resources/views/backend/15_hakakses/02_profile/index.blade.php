@@ -110,15 +110,189 @@
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-
-
                         </div>
 
 
+<div class="admin-profile-container" style="
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #D4AF37, #2ECC71) 1;
+    position: relative;
+    overflow: hidden;
+">
+    <!-- Hiasan sudut -->
+    <div class="corner-decor" style="
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        right: 0;
+        border-top: 2px solid #D4AF37;
+        border-right: 2px solid #D4AF37;
+        border-top-right-radius: 10px;
+    "></div>
+
+    <div class="corner-decor" style="
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid #2ECC71;
+        border-left: 2px solid #2ECC71;
+        border-bottom-left-radius: 10px;
+    "></div>
+
+    <h4 style="
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+        font-family: 'Arial', sans-serif;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    ">Akun Anda</h4>
+
+    <div class="admin-avatar" style="
+        text-align: center;
+        margin-bottom: 20px;
+    ">
+<div style="margin-top: 10px;">
+    @if($user->avatar && file_exists(public_path('storage/' . $user->avatar)))
+        {{-- Jika avatar ada di dalam folder storage --}}
+        <img src="{{ asset('storage/' . $user->avatar) }}" alt="Admin Avatar" style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #D4AF37;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        ">
+    @elseif($user->avatar && file_exists(public_path($user->avatar)))
+        {{-- Jika avatar ada di dalam folder public --}}
+        <img src="{{ asset($user->avatar) }}" alt="Admin Avatar" style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #D4AF37;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        ">
+    @elseif($user->avatar)
+        {{-- Jika avatar adalah link/path dari luar public folder --}}
+        <img src="{{ $user->avatar }}" alt="Admin Avatar" style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #D4AF37;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        ">
+    @else
+        {{-- Jika avatar tidak ada, tampilkan placeholder --}}
+        <img src="https://via.placeholder.com/150" alt="Admin Avatar" style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #D4AF37;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        ">
+    @endif
+</div>
+
+    </div>
+
+    <div class="form-group" style="
+        margin-bottom: 20px;
+        padding: 15px;
+        background: linear-gradient(to right, #f9f9f9, #fff);
+        border-left: 4px solid #D4AF37;
+        border-radius: 5px;
+    ">
+        <label style="
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        ">Status Admin</label>
+        <div class="form-control" style="
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        ">{{ $user->statusadmin->statusadmin ?? 'N/A' }}</div>
+    </div>
+
+    <div class="form-group" style="
+        margin-bottom: 20px;
+        padding: 15px;
+        background: linear-gradient(to right, #f9f9f9, #fff);
+        border-left: 4px solid #2ECC71;
+        border-radius: 5px;
+    ">
+        <label style="
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        ">Nama Lengkap</label>
+        <div class="form-control" style="
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        ">{{ $user->name ?? 'N/A' }}</div>
+    </div>
+
+    <div class="form-group" style="
+        margin-bottom: 20px;
+        padding: 15px;
+        background: linear-gradient(to right, #f9f9f9, #fff);
+        border-left: 4px solid #D4AF37;
+        border-radius: 5px;
+    ">
+        <label style="
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        ">Username</label>
+        <div class="form-control" style="
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        ">{{ $user->username ?? 'N/A' }}</div>
+    </div>
+    <div class="form-group" style="
+        margin-bottom: 20px;
+        padding: 15px;
+        background: linear-gradient(to right, #f9f9f9, #fff);
+        border-left: 4px solid #2ECC71;
+        border-radius: 5px;
+    ">
+        <label style="
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        ">Email</label>
+        <div class="form-control" style="
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        ">{{ $user->email ?? 'N/A' }}</div>
+    </div>
+</div>
 
 
                     </div>
-                 </div>
 
                  {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 
@@ -180,7 +354,6 @@
         </section>
     </main>
    <!--end::App Main-->
- </div>
  </div>
  </div>
 
