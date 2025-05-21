@@ -1075,6 +1075,8 @@ Route::get('/allsupptokobangunan', [LoginController::class, 'allsupptokobangunan
 
 Route::get('/alllsppenerbit', [LoginController::class, 'alllsppenerbit'])->middleware('auth');
 
+Route::get('/alldinas', [LoginController::class, 'alldinas'])->middleware('auth');
+
 
 // DATA PENGATURAN DATABASE DATA ALL
 

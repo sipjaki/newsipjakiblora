@@ -1175,7 +1175,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a href="/404" target="_blank" class="nav-link">
+                    <a href="/alldinas" target="_blank" class="nav-link">
                       <i class="nav-icon bi bi-building text-warning"></i>
                       <p style="color: white;">Dinas</p>
                     </a>
