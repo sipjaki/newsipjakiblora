@@ -27,7 +27,7 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
-@include('backend.00_style.00_cssdashboard.style')
+@include('backend.00_style.01_cssdashboard.style')
 
 {{-- ---------------------------------------------------------------------- --}}
 
