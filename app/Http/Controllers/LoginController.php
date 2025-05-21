@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use App\Models\statusadmin;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -371,5 +373,56 @@ public function beprofileupdate($id)
     ]);
 }
 
+
+// ========================
+
+
+public function beprofileupdatecreate(Request $request, $id)
+{
+    $user = User::findOrFail($id);
+
+    // Validasi input
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'username' => 'required|string|max:255|unique:users,username,' . $id,
+        'email' => 'required|email|max:255|unique:users,email,' . $id,
+        'avatar' => 'nullable|image|mimes:jpg,jpeg,png|max:5048',
+    ]);
+
+    // Simpan avatar baru jika ada file di-upload
+    if ($request->hasFile('avatar')) {
+        $file = $request->file('avatar');
+        $avatarName = 'avatar_' . time() . '.' . $file->getClientOriginalExtension();
+        $avatarPath = '00_akun/01_user/' . $avatarName; // relative path dari public
+
+        // Buat folder jika belum ada
+        if (!File::isDirectory(public_path('00_akun/01_user'))) {
+            File::makeDirectory(public_path('00_akun/01_user'), 0755, true);
+        }
+
+        // Hapus avatar lama jika ada
+        if ($user->avatar && file_exists(public_path($user->avatar))) {
+            File::delete(public_path($user->avatar));
+        }
+
+        // Simpan file baru ke public path
+        $file->move(public_path('00_akun/01_user'), $avatarName);
+
+        // Simpan path ke database (pastikan sesuai)
+        $user->avatar = $avatarPath;
+    }
+
+    // Simpan data lainnya
+    $user->name = $validated['name'];
+    $user->username = $validated['username'];
+    $user->email = $validated['email'];
+    $user->save();
+
+    session()->flash('create', 'Profile Berhasil Di Update !.');
+
+        // Redirect ke halaman utama
+    return redirect('/');
+
+}
 
 }
