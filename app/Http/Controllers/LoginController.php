@@ -512,7 +512,7 @@ public function alladmin(Request $request)
     $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
     // Hitung jumlah user dengan statusadmin id = 1
-    $jumlahStatus1 = User::whereHas('statusadmin', function ($q) {
+    $jumlahStatus2 = User::whereHas('statusadmin', function ($q) {
         $q->where('id', 1);
     })->count();
 
@@ -527,7 +527,7 @@ public function alladmin(Request $request)
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search,
-        'jumlahStatus1' => $jumlahStatus1, // Super Admin
+        'jumlahStatus2' => $jumlahStatus2, // Super Admin
     ]);
 }
 
