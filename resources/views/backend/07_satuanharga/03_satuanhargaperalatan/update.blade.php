@@ -102,27 +102,12 @@
                     @enderror
                 </div>
 
-                <!-- Satuan -->
-              <div class="mb-3">
-                    <label class="form-label" for="satuan">
-                        <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
-                    </label>
-                    <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
-                        <option value="">-- Pilih Satuan Waktu --</option>
-                        @foreach(['Jam','Hari','Minggu','Bulan','Tahun'] as $option)
-                            <option value="{{ $option }}" {{ old('satuan', $data->satuan ?? '') == $option ? 'selected' : '' }}>{{ $option }}</option>
-                        @endforeach
-                    </select>
-                    @error('satuan')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
 
 
                 <!-- Besaran -->
                 <div class="mb-3">
                     <label class="form-label" for="besaran_view">
-                        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
+                        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran Rp.
                     </label>
                     <input type="text" id="besaran_view"
                         class="form-control @error('besaran') is-invalid @enderror"
@@ -148,20 +133,25 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-{{--
-                <!-- Besaran Per/Jam -->
-                <div class="mb-3">
-                    <label class="form-label" for="besaranperjam_view">
-                        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran Per/Jam
+
+                     <!-- Satuan -->
+              <div class="mb-3">
+                    <label class="form-label" for="satuan">
+                        <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
                     </label>
-                    <input type="text" id="besaranperjam_view"
-                        class="form-control @error('besaranperjam') is-invalid @enderror"
-                        value="{{ old('besaranperjam', $data->besaranperjam ?? '') }}" />
-                    <input type="hidden" id="besaranperjam" name="besaranperjam" value="{{ $oldBesaranPerJam }}">
-                    @error('besaranperjam')
+                    <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
+                        <option value="">-- Pilih Satuan Waktu --</option>
+                        @foreach(['Jam','Hari','Minggu','Bulan','Tahun'] as $option)
+                            <option value="{{ $option }}" {{ old('satuan', $data->satuan ?? '') == $option ? 'selected' : '' }}>{{ $option }}</option>
+                        @endforeach
+                    </select>
+                    @error('satuan')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                </div> --}}
+                </div>
+
+
+
             </div>
 
 
