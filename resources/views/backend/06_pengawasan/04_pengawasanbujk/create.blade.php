@@ -65,7 +65,7 @@
                         <!--begin::Quick Example-->
                         <form  action="{{ route('createpengawasanbujknew') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT') <!-- Ganti dengan PUT untuk update -->
+                            @method('POST') <!-- Ganti dengan PUT untuk update -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -404,14 +404,14 @@
                                       <path d="M15.502 1.94a1.5 1.5 0 0 1 0 2.12L5.207 14.354a1 1 0 0 1-.39.243l-4 1.5a.5.5 0 0 1-.641-.641l1.5-4a1 1 0 0 1 .243-.39L13.44.44a1.5 1.5 0 0 1 2.12 0zm-2.121 1.415L4.854 11.882l-.708 2.122 2.121-.707L15.5 3.354l-2.12-2.121z"/>
                                     </svg>
 
-                                    <span style="font-family: 'Poppins', sans-serif;">Update</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
                                 </button>
                                 </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                                       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda yakin ingin memperbarui data ini?
+                                        Apakah Anda yakin ingin membuat data baru?
                                     </p>
 
                                       <!-- Tombol -->
