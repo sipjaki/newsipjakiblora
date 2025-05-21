@@ -80,31 +80,28 @@
 
                             <!-- begin::Body -->
                             <div class="card-body">
-                @php
-    function toRaw($value) {
-        return $value ? str_replace('.', '', $value) : '';
-    }
-
+@php
     $rupiahFields = [
-        'bangunankantortidaksederhana',
-        'bangunankantorsederhana',
-        'rumahnegaratipea',
-        'rumahnegaratipeb',
-        'rumahnegaratipecde',
-        'pagarrumahdepan',
-        'pagarrumahbelakang',
-        'pagarrumahsamping',
-        'pagarrumahnegaradepan',
-        'pagarrumahnegarabelakang',
-        'pagarrumahnegarasamping'
+        'bangunankantortidaksederhana' => ['label' => 'Bangunan Kantor Tidak Sederhana', 'icon' => 'bi-building'],
+        'bangunankantorsederhana' => ['label' => 'Bangunan Kantor Sederhana', 'icon' => 'bi-house'],
+        'rumahnegaratipea' => ['label' => 'Rumah Negara Tipe A', 'icon' => 'bi-house-door'],
+        'rumahnegaratipeb' => ['label' => 'Rumah Negara Tipe B', 'icon' => 'bi-house-door'],
+        'rumahnegaratipecde' => ['label' => 'Rumah Negara Tipe C/D/E', 'icon' => 'bi-house-door'],
+        'pagarrumahdepan' => ['label' => 'Pagar Rumah Depan', 'icon' => 'bi-border'],
+        'pagarrumahbelakang' => ['label' => 'Pagar Rumah Belakang', 'icon' => 'bi-border'],
+        'pagarrumahsamping' => ['label' => 'Pagar Rumah Samping', 'icon' => 'bi-border'],
+        'pagarrumahnegaradepan' => ['label' => 'Pagar Rumah Negara Depan', 'icon' => 'bi-shield-house'],
+        'pagarrumahnegarabelakang' => ['label' => 'Pagar Rumah Negara Belakang', 'icon' => 'bi-shield-house'],
+        'pagarrumahnegarasamping' => ['label' => 'Pagar Rumah Negara Samping', 'icon' => 'bi-shield-house'],
     ];
 @endphp
 
 <div class="row">
-    @foreach ($rupiahFields as $field)
+    @foreach ($rupiahFields as $field => $meta)
         <div class="col-md-6 mb-3">
-            <label class="form-label text-capitalize" for="{{ $field }}">
-                {{ ucwords(str_replace('_', ' ', preg_replace('/(?<!^)([A-Z])/', ' $1', $field))) }}
+            <label class="form-label" for="{{ $field }}">
+                <i class="bi {{ $meta['icon'] }}" style="margin-right: 8px; color: navy;"></i>
+                <span style="color: navy;">{{ $meta['label'] }}</span>
             </label>
             <input type="text" id="{{ $field }}_view" class="form-control @error($field) is-invalid @enderror"
                 value="{{ old($field, number_format($data->$field ?? 0, 0, ',', '.')) }}">
@@ -132,7 +129,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-        const fields = @json($rupiahFields);
+        const fields = @json(array_keys($rupiahFields));
         fields.forEach(field => {
             const view = document.getElementById(field + '_view');
             const hidden = document.getElementById(field);
@@ -143,13 +140,12 @@
                 hidden.value = raw;
             });
 
-            // Set formatted value on load
             view.value = formatRupiah(hidden.value);
         });
     });
 </script>
-                <!-- End row -->
-                            </div>
+
+                                <!-- End row -->
                             </div>
                             <!-- end::Body -->
 
