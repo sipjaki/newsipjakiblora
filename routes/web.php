@@ -1039,7 +1039,7 @@ Route::get('/besatuanhargaperalatan', [SatuanhargamaterialController::class, 'be
 Route::delete('/besatuanhargaperalatan/delete/{id}', [SatuanhargamaterialController::class, 'besatuanhargaperalatandelete'])->middleware('auth');
 
 Route::get('/besatuanhargaperalatan/create', [SatuanhargamaterialController::class, 'besatuanhargaperalatancreate'])->middleware('auth');
-// Route::post('/besatuanhargamaterial/createnew', [SatuanhargamaterialController::class, 'satuanhargamaterialcreatenew'])->middleware('auth')->name('create.satuanhargamaterialcreatenew');
+Route::post('/besatuanhargaperalatan/createnew', [SatuanhargamaterialController::class, 'besatuanhargaperalatancreatenew'])->middleware('auth')->name('create.besatuanhargaperalatancreatenew');
 
 // Route::get('/besatuanhargamaterial/update/{id}', [SatuanhargamaterialController::class, 'besatuanhargamaterialupdate'])->middleware('auth');
 // Route::post('/besatuanhargamaterial/updatecreate/{id}', [SatuanhargamaterialController::class, 'besatuanhargamaterialupdatecreate'])->middleware('auth')->name('update.besatuanhargamaterialcreateupdate');
