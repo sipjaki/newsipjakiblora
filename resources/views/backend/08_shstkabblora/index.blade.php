@@ -122,6 +122,7 @@
 @endforeach
 <br>
                         </div>
+                        </div>
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
