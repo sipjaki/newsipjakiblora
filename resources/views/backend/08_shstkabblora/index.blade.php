@@ -171,87 +171,67 @@
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<table id="tabelBujkkonstruksi" class="zebra-table table-striped" >
- <thead>
-     <tr>
-     <th style="width: 60px; text-align:center;">
-  <i class="bi bi-hash"></i> No
-</th>
-<th style="width: 500px; text-align:center;">
-  <i class="bi bi-card-text"></i> Uraian
-</th>
-<th style="width: 150px; text-align:center;">
-  <i class="bi bi-upc"></i> Kode
-</th>
-<th style="width: 150px; text-align:center;">
-  <i class="bi bi-rulers"></i> Satuan
-</th>
-<th style="width: 50px; text-align:center;">Rp.
-</th>
-<th style="width: 150px; text-align:center;">
-    <i class="bi bi-graph-up"></i> Besaran
-</th>
-<th style="width: 50px; text-align:center;">Rp.
-</th>
-<th style="width: 150px; text-align:center;">
-  <i class="bi bi-clock-history"></i> Besaran Per/Jam
-</th>
-<th style="width: 120px; text-align:center;">
-  <i class="bi bi-tools"></i> Aksi
-</th>
-
-     </tr>
- </thead>
- <tbody id="tableBody">
-     @foreach ($data as $item )
-     <tr class="align-middle">
-         <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{ $item->uraian }}</td>
-         <td style="text-align: left;">{{ $item->kode }}</td>
-         <td style="text-align: center;">{{ $item->satuan }}</td>
-         <td style="text-align: center;">Rp</td>
-         <td style="text-align: right;">{{ number_format($item->besaran, 0, ',', '.') }},00</td>
-         <td style="text-align: center;">Rp</td>
-        <td style="text-align: right;">{{ number_format($item->besaranperjam, 0, ',', '.') }},00</td>
-
-        <td style="text-align: center; vertical-align: middle;">
-            {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
-                <i class="bi bi-eye"></i>
-            </a> --}}
-            <a href="/besatuanhargaupahpekerjaan/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
-                <i class="bi bi-pencil-square"></i>
-            </a>
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
-               data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-judul="{{ $item->id }}"
-               onclick="setDeleteUrl(this)">
-                <i class="bi bi-trash"></i>
-            </a>
-        </td>
-
-        <!-- CSS untuk Hover -->
-        <style>
-            .btn-info:hover, .btn-warning:hover, .btn-danger:hover {
-                background-color: white !important; /* Ganti background menjadi putih */
-                color: white !important; /* Ganti warna teks menjadi putih */
-                border-color: transparent !important; /* Menyembunyikan border saat hover */
-            }
-
-            /* Ganti warna ikon untuk tombol hover agar tetap terlihat */
-            .btn-info:hover i, .btn-warning:hover i, .btn-danger:hover i {
-                color: navy !important; /* Ganti ikon menjadi navy atau warna lain yang diinginkan */
-            }
-        </style>
-
+{{-- <table id="tabelBujkkonstruksi" class="zebra-table table-striped" > --}}
+<table id="tabelBujkkonstruksi" class="zebra-table table-striped" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Pekerjaan </th>
+            <th>Besaran Rp. </th>
         </tr>
-
-     @endforeach
- </tbody>
+    </thead>
+    <tbody>
+        @foreach ($data as $item)
+            <tr>
+                <td>Bangunan Kantor Tidak Sederhana</td>
+                <td>{{ number_format($item->bangunankantortidaksederhana, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Bangunan Kantor Sederhana</td>
+                <td>{{ number_format($item->bangunankantorsederhana, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Rumah Negara Tipe A</td>
+                <td>{{ number_format($item->rumahnegaratipea, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Rumah Negara Tipe B</td>
+                <td>{{ number_format($item->rumahnegaratipeb, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Rumah Negara Tipe C/D/E</td>
+                <td>{{ number_format($item->rumahnegaratipecde, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Pagar Rumah Depan</td>
+                <td>{{ number_format($item->pagarrumahdepan, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Pagar Rumah Belakang</td>
+                <td>{{ number_format($item->pagarrumahbelakang, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Pagar Rumah Samping</td>
+                <td>{{ number_format($item->pagarrumahsamping, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Pagar Rumah Negara Depan</td>
+                <td>{{ number_format($item->pagarrumahnegaradepan, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Pagar Rumah Negara Belakang</td>
+                <td>{{ number_format($item->pagarrumahnegarabelakang, 2, ',', '.') }}</td>
+            </tr>
+            <tr>
+                <td>Pagar Rumah Negara Samping</td>
+                <td>{{ number_format($item->pagarrumahnegarasamping, 2, ',', '.') }}</td>
+            </tr>
+        @endforeach
+    </tbody>
 </table>
                      </div>
                  </div>
 
-                 @include('backend.00_administrator.00_baganterpisah.07_paginations')
+                 {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
 
                  <br><br>
 
