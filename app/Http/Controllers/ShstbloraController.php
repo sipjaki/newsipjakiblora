@@ -38,10 +38,11 @@ class ShstbloraController extends Controller
 public function beshstkabblora()
 {
     $user = Auth::user();
+    $data = shstblora::all();
 
     return view('backend.08_shstkabblora.index', [
         'title' => 'Daftar Satuan Harga Dasar Tertinggi Kabupaten Blora',
-        // 'data' => $data
+        'data' => $data
     ]);
 }
 
