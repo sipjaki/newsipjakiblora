@@ -35,7 +35,6 @@ class ShstbloraController extends Controller
     }
 
 // MENU BACKEND SHST KABUPATEN BLORA
-
 public function beshstkabblora()
 {
     $user = Auth::user();
