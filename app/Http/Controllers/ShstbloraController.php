@@ -80,17 +80,17 @@ public function beshstkabbloraupdatenew(Request $request, $id)
         'required' => 'Kolom :attribute wajib diisi.',
         'numeric' => 'Kolom :attribute harus berupa angka.',
     ], [
-        'bangunankantortidaksederhana'   => 'Bangunan Kantor Tidak Sederhana',
-        'bangunankantorsederhana'        => 'Bangunan Kantor Sederhana',
-        'rumahnegaratipea'               => 'Rumah Negara Tipe A',
-        'rumahnegaratipeb'               => 'Rumah Negara Tipe B',
-        'rumahnegaratipecde'             => 'Rumah Negara Tipe C/D/E',
-        'pagarrumahdepan'                => 'Pagar Rumah Depan',
-        'pagarrumahbelakang'             => 'Pagar Rumah Belakang',
-        'pagarrumahsamping'              => 'Pagar Rumah Samping',
-        'pagarrumahnegaradepan'          => 'Pagar Rumah Negara Depan',
-        'pagarrumahnegarabelakang'       => 'Pagar Rumah Negara Belakang',
-        'pagarrumahnegarasamping'        => 'Pagar Rumah Negara Samping',
+        'bangunankantortidaksederhana.required'   => 'Bangunan Kantor Tidak Sederhana Wajib Diisi !!',
+        'bangunankantorsederhana.required'        => 'Bangunan Kantor Sederhana Wajib Diisi !!',
+        'rumahnegaratipea.required'               => 'Rumah Negara Tipe A Wajib Diisi !!',
+        'rumahnegaratipeb.required'               => 'Rumah Negara Tipe B Wajib Diisi !!',
+        'rumahnegaratipecde.required'             => 'Rumah Negara Tipe C/D/E Wajib Diisi !!',
+        'pagarrumahdepan.required'                => 'Pagar Rumah Depan Wajib Diisi !!',
+        'pagarrumahbelakang.required'             => 'Pagar Rumah Belakang Wajib Diisi !!',
+        'pagarrumahsamping.required'              => 'Pagar Rumah Samping Wajib Diisi !!',
+        'pagarrumahnegaradepan.required'          => 'Pagar Rumah Negara Depan Wajib Diisi !!',
+        'pagarrumahnegarabelakang.required'       => 'Pagar Rumah Negara Belakang Wajib Diisi !!',
+        'pagarrumahnegarasamping.required'        => 'Pagar Rumah Negara Samping Wajib Diisi !!',
     ]);
 
     $proyek = shstblora::findOrFail($id);
