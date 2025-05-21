@@ -78,6 +78,9 @@
                 <i class="bi bi-hash" style="margin-right: 8px; color: navy;"></i> Kode Proyek
             </label>
             <input type="text" id="kodeproyek" name="kodeproyek" class="form-control" value="{{ $data->kodeproyek }}">
+                   @error('kodeproyek')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
         </div>
 
         <!-- Nama Perusahaan -->
@@ -86,6 +89,9 @@
                 <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Perusahaan
             </label>
             <input type="text" id="namaperusahaan" name="namaperusahaan" class="form-control" value="{{ $data->namaperusahaan }}">
+                @error('namaperusahaan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
         </div>
 
         <!-- Alamat Perusahaan -->
@@ -94,6 +100,9 @@
                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Alamat Perusahaan
             </label>
             <textarea id="alamatperusahaan" name="alamatperusahaan" class="form-control">{{ $data->alamatperusahaan }}</textarea>
+        @error('alamatperusahaan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
         </div>
 
         <!-- Status Modal -->
@@ -102,6 +111,9 @@
                 <i class="bi bi-currency-dollar" style="margin-right: 8px; color: navy;"></i> Status Modal
             </label>
             <input type="text" id="statusmodal" name="statusmodal" class="form-control" value="{{ $data->statusmodal }}">
+        @error('statusmodal')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
         </div>
 
         <!-- Jenis Perusahaan -->
@@ -110,6 +122,9 @@
                 <i class="bi bi-diagram-3" style="margin-right: 8px; color: navy;"></i> Jenis Perusahaan
             </label>
             <input type="text" id="jenisperusahaan" name="jenisperusahaan" class="form-control" value="{{ $data->jenisperusahaan }}">
+        @error('jenisperusahaan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
         </div>
 
         <!-- NIB -->
@@ -118,6 +133,10 @@
                 <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> NIB
             </label>
             <input type="text" id="nib" name="nib" class="form-control" value="{{ $data->nib }}">
+        @error('nib')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- KBLI -->
@@ -126,6 +145,10 @@
                 <i class="bi bi-code" style="margin-right: 8px; color: navy;"></i> KBLI
             </label>
             <input type="text" id="kbli" name="kbli" class="form-control" value="{{ $data->kbli }}">
+                @error('kbli')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- Uraian KBLI -->
@@ -134,6 +157,10 @@
                 <i class="bi bi-file-text" style="margin-right: 8px; color: navy;"></i> Uraian KBLI
             </label>
             <textarea id="uraiankbli" name="uraiankbli" class="form-control">{{ $data->uraiankbli }}</textarea>
+                @error('uraiankbli')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- Sektor -->
@@ -142,6 +169,10 @@
                 <i class="bi bi-layers" style="margin-right: 8px; color: navy;"></i> Sektor
             </label>
             <input type="text" id="sektor" name="sektor" class="form-control" value="{{ $data->sektor }}">
+                @error('sektor')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- Alamat Proyek -->
@@ -150,6 +181,10 @@
                 <i class="bi bi-geo" style="margin-right: 8px; color: navy;"></i> Alamat Proyek
             </label>
             <input type="text" id="alamatproyek" name="alamatproyek" class="form-control" value="{{ $data->alamatproyek }}">
+                @error('alamatproyek')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
     </div>
 
@@ -160,6 +195,10 @@
                 <i class="bi bi-globe" style="margin-right: 8px; color: navy;"></i> Wilayah
             </label>
             <input type="text" id="wilayah" name="wilayah" class="form-control" value="{{ $data->wilayah }}">
+                @error('wilayah')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- Luas Tanah -->
@@ -243,6 +282,10 @@
                 <i class="bi bi-exclamation-triangle" style="margin-right: 8px; color: navy;"></i> Resiko
             </label>
             <input type="text" id="resiko" name="resiko" class="form-control" value="{{ $data->resiko }}">
+                @error('resiko')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- Sumber Data -->
@@ -251,6 +294,10 @@
                 <i class="bi bi-database" style="margin-right: 8px; color: navy;"></i> Sumber Data
             </label>
             <input type="text" id="sumberdata" name="sumberdata" class="form-control" value="{{ $data->sumberdata }}">
+                @error('sumberdata')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- Investasi -->
@@ -259,6 +306,10 @@
                 <i class="bi bi-cash" style="margin-right: 8px; color: navy;"></i> Investasi (Rp)
             </label>
             <input type="number" step="0.01" id="investasi" name="investasi" class="form-control" value="{{ $data->investasi }}">
+                @error('investasi')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- Skala Usaha -->
@@ -267,6 +318,10 @@
                 <i class="bi bi-arrows-angle-expand" style="margin-right: 8px; color: navy;"></i> Skala Usaha Perusahaan
             </label>
             <input type="text" id="skalausahaperusahaan" name="skalausahaperusahaan" class="form-control" value="{{ $data->skalausahaperusahaan }}">
+                    @error('skalausahaperusahaan')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <div class="mb-3">
@@ -274,6 +329,10 @@
                 <i class="bi bi-aspect-ratio" style="margin-right: 8px; color: navy;"></i> Skala Usaha Proyek
             </label>
             <input type="text" id="skalausahaproyek" name="skalausahaproyek" class="form-control" value="{{ $data->skalausahaproyek }}">
+                @error('skalausahaproyek')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- Kewenangan -->
@@ -282,6 +341,10 @@
                 <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Kewenangan Koordinator
             </label>
             <input type="text" id="kewenangankoordinator" name="kewenangankoordinator" class="form-control" value="{{ $data->kewenangankoordinator }}">
+                @error('kewenangankoordinator')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <div class="mb-3">
@@ -289,6 +352,10 @@
                 <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Kewenangan Pengawas
             </label>
             <input type="text" id="kewenanganpengawas" name="kewenanganpengawas" class="form-control" value="{{ $data->kewenanganpengawas }}">
+                @error('kewenanganpengawas')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
 
         <!-- PSN -->
@@ -297,6 +364,10 @@
                 <i class="bi bi-patch-check" style="margin-right: 8px; color: navy;"></i> PSN
             </label>
             <input type="text" id="PSN" name="PSN" class="form-control" value="{{ $data->PSN }}">
+                @error('PSN')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+
         </div>
     </div>
 </div>
