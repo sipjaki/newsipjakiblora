@@ -828,7 +828,7 @@ Route::get('/bedetailsuratperjanjianpekerjaan/{id}', [PaketpekerjaanmasjakiContr
 
 
 // ___________________________________________________________________________________________________________________________________
-
+Route::get('/bepengawasanbujk', [PengawasanbujkController::class, 'bepengawasanbujk'])->middleware('auth');
 
 // ======================================= MENU AGENDA PEMBINAAN  -------------------------------------------------------------
 // ---------------------- MENU 01 AGENDA PELATIHAN   -----------------------------------------------------
@@ -940,7 +940,6 @@ Route::put('/besertifikatskkcreate/{id}', [PembinaanController::class, 'besertif
 
 Route::post('/peserta/downloadberkas/{id}', [PembinaanController::class, 'downloadSemuaBerkas'])->middleware('auth')->name('peserta.downloadSemua');
 
-// SAAT INI
 Route::get('/perbaikandataskk/{id}', [PembinaanController::class, 'perbaikandataskk'])->middleware('auth');
 Route::post('/perbaikandataskk/createnew/{id}', [PembinaanController::class, 'perbaikandataskkupdate'])->middleware('auth')->name('berkasperbaikandatapeserta');
 

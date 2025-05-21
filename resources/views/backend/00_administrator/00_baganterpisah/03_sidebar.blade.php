@@ -715,7 +715,7 @@
 
                   <!-- Pengawasan BUJk -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/bepengawasanbujk" class="nav-link">
                       <i class="nav-icon bi bi-shield-lock text-warning"></i> <!-- Ikon untuk Pengawasan BUJk -->
                       <p style="color: white">Pengawasan BUJK</p>
                     </a>

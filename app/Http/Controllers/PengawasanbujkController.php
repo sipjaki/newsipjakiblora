@@ -86,4 +86,56 @@ class PengawasanbujkController extends Controller
     ]);
     }
 
+
+    public function bepengawasanbujk(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = pengawasanbujk::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('kodeproyek', 'LIKE', "%{$search}%")
+              ->orWhere('namaperusahaan', 'LIKE', "%{$search}%")
+              ->orWhere('alamatperusahaan', 'LIKE', "%{$search}%")
+              ->orWhere('statusmodal', 'LIKE', "%{$search}%")
+              ->orWhere('jenisperusahaan', 'LIKE', "%{$search}%")
+              ->orWhere('nib', 'LIKE', "%{$search}%")
+              ->orWhere('kbli', 'LIKE', "%{$search}%")
+              ->orWhere('uraiankbli', 'LIKE', "%{$search}%")
+              ->orWhere('sektor', 'LIKE', "%{$search}%")
+              ->orWhere('alamatproyek', 'LIKE', "%{$search}%")
+              ->orWhere('wilayah', 'LIKE', "%{$search}%")
+              ->orWhere('resiko', 'LIKE', "%{$search}%")
+              ->orWhere('sumberdata', 'LIKE', "%{$search}%")
+              ->orWhere('skalausahaperusahaan', 'LIKE', "%{$search}%")
+              ->orWhere('skalausahaproyek', 'LIKE', "%{$search}%")
+              ->orWhere('kewenangankoordinator', 'LIKE', "%{$search}%")
+              ->orWhere('kewenanganpengawas', 'LIKE', "%{$search}%")
+              ->orWhere('PSN', 'LIKE', "%{$search}%");
+        });
+    }
+
+    // Urut berdasarkan nama perusahaan
+    $query->orderBy('namaperusahaan', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.06_pengawasan.04_pengawasanbujk.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.06_pengawasan.04_pengawasanbujk.index', [
+        'title' => 'Daftar Pengawasan Badan Usaha Jasa Konstruksi',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+
+
 }
