@@ -345,12 +345,16 @@ public function forgotpassword()
     // Ambil user yang sedang login
     $user = Auth::user();
 
-    // (opsional) Jika ingin cek usernya
-    // dd($user);
+    // Ambil ID dari user yang login
+    $userId = $user->id;
+
+    // (opsional) Kalau mau cek ID
+    // dd($userId);
 
     return view('backend.15_hakakses.02_profile.index', [
         'title' => 'Akun Anda !',
-        'user' => $user, // kirim ke view kalau mau ditampilkan
+        'user' => $user,
+        'userId' => $userId, // Kirim juga ke view jika perlu
     ]);
 }
 
