@@ -43,7 +43,7 @@ class FedashboardController extends Controller
         // return view('404', [
         // return view('frontend.00_approve.00_utama.index', [
             return view('frontend.00_android.00_halamanutama.index', [
-                'title' => 'Mas Jaki DPUPR Blora | Sistem Informasi Pembina Jasa Konstruksi ',
+                'title' => 'Sistem Informasi Pembina Jasa Konstruksi | Mas Jaki DPUPR Blora Provinsi Jawa Tengah ',
                 'data' => $data, // Mengirimkan data paginasi ke view
                 'dataartikel' => $dataartikel, // Mengirimkan data paginasi ke view
                 'dataheaderberanda' => $dataheaderberanda, // Mengirimkan data paginasi ke view
@@ -68,7 +68,7 @@ class FedashboardController extends Controller
         // return view('404', [
         return view('frontend.00_approve.00_utama.index', [
         // return view('frontend.00_android.00_halamanutama.index', [
-            'title' => 'Mas Jaki DPUPR Blora | Sistem Informasi Pembina Jasa Konstruksi ',
+            'title' => 'Sistem Informasi Pembina Jasa Konstruksi | Mas Jaki DPUPR Blora Provinsi Jawa Tengah',
             'data' => $data, // Mengirimkan data paginasi ke view
             'dataartikel' => $dataartikel, // Mengirimkan data paginasi ke view
             'dataheaderberanda' => $dataheaderberanda, // Mengirimkan data paginasi ke view

@@ -30,3 +30,4 @@
 </a>
 
 @include('backend.00_style.01_cssdashboard.style')
+@include('backend.00_style.01_cssdashboard.perintah')

@@ -70,7 +70,7 @@
 
 
 <!-- Tombol Download Excel -->
-<button class="hide-on-mobile" onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_shstkabupatenblora')"
+<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_shstkabupatenblora')"
     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
     onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white'; this.style.transform='scale(1)';"
     style="
