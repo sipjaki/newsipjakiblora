@@ -45,6 +45,8 @@
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
 
                            {{-- ======================================================= --}}
+
+
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
            <div class="card card-primary card-outline mb-6">
@@ -61,7 +63,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form  action="{{ route('updatepengwasanbujk', $data->id) }}" method="POST" enctype="multipart/form-data">
+                        <form  action="{{ route('updatepengwasanbujknew', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('POST') <!-- Ganti dengan PUT untuk update -->
 
