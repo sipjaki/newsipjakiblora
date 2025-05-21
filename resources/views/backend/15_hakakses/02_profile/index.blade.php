@@ -340,6 +340,7 @@
              </div>
              <!-- /.card -->
          </div>
+         </div>
          <!-- /.col -->
      </div>
      <!--end::Row-->
