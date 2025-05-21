@@ -229,7 +229,7 @@
             <td style="text-align: right">{{ number_format($item->pagarrumahsamping, 2, ',', '.') }}</td>
         </tr>
         <tr>
-            <td><i class="bi bi-shield-home" style="margin-right: 6px;"></i> Pagar Rumah Negara Depan</td>
+            <td><i class="bi bi-border-home" style="margin-right: 6px;"></i> Pagar Rumah Negara Depan</td>
             <td>Rp</td>
             <td style="text-align: right">{{ number_format($item->pagarrumahnegaradepan, 2, ',', '.') }}</td>
         </tr>
