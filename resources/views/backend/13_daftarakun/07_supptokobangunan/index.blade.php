@@ -169,7 +169,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/allsuppperalatan?search=${input}`)
+                            fetch(`/allsupptokobangunan?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
