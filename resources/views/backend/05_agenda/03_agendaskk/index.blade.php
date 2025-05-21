@@ -168,18 +168,19 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
                                 </script>
 
-                      <a href="/beagendaskk/create">
-    <button class="responsive-button"
+                     <a href="/beagendaskk/create">
+    <button class="hidden md:flex"
         onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
         onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
         style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px;
-               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+               border-radius: 15px; font-size: 16px; cursor: pointer; align-items: center;
                transition: background 0.3s, color 0.3s, border 0.3s;">
         <!-- Ikon Plus -->
         <i class="fa fa-plus" style="margin-right: 8px;"></i>
-        <span class="responsive-button-text">Create</span>
+        <span>Create</span>
     </button>
 </a>
+
 
                      </div>
                  </div>
