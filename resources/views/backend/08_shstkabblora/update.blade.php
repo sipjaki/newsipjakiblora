@@ -54,7 +54,7 @@
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
 
              <a href="{{ url()->previous() }}" style="text-decoration: none;">
-    <button class="hide-on-mobile"
+    <button
         onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
         onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #dee2e6)'; this.style.color='white'; this.style.transform='scale(1)'"
         style="background: linear-gradient(45deg, #6c757d, #dee2e6); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: all 0.3s ease;"
