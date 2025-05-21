@@ -1033,7 +1033,7 @@ Route::post('/besatuanhargaupahpekerjaan/updatecreate/{id}', [Satuanhargamateria
 
 // saat ini bro
 Route::get('/beprofile', [LoginController::class, 'beprofileindex'])->middleware('auth');
-Route::get('/beprofile/update/{id}', [SatuanhargamaterialController::class, 'beprofileupdate'])->middleware('auth');
+Route::get('/beprofile/update/{id}', [LoginController::class, 'beprofileupdate'])->middleware('auth');
 Route::post('/beprofile/updatecreate/{id}', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaanupdatecreate'])->middleware('auth')->name('update.besatuanhargaupahpekerjaanupdatecreate');
 // AKUN PERSONAL PRIBADI AKUN PEKERJA
 
