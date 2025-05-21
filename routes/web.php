@@ -829,7 +829,7 @@ Route::get('/bedetailsuratperjanjianpekerjaan/{id}', [PaketpekerjaanmasjakiContr
 
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bepengawasanbujk', [PengawasanbujkController::class, 'bepengawasanbujk'])->middleware('auth');
-Route::get('/bepengawasanbujk/show', [PengawasanbujkController::class, 'bepengawasanbujkshow'])->middleware('auth');
+Route::get('/bepengawasanbujk/show/{id}', [PengawasanbujkController::class, 'bepengawasanbujkshow'])->middleware('auth');
 
 // ======================================= MENU AGENDA PEMBINAAN  -------------------------------------------------------------
 // ---------------------- MENU 01 AGENDA PELATIHAN   -----------------------------------------------------
