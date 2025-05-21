@@ -133,7 +133,7 @@
           <th style="width: 400px; text-align:center;">
                 <i class="bi bi-hammer" style="margin-right: 6px;"></i> Pekerjaan
             </th>
-            <th style="width: 35px; text-align:center;">
+            <th style="width: 65px; text-align:center;">
                 <i class="bi bi-cash-coin" style="margin-right: 6px;"></i> Rp.
             </th>
             <th style="width: 150px; text-align:center;">
