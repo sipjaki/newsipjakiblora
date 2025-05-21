@@ -91,7 +91,7 @@
         </script>
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Upah Pekerjaan...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Peralatan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -141,7 +141,7 @@
 </button>
 
 <!-- Tombol Create -->
-<a href="/besatuanhargaupahpekerjaan/create" style="text-decoration: none;">
+<a href="/besatuanhargaperalatan/create" style="text-decoration: none;">
     <button
         onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
         onmouseout="this.style.background='linear-gradient(45deg, #228B22, #d4af37)'; this.style.color='white'; this.style.transform='scale(1)';"
@@ -280,7 +280,7 @@
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/besatuanhargaupahpekerjaan/delete/" + encodeURIComponent(id);
+                     var deleteUrl = "/besatuanhargaperalatan/delete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

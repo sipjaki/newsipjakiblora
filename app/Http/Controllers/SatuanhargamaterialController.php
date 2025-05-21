@@ -1968,4 +1968,44 @@ public function besatuanhargaperalatan(Request $request)
 
 
 
+public function besatuanhargaperalatandelete($id)
+{
+// Cari item berdasarkan judul
+$entry = satuanhargaperalatan::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/besatuanhargaperalatan')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+
+return redirect()->back()->with('error', 'Item not found');
+}
+
+
+
+
+public function besatuanhargaperalatancreate()
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.07_satuanharga.03_satuanhargaperalatan.create', [
+        // 'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        'title' => 'Create Satuan Harga Peralatan'
+    ]);
+}
+
+
 }
