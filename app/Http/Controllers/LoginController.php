@@ -366,7 +366,7 @@ public function beprofileupdate($id)
 
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.15_hakakses.02_profile.update', [
-        'data' => $user,
+        'user' => $user,
         'title' => 'Update Akun Anda !'
     ]);
 }
