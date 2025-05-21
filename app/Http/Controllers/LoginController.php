@@ -381,13 +381,31 @@ public function beprofileupdatecreate(Request $request, $id)
 {
     $user = User::findOrFail($id);
 
-    // Validasi input
-    $validated = $request->validate([
-        'name' => 'required|string|max:255',
-        'username' => 'required|string|max:255|unique:users,username,' . $id,
-        'email' => 'required|email|max:255|unique:users,email,' . $id,
-        'avatar' => 'nullable|image|mimes:jpg,jpeg,png|max:5048',
-    ]);
+   $validated = $request->validate([
+    'name' => 'required|string|max:255',
+    'username' => 'required|string|max:255|unique:users,username,' . $id,
+    'email' => 'required|email|max:255|unique:users,email,' . $id,
+    'avatar' => 'nullable|image|mimes:jpg,jpeg,png|max:5048',
+], [
+    'name.required' => 'Nama lengkap wajib diisi.',
+    'name.string' => 'Nama lengkap harus berupa teks.',
+    'name.max' => 'Nama lengkap tidak boleh lebih dari 255 karakter.',
+
+    'username.required' => 'Username wajib diisi.',
+    'username.string' => 'Username harus berupa teks.',
+    'username.max' => 'Username tidak boleh lebih dari 255 karakter.',
+    'username.unique' => 'Username ini sudah digunakan, silakan pilih yang lain.',
+
+    'email.required' => 'Email wajib diisi.',
+    'email.email' => 'Format email tidak valid.',
+    'email.max' => 'Email tidak boleh lebih dari 255 karakter.',
+    'email.unique' => 'Email ini sudah digunakan, silakan gunakan email lain.',
+
+    'avatar.image' => 'File harus berupa gambar.',
+    'avatar.mimes' => 'Format gambar harus jpg, jpeg, atau png.',
+    'avatar.max' => 'Ukuran gambar tidak boleh lebih dari 5MB.',
+]);
+
 
     // Simpan avatar baru jika ada file di-upload
     if ($request->hasFile('avatar')) {
