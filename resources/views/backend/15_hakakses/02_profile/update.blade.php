@@ -78,31 +78,29 @@
         </script>
 
 <!-- Tombol Create -->
-<a href="/beprofile/update/{{ $userId }}">
     <button
-        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-        onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white'; this.style.transform='scale(1)'"
-        style="
-            background: linear-gradient(45deg, #d4af37, #228B22);
-            color: white;
-            border: none;
-            margin-right: 10px;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-        "
-    >
-    <i class="bi bi-pencil-square"></i>
-
-        Update Profile
-    </button>
-</a>
+    onmouseover="this.style.background='white'; this.style.color='#555'; this.style.border='1px solid #ddd'; this.style.transform='scale(1.05)'; this.querySelector('i').style.color='#555'"
+    onmouseout="this.style.background='linear-gradient(45deg, #f5f5f5, #ffffff)'; this.style.color='#555'; this.style.border='1px solid #eee'; this.style.transform='scale(1)'; this.querySelector('i').style.color='#555'"
+    style="
+        background: linear-gradient(45deg, #f5f5f5, #ffffff);
+        color: #555;
+        border: 1px solid #eee;
+        margin-right: 10px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    "
+>
+    <i class="bi bi-arrow-left" style="color: #555; font-size: 18px; transition: all 0.3s ease;"></i>
+    Kembali
+</button>
 
 
                         </div>
