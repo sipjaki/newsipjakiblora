@@ -177,7 +177,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                transition: background 0.3s, color 0.3s, border 0.3s;">
         <!-- Ikon Plus -->
         <i class="fa fa-plus" style="margin-right: 8px;"></i>
-        Create
+        <span class="responsive-button-text">Create</span>
     </button>
 </a>
 
