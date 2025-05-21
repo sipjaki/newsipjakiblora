@@ -255,33 +255,11 @@
             border-radius: 4px;
         ">{{ $user->username ?? 'N/A' }}</div>
     </div>
-
     <div class="form-group" style="
         margin-bottom: 20px;
         padding: 15px;
         background: linear-gradient(to right, #f9f9f9, #fff);
         border-left: 4px solid #2ECC71;
-        border-radius: 5px;
-    ">
-        <label style="
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        ">Nomor Telepon</label>
-        <div class="form-control" style="
-            padding: 10px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        ">{{ $user->phone_number ?? 'N/A' }}</div>
-    </div>
-
-    <div class="form-group" style="
-        margin-bottom: 20px;
-        padding: 15px;
-        background: linear-gradient(to right, #f9f9f9, #fff);
-        border-left: 4px solid #D4AF37;
         border-radius: 5px;
     ">
         <label style="
