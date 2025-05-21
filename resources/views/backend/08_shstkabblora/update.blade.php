@@ -89,9 +89,9 @@
         'pagarrumahdepan' => ['label' => 'Pagar Rumah Depan', 'icon' => 'bi-border'],
         'pagarrumahbelakang' => ['label' => 'Pagar Rumah Belakang', 'icon' => 'bi-border'],
         'pagarrumahsamping' => ['label' => 'Pagar Rumah Samping', 'icon' => 'bi-border'],
-        'pagarrumahnegaradepan' => ['label' => 'Pagar Rumah Negara Depan', 'icon' => 'bi-shield-house'],
-        'pagarrumahnegarabelakang' => ['label' => 'Pagar Rumah Negara Belakang', 'icon' => 'bi-shield-house'],
-        'pagarrumahnegarasamping' => ['label' => 'Pagar Rumah Negara Samping', 'icon' => 'bi-shield-house'],
+        'pagarrumahnegaradepan' => ['label' => 'Pagar Rumah Negara Depan', 'icon' => 'bi-border'],
+        'pagarrumahnegarabelakang' => ['label' => 'Pagar Rumah Negara Belakang', 'icon' => 'bi-border'],
+        'pagarrumahnegarasamping' => ['label' => 'Pagar Rumah Negara Samping', 'icon' => 'bi-border'],
     ];
 @endphp
 
