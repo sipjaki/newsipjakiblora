@@ -116,7 +116,7 @@
 </button>
 
 <!-- Tombol Create -->
-<a href="/settingssekolah/create">
+<a href="/bepengawasanbujk/create">
     <button
         onmouseover="this.style.background='white'; this.style.color='black';"
         onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white';"
