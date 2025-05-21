@@ -513,7 +513,7 @@ public function alladmin(Request $request)
 
     // Hitung jumlah user dengan statusadmin id = 1
     $jumlahStatus2 = User::whereHas('statusadmin', function ($q) {
-        $q->where('id', 1);
+        $q->where('id', 2);
     })->count();
 
     if ($request->ajax()) {
