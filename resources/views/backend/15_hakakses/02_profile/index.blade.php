@@ -109,10 +109,9 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
-                        {{-- <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                        </div> --}}
+                        <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<div class="admin-profile-container" style="
+                            <div class="admin-profile-container" style="
     max-width: 800px;
     margin: 30px auto;
     padding: 30px;
@@ -290,6 +289,10 @@
     </div>
 </div>
 
+
+
+
+</div>
 
                     </div>
                  </div>
