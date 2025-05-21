@@ -78,10 +78,10 @@
         </script>
 
 <!-- Tombol Create -->
-    <a href="{{ url()->previous() }}">
+<a href="{{ url()->previous() }}">
     <button
         onmouseover="this.style.background='white'; this.style.color='#555'; this.style.border='1px solid #ddd'; this.style.transform='scale(1.05)'; this.querySelector('i').style.color='#555'"
-        onmouseout="this.style.background='linear-gradient(45deg, #504d4d, #ffffff)'; this.style.color='#555'; this.style.border='1px solid #eee'; this.style.transform='scale(1)'; this.querySelector('i').style.color='#ffffff'"
+        onmouseout="this.style.background='linear-gradient(45deg, #504d4d, #ffffff)'; this.style.color='white'; this.style.border='1px solid #eee'; this.style.transform='scale(1)'; this.querySelector('i').style.color='white'"
         style="
             background: linear-gradient(45deg, #504d4d, #ffffff);
             color: white;
@@ -99,7 +99,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         "
     >
-        <i class="bi bi-arrow-left" style="color: #555; font-size: 18px; transition: all 0.3s ease;"></i>
+        <i class="bi bi-arrow-left" style="color: white; font-size: 18px; transition: all 0.3s ease;"></i>
         Kembali
     </button>
 </a>
