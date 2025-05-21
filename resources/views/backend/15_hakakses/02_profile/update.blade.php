@@ -81,7 +81,7 @@
     <a href="{{ url()->previous() }}">
     <button
         onmouseover="this.style.background='white'; this.style.color='#555'; this.style.border='1px solid #ddd'; this.style.transform='scale(1.05)'; this.querySelector('i').style.color='#555'"
-        onmouseout="this.style.background='linear-gradient(45deg, #f5f5f5, #ffffff)'; this.style.color='#555'; this.style.border='1px solid #eee'; this.style.transform='scale(1)'; this.querySelector('i').style.color='#555'"
+        onmouseout="this.style.background='linear-gradient(45deg, #504d4d, #ffffff)'; this.style.color='#555'; this.style.border='1px solid #eee'; this.style.transform='scale(1)'; this.querySelector('i').style.color='#555'"
         style="
             background: linear-gradient(45deg, #504d4d, #ffffff);
             color: #555;
