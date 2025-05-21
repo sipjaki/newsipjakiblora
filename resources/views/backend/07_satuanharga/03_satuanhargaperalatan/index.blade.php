@@ -207,7 +207,7 @@
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{ $item->uraian }}</td>
-         <td style="text-align: left;">{{ $item->kode }}</td>
+<td style="text-align: left;">{!! $item->kode ? $item->kode : '<button style="background-color: navy; color: white; border: none; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: default;">Data Belum Di Update</button>' !!}</td>
          <td style="text-align: center;">{{ $item->satuan }}</td>
          <td style="text-align: center;">Rp</td>
          <td style="text-align: right;">{{ number_format($item->besaran, 0, ',', '.') }},00</td>
