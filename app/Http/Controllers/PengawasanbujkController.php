@@ -167,6 +167,56 @@ public function bepengawasanbujkupdatecreate($id)
     ]);
 }
 
+public function bepengawasanbujkupdatecreatenew(Request $request, $id)
+{
+    $validated = $request->validate([
+        'kodeproyek' => 'required|string|max:100',
+        'namaperusahaan' => 'required|string|max:255',
+        'alamatperusahaan' => 'required|string',
+        'statusmodal' => 'required|string|max:50',
+        'jenisperusahaan' => 'required|string|max:100',
+        'nib' => 'required|string|max:100',
+        'kbli' => 'required|string|max:20',
+        'uraiankbli' => 'required|string',
+        'sektor' => 'required|string|max:100',
+        'alamatproyek' => 'required|string|max:255',
+        'wilayah' => 'required|string|max:100',
+        'luastanah' => 'required|numeric|min:0',
+        'tki_lakilaki' => 'nullable|integer|min:0',
+        'tki_perempuan' => 'nullable|integer|min:0',
+        'tka_lakilaki' => 'nullable|integer|min:0',
+        'tka_perempuan' => 'nullable|integer|min:0',
+        'resiko' => 'required|string|max:50',
+        'sumberdata' => 'required|string|max:100',
+        'investasi' => 'required|numeric|min:0',
+        'skalausahaperusahaan' => 'required|string|max:100',
+        'skalausahaproyek' => 'required|string|max:100',
+        'kewenangankoordinator' => 'required|string|max:100',
+        'kewenanganpengawas' => 'required|string|max:100',
+        'PSN' => 'required|string|max:100',
+    ], [
+        'kodeproyek.max' => 'Kode proyek maksimal 100 karakter.',
+        'namaperusahaan.max' => 'Nama perusahaan maksimal 255 karakter.',
+        'alamatperusahaan.string' => 'Alamat perusahaan harus berupa teks.',
+        'luastanah.numeric' => 'Luas tanah harus berupa angka.',
+        'luastanah.min' => 'Luas tanah tidak boleh negatif.',
+        'investasi.numeric' => 'Investasi harus berupa angka.',
+        'tki_lakilaki.integer' => 'TKI Laki-laki harus berupa angka.',
+        'tka_lakilaki.integer' => 'TKA Laki-laki harus berupa angka.',
+        'PSN.required' => 'Field PSN wajib diisi.',
+    ]);
+
+    // Temukan data berdasarkan ID
+    $data = pengawasanbujk::findOrFail($id);
+
+    // Update data
+    $data->update($validated);
+
+    session()->flash('update', 'Data Pengawasan BUJK Berhasil Di Update!');
+    return redirect('/bepengawasanbujk');
+
+}
+
 
 
 }
