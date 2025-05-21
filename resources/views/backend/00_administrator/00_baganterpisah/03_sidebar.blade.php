@@ -764,7 +764,7 @@
 
                   <!-- Satuan Harga Peralatan -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/besatuanhargaperalatan" class="nav-link">
                       <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Satuan Harga Peralatan -->
                       <p style="color: white">Satuan Harga Peralatan</p>
                     </a>

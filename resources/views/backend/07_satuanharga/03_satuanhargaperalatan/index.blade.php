@@ -105,7 +105,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/besatuanhargaperalatan?search=${input}`)
+                            fetch(`/besatuanhargaupahpekerjaan?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -118,7 +118,7 @@
 
                                 </script>
 <!-- Tombol Download Excel -->
-<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_satuanhargaupahperalatan')"
+<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_satuanhargaupahpekerjaan')"
     onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
     onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white'; this.style.transform='scale(1)';"
     style="

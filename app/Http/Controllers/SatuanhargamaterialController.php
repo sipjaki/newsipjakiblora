@@ -1929,5 +1929,43 @@ public function besatuanhargaupahpekerjaanupdatecreate(Request $request, $id)
 
 // AKUN PEKERJA
 
+public function besatuanhargaperalatan(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = satuanhargaperalatan::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('uraian', 'LIKE', "%{$search}%")
+              ->orWhere('kode', 'LIKE', "%{$search}%")
+              ->orWhere('satuan', 'LIKE', "%{$search}%")
+              ->orWhere('besaran', 'LIKE', "%{$search}%");
+            //   ->orWhere('besaranperjam', 'LIKE', "%{$search}%");
+        });
+    }
+
+    // Urut berdasarkan kolom 'uraian' dari A-Z
+    $query->orderBy('uraian', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.07_satuanharga.03_satuanhargaperalatan.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.07_satuanharga.02_satuanhargaperalatan.index', [
+        'title' => 'Daftar Satuan Harga Peralatan',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+
+
 
 }
