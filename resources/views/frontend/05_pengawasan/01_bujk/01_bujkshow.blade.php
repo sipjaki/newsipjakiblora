@@ -121,22 +121,6 @@ table.zebra-table {
 
       <!-- KANAN: Search Bar -->
    <!-- Search Bar Wrapper -->
-<div class="w-full sm:w-auto">
-    <div class="flex items-center gap-2 px-3 py-2 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
-
-          <!-- Button with SVG Icon -->
-      <button onclick="searchTable()" class="flex items-center justify-center w-6 h-6 shrink-0">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#545768" viewBox="0 0 16 16">
-          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-        </svg>
-      </button>
-
-    </div>
-  </div>
-
-
-    </div>
-  </div>
 
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
