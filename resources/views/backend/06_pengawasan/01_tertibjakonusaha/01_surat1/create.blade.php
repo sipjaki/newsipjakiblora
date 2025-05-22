@@ -51,9 +51,8 @@
                                 <!-- Kontainer Kiri -->
                                 <div style="display: flex; gap: 10px; margin-right:25px; margin-left:25px;">
                                     <!-- Tombol Nama Pekerjaan -->
-                                    <button class="button-create">
-
-                                <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
+                                    <button class="btn-create">
+                                        <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
                                     Nama Pekerjaan : {{ $datatertibjasakonstruksi }}
                                     </button>
 
@@ -74,7 +73,7 @@
                                 <div>
                                     <a href="/betertibjakonusaha">
                                         <button class="button-abuabu">
-                                            <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
+                                            <i class="bi bi-arrow-left icon-create"></i>
                                             Kembali
                                         </button>
                                     </a>
