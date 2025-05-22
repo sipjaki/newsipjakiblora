@@ -664,7 +664,7 @@ table.zebra-table {
                         </div>
                         <div class="col-md-12 text-center" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }} font-size: 24px; font-weight: bold;">
-        <i class="bi bi-image" style="{{ $iconStyle }} font-size: 28px;"></i>
+        <i class="bi bi-image" style="{{ $iconStyle }} font-size: 16px;"></i>
         Syarat Tahun Pengalaman Kerja
     </label>
     <p style="font-size: 18px; color: #333; margin-top: 10px;">
@@ -1238,7 +1238,7 @@ function previewFile(previewId, input) {
 
 <div class="col-md-12 text-center" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }} font-size: 24px; font-weight: bold;">
-        <i class="bi bi-image" style="{{ $iconStyle }} font-size: 28px;"></i>
+        <i class="bi bi-image" style="{{ $iconStyle }} font-size: 16px;"></i>
         Syarat Tahun Pengalaman Kerja
     </label>
     <p style="font-size: 18px; color: #333; margin-top: 10px;">
