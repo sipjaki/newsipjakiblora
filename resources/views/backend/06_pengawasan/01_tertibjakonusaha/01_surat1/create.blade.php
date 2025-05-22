@@ -67,7 +67,7 @@
                                 <!-- Kontainer Kanan -->
                                 <div>
                                     <a href="/betertibjakonusaha">
-                                           <button class="btn-gradient-abu">
+                                           <button class="btn-kembali">
                                             <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
                                             Kembali
                                             </button>
