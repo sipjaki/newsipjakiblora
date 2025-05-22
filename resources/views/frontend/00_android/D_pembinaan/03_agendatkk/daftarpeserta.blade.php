@@ -733,25 +733,24 @@ h5 {
                             </p>
                             <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
                         </div>
-<!-- Bagian gambar -->
 <div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-image" style="{{ $iconStyle }}"></i> Syarat Pengalaman Kerja!
     </label>
     <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
-        <!-- Klik gambar untuk membuka modal -->
-        <img src="/assets/icon/jenjangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy"
-             style="margin-right: 5px; cursor: pointer;"
-             data-bs-toggle="modal" data-bs-target="#gambarModal">
+        <!-- Tombol atau ikon kecil untuk buka modal -->
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#gambarModal">
+            <i class="bi bi-eye"></i> Lihat Gambar
+        </button>
     </div>
 </div>
 
-<!-- Modal Bootstrap -->
+<!-- Modal: Gambar tampil hanya saat modal dibuka -->
 <div class="modal fade" id="gambarModal" tabindex="-1" aria-labelledby="gambarModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="gambarModalLabel">Persyaratan Pengalaman </h5>
+                <h5 class="modal-title" id="gambarModalLabel">Syarat Pengalaman Kerja</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
             </div>
             <div class="modal-body text-center">
