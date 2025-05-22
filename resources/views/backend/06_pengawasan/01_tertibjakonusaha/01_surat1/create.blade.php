@@ -114,7 +114,7 @@
                                                         class="form-control @error('namabadanusaha') is-invalid @enderror"
                                                         name="namabadanusaha"
                                                         placeholder="Masukan Nama Badan Usaha ..."
-                                                        value="{{ old('namabadanusaha', $datatertibjasakonstruksinamabadanusaha ?? '') }}">
+                                                        value="{{ old('namabadanusaha', $datatertibjasakonstruksinamabadanusaha ?? '') }}" readonly>
 
                                                     @error('namabadanusaha')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -148,7 +148,7 @@
                                                         class="form-control @error('nib') is-invalid @enderror"
                                                         name="nib"
                                                         placeholder="Masukkan NIB ..."
-                                                        value="{{ old('nib', $datatertibjasakonstruksinib ?? '') }}">
+                                                        value="{{ old('nib', $datatertibjasakonstruksinib ?? '') }}" readonly>
                                                     @error('nib')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
