@@ -152,7 +152,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/hakaksespekerjaskk?search=${input}`)
+                            fetch(`/hakaksespekerjaskkdaftar?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -213,7 +213,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             <i class="bi bi-image"></i> Foto
           </th>
           <th style="width: 150px; text-align:center; vertical-align: middle;">
-            <i class="bi bi-list-ul"></i> Daftar Materi
+            <i class="bi bi-list-ul"></i> Form Daftar
           </th>
           {{-- <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-people-fill"></i> Peserta
@@ -284,16 +284,52 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
 
         <td style="text-align: center; vertical-align: middle;">
-            <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           transition: background-color 0.3s, color 0.3s;">
-             <i class="bi bi-eye"></i> Lihat
-            </button>
-            </a>
+           @php
+                                    $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
+                                    $today = \Carbon\Carbon::now();
+                                    $isClosed = $today->greaterThanOrEqualTo($eventDate);
+                                    @endphp
+                                    @if ($isClosed)
+                                    <button style="
+                                            background-color: #FF0000;
+                                            color: white;
+                                            border: 2px solid #FF0000;
+                                            padding: 8px 12px;
+                                            font-size: 14px;
+                                            font-weight: bold;
+                                            border-radius: 6px;
+                                            cursor: not-allowed;
+                                            opacity: 0.6;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            gap: 6px;
+                                            " disabled>
+                                            <i class="fas fa-times-circle"></i> Ditutup
+                                        </button>
+                                        @else
+                                        <a href="/resagendatkk/{{$item->namakegiatan}}" style="text-decoration: none;">
+                                            <button style="
+                                            background-color: #006b1b;
+                                            color: white;
+                                            border: 2px solid #006b1b;
+                                            padding: 8px 12px;
+                                            font-size: 14px;
+                                            font-weight: bold;
+                                            border-radius: 6px;
+                                            opacity: 0.6;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            gap: 6px;
+                                            width:100%;
+                                            " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
+                                               onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
+                                               <i class="fas fa-user-check"></i> Daftar
+                                            </button>
+                                        </a>
+                                        @endif
+
         </td>
 
         </tr>
