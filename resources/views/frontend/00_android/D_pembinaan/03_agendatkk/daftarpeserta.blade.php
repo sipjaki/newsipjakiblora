@@ -733,19 +733,33 @@ h5 {
                             </p>
                             <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
                         </div>
+<!-- Bagian gambar -->
+<div class="col-md-6" style="{{ $divStyle }}">
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-image" style="{{ $iconStyle }}"></i> Syarat Pengalaman Kerja!
+    </label>
+    <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
+        <!-- Klik gambar untuk membuka modal -->
+        <img src="/assets/icon/jenjangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy"
+             style="margin-right: 5px; cursor: pointer;"
+             data-bs-toggle="modal" data-bs-target="#gambarModal">
+    </div>
+</div>
 
-                          <div class="col-md-6" style="{{ $divStyle }}">
-                                        <label class="form-label" style="{{ $labelStyle }}">
-                                            <i class="bi bi-image" style="{{ $iconStyle }}"></i> Syarat Pengalaman Kerja !
-                                        </label>
-                                        <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
-                                            <!-- Gambar pertama -->
-                                            <img src="/assets/icon/jenjangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
-
-                                            <!-- Gambar kedua -->
-                                            {{-- <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy"> --}}
-                                        </div>
-                                    </div>
+<!-- Modal Bootstrap -->
+<div class="modal fade" id="gambarModal" tabindex="-1" aria-labelledby="gambarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="gambarModalLabel">Persyaratan Pengalaman </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="/assets/icon/jenjangsyarat.jpg" alt="Preview" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</div>
 
                         <style>
                             @keyframes scroll-text {
