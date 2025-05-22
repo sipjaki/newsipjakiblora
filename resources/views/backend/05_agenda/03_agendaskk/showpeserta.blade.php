@@ -90,6 +90,9 @@
                                           <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Tanggal Lahir
                                         </th>
+                                          <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Jarak Kelulusan
+                                        </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>No Telepon
                                         </th>
@@ -131,6 +134,19 @@
                                         <td style="text-align: center;">
                                             {{ \Carbon\Carbon::parse($item->ttl)->translatedFormat('d F Y') }}
                                         </td>
+                                        @php
+                                            use Carbon\Carbon;
+
+                                            $birthDate = Carbon::parse($item->ttl);
+                                            $now = Carbon::now();
+                                            $diff = $birthDate->diff($now);
+                                        @endphp
+
+                                        <td style="text-align: center;">
+                                            {{ $birthDate->translatedFormat('d F Y') }}<br>
+                                            <small>{{ $diff->y }} tahun, {{ $diff->m }} bulan, {{ $diff->d }} hari</small>
+                                        </td>
+
                                         <td style="text-align: left;">{{ $item->notelepon }}</td>
                                         <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan }}</td>
                                         <td style="text-align: left;">{{ $item->namasekolah->namasekolah }}</td>
