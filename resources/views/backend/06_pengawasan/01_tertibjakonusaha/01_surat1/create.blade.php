@@ -109,7 +109,7 @@
                                                     <strong style="font-size: 15px;">Nama Badan Usaha</strong>
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control @error('namabadanusaha') is-invalid @enderror" name="namabadanusaha" placeholder="Masukan Nama Badan Usaha ..." value="{{ old('namabadanusaha') }}">
+                                                    <input type="text" class="form-control @error('namabadanusaha') is-invalid @enderror" name="namabadanusaha" placeholder="Masukan Nama Badan Usaha ..." value="{{ old('namabadanusaha') }} {{$datatertibjasakonstruksinamabadanusaha}}">
                                                     @error('namabadanusaha')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
