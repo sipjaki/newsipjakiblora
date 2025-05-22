@@ -669,7 +669,7 @@ table.zebra-table {
         </label>
         <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
             <!-- Gambar pertama -->
-            <img src="/assets/icon/jejangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
+            <img src="/assets/icon/jenjangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
 
             <!-- Gambar kedua -->
             {{-- <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy"> --}}
@@ -1233,7 +1233,7 @@ function previewFile(previewId, input) {
         </label>
         <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
             <!-- Gambar pertama -->
-            <img src="/assets/icon/jejangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
+            <img src="/assets/icon/jenjangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
 
             <!-- Gambar kedua -->
             {{-- <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy"> --}}
