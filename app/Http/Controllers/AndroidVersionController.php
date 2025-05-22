@@ -60,6 +60,7 @@ use App\Models\tahunpilihan;
 use App\Models\tertibjakonpemanfaatan;
 use App\Models\tertibjakonpenyelenggaraan;
 use App\Models\User;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -886,65 +887,63 @@ public function reasasosiasimasjakikontraktor($id)
              }
 
                      //  MENU PESERTA AGENDA PERLATIHAN ===================================================
+public function menuresskkpeserta(Request $request, $namakegiatan)
+{
+    $perPage = $request->input('perPage', 50);
+    $search = $request->input('search');
 
-                     public function menuresskkpeserta(Request $request, $namakegiatan)
-             {
-                 $perPage = $request->input('perPage', 50);
-                 $search = $request->input('search');
+    // Cari agenda berdasarkan nama kegiatan
+    $agendaskk = agendaskk::where('namakegiatan', $namakegiatan)->first();
 
-                 $query = allskktenagakerjablora::query();
+    if (!$agendaskk) {
+        return abort(404, 'Agenda tidak ditemukan');
+    }
 
-                 if ($search) {
-                     $query->where('namalengkap', 'LIKE', "%{$search}%")
-                           ->orWhere('jabatankerja', 'LIKE', "%{$search}%")
-                           ->orWhere('email', 'LIKE', "%{$search}%")
-                           ->orWhereHas('user', function ($q) use ($search) {
-                               $q->where('user', 'LIKE', "%{$search}%");
-                           })
-                           ->orWhereHas('jenjangpendidikan', function ($q) use ($search) {
-                               $q->where('jenjangpendidikan', 'LIKE', "%{$search}%");
-                           })
-                           ->orWhereHas('jabatankerja', function ($q) use ($search) {
-                               $q->where('jabatankerja', 'LIKE', "%{$search}%");
-                           });
+    $query = allskktenagakerjablora::query()
+        ->where('agendaskk_id', $agendaskk->id)
+        ->where('verifikasipu', 'lolos'); // 🔥 Filter: hanya yang verifikasipu-nya "lolos"
 
-                 }
+    // Jika ada pencarian, tambahkan ke query
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namalengkap', 'LIKE', "%{$search}%")
+              ->orWhere('jabatankerja', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhereHas('user', function ($q) use ($search) {
+                  $q->where('user', 'LIKE', "%{$search}%");
+              })
+              ->orWhereHas('jenjangpendidikan', function ($q) use ($search) {
+                  $q->where('jenjangpendidikan', 'LIKE', "%{$search}%");
+              })
+              ->orWhereHas('jabatankerja', function ($q) use ($search) {
+                  $q->where('jabatankerja', 'LIKE', "%{$search}%");
+              });
+        });
+    }
 
-                 $datapesertapelatihan = $query->paginate($perPage);
+    // Ambil hasil data terverifikasi dengan paginasi
+    $datapeserta = $query->select([
+            'id', 'user_id', 'jabatankerja_id', 'tempatlahir', 'ttl',
+            'jeniskelamin', 'nik', 'jenjangpendidikan_id', 'email', 'verifikasipu'
+        ])
+        ->paginate($perPage);
 
-                 if ($request->ajax()) {
-                     return response()->json([
-                         'html' => view('frontend.00_android.D_pembinaan.04_pesertaskk.partials.table', compact('data'))->render()
-                     ]);
-                 }
+    // Jika permintaan AJAX, kembalikan view tabel saja
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.D_pembinaan.04_pesertaskk.partials.table', compact('datapeserta'))->render()
+        ]);
+    }
 
-                 $agendaskk = agendaskk::where('namakegiatan', $namakegiatan)->first();
-
-                 // Jika asosiasi tidak ditemukan, tampilkan 404
-                 if (!$agendaskk) {
-                     return abort(404, 'Asosiasi tidak ditemukan');
-                 }
-
-                 $user = Auth::user();
-
-                     $datapeserta = allskktenagakerjablora::where('agendaskk_id', $agendaskk->id)
-                                 ->select(['id', 'user_id', 'jabatankerja_id', 'tempatlahir', 'ttl', 'jeniskelamin', 'nik', 'jenjangpendidikan_id', 'email' ])
-                                 ->paginate(25);
-
-                 // Ambil data user saat ini
-                 $user = Auth::user();
-
-
-                 return view('frontend.00_android.D_pembinaan.04_pesertaskk.show', [
-                     'title' => 'Daftar Peserta Sertifikasi ',
-                     'data' => $agendaskk,
-                     'datapeserta' => $datapeserta,
-                     'perPage' => $perPage,
-                     'search' => $search,
-                     'user' => $user,
-                     // 'datapeserta' => $datauser
-                 ]);
-             }
+    return view('frontend.00_android.D_pembinaan.04_pesertaskk.show', [
+        'title' => 'Daftar Peserta Sertifikasi',
+        'data' => $agendaskk,
+        'datapeserta' => $datapeserta,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => Auth::user(),
+    ]);
+}
 
 
 
