@@ -71,7 +71,6 @@
                                         </button>
                                     </a>
 
-                                        <a href="/404">
                                             <button class="btn-create"
                                                 style="border-radius: 15px; padding: 6px 12px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s, border 0.3s; font-size: 0.875rem;"
                                                 onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -79,7 +78,6 @@
                                                 <i class="bi bi-file-earmark-text icon-create"></i>
                                                 Lihat Berkas
                                             </button>
-                                        </a>
 
 
 
