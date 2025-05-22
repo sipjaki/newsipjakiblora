@@ -146,7 +146,7 @@
                                     <th rowspan="2" style="text-align: center; width:75px;">
                                         <i class="bi bi-list-ol"></i> No
                                     </th>
-                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                    <th rowspan="2" style="text-align: center; width:100px;">
                                         <i class="bi bi-people-fill"></i> Penyedia
                                     </th>
                                     <th rowspan="2" style="text-align: center; width:200px;">
@@ -164,6 +164,10 @@
 
                                     <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-building-fill"></i> PJBU
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                        <i class="bi bi-building-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
 
                                     <th colspan="4" style="text-align: center; width:800px;">
