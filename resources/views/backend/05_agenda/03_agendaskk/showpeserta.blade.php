@@ -140,6 +140,18 @@
                                         <td style="text-align: center;">
                                             {{$item->tahunlulus}}
                                         </td>
+                                        @php
+                                                $tahunLulus = $item->tahunlulus;
+                                                $tanggalLulus = \Carbon\Carbon::createFromDate($tahunLulus, 6, 1); // 1 Juni {tahun}
+                                                $now = \Carbon\Carbon::now();
+                                                $diff = $tanggalLulus->diff($now);
+                                            @endphp
+
+                                            <td style="text-align: center;">
+                                                {{ $tahunLulus }}<br>
+                                                <small>{{ $diff->y }} tahun, {{ $diff->m }} bulan, {{ $diff->d }} hari</small>
+                                            </td>
+
                                         <td style="text-align: left;">{{ $item->notelepon }}</td>
                                         <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan }}</td>
                                         <td style="text-align: left;">{{ $item->namasekolah->namasekolah }}</td>
