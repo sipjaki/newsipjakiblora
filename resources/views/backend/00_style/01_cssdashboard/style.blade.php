@@ -38,4 +38,20 @@
 }
 
 
+.button-abuabu {
+  background-color: #6B7280;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-abuabu:hover {
+  background-color: white;
+  color: black;
+}
+
 </style>
