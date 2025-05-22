@@ -70,6 +70,13 @@
                                             Perbaikan Data
                                         </button>
                                     </a>
+
+                                    <a href="/404">
+                                        <button class="btn-create">
+                                            <i class="bi bi-file-earmark-arrow-down icon-create"></i>
+                                            Download Berkas
+                                        </button>
+                                    </a>
                                 </div>
 
                                 <!-- Kontainer Kanan -->
