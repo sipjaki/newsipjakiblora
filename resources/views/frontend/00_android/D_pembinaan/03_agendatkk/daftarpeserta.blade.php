@@ -736,11 +736,11 @@ h5 {
 
                           <div class="col-md-6" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
-                                            <i class="bi bi-image" style="{{ $iconStyle }}"></i> Contoh Screenshot SKK Saudara !
+                                            <i class="bi bi-image" style="{{ $iconStyle }}"></i> Syarat Pengalaman Kerja !
                                         </label>
                                         <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
                                             <!-- Gambar pertama -->
-                                            <img src="/assets/icon/contoh3.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
+                                            <img src="/assets/icon/jenjangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
 
                                             <!-- Gambar kedua -->
                                             {{-- <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy"> --}}
