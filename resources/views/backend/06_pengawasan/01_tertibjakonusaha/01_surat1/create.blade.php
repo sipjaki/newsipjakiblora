@@ -77,6 +77,14 @@
                                             Download Berkas
                                         </button>
                                     </a>
+
+                                            <a href="/404">
+                                                <button class="btn-create">
+                                                    <i class="bi bi-file-earmark-text icon-create"></i>
+                                                    Lihat Berkas
+                                                </button>
+                                            </a>
+
                                 </div>
 
                                 <!-- Kontainer Kanan -->
