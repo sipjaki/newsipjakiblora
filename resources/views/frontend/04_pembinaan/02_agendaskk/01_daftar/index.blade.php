@@ -661,7 +661,6 @@ table.zebra-table {
                                 </span>
                             </p>
                             <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
-                        </div>
 
 
 <div class="col-md-6" style="{{ $divStyle }}">
@@ -690,6 +689,9 @@ table.zebra-table {
         </div>
     </div>
 </div>
+
+                        </div>
+
 
 
                         <style>
@@ -1240,8 +1242,6 @@ function previewFile(previewId, input) {
                                     Silahkan Upload Dokumen Saudara!! <span style="color: red;">Hati-hati dalam Upload Tahun Pengalaman Kerja!!</span>
                                 </span>
                             </p>
-                            <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
-                        </div>
 
 
 
@@ -1272,6 +1272,8 @@ function previewFile(previewId, input) {
     </div>
 </div>
 
+                            <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
+                        </div>
 
                         <style>
                             @keyframes scroll-text {
