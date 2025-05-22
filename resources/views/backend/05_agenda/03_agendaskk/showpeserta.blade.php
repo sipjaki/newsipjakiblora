@@ -134,18 +134,21 @@
                                         <td style="text-align: center;">
                                             {{ \Carbon\Carbon::parse($item->ttl)->translatedFormat('d F Y') }}
                                         </td>
-                                        @php
-                                            use Carbon\Carbon;
-
-                                            $birthDate = Carbon::parse($item->ttl);
-                                            $now = Carbon::now();
-                                            $diff = $birthDate->diff($now);
-                                        @endphp
-
-                                        <td style="text-align: center;">
-                                            {{ $birthDate->translatedFormat('d F Y') }}<br>
-                                            <small>{{ $diff->y }} tahun, {{ $diff->m }} bulan, {{ $diff->d }} hari</small>
+                                       <td style="text-align: center;">
+                                            {{ \Carbon\Carbon::parse($item->ttl)->translatedFormat('d F Y') }}<br>
+                                            <small>
+                                                {{
+                                                    \Carbon\Carbon::parse($item->ttl)->diff(\Carbon\Carbon::now())->y
+                                                }} tahun,
+                                                {{
+                                                    \Carbon\Carbon::parse($item->ttl)->diff(\Carbon\Carbon::now())->m
+                                                }} bulan,
+                                                {{
+                                                    \Carbon\Carbon::parse($item->ttl)->diff(\Carbon\Carbon::now())->d
+                                                }} hari
+                                            }}</small>
                                         </td>
+
 
                                         <td style="text-align: left;">{{ $item->notelepon }}</td>
                                         <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan }}</td>
