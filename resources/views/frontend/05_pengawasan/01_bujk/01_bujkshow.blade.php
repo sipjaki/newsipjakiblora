@@ -179,36 +179,8 @@ table.zebra-table {
 
             <div class="table-wrapper">
 
-         <section class="department-details-section" style="margin-top: -200px;">
-		<div class="container" style="margin-top: -100px;">
-			<div class="row">
-                {{-- ------------------------------------------------------------------------------------------ --}}
-                <div class="col-lg-12">
-                        <div class="document-details">
-							<div class="document-details-list">
-
-                                <div class="centered-button" style="display: flex; justify-content: space-between; align-items: center; margin-top: 0px;">
-                                    <!-- Tombol di kiri -->
-                                    <button class="green-button">
-                                        <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 10px;" loading="lazy">
-                                        <i class="fas fa-file mr-2" style="margin-right: 5px;"></i>
-                                        <span style="color: black;">{{$title}} : {{$data->kodeproyek}}</span>
-                                    </button>
-
-                                    <!-- Tombol di kanan -->
-                                    <a href="/pengawasanbujk">
-                                        <button class="badgekembali">
-                                            <i class="fas fa-arrow-circle-left" style="margin-right: 5px; color:red;"></i> KEMBALI
-                                        </button>
-                                    </a>
-                                </div>
 
 
-
-                                                        {{-- TABLE DATA  --}}
-                                        </head>
-
-                    <body>
                     <div class="table-wrapper" style="margin-top: 15px;">
                     <!-- Add this inside your HTML <head> for FontAwesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -533,9 +505,6 @@ table.zebra-table {
 </table>
 
 
-<div class="container-fluid" style="justify-content: right; margin-top:20px;">
-
-</div>
 
                     </div>
                                                 </div><!-- document-details-list -->
@@ -547,12 +516,6 @@ table.zebra-table {
                                     </div><!-- col-lg-8 -->
                                 </div><!-- row -->
                             </div><!-- container -->
-                        </div><!--page-wrapper-->
-                    </div><!--page-wrapper-->
-                </div><!--page-wrapper-->
-            </div><!--page-wrapper-->
-        </div><!--page-wrapper-->
-    </section><!-- department-details-section -->
 
 
 
