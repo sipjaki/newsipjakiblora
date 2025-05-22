@@ -194,9 +194,9 @@
                                                     <textarea
                                                         class="form-control @error('namapaketpekerjaan') is-invalid @enderror"
                                                         name="namapaketpekerjaan"
-                                                        {{-- placeholder="Masukan Nama Pekerjaan ..." --}}
+                                                        placeholder="Masukan Nama Pekerjaan ..."
                                                         rows="6"
-                                                        style="width: 100%; resize: vertical;" readonly>{{ old('namapaketpekerjaan', $datatertibjasakonstruksi ?? '') }}</textarea>
+                                                        style="width: 100%; resize: vertical;" readonly>{{ old('namapaketpekerjaan', $datatertibjasakonstruksi ?? 'Data Masih Kosong') }}</textarea>
 
                                                     @error('namapaketpekerjaan')
                                                         <div class="invalid-feedback">{{ $message }}</div>
