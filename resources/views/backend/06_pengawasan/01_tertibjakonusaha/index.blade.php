@@ -170,9 +170,18 @@
                                         <i class="bi bi-building-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
 
+                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                        <i class="bi bi-building-fill"></i> Segmentasi Pasar
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                        <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
+                                    </th>
+
                                     <th colspan="4" style="text-align: center; width:600px;">
                                         <i class="bi bi-person-lines-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
+
                                     <th colspan="2" style="text-align: center; width:450px;">
                                         <i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar
                                     </th>
@@ -310,6 +319,30 @@
                                   </button>
                                 @endif
                               </td>
+
+                               <td style="text-align: center; vertical-align: middle;">
+                                    <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
+                                        <button class="button-abuabu">
+                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                        </button>
+                                    </a>
+                                </td>
+
+                               <td style="text-align: center; vertical-align: middle;">
+                                    <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
+                                        <button class="button-abuabu">
+                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                        </button>
+                                    </a>
+                                </td>
+
+                               <td style="text-align: center; vertical-align: middle;">
+                                    <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
+                                        <button class="button-abuabu">
+                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                        </button>
+                                    </a>
+                                </td>
 
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
