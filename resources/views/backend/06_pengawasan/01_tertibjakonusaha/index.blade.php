@@ -166,19 +166,19 @@
                                         <i class="bi bi-building-fill"></i> PJBU
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-building-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-building-fill"></i> Segmentasi Pasar
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-building-fill"></i> Pemenuhan Syaratgi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
