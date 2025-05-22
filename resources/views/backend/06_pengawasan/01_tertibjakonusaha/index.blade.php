@@ -237,7 +237,7 @@
                             @foreach ($data as $item)
                             <tr>
                               <td style="text-align: center;">{{ $loop->iteration }}</td>
-                              <td>
+                              <td style="text-align: center;">
                                 @if($item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat')
                                   {{ $item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat' }}
                                 @else
