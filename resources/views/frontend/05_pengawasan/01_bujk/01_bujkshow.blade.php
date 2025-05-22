@@ -180,12 +180,10 @@ table.zebra-table {
             <div class="table-wrapper">
 
 
-
-                    <div class="table-wrapper" style="margin-top: 15px;">
-                    <!-- Add this inside your HTML <head> for FontAwesome -->
+                   <!-- Add this inside your HTML <head> for FontAwesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-<table  id="datakeluar" class="fl-table" style="width: 100%; border-collapse: collapse" class="fl-table">
+<table  id="datakeluar" class="zebra-table" style="width: 100%; border-collapse: collapse" class="fl-table">
     <thead>
 
         <tr>
@@ -515,7 +513,6 @@ table.zebra-table {
 
                                     </div><!-- col-lg-8 -->
                                 </div><!-- row -->
-                            </div><!-- container -->
 
 
 
