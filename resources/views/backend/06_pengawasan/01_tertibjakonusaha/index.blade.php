@@ -175,7 +175,7 @@
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:400px;">
-                                        <i class="bi bi-building-fill"></i> Pemenuhan Syarat
+                                        <i class="bi bi-building-fill"></i> Pemenuhan Syaratgi
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:400px;">

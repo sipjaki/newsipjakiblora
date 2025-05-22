@@ -1207,3 +1207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <br><br>
                     <!-- /.card -->
                     <!-- Button Section -->
+
+
+
+(['auth', 'can:super_admin'])
