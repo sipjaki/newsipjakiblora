@@ -999,7 +999,7 @@ Route::put('/verifikasipupesertaskk/{id}', [VerifikasiController::class, 'verifi
 
 // ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
-Route::get('/betertibjakonusaha', [TertibjasakonstruksiController::class, 'betertibjakonusaha'])->middleware('auth')->name('bertertibjakonusaha');
+Route::get('/betertibjakonusaha', [TertibjasakonstruksiController::class, 'betertibjakonusaha'])->middleware(['auth', 'can:super_admin'])->name('bertertibjakonusaha');
 Route::delete('/betertibjakonusaha/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahadelete'])->middleware('auth');
 
 Route::get('/betertibjakonusaha/create', [TertibjasakonstruksiController::class, 'betertibjakonusahacreate'])->middleware('auth')->name('betertibjakonusahacreate');
