@@ -673,7 +673,7 @@ table.zebra-table {
     <div class="d-flex justify-content-center align-items-center" style="padding: 20px;">
         <!-- Gambar pertama -->
         <img src="/assets/icon/jenjangsyarat.jpg"
-             style="width: 450px; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+             style="width: 600px; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
              alt="Blora" loading="lazy">
 
         <!-- Gambar kedua (opsional) -->
@@ -1247,7 +1247,7 @@ function previewFile(previewId, input) {
     <div class="d-flex justify-content-center align-items-center" style="padding: 20px;">
         <!-- Gambar pertama -->
         <img src="/assets/icon/jenjangsyarat.jpg"
-             style="width: 450px; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+             style="width: 600px; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
              alt="Blora" loading="lazy">
 
         <!-- Gambar kedua (opsional) -->
