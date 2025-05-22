@@ -297,13 +297,7 @@
                                 @endif
                               </td>
 
-                               <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
-                                        <i class="bi bi-eye icon-create"></i> Lihat Surat
-                                        </button>
-                                    </a>
-                                </td>
+
 
                               <td style="text-align: left; text-transform: uppercase;">
                                 @if($item->pjbu)
@@ -316,6 +310,14 @@
                                   </button>
                                 @endif
                               </td>
+
+                               <td style="text-align: center; vertical-align: middle;">
+                                    <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
+                                        <button class="button-abuabu">
+                                        <i class="bi bi-eye icon-create"></i> Lihat Surat
+                                        </button>
+                                    </a>
+                                </td>
 
                               @php
                               $kesesuaian = $item->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
