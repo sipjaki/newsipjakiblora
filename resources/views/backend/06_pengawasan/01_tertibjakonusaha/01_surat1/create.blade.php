@@ -196,7 +196,7 @@
                                                         name="namapaketpekerjaan"
                                                         placeholder="Masukan Nama Pekerjaan ..."
                                                         rows="6"
-                                                        style="width: 100%; resize: vertical;" readonly>{{ old('namapaketpekerjaan', $datatertibjasakonstruksi ?? 'Data Masih Kosong') }}</textarea>
+                                                        style="width: 100%; resize: vertical;">{{ old('namapaketpekerjaan', $datatertibjasakonstruksi ?? 'Data Masih Kosong') }}</textarea>
 
                                                     @error('namapaketpekerjaan')
                                                         <div class="invalid-feedback">{{ $message }}</div>
