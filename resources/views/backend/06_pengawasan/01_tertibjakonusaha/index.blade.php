@@ -175,6 +175,10 @@
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:400px;">
+                                        <i class="bi bi-building-fill"></i> Pemenuhan Syarat
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
