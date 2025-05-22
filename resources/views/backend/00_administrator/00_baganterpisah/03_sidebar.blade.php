@@ -280,7 +280,8 @@
 
               <li class="nav-item">
                 <a href="/hakaksespekerjaskkdaftar" class="nav-link">
-                  <i class="nav-icon bi bi-folder2-open" style="color: white"></i> <!-- Berkas Anda -->
+                    <i class="nav-icon bi bi-file-earmark-text" style="color: white"></i>
+                  {{-- <i class="nav-icon bi bi-folder2-open" style="color: white"></i> <!-- Berkas Anda --> --}}
                   <p style="color: white">
                     Daftar SKK
                     <i class="nav-arrow bi bi-chevron-right"></i>
