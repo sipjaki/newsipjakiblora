@@ -54,4 +54,30 @@
   color: black;
 }
 
+
+/* brn kembali */
+
+.btn-kembali {
+    background: linear-gradient(45deg, #6c757d, #adb5bd);
+    color: white;
+    border: none;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-kembali-abu:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+
 </style>
