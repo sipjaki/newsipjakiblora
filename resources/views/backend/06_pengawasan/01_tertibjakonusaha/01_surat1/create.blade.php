@@ -53,19 +53,14 @@
                                     <!-- Tombol Nama Pekerjaan -->
                                     <button class="btn-create">
                                         <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
-                                    Nama Pekerjaan : {{ $datatertibjasakonstruksi }}
+                                        Nama Pekerjaan: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
                                     </button>
 
                                     <!-- Tombol Badan Usaha -->
-                                    <button
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#051cec'; this.style.color='white';"
-                                        style="background-color: #051cec; color: white; border: none; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            viewBox="0 0 16 16" style="margin-right: 8px;">
-                                            <path d="M4 0h5.5L14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM9.5 1v3a1 1 0 0 0 1 1h3l-4-4z"/>
-                                        </svg>
-                                        Badan Usaha : {{ $datatertibjasakonstruksinamabadanusaha }}
+                                    <button class="btn-create">
+
+                                         <i class="bi bi-building icon-create"></i>
+                                        Badan Usaha : {{ $datatertibjasakonstruksinamabadanusaha ?? 'Masih Kosong' }}
                                     </button>
                                 </div>
 
