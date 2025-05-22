@@ -734,6 +734,19 @@ h5 {
                             <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
                         </div>
 
+                          <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-image" style="{{ $iconStyle }}"></i> Contoh Screenshot SKK Saudara !
+                                        </label>
+                                        <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
+                                            <!-- Gambar pertama -->
+                                            <img src="/assets/icon/contoh3.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
+
+                                            <!-- Gambar kedua -->
+                                            {{-- <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy"> --}}
+                                        </div>
+                                    </div>
+
                         <style>
                             @keyframes scroll-text {
                                 0% {
