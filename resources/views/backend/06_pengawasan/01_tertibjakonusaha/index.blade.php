@@ -325,7 +325,7 @@
                               </td>
 
                                <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonusahasurat1/create/{{$item->id}}" style="text-decoration: none;">
+                                    <a href="/betertibjakonusahasurat1/create/{{$item->id}}" style="text-decoration: none;">
                                         <button class="button-abuabu">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
