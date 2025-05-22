@@ -170,7 +170,7 @@
                                         <i class="bi bi-building-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
 
-                                    <th colspan="4" style="text-align: center; width:800px;">
+                                    <th colspan="4" style="text-align: center; width:600px;">
                                         <i class="bi bi-person-lines-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
                                     <th colspan="2" style="text-align: center; width:450px;">
@@ -314,7 +314,7 @@
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-abuabu">
-                                        <i class="bi bi-eye icon-create"></i> Lihat Surat
+                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
                                 </td>
