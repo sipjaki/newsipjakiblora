@@ -57,13 +57,6 @@
                                     </button>
 
                                     <!-- Tombol Badan Usaha -->
-                                    <button class="btn-create">
-
-                                         <i class="bi bi-building icon-create"></i>
-                                        Badan Usaha : {{ $datatertibjasakonstruksinamabadanusaha ?? 'Masih Kosong' }}
-                                    </button>
-
-                                    <!-- Tombol Badan Usaha -->
                                     <a href="/404">
                                         <button class="btn-create">
                                             <i class="bi bi-tools icon-create"></i>
