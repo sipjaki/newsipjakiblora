@@ -129,5 +129,45 @@ public function downsertifikatskk(Request $request)
         'search' => $search,
     ]);
 }
+
+
+    public function hakaksespekerjaskkdaftar(Request $request)
+    {
+        $perPage = $request->input('perPage', 10);
+        $search = $request->input('search');
+
+        $query = agendaskk::query();
+
+        if ($search) {
+            $query->where('namakegiatan', 'LIKE', "%{$search}%")
+                  ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
+                  ->orWhere('lokasi', 'LIKE', "%{$search}%")
+                  ->orWhere('keterangan', 'LIKE', "%{$search}%");
+                //   ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+                //       $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+                //   }
+                // );
+
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('backend.15_hakakses.01_pekerja.03_daftarskk.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        $user = Auth::user();
+
+        return view('backend.15_hakakses.01_pekerja.03_daftarskk.index', [
+            'title' => 'Agenda SKK Tenaga Konstruksi Kab Blora, Silahkan Daftar !',
+            'data' => $data,
+            'perPage' => $perPage,
+            'search' => $search,
+            'user' => $user
+        ]);
+    }
+
 }
 

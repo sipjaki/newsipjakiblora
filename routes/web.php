@@ -973,6 +973,7 @@ Route::get('/hakaksespekerjaskk', [HakAksesController::class, 'agendaskkpeserta'
 Route::get('/hakaksespekerjaberkas', [HakAksesController::class, 'agendaskkpesertaberkas'])->middleware('auth');
 Route::get('/downsertifikatskk', [HakAksesController::class, 'downsertifikatskk'])->middleware('auth');
 
+Route::get('/hakaksespekerjaskkdaftar', [HakAksesController::class, 'hakaksespekerjaskkdaftar'])->middleware('auth');
 // VERIFIKASI BERKAS PESERTA SKK
 Route::put('/validasidokumenpesertaskk/{id}', [VerifikasiController::class, 'validasidokumenpesertaskk'])->middleware('auth')->name('validasidokumenpesertaskk');
 

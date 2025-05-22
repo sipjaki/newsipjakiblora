@@ -279,10 +279,20 @@
                 </li>
 
               <li class="nav-item">
+                <a href="/hakaksespekerjaskkdaftar" class="nav-link">
+                  <i class="nav-icon bi bi-folder2-open" style="color: white"></i> <!-- Berkas Anda -->
+                  <p style="color: white">
+                    Daftar Kegiatan SKK
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
                 <a href="/hakaksespekerjaskk" class="nav-link">
                   <i class="nav-icon bi bi-folder2-open" style="color: white"></i> <!-- Berkas Anda -->
                   <p style="color: white">
-                    Daftar Kegiatan
+                    Kegiatan Anda
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
