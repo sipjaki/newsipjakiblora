@@ -325,8 +325,8 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                                             width:100%;
                                             " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
                                                onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
-                                               <i class="fas fa-user-check"></i> Daftar
-                                            </button>
+                                       <i class="bi bi-person-plus"></i> Daftar
+                                     </button>
                                         </a>
                                         @endif
 
