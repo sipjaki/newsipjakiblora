@@ -634,6 +634,7 @@ public function betertibjakonusahacreatenew(Request $request)
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan, // Ini dikirim ke form
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha, // Ini dikirim ke form
         'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id, // Ini dikirim ke form
+        'datatertibjasakonstruksinib' => $datatertibjasakonstruksi->nib, // Ini dikirim ke form
         'user' => $user,
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
