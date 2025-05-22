@@ -73,7 +73,7 @@
     transition: all 0.3s ease;
 }
 
-.btn-kembali-abu:hover {
+.btn-kembali:hover {
     background: white;
     color: black;
     transform: scale(1.05);
