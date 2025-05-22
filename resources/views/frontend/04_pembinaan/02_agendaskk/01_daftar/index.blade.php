@@ -1244,37 +1244,36 @@ function previewFile(previewId, input) {
                             </p>
 
 
+                            <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
+                        </div>
 
-<div class="col-md-6" style="{{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="{{ $iconStyle }}"></i> Syarat Pengalaman Kerja!
+
+<!-- Gambar 2 -->
+<div class="col-md-6 mt-4">
+    <label class="form-label">
+        <i class="bi bi-image"></i> Contoh Dokumen!
     </label>
     <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
-        <!-- Tombol atau ikon kecil untuk buka modal -->
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#gambarModal">
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalGambar2">
             <i class="bi bi-eye"></i> Lihat Gambar
         </button>
     </div>
 </div>
 
-<!-- Modal: Gambar tampil hanya saat modal dibuka -->
-<div class="modal fade" id="gambarModal" tabindex="-1" aria-labelledby="gambarModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+<!-- Modal Gambar 2 -->
+<div class="modal fade" id="modalGambar2" tabindex="-1" aria-labelledby="modalGambar2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="gambarModalLabel">Syarat Pengalaman Kerja</h5>
+                <h5 class="modal-title" id="modalGambar2Label">Contoh Dokumen</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
             </div>
             <div class="modal-body text-center">
-                <img src="/assets/icon/jenjangsyarat.jpg" alt="Preview" class="img-fluid rounded shadow">
+                <img src="/assets/icon/jenjangsyarat.jpg" class="img-fluid rounded shadow">
             </div>
         </div>
     </div>
 </div>
-
-                            <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
-                        </div>
-
                         <style>
                             @keyframes scroll-text {
                                 0% {
