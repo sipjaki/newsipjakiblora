@@ -661,39 +661,20 @@ table.zebra-table {
                                 </span>
                             </p>
                             <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
-
-
-<div class="col-md-6" style="{{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="{{ $iconStyle }}"></i> Syarat Pengalaman Kerja!
-    </label>
-    <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
-        <!-- Tombol atau ikon kecil untuk buka modal -->
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#gambarModal">
-            <i class="bi bi-eye"></i> Lihat Gambar
-        </button>
-    </div>
-</div>
-
-<!-- Modal: Gambar tampil hanya saat modal dibuka -->
-<div class="modal fade" id="gambarModal" tabindex="-1" aria-labelledby="gambarModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="gambarModalLabel">Syarat Pengalaman Kerja</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="/assets/icon/jenjangsyarat.jpg" alt="Preview" class="img-fluid rounded shadow">
-            </div>
-        </div>
-    </div>
-</div>
-
                         </div>
 
+                          <div class="col-md-6" style="{{ $divStyle }}">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-image" style="{{ $iconStyle }}"></i> Syarat Tahun Pengalaman Kerja !
+        </label>
+        <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
+            <!-- Gambar pertama -->
+            <img src="/assets/icon/jejangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
 
-
+            <!-- Gambar kedua -->
+            {{-- <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy"> --}}
+        </div>
+    </div>
                         <style>
                             @keyframes scroll-text {
                                 0% {
@@ -1242,38 +1223,23 @@ function previewFile(previewId, input) {
                                     Silahkan Upload Dokumen Saudara!! <span style="color: red;">Hati-hati dalam Upload Tahun Pengalaman Kerja!!</span>
                                 </span>
                             </p>
-
-
                             <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
                         </div>
 
 
-<!-- Gambar 2 -->
-<div class="col-md-6 mt-4">
-    <label class="form-label">
-        <i class="bi bi-image"></i> Contoh Dokumen!
-    </label>
-    <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
-        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalGambar2">
-            <i class="bi bi-eye"></i> Lihat Gambar
-        </button>
-    </div>
-</div>
+                          <div class="col-md-6" style="{{ $divStyle }}">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-image" style="{{ $iconStyle }}"></i> Syarat Tahun Pengalaman Kerja !
+        </label>
+        <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
+            <!-- Gambar pertama -->
+            <img src="/assets/icon/jejangsyarat.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
 
-<!-- Modal Gambar 2 -->
-<div class="modal fade" id="modalGambar2" tabindex="-1" aria-labelledby="modalGambar2Label" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalGambar2Label">Contoh Dokumen</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="/assets/icon/jenjangsyarat.jpg" class="img-fluid rounded shadow">
-            </div>
+            <!-- Gambar kedua -->
+            {{-- <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy"> --}}
         </div>
     </div>
-</div>
+
                         <style>
                             @keyframes scroll-text {
                                 0% {
