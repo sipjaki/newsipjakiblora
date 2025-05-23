@@ -262,34 +262,17 @@
                         </div>
 
         <hr>
-        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 70%;">
-  <thead>
-    <tr>
-      <th style="text-align: center; vertical-align: middle;">Kesesuaian Kegiatan Konstruksi</th>
-      <th style="text-align: center;">Jenis Kesesuaian</th>
-      <th style="text-align: center;">Nilai</th>
-    </tr>
-  </thead>
+        <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 50%; margin: auto; font-family: Arial, sans-serif;">
   <tbody>
     <tr>
-      <td rowspan="4" style="font-weight: bold; text-align: center; vertical-align: middle;">
+      <td rowspan="4" style="font-weight: bold; vertical-align: middle; border-bottom: 4px solid black; text-align: center;">
         Kesesuaian Kegiatan Konstruksi
       </td>
       <td>Sesuai Jenis</td>
-      <td>{{ $data->kesesuaian ?? '-' }}</td>
     </tr>
-    <tr>
-      <td>Sesuai Sifat</td>
-      <td>{{ $data->sifatusaha ?? '-' }}</td>
-    </tr>
-    <tr>
-      <td>Sesuai Klasifikasi</td>
-      <td>{{ $data->kesesuaianklasifikasi ?? '-' }}</td>
-    </tr>
-    <tr>
-      <td>Sesuai Layanan</td>
-      <td>{{ $data->kesesuaianlayananusaha ?? '-' }}</td>
-    </tr>
+    <tr><td>Sesuai Sifat</td></tr>
+    <tr><td>Sesuai Klasifikasi</td></tr>
+    <tr><td>Sesuai Layanan</td></tr>
   </tbody>
 </table>
 
