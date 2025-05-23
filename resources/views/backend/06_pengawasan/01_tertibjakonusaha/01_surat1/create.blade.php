@@ -57,14 +57,15 @@
                                     </button>
 
                                     <!-- Tombol Badan Usaha -->
-                                    <a href="/404">
-                                        <button class="btn-create">
-                                            <i class="bi bi-tools icon-create"></i>
-                                            Perbaikan Data
-                                        </button>
-                                    </a>
+
 
                                      @if($data->surattertibjakonusaha1)
+                                          <a href="/betertibjakonusahasurat1/update/{{$data->surattertibjakonusaha1->id}}">
+                                                <button class="btn-create">
+                                                    <i class="bi bi-tools icon-create"></i>
+                                                    Perbaikan Data
+                                                </button>
+                                            </a>
                                         <button onclick="printModalContent({{ $data->surattertibjakonusaha1->id }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
