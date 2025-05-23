@@ -47,7 +47,7 @@
 
                            {{-- ======================================================= --}}
                            <div class="card card-primary card-outline mb-6">
-                            <div style="display: flex; justify-content: space-between; margin-top: 10px; flex-wrap: wrap; margin-bottom:20px;">
+                               <div style="display: flex; justify-content: space-between; margin-top: 10px; flex-wrap: wrap; margin-bottom:20px;">
                                 <!-- Kontainer Kiri -->
                                 <div style="display: flex; gap: 10px; margin-right:25px; margin-left:25px;">
                                     <!-- Tombol Nama Pekerjaan -->
@@ -55,6 +55,15 @@
                                         <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
                                         Nama Pekerjaan: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
                                     </button>
+
+                                    @if(!$data->surattertibjakonusaha1)
+                                        <a href="/betertibjakonusahasurat1/createberkas">
+                                            <button class="btn-create">
+                                                <i class="bi bi-tools icon-create"></i>
+                                                Buat Berkas
+                                            </button>
+                                        </a>
+                                    @endif
 
                                     <!-- Tombol Badan Usaha -->
 
