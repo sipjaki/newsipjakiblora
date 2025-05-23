@@ -322,7 +322,7 @@
                                                 @if ($status === 'Terverifikasi')
                                                     <span class="badge bg-success" style="font-size:16px;">Terverifikasi</span>
                                                 @elseif ($status === 'Terdaftar')
-                                                    <span class="badge bg-danger" style="font-size:16px;">Terdaftar</span>
+                                                    <span class="badge bg-success" style="font-size:16px;">Terdaftar</span>
                                                 @elseif ($status === 'Tidak Terdaftar')
                                                     <span class="badge bg-danger" style="font-size:16px;">Tidak Terdaftar</span>
                                                 @elseif ($status === 'Belum Terdaftar')
