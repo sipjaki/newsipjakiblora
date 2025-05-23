@@ -296,6 +296,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
+                        {{ $datatertibjasakonstruksi_id }}
                         <form action="{{ route('betertibjakonusahasurat1createnewsurat') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
