@@ -272,15 +272,26 @@
   </thead>
   <tbody>
     <tr>
+
       <td colspan="2">Sesuai Jenis</td>
-                <td colspan="2">
-            @if($data->kesesuaian == 'Sesuai')
-                <i class="bi bi-check-circle text-success"></i> Tertib
-            @else
-                <i class="bi bi-x-circle text-danger"></i> Belum Tertib
-            @endif
-            </td>
-    </tr>
+
+                      @php
+                      $kesesuaian = $data->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
+                      $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+                      $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+                      $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+                  @endphp
+
+<button
+                          style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                          onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+                      >
+                          <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+                          {{ $tertibStatus }}
+                      </button>
+                  </td>
+   </tr>
     <tr>
       <td colspan="2">Sesuai Sifat</td>
       <td colspan="2"><i class="bi bi-check-circle text-success"></i>
