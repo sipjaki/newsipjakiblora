@@ -359,23 +359,13 @@
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                               <td class="d-flex align-items-center gap-2" style="font-size: 16px; white-space: nowrap;">
-                                                @if ($item && $item->surattertibjakonusaha1 && $item->surattertibjakonusaha1->waktupengawasan && $item->surattertibjakonusaha1->waktupengawasanselesai)
-                                                {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
-                                                –
-                                                {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
-
-                                                <span class="badge bg-primary py-1 px-2" title="Tanggal Mulai Pengawasan" style="font-weight: 500; font-size: 16px;">
-                                                    {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
-                                                </span>
-
-                                                <span style="font-weight: 600; color: #555; font-size: 16px;">&rarr;</span>
-
-                                                <span class="badge bg-secondary py-1 px-2" title="Tanggal Selesai Pengawasan" style="font-weight: 500; font-size: 16px;">
-                                                    {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
-                                                </span>
-                                            @else
-                                                <span class="text-muted">Belum Dibuat</span>
-                                            @endif
+                                                @if (optional($item->surattertibjakonusaha1)->waktupengawasan && optional($item->surattertibjakonusaha1)->waktupengawasanselesai)
+                                                        {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
+                                                        –
+                                                        {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
+                                                    @else
+                                                        <span class="text-muted">Belum Dibuat</span>
+                                                    @endif
 
                                                 </td>
 
