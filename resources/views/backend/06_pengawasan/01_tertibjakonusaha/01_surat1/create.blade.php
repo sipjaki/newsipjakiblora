@@ -56,14 +56,15 @@
                                         Nama Pekerjaan: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
                                     </button>
 
-                                        @if(empty($data->surattertibjakonusaha1->id))
+                                     @if(empty($data->surattertibjakonusaha1->id))
                                             <a href="/betertibjakonusahasurat1/createberkas">
                                                 <button class="btn-create">
-                                                    <i class="bi bi-tools icon-create"></i>
+                                                    <i class="bi bi-file-earmark-plus icon-create"></i>
                                                     Buat Berkas
                                                 </button>
                                             </a>
                                         @endif
+
 
                                     <!-- Tombol Badan Usaha -->
 
