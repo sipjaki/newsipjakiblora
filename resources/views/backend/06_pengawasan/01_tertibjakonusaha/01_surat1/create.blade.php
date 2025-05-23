@@ -111,17 +111,12 @@
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>
-                                                            @if ($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan && $data->surattertibjakonusaha1->waktupengawasanselesai)
-                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
-                                                                –
-                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
-                                                            @else
-                                                                <span class="text-muted">Belum Di Buat</span>
-                                                            @endif
-                                                        </td>
-
-
+                                                            <td style="font-size: 12px;">
+                                                                {{ $data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan
+                                                                    ? \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->translatedFormat('d F Y')
+                                                                    : '-'
+                                                                }}
+                                                            </td>
                                                     </tr>
                                                 </table>
 
