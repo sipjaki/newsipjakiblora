@@ -378,18 +378,25 @@
                                                 <td style="width: 200px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
-                                                <td class="d-flex gap-2">
-                                                        {{ $data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan
+                                                <td class="d-flex align-items-center gap-2" style="font-size: 14px; white-space: nowrap;">
+                                                    @php
+                                                        $mulai = $data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan
                                                             ? \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->translatedFormat('d F Y')
-                                                            : '-'
-                                                        }}
+                                                            : '-';
+                                                        $selesai = $data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasanselesai
+                                                            ? \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasanselesai)->translatedFormat('d F Y')
+                                                            : '-';
+                                                    @endphp
 
-                                                    <span class="mx-1">(Sampai Dengan)</span>
+                                                    <span class="badge bg-primary py-1 px-2" title="Tanggal Mulai Pengawasan" style="font-weight: 500;">
+                                                        {{ $mulai }}
+                                                    </span>
 
-                                                    <input type="date" class="form-control @error('waktupengawasanselesai') is-invalid @enderror" name="waktupengawasanselesai" value="{{ old('waktupengawasanselesai') }}" placeholder="Berakhir Tanggal ... ">
-                                                    @error('waktupengawasanselesai')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                                    <span style="font-weight: 600; color: #555;">&rarr;</span>
+
+                                                    <span class="badge bg-secondary py-1 px-2" title="Tanggal Selesai Pengawasan" style="font-weight: 500;">
+                                                        {{ $selesai }}
+                                                    </span>
                                                 </td>
                                             </tr>
                                         </table>
