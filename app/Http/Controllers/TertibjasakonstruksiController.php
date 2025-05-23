@@ -623,16 +623,19 @@ public function betertibjakonusahacreatenew(Request $request)
 
     // PEMBUATAN SURAT 1
 
-  public function betertibjakonusahasurat1($id)
+public function betertibjakonusahasurat1($id)
 {
     // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
-    $datatertibjasakonstruksi = tertibjasakonstruksi::with('surattertibjakonusaha1')->findOrFail($id);
+    $datatertibjasakonstruksi = tertibjasakonstruksi::with(['surattertibjakonusaha1' => function($query) {
+        // Jika perlu filter tambahan untuk relasi surattertibjakonusaha1
+        $query->orderBy('created_at', 'desc'); // Contoh pengurutan
+    }])->findOrFail($id);
 
     $user = Auth::user();
     $datasubklasifikasi = subklasifikasi::all();
     $datatandatangan = tandatangan::all();
 
-    // Ambil data relasi surattertibjakonusaha1 jika ada
+    // Data relasi surattertibjakonusaha1 sudah otomatis terambil melalui eager loading
     $datasurattertibjakonusaha1 = $datatertibjasakonstruksi->surattertibjakonusaha1;
 
     return view('backend.06_pengawasan.01_tertibjakonusaha.01_surat1.create', [
@@ -645,7 +648,7 @@ public function betertibjakonusahacreatenew(Request $request)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurattertibjakonusaha1' => $datasurattertibjakonusaha1,
-        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi '
+        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi'
     ]);
 }
 
