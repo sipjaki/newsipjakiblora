@@ -69,13 +69,13 @@
                                             Print
                                         </button>
 
-                                        <button class="btn-create" onclick="downloadPDF({{ $item->id }})">
+                                        <button class="btn-create" onclick="downloadPDF({{ $data->surattertibjakonusaha1->id }})">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                                         </button>
 
                                         <button class="btn-create"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $data->id }}">
+                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $data->surattertibjakonusaha1->id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
                                         </button>
