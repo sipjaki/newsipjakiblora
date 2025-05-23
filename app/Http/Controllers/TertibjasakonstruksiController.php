@@ -748,7 +748,7 @@ public function betertibjakonusahasurat1create(Request $request)
 
 
 
-  public function betertibjakonusahasurat1createnewberkas(Request $request)
+  public function betertibjakonusahasurat1createnewsurat(Request $request)
     {
         // Validasi data input dengan pesan custom
         $validatedData = $request->validate([
