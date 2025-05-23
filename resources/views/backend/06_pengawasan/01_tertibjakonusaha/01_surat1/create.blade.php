@@ -57,7 +57,7 @@
                                     </button>
 
                                     @if(empty($item->surattertibjakonusaha1->id))
-                                        <a href="{{ route('betertibjakonusahasurat1', ['id' => $item->id]) }}">
+                                        <a href="{{ route('betertibjakonusahasurat1', ['id' => $data->id]) }}">
                                             <button class="btn-create">
                                                 <i class="bi bi-file-earmark-plus icon-create"></i>
                                                 Buat Berkas
@@ -69,30 +69,30 @@
 
 
                                      @if($item->surattertibjakonusaha1)
-                                          <a href="/betertibjakonusahasurat1/update/{{$item->surattertibjakonusaha1->id}}">
+                                          <a href="/betertibjakonusahasurat1/update/{{$data->surattertibjakonusaha1->id}}">
                                                 <button class="btn-create">
                                                     <i class="bi bi-tools icon-create"></i>
                                                     Perbaikan Data
                                                 </button>
                                             </a>
-                                        <button onclick="printModalContent({{ $item->surattertibjakonusaha1->id }})" class="btn-create">
+                                        <button onclick="printModalContent({{ $data->surattertibjakonusaha1->id }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
                                         </button>
 
-                                        <button class="btn-create" onclick="downloadModalPDF({{ $item->surattertibjakonusaha1->id }})">
+                                        <button class="btn-create" onclick="downloadModalPDF({{ $data->surattertibjakonusaha1->id }})">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                                         </button>
 
                                         <button class="btn-create"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->surattertibjakonusaha1->id }}">
+                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $data->surattertibjakonusaha1->id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
                                         </button>
                                     @endif
 
-                                <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
+                                <div class="modal fade" id="modalKtp{{ $data->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $data->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem;">
                                             <div class="modal-header d-flex align-items-center">
@@ -107,6 +107,9 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
+
+                                                @foreach ($data as $item)
+
                                                 <h5 style="font-size: 1rem;">Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
@@ -237,6 +240,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                @endforeach
 
                                             </div>
                                         </div>
