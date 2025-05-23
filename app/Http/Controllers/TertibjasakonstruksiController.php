@@ -649,10 +649,6 @@ public function betertibjakonusahacreatenew(Request $request)
     ]);
 }
 
-
-
-
-
 public function betertibjakonusahasurat1create(Request $request)
 {
     $validated = $request->validate([
@@ -751,6 +747,118 @@ public function betertibjakonusahasurat1create(Request $request)
 }
 
 
+
+  public function betertibjakonusahasurat1createnewberkas(Request $request)
+    {
+        // Validasi data input dengan pesan custom
+        $validatedData = $request->validate([
+            'tertibjasakonstruksi_id' => 'required|exists:tertib_jasa_konstruksis,id',
+            'namabadanusaha' => 'required|string|max:255',
+            'statusperizinan' => 'required|in:Terverifikasi,Tidak Terdaftar',
+            'nib' => 'required|string|max:255',
+            'waktupengawasan' => 'required|date',
+            'waktupengawasanselesai' => 'required|date|after_or_equal:waktupengawasan',
+            'namapaketpekerjaan' => 'required|string',
+            'jenisusaha' => 'required|in:Pekerjaan Konstruksi,Pekerjaan Konsultasi Konstruksi',
+            'kesesuaian' => 'required|in:Sesuai,Tidak Sesuai',
+            'sifatusaha' => 'required|in:Umum,Spesialis',
+            'kesesuaiansbu' => 'required|in:Sesuai,Tidak Sesuai',
+            'subklasifikasi_id' => 'required|exists:subklasifikasis,id',
+            'kesesuaianklasifikasi' => 'required|in:Sesuai,Tidak Sesuai',
+            'layananusaha' => 'required|in:Pekerjaan Konstruksi,Pekerjaan Konsultasi Konstruksi',
+            'kesesuaianlayananusaha' => 'required|in:Sesuai,Tidak Sesuai',
+            // 'tandatangan1' => 'required|exists:tandatangans,id',
+            // 'tandatangan2' => 'nullable|exists:tandatangans,id',
+            // 'tandatangan3' => 'nullable|exists:tandatangans,id',
+        ], [
+            // Pesan error custom untuk setiap aturan validasi
+            'tertibjasakonstruksi_id.required' => 'ID Tertib Jasa Konstruksi wajib diisi',
+            'tertibjasakonstruksi_id.exists' => 'ID Tertib Jasa Konstruksi tidak valid',
+
+            'namabadanusaha.required' => 'Nama Badan Usaha wajib diisi',
+            'namabadanusaha.string' => 'Nama Badan Usaha harus berupa teks',
+            'namabadanusaha.max' => 'Nama Badan Usaha maksimal 255 karakter',
+
+            'statusperizinan.required' => 'Status Perizinan wajib dipilih',
+            'statusperizinan.in' => 'Status Perizinan tidak valid',
+
+            'nib.required' => 'Nomor NIB wajib diisi',
+            'nib.string' => 'Nomor NIB harus berupa teks',
+            'nib.max' => 'Nomor NIB maksimal 255 karakter',
+
+            'waktupengawasan.required' => 'Tanggal Mulai Pengawasan wajib diisi',
+            'waktupengawasan.date' => 'Format Tanggal Mulai Pengawasan tidak valid',
+
+            'waktupengawasanselesai.required' => 'Tanggal Selesai Pengawasan wajib diisi',
+            'waktupengawasanselesai.date' => 'Format Tanggal Selesai Pengawasan tidak valid',
+            'waktupengawasanselesai.after_or_equal' => 'Tanggal Selesai harus sama atau setelah Tanggal Mulai',
+
+            'namapaketpekerjaan.required' => 'Nama Paket Pekerjaan wajib diisi',
+            'namapaketpekerjaan.string' => 'Nama Paket Pekerjaan harus berupa teks',
+
+            'jenisusaha.required' => 'Jenis Usaha wajib dipilih',
+            'jenisusaha.in' => 'Jenis Usaha tidak valid',
+
+            'kesesuaian.required' => 'Kesesuaian Jenis Usaha wajib dipilih',
+            'kesesuaian.in' => 'Kesesuaian Jenis Usaha tidak valid',
+
+            'sifatusaha.required' => 'Sifat Usaha wajib dipilih',
+            'sifatusaha.in' => 'Sifat Usaha tidak valid',
+
+            'kesesuaiansbu.required' => 'Kesesuaian SBU Sifat Usaha wajib dipilih',
+            'kesesuaiansbu.in' => 'Kesesuaian SBU Sifat Usaha tidak valid',
+
+            'subklasifikasi_id.required' => 'Sub Klasifikasi wajib dipilih',
+            'subklasifikasi_id.exists' => 'Sub Klasifikasi tidak valid',
+
+            'kesesuaianklasifikasi.required' => 'Kesesuaian Klasifikasi wajib dipilih',
+            'kesesuaianklasifikasi.in' => 'Kesesuaian Klasifikasi tidak valid',
+
+            'layananusaha.required' => 'Layanan Usaha wajib dipilih',
+            'layananusaha.in' => 'Layanan Usaha tidak valid',
+
+            'kesesuaianlayananusaha.required' => 'Kesesuaian Layanan Usaha wajib dipilih',
+            'kesesuaianlayananusaha.in' => 'Kesesuaian Layanan Usaha tidak valid',
+
+            // 'tandatangan1.required' => 'Tim Pemeriksa 1 wajib dipilih',
+            // 'tandatangan1.exists' => 'Tim Pemeriksa 1 tidak valid',
+
+            // 'tandatangan2.exists' => 'Tim Pemeriksa 2 tidak valid',
+            // 'tandatangan3.exists' => 'Tim Pemeriksa 3 tidak valid',
+        ]);
+
+        try {
+            // Buat record baru
+            $surat = new SuratTertibJakonUsaha1();
+            $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'];
+            $surat->tandatangan1_id = $validatedData['tandatangan1'];
+            $surat->tandatangan2_id = $validatedData['tandatangan2'];
+            $surat->tandatangan3_id = $validatedData['tandatangan3'];
+            $surat->namabadanusaha = $validatedData['namabadanusaha'];
+            $surat->statusperizinan = $validatedData['statusperizinan'];
+            $surat->nib = $validatedData['nib'];
+            $surat->waktupengawasan = $validatedData['waktupengawasan'];
+            $surat->waktupengawasanselesai = $validatedData['waktupengawasanselesai'];
+            $surat->namapaketpekerjaan = $validatedData['namapaketpekerjaan'];
+            $surat->jenisusaha = $validatedData['jenisusaha'];
+            $surat->kesesuaian = $validatedData['kesesuaian'];
+            $surat->sifatusaha = $validatedData['sifatusaha'];
+            $surat->kesesuaiansbu = $validatedData['kesesuaiansbu'];
+            $surat->subklasifikasi_id = $validatedData['subklasifikasi_id'];
+            $surat->kesesuaianklasifikasi = $validatedData['kesesuaianklasifikasi'];
+            $surat->layananusaha = $validatedData['layananusaha'];
+            $surat->kesesuaianlayananusaha = $validatedData['kesesuaianlayananusaha'];
+
+            $surat->save();
+
+            return redirect()->route('/betertibjakonusaha')
+                ->with('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
+
+        } catch (\Exception $e) {
+            return back()->withInput()
+                ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+        }
+    }
 
 
 }

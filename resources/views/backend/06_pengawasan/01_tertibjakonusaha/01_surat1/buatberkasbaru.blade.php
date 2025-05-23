@@ -344,6 +344,7 @@
                                                         <option value="">-- Pilih Status --</option>
                                                         <option value="Terverifikasi" {{ old('statusperizinan') == 'Terverifikasi' ? 'selected' : '' }}>Terverifikasi</option>
                                                         <option value="Tidak Terdaftar" {{ old('statusperizinan') == 'Tidak Terdaftar' ? 'selected' : '' }}>Tidak Terdaftar</option>
+                                                        {{-- <option value="Tidak Terdaftar" {{ old('statusperizinan') == 'Kadaluarsa' ? 'selected' : '' }}>Tidak Terdaftar</option> --}}
                                                     </select>
                                                     @error('statusperizinan')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -409,8 +410,7 @@
                                                         name="namapaketpekerjaan"
                                                         placeholder="Masukan Nama Pekerjaan ..."
                                                         rows="6"
-                                                        style="width: 100%; resize: vertical;">{{ old('namapaketpekerjaan', $datatertibjasakonstruksi ?? 'Data Masih Kosong') }}</textarea>
-
+                                                        style="width: 100%; resize: vertical;" readonly>{{ old('namapaketpekerjaan', $datatertibjasakonstruksi ?? 'Data Masih Kosong') }}</textarea>
                                                     @error('namapaketpekerjaan')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
