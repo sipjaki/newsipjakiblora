@@ -258,8 +258,8 @@
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         @if (!$data->surattertibjakonusaha1)
-                            <div class="alert alert-warning">
-                                Berkas belum dibuat.
+                            <div class="alert alert-danger">
+                                Berkas Tertib Jakon Usaha Kesesuaian Kegiatan Konstruksi Belum Di Buat !!.
                             </div>
                         @else
                         <form action="{{ route('betertibjakonusahasurat1create') }}" method="POST" enctype="multipart/form-data">
