@@ -75,7 +75,7 @@
                                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                                             onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
                                             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $data->id }}">
-                                            <i class="bi bi-file-earmark-text icon-create"></i>
+                                            <i class="bi bi-file-earmark-text icon-create" style="font-size: 16px;"></i>
                                             Lihat Berkas
                                         </button>
 
