@@ -64,22 +64,24 @@
                                         </button>
                                     </a>
 
+                                     @if($data->surattertibjakonusaha1)
                                         <button onclick="printModalContent({{ $data->surattertibjakonusaha1->id }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
                                         </button>
 
-                                        <button class="btn-create" onclick="downloadModalPDF({{ $data->id }})">
+                                        <button class="btn-create" onclick="downloadModalPDF({{ $data->surattertibjakonusaha1->id }})">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                                         </button>
-
 
                                         <button class="btn-create"
                                             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $data->surattertibjakonusaha1->id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
                                         </button>
+                                    @endif
+
 
 
 
