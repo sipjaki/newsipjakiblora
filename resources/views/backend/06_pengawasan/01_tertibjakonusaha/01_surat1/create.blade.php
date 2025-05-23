@@ -64,7 +64,7 @@
                                         </button>
                                     </a>
 
-                                        <button onclick="printModalContent({{ $item->id }})" class="btn-create">
+                                        <button onclick="printModalContent({{ $data->surattertibjakonusaha1->id }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download Berkas
                                         </button>
