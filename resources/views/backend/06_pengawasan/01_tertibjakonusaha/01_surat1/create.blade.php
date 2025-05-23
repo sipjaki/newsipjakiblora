@@ -430,49 +430,22 @@
                                                     @enderror
                                                 </td>
 
-                                                    <td style="border: 1px solid #000;">
-                                                        <select class="form-control @error('jenisusaha') is-invalid @enderror" name="jenisusaha">
-                                                            <option value="">-- Pilih Jenis Usaha --</option>
-                                                            <option value="Pekerjaan Konstruksi" {{ old('jenisusaha') == 'Pekerjaan Konstruksi' ? 'selected' : '' }}>Pekerjaan Konstruksi</option>
-                                                            <option value="Pekerjaan Konsultasi Konstruksi" {{ old('jenisusaha') == 'Pekerjaan Konsultasi Konstruksi' ? 'selected' : '' }}>Pekerjaan Konsultasi Konstruksi</option>
-                                                        </select>
-                                                        @error('jenisusaha')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
+                                                   <td style="border: 1px solid #000; font-size: 16px;">
+                                                        {{ $data->surattertibjakonusaha1->jenisusaha ?? '-' }}
                                                     </td>
 
-                                                    <td style="border: 1px solid #000;">
-                                                        <select class="form-control @error('kesesuaian') is-invalid @enderror" name="kesesuaian">
-                                                            <option value="">-- Pilih Kesesuaian --</option>
-                                                            <option value="Sesuai" {{ old('kesesuaian') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-                                                            <option value="Tidak Sesuai" {{ old('kesesuaian') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
-                                                        </select>
-                                                        @error('kesesuaian')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
+                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                        {{ $data->surattertibjakonusaha1->kesesuaian ?? '-' }}
                                                     </td>
 
-                                                    <td style="border: 1px solid #000;">
-                                                        <select class="form-control @error('sifatusaha') is-invalid @enderror" name="sifatusaha">
-                                                            <option value="">-- Pilih Sifat Usaha --</option>
-                                                            <option value="Umum" {{ old('sifatusaha') == 'Umum' ? 'selected' : '' }}>Umum</option>
-                                                            <option value="Spesialis" {{ old('sifatusaha') == 'Spesialis' ? 'selected' : '' }}>Spesialis</option>
-                                                        </select>
-                                                        @error('sifatusaha')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
+                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                        {{ $data->surattertibjakonusaha1->sifatusaha ?? '-' }}
                                                     </td>
 
-                                                    <td style="border: 1px solid #000;">
-                                                        <select class="form-control @error('kesesuaiansbu') is-invalid @enderror" name="kesesuaiansbu">
-                                                            <option value="">-- Pilih Kesesuaian SBU --</option>
-                                                            <option value="Sesuai" {{ old('kesesuaiansbu') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-                                                            <option value="Tidak Sesuai" {{ old('kesesuaiansbu') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
-                                                        </select>
-                                                        @error('kesesuaiansbu')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
+                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                        {{ $data->surattertibjakonusaha1->kesesuaiansbu ?? '-' }}
                                                     </td>
+
                                                 </tr>
                                             </tbody>
                                         </table>
