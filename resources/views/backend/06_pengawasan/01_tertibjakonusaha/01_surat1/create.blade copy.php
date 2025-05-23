@@ -339,10 +339,16 @@
                                                 <td style="width: 300px;">
                                                     <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
                                                 </td>
-                                              <td>
-                                                    {{ $data->surattertibjakonusaha1->statusperizinan ?? '-' }}
+                                                <td>
+                                                    <select class="form-control @error('statusperizinan') is-invalid @enderror" name="statusperizinan">
+                                                        <option value="">-- Pilih Status --</option>
+                                                        <option value="Terverifikasi" {{ old('statusperizinan') == 'Terverifikasi' ? 'selected' : '' }}>Terverifikasi</option>
+                                                        <option value="Tidak Terdaftar" {{ old('statusperizinan') == 'Tidak Terdaftar' ? 'selected' : '' }}>Tidak Terdaftar</option>
+                                                    </select>
+                                                    @error('statusperizinan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </td>
-
                                             </tr>
 
                                             <tr>
