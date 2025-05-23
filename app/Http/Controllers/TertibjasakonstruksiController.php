@@ -767,9 +767,9 @@ public function betertibjakonusahasurat1create(Request $request)
             'kesesuaianklasifikasi' => 'required|in:Sesuai,Tidak Sesuai',
             'layananusaha' => 'required|in:Pekerjaan Konstruksi,Pekerjaan Konsultasi Konstruksi',
             'kesesuaianlayananusaha' => 'required|in:Sesuai,Tidak Sesuai',
-            'tandatangan1' => 'nullable|string|max:255',
-            'tandatangan2' => 'nullable|string|max:255',
-            'tandatangan3' => 'nullable|string|max:255',
+            'tandatangan1_id' => 'nullable|string|max:255',
+            'tandatangan2_id' => 'nullable|string|max:255',
+            'tandatangan3_id' => 'nullable|string|max:255',
         ], [
             // Pesan error custom untuk setiap aturan validasi
             'tertibjasakonstruksi_id.required' => 'ID Tertib Jasa Konstruksi wajib diisi',
@@ -831,9 +831,9 @@ public function betertibjakonusahasurat1create(Request $request)
             // Buat record baru
             $surat = new surattertibjakonusaha1();
             $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'];
-            $surat->tandatangan1_id = $validatedData['tandatangan1'];
-            $surat->tandatangan2_id = $validatedData['tandatangan2'];
-            $surat->tandatangan3_id = $validatedData['tandatangan3'];
+                $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+                $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+                $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
             $surat->namabadanusaha = $validatedData['namabadanusaha'];
             $surat->statusperizinan = $validatedData['statusperizinan'];
             $surat->nib = $validatedData['nib'];
