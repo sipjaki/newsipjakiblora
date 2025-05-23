@@ -732,6 +732,17 @@ function toggleSubmitButton() {
     }
 }
 
+
+function submitForm() {
+    // Ambil form element
+    const form = document.querySelector('form');
+    // Submit form jika ditemukan
+    if (form) {
+        form.submit();
+    }
+    // Tutup modal
+    closeModal();
+}
 </script>
 
                             </div>

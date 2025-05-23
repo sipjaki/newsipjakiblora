@@ -754,19 +754,19 @@ public function betertibjakonusahasurat1create(Request $request)
         $validatedData = $request->validate([
             'tertibjasakonstruksi_id' => 'required|string',
             'namabadanusaha' => 'required|string|max:255',
-            'statusperizinan' => 'required|string|max:255',
+            'statusperizinan' => 'required|in:Terverifikasi,Tidak Terdaftar',
             'nib' => 'required|string|max:255',
             'waktupengawasan' => 'required|date',
             'waktupengawasanselesai' => 'required|date|after_or_equal:waktupengawasan',
-            'namapaketpekerjaan' => 'required|string|max:255',
-            'jenisusaha' => 'required|string|max:255',
-            'kesesuaian' => 'required|string|max:255',
-            'sifatusaha' => 'required|string|max:255',
-            'kesesuaiansbu' => 'required|string|max:255',
+            'namapaketpekerjaan' => 'required|string',
+            'jenisusaha' => 'required|in:Pekerjaan Konstruksi,Pekerjaan Konsultasi Konstruksi',
+            'kesesuaian' => 'required|in:Sesuai,Tidak Sesuai',
+            'sifatusaha' => 'required|in:Umum,Spesialis',
+            'kesesuaiansbu' => 'required|in:Sesuai,Tidak Sesuai',
             'subklasifikasi_id' => 'required|string',
-            'kesesuaianklasifikasi' => 'required|string|max:255',
-            'layananusaha' => 'required|string|max:255',
-            'kesesuaianlayananusaha' => 'required|string|max:255',
+            'kesesuaianklasifikasi' => 'required|in:Sesuai,Tidak Sesuai',
+            'layananusaha' => 'required|in:Pekerjaan Konstruksi,Pekerjaan Konsultasi Konstruksi',
+            'kesesuaianlayananusaha' => 'required|in:Sesuai,Tidak Sesuai',
             'tandatangan1_id' => 'nullable|string|max:255',
             'tandatangan2_id' => 'nullable|string|max:255',
             'tandatangan3_id' => 'nullable|string|max:255',
@@ -831,9 +831,9 @@ public function betertibjakonusahasurat1create(Request $request)
             // Buat record baru
             $surat = new surattertibjakonusaha1();
             $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'];
-                $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
-                $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
-                $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
+            $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+            $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+            $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
             $surat->namabadanusaha = $validatedData['namabadanusaha'];
             $surat->statusperizinan = $validatedData['statusperizinan'];
             $surat->nib = $validatedData['nib'];
@@ -851,8 +851,8 @@ public function betertibjakonusahasurat1create(Request $request)
 
             $surat->save();
 
-            return redirect()->route('/betertibjakonusaha')
-                ->with('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
+             session()->flash('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
+            return redirect('/betertibjakonusaha');
 
         } catch (\Exception $e) {
             return back()->withInput()
