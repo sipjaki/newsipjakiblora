@@ -20,7 +20,7 @@ class tertibjasakonstruksi extends Model
 
     public function surattertibjakonusaha1()
     {
-        return $this->hasMany(surattertibjakonusaha1::class, 'surattertibjakonusaha1');
+        return $this->belongsTo(surattertibjakonusaha1::class, 'surattertibjakonusaha1');
     }
 
     public function surattertibjakonusaha2()
