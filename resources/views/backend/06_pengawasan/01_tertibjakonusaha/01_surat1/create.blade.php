@@ -276,13 +276,14 @@
       <td colspan="2">Sesuai Jenis</td>
 
                       @php
-                      $kesesuaian = $data->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
+                      $kesesuaian = $item->surattertibjakonusaha1->kesesuaianklasifikasi ?? 'Surat Belum Di Buat';
                       $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                       $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
                       $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
                   @endphp
 
-<button
+                  <td style="text-align: center;">
+                      <button
                           style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                           onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
@@ -291,7 +292,7 @@
                           {{ $tertibStatus }}
                       </button>
                   </td>
-   </tr>
+    </tr>
     <tr>
       <td colspan="2">Sesuai Sifat</td>
       <td colspan="2"><i class="bi bi-check-circle text-success"></i>
