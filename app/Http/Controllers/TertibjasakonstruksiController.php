@@ -645,7 +645,7 @@ public function betertibjakonusahacreatenew(Request $request)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurattertibjakonusaha1' => $datasurattertibjakonusaha1,
-        'title' => 'Create Surat Kesesuaian Kegiatan Konstruksi '
+        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi '
     ]);
 }
 
@@ -746,7 +746,7 @@ public function betertibjakonusahasurat1create(Request $request)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurattertibjakonusaha1' => $datasurattertibjakonusaha1,
-        'title' => 'Create Surat Kesesuaian Kegiatan Konstruksi '
+        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi '
     ]);
 }
 
