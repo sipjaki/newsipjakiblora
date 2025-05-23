@@ -1148,27 +1148,31 @@ public function bepesertaskkshowberkasakunpeserta($agenda_id, $user_id)
 }
 
 
-
 public function beagendaskkdatapeserta(Request $request)
 {
     $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
-    // Tambahkan withCount agar setiap agenda membawa jumlah peserta
-    $query = agendaskk::withCount('allskktenagakerjablora');
+    // Hitung hanya peserta yang verifikasipu = 'lolos'
+    $query = agendaskk::withCount([
+        'allskktenagakerjablora as allskktenagakerjablora_count' => function ($query) {
+            $query->where('verifikasipu', 'lolos');
+        }
+    ]);
 
     if ($search) {
-        $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                ->where('waktupelaksanaan', 'LIKE', "%{$search}%")
-                ->where('penutupan', 'LIKE', "%{$search}%")
-                ->where('jumlahpeserta', 'LIKE', "%{$search}%")
-
-            ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-                $q->where('namaasosiasi', 'LIKE', "%{$search}%");
-            })
-            ->orWhereHas('user', function ($q) use ($search) {
-                $q->where('name', 'LIKE', "%{$search}%");
-            });
+        $query->where(function ($q) use ($search) {
+            $q->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('waktupelaksanaan', 'LIKE', "%{$search}%")
+              ->orWhere('penutupan', 'LIKE', "%{$search}%")
+              ->orWhere('jumlahpeserta', 'LIKE', "%{$search}%")
+              ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+                  $q->where('namaasosiasi', 'LIKE', "%{$search}%");
+              })
+              ->orWhereHas('user', function ($q) use ($search) {
+                  $q->where('name', 'LIKE', "%{$search}%");
+              });
+        });
     }
 
     $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
