@@ -359,14 +359,24 @@
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                               <td class="d-flex align-items-center gap-2" style="font-size: 16px; white-space: nowrap;">
-                                                {{-- @if (optional($item->surattertibjakonusaha1)->waktupengawasan && optional($item->surattertibjakonusaha1)->waktupengawasanselesai)
-                                                        {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
-                                                        –
-                                                        {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
-                                                    @else
-                                                        <span class="text-muted">Belum Dibuat</span>
-                                                    @endif --}}
+                                                    @php
+                                                        $mulai = $item->surattertibjakonusaha1 && $item->surattertibjakonusaha1->waktupengawasan
+                                                            ? \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->translatedFormat('d F Y')
+                                                            : '-';
+                                                        $selesai = $item->surattertibjakonusaha1 && $item->surattertibjakonusaha1->waktupengawasanselesai
+                                                            ? \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai)->translatedFormat('d F Y')
+                                                            : '-';
+                                                    @endphp
 
+                                                    <span class="badge bg-primary py-1 px-2" title="Tanggal Mulai Pengawasan" style="font-weight: 500; font-size: 16px;">
+                                                        {{ $mulai }}
+                                                    </span>
+
+                                                    <span style="font-weight: 600; color: #555; font-size: 16px;">&rarr;</span>
+
+                                                    <span class="badge bg-secondary py-1 px-2" title="Tanggal Selesai Pengawasan" style="font-weight: 500; font-size: 16px;">
+                                                        {{ $selesai }}
+                                                    </span>
                                                 </td>
 
                                             </tr>
