@@ -358,7 +358,7 @@
                                                 <td style="width: 200px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
-                                              <td class="d-flex align-items-center gap-2" style="font-size: 16px; white-space: nowrap;">
+                                              {{-- <td class="d-flex align-items-center gap-2" style="font-size: 16px; white-space: nowrap;">
                                                     @php
                                                         $mulai = $item->surattertibjakonusaha1 && $item->surattertibjakonusaha1->waktupengawasan
                                                             ? \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->translatedFormat('d F Y')
@@ -377,7 +377,7 @@
                                                     <span class="badge bg-secondary py-1 px-2" title="Tanggal Selesai Pengawasan" style="font-weight: 500; font-size: 16px;">
                                                         {{ $selesai }}
                                                     </span>
-                                                </td>
+                                                </td> --}}
 
                                             </tr>
                                         </table>
