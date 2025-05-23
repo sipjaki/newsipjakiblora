@@ -576,16 +576,16 @@
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">1</td>
                                                                                     <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan1" class="form-control @error('tandatangan1') is-invalid @enderror">
+                                                                                        <select name="tandatangan1_id" class="form-control @error('tandatangan1_id') is-invalid @enderror">
                                                                                             <option value="">-- Pilih Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
-                                                                                                    {{ old('tandatangan1', optional(optional($data->surattertibjakonusaha1)->tandatangan1_id) ) == $tandatangan->id ? 'selected' : '' }}>
+                                                                                                    {{ old('tandatangan1_id', optional(optional($data->surattertibjakonusaha1)->tandatangan1_id) ) == $tandatangan->id ? 'selected' : '' }}>
                                                                                                     {{ $tandatangan->namalengkap }}
                                                                                                 </option>
                                                                                             @endforeach
                                                                                         </select>
-                                                                                        @error('tandatangan1')
+                                                                                        @error('tandatangan1_id')
                                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                                         @enderror
                                                                                     </td>
@@ -593,16 +593,16 @@
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
                                                                                     <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan2" class="form-control @error('tandatangan2') is-invalid @enderror">
+                                                                                        <select name="tandatangan2_id" class="form-control @error('tandatangan2_id') is-invalid @enderror">
                                                                                             <option value="">-- Pilih Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
-                                                                                                    {{ old('tandatangan2', optional(optional($data->surattertibjakonusaha1)->tandatangan2_id) ) == $tandatangan->id ? 'selected' : '' }}>
+                                                                                                    {{ old('tandatangan2_id', optional(optional($data->surattertibjakonusaha1)->tandatangan2_id) ) == $tandatangan->id ? 'selected' : '' }}>
                                                                                                     {{ $tandatangan->namalengkap }}
                                                                                                 </option>
                                                                                             @endforeach
                                                                                         </select>
-                                                                                        @error('tandatangan2')
+                                                                                        @error('tandatangan2_id')
                                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                                         @enderror
                                                                                     </td>
@@ -610,16 +610,16 @@
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
                                                                                     <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan3" class="form-control @error('tandatangan3') is-invalid @enderror">
+                                                                                        <select name="tandatangan3_id" class="form-control @error('tandatangan3_id') is-invalid @enderror">
                                                                                             <option value="">-- Pilih Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
-                                                                                                    {{ old('tandatangan3', optional(optional($data->surattertibjakonusaha1)->tandatangan3_id) ) == $tandatangan->id ? 'selected' : '' }}>
+                                                                                                    {{ old('tandatangan3_id', optional(optional($data->surattertibjakonusaha1)->tandatangan3_id) ) == $tandatangan->id ? 'selected' : '' }}>
                                                                                                     {{ $tandatangan->namalengkap }}
                                                                                                 </option>
                                                                                             @endforeach
                                                                                         </select>
-                                                                                        @error('tandatangan3')
+                                                                                        @error('tandatangan3_id')
                                                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                                                         @enderror
                                                                                     </td>
