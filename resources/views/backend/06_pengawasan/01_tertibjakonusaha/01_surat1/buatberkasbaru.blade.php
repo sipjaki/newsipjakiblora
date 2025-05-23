@@ -732,11 +732,6 @@ function toggleSubmitButton() {
     }
 }
 
-function submitForm() {
-    // Implementasikan aksi untuk mengirimkan form
-    alert('Form Submitted');
-    closeModal();
-}
 </script>
 
                             </div>
