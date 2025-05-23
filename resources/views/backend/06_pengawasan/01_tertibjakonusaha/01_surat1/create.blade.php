@@ -126,13 +126,17 @@
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>
-                                                            @if ($item->surattertibjakonusaha1 && $item->surattertibjakonusaha1->waktupengawasan && $item->surattertibjakonusaha1->waktupengawasanselesai)
-                                                                {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
+                                                      <td>
+                                                            @php
+                                                                $surat = optional($item->surattertibjakonusaha1);
+                                                            @endphp
+
+                                                            @if ($surat->waktupengawasan && $surat->waktupengawasanselesai)
+                                                                {{ \Carbon\Carbon::parse($surat->waktupengawasan)->isoFormat('D MMMM YYYY') }}
                                                                 –
-                                                                {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
+                                                                {{ \Carbon\Carbon::parse($surat->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
                                                             @else
-                                                                <span class="text-muted">Belum Di Buat</span>
+                                                                <span class="text-muted">Belum Dibuat</span>
                                                             @endif
                                                         </td>
 
