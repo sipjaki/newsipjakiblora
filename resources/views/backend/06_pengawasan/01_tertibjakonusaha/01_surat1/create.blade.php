@@ -469,15 +469,15 @@
                                                 </td>
 
 
-                                                <td style="border: 1px solid #000; font-size: 16px;">
+                                                <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
                                                     {{ $data->surattertibjakonusaha1->kesesuaianklasifikasi ?? '-' }}
                                                 </td>
 
-                                                <td style="border: 1px solid #000; font-size: 16px;">
+                                                <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
                                                     {{ $data->surattertibjakonusaha1->layananusaha ?? '-' }}
                                                 </td>
 
-                                                <td style="border: 1px solid #000; font-size: 16px;">
+                                                <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
                                                     {{ $data->surattertibjakonusaha1->kesesuaianlayananusaha ?? '-' }}
                                                 </td>
 
