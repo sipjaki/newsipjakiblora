@@ -7,6 +7,8 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('backend.00_style.01_cssdashboard.style')
+
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
@@ -73,14 +75,9 @@
         </script>
 
 
-                        <button
-                        onclick="exportTableToExcel('daftarpesertaskk', 'Data Peserta {{$data->namakegiatan}}')"
-                        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
-                        onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
-                        style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
-                               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                               transition: background 0.3s, color 0.3s, border 0.3s; margin-right:10px;">
-                        <i class="bi bi-file-earmark-excel-fill" style="margin-right: 8px; font-size: 16px;"></i> Download Excel
+                        <button class="hide-on-mobile btn-create"
+                        onclick="exportTableToExcel('daftarpesertaskk', 'Data Peserta {{$data->namakegiatan}}')">
+                        <i class="bi bi-file-earmark-excel-fill icon-create" style="margin-right: 8px; font-size: 16px;"></i> Download Excel
                     </button>
 
                     <script>
@@ -123,24 +120,9 @@
     }
 </script>
 
-<button
-    onclick="generatePDF()"
-    onmouseover="this.style.background = 'white'; this.style.color = 'black'; this.style.border = '1px solid #ccc';"
-    onmouseout="this.style.background = 'linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color = 'white'; this.style.border = 'none';"
-    style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px;
-           border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-           transition: background 0.3s, color 0.3s, border 0.3s; text-decoration: none;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        viewBox="0 0 16 16" style="margin-right: 8px;">
-        <path d="M.5 9.9a.5.5 0 0 1 .5.5V14a1 1 0 0 0 1 1h12a1
-                 1 0 0 0 1-1V10.4a.5.5 0 0 1 1 0V14a2 2 0 0 1-2
-                 2H2a2 2 0 0 1-2-2v-3.6a.5.5 0 0 1 .5-.5z"/>
-        <path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0
-                 0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1
-                 0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3
-                 3z"/>
-    </svg>
-    Download PDF
+<button class="hide-on-mobile btn-create"
+    onclick="generatePDF()">
+    <i class="bi bi-download" style="margin-right: 8px;"></i> Download PDF
 </button>
 
 
