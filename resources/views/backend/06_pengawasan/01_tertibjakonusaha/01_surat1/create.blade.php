@@ -540,7 +540,6 @@
 
 <!-- CDN html2pdf -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
 <script>
     function downloadModalPDF(id) {
         // Ambil elemen modal berdasarkan ID
@@ -551,22 +550,25 @@
             return;
         }
 
-        // Kloning isi modal agar tidak mengganggu tampilan
+        // Kloning isi modal agar tidak mengganggu tampilan asli
         const clone = modalContent.cloneNode(true);
 
         // Styling opsional untuk hasil PDF
         clone.style.fontSize = '14px';
         clone.style.padding = '20px';
 
+        // Format nama file
+        const fileName = `Tertibjakonusaha_kesesuaiankegiatankonstruksi_${id}.pdf`;
+
         // Konversi ke PDF dan download
         html2pdf()
             .from(clone)
             .set({
                 margin: 0.5,
-                filename: `modal-${id}.pdf`,
+                filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
             })
             .save();
     }
