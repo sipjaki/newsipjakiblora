@@ -752,7 +752,7 @@ public function betertibjakonusahasurat1create(Request $request)
     {
         // Validasi data input dengan pesan custom
         $validatedData = $request->validate([
-            'tertibjasakonstruksi_id' => 'required|exists:tertib_jasa_konstruksis,id',
+            'tertibjasakonstruksi_id' => 'required|string',
             'namabadanusaha' => 'required|string|max:255',
             'statusperizinan' => 'required|in:Terverifikasi,Tidak Terdaftar',
             'nib' => 'required|string|max:255',
@@ -829,7 +829,7 @@ public function betertibjakonusahasurat1create(Request $request)
 
         try {
             // Buat record baru
-            $surat = new SuratTertibJakonUsaha1();
+            $surat = new surattertibjakonusaha1();
             $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'];
             $surat->tandatangan1_id = $validatedData['tandatangan1'];
             $surat->tandatangan2_id = $validatedData['tandatangan2'];

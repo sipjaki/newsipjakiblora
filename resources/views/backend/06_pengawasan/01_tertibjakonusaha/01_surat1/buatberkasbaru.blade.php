@@ -639,18 +639,14 @@
 <!-- Tombol Submit -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
     <div class="flex justify-end">
-        <button type="button" onclick="openModal()"
-        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-        onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-        style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-
+        <button class="btn-create" type="button" onclick="openModal()">
         <!-- Ikon SVG Pensil -->
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
         fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
        </svg>
-        <span style="font-family: 'Poppins', sans-serif;">Create</span>
+        <span style="font-family: 'Poppins', sans-serif;">Buat Berkas</span>
     </button>
     </div>
 
