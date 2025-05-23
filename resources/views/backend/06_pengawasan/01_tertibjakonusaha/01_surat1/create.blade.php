@@ -275,7 +275,7 @@
                         @else
                         {{-- <form action="{{ route('betertibjakonusahasurat1create') }}" method="POST" enctype="multipart/form-data">
                             @csrf --}}
-                            @foreach ($item as $item)
+                            @foreach ($data as $item)
 
                             <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
 
