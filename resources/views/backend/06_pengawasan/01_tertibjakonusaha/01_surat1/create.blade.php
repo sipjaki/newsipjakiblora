@@ -339,19 +339,22 @@
                                                 <td style="width: 300px;">
                                                     <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
                                                 </td>
-                                              <td>
-                                                @if($data->surattertibjakonusaha1)
-                                                    @if($data->surattertibjakonusaha1->statusperizinan == 'terverifikasi')
+                                            <td>
+                                                    @php
+                                                        $status = $data->surattertibjakonusaha1->statusperizinan ?? null;
+                                                    @endphp
+
+                                                    @if ($status === 'Terverifikasi')
                                                         <span class="badge bg-success">Terverifikasi</span>
-                                                    @elseif($data->surattertibjakonusaha1->statusperizinan == 'belum terdaftar')
+                                                    @elseif ($status === 'Tidak Terdaftar')
                                                         <span class="badge bg-danger">Tidak Terdaftar</span>
+                                                    @elseif ($status === 'Belum Terdaftar')
+                                                        <span class="badge bg-warning text-dark">Belum Terdaftar</span>
                                                     @else
                                                         <span class="badge bg-secondary">-</span>
                                                     @endif
-                                                @else
-                                                    <span class="badge bg-secondary">-</span>
-                                                @endif
                                             </td>
+
 
                                             </tr>
 
