@@ -247,6 +247,37 @@
 
                                 </div>
 
+                                <table class="zeb" border="1" cellpadding="8" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                            <th>Induk</th>
+                                            <th>Detail</th>
+                                            <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td rowspan="4">Kesesuaian Kegiatan Konstruksi</td>
+                                            <td>Sesuai Jenis</td>
+                                            <td><!-- Isi Status Sesuai Jenis --></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Sesuai Sifat</td>
+                                            <td><!-- Isi Status Sesuai Sifat --></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Sesuai Klasifikasi</td>
+                                            <td><!-- Isi Status Sesuai Klasifikasi --></td>
+                                            </tr>
+                                            <tr>
+                                            <td>Sesuai Layanan</td>
+                                            <td><!-- Isi Status Sesuai Layanan --></td>
+                                            </tr>
+                                        </tbody>
+                                        </table>
+
+                                <hr>
+
                                 <!-- Kontainer Kanan -->
                                 <div>
                                     <a href="/betertibjakonusaha">
