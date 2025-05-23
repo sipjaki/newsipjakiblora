@@ -331,7 +331,9 @@
 <td style="text-align: center;">{{ $item->tahunpilihan->tahunpilihan ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->nik ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->tempatlahir ?? '-' }}</td>
-<td style="text-align: center;">{{ $item->ttl ? \Carbon\Carbon::parse($item->ttl)->format('d-m-Y') : '-' }}</td>
+<td style="text-align: center;">
+    {{ $item->ttl ? \Carbon\Carbon::parse($item->ttl)->translatedFormat('d F Y') : '-' }}
+</td>
 <td style="text-align: center;">{{ $item->jeniskelamin ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->alamat ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->notelepon ?? '-' }}</td>
