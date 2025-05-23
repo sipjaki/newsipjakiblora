@@ -262,23 +262,39 @@
                         </div>
 
         <hr>
-      <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 50%; margin: auto; font-family: Arial, sans-serif;">
+     <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 50%; margin: auto; font-family: Arial, sans-serif;">
   <thead>
     <tr>
-      <th colspan="2" style="text-align: center; border-bottom: 4px solid black; font-weight: bold;">
+      <th colspan="4" style="text-align: center; border-bottom: 4px solid black; font-weight: bold;">
         Kesesuaian Kegiatan Konstruksi
       </th>
     </tr>
   </thead>
   <tbody>
-    <tr><td colspan="2">Sesuai Jenis</td></tr>
-    <tr><td colspan="2">Sesuai Sifat</td></tr>
-    <tr><td colspan="2">Sesuai Klasifikasi</td></tr>
-    <tr><td colspan="2">Sesuai Layanan</td></tr>
+    <tr>
+      <td colspan="2">Sesuai Jenis</td>
+                <td colspan="2">
+            @if($data == 'tertib')
+                <i class="bi bi-check-circle text-success"></i> Tertib
+            @else
+                <i class="bi bi-x-circle text-danger"></i> Belum Tertib
+            @endif
+            </td>
+    </tr>
+    <tr>
+      <td colspan="2">Sesuai Sifat</td>
+      <td colspan="2"><i class="bi bi-check-circle text-success"></i> Tertib</td>
+    </tr>
+    <tr>
+      <td colspan="2">Sesuai Klasifikasi</td>
+      <td colspan="2"><i class="bi bi-check-circle text-success"></i> Tertib</td>
+    </tr>
+    <tr>
+      <td colspan="2">Sesuai Layanan</td>
+      <td colspan="2"><i class="bi bi-check-circle text-success"></i> Tertib</td>
+    </tr>
   </tbody>
 </table>
-
-
 
         {{-- ======================================================= --}}
                     <div class="col-md-12">
