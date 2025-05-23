@@ -339,23 +339,21 @@
                                                 <td style="width: 300px;">
                                                     <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
                                                 </td>
-                                          <td style="font-size: 16px;">
+                                         <td>
                                                 @php
                                                     $status = $data->surattertibjakonusaha1->statusperizinan ?? null;
                                                 @endphp
 
                                                 @if ($status === 'Terverifikasi')
-                                                    <span class="badge bg-success">Terverifikasi</span>
+                                                    <span class="badge bg-success" style="font-size:16px;">Terverifikasi</span>
                                                 @elseif ($status === 'Tidak Terdaftar')
-                                                    <span class="badge bg-danger">Tidak Terdaftar</span>
+                                                    <span class="badge bg-danger" style="font-size:16px;">Tidak Terdaftar</span>
                                                 @elseif ($status === 'Belum Terdaftar')
-                                                    <span class="badge bg-warning text-dark">Belum Terdaftar</span>
+                                                    <span class="badge bg-warning text-dark" style="font-size:16px;">Belum Terdaftar</span>
                                                 @else
-                                                    <span class="badge bg-secondary">-</span>
+                                                    <span class="badge bg-secondary" style="font-size:16px;">-</span>
                                                 @endif
                                             </td>
-
-
 
                                             </tr>
 
