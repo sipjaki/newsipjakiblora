@@ -767,9 +767,9 @@ public function betertibjakonusahasurat1create(Request $request)
             'kesesuaianklasifikasi' => 'required|in:Sesuai,Tidak Sesuai',
             'layananusaha' => 'required|in:Pekerjaan Konstruksi,Pekerjaan Konsultasi Konstruksi',
             'kesesuaianlayananusaha' => 'required|in:Sesuai,Tidak Sesuai',
-            'tandatangan1' => 'nullable|string',
-            'tandatangan2' => 'nullable|string',
-            'tandatangan3' => 'nullable|string',
+            'tandatangan1' => 'nullable|string|max:255',
+            'tandatangan2' => 'nullable|string|max:255',
+            'tandatangan3' => 'nullable|string|max:255',
         ], [
             // Pesan error custom untuk setiap aturan validasi
             'tertibjasakonstruksi_id.required' => 'ID Tertib Jasa Konstruksi wajib diisi',
