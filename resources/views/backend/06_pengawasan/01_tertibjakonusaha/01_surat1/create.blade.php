@@ -511,53 +511,20 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">1</td>
-                                                                                    <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan1" class="form-control @error('tandatangan1') is-invalid @enderror">
-                                                                                            <option value="">-- Pilih Pemeriksa --</option>
-                                                                                            @foreach ($datatandatangan as $tandatangan)
-                                                                                                <option value="{{ $tandatangan->id }}"
-                                                                                                    {{ old('tandatangan1', optional(optional($data->surattertibjakonusaha1)->tandatangan1_id) ) == $tandatangan->id ? 'selected' : '' }}>
-                                                                                                    {{ $tandatangan->namalengkap }}
-                                                                                                </option>
-                                                                                            @endforeach
-                                                                                        </select>
-                                                                                        @error('tandatangan1')
-                                                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                                                        @enderror
+                                                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                                                        {{ optional($data->surattertibjakonusaha1->tandatangan1)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                    <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan2" class="form-control @error('tandatangan2') is-invalid @enderror">
-                                                                                            <option value="">-- Pilih Pemeriksa --</option>
-                                                                                            @foreach ($datatandatangan as $tandatangan)
-                                                                                                <option value="{{ $tandatangan->id }}"
-                                                                                                    {{ old('tandatangan2', optional(optional($data->surattertibjakonusaha1)->tandatangan2_id) ) == $tandatangan->id ? 'selected' : '' }}>
-                                                                                                    {{ $tandatangan->namalengkap }}
-                                                                                                </option>
-                                                                                            @endforeach
-                                                                                        </select>
-                                                                                        @error('tandatangan2')
-                                                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                                                        @enderror
+                                                                                      <td style="border: 1px solid #000; font-size: 16px;">
+                                                                                        {{ optional($data->surattertibjakonusaha1->tandatangan2)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
-                                                                                    <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan3" class="form-control @error('tandatangan3') is-invalid @enderror">
-                                                                                            <option value="">-- Pilih Pemeriksa --</option>
-                                                                                            @foreach ($datatandatangan as $tandatangan)
-                                                                                                <option value="{{ $tandatangan->id }}"
-                                                                                                    {{ old('tandatangan3', optional(optional($data->surattertibjakonusaha1)->tandatangan3_id) ) == $tandatangan->id ? 'selected' : '' }}>
-                                                                                                    {{ $tandatangan->namalengkap }}
-                                                                                                </option>
-                                                                                            @endforeach
-                                                                                        </select>
-                                                                                        @error('tandatangan3')
-                                                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                                                        @enderror
+                                                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                                                        {{ optional($data->surattertibjakonusaha1->tandatangan3)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
