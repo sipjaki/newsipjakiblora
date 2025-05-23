@@ -511,19 +511,19 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">1</td>
-                                                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                                                    <td style="font-size: 16px;">
                                                                                         {{ optional($data->surattertibjakonusaha1->tandatangan1)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                      <td style="border: 1px solid #000; font-size: 16px;">
+                                                                                      <td style="font-size: 16px;">
                                                                                         {{ optional($data->surattertibjakonusaha1->tandatangan2)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
-                                                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                                                    <td style="font-size: 16px;">
                                                                                         {{ optional($data->surattertibjakonusaha1->tandatangan3)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
