@@ -69,10 +69,11 @@
                                             Print
                                         </button>
 
-                                        <button class="btn-create" onclick="downloadPDF({{ $data->surattertibjakonusaha1->id }})">
+                                        <button class="btn-create" onclick="downloadModalPDF({{ $data->id }})">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                                         </button>
+
 
                                         <button class="btn-create"
                                             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $data->surattertibjakonusaha1->id }}">
@@ -537,16 +538,37 @@
       @include('backend.00_administrator.00_baganterpisah.02_footer')
 
 
-      <script>
-    function downloadPDF(id) {
-        // Ganti URL sesuai lokasi file PDF kamu
-        const url = `/storage/pdf/berkas-${id}.pdf`; // contoh: public/storage/pdf/berkas-5.pdf
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `berkas-${id}.pdf`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+<!-- CDN html2pdf -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+    function downloadModalPDF(id) {
+        // Ambil elemen modal berdasarkan ID
+        const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
+
+        if (!modalContent) {
+            alert('Konten modal tidak ditemukan.');
+            return;
+        }
+
+        // Kloning isi modal agar tidak mengganggu tampilan
+        const clone = modalContent.cloneNode(true);
+
+        // Styling opsional untuk hasil PDF
+        clone.style.fontSize = '14px';
+        clone.style.padding = '20px';
+
+        // Konversi ke PDF dan download
+        html2pdf()
+            .from(clone)
+            .set({
+                margin: 0.5,
+                filename: `modal-${id}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            })
+            .save();
     }
 </script>
 
