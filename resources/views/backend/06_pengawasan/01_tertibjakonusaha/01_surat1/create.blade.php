@@ -340,8 +340,18 @@
                                                     <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
                                                 </td>
                                               <td>
-                                                    {{ $data->surattertibjakonusaha1->statusperizinan ?? '-' }}
-                                                </td>
+                                                @if($data->surattertibjakonusaha1)
+                                                    @if($data->surattertibjakonusaha1->statusperizinan == 'Terverifikasi')
+                                                        <span class="badge bg-success">Terverifikasi</span>
+                                                    @elseif($data->surattertibjakonusaha1->statusperizinan == 'Tidak Terdaftar')
+                                                        <span class="badge bg-danger">Tidak Terdaftar</span>
+                                                    @else
+                                                        <span class="badge bg-secondary">-</span>
+                                                    @endif
+                                                @else
+                                                    <span class="badge bg-secondary">-</span>
+                                                @endif
+                                            </td>
 
                                             </tr>
 
