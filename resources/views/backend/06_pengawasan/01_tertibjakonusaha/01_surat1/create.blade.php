@@ -258,6 +258,11 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
+                        @if (!$data->surattertibjakonusaha1)
+                            <div class="alert alert-warning">
+                                Berkas belum dibuat.
+                            </div>
+                        @else
                         <form action="{{ route('betertibjakonusahasurat1create') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
@@ -504,6 +509,7 @@
 
                             </div>
                         </form>
+                        @endif
 
 
                                                      </div>
