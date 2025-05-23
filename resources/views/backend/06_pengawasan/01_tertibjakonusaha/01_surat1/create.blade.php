@@ -203,59 +203,17 @@
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">1</td>
                                                                                                     <td style="font-size: 12px;">{{$data->surattertibjakonusaha1->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="height: 60px;">
-                                                                                                        <div style="margin-top: 10px;">
-                                                                                                            @if($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->tandatangan1 && $data->surattertibjakonusaha1->tandatangan1->tandatangan && file_exists(public_path('storage/' . $data->surattertibjakonusaha1->tandatangan1->tandatangan)))
-                                                                                                                <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $data->surattertibjakonusaha1->tandatangan1->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->tandatangan1 && $data->surattertibjakonusaha1->tandatangan1->tandatangan)
-                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($data->surattertibjakonusaha1->tandatangan1->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @else
-                                                                                                                <!-- Placeholder jika tidak ada data -->
-                                                                                                                <p style="font-size: 11px;">Tidak Ada Tanda Tangan !</p>
-
-                                                                                                                @endif
-                                                                                                        </div>
-                                                                                                    </td>
+                                                                                                    <td style="font-size: 12px;">{{$data->surattertibjakonusaha1->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">2</td>
                                                                                                     <td style="font-size: 12px;">{{$data->surattertibjakonusaha1->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="height: 60px;">
-                                                                                                        <div style="margin-top: 10px;">
-                                                                                                            @if($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->tandatangan2 && $data->surattertibjakonusaha1->tandatangan2->tandatangan && file_exists(public_path('storage/' . $data->surattertibjakonusaha1->tandatangan2->tandatangan)))
-                                                                                                                <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $data->surattertibjakonusaha1->tandatangan2->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->tandatangan2 && $data->surattertibjakonusaha1->tandatangan2->tandatangan)
-                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($data->surattertibjakonusaha1->tandatangan2->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @else
-                                                                                                                <!-- Placeholder jika tidak ada data -->
-                                                                                                                <p style="font-size: 11px;">Tidak Ada Tanda Tangan !</p>
-
-                                                                                                                @endif
-                                                                                                        </div>
-                                                                                                    </td>
+                                                                                                    <td style="font-size: 12px;">{{$data->surattertibjakonusaha1->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">3</td>
                                                                                                     <td style="font-size: 12px;">{{$data->surattertibjakonusaha1->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="height: 60px;">
-                                                                                                        <div style="margin-top: 10px;">
-                                                                                                            @if($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->tandatangan3 && $data->surattertibjakonusaha1->tandatangan3->tandatangan && file_exists(public_path('storage/' . $data->surattertibjakonusaha1->tandatangan3->tandatangan)))
-                                                                                                                <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $data->surattertibjakonusaha1->tandatangan3->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->tandatangan3 && $data->surattertibjakonusaha1->tandatangan3->tandatangan)
-                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($data->surattertibjakonusaha1->tandatangan3->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @else
-                                                                                                                <!-- Placeholder jika tidak ada data -->
-                                                                                                                <p style="font-size: 11px;">Tidak Ada Tanda Tangan !</p>
-
-                                                                                                                @endif
-                                                                                                        </div>
-                                                                                                    </td>
+                                                                                                    <td style="font-size: 12px;">{{$data->surattertibjakonusaha1->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
