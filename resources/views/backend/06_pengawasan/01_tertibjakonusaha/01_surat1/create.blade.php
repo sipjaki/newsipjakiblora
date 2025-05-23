@@ -339,21 +339,22 @@
                                                 <td style="width: 300px;">
                                                     <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
                                                 </td>
-                                            <td>
-                                                    @php
-                                                        $status = $data->surattertibjakonusaha1->statusperizinan ?? null;
-                                                    @endphp
+                                          <td style="font-size: 16px;">
+                                                @php
+                                                    $status = $data->surattertibjakonusaha1->statusperizinan ?? null;
+                                                @endphp
 
-                                                    @if ($status === 'Terverifikasi')
-                                                        <span class="badge bg-success">Terverifikasi</span>
-                                                    @elseif ($status === 'Tidak Terdaftar')
-                                                        <span class="badge bg-danger">Tidak Terdaftar</span>
-                                                    @elseif ($status === 'Belum Terdaftar')
-                                                        <span class="badge bg-warning text-dark">Belum Terdaftar</span>
-                                                    @else
-                                                        <span class="badge bg-secondary">-</span>
-                                                    @endif
+                                                @if ($status === 'Terverifikasi')
+                                                    <span class="badge bg-success">Terverifikasi</span>
+                                                @elseif ($status === 'Tidak Terdaftar')
+                                                    <span class="badge bg-danger">Tidak Terdaftar</span>
+                                                @elseif ($status === 'Belum Terdaftar')
+                                                    <span class="badge bg-warning text-dark">Belum Terdaftar</span>
+                                                @else
+                                                    <span class="badge bg-secondary">-</span>
+                                                @endif
                                             </td>
+
 
 
                                             </tr>
