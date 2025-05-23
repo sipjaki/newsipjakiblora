@@ -275,7 +275,7 @@
         <td colspan="2">Sesuai Jenis</td>
 
         @php
-            $kesesuaian = $item->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
+            $kesesuaian = $data->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
             $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
             $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
             $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -291,23 +291,14 @@
                 {{ $tertibStatus }}
             </button>
         </td>
-    </tr>
-
-    <tr>
         <td colspan="2">Sesuai Sifat</td>
         <td colspan="2">
             <i class="bi bi-check-circle text-success"></i>
         </td>
-    </tr>
-
-    <tr>
         <td colspan="2">Sesuai Klasifikasi</td>
         <td colspan="2">
             <i class="bi bi-check-circle text-success"></i> Tertib
         </td>
-    </tr>
-
-    <tr>
         <td colspan="2">Sesuai Layanan</td>
         <td colspan="2">
             <i class="bi bi-check-circle text-success"></i> Tertib
