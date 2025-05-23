@@ -430,19 +430,19 @@
                                                     @enderror
                                                 </td>
 
-                                                   <td style="border: 1px solid #000; font-size: 16px;">
+                                                   <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
                                                         {{ $data->surattertibjakonusaha1->jenisusaha ?? '-' }}
                                                     </td>
 
-                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                    <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
                                                         {{ $data->surattertibjakonusaha1->kesesuaian ?? '-' }}
                                                     </td>
 
-                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                    <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
                                                         {{ $data->surattertibjakonusaha1->sifatusaha ?? '-' }}
                                                     </td>
 
-                                                    <td style="border: 1px solid #000; font-size: 16px;">
+                                                    <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
                                                         {{ $data->surattertibjakonusaha1->kesesuaiansbu ?? '-' }}
                                                     </td>
 
