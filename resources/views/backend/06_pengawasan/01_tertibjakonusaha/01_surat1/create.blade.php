@@ -111,12 +111,17 @@
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                            <td style="font-size: 12px;">
-                                                                {{ $data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan
-                                                                    ? \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->translatedFormat('d F Y')
-                                                                    : '-'
-                                                                }}
-                                                            </td>
+                                                        <td>
+                                                            @if ($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan && $data->surattertibjakonusaha1->waktupengawasanselesai)
+                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
+                                                                –
+                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
+                                                            @else
+                                                                <span class="text-muted">Belum Di Buat</span>
+                                                            @endif
+                                                        </td>
+
+
                                                     </tr>
                                                 </table>
 
@@ -374,10 +379,10 @@
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                                 <td class="d-flex gap-2">
-                                                    <input type="date" class="form-control @error('waktupengawasan') is-invalid @enderror" name="waktupengawasan" value="{{ old('waktupengawasan') }}" placeholder="Dimulai Sejak ... ">
-                                                    @error('waktupengawasan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                                        {{ $data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan
+                                                            ? \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->translatedFormat('d F Y')
+                                                            : '-'
+                                                        }}
 
                                                     <span class="mx-1">(Sampai Dengan)</span>
 
