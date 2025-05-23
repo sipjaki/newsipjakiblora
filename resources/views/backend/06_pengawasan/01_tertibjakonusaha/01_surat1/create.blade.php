@@ -271,8 +271,8 @@
                                 Berkas Tertib Jakon Usaha Kesesuaian Kegiatan Konstruksi Belum Di Buat !!.
                             </div>
                         @else
-                        <form action="{{ route('betertibjakonusahasurat1create') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
+                        {{-- <form action="{{ route('betertibjakonusahasurat1create') }}" method="POST" enctype="multipart/form-data">
+                            @csrf --}}
 
                             <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
 
@@ -516,7 +516,7 @@
                                 <br><br>
 
                             </div>
-                        </form>
+                        {{-- </form> --}}
                         @endif
 
 
