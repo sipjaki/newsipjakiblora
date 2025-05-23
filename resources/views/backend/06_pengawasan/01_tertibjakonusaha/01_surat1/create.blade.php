@@ -268,7 +268,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        @if (!$item->surattertibjakonusaha1)
+                        @if (!$data->surattertibjakonusaha1)
                             <div class="alert alert-danger">
                                 Berkas Tertib Jakon Usaha Kesesuaian Kegiatan Konstruksi Belum Di Buat !!.
                             </div>
