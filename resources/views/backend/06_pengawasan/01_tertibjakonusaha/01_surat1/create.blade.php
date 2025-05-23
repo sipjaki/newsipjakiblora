@@ -441,12 +441,14 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                  <td style="border: 1px solid #000; max-width: 600px; font-size: 16px;">
-                                                    {{ $item->surattertibjakonusaha1 && $item->surattertibjakonusaha1->subklasifikasi
-                                                        ? Str::limit($item->surattertibjakonusaha1->subklasifikasi->pekerjaan, 500)
-                                                        : '-'
-                                                    }}
+                                               <td style="border: 1px solid #000; max-width: 600px; font-size: 16px;">
+                                                    @if (isset($item->surattertibjakonusaha1->subklasifikasi->pekerjaan))
+                                                        {{ \Illuminate\Support\Str::limit($item->surattertibjakonusaha1->subklasifikasi->pekerjaan, 500) }}
+                                                    @else
+                                                        -
+                                                    @endif
                                                 </td>
+
 
 
                                                 <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
