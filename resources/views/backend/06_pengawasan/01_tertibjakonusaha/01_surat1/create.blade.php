@@ -265,7 +265,7 @@
      <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 50%; margin: auto; font-family: Arial, sans-serif;">
   <thead>
     <tr>
-      <th colspan="4" style="text-align: center; border-bottom: 4px solid black; font-weight: bold;">
+      <th colspan="8" style="text-align: center; border-bottom: 4px solid black; font-weight: bold;">
         Kesesuaian Kegiatan Konstruksi
       </th>
     </tr>
