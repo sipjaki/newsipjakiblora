@@ -324,7 +324,7 @@
                                 @forelse ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->user->name ?? '-' }}</td>
+                                        <td style="text-align: left;">{{ strtoupper($item->user->name ?? '-') }}</td>
 <td style="text-align: center;">{{ $item->jenjangpendidikan->jenjangpendidikan ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->jabatankerja->jabatankerja ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->namasekolah->namasekolah ?? '-' }}</td>
