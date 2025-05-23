@@ -274,7 +274,7 @@
     <tr>
       <td colspan="2">Sesuai Jenis</td>
                 <td colspan="2">
-            @if($data == 'tertib')
+            @if($data->kesesuaian == 'Sesuai')
                 <i class="bi bi-check-circle text-success"></i> Tertib
             @else
                 <i class="bi bi-x-circle text-danger"></i> Belum Tertib
@@ -283,7 +283,9 @@
     </tr>
     <tr>
       <td colspan="2">Sesuai Sifat</td>
-      <td colspan="2"><i class="bi bi-check-circle text-success"></i> Tertib</td>
+      <td colspan="2"><i class="bi bi-check-circle text-success"></i>
+
+    </td>
     </tr>
     <tr>
       <td colspan="2">Sesuai Klasifikasi</td>
