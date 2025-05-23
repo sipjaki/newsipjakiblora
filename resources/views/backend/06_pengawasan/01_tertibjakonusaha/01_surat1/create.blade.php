@@ -341,9 +341,9 @@
                                                 </td>
                                               <td>
                                                 @if($data->surattertibjakonusaha1)
-                                                    @if($data->surattertibjakonusaha1->statusperizinan == 'Terverifikasi')
+                                                    @if($data->surattertibjakonusaha1->statusperizinan == 'terverifikasi')
                                                         <span class="badge bg-success">Terverifikasi</span>
-                                                    @elseif($data->surattertibjakonusaha1->statusperizinan == 'Tidak Terdaftar')
+                                                    @elseif($data->surattertibjakonusaha1->statusperizinan == 'belum terdaftar')
                                                         <span class="badge bg-danger">Tidak Terdaftar</span>
                                                     @else
                                                         <span class="badge bg-secondary">-</span>
