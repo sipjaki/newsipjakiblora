@@ -270,44 +270,50 @@
       </th>
     </tr>
   </thead>
-  <tbody>
+<tbody>
     <tr>
+        <td colspan="2">Sesuai Jenis</td>
 
-      <td colspan="2">Sesuai Jenis</td>
+        @php
+            $kesesuaian = $item->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
+            $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+            $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+            $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+        @endphp
 
-                      @php
-                      $kesesuaian = $item->surattertibjakonusaha1->kesesuaianklasifikasi ?? 'Surat Belum Di Buat';
-                      $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-                      $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-                      $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-                  @endphp
-
-                  <td style="text-align: center;">
-                      <button
-                          style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                          onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-                      >
-                          <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                          {{ $tertibStatus }}
-                      </button>
-                  </td>
+        <td style="text-align: center;">
+            <button
+                style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+            >
+                <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+                {{ $tertibStatus }}
+            </button>
+        </td>
     </tr>
+
     <tr>
-      <td colspan="2">Sesuai Sifat</td>
-      <td colspan="2"><i class="bi bi-check-circle text-success"></i>
+        <td colspan="2">Sesuai Sifat</td>
+        <td colspan="2">
+            <i class="bi bi-check-circle text-success"></i>
+        </td>
+    </tr>
 
-    </td>
-    </tr>
     <tr>
-      <td colspan="2">Sesuai Klasifikasi</td>
-      <td colspan="2"><i class="bi bi-check-circle text-success"></i> Tertib</td>
+        <td colspan="2">Sesuai Klasifikasi</td>
+        <td colspan="2">
+            <i class="bi bi-check-circle text-success"></i> Tertib
+        </td>
     </tr>
+
     <tr>
-      <td colspan="2">Sesuai Layanan</td>
-      <td colspan="2"><i class="bi bi-check-circle text-success"></i> Tertib</td>
+        <td colspan="2">Sesuai Layanan</td>
+        <td colspan="2">
+            <i class="bi bi-check-circle text-success"></i> Tertib
+        </td>
     </tr>
-  </tbody>
+</tbody>
 </table>
 
         {{-- ======================================================= --}}
