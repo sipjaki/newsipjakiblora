@@ -491,24 +491,25 @@
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
-                                                                                    <td style="font-size: 16px;">
-                                                                                        {{ optional($item->surattertibjakonusaha1->tandatangan1)->tandatangan ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                      <td style="font-size: 16px;">
-                                                                                        {{ optional($item->surattertibjakonusaha1->tandatangan2)->tandatangan ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
-                                                                                    <td style="font-size: 16px;">
-                                                                                        {{ optional($item->surattertibjakonusaha1->tandatangan3)->tandatangan ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-                                                                                </tr>
+                                                                               <tr>
+                                                                                        <td style="font-size: 12px; text-align:center;">1</td>
+                                                                                        <td style="font-size: 16px;">
+                                                                                            {{ isset($item->surattertibjakonusaha1->tandatangan1->tandatangan) ? $item->surattertibjakonusaha1->tandatangan1->tandatangan : 'Belum Di Tanda Tangan' }}
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="font-size: 12px; text-align:center;">2</td>
+                                                                                        <td style="font-size: 16px;">
+                                                                                            {{ isset($item->surattertibjakonusaha1->tandatangan2->tandatangan) ? $item->surattertibjakonusaha1->tandatangan2->tandatangan : 'Belum Di Tanda Tangan' }}
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="font-size: 12px; text-align:center;">3</td>
+                                                                                        <td style="font-size: 16px;">
+                                                                                            {{ isset($item->surattertibjakonusaha1->tandatangan3->tandatangan) ? $item->surattertibjakonusaha1->tandatangan3->tandatangan : 'Belum Di Tanda Tangan' }}
+                                                                                        </td>
+                                                                                    </tr>
+
                                                                             </tbody>
                                                                         </table>
                                                                     </div>
