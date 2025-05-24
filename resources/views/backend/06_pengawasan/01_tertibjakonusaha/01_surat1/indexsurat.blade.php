@@ -133,7 +133,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($subdata as $item )
+                                @foreach ($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->judulmateripelatihan }}</td>
