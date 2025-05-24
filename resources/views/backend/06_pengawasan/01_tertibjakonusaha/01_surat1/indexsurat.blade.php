@@ -146,7 +146,7 @@
                                         <td style="text-align: left;">{{ $item->namapaketpekerjaan }}</td>
 
                                                @php
-                                                $kesesuaian = $item->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
+                                                $kesesuaian = $item->kesesuaian ?? 'Surat Belum Di Buat';
                                                 $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                                                 $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
                                                 $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
