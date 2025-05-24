@@ -112,11 +112,31 @@
                             <table class="zebra-table table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Nama Pekerjaan</th>
-                                        <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-pdf-fill"></i> </th>
-                                        <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-pdf-fill"></i> Badan Usaha </th>
-                                        <th style="width: 100px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th>
+                                     <th style="width: 25px; text-align: center;">
+                                                    <i class="bi bi-hash"></i> No
+                                                </th>
+                                                <th style="width: 400px; text-align: center;">
+                                                    <i class="bi bi-file-earmark-text-fill"></i> Nama Pekerjaan
+                                                </th>
+                                                <th style="width: 200px; text-align: center;">
+                                                    <i class="bi bi-building-fill"></i> Jenis Usaha
+                                                </th>
+                                                <th style="width: 200px; text-align: center;">
+                                                    <i class="bi bi-briefcase-fill"></i> Sifat Usaha
+                                                </th>
+                                                <th style="width: 200px; text-align: center;">
+                                                    <i class="bi bi-file-earmark-check-fill"></i> Kesesuaian SBU
+                                                </th>
+                                                <th style="width: 200px; text-align: center;">
+                                                    <i class="bi bi-file-earmark-code-fill"></i> Kesesuaian SBU Sub Klasifikasi
+                                                </th>
+                                                <th style="width: 200px; text-align: center;">
+                                                    <i class="bi bi-file-earmark-bar-graph-fill"></i> Kesesuaian SBU Layanan Usaha
+                                                </th>
+                                                <th style="width: 100px; text-align: center;">
+                                                    <i class="bi bi-gear-fill"></i> Aksi
+                                                </th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -124,45 +144,26 @@
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->namapaketpekerjaan }}</td>
+
+                                               @php
+                                                $kesesuaian = $item->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
+                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+                                            @endphp
+
+                                            <td style="text-align: center;">
+                                                <button
+                                                    style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                                    onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+                                                >
+                                                    <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+                                                    {{ $tertibStatus }}
+                                                </button>
+                                            </td>
+
                                         <td style="text-align: center;">
-                                            <button class="btn btn-secondary btn-sm"
-                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
-                                                <i class="bi bi-eye"></i> Lihat
-                                            </button>
-
-                                            <!-- Modal KTP -->
-                                            <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
-                                                <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                                            <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                                            <span>:</span>
-                                                            <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">
-                                                                Sertifikat : <i class="bi bi-file-earmark-pdf-fill text-danger"></i> {{ $data->namakegiatan }}
-                                                            </h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body text-center">
-                                                            <div style="margin-top: 10px;">
-                                                                @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
-                                                                    <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                                @elseif($item->materipelatihan)
-                                                                    <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                                @else
-                                                                    <p>Data belum diupdate</p>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-
-                                                   <td style="text-align: center;">
                                             <!-- Show Icon -->
                                          {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                                                 <i class="bi bi-eye"></i>
