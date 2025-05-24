@@ -211,6 +211,9 @@ table.zebra-table {
                               <i class="bi bi-file-earmark-image"></i> Poster
                                 </th>
                                 <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
+                              <i class="bi bi-file-earmark-image"></i> Penutupan
+                                </th>
+                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
                                     <i class="bi bi-pencil-square"></i> Pendaftaran
                                 </th>
                                                                 </tr>
@@ -254,6 +257,13 @@ table.zebra-table {
     @endif
 </div>
                             </td>
+
+                            <td class="text-center">
+                                <button class="bg-red-600 text-white px-4 py-2 rounded-full font-medium shadow hover:bg-red-700 transition duration-300">
+                                    Pendaftaran ditutup 30 Mei 2025
+                                </button>
+                            </td>
+
 
                             <td style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px;">
                                 @php
