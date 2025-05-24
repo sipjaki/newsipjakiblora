@@ -56,14 +56,6 @@
                                         Nama Pekerjaan: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
                                     </button>
 
-                                    @if(empty($data->surattertibjakonusaha1->id))
-                                        <a href="{{ route('betertibjakonusahasurat1', ['id' => $data->id]) }}">
-                                            <button class="btn-create">
-                                                <i class="bi bi-file-earmark-plus icon-create"></i>
-                                                Buat Berkas
-                                            </button>
-                                        </a>
-                                    @endif
 
                                     <!-- Tombol Badan Usaha -->
 
