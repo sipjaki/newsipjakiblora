@@ -98,12 +98,9 @@
                         </button>
                     </a>
 
-
-                        <button class="btn-create">
-                         <!-- Ikon Kembali -->
-                         <i class="fa fa-plus icon-create"></i>
-                         {{$title}}
-                     </button>
+                            <button class="btn-create">
+                                <i class="bi bi-plus icon-create"></i> {{ $title }}
+                            </button>
 
                     </div>
 
