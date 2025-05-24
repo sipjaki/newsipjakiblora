@@ -310,11 +310,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                    @if (!$data->surattertibjakonusaha1 || !$data->surattertibjakonusaha1->id)
-                            <div class="alert alert-danger">
-                                Berkas Tertib Jakon Usaha Kesesuaian Kegiatan Konstruksi Belum Di Buat !!.
-                            </div>
-                        @else
+
                         {{-- <form action="{{ route('betertibjakonusahasurat1create') }}" method="POST" enctype="multipart/form-data">
                             @csrf --}}
 
@@ -561,7 +557,7 @@
 
                             </div>
                         </form>
-                        @endif
+
 
 
                                                      </div>
