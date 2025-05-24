@@ -99,17 +99,13 @@
                     </a>
 
 
-                     <a href="/beagendapelatihanmateri/createmateri/{{$data->id}}">
-                        <button
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
-                         style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                        <button class="btn-create">
                          <!-- Ikon Kembali -->
-                         <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                         Create
+                         <i class="fa fa-plus icon-create"></i>
+                         {{$title}}
                      </button>
-                     </a>
-                 </div>
+
+                    </div>
 
                     </div>
                     <!-- /.card-header -->
