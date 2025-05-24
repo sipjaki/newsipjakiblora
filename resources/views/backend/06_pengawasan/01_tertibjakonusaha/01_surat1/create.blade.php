@@ -243,12 +243,10 @@
 
                                 <!-- Kontainer Kanan -->
                                 <div>
-                                    <a href="/betertibjakonusaha">
-                                           <button class="btn-kembali">
+                                    <a href="javascript:history.back()" class="btn-kembali">
                                             <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
                                             Kembali
-                                            </button>
-                                    </a>
+                                        </a>
                                 </div>
                             </div>
 
