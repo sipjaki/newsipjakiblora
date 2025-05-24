@@ -98,9 +98,10 @@
                         </button>
                     </a>
 
-                            <button class="btn-create">
-                                <i class="bi bi-plus icon-create"></i> {{ $title }}
-                            </button>
+                <button class="btn-create">
+                    <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
+                </button>
+
 
                     </div>
 
