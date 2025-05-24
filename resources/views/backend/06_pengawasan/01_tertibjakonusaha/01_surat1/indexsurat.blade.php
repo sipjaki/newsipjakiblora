@@ -114,7 +114,7 @@
                                     <tr>
                                         <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th>
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Nama Pekerjaan</th>
-                                        <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-pdf-fill"></i> namapaketpekerjaan </th>
+                                        <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-pdf-fill"></i> </th>
                                         <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-pdf-fill"></i> Badan Usaha </th>
                                         <th style="width: 100px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th>
                                     </tr>

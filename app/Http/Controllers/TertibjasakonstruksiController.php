@@ -677,7 +677,7 @@ public function betertibjakonusahasuratpercobaan($id)
 
     // Kirim semua data ke view
     return view('backend.06_pengawasan.01_tertibjakonusaha.01_surat1.indexsurat', [
-        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi',
+        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi | Tertib Jakon Usaha ',
         'data' => $datatertibjasakonstruksi,
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
