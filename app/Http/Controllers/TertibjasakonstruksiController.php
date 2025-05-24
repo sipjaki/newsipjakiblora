@@ -908,10 +908,10 @@ public function betertibjakonusahasurat1create(Request $request)
 
  public function betertibjakonusahasuratnewberkas($id)
 {
-    // Ambil data surat berdasarkan ID
+    // Ambil data surat dengan relasi tertibjasakonstruksi
     $datasurat1 = surattertibjakonusaha1::with('tertibjasakonstruksi')->findOrFail($id);
 
-    // Ambil data relasi tertibjasakonstruksi dari surat
+    // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
     $datatertib = $datasurat1->tertibjasakonstruksi;
 
     // Ambil user
@@ -921,6 +921,12 @@ public function betertibjakonusahasurat1create(Request $request)
     $datasubklasifikasi = subklasifikasi::all();
     $datatandatangan = tandatangan::all();
 
+    // Jika relasi null, buat default kosong agar tidak error di view
+    $namapekerjaan = $datatertib->namapekerjaan ?? 'Data pekerjaan tidak ditemukan';
+    $namabadanusaha = $datatertib->namabadanusaha ?? '-';
+    $idtertib = $datatertib->id ?? null;
+    $nib = $datatertib->nib ?? '-';
+
     // Kirim data ke view
     return view('backend.06_pengawasan.01_tertibjakonusaha.01_surat1.create', [
         'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi',
@@ -929,10 +935,10 @@ public function betertibjakonusahasurat1create(Request $request)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurat1' => $datasurat1,
-        // 'datatertibjasakonstruksi' => $datatertib->namapekerjaan ?? 'Kosong',
-        // 'datatertibjasakonstruksinamabadanusaha' => $datatertib->namabadanusaha,
-        // 'datatertibjasakonstruksi_id' => $datatertib->id,
-        // 'datatertibjasakonstruksinib' => $datatertib->nib,
+        'datatertibjasakonstruksi' => $namapekerjaan,
+        'datatertibjasakonstruksinamabadanusaha' => $namabadanusaha,
+        'datatertibjasakonstruksi_id' => $idtertib,
+        'datatertibjasakonstruksinib' => $nib,
     ]);
 }
 
