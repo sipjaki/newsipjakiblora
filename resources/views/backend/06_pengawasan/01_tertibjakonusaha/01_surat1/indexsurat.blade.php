@@ -119,8 +119,9 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Judul Materi Pelatihan</th>
-                                        <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-pdf-fill"></i> Berkas/Brosur/Materi</th>
+                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Nama Pekerjaan</th>
+                                        <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-pdf-fill"></i> namapaketpekerjaan </th>
+                                        <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-pdf-fill"></i> Badan Usaha </th>
                                         <th style="width: 100px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th>
                                     </tr>
                                 </thead>
@@ -128,7 +129,7 @@
                                 @foreach ($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->judulmateripelatihan }}</td>
+                                        <td style="text-align: left;">{{ $item->namapaketpekerjaan }}</td>
                                         <td style="text-align: center;">
                                             <button class="btn btn-secondary btn-sm"
                                                 style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
