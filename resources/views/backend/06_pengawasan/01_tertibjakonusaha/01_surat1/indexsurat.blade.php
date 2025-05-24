@@ -122,9 +122,6 @@
                                                     <i class="bi bi-building-fill"></i> Jenis Usaha
                                                 </th>
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-briefcase-fill"></i> Sifat Usaha
-                                                </th>
-                                                <th style="width: 200px; text-align: center;">
                                                     <i class="bi bi-file-earmark-check-fill"></i> Kesesuaian SBU
                                                 </th>
                                                 <th style="width: 200px; text-align: center;">
