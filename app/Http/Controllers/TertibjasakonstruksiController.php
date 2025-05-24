@@ -687,6 +687,7 @@ public function betertibjakonusahasuratpercobaan($id)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurat' => $datasurattertibjakonusaha1,
+        'datasurat_id' => $datasurattertibjakonusaha1->id,
     ]);
 }
 

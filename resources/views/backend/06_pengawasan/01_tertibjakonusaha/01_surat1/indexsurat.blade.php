@@ -98,6 +98,12 @@
                         </button>
                     </a>
 
+                    <a href="{{ url('betertibjakonusahasurat1/create/' . $datasurat_id) }}">
+                        <button class="btn-create">
+                            <i class="bi bi-file-earmark icon-create"></i> Dokumen
+                        </button>
+                    </a>
+
                 <button class="btn-create">
                     <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
                 </button>
@@ -133,7 +139,6 @@
                                                 <th style="width: 100px; text-align: center;">
                                                     <i class="bi bi-gear-fill"></i> Aksi
                                                 </th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
