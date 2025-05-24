@@ -929,10 +929,10 @@ public function betertibjakonusahasurat1create(Request $request)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurat1' => $datasurat1,
-        'datatertibjasakonstruksi' => $datatertib->namapekerjaan ?? 'Kosong',
-        'datatertibjasakonstruksinamabadanusaha' => $datatertib->namabadanusaha,
+        // 'datatertibjasakonstruksi' => $datatertib->namapekerjaan ?? 'Kosong',
+        // 'datatertibjasakonstruksinamabadanusaha' => $datatertib->namabadanusaha,
         'datatertibjasakonstruksi_id' => $datatertib->id,
-        'datatertibjasakonstruksinib' => $datatertib->nib,
+        // 'datatertibjasakonstruksinib' => $datatertib->nib,
     ]);
 }
 
