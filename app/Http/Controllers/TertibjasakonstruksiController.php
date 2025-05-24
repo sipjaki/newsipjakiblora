@@ -622,35 +622,39 @@ public function betertibjakonusahacreatenew(Request $request)
 
 
     // PEMBUATAN SURAT 1
- public function betertibjakonusahasurat1($id)
+public function betertibjakonusahasurat1($id)
 {
     // Ambil data tertibjasakonstruksi sesuai $id
-    $datatertibjasakonstruksi = tertibjasakonstruksi::findOrFail($id);
+    $datatertibjasakonstruksi = tertibjasakonstruksi::where('id', $id)->first();
 
-    // Ambil data user saat ini (optional, kalau diperlukan)
+    if (!$datatertibjasakonstruksi) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    // Ambil data user saat ini
     $user = Auth::user();
 
-    // Ambil semua data subklasifikasi dan tandatangan untuk dropdown atau lainnya
+    // Ambil data subklasifikasi dan tandatangan
     $datasubklasifikasi = subklasifikasi::all();
     $datatandatangan = tandatangan::all();
 
-    // Ambil semua data surattertibjakonusaha1 sesuai tertibjasakonstruksi_id (bukan cuma 1 data)
+    // Ambil data surat sesuai tertibjasakonstruksi_id dan gunakan paginate
     $datasurattertibjakonusaha1 = surattertibjakonusaha1::where('tertibjasakonstruksi_id', $id)
         ->orderBy('created_at', 'desc')
-        ->get();
+        ->paginate(50);
 
     // Kirim semua data ke view
-    return view('backend.06_pengawasan.01_tertibjakonusaha.01_surat1.create', [
+    return view('backend.06_pengawasan.01_tertibjakonusaha.01_surat1.indexsurat', [
+        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi',
+        'data' => $datatertibjasakonstruksi,
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
         'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id,
         'datatertibjasakonstruksinib' => $datatertibjasakonstruksi->nib,
         'user' => $user,
-        'data' => $datatertibjasakonstruksi,
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
-        'datasurattertibjakonusaha1' => $datasurattertibjakonusaha1,  // INI sekarang koleksi semua data surat
-        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi',
+        'datasurat' => $datasurattertibjakonusaha1,
     ]);
 }
 
