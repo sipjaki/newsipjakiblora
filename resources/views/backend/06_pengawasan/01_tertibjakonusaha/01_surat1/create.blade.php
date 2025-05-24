@@ -394,14 +394,15 @@
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                               <td class="d-flex align-items-center gap-2" style="font-size: 16px; white-space: nowrap;">
-                                                    @php
-                                                        $mulai = $data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan
-                                                            ? \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->translatedFormat('d F Y')
-                                                            : '-';
-                                                        $selesai = $data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasanselesai
-                                                            ? \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasanselesai)->translatedFormat('d F Y')
-                                                            : '-';
-                                                    @endphp
+                                                @php
+                                                    $mulai = ($datasurat1 && $datasurat1->waktupengawasan)
+                                                        ? \Carbon\Carbon::parse($datasurat1->waktupengawasan)->translatedFormat('d F Y')
+                                                        : '-';
+
+                                                    $selesai = ($datasurat1 && $datasurat1->waktupengawasanselesai)
+                                                        ? \Carbon\Carbon::parse($datasurat1->waktupengawasanselesai)->translatedFormat('d F Y')
+                                                        : '-';
+                                                @endphp
 
                                                     <span class="badge bg-primary py-1 px-2" title="Tanggal Mulai Pengawasan" style="font-weight: 500; font-size: 16px;">
                                                         {{ $mulai }}
@@ -446,19 +447,19 @@
                                                 </td>
 
                                                    <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                        {{ $data->surattertibjakonusaha1->jenisusaha ?? '-' }}
+                                                        {{ $datasurat1->jenisusaha ?? '-' }}
                                                     </td>
 
                                                     <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                        {{ $data->surattertibjakonusaha1->kesesuaian ?? '-' }}
+                                                        {{ $datasurat1->kesesuaian ?? '-' }}
                                                     </td>
 
                                                     <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                        {{ $data->surattertibjakonusaha1->sifatusaha ?? '-' }}
+                                                        {{ $datasurat1->sifatusaha ?? '-' }}
                                                     </td>
 
                                                     <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                        {{ $data->surattertibjakonusaha1->kesesuaiansbu ?? '-' }}
+                                                        {{ $datasurat1->kesesuaiansbu ?? '-' }}
                                                     </td>
 
                                                 </tr>
@@ -477,23 +478,23 @@
                                             <tbody>
                                                 <tr>
                                                   <td style="border: 1px solid #000; max-width: 600px; font-size: 16px;">
-                                                    {{ $data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->subklasifikasi
-                                                        ? Str::limit($data->surattertibjakonusaha1->subklasifikasi->pekerjaan, 500)
+                                                    {{ $datasurat1 && $datasurat1->subklasifikasi
+                                                        ? Str::limit($datasurat1->subklasifikasi->pekerjaan, 500)
                                                         : '-'
                                                     }}
                                                 </td>
 
 
                                                 <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                    {{ $data->surattertibjakonusaha1->kesesuaianklasifikasi ?? '-' }}
+                                                    {{ $datasurat1->kesesuaianklasifikasi ?? '-' }}
                                                 </td>
 
                                                 <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                    {{ $data->surattertibjakonusaha1->layananusaha ?? '-' }}
+                                                    {{ $datasurat1->layananusaha ?? '-' }}
                                                 </td>
 
                                                 <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                    {{ $data->surattertibjakonusaha1->kesesuaianlayananusaha ?? '-' }}
+                                                    {{ $datasurat1->kesesuaianlayananusaha ?? '-' }}
                                                 </td>
 
                                                 </tr>
@@ -527,19 +528,19 @@
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">1</td>
                                                                                     <td style="font-size: 16px;">
-                                                                                        {{ optional($data->surattertibjakonusaha1->tandatangan1)->tandatangan ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{ optional($datasurat1->tandatangan1)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
                                                                                       <td style="font-size: 16px;">
-                                                                                        {{ optional($data->surattertibjakonusaha1->tandatangan2)->tandatangan ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{ optional($datasurat1->tandatangan2)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
                                                                                     <td style="font-size: 16px;">
-                                                                                        {{ optional($data->surattertibjakonusaha1->tandatangan3)->tandatangan ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{ optional($datasurat1->tandatangan3)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
