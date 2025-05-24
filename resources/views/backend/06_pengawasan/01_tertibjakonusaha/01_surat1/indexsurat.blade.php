@@ -98,7 +98,7 @@
                         </button>
                     </a>
 
-                    <a href="{{ url('betertibjakonusahasurat1/create/' . $datasurat_id) }}">
+                    <a href="{{ url('betertibjakonusahasurat1/createnew/' . $datasurat_id) }}">
                         <button class="btn-create">
                             <i class="bi bi-file-earmark icon-create"></i> Dokumen
                         </button>
