@@ -115,15 +115,16 @@
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>
-                                                            @if ($datasurat1-> && $datasurat1->waktupengawasan && $datasurat1->waktupengawasanselesai)
-                                                                {{ \Carbon\Carbon::parse($datasurat1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
-                                                                –
-                                                                {{ \Carbon\Carbon::parse($datasurat1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
-                                                            @else
-                                                                <span class="text-muted">Belum Di Buat</span>
-                                                            @endif
-                                                        </td>
+                                                    <td>
+                                                        @if ($datasurat1 && $datasurat1->waktupengawasan && $datasurat1->waktupengawasanselesai)
+                                                            {{ \Carbon\Carbon::parse($datasurat1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
+                                                            –
+                                                            {{ \Carbon\Carbon::parse($datasurat1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
+                                                        @else
+                                                            <span class="text-muted">Belum Di Buat</span>
+                                                        @endif
+                                                    </td>
+
 
 
                                                     </tr>
