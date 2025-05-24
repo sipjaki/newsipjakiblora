@@ -257,13 +257,11 @@ table.zebra-table {
     @endif
 </div>
                             </td>
-
                             <td class="text-center">
-                                <button class="bg-red-600 text-white px-4 py-2 rounded-full font-medium shadow hover:bg-red-700 transition duration-300">
-                                    Pendaftaran ditutup 30 Mei 2025
+                                <button class="bg-red-700 text-white px-6 py-3 rounded-full font-extrabold shadow-xl hover:bg-red-800 transition duration-300 border-b-4 border-red-900 hover:border-red-950 active:translate-y-1">
+                                    � PENDAFTARAN DITUTUP 30 MEI 2025
                                 </button>
                             </td>
-
 
                             <td style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px;">
                                 @php
