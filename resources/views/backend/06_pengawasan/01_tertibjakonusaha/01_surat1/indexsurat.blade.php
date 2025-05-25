@@ -100,12 +100,15 @@
 
 
                                     {{-- @if(empty($data->surattertibjakonusaha1->id)) --}}
-                                        <a href="{{ route('betertibjakonusahasurat1', ['id' => $data->id]) }}">
+                                   @if ($datasurat->isEmpty())
+                                        <a href="{{ route('betertibjakonusahasurat1new', ['id' => $data->id]) }}">
                                             <button class="btn-create">
                                                 <i class="bi bi-file-earmark-plus icon-create"></i>
                                                 Buat Berkas
                                             </button>
                                         </a>
+                                    @endif
+
                                     {{-- @endif --}}
 
                    @if ($datasurat->isNotEmpty())
