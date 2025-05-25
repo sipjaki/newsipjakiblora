@@ -1164,4 +1164,42 @@ public function betertibjakonusahasegmentasipasardelete($id)
     return redirect()->back();
 }
 
+
+
+ public function betertibjakonusahasegmentasipasarshow($id)
+{
+    // Ambil data surat dengan relasi tertibjasakonstruksi
+    $datasurat2 = surattertibjakonusaha2::with('tertibjasakonstruksi')->findOrFail($id);
+
+    // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
+    $datatertib = $datasurat2->tertibjasakonstruksi;
+
+    // Ambil user
+    $user = Auth::user();
+
+    // Ambil data subklasifikasi dan tandatangan
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
+
+    // Jika relasi null, buat default kosong agar tidak error di view
+    $namapekerjaan = $datatertib->namapekerjaan ?? 'Data pekerjaan tidak ditemukan';
+    $namabadanusaha = $datatertib->namabadanusaha ?? '-';
+    $idtertib = $datatertib->id ?? null;
+    $nib = $datatertib->nib ?? '-';
+
+    // Kirim data ke view
+    return view('backend.06_pengawasan.01_tertibjakonusaha.02_surat2.showberkas', [
+        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar',
+        'data' => $datatertib,
+        'user' => $user,
+        'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
+        'datasurat2' => $datasurat2,
+        'datatertibjasakonstruksi' => $namapekerjaan,
+        'datatertibjasakonstruksinamabadanusaha' => $namabadanusaha,
+        'datatertibjasakonstruksi_id' => $idtertib,
+        'datatertibjasakonstruksinib' => $nib,
+    ]);
+}
+
 }

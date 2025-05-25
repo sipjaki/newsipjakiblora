@@ -1026,13 +1026,14 @@ Route::post('/betertibjakonusahasurat1/createberkasnew', [TertibjasakonstruksiCo
 Route::get('/betertibjakonusahasurat1/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1updatenew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1updatenew');
 
 
-// SURAT DUKUNG TERTIB JAKON USAHA SEGMENTASI PASAR
+// SURAT DUKUNG TERTIB JAKON USAHA SURAT 2 SEGMENTASI PASAR
 Route::get('/betertibjakonusahasegmentasipasar/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasar'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat2indexsurat');
 Route::get('/betertibjakonusahasegmentasipasar/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasarcreateberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasegmentasipasarberkas');
 
 Route::post('/betertibjakonusahasegmentasipasar/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasarcreatenewberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasegmentasipasarbuatberkas');
 
 Route::delete('/betertibjakonusahasegmentasipasar/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasardelete'])->middleware('auth')->name('betertibjakonusahadeletesegmentasipasar');
+Route::get('/betertibjakonusahasegmentasipasar/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasarshow'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasegmentasipasarshow');
 
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------
 Route::get('/beshstkabblora', [ShstbloraController::class, 'beshstkabblora'])->middleware(['auth', 'can:super_admin'])->name('beshstkabblora');
