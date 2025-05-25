@@ -264,9 +264,12 @@
     </tr>
   </thead>
 <tbody>
-    <tr>
-    <td colspan="2">Kesimpulan</td>
+    <tr style="text-align: center; color: navy; font-weight: bold;">
+    <td colspan="2">
+        <i class="bi bi-journal-check" style="margin-right: 6px;"></i> Kesimpulan
+    </td>
 </tr>
+
 <tr>
     @php
         $kesesuaian = $datasurat3->kesimpulan ?? 'Surat Belum Di Buat';
