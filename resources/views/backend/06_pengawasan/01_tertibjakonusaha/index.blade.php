@@ -182,10 +182,6 @@
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
-                                    <th colspan="4" style="text-align: center; width:600px;">
-                                        <i class="bi bi-person-lines-fill"></i> Kesesuaian Kegiatan Konstruksi
-                                    </th>
-
                                     <th colspan="2" style="text-align: center; width:450px;">
                                         <i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar
                                     </th>
@@ -221,20 +217,6 @@
 
                                 </tr>
                                 <tr>
-                                    <!-- PJBU Subkolom -->
-                                    <th style="text-align: center;">
-                                        <i class="bi bi-check-circle"></i> Sesuai Jenis
-                                    </th>
-                                    <th style="text-align: center;">
-                                        <i class="bi bi-check-circle"></i> Sesuai Sifat
-                                    </th>
-                                    <th style="text-align: center;">
-                                        <i class="bi bi-check-circle"></i> Sesuai Klasifikasi
-                                    </th>
-                                    <th style="text-align: center;">
-                                        <i class="bi bi-check-circle"></i> Sesuai Layanan
-                                    </th>
-
                                     <!-- Segmentasi Pasar -->
                                     <th style="text-align: center;">
                                         <i class="bi bi-diagram-3-fill"></i> Sesuai Bentuk
@@ -327,7 +309,7 @@
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="/betertibjakonusahasuratpercobaan/create/{{$item->id}}" style="text-decoration: none;">
                                         <button class="button-abuabu">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Percobaan
+                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
                                 </td>
