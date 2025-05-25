@@ -302,16 +302,18 @@
                                 </td>
 
 
-                                {{-- BARU INI --}}
-
-
                                <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
+                                    <a href="{{ url('/betertibjakonusahapemenuhansyarat/index/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-abuabu">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
                                 </td>
+
+
+                                {{-- BARU INI --}}
+
+
 
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">

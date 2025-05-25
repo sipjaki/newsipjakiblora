@@ -6,6 +6,7 @@ use App\Models\penyediastatustertibjakon;
 use App\Models\subklasifikasi;
 use App\Models\surattertibjakonusaha1;
 use App\Models\surattertibjakonusaha2;
+use App\Models\surattertibjakonusaha3;
 use App\Models\tandatangan;
 use App\Models\tertibjakon;
 use App\Models\tertibjakonpemanfaatan;
@@ -1201,5 +1202,46 @@ public function betertibjakonusahasegmentasipasardelete($id)
         'datatertibjasakonstruksinib' => $nib,
     ]);
 }
+
+
+
+
+public function betertibjakonusahapemenuhansyarat($id)
+{
+    // Ambil data tertibjasakonstruksi sesuai $id
+    $datatertibjasakonstruksi = tertibjasakonstruksi::where('id', $id)->first();
+
+    if (!$datatertibjasakonstruksi) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    // Ambil data user saat ini
+    $user = Auth::user();
+
+    // Ambil data subklasifikasi dan tandatangan
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data surat sesuai tertibjasakonstruksi_id dan gunakan paginate
+    $datasurattertibjakonusaha3 = surattertibjakonusaha3::where('tertibjasakonstruksi_id', $id)
+        ->orderBy('created_at', 'desc')
+        ->paginate(50);
+
+    // Kirim semua data ke view
+    return view('backend.06_pengawasan.01_tertibjakonusaha.03_surat3.index', [
+        'title' => 'Berkas Surat Pemenuhan Syarat | Tertib Jakon Usaha ',
+        'data' => $datatertibjasakonstruksi,
+        'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
+        'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id,
+        'datatertibjasakonstruksinib' => $datatertibjasakonstruksi->nib,
+        'user' => $user,
+        'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
+        'datasurat' => $datasurattertibjakonusaha3,
+        'datasurat_id' => $datasurattertibjakonusaha3->first()?->id,
+    ]);
+}
+
 
 }
