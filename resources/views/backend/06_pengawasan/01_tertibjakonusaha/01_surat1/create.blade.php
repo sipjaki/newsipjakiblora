@@ -61,12 +61,12 @@
 
 
                                      @if($datasurat1->id)
-                                          <a href="/betertibjakonusahasurat1/update/{{$datasurat1->id}}">
+                                          {{-- <a href="/betertibjakonusahasurat1/update/{{$datasurat1->id}}">
                                                 <button class="btn-create">
                                                     <i class="bi bi-tools icon-create"></i>
                                                     Perbaikan Data
                                                 </button>
-                                            </a>
+                                            </a> --}}
                                         <button onclick="printModalContent({{ $datasurat1->id }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
@@ -103,7 +103,7 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $datasurat1->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
+                                                        <td>{{ $data->datasurat1->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
