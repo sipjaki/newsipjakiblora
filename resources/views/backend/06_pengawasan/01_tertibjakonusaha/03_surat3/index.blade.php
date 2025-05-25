@@ -166,6 +166,8 @@
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->namabujk }}</td>
 
+                                             {{-- <td style="border: 1px solid #000git ;">{{$item->surattertibjakonusaha3->kesimpulan ?? 'Data Belum Di Buat '}}</td> --}}
+
                                                @php
                                                 $kesesuaian = $item->kesimpulan ?? 'Surat Belum Di Buat';
                                                 $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
