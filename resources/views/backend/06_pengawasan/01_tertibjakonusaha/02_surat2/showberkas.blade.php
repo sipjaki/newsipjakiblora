@@ -588,7 +588,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
     function downloadModalPDF(id) {
-        // Ambil elemen modal berdasarkan ID
         const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
         if (!modalContent) {
@@ -596,19 +595,23 @@
             return;
         }
 
-        // Kloning isi modal agar tidak mengganggu tampilan asli
+        // Kloning isi modal
         const clone = modalContent.cloneNode(true);
 
-        // Styling opsional untuk hasil PDF
-        clone.style.fontSize = '14px';
-        clone.style.padding = '20px';
+        // Bungkus dalam div agar lebih fleksibel stylingnya
+        const wrapper = document.createElement('div');
+        wrapper.style.padding = '20px';
+        wrapper.style.fontSize = '14px';
+        wrapper.style.display = 'block';
+        wrapper.style.margin = '0'; // reset margin
+        wrapper.style.textAlign = 'left';
+        wrapper.style.alignItems = 'flex-start'; // kalau pakai flex di dalam
+        wrapper.appendChild(clone);
 
-        // Format nama file
         const fileName = `Tertibjakonusaha_segmentasipasar_${id}.pdf`;
 
-        // Konversi ke PDF dan download
         html2pdf()
-            .from(clone)
+            .from(wrapper)
             .set({
                 margin: 0.5,
                 filename: fileName,
@@ -619,7 +622,6 @@
             .save();
     }
 </script>
-
 
 
                                         <script>
