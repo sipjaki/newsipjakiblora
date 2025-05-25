@@ -309,45 +309,6 @@
                                             </tr>
 
                                             <tr>
-                                                <td style="width: 300px;">
-                                                    <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
-                                                </td>
-                                         <td>
-                                                @php
-                                                    $status = $datasurat3->statusperizinan ?? null;
-                                                @endphp
-
-                                                @if ($status === 'Terverifikasi')
-                                                    <span class="badge bg-success" style="font-size:16px;">Terverifikasi</span>
-                                                @elseif ($status === 'Tidak Terdaftar')
-                                                    <span class="badge bg-danger" style="font-size:16px;">Tidak Terdaftar</span>
-                                                @elseif ($status === 'Belum Terdaftar')
-                                                    <span class="badge bg-warning text-dark" style="font-size:16px;">Belum Terdaftar</span>
-                                                @else
-                                                    <span class="badge bg-secondary" style="font-size:16px;">-</span>
-                                                @endif
-                                            </td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">No NIB</strong>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        class="form-control @error('nib') is-invalid @enderror"
-                                                        name="nib"
-                                                        placeholder="Masukkan NIB ..."
-                                                        value="{{ old('nib', $datasurat3->nib ?? '') }}" readonly>
-                                                    @error('nib')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-                                            </tr>
-
-                                            <tr>
                                                 <td style="width: 200px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
@@ -376,89 +337,34 @@
                                             </tr>
                                         </table>
 
-                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">No</th>
-                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 400px; font-size:15px;">Nama Paket Pekerjaan</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Jenis Usaha Yang Dipersyaratkan</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Sifat Usaha<br>Yang Dipersyaratkan</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="border: 1px solid #000; text-align: center;">1</td>
-
-                                                  <td style="border: 1px solid #000; width: 400px;">
-                                                    <textarea
-                                                        class="form-control @error('namapaketpekerjaan') is-invalid @enderror"
-                                                        name="namapaketpekerjaan"
-                                                        placeholder="Masukan Nama Pekerjaan ..."
-                                                        rows="6"
-                                                        style="width: 100%; resize: vertical;">{{ old('namapaketpekerjaan', $datasurat3->namapaketpekerjaan ?? 'Data Masih Kosong') }}</textarea>
-
-                                                    @error('namapaketpekerjaan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-
-                                                   <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                        {{ $datasurat3->jenisusaha ?? '-' }}
-                                                    </td>
-
-                                                    <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                        {{ $datasurat3->kesesuaian ?? '-' }}
-                                                    </td>
-
-                                                    <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                        {{ $datasurat3->sifatusaha ?? '-' }}
-                                                    </td>
-
-                                                    <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                        {{ $datasurat3->kesesuaiansbu ?? '-' }}
-                                                    </td>
-
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
-                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Sub Klasifikasi Yang Dipersyaratkan</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Layanan Usaha Yang Dipersyaratkan </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                  <td style="border: 1px solid #000; max-width: 600px; font-size: 16px; height:75px;">
-                                                    {{ $datasurat3 && $datasurat3->subklasifikasi
-                                                        ? Str::limit($datasurat3->subklasifikasi->pekerjaan, 500)
-                                                        : '-'
-                                                    }}
-                                                </td>
-
-
-                                                <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                    {{ $datasurat3->kesesuaianklasifikasi ?? '-' }}
-                                                </td>
-
-                                                <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                    {{ $datasurat3->layananusaha ?? '-' }}
-                                                </td>
-
-                                                <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                    {{ $datasurat3->kesesuaianlayananusaha ?? '-' }}
-                                                </td>
-
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama BUJK</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nomor Induk Berusaha (NIB) </th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">PJBU</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis Usaha</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Klasifikasi/Subklasifikasi</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nomor Sertifikat Standar</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesimpulan Pemeriksaaan</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Catatan Pemeriksa</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="border: 1px solid #000; text-align: center;">1</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->namabujk ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->nib ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->pjbu ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$datasurat3->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
 
                                 </div>
 
