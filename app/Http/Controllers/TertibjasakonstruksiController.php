@@ -895,16 +895,19 @@ public function betertibjakonusahasurat1create(Request $request)
 
             $surat->save();
 
-             session()->flash('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
-            return redirect('/betertibjakonusaha');
+             // Ambil parentId dari object yang sudah disimpan
+                    $parentId = $surat->tertibjasakonstruksi_id;
 
-        } catch (\Exception $e) {
-            return back()->withInput()
-                ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
-        }
+                    session()->flash('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
+                    return redirect()->route('betertibjakonusahasurat1indexsurat', ['id' => $parentId]);
+
+                } catch (\Exception $e) {
+                    return back()->withInput()
+                        ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+                }
     }
 
-
+// saruana
 
  public function betertibjakonusahasuratnewberkas($id)
 {
@@ -961,6 +964,7 @@ public function betertibjakonusahadeletejakonusaha($id)
 
         session()->flash('delete', 'Data Berhasil Dihapus!');
         return redirect()->route('betertibjakonusahasurat1indexsurat', ['id' => $parentId]);
+
     }
 
     session()->flash('error', 'Item tidak ditemukan');
