@@ -148,6 +148,10 @@
                                                 <th style="width: 100px; text-align: center;">
                                                     <i class="bi bi-gear-fill"></i> Aksi
                                                 </th>
+
+                                                <th style="width: 100px; text-align: center;">
+                                                    <i class="bi bi-gear-fill"></i> Aksi
+                                                </th>
                                     </tr>
                                 </thead>
                                 <tbody>
