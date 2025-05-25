@@ -99,14 +99,14 @@
                     </a>
 
 
-                                    @if(empty($data->surattertibjakonusaha1->id))
+                                    {{-- @if(empty($data->surattertibjakonusaha1->id)) --}}
                                         <a href="{{ route('betertibjakonusahasurat1', ['id' => $data->id]) }}">
                                             <button class="btn-create">
                                                 <i class="bi bi-file-earmark-plus icon-create"></i>
                                                 Buat Berkas
                                             </button>
                                         </a>
-                                    @endif
+                                    {{-- @endif --}}
 
                     <a href="{{ url('betertibjakonusahasurat1/createnew/' . $datasurat_id) }}">
                         <button class="btn-create">
