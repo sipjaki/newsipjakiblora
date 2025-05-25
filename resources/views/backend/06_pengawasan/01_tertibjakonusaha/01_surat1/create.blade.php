@@ -170,15 +170,15 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                            <td style="border: 1px solid #000;">{{$datasurat1->namapaketpekerjaan ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$datasurat1->jenisusaha ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat1->kesesuaian ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat1->sifatusaha ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat1->kesesuaiansbu ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$datasurat1->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$datasurat1->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat1->kesesuaianklasifikasi ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$datasurat1->layananusaha ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat1->kesesuaianlayananusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat1->namapaketpekerjaan ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat1->jenisusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center; padding:0 8px;">{{$datasurat1->kesesuaian ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center; padding:0 8px;">{{$datasurat1->sifatusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center; padding:0 8px;">{{$datasurat1->kesesuaiansbu ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat1->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$datasurat1->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center; padding:0 8px;">{{$datasurat1->kesesuaianklasifikasi ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat1->layananusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center; padding:0 8px;">{{$datasurat1->kesesuaianlayananusaha ?? 'Data Belum Di Buat'}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
