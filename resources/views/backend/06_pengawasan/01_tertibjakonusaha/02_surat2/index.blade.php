@@ -112,7 +112,7 @@
                                     {{-- @endif --}}
 
                    @if ($datasurat->isNotEmpty())
-                    <a href="{{ url('betertibjakonusahasurat1/createnew/' . $datasurat_id) }}">
+                    <a href="{{ url('betertibjakonusahasegmentasipasar/show/' . $datasurat_id) }}">
                         <button class="btn-create">
                             <i class="bi bi-file-earmark icon-create"></i> Dokumen
                         </button>
