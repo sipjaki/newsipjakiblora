@@ -155,7 +155,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; margin:0px 3px;">{{$datasurat2->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat2->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->bentuk ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
@@ -479,7 +479,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000;">{{$datasurat2->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat2->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->bentuk ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
