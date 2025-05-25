@@ -243,7 +243,7 @@
 
                                 <!-- Kontainer Kanan -->
                                 <div>
-                                    <a href="javascript:history.back()" class="btn-kembali">
+                                    <a href="javascript:history.back()" class="btn-kembali" style="text-decoration: none;">
                                             <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
                                             Kembali
                                         </a>
