@@ -374,12 +374,12 @@
 
                                                   <td style="border: 1px solid #000; width: 400px;">
                                                     <textarea
-                                                        class="form-control @error('namapaketpekerjaan') is-invalid @enderror"
-                                                        name="namapaketpekerjaan"
-                                                        placeholder="Masukan Nama Pekerjaan ..."
+                                                        class="form-control @error('namabadanusaha') is-invalid @enderror"
+                                                        name="namabadanusaha"
+                                                        placeholder="Masukan Nama Badan Usaha ..."
                                                         rows="6"
-                                                        style="width: 100%; resize: vertical;" readonly>{{ old('namapaketpekerjaan', $datatertibjasakonstruksi ?? 'Data Masih Kosong') }}</textarea>
-                                                    @error('namapaketpekerjaan')
+                                                        style="width: 100%; resize: vertical;" readonly>{{ old('namabadanusaha', $datatertibjasakonstruksinamabadanusaha ?? 'Data Masih Kosong') }}</textarea>
+                                                    @error('namabadanusaha')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </td>
