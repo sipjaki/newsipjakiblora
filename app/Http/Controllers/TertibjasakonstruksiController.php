@@ -998,7 +998,7 @@ public function betertibjakonusahasegmentasipasar($id)
 
     // Kirim semua data ke view
     return view('backend.06_pengawasan.01_tertibjakonusaha.02_surat2.index', [
-        'title' => 'Berkas Surat Segmentasi Pasar | Tertib Jakon Usaha ',
+        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar | Tertib Jakon Usaha ',
         'data' => $datatertibjasakonstruksi,
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
@@ -1037,7 +1037,7 @@ public function betertibjakonusahasegmentasipasar($id)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurattertibjakonusaha2' => $datasurattertibjakonusaha2,
-        'title' => 'Berkas Surat Segmentasi Pasar'
+        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar'
     ]);
 }
 
