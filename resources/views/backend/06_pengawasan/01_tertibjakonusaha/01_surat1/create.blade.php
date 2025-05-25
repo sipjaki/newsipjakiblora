@@ -199,24 +199,24 @@
                                                                                         <table class="table table-sm">
                                                                                             <thead class="table-secondary">
                                                                                                 <tr>
-                                                                                                    <th style="width: 60px; font-size: 12px;" >No</th>
+                                                                                                    <th style="width: 60px; font-size: 12px; text-align: center;" >No</th>
                                                                                                     <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
                                                                                                     <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
                                                                                                 </tr>
                                                                                             </thead>
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <td style="font-size: 12px;">1</td>
+                                                                                                    <td style="font-size: 12px; text-align: center;">1</td>
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td style="font-size: 12px;">2</td>
+                                                                                                    <td style="font-size: 12px; text-align: center;">2</td>
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td style="font-size: 12px;">3</td>
+                                                                                                    <td style="font-size: 12px; text-align: center;">3</td>
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
