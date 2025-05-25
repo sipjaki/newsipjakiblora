@@ -154,9 +154,17 @@
                                 <tbody>
 
                                     @if ($datasurat->isEmpty())
-                                        <tr>
-                                            <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Kesesuaian Kegiatan Konstruksi <strong>Belum Dibuat</strong>!
+                                      <tr>
+                                            <td colspan="100%">
+                                                <div class="flex items-center justify-center p-6 m-2 rounded-xl shadow-lg border border-yellow-300 bg-gradient-to-r from-yellow-50 via-yellow-100 to-yellow-50">
+                                                    <svg class="w-6 h-6 text-yellow-500 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" />
+                                                    </svg>
+                                                    <span class="text-yellow-800 font-semibold text-base">
+                                                        Surat Dukung Kesesuaian Kegiatan Konstruksi <strong class="underline">Belum Dibuat</strong>!
+                                                    </span>
+                                                </div>
                                             </td>
                                         </tr>
                                     @else
