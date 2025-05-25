@@ -337,7 +337,7 @@
                                             </tr>
                                         </table>
 
-                                    <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                    <table style="width: 100%; border-collapse: collapse; font-size: 16px; color: #000;">
                                         <thead>
                                         <tr>
                                           <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
@@ -358,7 +358,7 @@
                                     </table>
                                     <br>
 
-                                    <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                    <table style="width: 100%; border-collapse: collapse; font-size: 16px; color: #000;">
                                         <thead>
                                             <tr>
                                                 <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis Usaha</th>
@@ -374,6 +374,23 @@
                                                 <td style="border: 1px solid #000;">{{$datasurat3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
                                                 <td style="border: 1px solid #000;">{{$datasurat3->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$datasurat3->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                 <td style="border: 1px solid #000;">{{$datasurat3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
+                                                <td style="border: 1px solid #000;">{{$datasurat3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
+                                                <td style="border: 1px solid #000;">{{$datasurat3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <br>
+                                    <table style="width: 100%; border-collapse: collapse; font-size: 16px; color: #000;">
+                                        <thead>
+                                            <tr>
+                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesimpulan Pemeriksaaan</th>
+                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Catatan Pemeriksa</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
                                                 <td style="border: 1px solid #000;">{{$datasurat3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
                                                 <td style="border: 1px solid #000;">{{$datasurat3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
                                             </tr>
