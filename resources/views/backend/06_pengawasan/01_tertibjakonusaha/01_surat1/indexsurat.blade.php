@@ -152,7 +152,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($datasurat as $item )
+
+                                    @forelse ($datasurat as $item)
+                                        {{-- Konten looping untuk setiap item --}}
+                                        <div class="p-4 mb-2 bg-white rounded-xl shadow-md border border-gray-200">
+                                            <div class="text-lg font-semibold text-gray-800">{{ $item->nama_surat }}</div>
+                                            {{-- Tambahkan konten lain sesuai kebutuhan --}}
+                                        </div>
+                                    @empty
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->namapaketpekerjaan }}</td>
@@ -297,7 +304,7 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
+                                        @endforelse
 
                                 </tbody>
                             </table>
