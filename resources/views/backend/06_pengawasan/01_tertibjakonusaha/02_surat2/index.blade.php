@@ -250,7 +250,7 @@
                                          <script>
                                          function setDeleteUrl(button) {
                                              var id = button.getAttribute('data-id');
-                                             var deleteUrl = "{{ route('betertibjakonusahadeletejakonusaha', ':id') }}";
+                                             var deleteUrl = "{{ route('betertibjakonusahadeletesegmentasipasar', ':id') }}";
                                              deleteUrl = deleteUrl.replace(':id', encodeURIComponent(id));
 
                                              document.getElementById('deleteForm').action = deleteUrl;
