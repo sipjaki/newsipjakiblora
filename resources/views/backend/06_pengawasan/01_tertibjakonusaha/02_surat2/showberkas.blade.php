@@ -505,7 +505,7 @@
 
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
                                                                 <div>Kualifikasi</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
+                                                                <div style="font-size: 16px">Yang Dipersyaratkan</div>
                                                             </th>
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
 >
