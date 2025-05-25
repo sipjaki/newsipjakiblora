@@ -166,7 +166,7 @@
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->namabujk }}</td>
 
-                                               @php
+                                            @php
                                                 $kesesuaian = $item->kesimpulan ?? 'Surat Belum Di Buat';
                                                 $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                                                 $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
@@ -183,6 +183,7 @@
                                                     {{ $tertibStatus }}
                                                 </button>
                                             </td>
+
 
                                         <td style="text-align: center;">
                                             <!-- Show Icon -->
