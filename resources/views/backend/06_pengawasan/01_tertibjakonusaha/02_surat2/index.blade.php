@@ -140,17 +140,12 @@
                                                 <th style="width: 400px; text-align: center;">
                                                     <i class="bi bi-file-earmark-text-fill"></i> Nama Pekerjaan
                                                 </th>
+
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Jenis Usaha
+                                                    <i class="bi bi-building-fill"></i> Bentuk | Kesesuaian Dengan SBU
                                                 </th>
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-file-earmark-check-fill"></i> Kesesuaian SBU
-                                                </th>
-                                                <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-file-earmark-code-fill"></i> Kesesuaian SBU Sub Klasifikasi
-                                                </th>
-                                                <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-file-earmark-bar-graph-fill"></i> Kesesuaian SBU Layanan Usaha
+                                                    <i class="bi bi-file-earmark-check-fill"></i> Kualifikasi | Kesesuaian Dengan SBU
                                                 </th>
                                                 <th style="width: 100px; text-align: center;">
                                                     <i class="bi bi-gear-fill"></i> Aksi
