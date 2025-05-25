@@ -535,41 +535,6 @@
                                             </tbody>
                                         </table>
 
-                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Sub Klasifikasi Yang Dipersyaratkan</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Layanan Usaha Yang Dipersyaratkan </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                  <td style="border: 1px solid #000; max-width: 600px; font-size: 16px;">
-                                                    {{ $datasurat2 && $datasurat2->subklasifikasi
-                                                        ? Str::limit($datasurat2->subklasifikasi->pekerjaan, 500)
-                                                        : '-'
-                                                    }}
-                                                </td>
-
-
-                                                <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                    {{ $datasurat2->kesesuaianklasifikasi ?? '-' }}
-                                                </td>
-
-                                                <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                    {{ $datasurat2->layananusaha ?? '-' }}
-                                                </td>
-
-                                                <td style="border: 1px solid #000; font-size: 16px; text-align:center;">
-                                                    {{ $datasurat2->kesesuaianlayananusaha ?? '-' }}
-                                                </td>
-
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
 
                                 </div>
 
@@ -682,7 +647,7 @@
         clone.style.padding = '20px';
 
         // Format nama file
-        const fileName = `Tertibjakonusaha_kesesuaiankegiatankonstruksi_${id}.pdf`;
+        const fileName = `Tertibjakonusaha_segmentasipasar_${id}.pdf`;
 
         // Konversi ke PDF dan download
         html2pdf()
