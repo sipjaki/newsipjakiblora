@@ -369,7 +369,7 @@
                                         <tbody>
 
                                             <tr>
-                                                <td style="border: 1px solid #000; height:75px;">{{$datasurat3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
+                                                <td style="border: 1px solid #000; height:75px; padding:0 8px;">{{$datasurat3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
                                                 <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$datasurat3->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                 <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
                                             </tr>
