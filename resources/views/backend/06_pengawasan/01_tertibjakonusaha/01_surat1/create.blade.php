@@ -262,12 +262,21 @@
     </tr>
   </thead>
 <tbody>
-    <tr>
-    <td colspan="2">Sesuai Jenis</td>
-    <td colspan="2">Sesuai Sifat</td>
-    <td colspan="2">Sesuai Klasifikasi</td>
-    <td colspan="2">Sesuai Layanan</td>
+   <tr style="text-align: center; color: navy; font-weight: bold;">
+    <td colspan="2">
+        <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Sesuai Jenis
+    </td>
+    <td colspan="2">
+        <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Sesuai Sifat
+    </td>
+    <td colspan="2">
+        <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Sesuai Klasifikasi
+    </td>
+    <td colspan="2">
+        <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Sesuai Layanan
+    </td>
 </tr>
+
 <tr>
     @php
         $kesesuaian = $datasurat1->kesesuaian ?? 'Surat Belum Di Buat';
