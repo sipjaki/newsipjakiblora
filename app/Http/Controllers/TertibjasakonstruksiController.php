@@ -1108,7 +1108,7 @@ public function betertibjakonusahasegmentasipasar($id)
 
         try {
             // Buat record baru
-            $surat = new surattertibjakonusaha1();
+            $surat = new surattertibjakonusaha2();
             $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'];
             $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
             $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
