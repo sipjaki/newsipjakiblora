@@ -357,6 +357,7 @@
                                         </tbody>
                                     </table>
                                     <br>
+
                                     <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
                                         <thead>
                                             <tr>
@@ -377,6 +378,7 @@
                                                 <td style="border: 1px solid #000;">{{$datasurat3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
                                             </tr>
                                         </tbody>
+                                    </table>
                                     </div>
 
                                 <div class="container" style="margin-top: 10px;">
