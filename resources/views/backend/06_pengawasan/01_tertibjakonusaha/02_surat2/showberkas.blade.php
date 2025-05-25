@@ -486,7 +486,7 @@
                                             </tr>
                                         </table>
 
-                                      <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                                 <table style="width: 100%; border-collapse: collapse; font-size: 16px; color: #000;">
                                                     <thead>
                                                         <tr>
                                                             <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
@@ -499,7 +499,7 @@
                                                         <tr>
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
                                                                 <div>Bentuk</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
+                                                                <div style="font-size: 16px">Yang Dipersyaratkan</div>
                                                             </th>
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
 
