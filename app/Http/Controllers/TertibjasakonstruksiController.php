@@ -1173,7 +1173,6 @@ public function betertibjakonusahasegmentasipasardelete($id)
 
     // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
     $datatertib = $datasurat2->tertibjasakonstruksi;
-    $listnamapekerjaan = $datasurat2->namapekerjaan;
 
     // Ambil user
     $user = Auth::user();
@@ -1183,7 +1182,7 @@ public function betertibjakonusahasegmentasipasardelete($id)
     $datatandatangan = tandatangan::all();
 
     // Jika relasi null, buat default kosong agar tidak error di view
-    $namapekerjaan = $datatertib->namapekerjaan ?? 'Data pekerjaan tidak ditemukan';
+    $namapekerjaan = $datatertib->namapaketpekerjaan ?? 'Data pekerjaan tidak ditemukan';
     $namabadanusaha = $datatertib->namabadanusaha ?? '-';
     $idtertib = $datatertib->id ?? null;
     $nib = $datatertib->nib ?? '-';
@@ -1196,7 +1195,7 @@ public function betertibjakonusahasegmentasipasardelete($id)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurat2' => $datasurat2,
-        'datatertibjasakonstruksi' => $listnamapekerjaan,
+        'datatertibjasakonstruksi' => $namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $namabadanusaha,
         'datatertibjasakonstruksi_id' => $idtertib,
         'datatertibjasakonstruksinib' => $nib,
