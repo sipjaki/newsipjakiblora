@@ -1018,9 +1018,9 @@ Route::delete('/betertibjakonusahadel/delete/{id}', [TertibjasakonstruksiControl
 Route::get('/betertibjakonusahasurat1/create/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1');
 
 Route::get('/betertibjakonusahasuratpercobaan/create/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasuratpercobaan'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1indexsurat');
-Route::get('/betertibjakonusahasurat1/createnew/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasuratnewberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1new');
+Route::get('/betertibjakonusahasurat1/createnew/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasuratnewberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1');
 // Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1create'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1create');
-Route::get('/betertibjakonusahasurat1/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1createnew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1');
+Route::get('/betertibjakonusahasurat1/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1createnew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1newberkas');
 Route::post('/betertibjakonusahasurat1/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1createnewsurat'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1createnewsurat');
 
 Route::get('/betertibjakonusahasurat1/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1updatenew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1updatenew');
