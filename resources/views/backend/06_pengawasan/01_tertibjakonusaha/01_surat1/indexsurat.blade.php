@@ -108,11 +108,14 @@
                                         </a>
                                     {{-- @endif --}}
 
+                   @if ($datasurat->isNotEmpty())
                     <a href="{{ url('betertibjakonusahasurat1/createnew/' . $datasurat_id) }}">
                         <button class="btn-create">
                             <i class="bi bi-file-earmark icon-create"></i> Dokumen
                         </button>
                     </a>
+                @endif
+
 
                 <button class="btn-create">
                     <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
@@ -154,13 +157,9 @@
                                 <tbody>
 
                                     @if ($datasurat->isEmpty())
-                                      <tr>
-                                            <td colspan="100%">
-                                                <div class="flex items-center justify-center p-6 m-2 rounded-xl shadow-lg border border-yellow-300 bg-gradient-to-r from-yellow-50 via-yellow-100 to-yellow-50">
-                                                    <span class="text-yellow-800 font-semibold text-base">
-                                                        Surat Dukung Kesesuaian Kegiatan Konstruksi <strong class="underline">Belum Dibuat</strong>!
-                                                    </span>
-                                                </div>
+                                        <tr>
+                                            <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
+                                                Surat Dukung Kesesuaian Kegiatan Konstruksi <strong>Belum Dibuat</strong>!
                                             </td>
                                         </tr>
                                     @else
