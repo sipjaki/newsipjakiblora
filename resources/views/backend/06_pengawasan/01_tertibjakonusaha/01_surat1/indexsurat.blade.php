@@ -153,13 +153,16 @@
                                 </thead>
                                 <tbody>
 
-                                    @forelse ($datasurat as $item)
-                                        {{-- Konten looping untuk setiap item --}}
-                                        <div class="p-4 mb-2 bg-white rounded-xl shadow-md border border-gray-200">
-                                            <div class="text-lg font-semibold text-gray-800">{{ $item->nama_surat }}</div>
-                                            {{-- Tambahkan konten lain sesuai kebutuhan --}}
-                                        </div>
-                                    @empty
+                                    @if ($datasurat->isEmpty())
+                                        <tr>
+                                            <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
+                                                Surat Dukung Kesesuaian Kegiatan Konstruksi <strong>Belum Dibuat</strong>!
+                                            </td>
+                                        </tr>
+                                    @else
+
+
+                                @foreach ($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->namapaketpekerjaan }}</td>
@@ -304,7 +307,8 @@
                                         </td>
 
                                     </tr>
-                                        @endforelse
+                                        @endforeach
+                                        @endif
 
                                 </tbody>
                             </table>
