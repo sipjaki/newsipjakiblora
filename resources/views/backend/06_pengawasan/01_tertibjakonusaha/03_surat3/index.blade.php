@@ -155,7 +155,7 @@
                                     @if ($datasurat->isEmpty())
                                         <tr>
                                             <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Segmentasi Pasar <strong>Belum Dibuat</strong>!
+                                                Surat Dukung Pemenuhan Syarat <strong>Belum Dibuat</strong>!
                                             </td>
                                         </tr>
                                     @else
