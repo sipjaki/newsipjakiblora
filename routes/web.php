@@ -1039,6 +1039,8 @@ Route::get('/betertibjakonusahasegmentasipasar/show/{id}', [Tertibjasakonstruksi
 Route::get('/betertibjakonusahapemenuhansyarat/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyarat'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapemenuhansyaratindex');
 Route::get('/betertibjakonusahapemenuhansyarat/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratshow'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapemenuhansyaratshow');
 
+Route::get('/betertibjakonusahapemenuhansyarat/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratcreateberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapemenuhansyaratcreateberkas');
+
 
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------
 Route::get('/beshstkabblora', [ShstbloraController::class, 'beshstkabblora'])->middleware(['auth', 'can:super_admin'])->name('beshstkabblora');

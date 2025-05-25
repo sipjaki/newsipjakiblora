@@ -1283,4 +1283,32 @@ public function betertibjakonusahapemenuhansyarat($id)
 
 
 
+  public function betertibjakonusahapemenuhansyaratcreateberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjasakonstruksi = tertibjasakonstruksi::with('surattertibjakonusaha3')->findOrFail($id);
+
+    $user = Auth::user();
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakonusaha3 = $datatertibjasakonstruksi->surattertibjakonusaha3;
+
+    return view('backend.06_pengawasan.01_tertibjakonusaha.03_surat3.buatberkasbaru', [
+        'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
+        'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id,
+        'datatertibjasakonstruksinib' => $datatertibjasakonstruksi->nib,
+        'user' => $user,
+        'data' => $datatertibjasakonstruksi,
+        'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
+        'datasurattertibjakonusaha2' => $datasurattertibjakonusaha3,
+        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar'
+    ]);
+}
+
+
+
 }
