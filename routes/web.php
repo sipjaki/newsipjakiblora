@@ -1037,6 +1037,7 @@ Route::get('/betertibjakonusahasegmentasipasar/show/{id}', [Tertibjasakonstruksi
 
 // SURAT DUKUNG TERTIB JAKON USAHA SURAT 3 PEMENUHAN SYARAT
 Route::get('/betertibjakonusahapemenuhansyarat/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyarat'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapemenuhansyaratindex');
+Route::get('/betertibjakonusahapemenuhansyarat/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratshow'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapemenuhansyaratshow');
 
 
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------

@@ -1244,4 +1244,43 @@ public function betertibjakonusahapemenuhansyarat($id)
 }
 
 
+
+ public function betertibjakonusahapemenuhansyaratshow($id)
+{
+    // Ambil data surat dengan relasi tertibjasakonstruksi
+    $datasurat3 = surattertibjakonusaha3::with('tertibjasakonstruksi')->findOrFail($id);
+
+    // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
+    $datatertib = $datasurat3->tertibjasakonstruksi;
+
+    // Ambil user
+    $user = Auth::user();
+
+    // Ambil data subklasifikasi dan tandatangan
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
+
+    // Jika relasi null, buat default kosong agar tidak error di view
+    $namapekerjaan = $datasurat3->namabujk ?? 'Data pekerjaan tidak ditemukan';
+    $namabadanusaha = $datatertib->namabadanusaha ?? '-';
+    $idtertib = $datatertib->id ?? null;
+    $nib = $datatertib->nib ?? '-';
+
+    // Kirim data ke view
+    return view('backend.06_pengawasan.01_tertibjakonusaha.03_surat3.showberkas', [
+        'title' => 'Berkas Surat Pemenuhan Syarat ',
+        'data' => $datatertib,
+        'user' => $user,
+        'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
+        'datasurat3' => $datasurat3,
+        'datatertibjasakonstruksi' => $namapekerjaan,
+        'datatertibjasakonstruksinamabadanusaha' => $namabadanusaha,
+        'datatertibjasakonstruksi_id' => $idtertib,
+        'datatertibjasakonstruksinib' => $nib,
+    ]);
+}
+
+
+
 }
