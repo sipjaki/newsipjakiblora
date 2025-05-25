@@ -142,11 +142,9 @@
                                                 </th>
 
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Bentuk | Kesesuaian Dengan SBU
+                                                    <i class="bi bi-building-fill"></i> Kesimpulan Pemenuhan Syarat
                                                 </th>
-                                                <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-file-earmark-check-fill"></i> Kualifikasi | Kesesuaian Dengan SBU
-                                                </th>
+
                                                 <th style="width: 100px; text-align: center;">
                                                     <i class="bi bi-gear-fill"></i> Aksi
                                                 </th>
@@ -166,10 +164,10 @@
                                 @foreach ($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->namapaketpekerjaan }}</td>
+                                        <td style="text-align: left;">{{ $item->tertibjasakonstruksi->namapekerjaan }}</td>
 
                                                @php
-                                                $kesesuaian = $item->kesesuaiansbu ?? 'Surat Belum Di Buat';
+                                                $kesesuaian = $item->kesimpulan ?? 'Surat Belum Di Buat';
                                                 $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                                                 $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
                                                 $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -185,26 +183,6 @@
                                                     {{ $tertibStatus }}
                                                 </button>
                                             </td>
-
-
-                          @php
-                          $kesesuaian = $item->sbu ?? 'Surat Belum Di Buat';
-                          $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-                          $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-                          $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-                      @endphp
-
-                      <td style="text-align: center;">
-                          <button
-                              style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                              onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-                          >
-                              <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                              {{ $tertibStatus }}
-                          </button>
-                      </td>
-
 
                                         <td style="text-align: center;">
                                             <!-- Show Icon -->
