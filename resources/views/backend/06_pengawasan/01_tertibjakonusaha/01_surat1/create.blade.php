@@ -287,17 +287,60 @@
         </button>
     </td>
 
-    <td colspan="2" style="text-align: center;">
-        <i class="bi bi-check-circle text-success"></i>
-    </td>
+@php
+        $kesesuaian = $datasurat1->kesesuaiansbu ?? 'Surat Belum Di Buat';
+        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+    @endphp
 
     <td colspan="2" style="text-align: center;">
-        <i class="bi bi-check-circle text-success"></i> Tertib
+        <button
+            style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+        >
+            <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+            {{ $tertibStatus }}
+        </button>
     </td>
 
+@php
+        $kesesuaian = $datasurat1->kesesuaianklasifikasi ?? 'Surat Belum Di Buat';
+        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+    @endphp
+
     <td colspan="2" style="text-align: center;">
-        <i class="bi bi-check-circle text-success"></i> Tertib
+        <button
+            style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+        >
+            <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+            {{ $tertibStatus }}
+        </button>
     </td>
+
+@php
+        $kesesuaian = $datasurat1->kesesuaianlayananusaha ?? 'Surat Belum Di Buat';
+        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+    @endphp
+
+    <td colspan="2" style="text-align: center;">
+        <button
+            style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+        >
+            <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+            {{ $tertibStatus }}
+        </button>
+    </td>
+
 </tr>
 
 </tbody>
