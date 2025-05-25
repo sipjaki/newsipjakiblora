@@ -53,7 +53,7 @@
                                     <!-- Tombol Nama Pekerjaan -->
                                     <button class="btn-create">
                                         <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
-                                        Nama Pekerjaan: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
+                                        Nama Badan Usaha: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
                                     </button>
 
 
@@ -364,8 +364,6 @@
                                                 <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis Usaha</th>
                                                 <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Klasifikasi/Subklasifikasi</th>
                                                 <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nomor Sertifikat Standar</th>
-                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesimpulan Pemeriksaaan</th>
-                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Catatan Pemeriksa</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -374,8 +372,6 @@
                                                 <td style="border: 1px solid #000;">{{$datasurat3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
                                                 <td style="border: 1px solid #000;">{{$datasurat3->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$datasurat3->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                 <td style="border: 1px solid #000;">{{$datasurat3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
-                                                <td style="border: 1px solid #000;">{{$datasurat3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
-                                                <td style="border: 1px solid #000;">{{$datasurat3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
