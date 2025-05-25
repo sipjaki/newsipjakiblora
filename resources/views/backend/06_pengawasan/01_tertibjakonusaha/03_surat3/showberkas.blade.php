@@ -103,16 +103,16 @@
                                                                             <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                                                 <tr>
                                                                                     <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                                                    <td>{{ $item->surattertibjakonusaha3->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
+                                                                                    <td>{{ $datasurat3->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
                                                                                 </tr>
 
                                                                                 <tr>
                                                                                     <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
                                                                                     <td>
-                                                                                        @if ($item->surattertibjakonusaha3 && $item->surattertibjakonusaha3->waktupengawasan && $item->surattertibjakonusaha3->waktupengawasanselesai)
-                                                                                            {{ \Carbon\Carbon::parse($item->surattertibjakonusaha3->waktupengawasan)->isoFormat('D MMMM YYYY') }}
+                                                                                        @if ($datasurat3 && $datasurat3->waktupengawasan && $datasurat3->waktupengawasanselesai)
+                                                                                            {{ \Carbon\Carbon::parse($datasurat3->waktupengawasan)->isoFormat('D MMMM YYYY') }}
                                                                                             –
-                                                                                            {{ \Carbon\Carbon::parse($item->surattertibjakonusaha3->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
+                                                                                            {{ \Carbon\Carbon::parse($datasurat3->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
                                                                                         @else
                                                                                             <span class="text-muted">Belum Di Buat</span>
                                                                                         @endif
@@ -139,14 +139,14 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->namabujk ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nib ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->pjbu ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$item->surattertibjakonusaha3->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->namabujk ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->nib ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->pjbu ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$datasurat3->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                             </table>
