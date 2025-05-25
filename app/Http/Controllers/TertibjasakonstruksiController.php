@@ -960,7 +960,7 @@ public function betertibjakonusahadeletejakonusaha($id)
         $entry->delete();
 
         session()->flash('delete', 'Data Berhasil Dihapus!');
-        return redirect()->route('betertibjakonusahasurat1', ['id' => $parentId]);
+        return redirect()->route('betertibjakonusahasurat1indexsurat', ['id' => $parentId]);
     }
 
     session()->flash('error', 'Item tidak ditemukan');
