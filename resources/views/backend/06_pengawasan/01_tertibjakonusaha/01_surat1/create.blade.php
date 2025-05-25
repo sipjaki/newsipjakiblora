@@ -518,7 +518,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                  <td style="border: 1px solid #000; max-width: 600px; font-size: 16px;">
+                                                  <td style="border: 1px solid #000; max-width: 600px; font-size: 16px; height:75px;">
                                                     {{ $datasurat1 && $datasurat1->subklasifikasi
                                                         ? Str::limit($datasurat1->subklasifikasi->pekerjaan, 500)
                                                         : '-'
