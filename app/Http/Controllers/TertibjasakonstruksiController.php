@@ -926,7 +926,7 @@ public function betertibjakonusahasurat1create(Request $request)
     $datatandatangan = tandatangan::all();
 
     // Jika relasi null, buat default kosong agar tidak error di view
-    $namapekerjaan = $datatertib->namapekerjaan ?? 'Data pekerjaan tidak ditemukan';
+    $namapekerjaan = $datasurat1->namapaketpekerjaan ?? 'Data pekerjaan tidak ditemukan';
     $namabadanusaha = $datatertib->namabadanusaha ?? '-';
     $idtertib = $datatertib->id ?? null;
     $nib = $datatertib->nib ?? '-';
