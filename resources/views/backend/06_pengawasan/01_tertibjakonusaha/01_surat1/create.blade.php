@@ -103,19 +103,19 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $datasurat1->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
+                                                        <td style="padding:0 8px;">{{ $datasurat1->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
-                                                        <td>{{ $datasurat1->statusperizinan ?? 'Data Belum Di Buat' }}</td>
+                                                        <td style="padding:0 8px;">{{ $datasurat1->statusperizinan ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>No NIB</strong></td>
-                                                        <td>{{ $datasurat1->nib ?? 'Data Belum Di Buat' }}</td>
+                                                        <td style="padding:0 8px;">{{ $datasurat1->nib ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                    <td>
+                                                    <td style="padding:0 8px;">
                                                         @if ($datasurat1 && $datasurat1->waktupengawasan && $datasurat1->waktupengawasanselesai)
                                                             {{ \Carbon\Carbon::parse($datasurat1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
                                                             –
@@ -527,7 +527,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                  <td style="border: 1px solid #000; max-width: 600px; font-size: 16px; height:75px;">
+                                                  <td style="border: 1px solid #000; max-width: 600px; font-size: 16px; height:75px; padding:0 8px;">
                                                     {{ $datasurat1 && $datasurat1->subklasifikasi
                                                         ? Str::limit($datasurat1->subklasifikasi->pekerjaan, 500)
                                                         : '-'
