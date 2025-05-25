@@ -13,10 +13,10 @@ class surattertibjakonusaha3 extends Model
 
     protected $guarded = ['id'];
 
-    public function tertibjasakonstruksi()
-    {
-        return $this->hasOne(tertibjasakonstruksi::class, 'tertibjasakonstruksi_id');
-    }
+      public function tertibjasakonstruksi()
+            {
+                return $this->hasOne(tertibjasakonstruksi::class, 'surattertibjakonusaha1_id')->oldest();
+            }
 
     public function tandatangan1()
     {
