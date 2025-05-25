@@ -57,7 +57,7 @@
                                     </button>
 
                                     <!-- Tombol Badan Usaha -->
-                                    {{-- <a href="/404">
+                                 <a href="/404">
                                         <button class="btn-create">
                                             <i class="bi bi-tools icon-create"></i>
                                             Perbaikan Data
@@ -75,7 +75,7 @@
                                             data-bs-toggle="modal" data-bs-target="#modalSurat2{{ $data->id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
-                                        </button> --}}
+                                        </button>
 
                                 <div class="modal fade" id="modalSurat2{{ $data->id }}" tabindex="-1" aria-labelledby="modalSurat2Label{{ $data->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
