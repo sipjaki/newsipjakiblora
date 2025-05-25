@@ -383,7 +383,7 @@
                                                         class="form-control @error('namabadanusaha') is-invalid @enderror"
                                                         name="namabadanusaha"
                                                         placeholder="Masukan Nama Badan Usaha ..."
-                                                        value="{{ old('namabadanusaha', $datatertibjasakonstruksinamabadanusaha ?? '') }}" readonly>
+                                                        value="{{ old('namabadanusaha', $datasurat1->namabadanusaha ?? '') }}" readonly>
 
                                                     @error('namabadanusaha')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -397,7 +397,7 @@
                                                 </td>
                                          <td>
                                                 @php
-                                                    $status = $data->surattertibjakonusaha1->statusperizinan ?? null;
+                                                    $status = $datasurat1->statusperizinan ?? null;
                                                 @endphp
 
                                                 @if ($status === 'Terverifikasi')
@@ -423,7 +423,7 @@
                                                         class="form-control @error('nib') is-invalid @enderror"
                                                         name="nib"
                                                         placeholder="Masukkan NIB ..."
-                                                        value="{{ old('nib', $datatertibjasakonstruksinib ?? '') }}" readonly>
+                                                        value="{{ old('nib', $datasurat1->nib ?? '') }}" readonly>
                                                     @error('nib')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
