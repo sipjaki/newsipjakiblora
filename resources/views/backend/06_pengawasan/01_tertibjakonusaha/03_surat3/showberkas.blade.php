@@ -120,7 +120,7 @@
 
                                                                                 </tr>
                                                                             </table>
-
+                                                                            <br>
                                                                             {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
                                                                             <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
                                                                                 <thead>
@@ -139,14 +139,14 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->namabujk ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->nib ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->pjbu ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$datasurat3->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$datasurat3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->namabujk ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->nib ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->pjbu ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$datasurat3->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000; padding:0 8px;">{{$datasurat3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                             </table>
