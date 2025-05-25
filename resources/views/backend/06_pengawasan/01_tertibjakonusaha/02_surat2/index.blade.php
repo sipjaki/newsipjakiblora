@@ -101,7 +101,7 @@
 
                                     {{-- @if(empty($data->surattertibjakonusaha1->id)) --}}
                                    @if ($datasurat->isEmpty())
-                                        <a href="{{ route('betertibjakonusahasurat1newberkas', ['id' => $data->id]) }}">
+                                        <a href="{{ route('betertibjakonusahasegmentasipasarberkas', ['id' => $data->id]) }}">
                                             <button class="btn-create">
                                                 <i class="bi bi-file-earmark-plus icon-create"></i>
                                                 Buat Berkas
@@ -157,7 +157,7 @@
                                     @if ($datasurat->isEmpty())
                                         <tr>
                                             <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Kesesuaian Kegiatan Konstruksi <strong>Belum Dibuat</strong>!
+                                                Surat Dukung Segmentasi Pasar <strong>Belum Dibuat</strong>!
                                             </td>
                                         </tr>
                                     @else

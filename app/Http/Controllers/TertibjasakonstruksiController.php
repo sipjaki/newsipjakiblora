@@ -1013,4 +1013,33 @@ public function betertibjakonusahasegmentasipasar($id)
 }
 
 
+
+
+  public function betertibjakonusahasegmentasipasarcreateberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjasakonstruksi = tertibjasakonstruksi::with('surattertibjakonusaha2')->findOrFail($id);
+
+    $user = Auth::user();
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakonusaha2 = $datatertibjasakonstruksi->surattertibjakonusaha2;
+
+    return view('backend.06_pengawasan.01_tertibjakonusaha.02_surat2.buatberkasbaru', [
+        'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
+        'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id,
+        'datatertibjasakonstruksinib' => $datatertibjasakonstruksi->nib,
+        'user' => $user,
+        'data' => $datatertibjasakonstruksi,
+        'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
+        'datasurattertibjakonusaha2' => $datasurattertibjakonusaha2,
+        'title' => 'Berkas Surat Segmentasi Pasar'
+    ]);
+}
+
+
 }
