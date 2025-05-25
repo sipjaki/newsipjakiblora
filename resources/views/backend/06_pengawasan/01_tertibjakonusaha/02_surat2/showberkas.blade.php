@@ -288,8 +288,12 @@
   </thead>
 <tbody>
     <tr>
-    <td colspan="2">Kesesuaian Bentuk SBU</td>
-    <td colspan="2">Kesesuaian Layanan SBU</td>
+        <td colspan="2" style="text-align: center;">
+            <i class="bi bi-check2-square"></i> Kesesuaian Bentuk SBU
+        </td>
+        <td colspan="2" style="text-align: center;">
+            <i class="bi bi-diagram-3"></i> Kesesuaian Layanan SBU
+        </td>
 </tr>
 
 <tr>
