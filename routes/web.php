@@ -1026,6 +1026,10 @@ Route::post('/betertibjakonusahasurat1/createberkasnew', [TertibjasakonstruksiCo
 Route::get('/betertibjakonusahasurat1/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1updatenew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1updatenew');
 
 
+// SURAT DUKUNG TERTIB JAKON USAHA SEGMENTASI PASAR
+Route::get('/betertibjakonusahasegmentasipasar/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasar'])->middleware(['auth', 'can:super_admin']);
+
+
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------
 Route::get('/beshstkabblora', [ShstbloraController::class, 'beshstkabblora'])->middleware(['auth', 'can:super_admin'])->name('beshstkabblora');
 Route::get('/beshstkabblora/update/{id}', [ShstbloraController::class, 'beshstkabbloraupdate'])->middleware(['auth', 'can:super_admin'])->name('beshstkabbloraupdate');

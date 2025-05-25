@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\penyediastatustertibjakon;
 use App\Models\subklasifikasi;
 use App\Models\surattertibjakonusaha1;
+use App\Models\surattertibjakonusaha2;
 use App\Models\tandatangan;
 use App\Models\tertibjakon;
 use App\Models\tertibjakonpemanfaatan;
@@ -969,6 +970,46 @@ public function betertibjakonusahadeletejakonusaha($id)
 
     session()->flash('error', 'Item tidak ditemukan');
     return redirect()->back();
+}
+
+// SURAT TERTIB JAKON USAHA SEGMENTASI PASAR SUARAT 2
+
+
+public function betertibjakonusahasegmentasipasar($id)
+{
+    // Ambil data tertibjasakonstruksi sesuai $id
+    $datatertibjasakonstruksi = tertibjasakonstruksi::where('id', $id)->first();
+
+    if (!$datatertibjasakonstruksi) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    // Ambil data user saat ini
+    $user = Auth::user();
+
+    // Ambil data subklasifikasi dan tandatangan
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data surat sesuai tertibjasakonstruksi_id dan gunakan paginate
+    $datasurattertibjakonusaha2 = surattertibjakonusaha2::where('tertibjasakonstruksi_id', $id)
+        ->orderBy('created_at', 'desc')
+        ->paginate(50);
+
+    // Kirim semua data ke view
+    return view('backend.06_pengawasan.01_tertibjakonusaha.02_surat2.index', [
+        'title' => 'Berkas Surat Segmentasi Pasar | Tertib Jakon Usaha ',
+        'data' => $datatertibjasakonstruksi,
+        'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
+        'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id,
+        'datatertibjasakonstruksinib' => $datatertibjasakonstruksi->nib,
+        'user' => $user,
+        'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
+        'datasurat' => $datasurattertibjakonusaha2,
+        'datasurat_id' => $datasurattertibjakonusaha2->first()?->id,
+    ]);
 }
 
 
