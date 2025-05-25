@@ -148,10 +148,6 @@
                                                 <th style="width: 100px; text-align: center;">
                                                     <i class="bi bi-gear-fill"></i> Aksi
                                                 </th>
-
-                                                <th style="width: 100px; text-align: center;">
-                                                    <i class="bi bi-gear-fill"></i> Aksi
-                                                </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -172,9 +168,9 @@
 
                                             @php
                                                 $kesesuaian = $item->kesimpulan ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+                                                $tertibStatus = $kesesuaian === 'Tertib' ? 'TERTIB' : 'BELUM TERTIB';
+                                                $color = $kesesuaian === 'Tertib' ? 'blue' : 'red';
+                                                $icon = $kesesuaian === 'Tertib' ? 'bi-check-circle' : 'bi-x-circle';
                                             @endphp
 
                                             <td style="text-align: center;">
