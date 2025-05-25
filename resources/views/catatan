@@ -1683,3 +1683,18 @@ if ($request->hasFile('sertifikat')) {
                                     </div>
                                 </div>
                             </td>
+
+
+
+
+
+                                                    <td style="border: 1px solid #000;">
+                                                        <select class="form-control @error('kesesuaiansbu') is-invalid @enderror" name="kesesuaiansbu">
+                                                            <option value="">-- Pilih Kesesuaian SBU --</option>
+                                                            <option value="Sesuai" {{ old('kesesuaiansbu') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+                                                            <option value="Tidak Sesuai" {{ old('kesesuaiansbu') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+                                                        </select>
+                                                        @error('kesesuaiansbu')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
+                                                    </td>
