@@ -315,7 +315,7 @@
                                     </div>
                                     <br>
                                     <div class="modal-body">
-                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
+                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Pemenuhan Persyaratan Usaha Jasa Konstruksi Secara Rutin </h5>
                                             <br>
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                             <tr>
@@ -331,40 +331,6 @@
                                                         value="{{ old('namabadanusaha', $datatertibjasakonstruksinamabadanusaha ?? '') }}" readonly>
 
                                                     @error('namabadanusaha')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 300px;">
-                                                    <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
-                                                </td>
-                                                <td>
-                                                    <select class="form-control @error('statusperizinan') is-invalid @enderror" name="statusperizinan">
-                                                        <option value="">-- Pilih Status --</option>
-                                                        <option value="Terverifikasi" {{ old('statusperizinan') == 'Terverifikasi' ? 'selected' : '' }}>Terverifikasi</option>
-                                                        <option value="Tidak Terdaftar" {{ old('statusperizinan') == 'Tidak Terdaftar' ? 'selected' : '' }}>Tidak Terdaftar</option>
-                                                        {{-- <option value="Tidak Terdaftar" {{ old('statusperizinan') == 'Kadaluarsa' ? 'selected' : '' }}>Tidak Terdaftar</option> --}}
-                                                    </select>
-                                                    @error('statusperizinan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">No NIB</strong>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        class="form-control @error('nib') is-invalid @enderror"
-                                                        name="nib"
-                                                        placeholder="Masukkan NIB ..."
-                                                        value="{{ old('nib', $datatertibjasakonstruksinib ?? '') }}" readonly>
-                                                    @error('nib')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </td>
@@ -388,6 +354,7 @@
                                                     @enderror
                                                 </td>
                                             </tr>
+
                                         </table>
 
                                         <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px;">

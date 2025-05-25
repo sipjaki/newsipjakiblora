@@ -299,7 +299,7 @@
                                     </div>
                                     <br>
                                     <div class="modal-body">
-                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
+                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Kesesuaian Bentuk dan Kualifikasi Usaha dengan Kegiatan Usaha Jasa Konstruksi dan Segmentasi Pasar Jasa Konstruksi Secara Rutin</h5>
                                             <br>
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                             <tr>
