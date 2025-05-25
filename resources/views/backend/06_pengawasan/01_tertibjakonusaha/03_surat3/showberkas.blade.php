@@ -256,9 +256,11 @@
      <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 50%; margin: auto; font-family: Arial, sans-serif;">
   <thead>
     <tr>
-      <th colspan="8" style="text-align: center; border-bottom: 4px solid black; font-weight: bold;">
-        Kesesuaian Pemenuhan Syarat Kegiatan Konstruksi
-      </th>
+        <th colspan="8" style="text-align: center; border-bottom: 4px solid black; font-weight: bold; color: navy;">
+            <i class="bi bi-check2-circle" style="margin-right: 8px;"></i>
+            Kesesuaian Pemenuhan Syarat Kegiatan Konstruksi
+        </th>
+
     </tr>
   </thead>
 <tbody>
