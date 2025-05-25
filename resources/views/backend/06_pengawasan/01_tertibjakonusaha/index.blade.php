@@ -182,10 +182,6 @@
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
-                                    <th colspan="2" style="text-align: center; width:450px;">
-                                        <i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar
-                                    </th>
-
                                     <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
                                         <i class="bi bi-gear-fill"></i> Pemenuhan Syarat
                                     </th>
@@ -212,16 +208,7 @@
 
 
                                 </tr>
-                                <tr>
-                                    <!-- Segmentasi Pasar -->
-                                    <th style="text-align: center;">
-                                        <i class="bi bi-diagram-3-fill"></i> Sesuai Bentuk
-                                    </th>
-                                    <th style="text-align: center;">
-                                        <i class="bi bi-bar-chart-line-fill"></i> Sesuai Kualifikasi
-                                    </th>
 
-                                </tr>
                             </thead>
 
                           <tbody>
@@ -337,41 +324,6 @@
                                         </button>
                                     </a>
                                 </td>
-              @php
-              $kesesuaian = $item->surattertibjakonusaha2->kesesuaiansbu ?? 'Surat Belum Di Buat';
-              $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-              $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-              $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-          @endphp
-
-          <td style="text-align: center;">
-              <button
-                  style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-                  onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                  onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-              >
-                  <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                  {{ $tertibStatus }}
-              </button>
-          </td>
-
-          @php
-          $kesesuaian = $item->surattertibjakonusaha2->sbu ?? 'Surat Belum Di Buat';
-          $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-          $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-          $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-      @endphp
-
-      <td style="text-align: center;">
-          <button
-              style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-              onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-          >
-              <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-              {{ $tertibStatus }}
-          </button>
-      </td>
 
       @php
     $kesimpulan = $item->surattertibjakonusaha3->kesimpulan ?? 'Surat Belum Di Buat';
