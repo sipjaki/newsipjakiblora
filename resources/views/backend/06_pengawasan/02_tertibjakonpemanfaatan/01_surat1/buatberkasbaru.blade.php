@@ -213,10 +213,10 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('betertibjakonmanfaat1') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonusahapelaksananewberkas') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
-                            <input type="hidden"  name="tertibjakonpemanfaatan_id" value="{{ $datatertibjasakonstruksi_id }}">
+                            <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
 
                                 <div class="modal-content" style="font-size: 0.875rem;">
                                     <div class="modal-header d-flex align-items-center">
@@ -304,77 +304,40 @@
 
                                         </table>
 
-<table class="audit">
-    <thead>
-        <tr>
-            <th>No</th>
-            <th>LINGKUP PENGAWASAN</th>
-            <th>Indikator</th>
-            <th>DOKUMEN YANG DIPERIKSA</th>
-            <th>CARA PEMERIKSAAN</th>
-            <th>KESIMPULAN PEMERIKSAAN</th>
-            <th>CATATAN PEMERIKSAAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="2">1</td>
-            <td rowspan="2">
-                Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
-            </td>
-            <td>
-                a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
-                &bull; Bangunan gedung sesuai dengan perizinan<br>
-                &bull; Bangunan sipil sesuai dengan peraturan perundangan
-            </td>
-            <td>Dokumen perizinan</td>
-            <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
-            <td>
-              <div class="form-group">
-                    <select name="kesimpulanpemeriksaan" id="kesimpulanpemeriksaan" required
-                        class="@error('kesimpulanpemeriksaan') is-invalid @enderror">
-                        <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
-                        <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-                        <option value="Tidak_sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak_sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
-                    </select>
 
-                    @error('kesimpulanpemeriksaan')
-                        <div class="error-message" style="color: red; font-size: 0.9em; margin-top: 4px;">
-                        {{ $message }}
-                        </div>
-                    @enderror
-                    </div>
 
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
-            </td>
-            <td>Dokumen resmi dari instansi berwenang</td>
-            <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-            <td>
-              <div class="form-group">
-                        <select name="catatan" id="catatan" required
-                            class="@error('catatan') is-invalid @enderror">
-                            <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
-                            <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
-                            <option value="Tidak_Tersedia" {{ old('catatan') == 'Tidak_Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
-                        </select>
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px; width:50px;">No</th>
+                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 400px; font-size:15px;">Nama Badan Usaha</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Status Pelaksana Pengembangan Usaha</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="border: 1px solid #000; text-align: center;">1</td>
 
-                        @error('catatan')
-                            <div class="error-message" style="color: red; font-size: 0.9em; margin-top: 4px;">
-                            {{ $message }}
-                            </div>
-                        @enderror
-                        </div>
-            </td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
-<br>
+                                              <td style="border: 1px solid #000; width: 400px; vertical-align: top; padding: 8px;">
+                                                    <div style="white-space: pre-wrap; min-height: 120px;">
+                                                        {{ $datatertibjasakonstruksinamabadanusaha ?? 'Data Masih Kosong' }}
+                                                    </div>
+                                                </td>
+
+                                                    <td style="border: 1px solid #000; width: 400px; text-align: center;">
+                                                        <select class="form-control @error('status') is-invalid @enderror" name="status" style="text-align: center;">
+                                                            <option value="">-- Pilih Status --</option>
+                                                            <option value="Tertib" {{ old('status') == 'Tertib' ? 'selected' : '' }}>Tertib</option>
+                                                            <option value="Tidak Tertib" {{ old('status') == 'Tidak Tertib' ? 'selected' : '' }}>Tidak Tertib</option>
+                                                        </select>
+                                                        @error('status')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
+                                                    </td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
                                 </div>
 
@@ -446,25 +409,7 @@
 <script>
 function openModal() {
     const modal = document.getElementById("confirmModal");
-    if (modal) {
-        modal.style.display = "flex";
-
-        // Reset checkbox dan tombol setiap buka modal
-        const checkbox = document.getElementById("agreeCheckbox");
-        const btn = document.getElementById("confirmSubmitBtn");
-        const icon = document.getElementById("submitIcon");
-
-        if (checkbox) checkbox.checked = false;
-        if (btn) {
-            btn.disabled = true;
-            btn.style.cursor = 'not-allowed';
-            btn.style.backgroundColor = '#DC2626'; // Merah
-        }
-        if (icon) {
-            icon.setAttribute("viewBox", "0 0 512 512");
-            icon.innerHTML = '<path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zM256 432c-97.2 0-176-78.8-176-176 0-38.6 12.5-74.2 33.5-103L359 398.5C330.2 419.5 294.6 432 256 432zM398.5 359L153 113.5C181.8 92.5 217.4 80 256 80c97.2 0 176 78.8 176 176 0 38.6-12.5 74.2-33.5 103z"/>';
-        }
-    }
+    if (modal) modal.style.display = "flex";
 }
 
 function closeModal() {
@@ -494,29 +439,14 @@ function toggleSubmitButton() {
     }
 }
 
+
 function submitForm() {
+    // Ambil form element
     const form = document.querySelector('form');
-    const btn = document.getElementById("confirmSubmitBtn");
-
-    if (!form) return;
-
-    // Validasi sederhana (misal: cek checkbox harus dicentang)
-    const checkbox = document.getElementById("agreeCheckbox");
-    if (!checkbox.checked) {
-        alert("Anda harus menyetujui persyaratan terlebih dahulu.");
-        return;
+    // Submit form jika ditemukan
+    if (form) {
+        form.submit();
     }
-
-    // Disable tombol agar gak bisa klik lagi saat proses submit
-    if (btn) {
-        btn.disabled = true;
-        btn.style.cursor = 'not-allowed';
-        btn.innerText = "Mengirim...";
-    }
-
-    // Submit form
-    form.submit();
-
     // Tutup modal
     closeModal();
 }
