@@ -1792,8 +1792,8 @@ public function betertibjakonpemanfataanjakonindex($id)
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.index', [
         'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan ',
         'data' => $datasurattertibjakonpemanfaatan1,
-        'datanamabangunan' => $datasurattertibjakonpemanfaatan1->namabangunan,
-        'datalokasi' => $datasurattertibjakonpemanfaatan1->lokasi,
+        'datanamabangunan' => $datatertibjakonpemanfaatan->namabangunan,
+        'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datatertibjasakonstruksi_id' => $datasurattertibjakonpemanfaatan1->id,
         'user' => $user,
         'datasurat' => $datasurattertibjakonpemanfaatan1,
