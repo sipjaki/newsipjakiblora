@@ -1826,44 +1826,42 @@ public function betertibjakonpemanfataanjakonindex($id)
 
 public function betertibjakonpemanfataanjakoncreateberkasnew(Request $request)
 {
-    // Validasi input, sesuaikan rules-nya jika perlu
+    // Pastikan user masih login
+    if (!auth()->check()) {
+        return redirect()->route('login')->with('error', 'Sesi habis, silakan login kembali.');
+    }
+
+    // Validasi input
     $validatedData = $request->validate([
         'tertibjakonpemanfaatan_id' => 'required|string',
-        'lingkuppengawasan' => 'required|string', // tanggal mulai
-        'indikator' => 'required|string', // tanggal akhir
-        'dokumendiperiksa' => 'required|date', // nama bangunan
-        'carapemeriksaan' => 'required|date', // nama pengelola
-        'kesimpulanpemeriksaan' => 'required|in:Sesuai,Tidak Sesuai', // status 1
-        'catatan' => 'required|in:Tersedia,Tidak Tersedia', // status 2
+        'lingkuppengawasan' => 'required|string',
+        'indikator' => 'required|string',
+        'dokumendiperiksa' => 'required|date',
+        'carapemeriksaan' => 'required|date',
+        'kesimpulanpemeriksaan' => 'required|in:Sesuai,Tidak_sesuai',
+        'catatan' => 'required|in:Tersedia,Tidak_Tersedia',
     ], [
-        'lingkuppengawasan.required' => 'Tanggal Mulai Pengawasan Wajib Diisi !.',
-        'indikator.required' => 'Tanggal Selesai Pengawasan Wajib Diisi !.',
-        'dokumendiperiksa.required' => 'Nama Pemilik Bangunan Wajib Diisi !.',
-        'carapemeriksaan.required' => 'Nama Pengelola Bangunan Wajib Diisi !.',
+        'lingkuppengawasan.required' => 'Nama Pemilik Bangunan Wajib Diisi !.',
+        'indikator.required' => 'Nama Pengelola Bangunan Wajib Diisi !.',
+        'dokumendiperiksa.required' => 'Tanggal Mulai Pengawasan Wajib Diisi !.',
+        'carapemeriksaan.required' => 'Tanggal Selesai Pengawasan Wajib Diisi !.',
         'kesimpulanpemeriksaan.required' => 'Kesimpulan Wajib Di Pilih !.',
         'catatan.required' => 'Kesimpulan Wajib Di Pilih !.',
     ]);
 
     try {
         $surat = new surattertibjakonpemanfaatan1();
+        $surat->fill($validatedData)->save();
 
-        $surat->tertibjakonpemanfaatan_id = $validatedData['tertibjakonpemanfaatan_id'] ?? null;
-        $surat->lingkuppengawasan = $validatedData['lingkuppengawasan'] ?? null;
-        $surat->indikator = $validatedData['indikator'] ?? null;
-        $surat->dokumendiperiksa = $validatedData['dokumendiperiksa'] ?? null;
-        $surat->carapemeriksaan = $validatedData['carapemeriksaan'] ?? null;
-        $surat->kesimpulanpemeriksaan = $validatedData['kesimpulanpemeriksaan'] ?? null;
-        $surat->catatan = $validatedData['catatan'] ?? null;
+        return redirect()
+            ->route('betertibjakonpemanfataansuratjasakonstruksiindex', [
+                'id' => $surat->tertibjakonpemanfaatan_id ?? 'default_id'
+            ])
+            ->with('success', 'Berkas berhasil dibuat!');
 
-        $surat->save();
-
-        // Ambil parentId dari object yang sudah disimpan, saya asumsikan ambil dari tertibjakonpemanfaatan_id
-        $parentId = $surat->tertibjakonpemanfaatan_id;
-
-        session()->flash('create', 'Surat Dukung Tertib Jakon Pemanfaatan berhasil dibuat!');
-        return redirect()->route('betertibjakonpemanfataansuratjasakonstruksiindex', ['id' => $parentId]);
     } catch (\Exception $e) {
-        return back()->withInput()
+        return back()
+            ->withInput()
             ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
     }
 }
