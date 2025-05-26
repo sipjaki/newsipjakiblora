@@ -1794,7 +1794,7 @@ public function betertibjakonpemanfataanjakonindex($id)
         'data' => $datasurattertibjakonpemanfaatan1,
         'datanamabangunan' => $datatertibjakonpemanfaatan->namabangunan,
         'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
-        // 'datatertibjasakonstruksi_id' => $datatertibjakonpemanfaatan->id,
+        // 'id' => $datasurattertibjakonpemanfaatan1->id,
         'user' => $user,
         'datasurat' => $datasurattertibjakonpemanfaatan1,
         'datasurat_id' => $datasurattertibjakonpemanfaatan1->first()?->id,
