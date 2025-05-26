@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('tertibjakonpemanfaatans', function (Blueprint $table) {
             $table->id();
             // $table->string('penyedia')->nullable()->index();
-            $table->foreignId('penyediastatustertibjakon_id')->nullable()->index();
             $table->foreignId('surattertibjakonpemanfaatan1_id')->nullable()->index();
             $table->foreignId('surattertibjakonpemanfaatan2_id')->nullable()->index();
             $table->foreignId('surattertibjakonpemanfaatan3_id')->nullable()->index();
             $table->foreignId('surattertibjakonpemanfaatan4_id')->nullable()->index();
             $table->foreignId('surattertibjakonpemanfaatan5_id')->nullable()->index();
+            $table->foreignId('penyediastatustertibjakon_id')->nullable()->index();
             // -----------------------------------------------------------------
             $table->text('namapekerjaan')->nullable()->index();
             $table->text('namabangunan')->nullable()->index();
