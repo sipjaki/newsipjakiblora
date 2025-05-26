@@ -1770,37 +1770,35 @@ public function betertibjakonpemanfaatanupdatecreate(Request $request, $id)
     return redirect('/betertibjakonpemanfaatan');
 }
 
-
 public function betertibjakonpemanfataanjakonindex($id)
 {
-    // Ambil data tertibjasakonstruksi sesuai $id
-    $datatertibjakonpemanfaatan = tertibjakonpemanfaatan::where('id', $id)->first();
+    // Ambil data utama berdasarkan ID
+    $datatertibjakonpemanfaatan = tertibjakonpemanfaatan::find($id);
 
+    // Jika data tidak ditemukan
     if (!$datatertibjakonpemanfaatan) {
         return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
     }
 
-    // Ambil data user saat ini
+    // Ambil user yang sedang login
     $user = Auth::user();
 
-    // Ambil data surat sesuai tertibjasakonstruksi_id dan gunakan paginate
-    $datasurattertibjakonpemanfaatan1 = surattertibjakonpemanfaatan1::where('tertibjakonpemanfaatan_id', $id)
-        ->orderBy('created_at', 'desc')
-        ->paginate(50);
+    // Ambil data surat terkait dengan paginate
+    $datasurat = surattertibjakonpemanfaatan1::where('tertibjakonpemanfaatan_id', $id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
 
-    // Kirim semua data ke view
+    // Kirim data ke view
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.index', [
-        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan ',
-        'data' => $datasurattertibjakonpemanfaatan1,
+        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan',
+        'user' => $user,
+        'data' => $datasurat, // digunakan jika kamu pakai nama "data" di view
+        'datasurat' => $datasurat,
         'datanamabangunan' => $datatertibjakonpemanfaatan->namabangunan,
         'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
-        // 'id' => $datasurattertibjakonpemanfaatan1->id,
-        'user' => $user,
-        'datasurat' => $datasurattertibjakonpemanfaatan1,
-        'datasurat_id' => $datasurattertibjakonpemanfaatan1->first()?->id,
+        'datasurat_id' => $datasurat->first()?->id, // id dari surat pertama jika ada
     ]);
 }
-
 
 
 

@@ -101,8 +101,8 @@
 
                                     {{-- @if(empty($data->surattertibjakonusaha1->id)) --}}
 
-                                    @if ($datasurat->isEmpty())
-                                        <a href="{{ route('betertibjakonusahapelaksanacreateberkas', ['id' => $data->id]) }}">
+                                 @if ($datasurat->isEmpty())
+                                        <a href="{{ route('betertibjakonusahapelaksanacreateberkas', ['id' => $data->first()?->tertibjakonpemanfaatan_id ?? $datasurat_id]) }}">
                                             <button class="btn-create">
                                                 <i class="bi bi-file-earmark-plus icon-create"></i>
                                                 Buat Berkas
