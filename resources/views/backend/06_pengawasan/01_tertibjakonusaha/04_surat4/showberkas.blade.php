@@ -419,7 +419,7 @@
         wrapper.style.alignItems = 'flex-start'; // kalau pakai flex di dalam
         wrapper.appendChild(clone);
 
-        const fileName = `Tertibjakonusaha_segmentasipasar_${id}.pdf`;
+        const fileName = `Tertibjakonusaha_pelaksanapengembanganusaha_${id}.pdf`;
 
         html2pdf()
             .from(wrapper)
