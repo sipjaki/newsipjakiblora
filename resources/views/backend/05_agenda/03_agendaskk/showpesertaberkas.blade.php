@@ -1231,7 +1231,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @elseif($datapeserta->uploadktp)
         <!-- Display the iframe with the updated file -->
@@ -1240,7 +1240,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
@@ -1259,7 +1259,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @elseif($datapeserta->uploadfoto)
         <!-- Display the iframe with the updated file -->
@@ -1268,7 +1268,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
@@ -1286,7 +1286,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @elseif($datapeserta->uploadijazah)
         <!-- Display the iframe with the updated file -->
@@ -1295,7 +1295,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
@@ -1321,7 +1321,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @elseif($datapeserta->uploadpengalaman)
         <!-- Display the iframe with the updated file -->
@@ -1330,7 +1330,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
@@ -1347,7 +1347,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @elseif($datapeserta->uploadnpwp)
         <!-- Display the iframe with the updated file -->
@@ -1356,7 +1356,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
@@ -1373,7 +1373,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @elseif($datapeserta->uploaddaftarriwayathidup)
         <!-- Display the iframe with the updated file -->
@@ -1382,7 +1382,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
@@ -1406,7 +1406,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @elseif($datapeserta->uploadkebenarandata)
         <!-- Display the iframe with the updated file -->
@@ -1415,7 +1415,7 @@ button:hover {
             frameborder="0"
             width="100%"
             height="600px"
-            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 500px;">
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
@@ -1675,10 +1675,10 @@ button:hover {
                                                          <div style="margin-top: 10px;">
                                                             @if($datapeserta->skkanda && file_exists(public_path('storage/' . $datapeserta->skkanda)))
                                                                 <!-- Display the default iframe when the file exists in the storage -->
-                                                                <iframe src="{{ asset('storage/' . $datapeserta->skkanda) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                <iframe src="{{ asset('storage/' . $datapeserta->skkanda) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                             @elseif($datapeserta->skkanda)
                                                                 <!-- Display the iframe with the updated file -->
-                                                                <iframe src="{{ asset($datapeserta->skkanda) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                <iframe src="{{ asset($datapeserta->skkanda) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                             @else
                                                                 <!-- Show a message if there's no file available -->
                                                                 <p style="color: red; font-weight: bold;">Peserta Belum Memiliki SKK !!</p>
@@ -1728,18 +1728,18 @@ button:hover {
 
                                                                 @if ($isStorageFile)
                                                                     @if ($extension === 'pdf')
-                                                                        <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="500px"></iframe>
+                                                                        <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                         <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
                                                                     @else
-                                                                        <img src="{{ $fileUrl }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                        <img src="{{ $fileUrl }}" alt="KTP" style="max-width:100%; max-height:600px;">
                                                                         <a href="{{ $fileUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
                                                                     @endif
                                                                 @else
                                                                     @if ($extension === 'pdf')
-                                                                        <iframe src="{{ $fallbackUrl }}" frameborder="0" width="100%" height="500px"></iframe>
+                                                                        <iframe src="{{ $fallbackUrl }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                         <a href="{{ $fallbackUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
                                                                     @else
-                                                                        <img src="{{ $fallbackUrl }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                        <img src="{{ $fallbackUrl }}" alt="KTP" style="max-width:100%; max-height:600px;">
                                                                         <a href="{{ $fallbackUrl }}" class="btn btn-primary mt-2" download>Download KTP</a>
                                                                     @endif
                                                                 @endif
@@ -1811,10 +1811,10 @@ button:hover {
                                                         </div>
                                                         <div class="modal-body text-center">
                                                             @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
-                                                                <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Foto" style="max-width:100%; max-height:500px;">
+                                                                <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Foto" style="max-width:100%; max-height:600px;">
                                                                 <a href="{{ asset('storage/' . $datapeserta->uploadfoto) }}" class="btn btn-primary mt-2" download>Download Foto</a>
                                                             @elseif($datapeserta->uploadfoto)
-                                                                <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Foto" style="max-width:100%; max-height:500px;">
+                                                                <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Foto" style="max-width:100%; max-height:600px;">
                                                                 <a href="{{ asset($datapeserta->uploadfoto) }}" class="btn btn-primary mt-2" download>Download Foto</a>
                                                             @else
                                                                 <p>Data belum diupdate</p>
@@ -1887,10 +1887,10 @@ button:hover {
                                                                 <div style="margin-top: 10px;">
                                                                     @if($datapeserta->uploadijazah && file_exists(public_path('storage/' . $datapeserta->uploadijazah)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                 @elseif($datapeserta->uploadijazah)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                    <iframe src="{{ asset($datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data belum diupdate</p>
@@ -1964,10 +1964,10 @@ button:hover {
                                                                 <div style="margin-top: 10px;">
                                                                     @if($datapeserta->uploadpengalaman && file_exists(public_path('storage/' . $datapeserta->uploadpengalaman)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                 @elseif($datapeserta->uploadpengalaman)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                    <iframe src="{{ asset($datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data belum diupdate</p>
@@ -2040,10 +2040,10 @@ button:hover {
                                                                 <div style="margin-top: 10px;">
                                                                     @if($datapeserta->uploadkebenarandata && file_exists(public_path('storage/' . $datapeserta->uploadkebenarandata)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                 @elseif($datapeserta->uploadkebenarandata)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                    <iframe src="{{ asset($datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data belum diupdate</p>
@@ -2126,15 +2126,15 @@ button:hover {
 
                                                                         @if($isStorageFile)
                                                                             @if($extension === 'pdf')
-                                                                                <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                                <iframe src="{{ $fileUrl }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                             @else
-                                                                                <img src="{{ $fileUrl }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                                <img src="{{ $fileUrl }}" alt="Dokumen NPWP" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
                                                                             @endif
                                                                         @else
                                                                             @if($extension === 'pdf')
-                                                                                <iframe src="{{ $fallbackUrl }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                                <iframe src="{{ $fallbackUrl }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                             @else
-                                                                                <img src="{{ $fallbackUrl }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                                <img src="{{ $fallbackUrl }}" alt="Dokumen NPWP" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
                                                                             @endif
                                                                         @endif
                                                                     @else
@@ -2208,9 +2208,9 @@ button:hover {
                                                                 <div style="margin-top: 10px;">
                                                                     <!-- Menampilkan iframe Daftar Riwayat Hidup -->
                                                                     @if($datapeserta->uploaddaftarriwayathidup && file_exists(public_path('storage/' . $datapeserta->uploaddaftarriwayathidup)))
-                                                                        <iframe src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                        <iframe src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                     @elseif($datapeserta->uploaddaftarriwayathidup)
-                                                                        <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                        <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="600px"></iframe>
                                                                     @else
                                                                         <p>Data belum diupdate</p>
                                                                     @endif
