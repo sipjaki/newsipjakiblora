@@ -126,7 +126,7 @@
                                     <i class="bi bi-download icon-create" style="margin-right: 5px" ></i> Download Excel
                                 </button>
 
-                                <a href="/betertibjakonpemanfaatan/create">
+                                <a href="/betertibjakonusaha/create">
                                     <button class="btn-create";>
                                     <!-- Ikon Kembali -->
                                     <i class="fa fa-plus icon-create" style="margin-right: 8px;"></i>
