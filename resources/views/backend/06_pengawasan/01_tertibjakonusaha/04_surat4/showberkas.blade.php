@@ -330,38 +330,14 @@
                                                         <tr>
                                                             <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
                                                             <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Bentuk</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kualifikasi</th>
-                                                            {{-- <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th> --}}
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Bentuk</div>
-                                                                <div style="font-size: 16px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Kualifikasi</div>
-                                                                <div style="font-size: 16px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
->
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Status Pelaksana Pengembangan Usaha</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat4->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->bentuk ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->sbu ?? 'Data Belum Di Buat '}}</td>
-                                                            {{-- <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha}}</td> --}}
+                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$namapekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->status ?? 'Data Belum Di Buat '}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>

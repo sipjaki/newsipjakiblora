@@ -1505,6 +1505,7 @@ public function betertibjakonusahapelaksana($id)
     // Jika relasi null, buat default kosong agar tidak error di view
     // $namapekerjaan = $datasurat4->namabujk ?? 'Data pekerjaan tidak ditemukan';
     $namabadanusaha = $datatertib->namabadanusaha ?? '-';
+    $namapekerjaan = $datatertib->namapekerjaan ?? '-';
     $idtertib = $datatertib->id ?? null;
     $nib = $datatertib->nib ?? '-';
 
@@ -1518,6 +1519,7 @@ public function betertibjakonusahapelaksana($id)
         'datasurat4' => $datasurat4,
         // 'datatertibjasakonstruksi' => $namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $namabadanusaha,
+        'namapekerjaan' => $namapekerjaan,
         'datatertibjasakonstruksi_id' => $idtertib,
         'datatertibjasakonstruksinib' => $nib,
     ]);
