@@ -1818,7 +1818,7 @@ public function betertibjakonpemanfataanjakonindex($id)
         'data' => $datatertibjasapemanfaatan,
 
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
-        'title' => 'Berkas Surat Tertib Jakon Pemanfaatan '
+        'title' => 'Create Surat Tertib Jakon Pemanfaatan '
     ]);
 }
 
