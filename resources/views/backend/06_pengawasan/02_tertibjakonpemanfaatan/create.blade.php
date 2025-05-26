@@ -164,18 +164,29 @@
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
-
 <div class="mb-3">
     <label for="umurbangunan" class="form-label">
         <i class="bi bi-hourglass-split text-primary"></i> Umur Bangunan
     </label>
-    <input type="text" id="umurbangunan" name="umurbangunan"
-        class="form-control @error('umurbangunan') is-invalid @enderror"
-        value="{{ old('umurbangunan', $data->umurbangunan ?? '') }}">
+    <select id="umurbangunan" name="umurbangunan"
+        class="form-select @error('umurbangunan') is-invalid @enderror">
+        <option value="">-- Pilih Umur Bangunan --</option>
+        @for ($i = 1; $i <= 10; $i++)
+            <option value="{{ $i }} Tahun"
+                {{ old('umurbangunan', $data->umurbangunan ?? '') == "$i Tahun" ? 'selected' : '' }}>
+                {{ $i }} Tahun
+            </option>
+        @endfor
+        <option value="Lebih dari 10 Tahun"
+            {{ old('umurbangunan', $data->umurbangunan ?? '') == 'Lebih dari 10 Tahun' ? 'selected' : '' }}>
+            Lebih dari 10 Tahun
+        </option>
+    </select>
     @error('umurbangunan')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+
 
 </div>
 
