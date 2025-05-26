@@ -507,17 +507,19 @@
                                                             @enderror
                                                         </td>
 
-                                                            <td style="border: 1px solid #000; width: 600px;">
-                                                                            <input height="300px;"
-                                                                                class="form-control @error('catatanpemeriksaan') is-invalid @enderror"
-                                                                                name="catatanpemeriksaan"
-                                                                                placeholder="Masukan Catatan Kesimpulan ..."
-                                                                                rows="6"
-                                                                                style="width: 100%; resize: vertical;"
-                                                                            @error('catatanpemeriksaan')
-                                                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                                            @enderror
-                                                            </td>
+                                                        <td style="border: 1px solid #000; width: 600px;">
+                                                            <textarea
+                                                                class="form-control @error('catatanpemeriksaan') is-invalid @enderror"
+                                                                name="catatanpemeriksaan"
+                                                                placeholder="Masukan Catatan Kesimpulan ..."
+                                                                rows="6"
+                                                                style="width: 100%; resize: vertical;"
+                                                            >{{ old('catatanpemeriksaan') }}</textarea>
+                                                            @error('catatanpemeriksaan')
+                                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                            @enderror
+                                                        </td>
+
 
                                                     </tr>
                                             </tbody>
