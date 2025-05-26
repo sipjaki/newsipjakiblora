@@ -260,7 +260,7 @@
   @endif
 </td>
 
-<td style="text-align: left;">
+<td style="text-align: center;">
   @if($item->tanggalpembangunan)
     {{ \Carbon\Carbon::parse($item->tanggalpembangunan)->translatedFormat('j F Y') }}
 
@@ -273,7 +273,7 @@
 @endif
 </td>
 
-<td style="text-align: left;">
+<td style="text-align: center;">
     @if($item->tanggalpemanfaatan)
     {{ \Carbon\Carbon::parse($item->tanggalpemanfaatan)->translatedFormat('j F Y') }}
   @else
@@ -286,7 +286,7 @@
 </td>
 
 
-<td style="text-align: left;">
+<td style="text-align: center;">
   @if($item->umurbangunan)
     {{ $item->umurbangunan }}
   @else
