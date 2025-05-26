@@ -496,7 +496,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                        <td style="border: 1px solid #000;">
+                                                        <td style="border: 1px solid #000; width: 200px;">
                                                             <select class="form-control @error('kesimpulan') is-invalid @enderror" name="kesimpulan">
                                                                 <option value="">-- Pilih Kesimpulan --</option>
                                                                 <option value="Tertib" {{ old('kesimpulan') == 'Tertib' ? 'selected' : '' }}>Tertib</option>
@@ -507,7 +507,7 @@
                                                             @enderror
                                                         </td>
 
-                                                            <td style="border: 1px solid #000; width: 400px;">
+                                                            <td style="border: 1px solid #000; width: 600px;">
                                                                             <input
                                                                                 class="form-control @error('catatanpemeriksaan') is-invalid @enderror"
                                                                                 name="catatanpemeriksaan"
