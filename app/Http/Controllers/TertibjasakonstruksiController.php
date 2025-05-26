@@ -1797,6 +1797,7 @@ public function betertibjakonpemanfataanjakonindex($id)
         'datanamabangunan' => $datatertibjakonpemanfaatan->namabangunan,
         'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datasurat_id' => $datasurat->first()?->id, // id dari surat pertama jika ada
+
     ]);
 }
 
