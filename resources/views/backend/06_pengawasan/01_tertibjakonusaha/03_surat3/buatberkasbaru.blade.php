@@ -360,10 +360,10 @@
                                         <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px;">
                                             <thead>
                                                 <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px; width:50px;">No</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px; width:50px;">No</th>
                                                     <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 400px; font-size:15px;">Nama BUJK</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Nomor Induk Berusaha</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">PJBU</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Nomor Induk Berusaha</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">PJBU</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -382,7 +382,7 @@
                                                     @enderror
                                                 </td>
 
-                                                <td style="border: 1px solid #000; width: 400px;">
+                                                <td style="border: 1px solid #000; width: 400px; text-align:center;">
                                                     <textarea
                                                         class="form-control @error('nib') is-invalid @enderror"
                                                         name="nib"
@@ -412,25 +412,26 @@
                                         <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
                                             <thead>
                                                 <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Jenis Usaha </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Sub Klasifikasi </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Nomor Sertifikat Standar </th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Jenis Usaha </th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Klasifikasi/Sub Klasifikasi </th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Nomor Sertifikat Standar </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
 
 
-                                                    <td style="border: 1px solid #000;">
+                                                  <td style="border: 1px solid #000;">
                                                         <select class="form-control @error('jenisusaha') is-invalid @enderror" name="jenisusaha">
-                                                            <option value="">-- Pilih Kesesuaian SBU --</option>
-                                                            <option value="Tertib" {{ old('jenisusaha') == 'Tertib' ? 'selected' : '' }}>Tertib</option>
-                                                            <option value="Tidak Tertib" {{ old('jenisusaha') == 'Tidak Tertib' ? 'selected' : '' }}>Tidak Tertib</option>
+                                                            <option value="">-- Pilih Jenis Usaha --</option>
+                                                            <option value="Pekerjaan Konstruksi" {{ old('jenisusaha') == 'Pekerjaan Konstruksi' ? 'selected' : '' }}>Pekerjaan Konstruksi</option>
+                                                            <option value="Jasa Konsultasi Konstruksi" {{ old('jenisusaha') == 'Jasa Konsultasi Konstruksi' ? 'selected' : '' }}>Jasa Konsultasi Konstruksi</option>
                                                         </select>
                                                         @error('jenisusaha')
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
                                                     </td>
+
 
                                                     <td style="border: 1px solid #000; max-width: 600px;">
                                                         <div id="subklasifikasi-container">
@@ -468,18 +469,18 @@
                                                         }
                                                     </script>
 
-<td style="border: 1px solid #000;">
-    <input
-        type="text"
-        name="nomorsertifikat"
-        class="form-control @error('nomorsertifikat') is-invalid @enderror"
-        value="{{ old('nomorsertifikat') }}"
-        placeholder="Masukkan Nomor Sertifikat">
+                                                        <td style="border: 1px solid #000;">
+                                                            <input
+                                                                type="text"
+                                                                name="nomorsertifikat"
+                                                                class="form-control @error('nomorsertifikat') is-invalid @enderror"
+                                                                value="{{ old('nomorsertifikat') }}"
+                                                                placeholder="Masukkan Nomor Sertifikat">
 
-    @error('nomorsertifikat')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</td>
+                                                            @error('nomorsertifikat')
+                                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                            @enderror
+                                                        </td>
 
                                                 </tr>
                                             </tbody>
