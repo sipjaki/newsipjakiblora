@@ -17,6 +17,4 @@ class surattertibjakonpemanfaatan1 extends Model
             {
                 return $this->hasOne(tertibjasakonstruksi::class, 'tertibjakonpemanfaatan_id')->oldest();
             }
-
-
 }
