@@ -1487,29 +1487,30 @@ public function betertibjakonusahapelaksana($id)
 
 
 
- public function betertibjakonusahapelaksanashow($id)
+public function betertibjakonusahapelaksanashow($id)
 {
-    // Ambil data surat dengan relasi tertibjasakonstruksi
+    // Ambil data surat
     $datasurat4 = surattertibjakonusaha4::with('tertibjasakonstruksi')->findOrFail($id);
 
-    // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
+    // Coba ambil data relasi
     $datatertib = $datasurat4->tertibjasakonstruksi;
 
-    // Ambil user
-    $user = Auth::user();
+    // Jika tidak ketemu lewat relasi, cari manual
+    if (!$datatertib) {
+        $datatertib = tertibjasakonstruksi::where('surattertibjakonusaha4_id', $datasurat4->id)->first();
+    }
 
-    // Ambil data subklasifikasi dan tandatangan
-    $datasubklasifikasi = subklasifikasi::all();
-    $datatandatangan = tandatangan::all();
-
-    // Jika relasi null, buat default kosong agar tidak error di view
-    // $namapekerjaan = $datasurat4->namabujk ?? 'Data pekerjaan tidak ditemukan';
+    // Data tambahan
     $namabadanusaha = $datatertib->namabadanusaha ?? '-';
     $namapekerjaan = $datatertib->namapekerjaan ?? 'Data Pekerjaan Masih Kosong';
     $idtertib = $datatertib->id ?? null;
     $nib = $datatertib->nib ?? '-';
 
-    // Kirim data ke view
+    // Data lain
+    $user = Auth::user();
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
+
     return view('backend.06_pengawasan.01_tertibjakonusaha.04_surat4.showberkas', [
         'title' => 'Berkas Surat Pelaksana Pengembangan Usaha ',
         'data' => $datatertib,
@@ -1517,7 +1518,6 @@ public function betertibjakonusahapelaksana($id)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurat4' => $datasurat4,
-        // 'datatertibjasakonstruksi' => $namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $namabadanusaha,
         'namabadanusaha' => $namabadanusaha,
         'namapekerjaan' => $namapekerjaan,
@@ -1525,7 +1525,6 @@ public function betertibjakonusahapelaksana($id)
         'datatertibjasakonstruksinib' => $nib,
     ]);
 }
-
 
 
 

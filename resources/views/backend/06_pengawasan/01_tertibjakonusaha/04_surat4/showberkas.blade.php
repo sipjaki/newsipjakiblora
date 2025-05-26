@@ -101,13 +101,13 @@
                                             <div class="modal-body">
                                                 <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin </h5>
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                                    <tr>
+                                                   <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $data->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
+                                                        <td>{{ $data->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 300px;"><strong>Nama Pekerjaan </strong></td>
-                                                        <td>{{ $data->namapekerjaan ?? 'Data Belum Di Buat ' }}</td>
+                                                        <td style="width: 300px;"><strong>Nama Pekerjaan</strong></td>
+                                                        <td>{{ $data->namapekerjaan ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
 
                                                 </table>
@@ -272,7 +272,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datatertibjasakonstruksinamabadanusaha ?? '-' }}
+                                                        {{ $data->namabadanusaha ?? '-' }}
                                                     </div>
                                                 </td>
 
