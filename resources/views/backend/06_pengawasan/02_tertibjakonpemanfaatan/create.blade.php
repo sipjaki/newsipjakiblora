@@ -182,7 +182,7 @@
                     <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end btn-create">
                                         <button type="button" onclick="openModal()">
-                                            <i class="bi bi-plus-circle-fill icon-create"></i>
+                                            <i class="bi bi-plus-circle-fill"></i>Create
                                     </button>
                                     </div>
                                     <!-- Modal Konfirmasi -->
