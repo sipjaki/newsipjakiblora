@@ -266,6 +266,9 @@
                                                             class="form-control"
                                                             style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
                                                         >
+                                                           @error('lingkuppengawasan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                     </td>
                                             </tr>
                                             <tr>
@@ -280,6 +283,10 @@
                                                             class="form-control"
                                                             style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
                                                         >
+                                                        @error('indikator')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+
                                                     </td>
                                             </tr>
                                             <tr>
