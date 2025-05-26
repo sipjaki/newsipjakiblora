@@ -245,7 +245,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px;">
+                                                <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Lokasi Bangunan </strong>
                                                 </td>
                                                 <td>
@@ -255,7 +255,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px;">
+                                                <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
                                                 </td>
                                                 <td>
@@ -269,7 +269,7 @@
                                                     </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px;">
+                                                <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
                                                 </td>
                                                 <td>
@@ -283,7 +283,7 @@
                                                     </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px;">
+                                                <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                                 <td class="d-flex gap-2">
