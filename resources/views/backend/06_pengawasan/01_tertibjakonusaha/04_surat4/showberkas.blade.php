@@ -254,6 +254,7 @@
     </tr>
 
 <tr>
+
     @php
         $kesesuaian = $datasurat4->status ?? 'Surat Belum Di Buat';
         $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
