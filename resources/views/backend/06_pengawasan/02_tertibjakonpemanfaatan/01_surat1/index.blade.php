@@ -91,7 +91,7 @@
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                    <a href="/betertibjakonusaha">
+                    <a href="/betertibjakonpemanfaatan">
                         <button class="btn-kembali">
                         <i class="bi bi-arrow-left icon-create"></i>
                             Kembali
@@ -152,7 +152,7 @@
                                     @if ($datasurat->isEmpty())
                                         <tr>
                                             <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Pelaksana Pengembangan Usaha <strong>Belum Dibuat</strong>!
+                                                Surat Dukung Tertib Pemanfaatan <strong>Belum Dibuat</strong>!
                                             </td>
                                         </tr>
                                     @else
