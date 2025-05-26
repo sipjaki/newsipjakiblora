@@ -315,43 +315,17 @@
                                     </div>
                                     <br>
                                     <div class="modal-body">
-                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Pemenuhan Persyaratan Usaha Jasa Konstruksi Secara Rutin </h5>
+                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin</h5>
                                             <br>
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                            <tr>
+                                         <tr>
                                                 <td style="width: 200px;">
                                                     <strong style="font-size: 15px;">Nama Badan Usaha</strong>
                                                 </td>
                                                 <td>
-                                                    <input
-                                                        type="text"
-                                                        class="form-control @error('namabadanusaha') is-invalid @enderror"
-                                                        name="namabadanusaha"
-                                                        placeholder="Masukan Nama Badan Usaha ..."
-                                                        value="{{ old('namabadanusaha', $datatertibjasakonstruksinamabadanusaha ?? '') }}" readonly>
-
-                                                    @error('namabadanusaha')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
-                                                </td>
-                                                <td class="d-flex gap-2">
-                                                    <input type="date" class="form-control @error('waktupengawasan') is-invalid @enderror" name="waktupengawasan" value="{{ old('waktupengawasan') }}" placeholder="Dimulai Sejak ... ">
-                                                    @error('waktupengawasan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-
-                                                    <span class="mx-1">(Sampai Dengan)</span>
-
-                                                    <input type="date" class="form-control @error('waktupengawasanselesai') is-invalid @enderror" name="waktupengawasanselesai" value="{{ old('waktupengawasanselesai') }}" placeholder="Berakhir Tanggal ... ">
-                                                    @error('waktupengawasanselesai')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                        {{ $datatertibjasakonstruksinamabadanusaha ?? '-' }}
+                                                    </div>
                                                 </td>
                                             </tr>
 
@@ -361,255 +335,38 @@
                                             <thead>
                                                 <tr>
                                                     <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px; width:50px;">No</th>
-                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 400px; font-size:15px;">Nama BUJK</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Nomor Induk Berusaha</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">PJBU</th>
+                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 400px; font-size:15px;">Nama Badan Usaha</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Status Pelaksana Pengembangan Usaha</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td style="border: 1px solid #000; text-align: center;">1</td>
 
-                                                  <td style="border: 1px solid #000; width: 400px;">
-                                                    <textarea
-                                                        class="form-control @error('namabujk') is-invalid @enderror"
-                                                        name="namabujk"
-                                                        placeholder="Masukan Nama Badan Usaha ..."
-                                                        rows="6"
-                                                        style="width: 100%; resize: vertical;" readonly>{{ old('namabujk', $datatertibjasakonstruksinamabadanusaha ?? 'Data Masih Kosong') }}</textarea>
-                                                    @error('namabujk')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                              <td style="border: 1px solid #000; width: 400px; vertical-align: top; padding: 8px;">
+                                                    <div style="white-space: pre-wrap; min-height: 120px;">
+                                                        {{ $datatertibjasakonstruksinamabadanusaha ?? 'Data Masih Kosong' }}
+                                                    </div>
                                                 </td>
 
-                                                <td style="border: 1px solid #000; width: 400px; text-align:center;">
-                                                    <textarea
-                                                        class="form-control @error('nib') is-invalid @enderror"
-                                                        name="nib"
-                                                        placeholder="Masukan Nomor Induk Berusaha  ..."
-                                                        rows="6"
-                                                        style="width: 100%; resize: vertical; text-align:center;" readonly>{{ old('nib', $datatertibjasakonstruksinib ?? 'Data Masih Kosong') }}</textarea>
-                                                    @error('nib')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-
-                                                <td style="border: 1px solid #000; width: 400px;">
-                                                    <input
-                                                        class="form-control @error('pjbu') is-invalid @enderror"
-                                                        name="pjbu"
-                                                        placeholder="Masukan Nama PJBU  ..."
-                                                        rows="6"
-                                                        style="width: 100%; resize: vertical;"
-                                                    @error('pjbu')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
-                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Jenis Usaha </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Klasifikasi/Sub Klasifikasi </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Nomor Sertifikat Standar </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-
-
-                                                  <td style="border: 1px solid #000;">
-                                                        <select class="form-control @error('jenisusaha') is-invalid @enderror" name="jenisusaha">
-                                                            <option value="">-- Pilih Jenis Usaha --</option>
-                                                            <option value="Pekerjaan Konstruksi" {{ old('jenisusaha') == 'Pekerjaan Konstruksi' ? 'selected' : '' }}>Pekerjaan Konstruksi</option>
-                                                            <option value="Jasa Konsultasi Konstruksi" {{ old('jenisusaha') == 'Jasa Konsultasi Konstruksi' ? 'selected' : '' }}>Jasa Konsultasi Konstruksi</option>
+                                                    <td style="border: 1px solid #000; width: 400px; text-align: center;">
+                                                        <select class="form-control @error('status') is-invalid @enderror" name="status" style="text-align: center;">
+                                                            <option value="">-- Pilih Status --</option>
+                                                            <option value="Tertib" {{ old('status') == 'Tertib' ? 'selected' : '' }}>Tertib</option>
+                                                            <option value="Tidak Tertib" {{ old('status') == 'Tidak Tertib' ? 'selected' : '' }}>Tidak Tertib</option>
                                                         </select>
-                                                        @error('jenisusaha')
+                                                        @error('status')
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
                                                     </td>
 
 
-                                                    <td style="border: 1px solid #000; max-width: 600px;">
-                                                        <div id="subklasifikasi-container">
-                                                            <select
-                                                                class="form-control mb-1 @error('subklasifikasi_id') is-invalid @enderror"
-                                                                name="subklasifikasi_id"
-                                                                id="subklasifikasiSelect"
-                                                                onchange="convertToTextarea(this)"
-                                                                style="width: 100%; max-height: 600px;"
-                                                            >
-                                                                <option value="">-- Pilih Subklasifikasi --</option>
-                                                                @foreach ($datasubklasifikasi as $sub)
-                                                                    <option value="{{ $sub->id }}" {{ old('subklasifikasi_id') == $sub->id ? 'selected' : '' }}>
-                                                                        {{ Str::limit($sub->pekerjaan, 125) }}
-                                                                    </option>
-                                                                @endforeach
-                                                            </select>
-                                                            @error('subklasifikasi_id')
-                                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
-                                                        </div>
-                                                    </td>
-
-                                                    <script>
-                                                        function convertToTextarea(select) {
-                                                            const selectedText = select.options[select.selectedIndex].text;
-                                                            const container = document.getElementById("subklasifikasi-container");
-
-                                                            // Gantikan select dengan textarea
-                                                            container.innerHTML = `
-                                                                <textarea class="form-control" readonly rows="4"
-                                                                    style="width: 100%; resize: vertical;">${selectedText}</textarea>
-                                                                <input type="hidden" name="subklasifikasi_id" value="${select.value}">
-                                                            `;
-                                                        }
-                                                    </script>
-
-                                                        <td style="border: 1px solid #000;">
-                                                            <input
-                                                                type="text"
-                                                                name="nomorsertifikat"
-                                                                class="form-control @error('nomorsertifikat') is-invalid @enderror"
-                                                                value="{{ old('nomorsertifikat') }}"
-                                                                placeholder="Masukkan Nomor Sertifikat">
-
-                                                            @error('nomorsertifikat')
-                                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
-                                                        </td>
-
                                                 </tr>
                                             </tbody>
                                         </table>
-
-                                        <br>
-                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Kesimpulan </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Catatan Pemeriksaan</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                        <td style="border: 1px solid #000; width: 200px;">
-                                                            <select class="form-control @error('kesimpulan') is-invalid @enderror" name="kesimpulan">
-                                                                <option value="">-- Pilih Kesimpulan --</option>
-                                                                <option value="Tertib" {{ old('kesimpulan') == 'Tertib' ? 'selected' : '' }}>Tertib</option>
-                                                                <option value="Tidak Tertib" {{ old('kesimpulan') == 'Tidak Tertib' ? 'selected' : '' }}>Tidak Tertib</option>
-                                                            </select>
-                                                            @error('kesimpulan')
-                                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
-                                                        </td>
-
-                                                        <td style="border: 1px solid #000; width: 600px;">
-                                                            <textarea
-                                                                class="form-control @error('catatanpemeriksaan') is-invalid @enderror"
-                                                                name="catatanpemeriksaan"
-                                                                placeholder="Masukan Catatan Kesimpulan ..."
-                                                                rows="6"
-                                                                style="width: 100%; resize: vertical;"
-                                                            >{{ old('catatanpemeriksaan') }}</textarea>
-                                                            @error('catatanpemeriksaan')
-                                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
-                                                        </td>
-
-
-                                                    </tr>
-                                            </tbody>
-                                        </table>
-
 
                                 </div>
 
-                                <div class="container" style="margin-top: 10px;">
-                                    <!-- Modal Card -->
-
-                                            <div class="container" style="margin-top: 10px;">
-                                                <div class="row">
-                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
-                                                        <!-- Modal Card -->
-                                                        <div class="card" style="border: 1px solid white;">
-                                                            <div class="card-body">
-                                                                <!-- Tim Pemeriksa -->
-                                                                <div class="tim-pemeriksa-container">
-                                                                    <div class="tim-pemeriksa">
-                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa:</h6>
-                                                                        <table class="table table-sm">
-                                                                            <thead class="table-secondary">
-                                                                                <tr>
-                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
-                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
-                                                                                    <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan1_id" class="form-control @error('tandatangan1_id') is-invalid @enderror">
-                                                                                            <option value="">-- Pilih Pemeriksa --</option>
-                                                                                            @foreach ($datatandatangan as $tandatangan)
-                                                                                                <option value="{{ $tandatangan->id }}"
-                                                                                                    {{ old('tandatangan1_id', optional(optional($data->surattertibjakonusaha1)->tandatangan1_id) ) == $tandatangan->id ? 'selected' : '' }}>
-                                                                                                    {{ $tandatangan->namalengkap }}
-                                                                                                </option>
-                                                                                            @endforeach
-                                                                                        </select>
-                                                                                        @error('tandatangan1_id')
-                                                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                                                        @enderror
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                    <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan2_id" class="form-control @error('tandatangan2_id') is-invalid @enderror">
-                                                                                            <option value="">-- Pilih Pemeriksa --</option>
-                                                                                            @foreach ($datatandatangan as $tandatangan)
-                                                                                                <option value="{{ $tandatangan->id }}"
-                                                                                                    {{ old('tandatangan2_id', optional(optional($data->surattertibjakonusaha1)->tandatangan2_id) ) == $tandatangan->id ? 'selected' : '' }}>
-                                                                                                    {{ $tandatangan->namalengkap }}
-                                                                                                </option>
-                                                                                            @endforeach
-                                                                                        </select>
-                                                                                        @error('tandatangan2_id')
-                                                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                                                        @enderror
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
-                                                                                    <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan3_id" class="form-control @error('tandatangan3_id') is-invalid @enderror">
-                                                                                            <option value="">-- Pilih Pemeriksa --</option>
-                                                                                            @foreach ($datatandatangan as $tandatangan)
-                                                                                                <option value="{{ $tandatangan->id }}"
-                                                                                                    {{ old('tandatangan3_id', optional(optional($data->surattertibjakonusaha1)->tandatangan3_id) ) == $tandatangan->id ? 'selected' : '' }}>
-                                                                                                    {{ $tandatangan->namalengkap }}
-                                                                                                </option>
-                                                                                            @endforeach
-                                                                                        </select>
-                                                                                        @error('tandatangan3_id')
-                                                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                                                        @enderror
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                 <br><br>
 <!-- Tombol Submit -->
