@@ -446,7 +446,25 @@
 <script>
 function openModal() {
     const modal = document.getElementById("confirmModal");
-    if (modal) modal.style.display = "flex";
+    if (modal) {
+        modal.style.display = "flex";
+
+        // Reset checkbox dan tombol setiap buka modal
+        const checkbox = document.getElementById("agreeCheckbox");
+        const btn = document.getElementById("confirmSubmitBtn");
+        const icon = document.getElementById("submitIcon");
+
+        if (checkbox) checkbox.checked = false;
+        if (btn) {
+            btn.disabled = true;
+            btn.style.cursor = 'not-allowed';
+            btn.style.backgroundColor = '#DC2626'; // Merah
+        }
+        if (icon) {
+            icon.setAttribute("viewBox", "0 0 512 512");
+            icon.innerHTML = '<path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zM256 432c-97.2 0-176-78.8-176-176 0-38.6 12.5-74.2 33.5-103L359 398.5C330.2 419.5 294.6 432 256 432zM398.5 359L153 113.5C181.8 92.5 217.4 80 256 80c97.2 0 176 78.8 176 176 0 38.6-12.5 74.2-33.5 103z"/>';
+        }
+    }
 }
 
 function closeModal() {
@@ -476,14 +494,29 @@ function toggleSubmitButton() {
     }
 }
 
-
 function submitForm() {
-    // Ambil form element
     const form = document.querySelector('form');
-    // Submit form jika ditemukan
-    if (form) {
-        form.submit();
+    const btn = document.getElementById("confirmSubmitBtn");
+
+    if (!form) return;
+
+    // Validasi sederhana (misal: cek checkbox harus dicentang)
+    const checkbox = document.getElementById("agreeCheckbox");
+    if (!checkbox.checked) {
+        alert("Anda harus menyetujui persyaratan terlebih dahulu.");
+        return;
     }
+
+    // Disable tombol agar gak bisa klik lagi saat proses submit
+    if (btn) {
+        btn.disabled = true;
+        btn.style.cursor = 'not-allowed';
+        btn.innerText = "Mengirim...";
+    }
+
+    // Submit form
+    form.submit();
+
     // Tutup modal
     closeModal();
 }
