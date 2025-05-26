@@ -13,9 +13,9 @@ class surattertibjakonusaha4 extends Model
 
     protected $guarded = ['id'];
 
-    public function tertibjasakonstruksi()
-    {
-        return $this->hasOne(tertibjasakonstruksi::class, 'tertibjasakonstruksi_id');
-    }
+      public function tertibjasakonstruksi()
+            {
+                return $this->hasOne(tertibjasakonstruksi::class, 'surattertibjakonusaha1_id')->oldest();
+            }
 
 }
