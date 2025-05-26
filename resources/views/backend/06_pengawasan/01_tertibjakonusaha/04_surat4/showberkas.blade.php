@@ -100,30 +100,30 @@
                                             </div>
                                             <div class="modal-body">
                                                 <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin </h5>
-                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                                   <tr>
+                                                {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
+                                                   {{-- <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
                                                         <td>{{ $datasurat4->tertibjasakonstruksi->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
-                                                    </tr>
-                                                    <tr>
+                                                    </tr> --}}
+                                                    {{-- <tr>
                                                         <td style="width: 300px;"><strong>Nama Pekerjaan</strong></td>
                                                         <td>{{ $datasurat4->tertibjasakonstruksi->namapekerjaan ?? 'Data Belum Di Buat' }}</td>
-                                                    </tr>
+                                                    </tr> --}}
 
-                                                </table>
+                                                {{-- </table> --}}
 
                                                 <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
                                                     <thead>
                                                         <tr>
                                                             <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
+                                                            {{-- <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th> --}}
                                                             <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Status Pelaksana Pengembangan Usaha</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$namapekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            {{-- <td style="border: 1px solid #000; padding: 0 8px;">{{$namapekerjaan ?? 'Data Belum Di Buat '}}</td> --}}
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->status ?? 'Data Belum Di Buat '}}</td>
                                                         </tr>
                                                     </tbody>
@@ -265,8 +265,8 @@
                                     <div class="modal-body">
                                         <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin</h5>
                                             <br>
-                                        <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                            <tr>
+                                        {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
+                                            {{-- <tr>
                                                 <td style="width: 200px;">
                                                     <strong style="font-size: 15px;">Nama Badan Usaha</strong>
                                                 </td>
@@ -276,22 +276,22 @@
                                                     </div>
                                                 </td>
 
-                                            </tr>
+                                            </tr> --}}
 
-                                        </table>
+                                        {{-- </table> --}}
 
                                         <table style="width: 100%; border-collapse: collapse; font-size: 16px; color: #000;">
                                                     <thead>
                                                         <tr>
                                                             <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
+                                                            {{-- <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th> --}}
                                                             <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Status Pelaksana Pengembangan Usaha</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat4->tertibjasakonstruksi->namapekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            {{-- <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat4->tertibjasakonstruksi->namapekerjaan ?? 'Data Belum Di Buat '}}</td> --}}
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->status ?? 'Data Belum Di Buat '}}</td>
                                                         </tr>
                                                     </tbody>
