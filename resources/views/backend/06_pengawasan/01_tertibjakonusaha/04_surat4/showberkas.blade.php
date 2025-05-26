@@ -103,11 +103,11 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                    <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $data->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
+                                                        <td>{{ $namabadanusaha ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 300px;"><strong>Nama Pekerjaan</strong></td>
-                                                        <td>{{ $data->namapekerjaan ?? 'Data Belum Di Buat' }}</td>
+                                                        <td>{{ $namapekerjaan ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
 
                                                 </table>
@@ -123,7 +123,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$data->namapekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$namapekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->status ?? 'Data Belum Di Buat '}}</td>
                                                         </tr>
                                                     </tbody>
@@ -272,7 +272,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $data->namabadanusaha ?? '-' }}
+                                                        {{ $namabadanusaha ?? '-' }}
                                                     </div>
                                                 </td>
 
@@ -291,7 +291,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datatertibjasakonstruksi ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$namapekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->status ?? 'Data Belum Di Buat '}}</td>
                                                         </tr>
                                                     </tbody>
