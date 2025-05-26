@@ -172,23 +172,23 @@
 </th>
 
 
-                                    <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemanfataan Jasa Konstruksi
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Rencana Umur Konstruksi
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Kapasitas dan Beban
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemeliharaan Produk Jasa Konstruksi
+                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemanfataan <br> Jasa Konstruksi
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:200px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Rencana <br> Umur Konstruksi
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan <br> Kapasitas dan Beban
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemeliharaan <br> Produk Jasa Konstruksi
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:175px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
 
