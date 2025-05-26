@@ -81,3 +81,24 @@
 
 
 </style>
+
+<style>
+    table.audit {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+    }
+
+    table.audit th,
+    table.audit td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top;
+    }
+
+    table.audit th {
+        background-color: #f2f2f2;
+        text-align: center;
+    }
+</style>

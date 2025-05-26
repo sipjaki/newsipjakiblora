@@ -304,7 +304,7 @@
 
                                         </table>
 
-                                        <table border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 13px; text-align: left;">
+<table class="audit">
     <thead>
         <tr>
             <th>No</th>
@@ -318,39 +318,32 @@
     </thead>
     <tbody>
         <tr>
-            <td rowspan="2" style="vertical-align: top;">1</td>
-            <td rowspan="2" style="vertical-align: top;">
+            <td rowspan="2">1</td>
+            <td rowspan="2">
                 Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
             </td>
-            <td style="vertical-align: top;">
+            <td>
                 a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
-                • Bangunan gedung sesuai dengan perizinan<br>
-                • Bangunan sipil sesuai dengan peraturan perundangan
+                &bull; Bangunan gedung sesuai dengan perizinan<br>
+                &bull; Bangunan sipil sesuai dengan peraturan perundangan
             </td>
-            <td style="vertical-align: top;">Dokumen perizinan</td>
-            <td style="vertical-align: top;">
-                Membandingkan izin pembangunan dengan fakta di lapangan
-            </td>
-            <td style="vertical-align: top;">Sesuai</td>
+            <td>Dokumen perizinan</td>
+            <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+            <td>Sesuai</td>
             <td></td>
         </tr>
         <tr>
-            <td style="vertical-align: top;">
-                b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR).
+            <td>
+                b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
             </td>
-            <td style="vertical-align: top;">
-                Dokumen resmi dari instansi berwenang
-            </td>
-            <td style="vertical-align: top;">
-                Memeriksa ketersediaan Dokumen resmi dari instansi berwenang
-            </td>
-            <td style="vertical-align: top;">Tersedia</td>
+            <td>Dokumen resmi dari instansi berwenang</td>
+            <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+            <td>Tersedia</td>
             <td></td>
         </tr>
     </tbody>
 </table>
 <br>
-
                                         <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px;">
                                             <thead>
                                                 <tr>
