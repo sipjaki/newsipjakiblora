@@ -486,80 +486,40 @@
                                             </tbody>
                                         </table>
 
+                                        <br>
                                         <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
                                             <thead>
                                                 <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Jenis Usaha </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Klasifikasi/Sub Klasifikasi </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Nomor Sertifikat Standar </th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Kesimpulan </th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Catatan Pemeriksaan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-
-
-                                                  <td style="border: 1px solid #000;">
-                                                        <select class="form-control @error('jenisusaha') is-invalid @enderror" name="jenisusaha">
-                                                            <option value="">-- Pilih Jenis Usaha --</option>
-                                                            <option value="Pekerjaan Konstruksi" {{ old('jenisusaha') == 'Pekerjaan Konstruksi' ? 'selected' : '' }}>Pekerjaan Konstruksi</option>
-                                                            <option value="Jasa Konsultasi Konstruksi" {{ old('jenisusaha') == 'Jasa Konsultasi Konstruksi' ? 'selected' : '' }}>Jasa Konsultasi Konstruksi</option>
-                                                        </select>
-                                                        @error('jenisusaha')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
-                                                    </td>
-
-
-                                                    <td style="border: 1px solid #000; max-width: 600px;">
-                                                        <div id="subklasifikasi-container">
-                                                            <select
-                                                                class="form-control mb-1 @error('subklasifikasi_id') is-invalid @enderror"
-                                                                name="subklasifikasi_id"
-                                                                id="subklasifikasiSelect"
-                                                                onchange="convertToTextarea(this)"
-                                                                style="width: 100%; max-height: 600px;"
-                                                            >
-                                                                <option value="">-- Pilih Subklasifikasi --</option>
-                                                                @foreach ($datasubklasifikasi as $sub)
-                                                                    <option value="{{ $sub->id }}" {{ old('subklasifikasi_id') == $sub->id ? 'selected' : '' }}>
-                                                                        {{ Str::limit($sub->pekerjaan, 125) }}
-                                                                    </option>
-                                                                @endforeach
-                                                            </select>
-                                                            @error('subklasifikasi_id')
-                                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
-                                                        </div>
-                                                    </td>
-
-                                                    <script>
-                                                        function convertToTextarea(select) {
-                                                            const selectedText = select.options[select.selectedIndex].text;
-                                                            const container = document.getElementById("subklasifikasi-container");
-
-                                                            // Gantikan select dengan textarea
-                                                            container.innerHTML = `
-                                                                <textarea class="form-control" readonly rows="4"
-                                                                    style="width: 100%; resize: vertical;">${selectedText}</textarea>
-                                                                <input type="hidden" name="subklasifikasi_id" value="${select.value}">
-                                                            `;
-                                                        }
-                                                    </script>
-
                                                         <td style="border: 1px solid #000;">
-                                                            <input
-                                                                type="text"
-                                                                name="nomorsertifikat"
-                                                                class="form-control @error('nomorsertifikat') is-invalid @enderror"
-                                                                value="{{ old('nomorsertifikat') }}"
-                                                                placeholder="Masukkan Nomor Sertifikat">
-
-                                                            @error('nomorsertifikat')
+                                                            <select class="form-control @error('kesimpulan') is-invalid @enderror" name="kesimpulan">
+                                                                <option value="">-- Pilih Kesimpulan --</option>
+                                                                <option value="Tertib" {{ old('kesimpulan') == 'Tertib' ? 'selected' : '' }}>Tertib</option>
+                                                                <option value="Tidak Tertib" {{ old('kesimpulan') == 'Tidak Tertib' ? 'selected' : '' }}>Tidak Tertib</option>
+                                                            </select>
+                                                            @error('kesimpulan')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
                                                             @enderror
                                                         </td>
 
-                                                </tr>
+                                                            <td style="border: 1px solid #000; width: 400px;">
+                                                                            <input
+                                                                                class="form-control @error('catatanpemeriksaan') is-invalid @enderror"
+                                                                                name="catatanpemeriksaan"
+                                                                                placeholder="Masukan Catatan Kesimpulan ..."
+                                                                                rows="6"
+                                                                                style="width: 100%; resize: vertical;"
+                                                                            @error('catatanpemeriksaan')
+                                                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                                            @enderror
+                                                            </td>
+
+                                                    </tr>
                                             </tbody>
                                         </table>
 
