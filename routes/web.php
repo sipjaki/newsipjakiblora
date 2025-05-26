@@ -1047,6 +1047,7 @@ Route::delete('/betertibjakonusahapemenuhansyaratdelete/delete/{id}', [Tertibjas
 
 // SURAT DUKUNG TERTIB JAKON USAHA 4 PELAKSANA PENGEMBANGAN USAHA
 Route::get('/betertibjakonusahapelaksana/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksana'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapelaksanaindex');
+Route::get('/betertibjakonusahapelaksana/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksanashow'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapelaksanashow');
 
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------
 Route::get('/beshstkabblora', [ShstbloraController::class, 'beshstkabblora'])->middleware(['auth', 'can:super_admin'])->name('beshstkabblora');
