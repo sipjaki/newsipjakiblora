@@ -64,7 +64,7 @@
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
 
-                        <form action="{{ route('betertibjakonusahacreatenew') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonpemanfaatancreatenew') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -180,10 +180,10 @@
 </div>
 
                     <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                    <div class="flex justify-end btn-create">
-                                        <button type="button" onclick="openModal()">
+                                    <div class="flex justify-end">
+                                        <button class="btn-create" type="button" onclick="openModal()">
                                             <i class="bi bi-plus-circle-fill"></i>Create
-                                    </button>
+                                        </button>
                                     </div>
                                     <!-- Modal Konfirmasi -->
                                     <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

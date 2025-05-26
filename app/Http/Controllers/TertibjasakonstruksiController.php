@@ -1687,4 +1687,34 @@ return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.create', [
 }
 
 
+        public function betertibjakonpemanfaatancreatenew(Request $request)
+    {
+        // Validasi input
+         $validated = $request->validate([
+        'namapekerjaan'       => 'required|string|max:65535', // text di DB = text max 65535 chars
+        'namabangunan'        => 'required|string|max:65535',
+        'nomorkontrak'        => 'required|string|max:255',
+        'lokasi'              => 'required|string|max:255',
+        'tanggalpembangunan'  => 'required|date',
+        'tanggalpemanfaatan'  => 'required|date',
+        'umurbangunan'        => 'required|string|max:255',
+    ], [
+        'namapekerjaan.required'       => 'Nama Pekerjaan Wajib Di Isi !.',
+        'namabangunan.required'        => 'Nama Bangunan Wajib Di Isi !.',
+        'nomorkontrak.required'        => 'Nomor Kontrak Wajib Di Isi !.',
+        'lokasi.required'              => 'Lokasi Wajib Di Isi !.',
+        'tanggalpembangunan.required'    => 'Tanggal Pembangunan Wajib Di Isi !.',
+        'tanggalpemanfaatan.required'    => 'Tanggal Pemanfaatan Wajib Di Isi !.',
+        'umurbangunan.required'        => 'Umur Bangunan Wajib Di Isi !.',
+    ]);
+
+    // Simpan data ke database
+    // Pastikan model kamu sesuai, misal PekerjaanBangunan::create
+    tertibjakonpemanfaatan::create($validated);
+
+    // Flash message & redirect
+        session()->flash('create', 'Data Tertib Jakon Pemanfataan Berhasil di Buat  !');
+        return redirect('/betertibjakonpemanfaatan');
+    }
+
 }

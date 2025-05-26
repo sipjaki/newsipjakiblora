@@ -1059,6 +1059,7 @@ Route::delete('/betertibjakonusahapelaksanadelete/delete/{id}', [Tertibjasakonst
 Route::get('/betertibjakonpemanfaatan', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatan'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanindexlist');
 
 Route::get('/betertibjakonpemanfaatan/create', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatancreate');
+Route::post('/betertibjakonpemanfaatan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreatenew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatancreatenew');
 
 
 
