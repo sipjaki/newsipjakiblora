@@ -1735,4 +1735,37 @@ return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.update', [
 ]);
 }
 
+public function betertibjakonpemanfaatanupdatecreate(Request $request, $id)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'penyediastatustertibjakon_id' => 'required|string',
+        'namapekerjaan'       => 'required|string|max:65535',
+        'namabangunan'        => 'required|string|max:65535',
+        'nomorkontrak'        => 'required|string|max:255',
+        'lokasi'              => 'required|string|max:255',
+        'tanggalpembangunan'  => 'required|date',
+        'tanggalpemanfaatan'  => 'required|date',
+        'umurbangunan'        => 'required|string|max:255',
+    ], [
+        'penyediastatustertibjakon_id.required' => 'Status Penyedia Wajib Di Isi !.',
+        'namapekerjaan.required'                => 'Nama Pekerjaan Wajib Di Isi !.',
+        'namabangunan.required'                 => 'Nama Bangunan Wajib Di Isi !.',
+        'nomorkontrak.required'                 => 'Nomor Kontrak Wajib Di Isi !.',
+        'lokasi.required'                       => 'Lokasi Wajib Di Isi !.',
+        'tanggalpembangunan.required'           => 'Tanggal Pembangunan Wajib Di Isi !.',
+        'tanggalpemanfaatan.required'           => 'Tanggal Pemanfaatan Wajib Di Isi !.',
+        'umurbangunan.required'                 => 'Umur Bangunan Wajib Di Isi !.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $data = tertibjakonpemanfaatan::findOrFail($id);
+
+    // Update data
+    $data->update($validated);
+
+    // Flash message & redirect
+    session()->flash('update', 'Data Tertib Jakon Pemanfaatan Berhasil di Update!');
+    return redirect('/betertibjakonpemanfaatan');
+}
 }
