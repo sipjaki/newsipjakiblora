@@ -1770,39 +1770,34 @@ public function betertibjakonpemanfaatanupdatecreate(Request $request, $id)
     return redirect('/betertibjakonpemanfaatan');
 }
 
+
 public function betertibjakonpemanfataanjakonindex($id)
 {
     // Ambil data utama berdasarkan ID
     $datatertibjakonpemanfaatan = tertibjakonpemanfaatan::find($id);
 
-    // Jika data tidak ditemukan
     if (!$datatertibjakonpemanfaatan) {
         return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
     }
 
-    // Ambil user yang sedang login
     $user = Auth::user();
 
-    // Ambil data surat terkait dengan paginate
+    // Ambil semua surat terkait dengan paginate
     $datasurat = surattertibjakonpemanfaatan1::where('tertibjakonpemanfaatan_id', $id)
                     ->orderBy('created_at', 'desc')
                     ->paginate(50);
 
-    // Kirim data ke view
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.index', [
         'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan',
         'user' => $user,
-        'data' => $datasurat, // digunakan jika kamu pakai nama "data" di view
+        'data' => $datasurat,
         'datasurat' => $datasurat,
         'datanamabangunan' => $datatertibjakonpemanfaatan->namabangunan,
         'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
-        'datasurat_id' => $datasurat->first()?->id, // id dari surat pertama jika ada
-
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id, // penting untuk route tombol "Buat Berkas"
     ]);
 }
-
-
-
 
   public function betertibjakonpemanfataanjakoncreateberkas($id)
 {

@@ -99,17 +99,14 @@
                     </a>
 
 
-                                    {{-- @if(empty($data->surattertibjakonusaha1->id)) --}}
-@if ($datasurat->isEmpty())
-    <a href="{{ route('betertibjakonpemanfataanjakoncreateberkas', ['id' => $datasurat_id]) }}">
-        <button class="btn-create">
-            <i class="bi bi-file-earmark-plus icon-create"></i>
-            Buat Berkas
-        </button>
-    </a>
-@endif
-
-
+       {{-- Tampilkan tombol jika surat kosong --}}
+    @if ($datasurat->isEmpty())
+        <a href="{{ route('betertibjakonpemanfataanjakoncreateberkas', ['id' => $id]) }}">
+            <button class="btn btn-success">
+                <i class="bi bi-file-earmark-plus"></i> Buat Berkas
+            </button>
+        </a>
+    @endif
                                     {{-- @endif --}}
 
                    @if ($datasurat->isNotEmpty())
