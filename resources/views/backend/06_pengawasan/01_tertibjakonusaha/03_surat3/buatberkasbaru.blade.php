@@ -361,9 +361,9 @@
                                             <thead>
                                                 <tr>
                                                     <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px; width:50px;">No</th>
-                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 400px; font-size:15px;">Nama Paket Pekerjaan</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Jenis Usaha Yang Dipersyaratkan</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
+                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 400px; font-size:15px;">Nama BUJK</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Nomor Induk Berusaha</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">PJBU</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
