@@ -107,7 +107,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/betertibjakonusaha?search=${encodeURIComponent(input)}`, {
+                            fetch(`/betertibjakonpemanfaatan?search=${encodeURIComponent(input)}`, {
                                 headers: {
                                     'X-Requested-With': 'XMLHttpRequest'
                                 }
@@ -149,43 +149,58 @@
                                     <th rowspan="2" style="text-align: center; width:125px;">
                                         <i class="bi bi-people-fill"></i> Penyedia
                                     </th>
-                                    <th rowspan="2" style="text-align: center; width:200px;">
-                                        <i class="bi bi-building"></i> NIB
-                                    </th>
+
                                     <th rowspan="2" style="text-align: center; width:500px;">
                                         <i class="bi bi-geo-alt-fill"></i> Nama Pekerjaan
                                     </th>
-                                    <th rowspan="2" style="text-align: center; width:200px; white-space: normal; word-wrap: break-word;">
-                                        <i class="bi bi-calendar-event"></i> Tahun Pelaksanaan
-                                    </th>
-                                    <th rowspan="2" style="text-align: center; width:400px;">
-                                        <i class="bi bi-building-fill"></i> Badan Usaha
+
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Nama Bangunan
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:400px;">
-                                        <i class="bi bi-building-fill"></i> PJBU
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Nomor Kontrak
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
-                                        <i class="bi bi-building-fill"></i> Kesesuaian Kegiatan Konstruksi
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Lokasi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
-                                        <i class="bi bi-building-fill"></i> Segmentasi Pasar
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Tanggal Pembangunan
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
-                                        <i class="bi bi-building-fill"></i> Pemenuhan Syarat
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Tanggal Pemanfaatan
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
-                                        <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Umur Bangunan
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Status 1
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Status 2
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Status 3
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Status 4
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Status 5
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:200px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
-
 
                                 </tr>
 
@@ -207,69 +222,94 @@
                                 @endif
                               </td>
 
-                              <td style="text-align: left;">
-                                @if($item->nib)
-                                  {{ $item->nib }}
-                                @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                                    Data Belum Di Update
-                                  </button>
-                                @endif
-                              </td>
+<td style="text-align: left;">
+  @if($item->namapekerjaan)
+    {{ $item->namapekerjaan }}
+  @else
+    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+      Data Belum Di Update
+    </button>
+  @endif
+</td>
 
-                              <td style="text-align: left;">
-                                @if($item->namapekerjaan)
-                                  {{ $item->namapekerjaan }}
-                                @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                                    Data Belum Di Update
-                                  </button>
-                                @endif
-                              </td>
+<td style="text-align: left;">
+  @if($item->namabangunan)
+    {{ $item->namabangunan }}
+  @else
+    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+      Data Belum Di Update
+    </button>
+  @endif
+</td>
 
-                              <td style="text-align: center;">
-                                @if($item->tahunpelaksanaan)
-                                  {{ $item->tahunpelaksanaan }}
-                                @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                                    Data Belum Di Update
-                                  </button>
-                                @endif
-                              </td>
+<td style="text-align: left;">
+  @if($item->nomorkontrak)
+    {{ $item->nomorkontrak }}
+  @else
+    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+      Data Belum Di Update
+    </button>
+  @endif
+</td>
 
-                              <td style="text-align: left;">
-                                @if($item->namabadanusaha)
-                                  {{ $item->namabadanusaha }}
-                                @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                                    Data Belum Di Update
-                                  </button>
-                                @endif
-                              </td>
+<td style="text-align: left;">
+  @if($item->lokasi)
+    {{ $item->lokasi }}
+  @else
+    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+      Data Belum Di Update
+    </button>
+  @endif
+</td>
+
+<td style="text-align: left;">
+  @if($item->tanggalpembangunan)
+    {{ \Carbon\Carbon::parse($item->tanggalpembangunan)->format('d-m-Y') }}
+  @else
+    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+      Data Belum Di Update
+    </button>
+  @endif
+</td>
+
+<td style="text-align: left;">
+  @if($item->tanggalpemanfaatan)
+    {{ \Carbon\Carbon::parse($item->tanggalpemanfaatan)->format('d-m-Y') }}
+  @else
+    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+      Data Belum Di Update
+    </button>
+  @endif
+</td>
+
+<td style="text-align: left;">
+  @if($item->umurbangunan)
+    {{ $item->umurbangunan }}
+  @else
+    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+      Data Belum Di Update
+    </button>
+  @endif
+</td>
 
 
 
-                              <td style="text-align: left; text-transform: uppercase;">
-                                @if($item->pjbu)
-                                  {{ $item->pjbu }}
-                                @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; text-transform: uppercase;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                                    Data Belum Di Update
-                                  </button>
-                                @endif
-                              </td>
 
-                               <td style="text-align: center; vertical-align: middle;">
+                             <td style="text-align: center; vertical-align: middle;">
                                     <a href="/betertibjakonusahasuratpercobaan/create/{{$item->id}}" style="text-decoration: none;">
                                         <button class="button-abuabu">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
