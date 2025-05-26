@@ -235,7 +235,7 @@
                                             <br>
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                          <tr>
-                                                <td style="width: 200px;">
+                                                <td style="width: 200px; padding:0 8px;">
                                                     <strong style="font-size: 15px;">Nama Bangunan </strong>
                                                 </td>
                                                 <td>
