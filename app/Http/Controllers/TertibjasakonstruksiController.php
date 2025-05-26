@@ -1363,7 +1363,7 @@ $validatedData = $request->validate([
 
     'nomorsertifikat.required' => 'Nomor Sertifikat wajib diisi.',
     'nomorsertifikat.string' => 'Nomor Sertifikat harus berupa teks.',
-    'nomorsertifikat.max' => 'Nomor Sertifikat maksimal 255 karakter.',
+    'nomorsertifikat.wex' => 'Nomor Sertifikat maksimal 255 karakter.',
 
     'kesimpulan.required' => 'Kesimpulan wajib dipilih.',
     'kesimpulan.in' => 'Kesimpulan harus berupa Tertib atau Tidak Tertib.',
