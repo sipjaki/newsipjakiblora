@@ -1831,8 +1831,8 @@ public function betertibjakonpemanfataanjakoncreateberkasnew(Request $request)
         'tertibjakonpemanfaatan_id' => 'required|string',
         'lingkuppengawasan' => 'required|string', // tanggal mulai
         'indikator' => 'required|string', // tanggal akhir
-        'dokumendiperiksa' => 'required|string', // nama bangunan
-        'carapemeriksaan' => 'required|string', // nama pengelola
+        'dokumendiperiksa' => 'required|date', // nama bangunan
+        'carapemeriksaan' => 'required|date', // nama pengelola
         'kesimpulanpemeriksaan' => 'required|in:Sesuai,Tidak Sesuai', // status 1
         'catatan' => 'required|in:Tersedia,Tidak Tersedia', // status 2
     ], [
