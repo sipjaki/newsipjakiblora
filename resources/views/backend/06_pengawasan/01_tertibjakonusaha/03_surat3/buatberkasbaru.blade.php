@@ -508,7 +508,7 @@
                                                         </td>
 
                                                             <td style="border: 1px solid #000; width: 600px;">
-                                                                            <input
+                                                                            <input height="300px;"
                                                                                 class="form-control @error('catatanpemeriksaan') is-invalid @enderror"
                                                                                 name="catatanpemeriksaan"
                                                                                 placeholder="Masukan Catatan Kesimpulan ..."
