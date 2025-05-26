@@ -1069,7 +1069,7 @@ Route::get('/betertibjakonpemanfataanjakon/index/{id}', [TertibjasakonstruksiCon
 
 
 Route::get('/betertibjakonpemanfataanjakon/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataanjakoncreateberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataanjakoncreateberkas');
-// Route::post('/betertibjakonusahapelaksana/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksananewberkascreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapelaksananewberkas');
+Route::post('/betertibjakonpemanfataanjakon/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataanjakoncreateberkasnew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataanjakonnewberkascreate');
 
 
 

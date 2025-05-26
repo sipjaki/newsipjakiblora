@@ -1824,4 +1824,48 @@ public function betertibjakonpemanfataanjakonindex($id)
 }
 
 
+public function betertibjakonpemanfataanjakoncreateberkasnew(Request $request)
+{
+    // Validasi input, sesuaikan rules-nya jika perlu
+    $validatedData = $request->validate([
+        'tertibjakonpemanfaatan_id' => 'required|string',
+        'lingkuppengawasan' => 'required|string', // tanggal mulai
+        'indikator' => 'required|string', // tanggal akhir
+        'dokumendiperiksa' => 'required|string', // nama bangunan
+        'carapemeriksaan' => 'required|string', // nama pengelola
+        'kesimpulanpemeriksaan' => 'required|in:Sesuai,Tidak Sesuai', // status 1
+        'catatan' => 'required|in:Tersedia,Tidak Tersedia', // status 2
+    ], [
+        'lingkuppengawasan.required' => 'Tanggal Mulai Pengawasan Wajib Diisi !.',
+        'indikator.required' => 'Tanggal Selesai Pengawasan Wajib Diisi !.',
+        'dokumendiperiksa.required' => 'Nama Pemilik Bangunan Wajib Diisi !.',
+        'carapemeriksaan.required' => 'Nama Pengelola Bangunan Wajib Diisi !.',
+        'kesimpulanpemeriksaan.required' => 'Kesimpulan Wajib Di Pilih !.',
+        'catatan.required' => 'Kesimpulan Wajib Di Pilih !.',
+    ]);
+
+    try {
+        $surat = new surattertibjakonpemanfaatan1();
+
+        $surat->tertibjakonpemanfaatan_id = $validatedData['tertibjakonpemanfaatan_id'] ?? null;
+        $surat->lingkuppengawasan = $validatedData['lingkuppengawasan'] ?? null;
+        $surat->indikator = $validatedData['indikator'] ?? null;
+        $surat->dokumendiperiksa = $validatedData['dokumendiperiksa'] ?? null;
+        $surat->carapemeriksaan = $validatedData['carapemeriksaan'] ?? null;
+        $surat->kesimpulanpemeriksaan = $validatedData['kesimpulanpemeriksaan'] ?? null;
+        $surat->catatan = $validatedData['catatan'] ?? null;
+
+        $surat->save();
+
+        // Ambil parentId dari object yang sudah disimpan, saya asumsikan ambil dari tertibjakonpemanfaatan_id
+        $parentId = $surat->tertibjakonpemanfaatan_id;
+
+        session()->flash('create', 'Surat Dukung Tertib Jakon Pemanfaatan berhasil dibuat!');
+        return redirect()->route('betertibjakonpemanfataansuratjasakonstruksiindex', ['id' => $parentId]);
+    } catch (\Exception $e) {
+        return back()->withInput()
+            ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+    }
+}
+
 }

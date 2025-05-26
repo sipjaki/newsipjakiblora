@@ -213,10 +213,10 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('betertibjakonusahapelaksananewberkas') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonpemanfataanjakonnewberkascreate') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
-                            <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
+                            <input type="hidden"  name="tertibjakonpemanfaatan_id" value="{{ $datatertibjasakonstruksi_id }}">
 
                                 <div class="modal-content" style="font-size: 0.875rem;">
                                     <div class="modal-header d-flex align-items-center">
