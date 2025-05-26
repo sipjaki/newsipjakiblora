@@ -1054,11 +1054,25 @@ Route::post('/betertibjakonusahapelaksana/createberkasnew', [Tertibjasakonstruks
 
 Route::delete('/betertibjakonusahapelaksanadelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksanadelete'])->middleware('auth')->name('betertibjakonusahapelaksanadelete');
 
+// SIGIT TEA
+// SURAT TERTIB JAKON PEMANFAATAN
+Route::get('/betertibjakonpemanfaatan', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatan'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanindexlist');
+
+
+
+
+
+
+
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------
 Route::get('/beshstkabblora', [ShstbloraController::class, 'beshstkabblora'])->middleware(['auth', 'can:super_admin'])->name('beshstkabblora');
 Route::get('/beshstkabblora/update/{id}', [ShstbloraController::class, 'beshstkabbloraupdate'])->middleware(['auth', 'can:super_admin'])->name('beshstkabbloraupdate');
 Route::put('/beshstkabblora/updatenew/{id}', [ShstbloraController::class, 'beshstkabbloraupdatenew'])->middleware(['auth', 'can:super_admin'])->name('beshstkabbloraupdatenew');
 // ___________________________________________________________________________________________________________________________________
+
+
+
+
 
 // MENU DATA BACKEND SATUAN HARGA DASAR MATERIAL
 Route::get('/besatuanhargamaterial', [SatuanhargamaterialController::class, 'besatuanhargamaterial'])->middleware(['auth', 'can:super_admin']);
