@@ -144,58 +144,48 @@
                             <thead>
                                 <tr>
                                     <th rowspan="2" style="text-align: center; width:75px;">
-                                        <i class="bi bi-list-ol"></i> No
-                                    </th>
-                                    <th rowspan="2" style="text-align: center; width:125px;">
-                                        <i class="bi bi-people-fill"></i> Penyedia
+    <i class="bi bi-list-ol"></i> No
+</th>
+<th rowspan="2" style="text-align: center; width:125px;">
+    <i class="bi bi-buildings"></i> Penyedia
+</th>
+<th rowspan="2" style="text-align: center; width:500px;">
+    <i class="bi bi-clipboard-check-fill"></i> Nama Pekerjaan
+</th>
+<th rowspan="2" style="text-align: center; width:500px;">
+    <i class="bi bi-house-fill"></i> Nama Bangunan
+</th>
+<th rowspan="2" style="text-align: center; width:250px;">
+    <i class="bi bi-file-earmark-text-fill"></i> Nomor Kontrak
+</th>
+<th rowspan="2" style="text-align: center; width:500px;">
+    <i class="bi bi-geo-alt-fill"></i> Lokasi
+</th>
+<th rowspan="2" style="text-align: center; width:225px;">
+    <i class="bi bi-calendar-check-fill"></i> Tanggal Pembangunan
+</th>
+<th rowspan="2" style="text-align: center; width:225px;">
+    <i class="bi bi-calendar-event-fill"></i> Tanggal Pemanfaatan
+</th>
+<th rowspan="2" style="text-align: center; width:175px;">
+    <i class="bi bi-hourglass-split"></i> Umur Bangunan
+</th>
+
+
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemanfataan Jasa Konstruksi
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Nama Pekerjaan
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Rencana Umur Konstruksi
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Nama Bangunan
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:250px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Nomor Kontrak
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Kapasitas dan Beban
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Lokasi
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:225px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Tanggal Pembangunan
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:225px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Tanggal Pemanfaatan
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:100px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Umur Bangunan
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Status 1
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Status 2
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Status 3
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Status 4
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:500px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Status 5
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemeliharaan Produk Jasa Konstruksi
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:200px;">
