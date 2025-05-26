@@ -1541,7 +1541,7 @@ public function betertibjakonusahapelaksana($id)
     // Ambil data relasi surattertibjakonusaha1 jika ada
     $datasurattertibjakonusaha4 = $datatertibjasakonstruksi->surattertibjakonusaha3;
 
-    return view('backend.06_pengawasan.01_tertibjakonusaha.03_surat3.buatberkasbaru', [
+    return view('backend.06_pengawasan.01_tertibjakonusaha.04_surat4.buatberkasbaru', [
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
         'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id,
