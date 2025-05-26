@@ -60,31 +60,31 @@
                                     <!-- Tombol Badan Usaha -->
 
 
-                                     @if($datasurat2->id)
-                                          {{-- <a href="/betertibjakonusahasurat1/update/{{$datasurat2->id}}">
+                                     @if($datasurat4->id)
+                                          {{-- <a href="/betertibjakonusahasurat1/update/{{$datasurat4->id}}">
                                                 <button class="btn-create">
                                                     <i class="bi bi-tools icon-create"></i>
                                                     Perbaikan Data
                                                 </button>
                                             </a> --}}
-                                        <button onclick="printModalContent({{ $datasurat2->id }})" class="btn-create">
+                                        <button onclick="printModalContent({{ $datasurat4->id }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
                                         </button>
 
-                                        <button class="btn-create" onclick="downloadModalPDF({{ $datasurat2->id }})">
+                                        <button class="btn-create" onclick="downloadModalPDF({{ $datasurat4->id }})">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                                         </button>
 
                                         <button class="btn-create"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat2->id }}">
+                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat4->id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
                                         </button>
                                     @endif
 
-                                <div class="modal fade" id="modalKtp{{ $datasurat2->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $datasurat2->id }}" aria-hidden="true">
+                                <div class="modal fade" id="modalKtp{{ $datasurat4->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $datasurat4->id }}" aria-hidden="true">
                                             <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem;">
                                             <div class="modal-header d-flex align-items-center">
@@ -103,23 +103,23 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $datasurat2->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
+                                                        <td>{{ $datasurat4->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
-                                                        <td>{{ $datasurat2->statusperizinan ?? 'Data Belum Di Buat ' }}</td>
+                                                        <td>{{ $datasurat4->statusperizinan ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>No NIB</strong></td>
-                                                        <td>{{ $datasurat2->nib ?? 'Data Belum Di Buat ' }}</td>
+                                                        <td>{{ $datasurat4->nib ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
                                                         <td>
-                                                            @if ($datasurat2 && $datasurat2->waktupengawasan && $datasurat2->waktupengawasanselesai)
-                                                                {{ \Carbon\Carbon::parse($datasurat2->waktupengawasan)->isoFormat('D MMMM YYYY') }}
+                                                            @if ($datasurat4 && $datasurat4->waktupengawasan && $datasurat4->waktupengawasanselesai)
+                                                                {{ \Carbon\Carbon::parse($datasurat4->waktupengawasan)->isoFormat('D MMMM YYYY') }}
                                                                 –
-                                                                {{ \Carbon\Carbon::parse($datasurat2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
+                                                                {{ \Carbon\Carbon::parse($datasurat4->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
                                                             @else
                                                                 <span class="text-muted">Belum Di Buat</span>
                                                             @endif
@@ -155,11 +155,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat2->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->bentuk ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->sbu ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat4->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->bentuk ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->sbu ?? 'Data Belum Di Buat '}}</td>
                                                             {{-- <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
@@ -192,18 +192,18 @@
                                                                                             <tbody>
                                                                                                  <tr>
                                                                                                     <td style="font-size: 12px; text-align: center;">1</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat2->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat2->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px; text-align: center;">2</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat2->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat2->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px; text-align: center;">3</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat2->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat2->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
@@ -258,7 +258,7 @@
 
 <tr>
     @php
-        $kesesuaian = $datasurat2->kesesuaiansbu ?? 'Surat Belum Di Buat';
+        $kesesuaian = $datasurat4->kesesuaiansbu ?? 'Surat Belum Di Buat';
         $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
         $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
         $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -276,7 +276,7 @@
     </td>
 
 @php
-        $kesesuaian = $datasurat2->sbu ?? 'Surat Belum Di Buat';
+        $kesesuaian = $datasurat4->sbu ?? 'Surat Belum Di Buat';
         $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
         $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
         $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -336,7 +336,7 @@
                                                         class="form-control @error('namabadanusaha') is-invalid @enderror"
                                                         name="namabadanusaha"
                                                         placeholder="Masukan Nama Badan Usaha ..."
-                                                        value="{{ old('namabadanusaha', $datasurat2->namabadanusaha ?? '') }}" readonly>
+                                                        value="{{ old('namabadanusaha', $datasurat4->namabadanusaha ?? '') }}" readonly>
 
                                                     @error('namabadanusaha')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -350,7 +350,7 @@
                                                 </td>
                                          <td>
                                                 @php
-                                                    $status = $datasurat2->statusperizinan ?? null;
+                                                    $status = $datasurat4->statusperizinan ?? null;
                                                 @endphp
 
                                                 @if ($status === 'Terverifikasi')
@@ -376,7 +376,7 @@
                                                         class="form-control @error('nib') is-invalid @enderror"
                                                         name="nib"
                                                         placeholder="Masukkan NIB ..."
-                                                        value="{{ old('nib', $datasurat2->nib ?? '') }}" readonly>
+                                                        value="{{ old('nib', $datasurat4->nib ?? '') }}" readonly>
                                                     @error('nib')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
@@ -389,12 +389,12 @@
                                                 </td>
                                               <td class="d-flex align-items-center gap-2" style="font-size: 16px; white-space: nowrap;">
                                                 @php
-                                                    $mulai = ($datasurat2 && $datasurat2->waktupengawasan)
-                                                        ? \Carbon\Carbon::parse($datasurat2->waktupengawasan)->translatedFormat('d F Y')
+                                                    $mulai = ($datasurat4 && $datasurat4->waktupengawasan)
+                                                        ? \Carbon\Carbon::parse($datasurat4->waktupengawasan)->translatedFormat('d F Y')
                                                         : '-';
 
-                                                    $selesai = ($datasurat2 && $datasurat2->waktupengawasanselesai)
-                                                        ? \Carbon\Carbon::parse($datasurat2->waktupengawasanselesai)->translatedFormat('d F Y')
+                                                    $selesai = ($datasurat4 && $datasurat4->waktupengawasanselesai)
+                                                        ? \Carbon\Carbon::parse($datasurat4->waktupengawasanselesai)->translatedFormat('d F Y')
                                                         : '-';
                                                 @endphp
 
@@ -439,11 +439,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat2->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->bentuk ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->sbu ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat4->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->bentuk ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->sbu ?? 'Data Belum Di Buat '}}</td>
                                                             {{-- <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
@@ -479,19 +479,19 @@
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">1</td>
                                                                                     <td style="font-size: 16px;">
-                                                                                        {{ optional($datasurat2->tandatangan1)->tandatangan ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{ optional($datasurat4->tandatangan1)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
                                                                                       <td style="font-size: 16px;">
-                                                                                        {{ optional($datasurat2->tandatangan2)->tandatangan ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{ optional($datasurat4->tandatangan2)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
                                                                                     <td style="font-size: 16px;">
-                                                                                        {{ optional($datasurat2->tandatangan3)->tandatangan ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{ optional($datasurat4->tandatangan3)->tandatangan ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
