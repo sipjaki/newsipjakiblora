@@ -128,6 +128,54 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
+{{--
+                                                <div class="container" style="margin-top: 10px;">
+                                                    <!-- Modal Card -->
+
+                                                            <div class="container" style="margin-top: 10px;">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
+                                                                        <!-- Modal Card -->
+                                                                        <div class="card" style="border: 1px solid white;">
+                                                                            <div class="card-body">
+                                                                                <!-- Tim Pemeriksa -->
+                                                                                <div class="tim-pemeriksa-container">
+                                                                                    <div class="tim-pemeriksa">
+                                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
+                                                                                        <table class="table table-sm">
+                                                                                            <thead class="table-secondary">
+                                                                                                <tr>
+                                                                                                    <th style="width: 60px; font-size: 12px;" >No</th>
+                                                                                                    <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
+                                                                                                    <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                 <tr>
+                                                                                                    <td style="font-size: 12px; text-align: center;">1</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td style="font-size: 12px; text-align: center;">2</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td style="font-size: 12px; text-align: center;">3</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> --}}
 
                                             </div>
                                         </div>
@@ -261,7 +309,7 @@
                                 <div class="container" style="margin-top: 10px;">
                                     <!-- Modal Card -->
 
-                                            <div class="container" style="margin-top: 10px;">
+                                            {{-- <div class="container" style="margin-top: 10px;">
                                                 <div class="row">
                                                     <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
                                                         <!-- Modal Card -->
@@ -305,7 +353,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
 
                                 <br><br>
