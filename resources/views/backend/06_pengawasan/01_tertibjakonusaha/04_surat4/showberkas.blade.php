@@ -103,28 +103,13 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $datasurat4->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
+                                                        <td>{{ $datatertibjasakonstruksinamabadanusaha ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
-                                                        <td>{{ $datasurat4->statusperizinan ?? 'Data Belum Di Buat ' }}</td>
+                                                        <td style="width: 300px;"><strong>Nama Pekerjaan </strong></td>
+                                                        <td>{{ $namapekerjaan ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>No NIB</strong></td>
-                                                        <td>{{ $datasurat4->nib ?? 'Data Belum Di Buat ' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>
-                                                            @if ($datasurat4 && $datasurat4->waktupengawasan && $datasurat4->waktupengawasanselesai)
-                                                                {{ \Carbon\Carbon::parse($datasurat4->waktupengawasan)->isoFormat('D MMMM YYYY') }}
-                                                                –
-                                                                {{ \Carbon\Carbon::parse($datasurat4->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
-                                                            @else
-                                                                <span class="text-muted">Belum Di Buat</span>
-                                                            @endif
-                                                        </td>
-                                                    </tr>
+
                                                 </table>
 
                                                 <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
@@ -132,89 +117,17 @@
                                                         <tr>
                                                             <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
                                                             <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Bentuk</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kualifikasi</th>
-                                                            {{-- <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th> --}}
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Bentuk</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Kualifikasi</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
->
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Status Pelaksana Pengembangan Usaha</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat4->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->bentuk ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->sbu ?? 'Data Belum Di Buat '}}</td>
-                                                            {{-- <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha}}</td> --}}
+                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$namapekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->status ?? 'Data Belum Di Buat '}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
-
-                                                <div class="container" style="margin-top: 10px;">
-                                                    <!-- Modal Card -->
-
-                                                            <div class="container" style="margin-top: 10px;">
-                                                                <div class="row">
-                                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
-                                                                        <!-- Modal Card -->
-                                                                        <div class="card" style="border: 1px solid white;">
-                                                                            <div class="card-body">
-                                                                                <!-- Tim Pemeriksa -->
-                                                                                <div class="tim-pemeriksa-container">
-                                                                                    <div class="tim-pemeriksa">
-                                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
-                                                                                        <table class="table table-sm">
-                                                                                            <thead class="table-secondary">
-                                                                                                <tr>
-                                                                                                    <th style="width: 60px; font-size: 12px;" >No</th>
-                                                                                                    <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
-                                                                                                    <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
-                                                                                                </tr>
-                                                                                            </thead>
-                                                                                            <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="font-size: 12px; text-align: center;">1</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td style="font-size: 12px; text-align: center;">2</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td style="font-size: 12px; text-align: center;">3</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
 
                                             </div>
                                         </div>
