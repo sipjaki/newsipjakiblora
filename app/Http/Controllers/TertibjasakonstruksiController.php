@@ -1802,4 +1802,29 @@ public function betertibjakonpemanfataanjakonindex($id)
 
 
 
+
+  public function betertibjakonpemanfataanjakoncreateberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan1')->findOrFail($id);
+
+    $user = Auth::user();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonusaha3;
+
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.buatberkasbaru', [
+        'datatertibjasakonstruksi' => $datatertibjasapemanfaatan->namapekerjaan,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
+        'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
+        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
+        'user' => $user,
+        'data' => $datatertibjasapemanfaatan,
+
+        'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
+        'title' => 'Berkas Surat Tertib Jakon Pemanfaatan '
+    ]);
+}
+
+
 }

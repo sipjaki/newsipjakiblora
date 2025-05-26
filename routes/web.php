@@ -1068,6 +1068,10 @@ Route::post('/betertibjakonpemanfaatan/updatecreate/{id}', [Tertibjasakonstruksi
 Route::get('/betertibjakonpemanfataanjakon/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataanjakonindex'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataansuratjasakonstruksiindex');
 
 
+Route::get('/betertibjakonpemanfataanjakon/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataanjakoncreateberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataanjakoncreateberkas');
+// Route::post('/betertibjakonusahapelaksana/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksananewberkascreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapelaksananewberkas');
+
+
 
 
 
