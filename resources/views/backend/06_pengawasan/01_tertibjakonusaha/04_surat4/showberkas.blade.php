@@ -103,11 +103,11 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $datatertibjasakonstruksinamabadanusaha ?? 'Data Belum Di Buat ' }}</td>
+                                                        <td>{{ $data->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 300px;"><strong>Nama Pekerjaan </strong></td>
-                                                        <td>{{ $namapekerjaan ?? 'Data Belum Di Buat ' }}</td>
+                                                        <td>{{ $data->namapekerjaan ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
 
                                                 </table>
@@ -123,7 +123,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$data->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$data->namapekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->status ?? 'Data Belum Di Buat '}}</td>
                                                         </tr>
                                                     </tbody>
