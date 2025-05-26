@@ -1519,6 +1519,7 @@ public function betertibjakonusahapelaksana($id)
         'datasurat4' => $datasurat4,
         // 'datatertibjasakonstruksi' => $namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $namabadanusaha,
+        'namabadanusaha' => $namabadanusaha,
         'namapekerjaan' => $namapekerjaan,
         'datatertibjasakonstruksi_id' => $idtertib,
         'datatertibjasakonstruksinib' => $nib,
