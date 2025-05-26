@@ -180,12 +180,8 @@
 </div>
 
                     <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                    <div class="flex justify-end">
-                                        <button type="button" onclick="openModal()"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-                                        style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-
+                                    <div class="flex justify-end btn-create">
+                                        <button type="button" onclick="openModal()">
                                         <!-- Ikon SVG Pensil -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                         fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
