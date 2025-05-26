@@ -388,7 +388,7 @@
                                                         name="nib"
                                                         placeholder="Masukan Nomor Induk Berusaha  ..."
                                                         rows="6"
-                                                        style="width: 100%; resize: vertical;" readonly>{{ old('nib', $datatertibjasakonstruksinib ?? 'Data Masih Kosong') }}</textarea>
+                                                        style="width: 100%; resize: vertical; text-align:center;" readonly>{{ old('nib', $datatertibjasakonstruksinib ?? 'Data Masih Kosong') }}</textarea>
                                                     @error('nib')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
