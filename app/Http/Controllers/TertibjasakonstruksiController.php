@@ -1824,7 +1824,7 @@ public function betertibjakonpemanfataanjakonindex($id)
 }
 
 
-public function betertibjakonpemanfataanjakoncreateberkasnew(Request $request)
+public function betertibjakonmanfaatcreateberkasnew(Request $request)
 {
     // Pastikan user masih login
     if (!auth()->check()) {
