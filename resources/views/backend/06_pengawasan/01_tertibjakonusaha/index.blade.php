@@ -182,15 +182,6 @@
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
-
-                                    <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
-                                        <i class="bi bi-gear-fill"></i> Pelaksanaan Pengembangan Usaha
-                                    </th>
-
-                                    <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
-                                        <i class="bi bi-file-earmark-text-fill"></i> Surat Dukung Pelaksanaan Pengembangan Usaha
-                                    </th>
-
                                     <th rowspan="2" style="text-align: center; width:200px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
@@ -310,40 +301,6 @@
                                         </button>
                                     </a>
                                 </td>
-
-
-@php
-    $status = $item->surattertibjakonusaha4->status ?? 'Surat Belum Di Buat';
-    $tertibStatus = $status === 'Tertib' ? 'TERTIB' : 'BELUM TERTIB';
-    $color = $status === 'Tertib' ? 'blue' : 'red';
-    $icon = $status === 'Tertib' ? 'bi-check-circle' : 'bi-x-circle';
-@endphp
-
-<td style="text-align: center;">
-    <button
-        style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-        onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-    >
-        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-        {{ $tertibStatus }}
-    </button>
-</td>
-
-                            {{-- ----------------------- SURAT TERTIB JAKON USAHA 4 ------------------------------------ --}}
-
-                                                        <td style="text-align: center;">
-                                                            {{-- <button class="btn btn-secondary btn-sm"
-                                                                style="border-radius: 15px; padding: 6px 12px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s; font-size: 0.875rem;"
-                                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                                data-bs-toggle="modal" data-bs-target="#modalSurat3{{ $item->id }}">
-                                                                <i class="bi bi-eye"></i>
-                                                            </button> --}}
-                                                            <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
-                                                                <i class="bi bi-pencil"></i>
-                                                            </a>
-                                                        </td>
 
 
                                         </div>
