@@ -242,23 +242,20 @@
   <thead>
     <tr>
       <th colspan="8" style="text-align: center; border-bottom: 4px solid black; font-weight: bold;">
-        Kesesuaian Jasa Konstruksi & Segmentasi Pasar
+        Kesesuaian Pelaksana Pengembangan Usaha
       </th>
     </tr>
   </thead>
 <tbody>
     <tr>
         <td colspan="2" style="text-align: center; color: navy;">
-            <i class="bi bi-check2-square"></i> Kesesuaian Bentuk SBU
+            <i class="bi bi-check2-square"></i> Kesesuaian Pelaksana Pengembangan Usaha
         </td>
-        <td colspan="2" style="text-align: center; color: navy;">
-            <i class="bi bi-diagram-3"></i> Kesesuaian Layanan SBU
-        </td>
-</tr>
+    </tr>
 
 <tr>
     @php
-        $kesesuaian = $datasurat4->kesesuaiansbu ?? 'Surat Belum Di Buat';
+        $kesesuaian = $datasurat4->status ?? 'Surat Belum Di Buat';
         $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
         $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
         $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -274,25 +271,6 @@
             {{ $tertibStatus }}
         </button>
     </td>
-
-@php
-        $kesesuaian = $datasurat4->sbu ?? 'Surat Belum Di Buat';
-        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-    @endphp
-
-    <td colspan="2" style="text-align: center;">
-        <button
-            style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-        >
-            <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-            {{ $tertibStatus }}
-        </button>
-    </td>
-
 
 </tr>
 
@@ -336,7 +314,7 @@
                                                         class="form-control @error('namabadanusaha') is-invalid @enderror"
                                                         name="namabadanusaha"
                                                         placeholder="Masukan Nama Badan Usaha ..."
-                                                        value="{{ old('namabadanusaha', $datasurat4->namabadanusaha ?? '') }}" readonly>
+                                                        value="{{ old('namabadanusaha', $datatertibjasakonstruksinamabadanusaha ?? '') }}" readonly>
 
                                                     @error('namabadanusaha')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -344,71 +322,6 @@
                                                 </td>
                                             </tr>
 
-                                            <tr>
-                                                <td style="width: 300px;">
-                                                    <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
-                                                </td>
-                                         <td>
-                                                @php
-                                                    $status = $datasurat4->statusperizinan ?? null;
-                                                @endphp
-
-                                                @if ($status === 'Terverifikasi')
-                                                    <span class="badge bg-success" style="font-size:16px;">Terverifikasi</span>
-                                                @elseif ($status === 'Tidak Terdaftar')
-                                                    <span class="badge bg-danger" style="font-size:16px;">Tidak Terdaftar</span>
-                                                @elseif ($status === 'Belum Terdaftar')
-                                                    <span class="badge bg-warning text-dark" style="font-size:16px;">Belum Terdaftar</span>
-                                                @else
-                                                    <span class="badge bg-secondary" style="font-size:16px;">-</span>
-                                                @endif
-                                            </td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">No NIB</strong>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        class="form-control @error('nib') is-invalid @enderror"
-                                                        name="nib"
-                                                        placeholder="Masukkan NIB ..."
-                                                        value="{{ old('nib', $datasurat4->nib ?? '') }}" readonly>
-                                                    @error('nib')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
-                                                </td>
-                                              <td class="d-flex align-items-center gap-2" style="font-size: 16px; white-space: nowrap;">
-                                                @php
-                                                    $mulai = ($datasurat4 && $datasurat4->waktupengawasan)
-                                                        ? \Carbon\Carbon::parse($datasurat4->waktupengawasan)->translatedFormat('d F Y')
-                                                        : '-';
-
-                                                    $selesai = ($datasurat4 && $datasurat4->waktupengawasanselesai)
-                                                        ? \Carbon\Carbon::parse($datasurat4->waktupengawasanselesai)->translatedFormat('d F Y')
-                                                        : '-';
-                                                @endphp
-
-                                                    <span class="badge bg-primary py-1 px-2" title="Tanggal Mulai Pengawasan" style="font-weight: 500; font-size: 16px;">
-                                                        {{ $mulai }}
-                                                    </span>
-
-                                                    <span style="font-weight: 600; color: #555; font-size: 16px;">&rarr;</span>
-
-                                                    <span class="badge bg-secondary py-1 px-2" title="Tanggal Selesai Pengawasan" style="font-weight: 500; font-size: 16px;">
-                                                        {{ $selesai }}
-                                                    </span>
-                                                </td>
-                                            </tr>
                                         </table>
 
                                         <table style="width: 100%; border-collapse: collapse; font-size: 16px; color: #000;">
