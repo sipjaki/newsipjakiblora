@@ -142,7 +142,7 @@
                                                 </th>
 
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Kesimpulan Pemenuhan Syarat
+                                                    <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                                 </th>
 
                                                 <th style="width: 100px; text-align: center;">
@@ -155,19 +155,18 @@
                                     @if ($datasurat->isEmpty())
                                         <tr>
                                             <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Pemenuhan Syarat <strong>Belum Dibuat</strong>!
+                                                Surat Dukung Pelaksana Pengembangan Usaha <strong>Belum Dibuat</strong>!
                                             </td>
                                         </tr>
                                     @else
 
-
                                 @foreach ($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->namabujk }}</td>
+                                        <td style="text-align: left;">{{ $datatertibjasakonstruksi }}</td>
 
                                             @php
-                                                $kesesuaian = $item->kesimpulan ?? 'Surat Belum Di Buat';
+                                                $kesesuaian = $item->status ?? 'Surat Belum Di Buat';
                                                 $tertibStatus = $kesesuaian === 'Tertib' ? 'TERTIB' : 'BELUM TERTIB';
                                                 $color = $kesesuaian === 'Tertib' ? 'blue' : 'red';
                                                 $icon = $kesesuaian === 'Tertib' ? 'bi-check-circle' : 'bi-x-circle';
