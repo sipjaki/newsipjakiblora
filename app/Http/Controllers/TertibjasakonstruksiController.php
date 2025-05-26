@@ -1669,4 +1669,22 @@ public function betertibjakonpemanfaatan(Request $request)
 }
 
 
+public function betertibjakonpemanfaatancreate()
+{
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+$datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.create', [
+    'title' => 'Create Tertib Jakon Pemanfaatan ',
+    // 'data' => $datatertibjakonusaha,
+    'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
 }

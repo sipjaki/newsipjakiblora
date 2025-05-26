@@ -1058,6 +1058,8 @@ Route::delete('/betertibjakonusahapelaksanadelete/delete/{id}', [Tertibjasakonst
 // SURAT TERTIB JAKON PEMANFAATAN
 Route::get('/betertibjakonpemanfaatan', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatan'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanindexlist');
 
+Route::get('/betertibjakonpemanfaatan/create', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatancreate');
+
 
 
 
