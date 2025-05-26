@@ -271,17 +271,11 @@
                                                     <strong style="font-size: 15px;">Nama Badan Usaha</strong>
                                                 </td>
                                                 <td>
-                                                    <input
-                                                        type="text"
-                                                        class="form-control @error('namabadanusaha') is-invalid @enderror"
-                                                        name="namabadanusaha"
-                                                        placeholder="Masukan Nama Badan Usaha ..."
-                                                        value="{{ old('namabadanusaha', $datatertibjasakonstruksinamabadanusaha ?? '') }}" readonly>
-
-                                                    @error('namabadanusaha')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                        {{ $datatertibjasakonstruksinamabadanusaha ?? '-' }}
+                                                    </div>
                                                 </td>
+
                                             </tr>
 
                                         </table>
