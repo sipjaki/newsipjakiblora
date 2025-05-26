@@ -257,9 +257,9 @@
 
     @php
         $kesesuaian = $datasurat4->status ?? 'Surat Belum Di Buat';
-        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+        $tertibStatus = $kesesuaian === 'Tertib' ? 'TERTIB' : 'BELUM TERTIB';
+        $color = $kesesuaian === 'Tertib' ? 'blue' : 'red';
+        $icon = $kesesuaian === 'Tertib' ? 'bi-check-circle' : 'bi-x-circle';
     @endphp
 
     <td colspan="2" style="text-align: center;">
