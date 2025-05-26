@@ -1718,4 +1718,21 @@ return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.create', [
         return redirect('/betertibjakonpemanfaatan');
     }
 
+public function betertibjakonpemanfaatanupdate($id)
+{
+    $datatertibjakonpemanfaatan = tertibjakonpemanfaatan::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+$datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.update', [
+    'title' => 'Update Tertib Jakon Pemanfaatan ',
+    'data' => $datatertibjakonpemanfaatan,
+    'datapenyedia' => $datapenyedia,
+    'user' => $user,
+]);
+}
+
 }

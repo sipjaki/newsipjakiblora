@@ -1061,6 +1061,9 @@ Route::get('/betertibjakonpemanfaatan', [TertibjasakonstruksiController::class, 
 Route::get('/betertibjakonpemanfaatan/create', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatancreate');
 Route::post('/betertibjakonpemanfaatan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreatenew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatancreatenew');
 
+Route::get('/betertibjakonpemanfaatan/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatanupdate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanupdate');
+// Route::post('/betertibjakonusaha/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahaupdatecreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahaupdatecreate');
+
 
 
 
