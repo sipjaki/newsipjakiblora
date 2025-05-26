@@ -1042,6 +1042,7 @@ Route::get('/betertibjakonusahapemenuhansyarat/show/{id}', [Tertibjasakonstruksi
 Route::get('/betertibjakonusahapemenuhansyarat/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratcreateberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapemenuhansyaratcreateberkas');
 Route::post('/betertibjakonusahapemenuhansyarat/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratcreateberkasnew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapemenuhansyaratnewberkas');
 
+Route::delete('/betertibjakonusahapemenuhansyaratdelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratdelete'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratdelete');
 
 
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------
