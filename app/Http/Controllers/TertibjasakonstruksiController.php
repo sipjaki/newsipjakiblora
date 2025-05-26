@@ -1691,6 +1691,7 @@ return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.create', [
     {
         // Validasi input
          $validated = $request->validate([
+        'penyediastatustertibjakon_id' => 'required|string', // text di DB = text max 65535 chars
         'namapekerjaan'       => 'required|string|max:65535', // text di DB = text max 65535 chars
         'namabangunan'        => 'required|string|max:65535',
         'nomorkontrak'        => 'required|string|max:255',
