@@ -103,11 +103,11 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                    <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $datasurat4->tertibjasakonstruksi->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
+                                                        <td>{{ $datasurat4->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 300px;"><strong>Nama Pekerjaan</strong></td>
-                                                        <td>{{ $datasurat4->tertibjasakonstruksi->namapekerjaan ?? 'Data Belum Di Buat' }}</td>
+                                                        <td>{{ $datasurat4->namapekerjaan ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
 
                                                 </table>
