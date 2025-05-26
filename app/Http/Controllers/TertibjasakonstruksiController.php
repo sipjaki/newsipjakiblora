@@ -1555,4 +1555,43 @@ public function betertibjakonusahapelaksana($id)
     ]);
 }
 
+
+ public function betertibjakonusahapelaksananewberkascreate(Request $request)
+    {
+        // Validasi data input dengan pesan custom
+$validatedData = $request->validate([
+    'tertibjasakonstruksi_id' => 'required|string',
+    'status' => 'required|in:Tertib,Tidak Tertib',
+], [
+    'tertibjasakonstruksi_id.required' => 'ID Tertib Jasa Konstruksi wajib diisi.',
+    'tertibjasakonstruksi_id.string' => 'ID Tertib Jasa Konstruksi harus berupa teks.',
+
+    'status.required' => 'Status Pengembangan wajib dipilih.',
+    'status.in' => 'Status Pengembangan yang dipilih tidak valid.',
+
+]);
+
+        try {
+            // Buat record baru
+                $surat = new surattertibjakonusaha4();
+
+                $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'] ?? null;
+                $surat->status = $validatedData['status'] ?? null;
+
+                $surat->save();
+
+
+             // Ambil parentId dari object yang sudah disimpan
+                    $parentId = $surat->tertibjasakonstruksi_id;
+
+                    session()->flash('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
+                    return redirect()->route('betertibjakonusahapelaksanaindex', ['id' => $parentId]);
+
+                } catch (\Exception $e) {
+                    return back()->withInput()
+                        ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+                }
+    }
+
+
 }
