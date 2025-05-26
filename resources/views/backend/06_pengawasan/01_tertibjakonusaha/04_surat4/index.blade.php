@@ -121,6 +121,10 @@
 
 
                 <button class="btn-create">
+                    <i class="bi bi-file-earmark icon-create"></i>  Nama Pekerjaan : {{ $datatertibjasakonstruksi }}
+                </button>
+
+                <button class="btn-create">
                     <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
                 </button>
 
@@ -137,9 +141,9 @@
                                      <th style="width: 25px; text-align: center;">
                                                     <i class="bi bi-hash"></i> No
                                                 </th>
-                                                <th style="width: 400px; text-align: center;">
+                                                {{-- <th style="width: 400px; text-align: center;">
                                                     <i class="bi bi-file-earmark-text-fill"></i> Nama Pekerjaan
-                                                </th>
+                                                </th> --}}
 
                                                 <th style="width: 200px; text-align: center;">
                                                     <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
@@ -163,7 +167,7 @@
                                 @foreach ($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->tertibjasakonstruksi->namapekerjaan }}</td>
+                                        {{-- <td style="text-align: left;">{{ $item->tertibjasakonstruksi->namapekerjaan }}</td> --}}
 
                                             @php
                                                 $kesesuaian = $item->status ?? 'Surat Belum Di Buat';
