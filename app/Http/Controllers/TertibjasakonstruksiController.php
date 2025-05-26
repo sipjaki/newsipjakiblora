@@ -1811,6 +1811,7 @@ public function betertibjakonpemanfataanjakonindex($id)
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.buatberkasbaru', [
         'datanamabangunan' => $datatertibjasapemanfaatan->namabangunan,
+        'datalokasi' => $datatertibjasapemanfaatan->lokasi,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
         'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
         // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,

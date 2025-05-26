@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('surattertibjakonpemanfaatan1s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tertibjakonpemanfaatan_id')->nullable()->index();
-            $table->text('lingkuppengawasan')->nullable()->index();
-            $table->text('indikator')->nullable()->index();
-            $table->text('dokumendiperiksa')->nullable()->index();
-            $table->text('carapemeriksaan')->nullable()->index();
+            $table->text('lingkuppengawasan')->nullable()->index(); // PEMILIK BANGUNAN
+            $table->text('indikator')->nullable()->index(); // PENGELOLA BANGUNAN
+            $table->text('dokumendiperiksa')->nullable()->index(); // TANGGAL MULAI
+            $table->text('carapemeriksaan')->nullable()->index(); // TANGGAL SELESAI
             $table->text('kesimpulanpemeriksaan')->nullable()->index();
             $table->text('catatan')->nullable()->index();
             $table->softDeletes();

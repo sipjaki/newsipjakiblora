@@ -236,14 +236,71 @@
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                          <tr>
                                                 <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">Nama Badan Usaha</strong>
+                                                    <strong style="font-size: 15px;">Nama Bangunan </strong>
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datatertibjasakonstruksinamabadanusaha ?? '-' }}
+                                                        {{ $datanamabangunan ?? '-' }}
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td style="width: 200px;">
+                                                    <strong style="font-size: 15px;">Lokasi Bangunan </strong>
+                                                </td>
+                                                <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                        {{ $datalokasi ?? '-' }}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px;">
+                                                    <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
+                                                </td>
+                                                <td>
+                                                        <input
+                                                            type="text"
+                                                            name="lingkuppengawasan"
+                                                            value="{{ old('lingkuppengawasan') }}"
+                                                            class="form-control"
+                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
+                                                        >
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px;">
+                                                    <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
+                                                </td>
+                                                <td>
+                                                        <input
+                                                            type="text"
+                                                            name="indikator"
+                                                            value="{{ old('indikator') }}"
+                                                            class="form-control"
+                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
+                                                        >
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px;">
+                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
+                                                </td>
+                                                <td class="d-flex gap-2">
+                                                    <input type="date" class="form-control @error('dokumendiperiksa') is-invalid @enderror" name="dokumendiperiksa" value="{{ old('dokumendiperiksa') }}" placeholder="Dimulai Sejak ... ">
+                                                    @error('dokumendiperiksa')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+
+                                                    <span class="mx-1">(Sampai Dengan)</span>
+
+                                                    <input type="date" class="form-control @error('carapemeriksaan') is-invalid @enderror" name="carapemeriksaan" value="{{ old('carapemeriksaan') }}" placeholder="Berakhir Tanggal ... ">
+                                                    @error('carapemeriksaan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </td>
+                                            </tr>
+
 
                                         </table>
 
