@@ -272,19 +272,20 @@
 
 <td style="text-align: left;">
   @if($item->tanggalpembangunan)
-    {{ \Carbon\Carbon::parse($item->tanggalpembangunan)->format('d-m-Y') }}
-  @else
+    {{ \Carbon\Carbon::parse($item->tanggalpembangunan)->translatedFormat('j F Y') }}
+
+    @else
     <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-      Data Belum Di Update
-    </button>
-  @endif
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+    onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+    Data Belum Di Update
+</button>
+@endif
 </td>
 
 <td style="text-align: left;">
-  @if($item->tanggalpemanfaatan)
-    {{ \Carbon\Carbon::parse($item->tanggalpemanfaatan)->format('d-m-Y') }}
+    @if($item->tanggalpemanfaatan)
+    {{ \Carbon\Carbon::parse($item->tanggalpemanfaatan)->translatedFormat('j F Y') }}
   @else
     <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
