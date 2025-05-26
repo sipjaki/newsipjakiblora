@@ -70,9 +70,8 @@
                                 <div class="row">
                                     <!-- Kolom Kiri -->
                                     <div class="col-md-6">
-                                        <!-- Kategori Pelatihan -->
-                                        <!-- Kategori Pelatihan -->
                                         <div class="mb-3">
+
     <label for="penyediastatustertibjakon_id" class="form-label">
         <i class="bi bi-card-text text-primary"></i> Status Penyedia
     </label>
