@@ -1526,4 +1526,33 @@ public function betertibjakonusahapelaksana($id)
 }
 
 
+
+
+
+  public function betertibjakonusahapelaksanacreateberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjasakonstruksi = tertibjasakonstruksi::with('surattertibjakonusaha4')->findOrFail($id);
+
+    $user = Auth::user();
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakonusaha4 = $datatertibjasakonstruksi->surattertibjakonusaha3;
+
+    return view('backend.06_pengawasan.01_tertibjakonusaha.03_surat3.buatberkasbaru', [
+        'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
+        'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id,
+        'datatertibjasakonstruksinib' => $datatertibjasakonstruksi->nib,
+        'user' => $user,
+        'data' => $datatertibjasakonstruksi,
+        'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
+        'datasurattertibjakonusaha4' => $datasurattertibjakonusaha4,
+        'title' => 'Berkas Surat Pelaksana Pengembangan Usaha '
+    ]);
+}
+
 }
