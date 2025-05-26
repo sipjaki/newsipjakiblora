@@ -158,7 +158,7 @@
                                         <i class="bi bi-geo-alt-fill"></i> Nama Bangunan
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                    <th rowspan="2" style="text-align: center; width:250px;">
                                         <i class="bi bi-geo-alt-fill"></i> Nomor Kontrak
                                     </th>
 
@@ -166,15 +166,15 @@
                                         <i class="bi bi-geo-alt-fill"></i> Lokasi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                    <th rowspan="2" style="text-align: center; width:225px;">
                                         <i class="bi bi-geo-alt-fill"></i> Tanggal Pembangunan
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                    <th rowspan="2" style="text-align: center; width:225px;">
                                         <i class="bi bi-geo-alt-fill"></i> Tanggal Pemanfaatan
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                    <th rowspan="2" style="text-align: center; width:100px;">
                                         <i class="bi bi-geo-alt-fill"></i> Umur Bangunan
                                     </th>
 
@@ -293,6 +293,7 @@
     </button>
   @endif
 </td>
+
 
 <td style="text-align: left;">
   @if($item->umurbangunan)
