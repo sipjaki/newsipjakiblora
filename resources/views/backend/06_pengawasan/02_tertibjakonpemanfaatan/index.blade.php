@@ -172,19 +172,19 @@
 </th>
 
 
-                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemanfataan <br> Jasa Konstruksi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Rencana <br> Umur Konstruksi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan <br> Kapasitas dan Beban
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemeliharaan <br> Produk Jasa Konstruksi
                                     </th>
 
