@@ -1054,7 +1054,6 @@ Route::post('/betertibjakonusahapelaksana/createberkasnew', [Tertibjasakonstruks
 
 Route::delete('/betertibjakonusahapelaksanadelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksanadelete'])->middleware('auth')->name('betertibjakonusahapelaksanadelete');
 
-// SIGIT TEA
 // SURAT TERTIB JAKON PEMANFAATAN
 Route::get('/betertibjakonpemanfaatan', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatan'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanindexlist');
 
@@ -1063,6 +1062,10 @@ Route::post('/betertibjakonpemanfaatan/createnew', [TertibjasakonstruksiControll
 
 Route::get('/betertibjakonpemanfaatan/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatanupdate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanupdate');
 Route::post('/betertibjakonpemanfaatan/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatanupdatecreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanupdatecreate');
+
+
+// SIGIT TEA
+Route::get('/betertibjakonpemanfataanjakon/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataanjakonindex'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataansuratjasakonstruksiindex');
 
 
 
