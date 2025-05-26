@@ -53,7 +53,7 @@
                                     <!-- Tombol Nama Pekerjaan -->
                                     <button class="btn-create">
                                         <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
-                                        Nama Pekerjaan: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
+                                        Nama Bangunan: {{ $datanamabangunan ?? 'Masih Kosong' }}
                                     </button>
 
                                     <!-- Tombol Badan Usaha -->

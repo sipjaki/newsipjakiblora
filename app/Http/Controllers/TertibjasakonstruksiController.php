@@ -1810,7 +1810,7 @@ public function betertibjakonpemanfataanjakonindex($id)
     $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonusaha3;
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.buatberkasbaru', [
-        'datatertibjasakonstruksi' => $datatertibjasapemanfaatan->namapekerjaan,
+        'datanamabangunan' => $datatertibjasapemanfaatan->namabangunan,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
         'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
         // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
