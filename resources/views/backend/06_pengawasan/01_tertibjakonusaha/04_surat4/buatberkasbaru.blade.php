@@ -77,6 +77,113 @@
                                             Lihat Berkas
                                         </button> --}}
 
+
+
+
+                                <div class="modal fade" id="modalKtp{{ $data->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $data->id }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                        <div class="modal-content" style="font-size: 0.875rem;">
+                                            <div class="modal-header d-flex align-items-center">
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                    <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
+                                                </a>
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                    <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
+                                                </a>
+                                                <span class="mx-2">:</span>
+                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Pemenuhan Persyaratan Usaha Jasa Konstruksi Secara Rutin </h5>
+                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
+                                                    <tr>
+                                                        <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
+                                                        <td>{{ $data->surattertibjakonusaha1->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
+                                                        <td>{{ $data->surattertibjakonusaha1->statusperizinan ?? 'Data Belum Di Buat' }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 200px;"><strong>No NIB</strong></td>
+                                                        <td>{{ $data->surattertibjakonusaha1->nib ?? 'Data Belum Di Buat' }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
+                                                        <td>
+                                                            @if ($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan && $data->surattertibjakonusaha1->waktupengawasanselesai)
+                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
+                                                                –
+                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
+                                                            @else
+                                                                <span class="text-muted">Belum Di Buat</span>
+                                                            @endif
+                                                        </td>
+
+
+                                                    </tr>
+                                                </table>
+
+                                                {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
+                                                <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
+                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis</th>
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Sifat</th>
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
+                                                                <div>Jenis Usaha</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
+                                                            </th>
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
+
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
+                                                                <div>Sifat Usaha</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
+                                                            </th>
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
+
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
+                                                                <div>Sub Klasifikasi</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
+                                                            </th>
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
+
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
+                                                                <div>Layanan Usaha</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
+                                                            </th>
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="border: 1px solid #000; text-align: center;">1</td>
+                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->namapaketpekerjaan ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->jenisusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaian ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->sifatusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaiansbu ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$data->surattertibjakonusaha1->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaianklasifikasi ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->layananusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaianlayananusaha ?? 'Data Belum Di Buat'}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <div class="container" style="margin-top: 10px;">
+                                                    <!-- Modal Card -->
+
+
+                                                        </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +213,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('betertibjakonusahapelaksananewberkas') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonusahapemenuhansyaratnewberkas') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
