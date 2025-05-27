@@ -1857,7 +1857,7 @@ public function betertibjakonmanfaatcreateberkasnew(Request $request)
             ->route('betertibjakonpemanfataansuratjasakonstruksiindex', [
                 'id' => $surat->tertibjakonpemanfaatan_id ?? 'default_id'
             ])
-            ->with('success', 'Berkas berhasil dibuat!');
+            ->with('create', 'Berkas berhasil dibuat!');
 
     } catch (\Exception $e) {
         return back()
