@@ -1867,21 +1867,26 @@ public function betertibjakonmanfaatcreateberkasnew(Request $request)
 }
 
 
-
 public function betertibjakonpemanfaatandeletedata($id)
 {
-    $entry = surattertibjakonpemanfaatan1::where('id', $id)->first();
+// Cari item berdasarkan judul
+$entry = tertibjakonpemanfaatan::where('id', $id)->first();
 
-    if ($entry) {
-        $parentId = $entry->tertibjasakonstruksi_id;
-        $entry->delete();
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
 
-        session()->flash('delete', 'Data Berhasil Dihapus!');
-        return redirect()->route('betertibjakonpemanfaatanindexlist', ['id' => $parentId]);
-    }
+// Hapus entri dari database
+$entry->delete();
 
-    session()->flash('error', 'Item tidak ditemukan');
-    return redirect()->back();
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/betertibjakonpemanfaatan')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+
+return redirect()->back()->with('error', 'Item not found');
 }
 
 }
