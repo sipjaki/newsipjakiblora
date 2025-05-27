@@ -310,81 +310,81 @@
 
 
                                         </table>
-                                        <br>
-
-<table>
-    <thead>
-        <tr>
-            <th>No</th>
-            <th>LINGKUP PENGAWASAN</th>
-            <th>Indikator</th>
-            <th>DOKUMEN YANG DIPERIKSA</th>
-            <th>CARA PEMERIKSAAN</th>
-            <th>KESIMPULAN PEMERIKSAAN</th>
-            <th>CATATAN PEMERIKSAAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="2">1</td>
-            <td rowspan="2">
-                Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
-            </td>
-            <td>
-                a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
-                &bull; Bangunan gedung sesuai dengan perizinan<br>
-                &bull; Bangunan sipil sesuai dengan peraturan perundangan
-            </td>
-            <td>Dokumen perizinan</td>
-            <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
-            <td>
-              <div class="form-group">
-                    <select name="kesimpulanpemeriksaan" id="kesimpulanpemeriksaan" required
-                        class="@error('kesimpulanpemeriksaan') is-invalid @enderror">
-                        <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
-                        <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-                        <option value="Tidak_sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak_sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
-                    </select>
-
-                    @error('kesimpulanpemeriksaan')
-                        <div class="error-message" style="color: red; font-size: 0.9em; margin-top: 4px;">
-                        {{ $message }}
-                        </div>
-                    @enderror
-                    </div>
-
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
-            </td>
-            <td>Dokumen resmi dari instansi berwenang</td>
-            <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-            <td>
-              <div class="form-group">
-                        <select name="catatan" id="catatan" required
-                            class="@error('catatan') is-invalid @enderror">
-                            <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
-                            <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
-                            <option value="Tidak_Tersedia" {{ old('catatan') == 'Tidak_Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
-                        </select>
-
-                        @error('catatan')
-                            <div class="error-message" style="color: red; font-size: 0.9em; margin-top: 4px;">
-                            {{ $message }}
-                            </div>
-                        @enderror
-                        </div>
-            </td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
 
 
-                                    </div>
+
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>LINGKUP PENGAWASAN</th>
+                                                    <th>Indikator</th>
+                                                    <th>DOKUMEN YANG DIPERIKSA</th>
+                                                    <th>CARA PEMERIKSAAN</th>
+                                                    <th>KESIMPULAN PEMERIKSAAN</th>
+                                                    <th>CATATAN PEMERIKSAAN</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="2">1</td>
+                                                    <td rowspan="2">
+                                                        Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
+                                                    </td>
+                                                    <td>
+                                                        a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                                        &bull; Bangunan gedung sesuai dengan perizinan<br>
+                                                        &bull; Bangunan sipil sesuai dengan peraturan perundangan
+                                                    </td>
+                                                    <td>Dokumen perizinan</td>
+                                                    <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+                                                    <td>
+                                                    <div class="form-group">
+                                                            <select name="kesimpulanpemeriksaan" id="kesimpulanpemeriksaan" required
+                                                                class="@error('kesimpulanpemeriksaan') is-invalid @enderror">
+                                                                <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
+                                                                <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+                                                                <option value="Tidak_sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak_sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+                                                            </select>
+
+                                                            @error('kesimpulanpemeriksaan')
+                                                                <div class="error-message" style="color: red; font-size: 0.9em; margin-top: 4px;">
+                                                                {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            </div>
+
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+                                                    </td>
+                                                    <td>Dokumen resmi dari instansi berwenang</td>
+                                                    <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+                                                    <td>
+                                                    <div class="form-group">
+                                                                <select name="catatan" id="catatan" required
+                                                                    class="@error('catatan') is-invalid @enderror">
+                                                                    <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
+                                                                    <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
+                                                                    <option value="Tidak_Tersedia" {{ old('catatan') == 'Tidak_Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
+                                                                </select>
+
+                                                                @error('catatan')
+                                                                    <div class="error-message" style="color: red; font-size: 0.9em; margin-top: 4px;">
+                                                                    {{ $message }}
+                                                                    </div>
+                                                                @enderror
+                                                                </div>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                </div>
 
 
                                 <br><br>
