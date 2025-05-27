@@ -134,12 +134,16 @@
                                      <th style="width: 25px; text-align: center;">
                                                     <i class="bi bi-hash"></i> No
                                                 </th>
-                                                <th style="width: 400px; text-align: center;">
+                                                {{-- <th style="width: 400px; text-align: center;">
                                                     <i class="bi bi-file-earmark-text-fill"></i> Nama Pekerjaan
+                                                </th> --}}
+
+                                                <th style="width: 200px; text-align: center;">
+                                                    <i class="bi bi-building-fill"></i> Peruntukan Fungsi
                                                 </th>
 
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
+                                                    <i class="bi bi-building-fill"></i> Peruntukan Lokasi
                                                 </th>
 
                                                 <th style="width: 100px; text-align: center;">
@@ -160,13 +164,31 @@
                                 @foreach ($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->tertibjakonpemanfaatan->namabangunan }}</td>
+                                        {{-- <td style="text-align: left;">{{ $item->tertibjakonpemanfaatan->namabangunan }}</td> --}}
 
                                             @php
-                                                $kesesuaian = $item->status ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Tertib' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Tertib' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Tertib' ? 'bi-check-circle' : 'bi-x-circle';
+                                                $kesesuaian = $item->kesimpulanpemeriksaan ?? 'Surat Belum Di Buat';
+                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+                                            @endphp
+
+                                            <td style="text-align: center;">
+                                                <button
+                                                    style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                                    onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+                                                >
+                                                    <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+                                                    {{ $tertibStatus }}
+                                                </button>
+                                            </td>
+
+                                        @php
+                                                $kesesuaian = $item->catatan ?? 'Surat Belum Di Buat';
+                                                $tertibStatus = $kesesuaian === 'Tersedia' ? 'TERTIB' : 'BELUM TERTIB';
+                                                $color = $kesesuaian === 'Tersedia' ? 'blue' : 'red';
+                                                $icon = $kesesuaian === 'Tersedia' ? 'bi-check-circle' : 'bi-x-circle';
                                             @endphp
 
                                             <td style="text-align: center;">
