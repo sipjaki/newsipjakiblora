@@ -306,6 +306,40 @@
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </td>
+
+                                                        <script>
+                                                    document.addEventListener('DOMContentLoaded', function () {
+                                                        const kesimpulanSelect = document.getElementById('kesimpulanSelect');
+                                                        const outputKesimpulan = document.getElementById('outputKesimpulan');
+                                                        const textKesimpulan = document.getElementById('textKesimpulan');
+
+                                                        const catatanSelect = document.getElementById('catatanSelect');
+                                                        const outputCatatan = document.getElementById('outputCatatan');
+                                                        const textCatatan = document.getElementById('textCatatan');
+
+                                                        kesimpulanSelect.addEventListener('change', function () {
+                                                            const value = this.value;
+                                                            if (value) {
+                                                                textKesimpulan.textContent = value;
+                                                                outputKesimpulan.style.display = 'table-row';
+                                                            } else {
+                                                                outputKesimpulan.style.display = 'none';
+                                                            }
+                                                        });
+
+                                                        catatanSelect.addEventListener('change', function () {
+                                                            const value = this.value;
+                                                            if (value) {
+                                                                textCatatan.textContent = value;
+                                                                outputCatatan.style.display = 'table-row';
+                                                            } else {
+                                                                outputCatatan.style.display = 'none';
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
+
+
                                             </tr>
 
                                             <tr>
@@ -373,17 +407,8 @@
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
                                 <td>
-                                        <select name="kesimpulanpemeriksaan"
-                                            class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
-                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-                                            <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
-                                            <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-                                            <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
-                                        </select>
-                                        @error('kesimpulanpemeriksaan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </td>
+                                    <tbody id="hasilKesimpulan"></tbody>
+                                </td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -392,17 +417,9 @@
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                             <td>
-                                    <select name="catatan"
-                                        class="form-control @error('catatan') is-invalid @enderror"
-                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-                                        <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
-                                        <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
-                                        <option value="Tidak Tersedia" {{ old('catatan') == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
-                                    </select>
-                                    @error('catatan')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
+                                <td>
+
+                            <tbody id="outputCatatan"></tbody>
                                 </td>
 
                                 <td></td>
