@@ -1827,9 +1827,9 @@ public function betertibjakonpemanfataanjakonindex($id)
 public function betertibjakonmanfaatcreateberkasnew(Request $request)
 {
     // Pastikan user masih login
-    if (!auth()->check()) {
-        return redirect()->route('login')->with('error', 'Sesi habis, silakan login kembali.');
-    }
+    // if (!auth()->check()) {
+    //     return redirect()->route('login')->with('error', 'Sesi habis, silakan login kembali.');
+    // }
 
     // Validasi input
     $validatedData = $request->validate([
