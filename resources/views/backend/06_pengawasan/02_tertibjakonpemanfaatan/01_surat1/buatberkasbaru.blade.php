@@ -216,7 +216,7 @@
                         <form action="{{ route('betertibjakonmanfaat1') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
-                            <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
+                            <input type="hidden"  name="tertibjakonpemanfaatan_id" value="{{ $datatertibjasakonstruksi_id }}">
 
                                 <div class="modal-content" style="font-size: 0.875rem;">
                                     <div class="modal-header d-flex align-items-center">
