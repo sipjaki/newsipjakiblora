@@ -147,7 +147,7 @@
                                         <i class="bi bi-list-ol"></i> No
                                     </th>
                                     <th rowspan="2" style="text-align: center; width:125px;">
-                                        <i class="bi bi-people-fill"></i> Penyedia
+                                        <i class="bi bi-people-fill"></i> Sektor
                                     </th>
                                     <th rowspan="2" style="text-align: center; width:200px;">
                                         <i class="bi bi-building"></i> NIB
