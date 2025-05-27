@@ -345,15 +345,70 @@
                                                     @enderror
                                                 </td>
                                             </tr>
-
-
-
-
-
                                         </table>
+                    <br>
+                    <table class="audit">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>LINGKUP PENGAWASAN</th>
+                                <th>Indikator</th>
+                                <th>DOKUMEN YANG DIPERIKSA</th>
+                                <th>CARA PEMERIKSAAN</th>
+                                <th>KESIMPULAN PEMERIKSAAN</th>
+                                <th>CATATAN PEMERIKSAAN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">1</td>
+                                <td rowspan="2">
+                                    Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
+                                </td>
+                                <td>
+                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
+                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan
+                                </td>
+                                <td>Dokumen perizinan</td>
+                                <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+                                <td>
+                                        <select name="kesimpulanpemeriksaan"
+                                            class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
+                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+                                            <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
+                                            <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+                                            <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+                                        </select>
+                                        @error('kesimpulanpemeriksaan')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+                                </td>
+                                <td>Dokumen resmi dari instansi berwenang</td>
+                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+                             <td>
+                                    <select name="catatan"
+                                        class="form-control @error('catatan') is-invalid @enderror"
+                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+                                        <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
+                                        <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
+                                        <option value="Tidak Tersedia" {{ old('catatan') == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
+                                    </select>
+                                    @error('catatan')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </td>
 
-
-
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                                 </div>
 
