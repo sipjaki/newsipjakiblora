@@ -329,6 +329,27 @@
                                                         </div>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
+                                                </td>
+                                                <td class="d-flex gap-2">
+                                              <div class="form-group">
+                                                        <select name="catatan" id="catatan" required
+                                                            class="@error('catatan') is-invalid @enderror">
+                                                            <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
+                                                            <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
+                                                            <option value="Tidak Tersedia" {{ old('catatan') == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
+                                                        </select>
+
+                                                        @error('catatan')
+                                                            <div class="error-message" style="color: red; font-size: 0.9em; margin-top: 4px;">
+                                                            {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                        </div>
+                                                </td>
+                                            </tr>
 
 
                                         </table>
