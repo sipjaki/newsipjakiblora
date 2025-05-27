@@ -312,7 +312,7 @@
                                         </table>
                                         <br>
 
-<table class="audit">
+<table>
     <thead>
         <tr>
             <th>No</th>
