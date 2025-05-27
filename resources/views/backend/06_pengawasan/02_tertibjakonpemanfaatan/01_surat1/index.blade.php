@@ -160,7 +160,7 @@
                                 @foreach ($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->namabangunan }}</td>
+                                        <td style="text-align: left;">{{ $item->tertibjakonpemanfaatan->namabangunan }}</td>
 
                                             @php
                                                 $kesesuaian = $item->status ?? 'Surat Belum Di Buat';
