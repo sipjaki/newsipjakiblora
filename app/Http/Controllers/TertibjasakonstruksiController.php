@@ -1838,7 +1838,7 @@ public function betertibjakonmanfaatcreateberkasnew(Request $request)
         'indikator' => 'required|string',
         'dokumendiperiksa' => 'required|date',
         'carapemeriksaan' => 'required|date',
-        'kesimpulanpemeriksaan' => 'required|in:Sesuai,Tidak_sesuai',
+        'kesimpulanpemeriksaan' => 'required|in:Sesuai,Tidak Sesuai',
         'catatan' => 'required|in:Tersedia,Tidak_Tersedia',
     ], [
         'lingkuppengawasan.required' => 'Nama Pemilik Bangunan Wajib Diisi !.',

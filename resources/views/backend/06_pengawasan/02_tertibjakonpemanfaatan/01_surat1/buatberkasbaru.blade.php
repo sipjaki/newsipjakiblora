@@ -318,7 +318,7 @@
                                                             class="@error('kesimpulanpemeriksaan') is-invalid @enderror">
                                                             <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
                                                             <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-                                                            <option value="Tidak_sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak_sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+                                                            <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
                                                         </select>
 
                                                         @error('kesimpulanpemeriksaan')
