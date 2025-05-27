@@ -195,10 +195,11 @@
         </button>
     </a>
 </td>
+
 <!-- Tombol Verifikasi -->
 <td style="text-align: center;">
     @if($item->verifikasipu == 'lolos')
-        <button type="button" disabled class="btn" style="background-color: #10B981; color: white;">
+        <button type="button" class="btn" style="background-color: #10B981; color: white;">
             <i class="bi bi-patch-check-fill"></i> LOLOS
         </button>
     @elseif($item->verifikasipu == 'dikembalikan')
