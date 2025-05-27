@@ -1873,19 +1873,11 @@ public function betertibjakonpemanfaatandeletedata($id)
     $entry = surattertibjakonpemanfaatan1::where('id', $id)->first();
 
     if ($entry) {
-        // Hapus file jika perlu
-        // if (Storage::disk('public')->exists($entry->header)) {
-        //     Storage::disk('public')->delete($entry->header);
-        // }
-
-        // Ambil ID dari relasi tertibjasakonstruksi, misalnya:
-        $parentId = $entry->tertibjasakonstruksi_id; // pastikan ini ada di tabel
-
+        $parentId = $entry->tertibjasakonstruksi_id;
         $entry->delete();
 
         session()->flash('delete', 'Data Berhasil Dihapus!');
         return redirect()->route('betertibjakonpemanfaatanindexlist', ['id' => $parentId]);
-
     }
 
     session()->flash('error', 'Item tidak ditemukan');
