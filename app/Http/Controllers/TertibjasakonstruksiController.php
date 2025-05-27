@@ -1879,7 +1879,7 @@ public function betertibjakonpemanfaatandeletedata($id)
         // }
 
         // Ambil ID dari relasi tertibjasakonstruksi, misalnya:
-        $parentId = $entry->tertibjakonpemanfaatan_id; // pastikan ini ada di tabel
+        $parentId = $entry->tertibjasakonstruksi_id; // pastikan ini ada di tabel
 
         $entry->delete();
 

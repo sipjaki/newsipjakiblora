@@ -1063,6 +1063,7 @@ Route::post('/betertibjakonpemanfaatan/createnew', [TertibjasakonstruksiControll
 Route::get('/betertibjakonpemanfaatan/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatanupdate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanupdate');
 Route::post('/betertibjakonpemanfaatan/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatanupdatecreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanupdatecreate');
 
+// Route::delete('/betertibjakonpemanfaatandelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatandeletedata'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratdeletedata');
 Route::delete('/betertibjakonpemanfaatandelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatandeletedata'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratdeletedata');
 
 // SIGIT TEA
