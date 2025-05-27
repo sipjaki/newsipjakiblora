@@ -313,40 +313,8 @@
 
 
 
-                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px; width:50px;">No</th>
-                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 400px; font-size:15px;">Nama Badan Usaha</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Status Pelaksana Pengembangan Usaha</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td style="border: 1px solid #000; text-align: center;">1</td>
 
-                                              <td style="border: 1px solid #000; width: 400px; vertical-align: top; padding: 8px;">
-                                                    <div style="white-space: pre-wrap; min-height: 120px;">
-                                                        {{ $datatertibjasakonstruksinamabadanusaha ?? 'Data Masih Kosong' }}
-                                                    </div>
-                                                </td>
-
-                                                    <td style="border: 1px solid #000; width: 400px; text-align: center;">
-                                                        <select class="form-control @error('status') is-invalid @enderror" name="status" style="text-align: center;">
-                                                            <option value="">-- Pilih Status --</option>
-                                                            <option value="Tertib" {{ old('status') == 'Tertib' ? 'selected' : '' }}>Tertib</option>
-                                                            <option value="Tidak Tertib" {{ old('status') == 'Tidak Tertib' ? 'selected' : '' }}>Tidak Tertib</option>
-                                                        </select>
-                                                        @error('status')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
-                                                    </td>
-
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
-                                </div>
+                                    </div>
 
 
                                 <br><br>
