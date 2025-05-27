@@ -815,7 +815,7 @@ public function beagendaskkupdatecreate(Request $request, $id)
         'namakegiatan'         => 'required|string|max:255',
         'asosiasimasjaki_id'   => 'required|string',
         'waktupelaksanaan'     => 'required|date',
-        'penutupan'            => 'required|date|after_or_equal:waktupelaksanaan',
+        'penutupan'            => 'required|date',
         'jumlahpeserta'        => 'required|string',
         'lokasi'               => 'required|string|max:255',
         'keterangan'           => 'required|string|max:255',
