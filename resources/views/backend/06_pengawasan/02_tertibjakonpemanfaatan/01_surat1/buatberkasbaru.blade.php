@@ -294,51 +294,20 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Kesimpulan Pemeriksaan</strong>
                                                 </td>
-                                                <td>
-                                                    <select name="kesimpulanpemeriksaan"
-                                                        class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
-                                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-                                                        <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
-                                                        <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-                                                        <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
-                                                    </select>
-                                                    @error('kesimpulanpemeriksaan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-
-                                                        <script>
-                                                    document.addEventListener('DOMContentLoaded', function () {
-                                                        const kesimpulanSelect = document.getElementById('kesimpulanSelect');
-                                                        const outputKesimpulan = document.getElementById('outputKesimpulan');
-                                                        const textKesimpulan = document.getElementById('textKesimpulan');
-
-                                                        const catatanSelect = document.getElementById('catatanSelect');
-                                                        const outputCatatan = document.getElementById('outputCatatan');
-                                                        const textCatatan = document.getElementById('textCatatan');
-
-                                                        kesimpulanSelect.addEventListener('change', function () {
-                                                            const value = this.value;
-                                                            if (value) {
-                                                                textKesimpulan.textContent = value;
-                                                                outputKesimpulan.style.display = 'table-row';
-                                                            } else {
-                                                                outputKesimpulan.style.display = 'none';
-                                                            }
-                                                        });
-
-                                                        catatanSelect.addEventListener('change', function () {
-                                                            const value = this.value;
-                                                            if (value) {
-                                                                textCatatan.textContent = value;
-                                                                outputCatatan.style.display = 'table-row';
-                                                            } else {
-                                                                outputCatatan.style.display = 'none';
-                                                            }
-                                                        });
-                                                    });
-                                                </script>
-
+<!-- Pilihan Kesimpulan -->
+    <td>
+        <select name="kesimpulanpemeriksaan"
+            class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
+            id="kesimpulanSelect"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+            <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
+            <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+            <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+        </select>
+        @error('kesimpulanpemeriksaan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
 
                                             </tr>
 
@@ -349,6 +318,7 @@
                                                 <td>
                                                     <select name="catatan"
                                                         class="form-control @error('catatan') is-invalid @enderror"
+                                                        id="catatanSelect"
                                                         style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
                                                         <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
                                                         <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
@@ -358,7 +328,7 @@
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </td>
-                                            </tr>
+                                                </tr>
 
 
                                             <tr>
@@ -407,7 +377,7 @@
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
                                 <td>
-                                    <tbody id="hasilKesimpulan"></tbody>
+                                    <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                                 </td>
                                 <td></td>
                             </tr>
@@ -417,10 +387,9 @@
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                                <td>
-
-                            <tbody id="outputCatatan"></tbody>
-                                </td>
+                             <td>
+                                 <span id="textCatatan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
+                            </td>
 
                                 <td></td>
                             </tr>
@@ -576,3 +545,35 @@ function submitForm() {
       @include('backend.00_administrator.00_baganterpisah.02_footer')
 
 
+
+      <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const kesimpulanSelect = document.getElementById('kesimpulanSelect');
+        const outputKesimpulan = document.getElementById('outputKesimpulan');
+        const textKesimpulan = document.getElementById('textKesimpulan');
+
+        const catatanSelect = document.getElementById('catatanSelect');
+        const outputCatatan = document.getElementById('outputCatatan');
+        const textCatatan = document.getElementById('textCatatan');
+
+        kesimpulanSelect.addEventListener('change', function () {
+            const value = this.value;
+            if (value) {
+                textKesimpulan.textContent = value;
+                outputKesimpulan.style.display = 'table-row';
+            } else {
+                outputKesimpulan.style.display = 'none';
+            }
+        });
+
+        catatanSelect.addEventListener('change', function () {
+            const value = this.value;
+            if (value) {
+                textCatatan.textContent = value;
+                outputCatatan.style.display = 'table-row';
+            } else {
+                outputCatatan.style.display = 'none';
+            }
+        });
+    });
+</script>
