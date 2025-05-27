@@ -187,10 +187,10 @@
                                     <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemeliharaan <br> Produk Jasa Konstruksi
                                     </th>
-{{--
+
                                     <th rowspan="2" style="text-align: center; width:175px;">
                                         <i class="bi bi-tools"></i> Aksi
-                                    </th> --}}
+                                    </th>
 
                                 </tr>
 
