@@ -329,7 +329,7 @@
 
                                             <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
-                                                    {{-- <strong style="font-size: 15px;">Waktu Pengawasan</strong> --}}
+                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                                 <td class="d-flex gap-2">
                                                     <input type="date" class="form-control @error('dokumendiperiksa') is-invalid @enderror" name="dokumendiperiksa" value="{{ old('dokumendiperiksa') }}" placeholder="Dimulai Sejak ... ">
