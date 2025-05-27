@@ -1839,7 +1839,7 @@ public function betertibjakonmanfaatcreateberkasnew(Request $request)
         'dokumendiperiksa' => 'required|date',
         'carapemeriksaan' => 'required|date',
         'kesimpulanpemeriksaan' => 'required|in:Sesuai,Tidak Sesuai',
-        'catatan' => 'required|in:Tersedia,Tidak_Tersedia',
+        'catatan' => 'required|in:Tersedia,Tidak Tersedia',
     ], [
         'lingkuppengawasan.required' => 'Nama Pemilik Bangunan Wajib Diisi !.',
         'indikator.required' => 'Nama Pengelola Bangunan Wajib Diisi !.',
