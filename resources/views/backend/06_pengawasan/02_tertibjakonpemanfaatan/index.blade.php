@@ -346,9 +346,17 @@
                                 <!-- Tombol Aksi -->
                                 {{-- <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a> --}}
                                 <a href="/betertibjakonpemanfaatan/update/{{$item->id}}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                <a href="javascript:void(0)" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
+                                {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
                                   <i class="bi bi-trash"></i>
+                                </a> --}}
+                                <a href="javascript:void(0)" class="btn btn-sm btn-danger"
+                                data-bs-toggle="modal"
+                                data-bs-target="#deleteModal"
+                                data-url="{{ route('betertibjakonusahapemenuhansyaratdeletedata', $item->id) }}"
+                                onclick="setDeleteUrl(this)">
+                                    <i class="bi bi-trash"></i>
                                 </a>
+
                               </td>
                             </tr>
                             @endforeach
@@ -384,13 +392,13 @@
                     </div>
                 </div>
 
-                <script>
+             <script>
                 function setDeleteUrl(button) {
-                    var id = button.getAttribute('data-judul');
-                    var deleteUrl = "/betertibjakonpemanfaatandelete/delete/" + encodeURIComponent(id);
+                    var deleteUrl = button.getAttribute('data-url');
                     document.getElementById('deleteForm').action = deleteUrl;
                 }
                 </script>
+
                  <style>
                      .table-responsive {
                          max-width: 100%;
