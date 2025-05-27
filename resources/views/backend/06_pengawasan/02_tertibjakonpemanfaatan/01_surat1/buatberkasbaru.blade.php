@@ -375,7 +375,7 @@
                                 </td>
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
-                                <td>
+                                <td style="text-align: center;">
                                     <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                                 </td>
                                 <td></td>
@@ -386,7 +386,7 @@
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                             <td>
+                             <td style="text-align: center;">
                                  <span id="textCatatan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                             </td>
 
