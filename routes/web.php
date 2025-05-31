@@ -1110,9 +1110,25 @@ Route::post('/besatuanhargaupahpekerjaan/createnew', [SatuanhargamaterialControl
 Route::get('/besatuanhargaupahpekerjaan/update/{id}', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaanupdate'])->middleware(['auth', 'can:super_admin']);
 Route::post('/besatuanhargaupahpekerjaan/updatecreate/{id}', [SatuanhargamaterialController::class, 'besatuanhargaupahpekerjaanupdatecreate'])->middleware(['auth', 'can:super_admin'])->name('update.besatuanhargaupahpekerjaanupdatecreate');
 
-Route::get('/beprofile', [LoginController::class, 'beprofileindex'])->middleware(['auth', 'can:pekerja']);
-Route::get('/beprofile/update/{id}', [LoginController::class, 'beprofileupdate'])->middleware(['auth', 'can:pekerja']);
-Route::put('/beprofile/updatecreate/{id}', [LoginController::class, 'beprofileupdatecreate'])->middleware(['auth', 'pekerja'])->name('admin.profile.update');
+// Route::get('/beprofile', [LoginController::class, 'beprofileindex'])->middleware(['auth', 'can:pekerja']);
+// Route::get('/beprofile/update/{id}', [LoginController::class, 'beprofileupdate'])->middleware(['auth', 'can:pekerja']);
+// Route::put('/beprofile/updatecreate/{id}', [LoginController::class, 'beprofileupdatecreate'])->middleware(['auth', 'pekerja'])->name('admin.profile.update');
+
+Route::middleware(['auth'])->group(function () {
+    // Untuk pekerja
+    Route::middleware(['can:pekerja'])->group(function () {
+        Route::get('/beprofile', [LoginController::class, 'beprofileindex'])->name('pekerja.profile.index');
+        Route::get('/beprofile/update/{id}', [LoginController::class, 'beprofileupdate'])->name('pekerja.profile.edit');
+        Route::put('/beprofile/updatecreate/{id}', [LoginController::class, 'beprofileupdatecreate'])->name('pekerja.profile.update');
+    });
+
+    // Untuk lsppenerbit
+    Route::middleware(['can:lsppenerbit'])->group(function () {
+        Route::get('/lspprofile', [LoginController::class, 'lspprofileindex'])->name('lsppenerbit.profile.index');
+        Route::get('/lspprofile/update/{id}', [LoginController::class, 'lspprofileupdate'])->name('lsppenerbit.profile.edit');
+        Route::put('/lspprofile/updatecreate/{id}', [LoginController::class, 'lspprofileupdatecreate'])->name('lsppenerbit.profile.update');
+    });
+});
 
 Route::get('/besatuanhargaperalatan', [SatuanhargamaterialController::class, 'besatuanhargaperalatan'])->middleware(['auth', 'can:super_admin']);
 Route::delete('/besatuanhargaperalatan/delete/{id}', [SatuanhargamaterialController::class, 'besatuanhargaperalatandelete'])->middleware(['auth', 'can:super_admin']);
