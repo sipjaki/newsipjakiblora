@@ -362,7 +362,7 @@
 
   <!-- Menu Profil Anda -->
   <li class="nav-item">
-    <a href="#" class="nav-link">
+    <a href="/beprofile" class="nav-link">
       <!-- Ikon untuk Profil Anda -->
       <i class="nav-icon bi bi-person-circle" style="color: white;"></i>
       <p style="color: white">
@@ -391,7 +391,7 @@
 
   <!-- Menu Profil Anda -->
   <li class="nav-item">
-    <a href="#" class="nav-link">
+    <a href="/beprofile" class="nav-link">
       <!-- Ikon untuk Profil Anda -->
       <i class="nav-icon bi bi-person-circle" style="color: white;"></i>
       <p style="color: white">
