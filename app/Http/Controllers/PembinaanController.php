@@ -1199,8 +1199,13 @@ public function beakseslsppenerbitskk(Request $request)
     $user = Auth::user();
 
     // Ambil data agenda yang hanya milik user login
-    $query = agendaskk::withCount('allskktenagakerjablora')
-                ->where('user_id', $user->id); // sesuaikan field relasi user
+    $query = agendaskk::withCount(['allskktenagakerjablora' => function ($query) {
+        $query->where('verifikasipu', 'lolos'); // hanya hitung yang lolos
+    }])
+    ->where('user_id', $user->id)
+    ->whereHas('allskktenagakerjablora', function ($q) {
+        $q->where('verifikasipu', 'lolos'); // hanya ambil agenda yang punya peserta 'lolos'
+    });
 
     if ($search) {
         $query->where(function ($q) use ($search) {
@@ -1226,7 +1231,7 @@ public function beakseslsppenerbitskk(Request $request)
     }
 
     return view('backend.05_agenda.04_pesertaskk.index', [
-        'title' => 'Daftar Peserta SKK Sertifikasi',
+        'title' => 'Daftar Peserta SKK Sertifikasi (Lolos DPUPR)',
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search
