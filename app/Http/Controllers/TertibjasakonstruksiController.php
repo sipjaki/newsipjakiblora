@@ -2421,7 +2421,7 @@ public function betertibjakonpenyelenggaraaninformasi(Request $request)
     ]);
 
     try {
-        $surat = new surattertibjakonpemanfaatan3();
+        $surat = new informasisurattertibpenyelenggaraan();
         $surat->fill($validatedData)->save();
 
         return redirect()
