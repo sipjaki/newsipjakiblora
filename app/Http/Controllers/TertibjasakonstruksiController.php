@@ -1889,4 +1889,38 @@ return redirect('/betertibjakonpemanfaatan')->with('delete', 'Data Berhasil Di H
 return redirect()->back()->with('error', 'Item not found');
 }
 
+
+public function betertibjakonmanfaat1showdata($id)
+{
+    // Ambil data surat
+    $datasurat1 = surattertibjakonpemanfaatan1::with('tertibjakonpemanfaatan')->findOrFail($id);
+
+    // Coba ambil data relasi
+    $datatertib = $datasurat1->tertibjakonpemanfaatan;
+
+    // Jika tidak ketemu lewat relasi, cari manual
+    if (!$datatertib) {
+        $datatertib = tertibjakonpemanfaatan::where('surattertibjakonpemanfaatan1', $datasurat1->id)->first();
+    }
+
+    // Data tambahan
+    $namabangunan = $datatertib->namabangunan ?? '-';
+    // Data lain
+    $user = Auth::user();
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
+
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberkas', [
+        'title' => 'Berkas Surat Tertib Jakon Pemanfaaatan ',
+        'data' => $datatertib,
+        'user' => $user,
+        'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
+        'datasurat1' => $datasurat1,
+        'namabangunan' => $namabangunan,
+
+    ]);
+}
+
+
 }
