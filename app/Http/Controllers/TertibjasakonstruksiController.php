@@ -2300,4 +2300,22 @@ return redirect('/betertibjakonpenyelenggaraan')->with('delete', 'Data Berhasil 
 return redirect()->back()->with('error', 'Item not found');
 }
 
+
+
+public function betertibjakonpenyelenggaraanupdate($id)
+{
+    $datatertibjakonpemanfaatan = tertibjakonpenyelenggaraan::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+$datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.update', [
+    'title' => 'Update Tertib Jakon Penyelenggaraan ',
+    'data' => $datatertibjakonpemanfaatan,
+    'datapenyedia' => $datapenyedia,
+    'user' => $user,
+]);
+}
 }
