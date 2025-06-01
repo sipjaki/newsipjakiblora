@@ -1104,7 +1104,7 @@ Route::post('/betertibjakonpenyelenggaraan/createnew', [TertibjasakonstruksiCont
 Route::delete('/betertibjakonpenyelenggaraandelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraandeletedata'])->middleware('auth')->name('betertibjakonpenyelenggaraandeletedata');
 
 Route::get('/betertibjakonpenyelenggaraan/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanupdate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraanupdate');
-Route::post('/betertibjakonpenyelenggaraan/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanupdatecreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraanpembaruan');
+Route::post('/betertibjakonpenyelenggaraan/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanupdatecreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraancreatenupdate');
 
 
 
