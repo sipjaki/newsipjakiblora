@@ -2359,14 +2359,9 @@ public function betertibjakonpenyelenggaraanindexlist($id)
 
     $user = Auth::user();
 
-    // Ambil semua data relasi informasisurattertibpenyelenggaraan sebagai collection
-    // (kalau relasinya hasMany)
     $datasurat = $datatertibjakonpemanfaatan->informasisurattertibpenyelenggaraan()
         ->orderBy('created_at', 'desc')
         ->paginate(50);
-
-    // Cek apakah relasi kosong (no records)
-    $isRelasiKosong = $datasurat->isEmpty();
 
     return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_surat0.index', [
         'title' => 'Berkas Surat | Informasi Tertib Jakon Penyelenggaraan',
@@ -2375,7 +2370,6 @@ public function betertibjakonpenyelenggaraanindexlist($id)
         'datainduk' => $datatertibjakonpemanfaatan,
         'datasurat_id' => $datasurat->first()?->id,
         'id' => $id,
-        'isRelasiKosong' => $isRelasiKosong,
     ]);
 }
 

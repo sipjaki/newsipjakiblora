@@ -552,15 +552,18 @@
     <td style="width: 200px; padding:4px 8px;">
         <strong style="font-size: 15px;">Nama Proyek Konstruksi</strong>
     </td>
-    <td>
-        <input type="text" name="namaproyekkonstruksi"
-            class="form-control @error('namaproyekkonstruksi') is-invalid @enderror"
-            value="{{ old('namaproyekkonstruksi', $datasurat->informasisurattertibpenyelenggaraan->namaproyekkonstruksi ?? '') }}"
-            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-        @error('namaproyekkonstruksi')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </td>
+   @php
+    $firstSurat = $datasurat->first();
+@endphp
+
+<input type="text" name="namaproyekkonstruksi"
+    class="form-control @error('namaproyekkonstruksi') is-invalid @enderror"
+    value="{{ old('namaproyekkonstruksi', $firstSurat->namaproyekkonstruksi ?? '') }}"
+    style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+@error('namaproyekkonstruksi')
+    <div class="invalid-feedback">{{ $message }}</div>
+@enderror
+
 </tr>
 
 <tr>
