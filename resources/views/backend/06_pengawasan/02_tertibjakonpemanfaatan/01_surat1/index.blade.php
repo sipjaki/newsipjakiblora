@@ -549,7 +549,7 @@
 
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                          <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
+                                                <td style="width: 400px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Bangunan </strong>
                                                 </td>
                                                 <td>
@@ -562,7 +562,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
+                                                <td style="width: 400px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Lokasi Bangunan </strong>
                                                 </td>
                                                 <td>
@@ -575,7 +575,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
+                                                <td style="width: 400px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
                                                 </td>
                                            <td>
@@ -588,7 +588,7 @@
 
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
+                                                <td style="width: 400px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
                                                 </td>
                                             <td>
@@ -601,7 +601,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
+                                                <td style="width: 400px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                             @foreach ($datasurat as $item)
