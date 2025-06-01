@@ -139,6 +139,176 @@
     @enderror
 </div>
 
+
+<div class="mb-3">
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Nama Proyek Konstruksi</strong>
+    </td>
+    <td>
+        <input type="text" name="namaproyekkonstruksi"
+            class="form-control @error('namaproyekkonstruksi') is-invalid @enderror"
+            value="{{ old('namaproyekkonstruksi', $data->namaproyekkonstruksi ?? '') }}"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+        @error('namaproyekkonstruksi')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</div>
+
+<div class="mb-3">
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Nilai Proyek</strong>
+    </td>
+    <td>
+        <div style="display: flex; align-items: center;">
+            <span style="margin-right: 6px; font-size: 15px;">Rp.</span>
+            <input type="text" id="nilaiproyek_display"
+                class="form-control @error('nilaiproyek') is-invalid @enderror"
+                value="{{ old('nilaiproyek', number_format($data->nilaiproyek ?? 0, 0, ',', '.')) }}"
+                style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; width: 100%;">
+        </div>
+
+        <input type="hidden" name="nilaiproyek" id="nilaiproyek"
+            value="{{ old('nilaiproyek', $data->nilaiproyek ?? '') }}">
+
+        @error('nilaiproyek')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+<script>
+    const displayInput = document.getElementById('nilaiproyek_display');
+    const hiddenInput = document.getElementById('nilaiproyek');
+
+    function formatRupiah(angka) {
+        return angka.replace(/\D/g, '') // Hapus semua non-digit
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // Tambah titik
+    }
+
+    displayInput.addEventListener('input', function () {
+        const rawValue = this.value.replace(/\./g, ''); // Hapus titik untuk dapat angka mentah
+        hiddenInput.value = rawValue; // Simpan ke input hidden
+
+        this.value = formatRupiah(rawValue); // Tampilkan format 1.000
+    });
+</script>
+</div>
+
+
+<tr>
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Nomor Kontrak</strong>
+    </td>
+    <td>
+        <input type="text" name="nomorkontrak" readonly
+            class="form-control @error('nomorkontrak') is-invalid @enderror"
+            value="{{ old('nomorkontrak', $data->nomorkontrak ?? '') }}"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+        @error('nomorkontrak')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</tr>
+<tr>
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Waktu Pelaksanaan</strong>
+    </td>
+    <td style="display: flex; align-items: center; gap: 8px;">
+        <input type="number" name="waktupelaksanaan" id="waktupelaksanaan"
+            class="form-control @error('waktupelaksanaan') is-invalid @enderror"
+            value="{{ old('waktupelaksanaan', $data->waktupelaksanaan ?? '') }}"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+            <span id="terbilang" style="margin-left: 10px; font-style: italic; color: #555;"></span>
+        <span style="white-space: nowrap;">Hari Kalender</span>
+        @error('waktupelaksanaan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</tr>
+
+<script>
+    function angkaTerbilang(n) {
+        const satuan = ["", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas"];
+        function terbilang(n) {
+            n = parseInt(n);
+            if (isNaN(n) || n === 0) return "";
+            if (n < 12) return satuan[n];
+            if (n < 20) return satuan[n - 10] + " Belas";
+            if (n < 100) return terbilang(Math.floor(n / 10)) + " Puluh " + terbilang(n % 10);
+            if (n < 200) return "Seratus " + terbilang(n - 100);
+            if (n < 1000) return terbilang(Math.floor(n / 100)) + " Ratus " + terbilang(n % 100);
+            if (n < 2000) return "Seribu " + terbilang(n - 1000);
+            if (n < 1000000) return terbilang(Math.floor(n / 1000)) + " Ribu " + terbilang(n % 1000);
+            if (n < 1000000000) return terbilang(Math.floor(n / 1000000)) + " Juta " + terbilang(n % 1000000);
+            return "Terlalu Besar";
+        }
+        return terbilang(n).trim();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById('waktupelaksanaan');
+        const spanTerbilang = document.getElementById('terbilang');
+
+        function updateTerbilang() {
+            const value = input.value;
+            spanTerbilang.textContent = value ? '(' + angkaTerbilang(value) + ')' : '';
+        }
+
+        input.addEventListener('input', updateTerbilang);
+        updateTerbilang(); // initial load
+    });
+</script>
+
+<tr>
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Penyedia Jasa</strong>
+    </td>
+    <td>
+        <input type="text" name="penyediajasa"
+            class="form-control @error('penyediajasa') is-invalid @enderror"
+            value="{{ old('penyediajasa', $data->bujk ?? '') }}"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+        @error('penyediajasa')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</tr>
+
+
+<tr>
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Satuan OPD</strong>
+    </td>
+    <td>
+        <input type="text" name="satuanopd"
+            class="form-control @error('satuanopd') is-invalid @enderror"
+            value="{{ old('satuanopd', $data->satuanopd ?? '') }}"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+        @error('satuanopd')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</tr>
+
+
+                                                <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Tanggal Pengawasan</strong>
+                                                </td>
+                                                    <td class="d-flex gap-2 align-items-center">
+                                                        <input type="date" class="form-control @error('waktupengawasan') is-invalid @enderror"
+                                                            name="waktupengawasan"
+                                                            value="{{ old('waktupengawasan', $data->waktupengawasan ?? '') }}"
+                                                            placeholder="Dimulai Sejak ... ">
+                                                        {{-- <span style="white-space: nowrap;">Hari Kalender</span> --}}
+                                                        @error('waktupengawasan')
+                                                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                                                        @enderror
+                                                    </td>
+                                            </tr>
+
+
+
+
 </div>
 
                     <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
