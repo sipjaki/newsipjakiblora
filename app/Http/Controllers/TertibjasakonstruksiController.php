@@ -1987,4 +1987,49 @@ public function betertibjakonpemanfataansurat2index($id)
     ]);
 }
 
+
+
+
+public function betertibjakonmanfaat2createberkasnew(Request $request)
+{
+    // Pastikan user masih login
+    // if (!auth()->check()) {
+    //     return redirect()->route('login')->with('error', 'Sesi habis, silakan login kembali.');
+    // }
+
+    // Validasi input
+    $validatedData = $request->validate([
+        'tertibjakonpemanfaatan_id' => 'required|string',
+        // 'lingkuppengawasan' => 'required|string',
+        // 'indikator' => 'required|string',
+        'dokumendiperiksa' => 'required|string',
+        'carapemeriksaan' => 'required|string',
+        'kesimpulanpemeriksaan' => 'required|in:Sesuai,Tidak Sesuai',
+        'catatan' => 'required|in:Tersedia,Tidak Tersedia',
+    ], [
+        // 'lingkuppengawasan.required' => 'Nama Pemilik Bangunan Wajib Diisi !.',
+        // 'indikator.required' => 'Nama Pengelola Bangunan Wajib Diisi !.',
+        'dokumendiperiksa.required' => 'Catatan Pemeriksaan Wajib Diisi !.',
+        'carapemeriksaan.required' => 'Catatan Pemeriksaan Wajib Diisi !.',
+        'kesimpulanpemeriksaan.required' => 'Kesimpulan Wajib Di Pilih !.',
+        'catatan.required' => 'Kesimpulan Wajib Di Pilih !.',
+    ]);
+
+    try {
+        $surat = new surattertibjakonpemanfaatan2();
+        $surat->fill($validatedData)->save();
+
+        return redirect()
+            ->route('betertibjakonpemanfataansurat2index', [
+                'id' => $surat->tertibjakonpemanfaatan_id ?? 'default_id'
+            ])
+            ->with('create', 'Berkas berhasil dibuat!');
+
+    } catch (\Exception $e) {
+        return back()
+            ->withInput()
+            ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+    }
+}
+
 }

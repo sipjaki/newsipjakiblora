@@ -263,7 +263,7 @@
             class="form-control @error('carapemeriksaan') is-invalid @enderror"
             style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
             rows="4"
-            placeholder="Masukkan catatan pemeriksaan..."
+            placeholder="Masukkan catatan pemeriksaan 1 ..."
             id="carapemeriksaanInput">{{ old('carapemeriksaan') }}</textarea>
 
         @error('carapemeriksaan')
@@ -302,7 +302,7 @@
             class="form-control @error('dokumendiperiksa') is-invalid @enderror"
             style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
             rows="4"
-            placeholder="Masukkan catatan pemeriksaan..."
+            placeholder="Masukkan catatan pemeriksaan 2..."
             id="dokumendiperiksaInput">{{ old('dokumendiperiksa') }}</textarea>
 
         @error('dokumendiperiksa')

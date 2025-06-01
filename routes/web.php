@@ -1081,7 +1081,7 @@ Route::delete('/betertibjakonmanfaat1delete/delete/{id}', [TertibjasakonstruksiC
 Route::get('/betertibjakonpemanfataansurat2/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat2index'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataansurat2index');
 Route::get('/betertibjakonpemanfataansurat2/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat2createberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataansurat2createberkas');
 
-Route::post('/betertibjakonmanfaat2/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaatcreateberkasnew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonmanfaat2');
+Route::post('/betertibjakonmanfaat2/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat2createberkasnew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonmanfaat2');
 
 
 
