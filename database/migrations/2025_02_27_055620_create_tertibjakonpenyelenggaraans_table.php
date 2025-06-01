@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('namapekerjaan')->nullable();
             $table->string('nomorkontrak')->nullable();
             $table->string('bujk')->nullable();
+
+
             $table->string('prosespemilihan')->nullable();
             $table->string('pengawasan_standarkontrak')->nullable();
             $table->string('pengawasan_tenagakerja')->nullable();

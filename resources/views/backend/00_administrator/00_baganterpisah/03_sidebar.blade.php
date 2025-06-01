@@ -718,7 +718,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/betertibjakonpenyelenggaraan" class="nav-link">
                       <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
                       <p style="color: white">Tertib Penyelenggaraan </p>
                     </a>
