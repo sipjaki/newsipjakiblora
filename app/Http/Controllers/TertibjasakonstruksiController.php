@@ -2191,4 +2191,53 @@ public function betertibjakonmanfaat3deleteberkas($id)
     return redirect()->back();
 }
 
+
+
+// SURAT TERTIB JAKON PENYELENGGARAAN
+
+public function betertibjakonpenyelenggaraanindex(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = tertibjakonpenyelenggaraan::query();
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('namabangunan', 'LIKE', "%{$search}%")
+              ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+              ->orWhere('lokasi', 'LIKE', "%{$search}%")
+              ->orWhereDate('tanggalpembangunan', $search)
+              ->orWhereDate('tanggalpemanfaatan', $search)
+              ->orWhere('umurbangunan', 'LIKE', "%{$search}%")
+            //   ->orWhere('peruntukan_fungsi', 'LIKE', "%{$search}%")
+            //   ->orWhere('peruntukan_lokasi', 'LIKE', "%{$search}%")
+            //   ->orWhere('rencanaumur', 'LIKE', "%{$search}%")
+            //   ->orWhere('kapasitasdanbeban', 'LIKE', "%{$search}%")
+            //   ->orWhere('pemeliharaan_konstruksi', 'LIKE', "%{$search}%")
+            //   ->orWhere('pemeliharaan_struktur', 'LIKE', "%{$search}%")
+              ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+                  $r->where('penyedia', 'LIKE', "%{$search}%");
+              });
+        });
+    }
+
+    $data = $query->orderBy('updated_at', 'desc')
+                  ->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.06_pengawasan.02_tertibjakonpemanfaatan.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.index', [
+        'title' => 'Data Tertib Jakon Pemanfaatan',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
 }
