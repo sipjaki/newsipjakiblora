@@ -109,20 +109,20 @@
 {{-- @endif --}}
                                  {{-- @endif --}}
 
-                   {{-- @if ($datasurat->isNotEmpty()) --}}
+                   {{-- @if ($data->isNotEmpty()) --}}
 
-                   {{-- <button onclick="printModalContent({{ $datasurat_id }})" class="btn-create">
+                   {{-- <button onclick="printModalContent({{ $data_id }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
                     </button>
 
-                    <button class="btn-create" onclick="downloadModalPDF({{ $datasurat_id }})">
+                    <button class="btn-create" onclick="downloadModalPDF({{ $data_id }})">
                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                     </button>
 
                    <button class="btn-create"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat_id }}">
+                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $data_id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
                     </button> --}}
@@ -348,9 +348,9 @@
                                                 </td>
                                            <td>
                                                 <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        @foreach ($datasurat as $item)
+                                                        {{-- @foreach ($data as $item)
                                                         {{ $item->lingkuppengawasan ?? '-' }}
-                                                        @endforeach
+                                                        @endforeach --}}
                                                 </div>
                                             </td>
 
@@ -361,38 +361,13 @@
                                                 </td>
                                             <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                       @foreach ($datasurat as $item)
+                                                       {{-- @foreach ($data as $item)
                                                         {{ $item->indikator ?? '-' }}
-                                                        @endforeach
+                                                        @endforeach --}}
                                                     </div>
                                                 </td>
                                             </tr>
 
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
-                                                </td>
-                                            @foreach ($datasurat as $item)
-    <td class="d-flex gap-2">
-        <div class="form-control bg-light">
-            {{ $item->dokumendiperiksa
-                ? \Carbon\Carbon::parse($item->dokumendiperiksa)->locale('id')->isoFormat('D MMMM YYYY')
-                : '-'
-            }}
-        </div>
-
-        <span class="mx-1">(Sampai Dengan)</span>
-
-        <div class="form-control bg-light">
-            {{ $item->carapemeriksaan
-                ? \Carbon\Carbon::parse($item->carapemeriksaan)->locale('id')->isoFormat('D MMMM YYYY')
-                : '-'
-            }}
-        </div>
-    </td>
-@endforeach
-
-                                            </tr>
                                         </table>
                     <br>
                     <table class="audit">
@@ -420,7 +395,7 @@
                                 </td>
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
-                                    @foreach ($datasurat as $item)
+                                    @foreach ($data as $item)
 
                                     <td style="text-align: center;">
                                         <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
@@ -438,7 +413,7 @@
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                                @foreach ($datasurat as $item)
+                                @foreach ($data as $item)
 
                                     <td style="text-align: center;">
                                         <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
@@ -519,7 +494,7 @@
         });
     </script>
 
-   <div class="modal fade" id="modalKtp{{ $datasurat_id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $datasurat_id }}" aria-hidden="true">
+   <div class="modal fade" id="modalKtp{{ $data_id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $data_id }}" aria-hidden="true">
                                             <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem; margin-top:-10px;" >
                                             <div class="modal-header d-flex align-items-center">
@@ -538,11 +513,11 @@
                                                 {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
                                                    {{-- <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $datasurat4->tertibjasakonstruksi->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
+                                                        <td>{{ $data4->tertibjasakonstruksi->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
                                                     </tr> --}}
                                                     {{-- <tr>
                                                         <td style="width: 300px;"><strong>Nama Pekerjaan</strong></td>
-                                                        <td>{{ $datasurat4->tertibjasakonstruksi->namapekerjaan ?? 'Data Belum Di Buat' }}</td>
+                                                        <td>{{ $data4->tertibjasakonstruksi->namapekerjaan ?? 'Data Belum Di Buat' }}</td>
                                                     </tr> --}}
 
                                                 {{-- </table> --}}
@@ -553,7 +528,7 @@
         <strong style="font-size: 15px;">Nama Proyek Konstruksi</strong>
     </td>
    @php
-    $firstSurat = $datasurat->first();
+    $firstSurat = $data->first();
 @endphp
 
 <input type="text" name="namaproyekkonstruksi"
@@ -669,7 +644,7 @@
                                                 </td>
                                            <td>
                                                 <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        @foreach ($datasurat as $item)
+                                                        @foreach ($data as $item)
                                                         {{ $item->lingkuppengawasan ?? '-' }}
                                                         @endforeach
                                                 </div>
@@ -682,7 +657,7 @@
                                                 </td>
                                             <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                       @foreach ($datasurat as $item)
+                                                       @foreach ($data as $item)
                                                         {{ $item->indikator ?? '-' }}
                                                         @endforeach
                                                     </div>
@@ -693,7 +668,7 @@
                                                 <td style="width: 400px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
-                                            @foreach ($datasurat as $item)
+                                            @foreach ($data as $item)
     <td class="d-flex gap-2">
         <div class="form-control bg-light">
             {{ $item->dokumendiperiksa
@@ -742,7 +717,7 @@
                                 </td>
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
-                                    @foreach ($datasurat as $item)
+                                    @foreach ($data as $item)
 
                                     <td style="text-align: center;">
                                         <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
@@ -760,7 +735,7 @@
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                                @foreach ($datasurat as $item)
+                                @foreach ($data as $item)
 
                                     <td style="text-align: center;">
                                         <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
@@ -800,18 +775,18 @@
                                                                                             <tbody>
                                                                                                  <tr>
                                                                                                     <td style="font-size: 12px; text-align: center;">1</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$data4->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$data4->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px; text-align: center;">2</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$data4->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$data4->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px; text-align: center;">3</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$data4->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$data4->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
