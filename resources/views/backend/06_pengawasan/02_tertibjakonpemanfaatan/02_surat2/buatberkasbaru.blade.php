@@ -315,7 +315,7 @@
                                 <td>Surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan </td>
                                 <td>Memerika ketersediaan surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau melakukan konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan</td>
                                 <td style="text-align: center;">
-                                    <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
+                                    <span id="textCatatan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                                 </td>
                                 <td></td>
                             </tr>
