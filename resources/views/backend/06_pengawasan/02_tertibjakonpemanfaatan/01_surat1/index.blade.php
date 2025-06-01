@@ -547,6 +547,87 @@
 
                                                 {{-- </table> --}}
 
+                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
+                                         <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Nama Bangunan </strong>
+                                                </td>
+                                                <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                    {{-- @foreach ($datainduk as $item) --}}
+                                                    {{ $datainduk->namabangunan ?? '-' }}
+                                                    {{-- @endforeach --}}
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Lokasi Bangunan </strong>
+                                                </td>
+                                                <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                    {{-- @foreach ($datainduk as $item) --}}
+                                                    {{ $datainduk->lokasi ?? '-' }}
+                                                    {{-- @endforeach --}}
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
+                                                </td>
+                                           <td>
+                                                <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                        @foreach ($datasurat as $item)
+                                                        {{ $item->lingkuppengawasan ?? '-' }}
+                                                        @endforeach
+                                                </div>
+                                            </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
+                                                </td>
+                                            <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                       @foreach ($datasurat as $item)
+                                                        {{ $item->indikator ?? '-' }}
+                                                        @endforeach
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
+                                                </td>
+                                            @foreach ($datasurat as $item)
+    <td class="d-flex gap-2">
+        <div class="form-control bg-light">
+            {{ $item->dokumendiperiksa
+                ? \Carbon\Carbon::parse($item->dokumendiperiksa)->locale('id')->isoFormat('D MMMM YYYY')
+                : '-'
+            }}
+        </div>
+
+        <span class="mx-1">(Sampai Dengan)</span>
+
+        <div class="form-control bg-light">
+            {{ $item->carapemeriksaan
+                ? \Carbon\Carbon::parse($item->carapemeriksaan)->locale('id')->isoFormat('D MMMM YYYY')
+                : '-'
+            }}
+        </div>
+    </td>
+@endforeach
+
+                                            </tr>
+                                        </table>
+                    <br>
+
                                                 <table class="audit">
                         <thead>
                             <tr>
@@ -676,7 +757,7 @@
         clone.style.padding = '20px';
 
         // Format nama file
-        const fileName = `Tertibjakonusaha_kesesuaianpemenuhansyarat_${id}.pdf`;
+        const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
 
         // Konversi ke PDF dan download
         html2pdf()
