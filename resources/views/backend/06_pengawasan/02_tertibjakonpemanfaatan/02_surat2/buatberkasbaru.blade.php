@@ -239,21 +239,20 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Kesimpulan Pemeriksaan</strong>
                                                 </td>
-<!-- Pilihan Kesimpulan -->
-    <td>
-        <select name="kesimpulanpemeriksaan"
-            class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
-            id="kesimpulanSelect"
-            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-            <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
-            <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-            <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
-        </select>
-        @error('kesimpulanpemeriksaan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </td>
 
+                                                       <td>
+                                                    <select name="kesimpulanpemeriksaan"
+                                                        class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
+                                                        id="kesimpulanSelect"
+                                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+                                                        <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
+                                                        <option value="Tersedia" {{ old('kesimpulanpemeriksaan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
+                                                        <option value="Tidak Tersedia" {{ old('kesimpulanpemeriksaan') == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
+                                                    </select>
+                                                    @error('kesimpulanpemeriksaan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </td>
                                             </tr>
 
                                             <tr>
@@ -261,39 +260,20 @@
                                                     <strong style="font-size: 15px;">Catatan</strong>
                                                 </td>
                                                 <td>
-                                                    <select name="catatan"
-                                                        class="form-control @error('catatan') is-invalid @enderror"
-                                                        id="catatanSelect"
-                                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-                                                        <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
-                                                        <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
-                                                        <option value="Tidak Tersedia" {{ old('catatan') == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
-                                                    </select>
-                                                    @error('catatan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                                        <select name="catatan"
+                                                            class="form-control @error('catatan') is-invalid @enderror"
+                                                            id="catatanSelect"
+                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+                                                            <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
+                                                            <option value="Sesuai" {{ old('catatan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+                                                            <option value="Tidak Sesuai" {{ old('catatan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+                                                        </select>
+                                                        @error('catatan')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
                                                 </td>
                                                 </tr>
 
-
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
-                                                </td>
-                                                <td class="d-flex gap-2">
-                                                    <input type="date" class="form-control @error('dokumendiperiksa') is-invalid @enderror" name="dokumendiperiksa" value="{{ old('dokumendiperiksa') }}" placeholder="Dimulai Sejak ... ">
-                                                    @error('dokumendiperiksa')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-
-                                                    <span class="mx-1">(Sampai Dengan)</span>
-
-                                                    <input type="date" class="form-control @error('carapemeriksaan') is-invalid @enderror" name="carapemeriksaan" value="{{ old('carapemeriksaan') }}" placeholder="Berakhir Tanggal ... ">
-                                                    @error('carapemeriksaan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-                                            </tr>
                                         </table>
                     <br>
                     <table class="audit">
@@ -325,17 +305,21 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>
-                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+                                <td rowspan="2">2</td>
+                                <td rowspan="2">
+                                    Pengawasan terhadap kapasitas dan beban
                                 </td>
-                                <td>Dokumen resmi dari instansi berwenang</td>
-                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                             <td style="text-align: center;">
-                                 <span id="textCatatan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
-                            </td>
-
+                                <td>
+                                    Terjaminnya bangunan konstruksi dari kelebihan kapasitas dan beban yang di buktikan dengan tersedianya surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan<br>
+                                </td>
+                                <td>Surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan </td>
+                                <td>Memerika ketersediaan surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau melakukan konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan</td>
+                                <td style="text-align: center;">
+                                    <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
+                                </td>
                                 <td></td>
                             </tr>
+
                         </tbody>
                     </table>
 
