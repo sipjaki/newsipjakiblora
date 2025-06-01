@@ -177,7 +177,7 @@
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:300px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Rencana <br> Umur Konstruksi
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Rencana <br> Umur Konstruksi & Kapasitas Beban
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:300px;">
