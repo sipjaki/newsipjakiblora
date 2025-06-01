@@ -256,19 +256,22 @@
         <strong style="font-size: 15px;">Nilai Proyek</strong>
     </td>
     <td>
-        <span>Rp. </span>
-    <input type="text" id="nilaiproyek_display"
-           class="form-control @error('nilaiproyek') is-invalid @enderror"
-           value="{{ old('nilaiproyek', number_format($data->nilaiproyek ?? 0, 0, ',', '.')) }}"
-           style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+        <div style="display: flex; align-items: center;">
+            <span style="margin-right: 6px; font-size: 15px;">Rp.</span>
+            <input type="text" id="nilaiproyek_display"
+                class="form-control @error('nilaiproyek') is-invalid @enderror"
+                value="{{ old('nilaiproyek', number_format($data->nilaiproyek ?? 0, 0, ',', '.')) }}"
+                style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; width: 100%;">
+        </div>
 
-    <input type="hidden" name="nilaiproyek" id="nilaiproyek"
-           value="{{ old('nilaiproyek', $data->nilaiproyek ?? '') }}">
+        <input type="hidden" name="nilaiproyek" id="nilaiproyek"
+            value="{{ old('nilaiproyek', $data->nilaiproyek ?? '') }}">
 
-    @error('nilaiproyek')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</td>
+        @error('nilaiproyek')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</tr>
 <script>
     const displayInput = document.getElementById('nilaiproyek_display');
     const hiddenInput = document.getElementById('nilaiproyek');
