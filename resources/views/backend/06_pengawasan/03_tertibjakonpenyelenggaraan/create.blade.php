@@ -64,7 +64,7 @@
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
 
-                        <form action="{{ route('betertibjakonpenyelenggaraancreatenewupdate') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonpenyelenggaraancreatenupdate') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
