@@ -273,7 +273,7 @@
 
                                 </tbody>
                             </table>
-                            <br><br><br>
+                            <br>
                             <hr>
                             <br><br>
 
