@@ -2318,4 +2318,34 @@ return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.update', [
     'user' => $user,
 ]);
 }
+
+
+public function betertibjakonpenyelenggaraanupdatecreate(Request $request, $id)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'penyediastatustertibjakon_id' => 'required|string',
+        'kegiatankonstruksi'           => 'required|string|max:65535',
+        'namapekerjaan'                => 'required|string|max:65535',
+        'nomorkontrak'                 => 'required|string|max:255',
+        'bujk'                         => 'required|string|max:255',
+    ], [
+        'penyediastatustertibjakon_id.required' => 'Data Penyedia wajib dipilih!',
+        'kegiatankonstruksi.required'           => 'Kegiatan Konstruksi wajib diisi!',
+        'namapekerjaan.required'                => 'Nama Pekerjaan wajib diisi!',
+        'nomorkontrak.required'                 => 'Nomor Kontrak wajib diisi!',
+        'bujk.required'                         => 'BUJK wajib diisi!',
+    ]);
+
+    // Cari data berdasarkan ID
+    $data = tertibjakonpenyelenggaraan::findOrFail($id);
+
+    // Update data
+    $data->update($validated);
+
+    // Flash message & redirect
+    session()->flash('update', 'Data Tertib Jakon Penyelenggaraan berhasil diperbarui!');
+    return redirect('/betertibjakonpenyelenggaraan');
+}
+
 }
