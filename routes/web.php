@@ -1083,6 +1083,7 @@ Route::get('/betertibjakonpemanfataansurat2/createberkas/{id}', [Tertibjasakonst
 
 Route::post('/betertibjakonmanfaat2/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat2createberkasnew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonmanfaat2');
 
+Route::delete('/betertibjakonmanfaat2delete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat2deleteberkas'])->middleware('auth')->name('betertibjakonmanfaat2deleteberkas');
 
 
 
