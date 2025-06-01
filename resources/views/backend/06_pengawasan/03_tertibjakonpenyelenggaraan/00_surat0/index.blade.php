@@ -100,16 +100,16 @@
 
 
        {{-- Tampilkan tombol jika surat kosong --}}
-@if ($isRelasiKosong)
+{{-- @if ($isRelasiKosong) --}}
     <a href="{{ route('betertibjakonpenyelenggaraancreateberkas', ['id' => $id]) }}">
         <button class="btn-create">
             <i class="bi bi-file-earmark-plus"></i> Buat Berkas
         </button>
     </a>
-@endif
+{{-- @endif --}}
                                  {{-- @endif --}}
 
-                   @if ($datasurat->isNotEmpty())
+                   {{-- @if ($datasurat->isNotEmpty()) --}}
 
                    <button onclick="printModalContent({{ $datasurat_id }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
@@ -128,7 +128,7 @@
                     </button>
 
 
-                    @endif
+                    {{-- @endif --}}
 
                 <button class="btn-create">
                     <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
