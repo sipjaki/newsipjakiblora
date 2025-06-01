@@ -2360,8 +2360,10 @@ public function betertibjakonpenyelenggaraanindexlist($id)
 
     $user = Auth::user();
 
-    // Ambil surat dari relasi yang sudah dimuat
-    $datasurat = $datatertibjakonpemanfaatan->informasisurattertibpenyelenggaraan()->orderBy('created_at', 'desc')->paginate(50);
+    // Ambil surat terkait dari relasi yang sudah eager loaded
+    $datasurat = $datatertibjakonpemanfaatan->informasisurattertibpenyelenggaraan()
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
 
     return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_surat0.index', [
         'title' => 'Berkas Surat | Informasi Tertib Jakon Penyelenggaraan',
@@ -2377,32 +2379,26 @@ public function betertibjakonpenyelenggaraanindexlist($id)
 
 
 
-public function betertibjakonpenyelenggaraancreateberkas($id)
+  public function betertibjakonpenyelenggaraancreateberkas($id)
 {
-    // Ambil data tertibjasakonstruksi dengan relasi informasisurattertibpenyelenggaraan
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
     $datatertibjasapemanfaatan = tertibjakonpenyelenggaraan::with('informasisurattertibpenyelenggaraan')->findOrFail($id);
 
     $user = Auth::user();
 
-    // Ambil data relasi surattertibjakonusaha3 jika ada
+    // Ambil data relasi surattertibjakonusaha1 jika ada
     $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonusaha3;
-
-    // Ambil ID dari relasi informasisurattertibpenyelenggaraan (asumsinya satu data)
-    $informasiId = null;
-    if ($datatertibjasapemanfaatan->informasisurattertibpenyelenggaraan) {
-        $informasiId = $datatertibjasapemanfaatan->informasisurattertibpenyelenggaraan->id;
-    }
 
     return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_surat0.buatberkasbaru', [
         'databujk' => $datatertibjasapemanfaatan->bujk,
+
         'user' => $user,
         'data' => $datatertibjasapemanfaatan,
+
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
-        'informasiId' => $informasiId,  // <-- passing id ke view
         'title' => 'Create Berkas Informasi Proyek Jakon Penyelenggaraan'
     ]);
 }
-
 
 
 public function betertibjakonpenyelenggaraaninformasi(Request $request)
