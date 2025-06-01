@@ -166,13 +166,13 @@
                                 </thead>
                                 <tbody>
 
-                                    @if ($data->informasisurattertibpenyelenggaraan->isEmpty())
+                                    {{-- @if ($data->informasisurattertibpenyelenggaraan->isEmpty())
                                         <tr>
                                             <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
                                                 Berkas Informasi Proyek Tertib Penyelenggaraan <strong>Belum Dibuat (Informasi Pekerjaan)</strong>!
                                             </td>
                                         </tr>
-                                    @else
+                                    @else --}}
 
                                 @foreach ($data as $item )
                                     <tr class="align-middle">
@@ -282,7 +282,7 @@
 
                                     </tr>
                                         @endforeach
-                                        @endif
+                                        {{-- @endif --}}
 
                                 </tbody>
                             </table>
