@@ -358,19 +358,18 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
-                                                <td class="d-flex gap-2">
-                                                    <input type="date" class="form-control @error('dokumendiperiksa') is-invalid @enderror" name="dokumendiperiksa" value="{{ old('dokumendiperiksa') }}" placeholder="Dimulai Sejak ... ">
-                                                    @error('dokumendiperiksa')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                              <td class="d-flex gap-2">
+                                                <div class="form-control bg-light">
+                                                    {{ $datasurat->dokumendiperiksa ? date('Y-m-d', strtotime($datasurat->dokumendiperiksa)) : '-' }}
+                                                </div>
 
-                                                    <span class="mx-1">(Sampai Dengan)</span>
+                                                <span class="mx-1">(Sampai Dengan)</span>
 
-                                                    <input type="date" class="form-control @error('carapemeriksaan') is-invalid @enderror" name="carapemeriksaan" value="{{ old('carapemeriksaan') }}" placeholder="Berakhir Tanggal ... ">
-                                                    @error('carapemeriksaan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
+                                                <div class="form-control bg-light">
+                                                    {{ $datasurat->carapemeriksaan ? date('Y-m-d', strtotime($datasurat->carapemeriksaan)) : '-' }}
+                                                </div>
+                                            </td>
+
                                             </tr>
                                         </table>
                     <br>
