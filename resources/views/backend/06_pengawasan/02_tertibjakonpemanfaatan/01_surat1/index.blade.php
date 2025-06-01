@@ -506,7 +506,7 @@
         });
     </script>
 
-   <div class="modal fade" id="modalKtp{{ $datasurat4->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $datasurat4->id }}" aria-hidden="true">
+   <div class="modal fade" id="modalKtp{{ $datasurat_id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $datasurat_id }}" aria-hidden="true">
                                             <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem;">
                                             <div class="modal-header d-flex align-items-center">
@@ -546,7 +546,7 @@
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
                                                             {{-- <td style="border: 1px solid #000; padding: 0 8px;">{{$namapekerjaan ?? 'Data Belum Di Buat '}}</td> --}}
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->status ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat->status ?? 'Data Belum Di Buat '}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
