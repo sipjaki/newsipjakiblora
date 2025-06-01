@@ -1983,7 +1983,7 @@ public function betertibjakonpemanfataansurat2index($id)
         'data' => $datatertibjasapemanfaatan,
 
         // 'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
-        'title' => 'Create Surat Tertib Jakon Pemanfaatan'
+        'title' => 'Create Surat Tertib Jakon Pemanfaatan Bagian 2'
     ]);
 }
 
