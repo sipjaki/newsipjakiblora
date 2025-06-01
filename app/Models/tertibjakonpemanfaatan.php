@@ -19,7 +19,7 @@ class tertibjakonpemanfaatan extends Model
 
     public function surattertibjakonpemanfaatan1()
 {
-    return $this->belongsTo(surattertibjakonpemanfaatan1::class, 'surattertibjakonpemanfaatan1_id');
+    return $this->belongsTo(surattertibjakonpemanfaatan1::class);
 }
 
     // Relasi dengan surattertibjakonpemanfaatan2
