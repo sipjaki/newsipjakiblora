@@ -371,11 +371,13 @@
                                 <td>Dokumen laik fungsi atau dokumen sejenis yang di terbitkan oleh instansi berwenang </td>
                                 <td>Memerika ketersediaan dokumen laik fungsi atau dokumen sejenis yang diterbitkan oleh instansi berwenang </td>
                                 <td style="text-align: center;">
-                                    <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
+                                    @foreach ($datasurat as $item)
+                                    {{$item->kesimpulanpemeriksaan}}
+                                    @endforeach
                                 </td>
                                  <td>
                                     @foreach ($datasurat as $item)
-                                    {{$item->kesimpulanpemeriksaan}}
+                                    {{$item->carapemeriksaan}}
                                     @endforeach
                                 </td>
                             </tr>
@@ -395,10 +397,9 @@
                                     @endforeach
                                 </td>
                                  <td>
-                                        <div id="dokumendiperiksaPreview"
-                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #f8f9fa; min-height: 100px;">
-                                            <!-- Hasil teks tampil di sini -->
-                                        </div>
+                                    @foreach ($datasurat as $item)
+                                    {{$item->dokumendiperiksa}}
+                                    @endforeach
                                     </td>
                             </tr>
 
