@@ -228,7 +228,7 @@
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
                                             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                            data-id="{{ $item->id }}" onclick="setDeleteUrl(this)">
+                                            data-id="{{ $data->id }}" onclick="setDeleteUrl(this)">
                                              <i class="bi bi-trash"></i>
                                          </a>
 
