@@ -334,7 +334,7 @@
                                                 </td>
                                            <td>
                                                 <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        @foreach ($firstsurat as $item)
+                                                        @foreach ($datasurat as $item)
                                                         {{ $item->lingkuppengawasan ?? '-' }}
                                                         @endforeach
                                                 </div>
@@ -347,7 +347,7 @@
                                                 </td>
                                             <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                       @foreach ($firstsurat as $item)
+                                                       @foreach ($datasurat as $item)
                                                         {{ $item->indikator ?? '-' }}
                                                         @endforeach
                                                     </div>
