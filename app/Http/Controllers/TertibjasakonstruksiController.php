@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\informasisurattertibpenyelenggaraan;
 use App\Models\penyediastatustertibjakon;
 use App\Models\subklasifikasi;
 use App\Models\surattertibjakonpemanfaatan1;
@@ -2346,6 +2347,32 @@ public function betertibjakonpenyelenggaraanupdatecreate(Request $request, $id)
     // Flash message & redirect
     session()->flash('update', 'Data Tertib Jakon Penyelenggaraan berhasil diperbarui!');
     return redirect('/betertibjakonpenyelenggaraan');
+}
+
+
+public function betertibjakonpenyelenggaraanindexlist($id)
+{
+    $datatertibjakonpemanfaatan = Tertibjakonpenyelenggaraan::with('informasisurat')->find($id);
+
+    if (!$datatertibjakonpemanfaatan) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    $user = Auth::user();
+
+    // Ambil surat dari relasi yang sudah dimuat
+    $datasurat = $datatertibjakonpemanfaatan->informasisurat()->orderBy('created_at', 'desc')->paginate(50);
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_surat0.index', [
+        'title' => 'Berkas Surat | Informasi Tertib Jakon Penyelenggaraan',
+        'user' => $user,
+        'data' => $datasurat,
+        'datasurat' => $datasurat,
+        'datainduk' => $datatertibjakonpemanfaatan,
+        'firstsurat' => $datasurat->first(),
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id,
+    ]);
 }
 
 }

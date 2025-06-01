@@ -1107,6 +1107,8 @@ Route::get('/betertibjakonpenyelenggaraan/update/{id}', [TertibjasakonstruksiCon
 Route::post('/betertibjakonpenyelenggaraan/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanupdatecreate'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraancreatenupdate');
 
 
+// SURAT JAKON PENYELENGGARAN  INFORMASI PEKERJAAN
+Route::get('/betertibjakonpenyelenggaraan/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanindexlist'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraanindexinformasi');
 
 
 

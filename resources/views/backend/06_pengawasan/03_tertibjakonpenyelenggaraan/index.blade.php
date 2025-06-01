@@ -268,7 +268,7 @@
 
 
                            <td style="text-align: center; vertical-align: middle;">
-                                <a href="/betertibjakonpemanfataanjakon/index/{{ $item->id }}" style="text-decoration: none;">
+                                <a href="/betertibjakonpenyelenggaraan/index/{{ $item->id }}" style="text-decoration: none;">
                                     <button style="background-color: #800000; color: white; padding: 8px 16px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Buat Berkas
                                     </button>
