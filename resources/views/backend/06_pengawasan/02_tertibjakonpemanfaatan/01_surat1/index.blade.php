@@ -332,35 +332,23 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
                                                 </td>
-                                                <td>
-                                                        <input
-                                                            type="text"
-                                                            name="lingkuppengawasan"
-                                                            value="{{ old('lingkuppengawasan') }}"
-                                                            class="form-control"
-                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
-                                                        >
-                                                            @error('lingkuppengawasan')
-                                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                                    @enderror
-                                                    </td>
+                                              <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                        {{ $datasurat->lingkuppengawasan ?? '-' }}
+                                                    </div>
+                                                </td>
+
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
                                                 </td>
-                                                <td>
-                                                        <input
-                                                            type="text"
-                                                            name="indikator"
-                                                            value="{{ old('indikator') }}"
-                                                            class="form-control"
-                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
-                                                        >
-                                                           @error('indikator')
-                                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                                    @enderror
+                                               <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                        {{ $datasurat->indikator ?? '-' }}
+                                                    </div>
                                                 </td>
+
                                             </tr>
                                             <tr>
 
