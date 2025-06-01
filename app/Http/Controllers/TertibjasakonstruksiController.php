@@ -2425,7 +2425,7 @@ public function betertibjakonpenyelenggaraaninformasi(Request $request)
         $surat->fill($validatedData)->save();
 
         return redirect()
-            ->route('betertibjakonpemanfataansurat3index', [
+            ->route('betertibjakonpenyelenggaraanindexinformasi', [
                 'id' => $surat->id ?? 'default_id'
             ])
             ->with('create', 'Data proyek berhasil disimpan!');
