@@ -111,18 +111,18 @@
 
                    @if ($datasurat->isNotEmpty())
 
-                   <button onclick="printModalContent({{ $datasurat_id }})" class="btn-create">
+                   <button onclick="printModalContent({{ $informasiId }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
                     </button>
 
-                    <button class="btn-create" onclick="downloadModalPDF({{ $datasurat_id }})">
+                    <button class="btn-create" onclick="downloadModalPDF({{ $informasiId }})">
                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                     </button>
 
                    <button class="btn-create"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat_id }}">
+                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $informasiId }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
                     </button>
