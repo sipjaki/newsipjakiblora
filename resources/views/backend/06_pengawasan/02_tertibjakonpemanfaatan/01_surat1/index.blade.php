@@ -308,7 +308,10 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{-- {{ $datanamabangunan ?? '-' }} --}}
+                                                    @foreach ($datatertibjakonpemanfaatan as $item)
+                                                    {{ $item->namabangunan ?? '-' }}
+                                                    @endforeach
+
                                                     </div>
                                                 </td>
                                             </tr>
@@ -318,7 +321,10 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{-- {{ $datalokasi ?? '-' }} --}}
+                                                    @foreach ($datatertibjakonpemanfaatan as $item)
+                                                    {{ $item->lokasi ?? '-' }}
+                                                    @endforeach
+
                                                     </div>
                                                 </td>
                                             </tr>
