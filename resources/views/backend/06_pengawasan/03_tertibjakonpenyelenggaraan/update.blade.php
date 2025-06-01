@@ -56,7 +56,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/betertibjakonpemanfaatan">
+                <a href="/betertibjakonpenyelenggaraan">
                     <button class="btn-kembali">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
