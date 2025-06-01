@@ -292,7 +292,7 @@
 
                             {{-- ============================================================== --}}
                         {{-- ======================================================= --}}
-                    @if($datasurat && $datasurat->count() > 0)
+                    @if($data && $data->count() > 0)
                         <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <form method="POST" enctype="multipart/form-data">
