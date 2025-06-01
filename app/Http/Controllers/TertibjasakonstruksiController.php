@@ -1892,24 +1892,30 @@ return redirect()->back()->with('error', 'Item not found');
 
 public function betertibjakonmanfaat1showberkas($id)
 {
+
+    $datasurat1 = surattertibjakonpemanfaatan1::with('tertibjakonpemanfataan')->findOrFail($id);
+
+    // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
+    $datatertib = $datasurat1->tertibjakonpemanfaatan;
+
+    // Ambil user
+    $user = Auth::user();
+
+    // Jika relasi null, buat default kosong agar tidak error di view
+    $namabangunan = $datasurat1->namabangunan ?? 'Data pekerjaan tidak ditemukan';
+
     // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
-    $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan1')->findOrFail($id);
+    // $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan1')->findOrFail($id);
 
     $user = Auth::user();
 
-    // Ambil data relasi surattertibjakonusaha1 jika ada
-    $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonpemanfaatan1;
-
-    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberka', [
-        'datanamabangunan' => $datatertibjasapemanfaatan->namabangunan,
-        'datalokasi' => $datatertibjasapemanfaatan->lokasi,
-        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
-        'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberkas', [
+        'namabangunan' => $namabangunan,
+        // 'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
         // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
         'user' => $user,
-        'data' => $datatertibjasapemanfaatan,
-
-        'datasurattertibjakonusaha1' => $datasurattertibjakopemanfaatan1,
+        'data' => $datatertib,
+        'datasurat1' => $datasurat1,
         'title' => 'Show Berkas Surat Tertib Jakon Pemanfaatan '
     ]);
 }

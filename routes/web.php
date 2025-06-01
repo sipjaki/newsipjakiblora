@@ -1074,7 +1074,7 @@ Route::get('/betertibjakonpemanfataanjakon/createberkas/{id}', [Tertibjasakonstr
 Route::post('/betertibjakonmanfaat1/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaatcreateberkasnew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonmanfaat1');
 
 // Route::get('/betertibjakonmanfaat1/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat1showdata'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonmanfaat1show');
-Route::get('/betertibjakonmanfaat1showberkas/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat1showberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonmanfaat1showberkas');
+Route::get('/betertibjakonmanfaat1showberkassurat/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat1showberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonmanfaat1showberkas');
 
 
 
