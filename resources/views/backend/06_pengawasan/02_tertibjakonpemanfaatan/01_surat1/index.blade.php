@@ -360,16 +360,16 @@
                                         <td style="width: 200px; padding:4px 8px;">
                                             <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                         </td>
+                                        @foreach ($datasurat as $item)
 
                                         <td>
-                                            @foreach ($datasurat as $item)
                                             <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
                                                 {{ $item->dokumendiperiksa ? \Carbon\Carbon::parse($item->dokumendiperiksa)->translatedFormat('d F Y') : '-' }}
                                                 <span class="mx-1">(Sampai Dengan)</span>
                                                 {{ $item->carapemeriksaan ? \Carbon\Carbon::parse($item->carapemeriksaan)->translatedFormat('d F Y') : '-' }}
                                             </div>
-                                            @endforeach
                                         </td>
+                                        @endforeach
 
                                             </tr>
                                         </table>
