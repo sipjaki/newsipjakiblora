@@ -300,7 +300,7 @@
                                     </div>
                                     <br>
                                     <div class="modal-body">
-                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin</h5>
+                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Pemanfaatan : Pengawasan Tertib Pemanfaatan Produk Konstruksi Secara Rutin Terhadap Bangunan Konstruksi yang di Biayai dengan dana dari APBD</h5>
                                             <br>
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                          <tr>
@@ -521,7 +521,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin </h5>
+                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Pemanfaatan : <br> Pengawasan Tertib Pemanfaatan Produk Konstruksi Secara Rutin Terhadap Bangunan Konstruksi yang di Biayai dengan dana dari APBD </h5>
                                                 {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
                                                    {{-- <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
