@@ -213,7 +213,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('betertibjakonmanfaat1') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonmanfaat2') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <input type="hidden"  name="tertibjakonpemanfaatan_id" value="{{ $datatertibjasakonstruksi_id }}">
