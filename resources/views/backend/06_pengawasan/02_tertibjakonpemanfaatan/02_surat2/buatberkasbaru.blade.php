@@ -259,17 +259,19 @@
                                                 </td>
 
                                                      <td>
-                                                            <textarea name="carapemeriksaan"
-                                                                class="form-control @error('carapemeriksaan') is-invalid @enderror"
-                                                                style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
-                                                                rows="4"
-                                                                placeholder="Masukkan catatan pemeriksaan...">{{ old('carapemeriksaan') }}</textarea>
+        <textarea name="carapemeriksaan"
+            class="form-control @error('carapemeriksaan') is-invalid @enderror"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
+            rows="4"
+            placeholder="Masukkan catatan pemeriksaan..."
+            id="carapemeriksaanInput">{{ old('carapemeriksaan') }}</textarea>
 
-                                                            @error('carapemeriksaan')
-                                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
-                                                        </td>
+        @error('carapemeriksaan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
 
+    <!-- Tempat menampilkan isi secara otomatis -->
                                             </tr>
 
                                             <tr>
@@ -295,17 +297,18 @@
                                                     <strong style="font-size: 15px;">Catatan Pemeriksaan 2</strong>
                                                 </td>
 
-                                                     <td>
-                                                        <textarea name="dokumendiperiksa"
-                                                            class="form-control @error('dokumendiperiksa') is-invalid @enderror"
-                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
-                                                            rows="4"
-                                                            placeholder="Masukkan catatan pemeriksaan...">{{ old('dokumendiperiksa') }}</textarea>
+                                                      <td>
+        <textarea name="dokumendiperiksa"
+            class="form-control @error('dokumendiperiksa') is-invalid @enderror"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
+            rows="4"
+            placeholder="Masukkan catatan pemeriksaan..."
+            id="dokumendiperiksaInput">{{ old('dokumendiperiksa') }}</textarea>
 
-                                                        @error('dokumendiperiksa')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
-                                                    </td>
+        @error('dokumendiperiksa')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
 
 
                                             </tr>
