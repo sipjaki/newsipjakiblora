@@ -2261,6 +2261,7 @@ public function betertibjakonpenyelenggaraancreatenew(Request $request)
         'nomorkontrak'          => 'required|string|max:255',
         'bujk'                  => 'required|string|max:255',
     ], [
+        'penyediastatustertibjakon_id.required' => 'required|string',
         'kegiatankonstruksi.required'    => 'Kegiatan Konstruksi wajib diisi!',
         'namapekerjaan.required'         => 'Nama Pekerjaan wajib diisi!',
         'nomorkontrak.required'          => 'Nomor Kontrak wajib diisi!',
