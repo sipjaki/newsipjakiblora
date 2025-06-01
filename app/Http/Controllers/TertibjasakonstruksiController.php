@@ -1826,7 +1826,7 @@ public function betertibjakonpemanfataanjakonindex($id)
         'data' => $datatertibjasapemanfaatan,
 
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
-        'title' => 'Create Surat Tertib Jakon Pemanfaatan '
+        'title' => 'Create Surat Tertib Jakon Pemanfaatan Bagian 2'
     ]);
 }
 
@@ -1947,7 +1947,7 @@ public function betertibjakonpemanfataansurat2index($id)
 
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.02_surat2.index', [
-        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan',
+        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan Bagian 2',
         'user' => $user,
         'data' => $datasurat,
         'datasurat' => $datasurat,
