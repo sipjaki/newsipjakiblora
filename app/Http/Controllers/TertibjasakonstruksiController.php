@@ -1890,36 +1890,29 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
- public function betertibjakonmanfaat1showberkas($id)
+public function betertibjakonmanfaat1showberkas($id)
 {
-    // Ambil data surat dengan relasi tertibjasakonstruksi
-    $datasurat1 = surattertibjakonpemanfaatan1::with('tertibjakonpemanfaatan')->findOrFail($id);
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan1')->findOrFail($id);
 
-    // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
-    $datatertib = $datasurat1->tertibjakonpemanfaatan;
-
-    // Ambil user
     $user = Auth::user();
 
-    // Ambil data subklasifikasi dan tandatangan
-    $datasubklasifikasi = subklasifikasi::all();
-    $datatandatangan = tandatangan::all();
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonpemanfaatan1;
 
-    // Jika relasi null, buat default kosong agar tidak error di view
-    $namabangunan = $datasurat1->namabangunan ?? 'Data pekerjaan tidak ditemukan';
-
-    // Kirim data ke view
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberkas', [
-        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar',
-        'data' => $datatertib,
+        'datanamabangunan' => $datatertibjasapemanfaatan->namabangunan,
+        'datalokasi' => $datatertibjasapemanfaatan->lokasi,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
+        'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
+        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
         'user' => $user,
-        'datasubklasifikasi' => $datasubklasifikasi,
-        'datatandatangan' => $datatandatangan,
-        'datasurat1' => $datasurat1,
-        'namabangunan' => $namabangunan,
+        'data' => $datatertibjasapemanfaatan,
+
+        'datasurattertibjakonusaha1' => $datasurattertibjakopemanfaatan1,
+        'title' => 'Show Berkas Surat Tertib Jakon Pemanfaatan '
     ]);
 }
-
 
 
 
