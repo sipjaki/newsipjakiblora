@@ -342,32 +342,6 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
-                                                </td>
-                                           <td>
-                                                <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        @foreach ($datasurat as $item)
-                                                        {{ $item->lingkuppengawasan ?? '-' }}
-                                                        @endforeach
-                                                </div>
-                                            </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
-                                                </td>
-                                            <td>
-                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                       @foreach ($datasurat as $item)
-                                                        {{ $item->indikator ?? '-' }}
-                                                        @endforeach
-                                                    </div>
-                                                </td>
-                                            </tr>
-
 
                                         </table>
                     <br>
@@ -550,31 +524,6 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td style="width: 400px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
-                                                </td>
-                                           <td>
-                                                <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        @foreach ($datasurat as $item)
-                                                        {{ $item->lingkuppengawasan ?? '-' }}
-                                                        @endforeach
-                                                </div>
-                                            </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 400px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
-                                                </td>
-                                            <td>
-                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                       @foreach ($datasurat as $item)
-                                                        {{ $item->indikator ?? '-' }}
-                                                        @endforeach
-                                                    </div>
-                                                </td>
-                                            </tr>
 
                                         </table>
                     <br>
@@ -604,17 +553,16 @@
                                 </td>
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+                                        <td style="text-align: center;">
                                     @foreach ($datasurat as $item)
-
-                                    <td style="text-align: center;">
-                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
-                                            {{ $item->kesimpulanpemeriksaan ?? '-' }}
-                                        </span>
-                                    </td>
-
+                                    {{$item->kesimpulanpemeriksaan}}
                                     @endforeach
-
-                                <td></td>
+                                </td>
+                                 <td>
+                                    @foreach ($datasurat as $item)
+                                    {{$item->carapemeriksaan}}
+                                    @endforeach
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -622,16 +570,16 @@
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                                @foreach ($datasurat as $item)
-
-                                    <td style="text-align: center;">
-                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
-                                            {{ $item->catatan ?? '-' }}
-                                        </span>
-                                    </td>
-
+                              <td style="text-align: center;">
+                                    @foreach ($datasurat as $item)
+                                    {{$item->catatan}}
                                     @endforeach
-                                <td></td>
+                                </td>
+                                 <td>
+                                    @foreach ($datasurat as $item)
+                                    {{$item->dokumendiperiksa}}
+                                    @endforeach
+                                    </td>
                             </tr>
                         </tbody>
                     </table>
