@@ -289,8 +289,8 @@
             class="form-control @error('waktupelaksanaan') is-invalid @enderror"
             value="{{ old('waktupelaksanaan', $data->waktupelaksanaan ?? '') }}"
             style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+            <span id="terbilang" style="margin-left: 10px; font-style: italic; color: #555;"></span>
         <span style="white-space: nowrap;">Hari Kalender</span>
-        <span id="terbilang" style="margin-left: 10px; font-style: italic; color: #555;"></span>
         @error('waktupelaksanaan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
