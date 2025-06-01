@@ -1101,6 +1101,7 @@ Route::get('/betertibjakonpenyelenggaraan', [TertibjasakonstruksiController::cla
 Route::get('/betertibjakonpenyelenggaraan/create', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraancreate'])->middleware(['auth', 'can:super_admin']);
 Route::post('/betertibjakonpenyelenggaraan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraancreatenew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraancreatenewupdate');
 
+Route::delete('/betertibjakonpenyelenggaraandelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraandeletedata'])->middleware('auth')->name('betertibjakonpenyelenggaraandeletedata');
 
 
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------

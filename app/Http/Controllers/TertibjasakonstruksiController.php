@@ -2276,4 +2276,28 @@ public function betertibjakonpenyelenggaraancreatenew(Request $request)
     return redirect('/betertibjakonpenyelenggaraan');
 }
 
+
+
+public function betertibjakonpenyelenggaraandeletedata($id)
+{
+// Cari item berdasarkan judul
+$entry = tertibjakonpenyelenggaraan::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/betertibjakonpenyelenggaraan')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+
+return redirect()->back()->with('error', 'Item not found');
+}
+
 }
