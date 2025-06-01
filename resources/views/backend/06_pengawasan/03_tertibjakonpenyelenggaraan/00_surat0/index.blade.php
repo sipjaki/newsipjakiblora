@@ -549,6 +549,92 @@
 
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                          <tr>
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Nama Proyek Konstruksi</strong>
+    </td>
+    <td>
+        <input type="text" name="namaproyekkonstruksi"
+            class="form-control @error('namaproyekkonstruksi') is-invalid @enderror"
+            value="{{ old('namaproyekkonstruksi', $data->namaproyekkonstruksi ?? '') }}"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+        @error('namaproyekkonstruksi')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</tr>
+
+<tr>
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Nilai Proyek</strong>
+    </td>
+    <td>
+        <div style="display: flex; align-items: center;">
+            <span style="margin-right: 6px; font-size: 15px;">Rp.</span>
+            <input type="text" id="nilaiproyek_display"
+                class="form-control @error('nilaiproyek') is-invalid @enderror"
+                value="{{ old('nilaiproyek', number_format($data->nilaiproyek ?? 0, 0, ',', '.')) }}"
+                style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; width: 100%;"
+                autocomplete="off">
+        </div>
+
+        <input type="hidden" name="nilaiproyek" id="nilaiproyek"
+            value="{{ old('nilaiproyek', $data->nilaiproyek ?? '') }}">
+
+        @error('nilaiproyek')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</tr>
+
+<script>
+    const displayInput = document.getElementById('nilaiproyek_display');
+    const hiddenInput = document.getElementById('nilaiproyek');
+
+    // Fungsi format angka ke format Rp dengan titik sebagai ribuan
+    function formatRupiah(angka) {
+        let numberString = angka.replace(/[^,\d]/g, '').toString(),
+            split = numberString.split(','),
+            sisa = split[0].length % 3,
+            rupiah = split[0].substr(0, sisa),
+            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        if (ribuan) {
+            let separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+        return rupiah;
+    }
+
+    // Event listener input perubahan di displayInput
+    displayInput.addEventListener('input', function(e) {
+        let cursorPosition = this.selectionStart;
+
+        // Simpan value asli sebelum formatting
+        let originalValue = this.value;
+
+        // Hapus semua karakter kecuali angka dan koma
+        let angka = originalValue.replace(/[^0-9]/g, '');
+
+        // Update hidden input tanpa titik
+        hiddenInput.value = angka;
+
+        // Format input yang tampilkan
+        this.value = formatRupiah(angka);
+
+        // Set cursor di akhir input supaya nyaman
+        this.selectionStart = this.selectionEnd = this.value.length;
+    });
+
+    // Saat halaman load, pastikan displayInput sesuai dengan hiddenInput
+    document.addEventListener('DOMContentLoaded', function() {
+        let angka = hiddenInput.value;
+        displayInput.value = formatRupiah(angka);
+    });
+</script>
+
+                                                    <tr>
                                                 <td style="width: 400px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Bangunan </strong>
                                                 </td>
