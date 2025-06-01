@@ -308,7 +308,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                    @foreach ($datainduk as $item)
+                                                    @foreach ($datasurat as $item)
                                                     {{ $item->namabangunan ?? '-' }}
                                                     @endforeach
 
@@ -321,7 +321,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                    @foreach ($datainduk as $item)
+                                                    @foreach ($datasurat as $item)
                                                     {{ $item->lokasi ?? '-' }}
                                                     @endforeach
 
