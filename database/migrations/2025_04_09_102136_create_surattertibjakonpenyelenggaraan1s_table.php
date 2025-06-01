@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('surattertibjakonpenyelenggaraan1s', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tertibjakonpenyelenggaraan_id')->nullable()->index();
+            // $table->foreignId('tertibjakonpenyelenggaraan_id')->nullable()->index();
             $table->text('lingkuppengawasan')->nullable()->index();
             $table->text('indikator')->nullable()->index();
             $table->text('dokumenperiksa')->nullable()->index();
