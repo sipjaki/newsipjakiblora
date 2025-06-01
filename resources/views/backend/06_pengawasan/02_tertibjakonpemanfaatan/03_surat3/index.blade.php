@@ -581,11 +581,11 @@
 
         <!-- TTD Kab Blora di atas -->
         <img src="/assets/icon/ttdkabblora.png" alt="TTD Kab Blora"
-             style="position: absolute; top: 0; left: 0; width: 200px; height: auto; z-index: 2; opacity: 0.9;">
+             style="position: absolute; top: 0; left: 0; width: 150px; height: auto; z-index: 2; opacity: 0.9;">
     </div>
 
     <!-- Nama pejabat di bawah tanda tangan -->
-    <p style="font-weight: bold; color: #000; border-bottom: 2px solid #000; padding-bottom: 4px; margin-top: 10px;">
+    <p style="font-weight: bold; color: #000; border-bottom: 2px solid #000; padding-bottom: 4px; margin-top: 25px;">
         MOHAMAD ARIF HIDAYAT, ST
     </p>
 </div>
