@@ -350,7 +350,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>LINGKUP PENGAWASAN</th>
-                                <th>Indikator</th>
+                                <th>INDIKATOR</th>
                                 <th>DOKUMEN YANG DIPERIKSA</th>
                                 <th>CARA PEMERIKSAAN</th>
                                 <th>KESIMPULAN PEMERIKSAAN</th>
@@ -526,12 +526,12 @@
                                         </table>
                     <br>
 
-                                                <table class="audit">
+                                        <table class="audit">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>LINGKUP PENGAWASAN</th>
-                                <th>Indikator</th>
+                                <th>INDIKATOR</th>
                                 <th>DOKUMEN YANG DIPERIKSA</th>
                                 <th>CARA PEMERIKSAAN</th>
                                 <th>KESIMPULAN PEMERIKSAAN</th>
@@ -551,7 +551,7 @@
                                 </td>
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
-                                        <td style="text-align: center;">
+                                    <td style="text-align: center;">
                                     @foreach ($datasurat as $item)
                                     {{$item->kesimpulanpemeriksaan}}
                                     @endforeach
@@ -560,15 +560,14 @@
                                     @foreach ($datasurat as $item)
                                     {{$item->carapemeriksaan}}
                                     @endforeach
-                                </td>
-                            </tr>
+                                </td>                            </tr>
                             <tr>
                                 <td>
                                     b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                              <td style="text-align: center;">
+                                 <td style="text-align: center;">
                                     @foreach ($datasurat as $item)
                                     {{$item->catatan}}
                                     @endforeach
@@ -581,6 +580,7 @@
                             </tr>
                         </tbody>
                     </table>
+
 
 
                     {{--
