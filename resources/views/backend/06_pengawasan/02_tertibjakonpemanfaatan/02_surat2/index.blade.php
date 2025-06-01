@@ -152,11 +152,11 @@
                                                 </th> --}}
 
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Peruntukan Fungsi
+                                                    <i class="bi bi-building-fill"></i> Rencana Umur
                                                 </th>
 
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Peruntukan Lokasi
+                                                    <i class="bi bi-building-fill"></i> Kapasitas & Beban
                                                 </th>
 
                                                 <th style="width: 100px; text-align: center;">
