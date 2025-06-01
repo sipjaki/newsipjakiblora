@@ -164,9 +164,9 @@
 
 
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    {{-- <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-geo-alt-fill"></i> Informasi Pekerjaan
-                                    </th>
+                                    </th> --}}
 
                                     <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemilihan <br> Penyedia Jasa
@@ -267,13 +267,13 @@
 </td>
 
 
-                           <td style="text-align: center; vertical-align: middle;">
+                           {{-- <td style="text-align: center; vertical-align: middle;">
                                 <a href="/betertibjakonpenyelenggaraan/index/{{ $item->id }}" style="text-decoration: none;">
                                     <button style="background-color: #800000; color: white; padding: 8px 16px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Buat Berkas
                                     </button>
                                 </a>
-                            </td>
+                            </td> --}}
 
 
                              <td style="text-align: center; vertical-align: middle;">
