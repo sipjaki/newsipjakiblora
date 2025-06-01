@@ -110,7 +110,7 @@
                                     {{-- @endif --}}
 
                    @if ($datasurat->isNotEmpty())
-                    <a href="{{ url('betertibjakonmanfaat1showberkassurat/show/' . $datasurat_id) }}">
+                    <a href="{{ url('betertibjakonusahapelaksana/show/' . $datasurat_id) }}">
                         <button class="btn-create">
                             <i class="bi bi-file-earmark icon-create"></i> Dokumen
                         </button>
@@ -274,10 +274,6 @@
                                 </tbody>
                             </table>
                             <br><br><br>
-
-                            {{-- ---------------------------------- --}}
-
-
                         </div>
                     </div>
                     <!-- /.card-body -->
