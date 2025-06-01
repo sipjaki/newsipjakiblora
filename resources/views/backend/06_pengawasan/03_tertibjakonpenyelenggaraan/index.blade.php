@@ -184,7 +184,7 @@
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Terhadap <br> Penggunaan Material Peralatan
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:500px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Terhadap <br> Pengelolaan & Pemanfaatan Sumber Material
                                     </th>
 
