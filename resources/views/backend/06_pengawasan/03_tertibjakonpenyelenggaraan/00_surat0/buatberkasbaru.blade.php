@@ -280,21 +280,22 @@
         @enderror
     </td>
 </tr>
-
 <tr>
     <td style="width: 200px; padding:4px 8px;">
         <strong style="font-size: 15px;">Waktu Pelaksanaan</strong>
     </td>
-    <td>
-        <input type="text" name="waktupelaksanaan"
+    <td style="display: flex; align-items: center; gap: 8px;">
+        <input type="number" name="waktupelaksanaan"
             class="form-control @error('waktupelaksanaan') is-invalid @enderror"
             value="{{ old('waktupelaksanaan', $data->waktupelaksanaan ?? '') }}"
             style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+        <span style="white-space: nowrap;">Hari Kalender</span>
         @error('waktupelaksanaan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </td>
 </tr>
+
 <tr>
     <td style="width: 200px; padding:4px 8px;">
         <strong style="font-size: 15px;">Penyedia Jasa</strong>
@@ -336,7 +337,7 @@
                                                             name="waktupengawasan"
                                                             value="{{ old('waktupengawasan', $data->waktupengawasan ?? '') }}"
                                                             placeholder="Dimulai Sejak ... ">
-                                                        <span style="white-space: nowrap;">Hari Kalender</span>
+                                                        {{-- <span style="white-space: nowrap;">Hari Kalender</span> --}}
                                                         @error('waktupengawasan')
                                                             <div class="invalid-feedback d-block">{{ $message }}</div>
                                                         @enderror
