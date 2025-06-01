@@ -2352,7 +2352,7 @@ public function betertibjakonpenyelenggaraanupdatecreate(Request $request, $id)
 
 public function betertibjakonpenyelenggaraanindexlist($id)
 {
-    $datatertibjakonpemanfaatan = Tertibjakonpenyelenggaraan::with('informasisurat')->find($id);
+    $datatertibjakonpemanfaatan = tertibjakonpenyelenggaraan::with('informasisurattertibpenyelenggaraan')->find($id);
 
     if (!$datatertibjakonpemanfaatan) {
         return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
@@ -2361,7 +2361,7 @@ public function betertibjakonpenyelenggaraanindexlist($id)
     $user = Auth::user();
 
     // Ambil surat dari relasi yang sudah dimuat
-    $datasurat = $datatertibjakonpemanfaatan->informasisurat()->orderBy('created_at', 'desc')->paginate(50);
+    $datasurat = $datatertibjakonpemanfaatan->informasisurattertibpenyelenggaraan()->orderBy('created_at', 'desc')->paginate(50);
 
     return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_surat0.index', [
         'title' => 'Berkas Surat | Informasi Tertib Jakon Penyelenggaraan',
