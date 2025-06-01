@@ -2250,4 +2250,29 @@ return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.create', [
 ]);
 }
 
+
+public function betertibjakonpenyelenggaraancreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'penyediastatustertibjakon_id' => 'required|string',
+        'kegiatankonstruksi'    => 'required|string|max:65535',
+        'namapekerjaan'         => 'required|string|max:65535',
+        'nomorkontrak'          => 'required|string|max:255',
+        'bujk'                  => 'required|string|max:255',
+    ], [
+        'kegiatankonstruksi.required'    => 'Kegiatan Konstruksi wajib diisi!',
+        'namapekerjaan.required'         => 'Nama Pekerjaan wajib diisi!',
+        'nomorkontrak.required'          => 'Nomor Kontrak wajib diisi!',
+        'bujk.required'                  => 'BUJK wajib diisi!',
+    ]);
+
+    // Simpan data ke database
+    tertibjakonpenyelenggaraan::create($validated);
+
+    // Flash message & redirect
+    session()->flash('create', 'Data Tertib Jakon Pemanfaatan berhasil dibuat!');
+    return redirect('/betertibjakonpenyelenggaraan');
+}
+
 }

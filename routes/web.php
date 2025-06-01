@@ -1099,7 +1099,7 @@ Route::delete('/betertibjakonmanfaat3delete/delete/{id}', [TertibjasakonstruksiC
 Route::get('/betertibjakonpenyelenggaraan', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanindex'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraanindexlist');
 
 Route::get('/betertibjakonpenyelenggaraan/create', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraancreate'])->middleware(['auth', 'can:super_admin']);
-Route::post('/betertibjakonpenyelenggaraan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreatenew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfaatanupdatecreatenew');
+Route::post('/betertibjakonpenyelenggaraan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraancreatenew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraancreatenewupdate');
 
 
 
