@@ -1911,7 +1911,7 @@ public function betertibjakonmanfaat1showberkas($id)
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberkas', [
         'namabangunan' => $namabangunan,
-        // 'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
+        'datatertibjasakonstruksi_id' => $datatertib->id,
         // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
         'user' => $user,
         'data' => $datatertib,
