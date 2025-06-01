@@ -235,7 +235,6 @@
                                             <br>
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                             <tr>
-
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Kesimpulan Pemeriksaan</strong>
                                                 </td>
@@ -253,6 +252,24 @@
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Catatan Pemeriksaan 1</strong>
+                                                </td>
+
+                                                     <td>
+                                                            <textarea name="carapemeriksaan"
+                                                                class="form-control @error('carapemeriksaan') is-invalid @enderror"
+                                                                style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
+                                                                rows="4"
+                                                                placeholder="Masukkan catatan pemeriksaan...">{{ old('carapemeriksaan') }}</textarea>
+
+                                                            @error('carapemeriksaan')
+                                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                            @enderror
+                                                        </td>
+
                                             </tr>
 
                                             <tr>
@@ -273,6 +290,27 @@
                                                         @enderror
                                                 </td>
                                                 </tr>
+                                                                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Catatan Pemeriksaan 2</strong>
+                                                </td>
+
+                                                     <td>
+                                                        <textarea name="dokumendiperiksa"
+                                                            class="form-control @error('dokumendiperiksa') is-invalid @enderror"
+                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
+                                                            rows="4"
+                                                            placeholder="Masukkan catatan pemeriksaan...">{{ old('dokumendiperiksa') }}</textarea>
+
+                                                        @error('dokumendiperiksa')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
+                                                    </td>
+
+
+                                            </tr>
+
+
 
                                         </table>
                     <br>
@@ -290,7 +328,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
+                                <td>2</td>
                                 <td>
                                     Pengawasan terhadap rencana umur konstruksi
                                 </td>
@@ -305,7 +343,7 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>2</td>
+                                <td>3</td>
                                 <td>
                                     Pengawasan terhadap kapasitas dan beban
                                 </td>
