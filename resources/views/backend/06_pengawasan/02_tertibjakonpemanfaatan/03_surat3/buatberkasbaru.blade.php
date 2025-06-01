@@ -546,3 +546,34 @@ function submitForm() {
         });
     });
 </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const input = document.getElementById('carapemeriksaanInput');
+        const preview = document.getElementById('carapemeriksaanPreview');
+
+        // Tampilkan nilai awal jika ada
+        preview.textContent = input.value;
+
+        // Update secara real-time saat user mengetik
+        input.addEventListener('input', function () {
+            preview.textContent = this.value;
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const input = document.getElementById('dokumendiperiksaInput');
+        const preview = document.getElementById('dokumendiperiksaPreview');
+
+        // Tampilkan isi awal jika ada
+        preview.textContent = input.value;
+
+        // Update preview setiap kali user mengetik
+        input.addEventListener('input', function () {
+            preview.textContent = this.value;
+        });
+    });
+</script>
+
