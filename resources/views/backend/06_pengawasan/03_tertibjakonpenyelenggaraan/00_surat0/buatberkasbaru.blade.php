@@ -240,24 +240,15 @@
         <strong style="font-size: 15px;">Nama Proyek Konstruksi</strong>
     </td>
     <td>
-   <!-- TAMPILAN SAJA -->
-<input type="text" name="kegiatankonstruksi"
-    class="form-control @error('namaproyekkonstruksi') is-invalid @enderror"
-    value="{{ old('namaproyekkonstruksi', $data->kegiatankonstruksi ?? '') }}"
-    style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;" readonly>
-
-<!-- DATA YANG DISIMPAN KE DATABASE -->
-<input type="hidden" name="namaproyekkonstruksi"
-    value="{{ old('namaproyekkonstruksi', $data->kegiatankonstruksi ?? '') }}">
-
-@error('namaproyekkonstruksi')
-    <div class="invalid-feedback">{{ $message }}</div>
-@enderror
-
-</td>
-
+        <input type="text" name="namaproyekkonstruksi"
+            class="form-control @error('namaproyekkonstruksi') is-invalid @enderror"
+            value="{{ old('namaproyekkonstruksi', $data->namaproyekkonstruksi ?? '') }}"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+        @error('namaproyekkonstruksi')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
 </tr>
-
 
 
 <tr>
