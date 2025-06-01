@@ -1793,7 +1793,7 @@ public function betertibjakonpemanfataanjakonindex($id)
         'data' => $datasurat,
         'datasurat' => $datasurat,
         'datainduk' => $datatertibjakonpemanfaatan,
-        'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
+        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datasurat_id' => $datasurat->first()?->id,
         'id' => $id, // penting untuk route tombol "Buat Berkas"
     ]);
