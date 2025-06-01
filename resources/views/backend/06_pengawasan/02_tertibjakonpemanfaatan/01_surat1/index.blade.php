@@ -360,7 +360,7 @@
                                         <td style="width: 200px; padding:4px 8px;">
                                             <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                         </td>
-                                        @foreach ($datasurat as $item)
+                                        {{-- @foreach ($datasurat as $item)
 
                                         <td>
                                             <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
@@ -369,7 +369,7 @@
                                                 {{ $item->carapemeriksaan ? \Carbon\Carbon::parse($item->carapemeriksaan)->translatedFormat('d F Y') : '-' }}
                                             </div>
                                         </td>
-                                        @endforeach
+                                        @endforeach --}}
 
                                             </tr>
                                         </table>
