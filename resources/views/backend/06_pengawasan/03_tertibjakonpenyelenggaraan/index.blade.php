@@ -329,7 +329,7 @@
                                 <a href="javascript:void(0)" class="btn btn-sm btn-danger"
                                 data-bs-toggle="modal"
                                 data-bs-target="#deleteModal"
-                                data-url="{{ route('betertibjakonusahapemenuhansyaratdeletedata', $item->id) }}"
+                                data-url="{{ route('betertibjakonpenyelenggaraandeletedata', $item->id) }}"
                                 onclick="setDeleteUrl(this)">
                                     <i class="bi bi-trash"></i>
                                 </a>
