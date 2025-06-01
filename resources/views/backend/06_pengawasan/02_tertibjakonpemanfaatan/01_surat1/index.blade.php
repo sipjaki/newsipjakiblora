@@ -109,13 +109,13 @@
     @endif
                                     {{-- @endif --}}
 
-                   {{-- @if ($datasurat->isNotEmpty())
+                   @if ($datasurat->isNotEmpty())
                     <a href="{{ url('betertibjakonmanfaat1showberkassurat/show/' . $datasurat_id) }}">
                         <button class="btn-create">
                             <i class="bi bi-file-earmark icon-create"></i> Dokumen
                         </button>
                     </a>
-                    @endif --}}
+                    @endif
 
                 <button class="btn-create">
                     <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
@@ -276,7 +276,7 @@
                             <br><br><br>
 
                             {{-- ---------------------------------- --}}
-<hr>
+
                             {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
@@ -317,7 +317,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $namalokasi ?? '-' }}
+                                                        {{ $datalokasi ?? '-' }}
                                                     </div>
                                                 </td>
                                             </tr>
