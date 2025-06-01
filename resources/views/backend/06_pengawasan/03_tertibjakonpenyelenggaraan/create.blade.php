@@ -87,104 +87,59 @@
     <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+<div class="mb-3">
+    <label for="kegiatankonstruksi" class="form-label">
+        <i class="bi bi-tools text-primary"></i> Kegiatan Konstruksi
+    </label>
+    <input type="text" id="kegiatankonstruksi" name="kegiatankonstruksi"
+        class="form-control @error('kegiatankonstruksi') is-invalid @enderror"
+        value="{{ old('kegiatankonstruksi', $data->kegiatankonstruksi ?? '') }}">
+    @error('kegiatankonstruksi')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
 <div class="mb-3">
     <label for="namapekerjaan" class="form-label">
         <i class="bi bi-clipboard-check-fill text-primary"></i> Nama Pekerjaan
     </label>
     <input type="text" id="namapekerjaan" name="namapekerjaan"
-    class="form-control @error('namapekerjaan') is-invalid @enderror"
-    value="{{ old('namapekerjaan', $data->namapekerjaan ?? '') }}">
+        class="form-control @error('namapekerjaan') is-invalid @enderror"
+        value="{{ old('namapekerjaan', $data->namapekerjaan ?? '') }}">
     @error('namapekerjaan')
-    <div class="invalid-feedback">{{ $message }}</div>
+        <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
-<div class="mb-3">
-    <label for="namabangunan" class="form-label">
-        <i class="bi bi-house-fill text-primary"></i> Nama Bangunan
-    </label>
-    <input type="text" id="namabangunan" name="namabangunan"
-    class="form-control @error('namabangunan') is-invalid @enderror"
-    value="{{ old('namabangunan', $data->namabangunan ?? '') }}">
-    @error('namabangunan')
-    <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
+
 </div>
 
+<div class="col-md-6">
 <div class="mb-3">
     <label for="nomorkontrak" class="form-label">
         <i class="bi bi-file-earmark-text-fill text-primary"></i> Nomor Kontrak
     </label>
     <input type="text" id="nomorkontrak" name="nomorkontrak"
-    class="form-control @error('nomorkontrak') is-invalid @enderror"
-    value="{{ old('nomorkontrak', $data->nomorkontrak ?? '') }}">
+        class="form-control @error('nomorkontrak') is-invalid @enderror"
+        value="{{ old('nomorkontrak', $data->nomorkontrak ?? '') }}">
     @error('nomorkontrak')
-    <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-</div>
-
-<div class="col-md-6">
-
-<div class="mb-3">
-    <label for="lokasi" class="form-label">
-        <i class="bi bi-geo-alt-fill text-primary"></i> Lokasi
-    </label>
-    <input type="text" id="lokasi" name="lokasi"
-        class="form-control @error('lokasi') is-invalid @enderror"
-        value="{{ old('lokasi', $data->lokasi ?? '') }}">
-    @error('lokasi')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
 <div class="mb-3">
-    <label for="tanggalpembangunan" class="form-label">
-        <i class="bi bi-calendar-check-fill text-primary"></i> Tanggal Pembangunan
+    <label for="bujk" class="form-label">
+        <i class="bi bi-building text-primary"></i> BUJK
     </label>
-    <input type="date" id="tanggalpembangunan" name="tanggalpembangunan"
-        class="form-control @error('tanggalpembangunan') is-invalid @enderror"
-        value="{{ old('tanggalpembangunan', $data->tanggalpembangunan ?? '') }}">
-    @error('tanggalpembangunan')
+    <input type="text" id="bujk" name="bujk"
+        class="form-control @error('bujk') is-invalid @enderror"
+        value="{{ old('bujk', $data->bujk ?? '') }}">
+    @error('bujk')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
-<div class="mb-3">
-    <label for="tanggalpemanfaatan" class="form-label">
-        <i class="bi bi-calendar-event-fill text-primary"></i> Tanggal Pemanfaatan
-    </label>
-    <input type="date" id="tanggalpemanfaatan" name="tanggalpemanfaatan"
-        class="form-control @error('tanggalpemanfaatan') is-invalid @enderror"
-        value="{{ old('tanggalpemanfaatan', $data->tanggalpemanfaatan ?? '') }}">
-    @error('tanggalpemanfaatan')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-<div class="mb-3">
-    <label for="umurbangunan" class="form-label">
-        <i class="bi bi-hourglass-split text-primary"></i> Umur Bangunan
-    </label>
-    <select id="umurbangunan" name="umurbangunan"
-        class="form-select @error('umurbangunan') is-invalid @enderror">
-        <option value="">-- Pilih Umur Bangunan --</option>
-        @for ($i = 1; $i <= 10; $i++)
-            <option value="{{ $i }} Tahun"
-                {{ old('umurbangunan', $data->umurbangunan ?? '') == "$i Tahun" ? 'selected' : '' }}>
-                {{ $i }} Tahun
-            </option>
-        @endfor
-        <option value="Lebih dari 10 Tahun"
-            {{ old('umurbangunan', $data->umurbangunan ?? '') == 'Lebih dari 10 Tahun' ? 'selected' : '' }}>
-            Lebih dari 10 Tahun
-        </option>
-    </select>
-    @error('umurbangunan')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
+
 
 
 </div>
