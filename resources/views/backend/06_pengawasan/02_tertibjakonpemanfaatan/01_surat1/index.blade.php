@@ -100,13 +100,13 @@
 
 
        {{-- Tampilkan tombol jika surat kosong --}}
-    {{-- @if ($datasurat->isEmpty())
+    @if ($datasurat->isEmpty())
         <a href="{{ route('betertibjakonpemanfataanjakoncreateberkas', ['id' => $id]) }}">
             <button class="btn-create">
                 <i class="bi bi-file-earmark-plus"></i> Buat Berkas
             </button>
         </a>
-    @endif --}}
+    @endif
                                     {{-- @endif --}}
 
                    {{-- @if ($datasurat->isNotEmpty())
@@ -279,8 +279,6 @@
 <hr>
                             {{-- ======================================================= --}}
                     <div class="col-md-12">
-                        @foreach ($datasurat as $item)
-
                         <!--begin::Quick Example-->
                         <form  method="POST" enctype="multipart/form-data">
                             @csrf
@@ -309,7 +307,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{-- {{ $item->tertibjakonpeman ?? '-' }} --}}
+                                                        {{ $datanamabangunan ?? '-' }}
                                                     </div>
                                                 </td>
                                             </tr>
@@ -319,7 +317,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{-- {{ $namalokasi ?? '-' }} --}}
+                                                        {{ $namalokasi ?? '-' }}
                                                     </div>
                                                 </td>
                                             </tr>
@@ -327,23 +325,25 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
                                                 </td>
-                                              <td>
-                                                    <input
-                                                        type="text"
-                                                        value="{{ $item->lingkuppengawasan }}"
-                                                        class="form-control"
-                                                        readonly
-                                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;"
-                                                    >
-                                                </td>
-
+                                                <td>
+                                                        <input
+                                                            type="text"
+                                                            name="lingkuppengawasan"
+                                                            value="{{ old('lingkuppengawasan') }}"
+                                                            class="form-control"
+                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
+                                                        >
+                                                            @error('lingkuppengawasan')
+                                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                                    @enderror
+                                                    </td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
                                                 </td>
                                                 <td>
-                                                        {{-- <input
+                                                        <input
                                                             type="text"
                                                             name="indikator"
                                                             value="{{ old('indikator') }}"
@@ -352,7 +352,7 @@
                                                         >
                                                            @error('indikator')
                                                                         <div class="invalid-feedback">{{ $message }}</div>
-                                                                    @enderror --}}
+                                                                    @enderror
                                                 </td>
                                             </tr>
                                             <tr>
@@ -361,10 +361,19 @@
                                                     <strong style="font-size: 15px;">Kesimpulan Pemeriksaan</strong>
                                                 </td>
 <!-- Pilihan Kesimpulan -->
-                                            <td>
-                                                <input type="text" value="{{ $item->kesimpulanpemeriksaan }}" class="form-control" readonly style="background-color: #e9ecef;">
-                                            </td>
-
+    <td>
+        <select name="kesimpulanpemeriksaan"
+            class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
+            id="kesimpulanSelect"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+            <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
+            <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+            <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+        </select>
+        @error('kesimpulanpemeriksaan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
 
                                             </tr>
 
@@ -373,7 +382,17 @@
                                                     <strong style="font-size: 15px;">Catatan</strong>
                                                 </td>
                                                 <td>
-                                                    <input type="text" value="{{ $item->catatan }}" class="form-control" readonly style="background-color: #e9ecef;">
+                                                    <select name="catatan"
+                                                        class="form-control @error('catatan') is-invalid @enderror"
+                                                        id="catatanSelect"
+                                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+                                                        <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
+                                                        <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
+                                                        <option value="Tidak Tersedia" {{ old('catatan') == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
+                                                    </select>
+                                                    @error('catatan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </td>
                                                 </tr>
 
@@ -382,14 +401,19 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
-                                                <td class="d-flex gap-2 align-items-center">
-                                                    <input type="date" class="form-control" value="{{ $item->dokumendiperiksa }}" readonly style="background-color: #e9ecef;">
+                                                <td class="d-flex gap-2">
+                                                    <input type="date" class="form-control @error('dokumendiperiksa') is-invalid @enderror" name="dokumendiperiksa" value="{{ old('dokumendiperiksa') }}" placeholder="Dimulai Sejak ... ">
+                                                    @error('dokumendiperiksa')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
 
                                                     <span class="mx-1">(Sampai Dengan)</span>
 
-                                                    <input type="date" class="form-control" value="{{ $item->carapemeriksaan }}" readonly style="background-color: #e9ecef;">
+                                                    <input type="date" class="form-control @error('carapemeriksaan') is-invalid @enderror" name="carapemeriksaan" value="{{ old('carapemeriksaan') }}" placeholder="Berakhir Tanggal ... ">
+                                                    @error('carapemeriksaan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </td>
-
                                             </tr>
                                         </table>
                     <br>
@@ -554,7 +578,6 @@ function submitForm() {
                             </div>
                         </form>
 
-                        @endforeach
 
                                                      </div>
 
