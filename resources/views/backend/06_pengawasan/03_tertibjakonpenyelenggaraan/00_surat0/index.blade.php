@@ -91,7 +91,7 @@
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                    <a href="/betertibjakonpemanfaatan">
+                    <a href="/betertibjakonpenyelenggaraan">
                         <button class="btn-kembali">
                         <i class="bi bi-arrow-left icon-create"></i>
                             Kembali
