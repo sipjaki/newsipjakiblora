@@ -500,35 +500,7 @@
 
                                                 {{-- </table> --}}
 
-                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                         <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Nama Bangunan </strong>
-                                                </td>
-                                                <td>
-                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                    {{-- @foreach ($datainduk as $item) --}}
-                                                    {{ $datainduk->namabangunan ?? '-' }}
-                                                    {{-- @endforeach --}}
 
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Lokasi Bangunan </strong>
-                                                </td>
-                                                <td>
-                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                    {{-- @foreach ($datainduk as $item) --}}
-                                                    {{ $datainduk->lokasi ?? '-' }}
-                                                    {{-- @endforeach --}}
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                        </table>
                     <br>
 
                                               <table class="audit">
