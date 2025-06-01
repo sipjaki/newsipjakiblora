@@ -329,7 +329,7 @@
 
                                                 <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
+                                                    <strong style="font-size: 15px;">Tanggal Pengawasan</strong>
                                                 </td>
                                                     <td class="d-flex gap-2 align-items-center">
                                                         <input type="date" class="form-control @error('waktupengawasan') is-invalid @enderror"
