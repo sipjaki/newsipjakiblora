@@ -181,9 +181,9 @@
 
                                             @php
                                                 $kesesuaian = $item->kesimpulanpemeriksaan ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+                                                $tertibStatus = $kesesuaian === 'Tersedia' ? 'TERTIB' : 'BELUM TERTIB';
+                                                $color = $kesesuaian === 'Tersedia' ? 'blue' : 'red';
+                                                $icon = $kesesuaian === 'Tersedia' ? 'bi-check-circle' : 'bi-x-circle';
                                             @endphp
 
                                             <td style="text-align: center;">
@@ -199,9 +199,9 @@
 
                                         @php
                                                 $kesesuaian = $item->catatan ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Tersedia' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Tersedia' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Tersedia' ? 'bi-check-circle' : 'bi-x-circle';
+                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
                                             @endphp
 
                                             <td style="text-align: center;">
