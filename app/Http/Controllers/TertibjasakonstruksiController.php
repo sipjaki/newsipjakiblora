@@ -1787,6 +1787,9 @@ public function betertibjakonpemanfataanjakonindex($id)
                     ->orderBy('created_at', 'desc')
                     ->paginate(50);
 
+    $suratPertama = $datasurat->first();
+
+
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.index', [
         'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan',
         'user' => $user,
@@ -1795,6 +1798,7 @@ public function betertibjakonpemanfataanjakonindex($id)
         // 'datapengelola1' => $datasurat->lingkuppengawasan,
         // 'datapengelola2' => $datasurat->indikator,
         'datainduk' => $datatertibjakonpemanfaatan,
+        'firstsurat' => $suratPertama,
         // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datasurat_id' => $datasurat->first()?->id,
         'id' => $id, // penting untuk route tombol "Buat Berkas"

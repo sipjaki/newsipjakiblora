@@ -332,28 +332,22 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
                                                 </td>
-                                              <td>
-                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                            @foreach ($data as $item)
-                                                            {{ $item->lingkuppengawasan ?? '-' }}
-                                                            @endforeach
-                                                    </div>
-                                                </td>
+                                           <td>
+                                                <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                    {{ $firstsurat->lingkuppengawasan ?? '-' }}
+                                                </div>
+                                            </td>
 
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
                                                 </td>
-                                               <td>
-                                            <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-
-                                                @foreach ($data as $item)
-                                                            {{ $item->indikator ?? '-' }}
-                                                @endforeach
-                                            </div>
-                                        </td>
-
+                                            <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                        {{ $firstsurat->indikator ?? '-' }}
+                                                    </div>
+                                                </td>
                                             </tr>
                                             <tr>
 
