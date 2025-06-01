@@ -256,14 +256,35 @@
         <strong style="font-size: 15px;">Nilai Proyek</strong>
     </td>
     <td>
-        <input type="text" name="nilaiproyek"
-            class="form-control @error('nilaiproyek') is-invalid @enderror"
-            value="{{ old('nilaiproyek', $data->nilaiproyek ?? '') }}"
-            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-        @error('nilaiproyek')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </td>
+    <input type="text" id="nilaiproyek_display"
+           class="form-control @error('nilaiproyek') is-invalid @enderror"
+           value="{{ old('nilaiproyek', number_format($data->nilaiproyek ?? 0, 0, ',', '.')) }}"
+           style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+
+    <input type="hidden" name="nilaiproyek" id="nilaiproyek"
+           value="{{ old('nilaiproyek', $data->nilaiproyek ?? '') }}">
+
+    @error('nilaiproyek')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</td>
+<script>
+    const displayInput = document.getElementById('nilaiproyek_display');
+    const hiddenInput = document.getElementById('nilaiproyek');
+
+    function formatRupiah(angka) {
+        return angka.replace(/\D/g, '') // Hapus semua non-digit
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // Tambah titik
+    }
+
+    displayInput.addEventListener('input', function () {
+        const rawValue = this.value.replace(/\./g, ''); // Hapus titik untuk dapat angka mentah
+        hiddenInput.value = rawValue; // Simpan ke input hidden
+
+        this.value = formatRupiah(rawValue); // Tampilkan format 1.000
+    });
+</script>
+
 </tr>
 
 <tr>
