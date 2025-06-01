@@ -1784,7 +1784,8 @@ public function betertibjakonpemanfataanjakonindex($id)
 
     // Ambil semua surat terkait dengan paginate
     $datasurat = surattertibjakonpemanfaatan1::where('tertibjakonpemanfaatan_id', $id)
-                    ->orderBy('created_at', 'desc');
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.index', [
         'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan',
@@ -1890,6 +1891,28 @@ return redirect()->back()->with('error', 'Item not found');
 
 
 
+public function betertibjakonmanfaat1deleteberkas($id)
+{
+    $entry = surattertibjakonpemanfaatan1::where('id', $id)->first();
 
+    if ($entry) {
+        // Hapus file jika perlu
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Ambil ID dari relasi tertibjasakonstruksi, misalnya:
+        $parentId = $entry->tertibjakonpemanfaatan_id; // pastikan ini ada di tabel
+
+        $entry->delete();
+
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect()->route('betertibjakonpemanfataansuratjasakonstruksiindex', ['id' => $parentId]);
+
+    }
+
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
 
 }
