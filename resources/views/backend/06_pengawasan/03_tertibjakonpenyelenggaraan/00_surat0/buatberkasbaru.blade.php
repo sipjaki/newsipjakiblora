@@ -256,6 +256,7 @@
         <strong style="font-size: 15px;">Nilai Proyek</strong>
     </td>
     <td>
+        <span>Rp. </span>
     <input type="text" id="nilaiproyek_display"
            class="form-control @error('nilaiproyek') is-invalid @enderror"
            value="{{ old('nilaiproyek', number_format($data->nilaiproyek ?? 0, 0, ',', '.')) }}"
