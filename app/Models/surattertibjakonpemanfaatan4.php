@@ -14,8 +14,8 @@ class surattertibjakonpemanfaatan4 extends Model
     protected $guarded = ['id'];
 
     public function tertibjakonpemanfaatan()
-    {
-        return $this->hasOne(tertibjakonpemanfaatan::class, 'tertibjakonpemanfaatan_id');
-    }
+{
+    return $this->hasMany(tertibjakonpemanfaatan::class, 'tertibjakonpemanfaatan_id')->oldest();
+}
 
 }

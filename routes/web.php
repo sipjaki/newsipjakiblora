@@ -1079,6 +1079,7 @@ Route::delete('/betertibjakonmanfaat1delete/delete/{id}', [TertibjasakonstruksiC
 
 // SURAT JAKON PEMANFAATAAN 2
 Route::get('/betertibjakonpemanfataansurat2/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat2index'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataansurat2index');
+Route::get('/betertibjakonpemanfataansurat2/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat2createberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataansurat2createberkas');
 
 
 
