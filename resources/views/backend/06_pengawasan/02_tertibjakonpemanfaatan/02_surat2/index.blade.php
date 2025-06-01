@@ -345,12 +345,14 @@
 
                                     </table>
                     <br>
+                            </table>
+                    <br>
                     <table class="audit">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>LINGKUP PENGAWASAN</th>
-                                <th>Indikator</th>
+                                <th>INDIKATOR</th>
                                 <th>DOKUMEN YANG DIPERIKSA</th>
                                 <th>CARA PEMERIKSAAN</th>
                                 <th>KESIMPULAN PEMERIKSAAN</th>
@@ -359,49 +361,49 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowspan="2">1</td>
-                                <td rowspan="2">
-                                    Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
+                                <td>2</td>
+                                <td>
+                                    Pengawasan terhadap rencana umur konstruksi
                                 </td>
                                 <td>
-                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
-                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
-                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan
+                                    Terjaminnya bangunan konstruksi tetap laik fungsi sepanjang umur konstruksi yang di buktikan dengan tersedianya dokumen laik fungsi atau dokumen sejenis lainnya  <br>
                                 </td>
-                                <td>Dokumen perizinan</td>
-                                <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+                                <td>Dokumen laik fungsi atau dokumen sejenis yang di terbitkan oleh instansi berwenang </td>
+                                <td>Memerika ketersediaan dokumen laik fungsi atau dokumen sejenis yang diterbitkan oleh instansi berwenang </td>
+                                <td style="text-align: center;">
+                                    <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
+                                </td>
+                                 <td>
                                     @foreach ($datasurat as $item)
-
-                                    <td style="text-align: center;">
-                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
-                                            {{ $item->kesimpulanpemeriksaan ?? '-' }}
-                                        </span>
-                                    </td>
-
+                                    {{$item->kesimpulanpemeriksaan}}
                                     @endforeach
-
-                                <td></td>
+                                </td>
                             </tr>
                             <tr>
+                                <td>3</td>
                                 <td>
-                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+                                    Pengawasan terhadap kapasitas dan beban
                                 </td>
-                                <td>Dokumen resmi dari instansi berwenang</td>
-                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                                @foreach ($datasurat as $item)
-
-                                    <td style="text-align: center;">
-                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
-                                            {{ $item->catatan ?? '-' }}
-                                        </span>
-                                    </td>
-
+                                <td>
+                                    Terjaminnya bangunan konstruksi dari kelebihan kapasitas dan beban yang di buktikan dengan tersedianya surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan<br>
+                                </td>
+                                <td>Surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan </td>
+                                <td>Memerika ketersediaan surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau melakukan konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan</td>
+                                <td style="text-align: center;">
+                                    @foreach ($datasurat as $item)
+                                    {{$item->catatan}}
                                     @endforeach
-                                <td></td>
+                                </td>
+                                 <td>
+                                        <div id="dokumendiperiksaPreview"
+                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #f8f9fa; min-height: 100px;">
+                                            <!-- Hasil teks tampil di sini -->
+                                        </div>
+                                    </td>
                             </tr>
+
                         </tbody>
                     </table>
-
                                 </div>
 
 
