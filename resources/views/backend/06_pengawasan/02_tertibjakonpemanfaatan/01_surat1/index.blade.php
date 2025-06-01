@@ -109,13 +109,13 @@
     @endif
                                     {{-- @endif --}}
 
-                   @if ($datasurat->isNotEmpty())
+                   {{-- @if ($datasurat->isNotEmpty())
                     <a href="{{ url('betertibjakonmanfaat1showberkassurat/show/' . $datasurat_id) }}">
                         <button class="btn-create">
                             <i class="bi bi-file-earmark icon-create"></i> Dokumen
                         </button>
                     </a>
-                    @endif
+                    @endif --}}
 
                 <button class="btn-create">
                     <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
@@ -276,7 +276,7 @@
                             <br><br><br>
 
                             {{-- ---------------------------------- --}}
-
+<hr>
                             {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
@@ -317,7 +317,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datalokasi ?? '-' }}
+                                                        {{ $namalokasi ?? '-' }}
                                                     </div>
                                                 </td>
                                             </tr>
@@ -325,18 +325,16 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
                                                 </td>
-                                                <td>
-                                                        <input
-                                                            type="text"
-                                                            name="lingkuppengawasan"
-                                                            value="{{ old('lingkuppengawasan') }}"
-                                                            class="form-control"
-                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
-                                                        >
-                                                            @error('lingkuppengawasan')
-                                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                                    @enderror
-                                                    </td>
+                                              <td>
+                                                    <input
+                                                        type="text"
+                                                        value="{{ $datasurat1->lingkuppengawasan }}"
+                                                        class="form-control"
+                                                        readonly
+                                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;"
+                                                    >
+                                                </td>
+
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
