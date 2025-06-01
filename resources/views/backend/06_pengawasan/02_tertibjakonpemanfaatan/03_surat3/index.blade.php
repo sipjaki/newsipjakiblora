@@ -617,31 +617,45 @@
         // Clone isi modal
         const clone = modalContent.cloneNode(true);
 
-        // Buat container kosong untuk PDF
+        // Buat container wrapper
         const container = document.createElement('div');
-        container.style.margin = '0';               // Hapus margin
-        container.style.padding = '0';              // Hapus padding
-        container.style.background = '#fff';        // Background putih
-        container.style.fontSize = '14px';
+        container.style.margin = '0';
+        container.style.padding = '0';
+        container.style.background = '#fff';
+        container.style.fontSize = '12px';
         container.style.pageBreakInside = 'avoid';
+        container.style.height = '100%';
+        container.style.display = 'flex';
+        container.style.flexDirection = 'column';
+        container.style.justifyContent = 'flex-start'; // Ini yang bikin isi naik ke atas
 
-        // Tambahkan isi modal ke container
+        // Tambahkan isi ke dalam wrapper
         container.appendChild(clone);
 
-        // Set nama file
-        const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
-
-        // Export PDF
+        // Buat file PDF
         html2pdf()
             .from(container)
             .set({
-                margin: [0, 0, 0, 0], // margin 0 semua sisi
-                filename: fileName,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
+                margin: [0, 0, 0, 0],
+                filename: `Tertibjakonpemanfaatan_surat1_${id}.pdf`,
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    scrollY: 0,
+                    scrollX: 0,
+                    windowWidth: 1920,
+                    windowHeight: 1080
+                },
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
+                    orientation: 'landscape'
+                }
             })
-            .save();
+            .then(() => {
+                console.log("PDF downloaded");
+            });
     }
 </script>
 
