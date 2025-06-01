@@ -581,7 +581,7 @@
 
         <!-- TTD Kab Blora di atas -->
         <img src="/assets/icon/ttdkabblora.png" alt="TTD Kab Blora"
-             style="position: absolute; top: 0; left: 0; width: 300px; height: auto; z-index: 2; opacity: 0.9;">
+             style="position: absolute; top: 0; left: 0; width: 100px; height: auto; z-index: 2; opacity: 0.9;">
     </div>
 
     <!-- Nama pejabat di bawah tanda tangan -->
