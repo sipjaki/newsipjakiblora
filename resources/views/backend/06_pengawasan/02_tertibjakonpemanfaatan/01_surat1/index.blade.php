@@ -110,11 +110,11 @@
                                     {{-- @endif --}}
 
                    @if ($datasurat->isNotEmpty())
-                    <a href="{{ url('betertibjakonusahapelaksana/show/' . $datasurat_id) }}">
-                        <button class="btn-create">
-                            <i class="bi bi-file-earmark icon-create"></i> Dokumen
-                        </button>
-                    </a>
+                   <button class="btn-create"
+                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat->id }}">
+                                            <i class="bi bi-file-earmark-text icon-create"></i>
+                                            Lihat Berkas
+                    </button>
                     @endif
 
                 <button class="btn-create">
@@ -505,3 +505,98 @@
             });
         });
     </script>
+
+   <div class="modal fade" id="modalKtp{{ $datasurat4->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $datasurat4->id }}" aria-hidden="true">
+                                            <div class="modal-dialog modal-xl modal-dialog-centered">
+                                        <div class="modal-content" style="font-size: 0.875rem;">
+                                            <div class="modal-header d-flex align-items-center">
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                    <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
+                                                </a>
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                    <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
+                                                </a>
+                                                <span class="mx-2">:</span>
+                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin </h5>
+                                                {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
+                                                   {{-- <tr>
+                                                        <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
+                                                        <td>{{ $datasurat4->tertibjasakonstruksi->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
+                                                    </tr> --}}
+                                                    {{-- <tr>
+                                                        <td style="width: 300px;"><strong>Nama Pekerjaan</strong></td>
+                                                        <td>{{ $datasurat4->tertibjasakonstruksi->namapekerjaan ?? 'Data Belum Di Buat' }}</td>
+                                                    </tr> --}}
+
+                                                {{-- </table> --}}
+
+                                                <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
+                                                            {{-- <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th> --}}
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Status Pelaksana Pengembangan Usaha</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
+                                                            {{-- <td style="border: 1px solid #000; padding: 0 8px;">{{$namapekerjaan ?? 'Data Belum Di Buat '}}</td> --}}
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat4->status ?? 'Data Belum Di Buat '}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+{{--
+                                                <div class="container" style="margin-top: 10px;">
+                                                    <!-- Modal Card -->
+
+                                                            <div class="container" style="margin-top: 10px;">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
+                                                                        <!-- Modal Card -->
+                                                                        <div class="card" style="border: 1px solid white;">
+                                                                            <div class="card-body">
+                                                                                <!-- Tim Pemeriksa -->
+                                                                                <div class="tim-pemeriksa-container">
+                                                                                    <div class="tim-pemeriksa">
+                                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
+                                                                                        <table class="table table-sm">
+                                                                                            <thead class="table-secondary">
+                                                                                                <tr>
+                                                                                                    <th style="width: 60px; font-size: 12px;" >No</th>
+                                                                                                    <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
+                                                                                                    <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                 <tr>
+                                                                                                    <td style="font-size: 12px; text-align: center;">1</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td style="font-size: 12px; text-align: center;">2</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td style="font-size: 12px; text-align: center;">3</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> --}}
+                                                        <br><br><br><br>
+                                            </div>
