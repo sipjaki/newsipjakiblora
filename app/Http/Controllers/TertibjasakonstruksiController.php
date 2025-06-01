@@ -2360,10 +2360,8 @@ public function betertibjakonpenyelenggaraanindexlist($id)
 
     $user = Auth::user();
 
-    // Ambil surat terkait dari relasi yang sudah eager loaded
-    $datasurat = $datatertibjakonpemanfaatan->informasisurattertibpenyelenggaraan()
-                    ->orderBy('created_at', 'desc')
-                    ->paginate(50);
+    // Ambil surat dari relasi yang sudah dimuat
+    $datasurat = $datatertibjakonpemanfaatan->informasisurattertibpenyelenggaraan()->orderBy('created_at', 'desc')->paginate(50);
 
     return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_surat0.index', [
         'title' => 'Berkas Surat | Informasi Tertib Jakon Penyelenggaraan',
@@ -2411,7 +2409,7 @@ public function betertibjakonpenyelenggaraaninformasi(Request $request)
         'waktupelaksanaan' => 'required|string',
         'penyediajasa' => 'required|string',
         'satuanopd' => 'required|string',
-        'waktupengawasan' => 'required|date',
+        'waktupengawasan' => 'required|string',
     ], [
         'namaproyekkonstruksi.required' => 'Nama Proyek Konstruksi wajib diisi!',
         'nilaiproyek.required' => 'Nilai Proyek wajib diisi!',
@@ -2423,11 +2421,11 @@ public function betertibjakonpenyelenggaraaninformasi(Request $request)
     ]);
 
     try {
-        $surat = new informasisurattertibpenyelenggaraan();
+        $surat = new surattertibjakonpemanfaatan3();
         $surat->fill($validatedData)->save();
 
         return redirect()
-            ->route('betertibjakonpenyelenggaraanindexinformasi', [
+            ->route('betertibjakonpemanfataansurat3index', [
                 'id' => $surat->id ?? 'default_id'
             ])
             ->with('create', 'Data proyek berhasil disimpan!');
