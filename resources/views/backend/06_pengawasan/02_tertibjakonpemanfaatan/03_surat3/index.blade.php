@@ -152,11 +152,11 @@
                                                 </th> --}}
 
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Peruntukan Fungsi
+                                                    <i class="bi bi-building-fill"></i> Pemeliharaan Konstruksi
                                                 </th>
 
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Peruntukan Lokasi
+                                                    <i class="bi bi-building-fill"></i> Pemeliharaan Struktur
                                                 </th>
 
                                                 <th style="width: 100px; text-align: center;">
@@ -199,9 +199,9 @@
 
                                         @php
                                                 $kesesuaian = $item->catatan ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Tersedia' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Tersedia' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Tersedia' ? 'bi-check-circle' : 'bi-x-circle';
+                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
                                             @endphp
 
                                             <td style="text-align: center;">
