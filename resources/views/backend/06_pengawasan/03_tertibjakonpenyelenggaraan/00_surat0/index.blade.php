@@ -101,7 +101,7 @@
 
        {{-- Tampilkan tombol jika surat kosong --}}
    @if ($datasurat->isEmpty())
-    <a href="{{ route('betertibjakonpenyelenggaraancreateberkas', ['id' => $informasiId ?? $id]) }}">
+    <a href="{{ route('betertibjakonpenyelenggaraancreateberkas', ['id' => $datasurat_id ?? $id]) }}">
         <button class="btn-create">
             <i class="bi bi-file-earmark-plus"></i> Buat Berkas
         </button>
@@ -111,18 +111,18 @@
 
                    @if ($datasurat->isNotEmpty())
 
-                   <button onclick="printModalContent({{ $informasiId }})" class="btn-create">
+                   <button onclick="printModalContent({{ $datasurat_id }})" class="btn-create">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
                     </button>
 
-                    <button class="btn-create" onclick="downloadModalPDF({{ $informasiId }})">
+                    <button class="btn-create" onclick="downloadModalPDF({{ $datasurat_id }})">
                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                     </button>
 
                    <button class="btn-create"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $informasiId }}">
+                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat_id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
                     </button>
