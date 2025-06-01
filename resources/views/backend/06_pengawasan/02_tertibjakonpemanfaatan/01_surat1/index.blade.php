@@ -111,7 +111,7 @@
 
                    @if ($datasurat->isNotEmpty())
                    <button class="btn-create"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat->id }}">
+                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat_id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
                     </button>
