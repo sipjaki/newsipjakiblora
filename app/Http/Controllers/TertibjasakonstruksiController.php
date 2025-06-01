@@ -2349,29 +2349,42 @@ public function betertibjakonpenyelenggaraanupdatecreate(Request $request, $id)
     return redirect('/betertibjakonpenyelenggaraan');
 }
 
+
 public function betertibjakonpenyelenggaraanindexlist($id)
 {
-    $datatertibjakonpemanfaatan = tertibjakonpenyelenggaraan::with('informasisurattertibpenyelenggaraan')->find($id);
-
-    if (!$datatertibjakonpemanfaatan) {
-        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
-    }
-
+    $datatertib = tertibjakonpenyelenggaraan::where('id', $id)->first();
+// Ambil data user saat ini
     $user = Auth::user();
 
-    $datasurat = $datatertibjakonpemanfaatan->informasisurattertibpenyelenggaraan()
-        ->orderBy('created_at', 'desc')
-        ->paginate(50);
-
-    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_surat0.index', [
-        'title' => 'Berkas Surat | Informasi Tertib Jakon Penyelenggaraan',
-        'user' => $user,
-        'datasurat' => $datasurat,
-        'datainduk' => $datatertibjakonpemanfaatan,
-        'datasurat_id' => $datasurat->first()?->id,
-        'id' => $id,
-    ]);
+return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_surat0.index', [
+    'title' => 'Berkas Surat | Informasi Tertib Jakon Penyelenggaraan',
+    'data' => $datatertib,
+]);
 }
+
+// public function betertibjakonpenyelenggaraanindexlist($id)
+// {
+//     $datatertibjakonpemanfaatan = tertibjakonpenyelenggaraan::with('informasisurattertibpenyelenggaraan')->find($id);
+
+//     if (!$datatertibjakonpemanfaatan) {
+//         return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+//     }
+
+//     $user = Auth::user();
+
+//     $datasurat = $datatertibjakonpemanfaatan->informasisurattertibpenyelenggaraan()
+//         ->orderBy('created_at', 'desc')
+//         ->paginate(50);
+
+//     return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_surat0.index', [
+//         'title' => 'Berkas Surat | Informasi Tertib Jakon Penyelenggaraan',
+//         'user' => $user,
+//         'datasurat' => $datasurat,
+//         'datainduk' => $datatertibjakonpemanfaatan,
+//         'datasurat_id' => $datasurat->first()?->id,
+//         'id' => $id,
+//     ]);
+// }
 
 
 
@@ -2389,7 +2402,7 @@ public function betertibjakonpenyelenggaraanindexlist($id)
         'databujk' => $datatertibjasapemanfaatan->bujk,
 
         'user' => $user,
-        'datakonstruksi' => $datatertibjasapemanfaatan->kegiatankonstruksi,
+        'data' => $datatertibjasapemanfaatan,
 
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
         'title' => 'Create Berkas Informasi Proyek Jakon Penyelenggaraan'
