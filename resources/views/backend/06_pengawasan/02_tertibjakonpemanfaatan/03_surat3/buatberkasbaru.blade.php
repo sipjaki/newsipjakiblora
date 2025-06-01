@@ -213,7 +213,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('betertibjakonmanfaat1') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonmanfaat3') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <input type="hidden"  name="tertibjakonpemanfaatan_id" value="{{ $datatertibjasakonstruksi_id }}">
@@ -246,8 +246,8 @@
                                                         id="kesimpulanSelect"
                                                         style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
                                                         <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
-                                                        <option value="Tersedia" {{ old('kesimpulanpemeriksaan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
-                                                        <option value="Tidak Tersedia" {{ old('kesimpulanpemeriksaan') == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
+                                                        <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+                                                        <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
                                                     </select>
                                                     @error('kesimpulanpemeriksaan')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -335,17 +335,16 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowspan="2">1</td>
+                                <td rowspan="2">4</td>
                                 <td rowspan="2">
-                                    Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
+                                    Pengawasan terhadap pemeliharaan produk jasa konstruksi
                                 </td>
                                 <td>
-                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
-                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
-                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan
+                                    Terlaksananya pemeliharaan bangunan konstruksi yang di buktikan dengen ketersediaan surat pernyataan pemilik/pengelola bangunan dengan lampiran :<br>
+                                    &bull; a. Dokumen program pemeliharaan dan perawatan bangunan sesuai dengan ketentuan peraturan perundang undangan tentang standar pemeliharaan dan perawatan<br>
                                 </td>
-                                <td>Dokumen perizinan</td>
-                                <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+                                <td>Dokumen program pemeliharaan/perawatan pemeliharaan bangunan dan </td>
+                                <td>Memeriksa ketersediaan Dokumen program pemeliharaan/perawatan bangunan dan </td>
                                 <td style="text-align: center;">
                                     <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                                 </td>
@@ -353,10 +352,10 @@
                             </tr>
                             <tr>
                                 <td>
-                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+                                    b. Laporan pelaksanaan program pemeliharaan dan perawatan bangunan
                                 </td>
-                                <td>Dokumen resmi dari instansi berwenang</td>
-                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+                                <td>Laporan Pelaksanaan program pemeliharaan/ perawatan bangunan </td>
+                                <td>Memeriksa ketersediaan laporan pelaksanaan program pemeliharaan/perawatan bangunan di bandingkan dengan pelaksananya</td>
                              <td style="text-align: center;">
                                  <span id="textCatatan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                             </td>
