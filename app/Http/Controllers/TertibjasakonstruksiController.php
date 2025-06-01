@@ -1784,14 +1784,16 @@ public function betertibjakonpemanfataanjakonindex($id)
 
     // Ambil semua surat terkait dengan paginate
     $datasurat = surattertibjakonpemanfaatan1::where('tertibjakonpemanfaatan_id', $id)
-                    ->orderBy('created_at', 'desc');
-                    // ->paginate(50);
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.index', [
         'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan',
         'user' => $user,
         'data' => $datasurat,
         'datasurat' => $datasurat,
+        'datapengelola1' => $datasurat->lingkuppengawasan,
+        'datapengelola2' => $datasurat->indikator,
         'datainduk' => $datatertibjakonpemanfaatan,
         // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datasurat_id' => $datasurat->first()?->id,
