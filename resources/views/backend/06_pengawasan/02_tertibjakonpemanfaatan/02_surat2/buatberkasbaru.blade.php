@@ -290,8 +290,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowspan="2">1</td>
-                                <td rowspan="2">
+                                <td>1</td>
+                                <td>
                                     Pengawasan terhadap rencana umur konstruksi
                                 </td>
                                 <td>
@@ -305,8 +305,8 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td rowspan="2">2</td>
-                                <td rowspan="2">
+                                <td>2</td>
+                                <td>
                                     Pengawasan terhadap kapasitas dan beban
                                 </td>
                                 <td>
