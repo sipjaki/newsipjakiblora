@@ -233,7 +233,8 @@
                                     <div class="modal-body">
                                         <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin</h5>
                                             <br>
-                                        <table class="table table-bordered table-sm" style="font-size: 14px;">
+
+                                            <table class="table table-bordered table-sm" style="font-size: 14px;">
                                             <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Kesimpulan Pemeriksaan</strong>

@@ -233,81 +233,46 @@
                                     <div class="modal-body">
                                         <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin</h5>
                                             <br>
-                                        <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                         <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Nama Bangunan </strong>
-                                                </td>
-                                                <td>
-                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datanamabangunan ?? '-' }}
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Lokasi Bangunan </strong>
-                                                </td>
-                                                <td>
-                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datalokasi ?? '-' }}
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
-                                                </td>
-                                                <td>
-                                                        <input
-                                                            type="text"
-                                                            name="lingkuppengawasan"
-                                                            value="{{ old('lingkuppengawasan') }}"
-                                                            class="form-control"
-                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
-                                                        >
-                                                            @error('lingkuppengawasan')
-                                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                                    @enderror
-                                                    </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
-                                                </td>
-                                                <td>
-                                                        <input
-                                                            type="text"
-                                                            name="indikator"
-                                                            value="{{ old('indikator') }}"
-                                                            class="form-control"
-                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #fff;"
-                                                        >
-                                                           @error('indikator')
-                                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                                    @enderror
-                                                </td>
-                                            </tr>
-                                            <tr>
 
+                                                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
+                                            <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Kesimpulan Pemeriksaan</strong>
                                                 </td>
-<!-- Pilihan Kesimpulan -->
-    <td>
-        <select name="kesimpulanpemeriksaan"
-            class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
-            id="kesimpulanSelect"
-            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-            <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
-            <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-            <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
-        </select>
-        @error('kesimpulanpemeriksaan')
+
+                                                       <td>
+                                                    <select name="kesimpulanpemeriksaan"
+                                                        class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
+                                                        id="kesimpulanSelect"
+                                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+                                                        <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
+                                                        <option value="Tersedia" {{ old('kesimpulanpemeriksaan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
+                                                        <option value="Tidak Tersedia" {{ old('kesimpulanpemeriksaan') == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
+                                                    </select>
+                                                    @error('kesimpulanpemeriksaan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Catatan Pemeriksaan 1</strong>
+                                                </td>
+
+                                                     <td>
+        <textarea name="carapemeriksaan"
+            class="form-control @error('carapemeriksaan') is-invalid @enderror"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
+            rows="4"
+            placeholder="Masukkan catatan pemeriksaan 1 ..."
+            id="carapemeriksaanInput">{{ old('carapemeriksaan') }}</textarea>
+
+        @error('carapemeriksaan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </td>
 
+    <!-- Tempat menampilkan isi secara otomatis -->
                                             </tr>
 
                                             <tr>
@@ -315,40 +280,46 @@
                                                     <strong style="font-size: 15px;">Catatan</strong>
                                                 </td>
                                                 <td>
-                                                    <select name="catatan"
-                                                        class="form-control @error('catatan') is-invalid @enderror"
-                                                        id="catatanSelect"
-                                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-                                                        <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
-                                                        <option value="Tersedia" {{ old('catatan') == 'Tersedia' ? 'selected' : '' }}>Tersedia</option>
-                                                        <option value="Tidak Tersedia" {{ old('catatan') == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia</option>
-                                                    </select>
-                                                    @error('catatan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                                        <select name="catatan"
+                                                            class="form-control @error('catatan') is-invalid @enderror"
+                                                            id="catatanSelect"
+                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+                                                            <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
+                                                            <option value="Sesuai" {{ old('catatan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+                                                            <option value="Tidak Sesuai" {{ old('catatan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+                                                        </select>
+                                                        @error('catatan')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
                                                 </td>
                                                 </tr>
-
-
-                                            <tr>
+                                                                                            <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
+                                                    <strong style="font-size: 15px;">Catatan Pemeriksaan 2</strong>
                                                 </td>
-                                                <td class="d-flex gap-2">
-                                                    <input type="date" class="form-control @error('dokumendiperiksa') is-invalid @enderror" name="dokumendiperiksa" value="{{ old('dokumendiperiksa') }}" placeholder="Dimulai Sejak ... ">
-                                                    @error('dokumendiperiksa')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
 
-                                                    <span class="mx-1">(Sampai Dengan)</span>
+                                                      <td>
+        <textarea name="dokumendiperiksa"
+            class="form-control @error('dokumendiperiksa') is-invalid @enderror"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
+            rows="4"
+            placeholder="Masukkan catatan pemeriksaan 2..."
+            id="dokumendiperiksaInput">{{ old('dokumendiperiksa') }}</textarea>
 
-                                                    <input type="date" class="form-control @error('carapemeriksaan') is-invalid @enderror" name="carapemeriksaan" value="{{ old('carapemeriksaan') }}" placeholder="Berakhir Tanggal ... ">
-                                                    @error('carapemeriksaan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
+        @error('dokumendiperiksa')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+
+
                                             </tr>
+
+
+
                                         </table>
+
+
+
                     <br>
                     <table class="audit">
                         <thead>
