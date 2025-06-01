@@ -166,7 +166,7 @@
                                 </thead>
                                 <tbody>
 
-                                    @if ($datasurat->isEmpty())
+                                    @if ($data->isEmpty())
                                         <tr>
                                             <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
                                                 Berkas Informasi Proyek Tertib Penyelenggaraan <strong>Belum Dibuat (Informasi Pekerjaan)</strong>!
@@ -174,7 +174,7 @@
                                         </tr>
                                     @else
 
-                                @foreach ($datasurat as $item )
+                                @foreach ($data as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         {{-- <td style="text-align: left;">{{ $item->tertibjakonpemanfaatan->namabangunan }}</td> --}}
