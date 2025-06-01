@@ -1890,38 +1890,37 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
-public function betertibjakonmanfaat1showdata($id)
+ public function betertibjakonmanfaat1showberkas($id)
 {
-    // Ambil data surat
+    // Ambil data surat dengan relasi tertibjasakonstruksi
     $datasurat1 = surattertibjakonpemanfaatan1::with('tertibjakonpemanfaatan')->findOrFail($id);
 
-    // Coba ambil data relasi
+    // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
     $datatertib = $datasurat1->tertibjakonpemanfaatan;
 
-    // Jika tidak ketemu lewat relasi, cari manual
-    if (!$datatertib) {
-        $datatertib = tertibjakonpemanfaatan::where('surattertibjakonpemanfaatan1', $datasurat1->id)->first();
-    }
-
-    // Data tambahan
-    $namabangunan = $datatertib->namabangunan ?? '-';
-
-    // Data lain
+    // Ambil user
     $user = Auth::user();
+
+    // Ambil data subklasifikasi dan tandatangan
     $datasubklasifikasi = subklasifikasi::all();
     $datatandatangan = tandatangan::all();
 
+    // Jika relasi null, buat default kosong agar tidak error di view
+    $namabangunan = $datasurat1->namabangunan ?? 'Data pekerjaan tidak ditemukan';
+
+    // Kirim data ke view
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberkas', [
-        'title' => 'Berkas Surat Tertib Jakon Pemanfaaatan ',
+        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar',
         'data' => $datatertib,
         'user' => $user,
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurat1' => $datasurat1,
         'namabangunan' => $namabangunan,
-
     ]);
 }
+
+
 
 
 }
