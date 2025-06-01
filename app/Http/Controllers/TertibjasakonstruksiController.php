@@ -2142,8 +2142,8 @@ public function betertibjakonmanfaat3createberkasnew(Request $request)
     ], [
         // 'lingkuppengawasan.required' => 'Nama Pemilik Bangunan Wajib Diisi !.',
         // 'indikator.required' => 'Nama Pengelola Bangunan Wajib Diisi !.',
-        'dokumendiperiksa.required' => 'Catatan Pemeriksaan Wajib Diisi !.',
-        'carapemeriksaan.required' => 'Catatan Pemeriksaan Wajib Diisi !.',
+        'dokumendiperiksa.required' => 'Catatan Pemeriksaan Bagian 3 Wajib Diisi !.',
+        'carapemeriksaan.required' => 'Catatan Pemeriksaan Bagian 3 Wajib Diisi !.',
         'kesimpulanpemeriksaan.required' => 'Kesimpulan Wajib Di Pilih !.',
         'catatan.required' => 'Kesimpulan Wajib Di Pilih !.',
     ]);
