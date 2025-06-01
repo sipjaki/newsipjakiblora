@@ -572,18 +572,23 @@
                                                                                 Dinas Pekerjaan Umum dan Penataan Ruang <br>
                                                                                 Kabupaten Blora
                                                                             </h6>
-                                                                        <div style="position: relative; width: 200px; height: 100px;">
-    <!-- TTD Pa Arif di bawah -->
-    <img src="/assets/icon/ttdpaarif.png" alt="TTD Pa Arif" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; z-index: 1;">
+                                                                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <!-- Container untuk gambar tanda tangan -->
+    <div style="position: relative; width: 200px; height: 100px;">
+        <!-- TTD Pa Arif di bawah -->
+        <img src="/assets/icon/ttdpaarif.png" alt="TTD Pa Arif"
+             style="position: absolute; top: 0; left: 0; width: 100%; height: auto; z-index: 1;">
 
-    <!-- TTD Kab Blora di atas -->
-    <img src="/assets/icon/ttdkabblora.png" alt="TTD Kab Blora" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; z-index: 2; opacity: 0.9;">
+        <!-- TTD Kab Blora di atas -->
+        <img src="/assets/icon/ttdkabblora.png" alt="TTD Kab Blora"
+             style="position: absolute; top: 0; left: 0; width: 300px; height: auto; z-index: 2; opacity: 0.9;">
+    </div>
+
+    <!-- Nama pejabat di bawah tanda tangan -->
+    <p style="font-weight: bold; color: #000; border-bottom: 2px solid #000; padding-bottom: 4px; margin-top: 110px;">
+        MOHAMAD ARIF HIDAYAT, ST
+    </p>
 </div>
-
-<!-- Nama dan garis bawah -->
-<p style="font-weight: bold; color: #000; text-align: center; margin-top: 110px; border-bottom: 2px solid #000; display: inline-block; padding-bottom: 4px;">
-    MOHAMAD ARIF HIDAYAT, ST
-</p>
 
 
 
