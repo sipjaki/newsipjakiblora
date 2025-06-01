@@ -334,7 +334,9 @@
                                                 </td>
                                               <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datasurat->lingkuppengawasan ?? '-' }}
+                                                            @foreach ($datasurat as $item)
+                                                            {{ $item->lingkuppengawasan ?? '-' }}
+                                                            @endforeach
                                                     </div>
                                                 </td>
 
@@ -344,10 +346,13 @@
                                                     <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
                                                 </td>
                                                <td>
-                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datasurat->indikator ?? '-' }}
-                                                    </div>
-                                                </td>
+                                            <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                {{-- {{ $datasurat->indikator ?? '-' }} --}}
+                                              @foreach ($datasurat as $item)
+                                                    {{ $item->indikator ?? '-' }}
+                                                @endforeach
+                                            </div>
+                                        </td>
 
                                             </tr>
                                             <tr>
