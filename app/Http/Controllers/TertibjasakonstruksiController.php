@@ -2204,19 +2204,11 @@ public function betertibjakonpenyelenggaraanindex(Request $request)
 
     if ($search) {
         $query->where(function ($q) use ($search) {
-            $q->where('namapekerjaan', 'LIKE', "%{$search}%")
-              ->orWhere('namabangunan', 'LIKE', "%{$search}%")
-              ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
-              ->orWhere('lokasi', 'LIKE', "%{$search}%")
-              ->orWhereDate('tanggalpembangunan', $search)
-              ->orWhereDate('tanggalpemanfaatan', $search)
-              ->orWhere('umurbangunan', 'LIKE', "%{$search}%")
-            //   ->orWhere('peruntukan_fungsi', 'LIKE', "%{$search}%")
-            //   ->orWhere('peruntukan_lokasi', 'LIKE', "%{$search}%")
-            //   ->orWhere('rencanaumur', 'LIKE', "%{$search}%")
-            //   ->orWhere('kapasitasdanbeban', 'LIKE', "%{$search}%")
-            //   ->orWhere('pemeliharaan_konstruksi', 'LIKE', "%{$search}%")
-            //   ->orWhere('pemeliharaan_struktur', 'LIKE', "%{$search}%")
+          $q->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
+            ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+            ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+            ->orWhere('bujk', 'LIKE', "%{$search}%")
+
               ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
                   $r->where('penyedia', 'LIKE', "%{$search}%");
               });
@@ -2228,12 +2220,12 @@ public function betertibjakonpenyelenggaraanindex(Request $request)
 
     if ($request->ajax()) {
         return response()->json([
-            'html' => view('backend.06_pengawasan.02_tertibjakonpemanfaatan.partials.table', compact('data'))->render()
+            'html' => view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.partials.table', compact('data'))->render()
         ]);
     }
 
-    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.index', [
-        'title' => 'Data Tertib Jakon Pemanfaatan',
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.index', [
+        'title' => 'Data Tertib Jakon Penyelenggaraan',
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search
