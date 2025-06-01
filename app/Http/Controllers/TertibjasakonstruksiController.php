@@ -1890,32 +1890,33 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
-
-public function betertibjakonmanfaat1showberkas($id)
+ public function betertibjakonmanfaat1showberkas($id)
 {
-    // Ambil data utama berdasarkan ID
-    $datatertibjakonpemanfaatan = tertibjakonpemanfaatan::find($id);
+    // Ambil data surat dengan relasi tertibjasakonstruksi
+    $datasurat1 = surattertibjakonpemanfaatan1::with('tertibjakonpemanfaatan')->findOrFail($id);
 
-    if (!$datatertibjakonpemanfaatan) {
-        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
-    }
+    // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
+    $datatertib = $datasurat1->tertibjakonpemanfaatan;
 
+    // Ambil user
     $user = Auth::user();
 
-    // Ambil semua surat terkait dengan paginate
-    $datasurat1 = surattertibjakonpemanfaatan1::where('tertibjakonpemanfaatan_id', $id)
-                    ->orderBy('created_at', 'desc')
-                    ->paginate(50);
+    // Ambil data subklasifikasi dan tandatangan
+    $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all();
 
+    // Jika relasi null, buat default kosong agar tidak error di view
+    $namabangunan = $datasurat1->namabangunan ?? 'Data pekerjaan tidak ditemukan';
+
+    // Kirim data ke view
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberkas', [
-        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan',
+        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar',
+        'data' => $datatertib,
         'user' => $user,
-        'data' => $datasurat1,
-        'datasurat' => $datasurat1,
-        'datanamabangunan' => $datatertibjakonpemanfaatan->namabangunan,
-        'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
-        'datasurat_id' => $datasurat1->first()?->id,
-        'id' => $id, // penting untuk route tombol "Buat Berkas"
+        'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
+        'datasurat1' => $datasurat1,
+        'namabangunan' => $namabangunan,
     ]);
 }
 
