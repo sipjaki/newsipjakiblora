@@ -100,14 +100,14 @@
 
 
        {{-- Tampilkan tombol jika surat kosong --}}
-    @if ($datasurat->isEmpty())
-        <a href="{{ route('betertibjakonpenyelenggaraancreateberkas', ['id' => $id]) }}">
-            <button class="btn-create">
-                <i class="bi bi-file-earmark-plus"></i> Buat Berkas
-            </button>
-        </a>
-    @endif
-                                    {{-- @endif --}}
+   @if ($datasurat->isEmpty())
+    <a href="{{ route('betertibjakonpenyelenggaraancreateberkas', ['id' => $informasiId ?? $id]) }}">
+        <button class="btn-create">
+            <i class="bi bi-file-earmark-plus"></i> Buat Berkas
+        </button>
+    </a>
+@endif
+                                 {{-- @endif --}}
 
                    @if ($datasurat->isNotEmpty())
 
