@@ -64,7 +64,7 @@
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
 
-                        <form action="{{ route('betertibjakonpenyelenggaraancreatenewupdate') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonpemanfaatanupdatecreatenew') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -93,7 +93,7 @@
     </label>
     <input type="text" id="kegiatankonstruksi" name="kegiatankonstruksi"
         class="form-control @error('kegiatankonstruksi') is-invalid @enderror"
-        value="{{ old('kegiatankonstruksi', $data->kegiatankonstruksi) }}">
+        value="{{ old('kegiatankonstruksi', $data->kegiatankonstruksi ?? '') }}">
     @error('kegiatankonstruksi')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -105,11 +105,12 @@
     </label>
     <input type="text" id="namapekerjaan" name="namapekerjaan"
         class="form-control @error('namapekerjaan') is-invalid @enderror"
-        value="{{ old('namapekerjaan', $data->namapekerjaan) }}">
+        value="{{ old('namapekerjaan', $data->namapekerjaan ?? '') }}">
     @error('namapekerjaan')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+
 
 </div>
 
@@ -120,7 +121,7 @@
     </label>
     <input type="text" id="nomorkontrak" name="nomorkontrak"
         class="form-control @error('nomorkontrak') is-invalid @enderror"
-        value="{{ old('nomorkontrak', $data->nomorkontrak) }}">
+        value="{{ old('nomorkontrak', $data->nomorkontrak ?? '') }}">
     @error('nomorkontrak')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -132,7 +133,7 @@
     </label>
     <input type="text" id="bujk" name="bujk"
         class="form-control @error('bujk') is-invalid @enderror"
-        value="{{ old('bujk', $data->bujk) }}">
+        value="{{ old('bujk', $data->bujk ?? '') }}">
     @error('bujk')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
