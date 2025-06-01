@@ -358,19 +358,21 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
+                                                @foreach ($datasurat as $item)
+
                                                 <td class="d-flex gap-2">
-                                                    <input type="date" class="form-control @error('dokumendiperiksa') is-invalid @enderror" name="dokumendiperiksa" value="{{ old('dokumendiperiksa') }}" placeholder="Dimulai Sejak ... ">
-                                                    @error('dokumendiperiksa')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                                    <div class="form-control bg-light">
+                                                        {{ $item->dokumendiperiksa ? date('Y-m-d', strtotime($datasurat->dokumendiperiksa)) : '-' }}
+                                                    </div>
 
                                                     <span class="mx-1">(Sampai Dengan)</span>
 
-                                                    <input type="date" class="form-control @error('carapemeriksaan') is-invalid @enderror" name="carapemeriksaan" value="{{ old('carapemeriksaan') }}" placeholder="Berakhir Tanggal ... ">
-                                                    @error('carapemeriksaan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                                    <div class="form-control bg-light">
+                                                        {{ $item->carapemeriksaan ? date('Y-m-d', strtotime($datasurat->carapemeriksaan)) : '-' }}
+                                                    </div>
                                                 </td>
+                                                @endforeach
+
                                             </tr>
                                         </table>
                     <br>
