@@ -573,6 +573,7 @@
                                                                                 Kabupaten Blora
                                                                             </h6>
                                                                             <img src="/assets/icon/ttdkabblora.png" alt="">
+                                                                            <img src="/assets/icon/ttdpaarif.png" alt="">
                                                                             <p>MOHAMAD ARIF HIDAYAT, ST</p>
 
 
