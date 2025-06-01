@@ -511,7 +511,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowspan="2">1</td>
+                                <td rowspan="2">4</td>
                                 <td rowspan="2">
                                     Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
                                 </td>
@@ -554,7 +554,7 @@
 
 
 
-                    {{--
+
                                                 <div class="container" style="margin-top: 10px;">
                                                     <!-- Modal Card -->
 
@@ -601,7 +601,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div> --}}
+                                                        </div>
                                                         <br><br><br><br>
                                             </div>
 
