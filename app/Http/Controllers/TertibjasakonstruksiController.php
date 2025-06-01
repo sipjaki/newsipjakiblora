@@ -2389,7 +2389,7 @@ public function betertibjakonpenyelenggaraanindexlist($id)
         'databujk' => $datatertibjasapemanfaatan->bujk,
 
         'user' => $user,
-        'data' => $datatertibjasapemanfaatan,
+        'datakonstruksi' => $datatertibjasapemanfaatan->kegiatankonstruksi,
 
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
         'title' => 'Create Berkas Informasi Proyek Jakon Penyelenggaraan'
