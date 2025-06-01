@@ -348,7 +348,11 @@
                                 <td style="text-align: center;">
                                     <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                                 </td>
-                                <td></td>
+                                <td>
+                                        <div id="carapemeriksaanPreview" style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #f8f9fa; min-height: 100px;">
+                                        <!-- Teks dari textarea akan muncul di sini -->
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -360,7 +364,12 @@
                                  <span id="textCatatan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                             </td>
 
-                                <td></td>
+                                <td>
+                                       <div id="dokumendiperiksaPreview"
+                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #f8f9fa; min-height: 100px;">
+                                            <!-- Hasil teks tampil di sini -->
+                                        </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
