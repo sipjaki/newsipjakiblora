@@ -534,23 +534,65 @@
 
                                                 {{-- </table> --}}
 
-                                                <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
-                                                    <thead>
-                                                        <tr>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
-                                                            {{-- <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th> --}}
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Status Pelaksana Pengembangan Usaha</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            {{-- <td style="border: 1px solid #000; padding: 0 8px;">{{$namapekerjaan ?? 'Data Belum Di Buat '}}</td> --}}
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat->status ?? 'Data Belum Di Buat '}}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-{{--
+                                                <table class="audit">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>LINGKUP PENGAWASAN</th>
+                                <th>Indikator</th>
+                                <th>DOKUMEN YANG DIPERIKSA</th>
+                                <th>CARA PEMERIKSAAN</th>
+                                <th>KESIMPULAN PEMERIKSAAN</th>
+                                <th>CATATAN PEMERIKSAAN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">1</td>
+                                <td rowspan="2">
+                                    Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
+                                </td>
+                                <td>
+                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
+                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan
+                                </td>
+                                <td>Dokumen perizinan</td>
+                                <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+                                    @foreach ($datasurat as $item)
+
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->kesimpulanpemeriksaan ?? '-' }}
+                                        </span>
+                                    </td>
+
+                                    @endforeach
+
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+                                </td>
+                                <td>Dokumen resmi dari instansi berwenang</td>
+                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+                                @foreach ($datasurat as $item)
+
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->catatan ?? '-' }}
+                                        </span>
+                                    </td>
+
+                                    @endforeach
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    {{--
                                                 <div class="container" style="margin-top: 10px;">
                                                     <!-- Modal Card -->
 
