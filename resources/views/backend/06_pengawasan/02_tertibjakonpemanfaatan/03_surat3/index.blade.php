@@ -607,7 +607,6 @@
                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
     function downloadModalPDF(id) {
-        // Ambil elemen modal berdasarkan ID
         const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
         if (!modalContent) {
@@ -615,21 +614,28 @@
             return;
         }
 
-        // Kloning isi modal agar tidak mengganggu tampilan asli
+        // Clone isi modal
         const clone = modalContent.cloneNode(true);
 
-        // Styling opsional untuk hasil PDF
-        clone.style.fontSize = '14px';
-        clone.style.padding = '20px';
+        // Buat container kosong untuk PDF
+        const container = document.createElement('div');
+        container.style.margin = '0';               // Hapus margin
+        container.style.padding = '0';              // Hapus padding
+        container.style.background = '#fff';        // Background putih
+        container.style.fontSize = '14px';
+        container.style.pageBreakInside = 'avoid';
 
-        // Format nama file
+        // Tambahkan isi modal ke container
+        container.appendChild(clone);
+
+        // Set nama file
         const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
 
-        // Konversi ke PDF dan download
+        // Export PDF
         html2pdf()
-            .from(clone)
+            .from(container)
             .set({
-                margin: 0.5,
+                margin: [0, 0, 0, 0], // margin 0 semua sisi
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
