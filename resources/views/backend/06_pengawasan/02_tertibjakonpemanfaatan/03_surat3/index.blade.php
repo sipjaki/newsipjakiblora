@@ -567,7 +567,7 @@
                                                                                 <!-- Tim Pemeriksa -->
                                                                                 <div class="tim-pemeriksa-container">
                                                                                     <div class="tim-pemeriksa">
-                                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
+                                                                                        <h6 style="font-size: 0.9rem;">Kepala Bidang Bangunan Gedung <br> Dinas Pekerjaan Umum dan Penataan Ruang <br>Kabupaten Blora </h6>
                                                                                         <table class="table table-sm">
                                                                                             <thead class="table-secondary">
                                                                                                 <tr>
