@@ -607,6 +607,7 @@
                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
     function downloadModalPDF(id) {
+        // Ambil elemen modal berdasarkan ID
         const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
         if (!modalContent) {
@@ -614,48 +615,27 @@
             return;
         }
 
-        // Clone isi modal
+        // Kloning isi modal agar tidak mengganggu tampilan asli
         const clone = modalContent.cloneNode(true);
 
-        // Buat container wrapper
-        const container = document.createElement('div');
-        container.style.margin = '0';
-        container.style.padding = '0';
-        container.style.background = '#fff';
-        container.style.fontSize = '12px';
-        container.style.pageBreakInside = 'avoid';
-        container.style.height = '100%';
-        container.style.display = 'flex';
-        container.style.flexDirection = 'column';
-        container.style.justifyContent = 'flex-start'; // Ini yang bikin isi naik ke atas
+        // Styling opsional untuk hasil PDF
+        clone.style.fontSize = '14px';
+        clone.style.padding = '20px';
 
-        // Tambahkan isi ke dalam wrapper
-        container.appendChild(clone);
+        // Format nama file
+        const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
 
-        // Buat file PDF
+        // Konversi ke PDF dan download
         html2pdf()
-            .from(container)
+            .from(clone)
             .set({
-                margin: [0, 0, 0, 0],
-                filename: `Tertibjakonpemanfaatan_surat1_${id}.pdf`,
-                image: { type: 'jpeg', quality: 1 },
-                html2canvas: {
-                    scale: 2,
-                    useCORS: true,
-                    scrollY: 0,
-                    scrollX: 0,
-                    windowWidth: 1920,
-                    windowHeight: 1080
-                },
-                jsPDF: {
-                    unit: 'mm',
-                    format: 'a4',
-                    orientation: 'landscape'
-                }
+                margin: 0.5,
+                filename: fileName,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
             })
-            .then(() => {
-                console.log("PDF downloaded");
-            });
+            .save();
     }
 </script>
 
