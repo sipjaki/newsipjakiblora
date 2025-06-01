@@ -20,7 +20,7 @@ class tertibjakonpenyelenggaraan extends Model
 
     public function informasisurattertibpenyelenggaraan()
     {
-        return $this->belongsTo(informasisurattertibpenyelenggaraan::class);
+        return $this->hasMany(informasisurattertibpenyelenggaraan::class);
     }
 
     public function surattertibjakonpenyelenggaraan1()
