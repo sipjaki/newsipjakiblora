@@ -15,7 +15,7 @@ class surattertibjakonpenyelenggaraan1 extends Model
 
     public function tertibjakonpenyelenggaraan()
     {
-        return $this->hasOne(tertibjakonpenyelenggaraan::class)->oldest();
+        return $this->hasOne(tertibjakonpenyelenggaraan::class);
     }
 
 }

@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('pengawasan_dokumenk4')->nullable();
             $table->string('pengawasan_smkk')->nullable();
             $table->string('pengawasan_kecelakaankerja')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });
