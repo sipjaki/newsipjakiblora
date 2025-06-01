@@ -169,7 +169,7 @@
                                     @if ($datasurat->isEmpty())
                                         <tr>
                                             <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Tertib Pemanfaatan <strong>Belum Dibuat (Surat 1)</strong>!
+                                                Berkas Informasi Proyek Tertib Penyelenggaraan <strong>Belum Dibuat (Informasi Pekerjaan)</strong>!
                                             </td>
                                         </tr>
                                     @else
