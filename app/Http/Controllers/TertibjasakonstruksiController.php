@@ -2398,4 +2398,41 @@ public function betertibjakonpenyelenggaraanindexlist($id)
     ]);
 }
 
+
+public function betertibjakonpenyelenggaraaninformasi(Request $request)
+{
+    // Validasi input berdasarkan kolom baru
+    $validatedData = $request->validate([
+        'namaproyekkonstruksi' => 'required|string',
+        'nilaiproyek' => 'required|string',
+        'nomorkontrak' => 'required|string',
+        'waktupelaksanaan' => 'required|string',
+        'penyediajasa' => 'required|string',
+        'satuanopd' => 'required|string',
+        'waktupengawasan' => 'required|date',
+    ], [
+        'namaproyekkonstruksi.required' => 'Nama Proyek Konstruksi wajib diisi!',
+        'nilaiproyek.required' => 'Nilai Proyek wajib diisi!',
+        'nomorkontrak.required' => 'Nomor Kontrak wajib diisi!',
+        'waktupelaksanaan.required' => 'Waktu Pelaksanaan wajib diisi!',
+        'penyediajasa.required' => 'Penyedia Jasa wajib diisi!',
+        'satuanopd.required' => 'Satuan/OPD wajib diisi!',
+        'waktupengawasan.required' => 'Waktu Pengawasan wajib diisi!',
+    ]);
+
+    try {
+        $surat = new informasisurattertibpenyelenggaraan();
+        $surat->fill($validatedData)->save();
+
+        return redirect()
+            ->route('betertibjakonpenyelenggaraanindexinformasi', [
+                'id' => $surat->id ?? 'default_id'
+            ])
+            ->with('create', 'Data proyek berhasil disimpan!');
+    } catch (\Exception $e) {
+        return back()
+            ->withInput()
+            ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+    }
+}
 }

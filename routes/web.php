@@ -1111,7 +1111,7 @@ Route::post('/betertibjakonpenyelenggaraan/updatecreate/{id}', [Tertibjasakonstr
 Route::get('/betertibjakonpenyelenggaraan/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanindexlist'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraanindexinformasi');
 
 Route::get('/betertibjakonpenyelenggaraan/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraancreateberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraancreateberkas');
-Route::post('/betertibjakonmanfaat1/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaatcreateberkasnew'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonmanfaat1');
+Route::post('/betertibjakonpenyelenggaraan/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraaninformasi'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpenyelenggaraaninformasi');
 
 
 
