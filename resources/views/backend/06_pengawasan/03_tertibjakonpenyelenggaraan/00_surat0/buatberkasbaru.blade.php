@@ -243,7 +243,7 @@
     <input type="text" name="namaproyekkonstruksi"
         class="form-control @error('namaproyekkonstruksi') is-invalid @enderror"
         value="{{ old('namaproyekkonstruksi', $data->kegiatankonstruksi ?? '') }}"
-        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
+        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;" readonly>
     @error('namaproyekkonstruksi')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -271,7 +271,7 @@
         <strong style="font-size: 15px;">Nomor Kontrak</strong>
     </td>
     <td>
-        <input type="text" name="nomorkontrak"
+        <input type="text" name="nomorkontrak" readonly
             class="form-control @error('nomorkontrak') is-invalid @enderror"
             value="{{ old('nomorkontrak', $data->nomorkontrak ?? '') }}"
             style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
@@ -295,7 +295,6 @@
         @enderror
     </td>
 </tr>
-
 <tr>
     <td style="width: 200px; padding:4px 8px;">
         <strong style="font-size: 15px;">Penyedia Jasa</strong>
@@ -303,13 +302,14 @@
     <td>
         <input type="text" name="penyediajasa"
             class="form-control @error('penyediajasa') is-invalid @enderror"
-            value="{{ old('penyediajasa', $data->penyediajasa ?? '') }}"
+            value="{{ old('penyediajasa', $data->bujk ?? '') }}"
             style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
         @error('penyediajasa')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </td>
 </tr>
+
 
 <tr>
     <td style="width: 200px; padding:4px 8px;">
@@ -327,12 +327,12 @@
 </tr>
 
 
-    <tr>
+                                                <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                                     <td class="d-flex gap-2 align-items-center">
-                                                        <input type="number" class="form-control @error('waktupengawasan') is-invalid @enderror"
+                                                        <input type="date" class="form-control @error('waktupengawasan') is-invalid @enderror"
                                                             name="waktupengawasan"
                                                             value="{{ old('waktupengawasan', $data->waktupengawasan ?? '') }}"
                                                             placeholder="Dimulai Sejak ... ">
