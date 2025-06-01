@@ -15,7 +15,7 @@ class informasisurattertibpenyelenggaraan extends Model
 
     public function tertibjakonpenyelenggaraan()
     {
-        return $this->hasOne(tertibjakonpenyelenggaraan::class);
+        return $this->hasOne(tertibjakonpenyelenggaraan::class, 'tertibjakonpenyelenggaraan_id', 'id');
     }
 
 }
