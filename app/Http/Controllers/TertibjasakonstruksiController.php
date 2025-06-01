@@ -2232,4 +2232,22 @@ public function betertibjakonpenyelenggaraanindex(Request $request)
     ]);
 }
 
+
+public function betertibjakonpenyelenggaraancreate()
+{
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+$datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.create', [
+    'title' => 'Create Tertib Jakon Penyelenggaraan ',
+    // 'data' => $datatertibjakonusaha,
+    'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
 }
