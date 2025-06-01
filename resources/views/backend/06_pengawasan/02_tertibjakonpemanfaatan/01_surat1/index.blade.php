@@ -282,9 +282,9 @@
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <form action="{{ route('betertibjakonmanfaat1') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
+                            {{-- @csrf --}}
 
-                            <input type="hidden"  name="tertibjakonpemanfaatan_id" value="{{ $datatertibjasakonstruksi_id }}">
+                            {{-- <input type="hidden"  name="tertibjakonpemanfaatan_id" value="{{ $datatertibjasakonstruksi_id }}"> --}}
 
                                 <div class="modal-content" style="font-size: 0.875rem;">
                                     <div class="modal-header d-flex align-items-center">
@@ -308,7 +308,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datanamabangunan ?? '-' }}
+                                                        {{-- {{ $datanamabangunan ?? '-' }} --}}
                                                     </div>
                                                 </td>
                                             </tr>
@@ -318,7 +318,7 @@
                                                 </td>
                                                 <td>
                                                     <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datalokasi ?? '-' }}
+                                                        {{-- {{ $datalokasi ?? '-' }} --}}
                                                     </div>
                                                 </td>
                                             </tr>
