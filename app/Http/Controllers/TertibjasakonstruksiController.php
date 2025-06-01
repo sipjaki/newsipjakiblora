@@ -1905,6 +1905,7 @@ public function betertibjakonmanfaat1showdata($id)
 
     // Data tambahan
     $namabangunan = $datatertib->namabangunan ?? '-';
+
     // Data lain
     $user = Auth::user();
     $datasubklasifikasi = subklasifikasi::all();
