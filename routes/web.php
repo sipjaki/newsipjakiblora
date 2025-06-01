@@ -1085,6 +1085,8 @@ Route::post('/betertibjakonmanfaat2/createberkasnew', [TertibjasakonstruksiContr
 
 Route::delete('/betertibjakonmanfaat2delete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat2deleteberkas'])->middleware('auth')->name('betertibjakonmanfaat2deleteberkas');
 
+// SURAT JAKON PEMANFAATAN 3
+Route::get('/betertibjakonpemanfataansurat3/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat3index'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataansurat3index');
 
 
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------

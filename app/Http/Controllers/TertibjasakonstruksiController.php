@@ -6,6 +6,7 @@ use App\Models\penyediastatustertibjakon;
 use App\Models\subklasifikasi;
 use App\Models\surattertibjakonpemanfaatan1;
 use App\Models\surattertibjakonpemanfaatan2;
+use App\Models\surattertibjakonpemanfaatan3;
 use App\Models\surattertibjakonusaha1;
 use App\Models\surattertibjakonusaha2;
 use App\Models\surattertibjakonusaha3;
@@ -2057,5 +2058,41 @@ public function betertibjakonmanfaat2deleteberkas($id)
     session()->flash('error', 'Item tidak ditemukan');
     return redirect()->back();
 }
+
+
+public function betertibjakonpemanfataansurat3index($id)
+{
+    // Ambil data utama berdasarkan ID
+    $datatertibjakonpemanfaatan = tertibjakonpemanfaatan::find($id);
+
+    if (!$datatertibjakonpemanfaatan) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    $user = Auth::user();
+
+    // Ambil semua surat terkait dengan paginate
+    $datasurat = surattertibjakonpemanfaatan3::where('tertibjakonpemanfaatan_id', $id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
+
+    $suratPertama = $datasurat->first();
+
+
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.03_surat3.index', [
+        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan Bagian 3',
+        'user' => $user,
+        'data' => $datasurat,
+        'datasurat' => $datasurat,
+        // 'datapengelola1' => $datasurat->lingkuppengawasan,
+        // 'datapengelola2' => $datasurat->indikator,
+        'datainduk' => $datatertibjakonpemanfaatan,
+        'firstsurat' => $suratPertama,
+        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id, // penting untuk route tombol "Buat Berkas"
+    ]);
+}
+
 
 }

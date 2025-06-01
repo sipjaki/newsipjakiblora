@@ -180,12 +180,9 @@
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Rencana <br> Umur Konstruksi & Kapasitas Beban
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan <br> Kapasitas dan Beban
-                                    </th>
 
                                     <th rowspan="2" style="text-align: center; width:300px;">
-                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemeliharaan <br> Produk Jasa Konstruksi
+                                        <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemeliharaan <br> Konstruksi & Struktur
                                     </th>
 
                                     <th rowspan="2" style="text-align: center; width:175px;">
@@ -308,26 +305,18 @@
                                         </button>
                                     </a>
                                 </td>
-{{-- baru ini  --}}
-                               <td style="text-align: center; vertical-align: middle;">
+                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonpemanfataansurat2/index/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-abuabu">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                            <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
                                 </td>
 
-
-                               <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonusahapemenuhansyarat/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
-                                        </button>
-                                    </a>
-                                </td>
+                                {{-- baru ini  --}}
 
                                 <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonusahapelaksana/index/' . $item->id) }}" style="text-decoration: none;">
+                                    <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-abuabu">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
