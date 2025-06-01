@@ -328,7 +328,7 @@
                                               <td>
                                                     <input
                                                         type="text"
-                                                        value="{{ $datasurat1->lingkuppengawasan }}"
+                                                        value="{{ $datasurat->lingkuppengawasan }}"
                                                         class="form-control"
                                                         readonly
                                                         style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;"

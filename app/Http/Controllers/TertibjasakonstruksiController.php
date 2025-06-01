@@ -1890,36 +1890,6 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
-public function betertibjakonmanfaat1showberkas($id)
-{
-
-    $datasurat1 = surattertibjakonpemanfaatan1::with('tertibjakonpemanfaatan')->findOrFail($id);
-
-    // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
-    $datatertib = $datasurat1->tertibjakonpemanfaatan;
-
-    // Ambil user
-    $user = Auth::user();
-
-    // Jika relasi null, buat default kosong agar tidak error di view
-    $namabangunan = $datasurat1->namabangunan ?? 'Data pekerjaan tidak ditemukan';
-
-    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
-    // $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan1')->findOrFail($id);
-
-    $user = Auth::user();
-
-    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberkas', [
-        'namabangunan' => $namabangunan,
-        'namalokasi' => $namalokasi,
-        'datatertibjasakonstruksi_id' => $datatertib->id,
-        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
-        'user' => $user,
-        'data' => $datatertib,
-        'datasurat1' => $datasurat1,
-        'title' => 'Show Berkas Surat Tertib Jakon Pemanfaatan '
-    ]);
-}
 
 
 
