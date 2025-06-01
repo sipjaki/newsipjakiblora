@@ -110,11 +110,24 @@
                                     {{-- @endif --}}
 
                    @if ($datasurat->isNotEmpty())
+
+                   <button onclick="printModalContent({{ $datasurat_id }})" class="btn-create">
+                                            <i class="bi bi-file-earmark-arrow-down icon-create"></i>
+                                            Print
+                    </button>
+
+                    <button class="btn-create" onclick="downloadModalPDF({{ $datasurat_id }})">
+                            <i class="bi bi-file-earmark-arrow-down icon-create"></i>
+                                            Download
+                    </button>
+
                    <button class="btn-create"
                                             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat_id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
                     </button>
+
+
                     @endif
 
                 <button class="btn-create">
@@ -642,3 +655,143 @@
                                                         </div> --}}
                                                         <br><br><br><br>
                                             </div>
+
+
+                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    function downloadModalPDF(id) {
+        // Ambil elemen modal berdasarkan ID
+        const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
+
+        if (!modalContent) {
+            alert('Konten modal tidak ditemukan.');
+            return;
+        }
+
+        // Kloning isi modal agar tidak mengganggu tampilan asli
+        const clone = modalContent.cloneNode(true);
+
+        // Styling opsional untuk hasil PDF
+        clone.style.fontSize = '14px';
+        clone.style.padding = '20px';
+
+        // Format nama file
+        const fileName = `Tertibjakonusaha_kesesuaianpemenuhansyarat_${id}.pdf`;
+
+        // Konversi ke PDF dan download
+        html2pdf()
+            .from(clone)
+            .set({
+                margin: 0.5,
+                filename: fileName,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
+            })
+            .save();
+    }
+</script>
+
+                                        <script>
+                                            function printModalContent(id) {
+                                                const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
+                                                if (!modalContent) {
+                                                    alert("Konten tidak ditemukan.");
+                                                    return;
+                                                }
+
+                                                const printWindow = window.open('', '', 'width=1200,height=800');
+                                                printWindow.document.write(`
+                                                    <html>
+                                                    <head>
+                                                        <title>Print Dokumen</title>
+                                                        <style>
+                                                            @media print {
+                                                                @page {
+                                                                    size: A4 landscape;
+                                                                    margin: 0mm;
+                                                                }
+                                                                body {
+                                                                    font-family: Arial, sans-serif;
+                                                                    font-size: 12px;
+                                                                    color: #000;
+                                                                }
+                                                                table {
+                                                                    border-collapse: collapse;
+                                                                    width: 100%;
+                                                                    page-break-inside: auto;
+                                                                }
+                                                                th, td {
+                                                                    border: 1px solid #000;
+                                                                    padding: 4px;
+                                                                    vertical-align: top;
+                                                                }
+                                                                .no-border td {
+                                                                    border: none;
+                                                                }
+                                                            }
+
+                                                            body {
+                                                                margin: 10mm;
+                                                                font-family: Arial, sans-serif;
+                                                                font-size: 12px;
+                                                            }
+
+                                                            h5 {
+                                                                font-size: 1rem;
+                                                                margin-bottom: 10px;
+                                                            }
+
+                                                            .table-bordered {
+                                                                border: 1px solid #000;
+                                                                width: 100%;
+                                                                margin-top: 10px;
+                                                            }
+
+                                                            .table-bordered th, .table-bordered td {
+                                                                border: 1px solid #000;
+                                                                padding: 6px;
+                                                                text-align: left;
+                                                            }
+
+                                                            .table-secondary {
+                                                                background-color: #f8f9fa;
+                                                            }
+
+                                                            /* Penyesuaian khusus untuk bagian tim pemeriksa */
+                                                            .tim-pemeriksa-container {
+                                                                display: flex;
+                                                                justify-content: flex-end;
+                                                            }
+
+                                                            .tim-pemeriksa {
+                                                                width: 50%;
+                                                            }
+
+                                                            .tim-pemeriksa table {
+                                                                width: 100%;
+                                                                border: 1px solid #000;
+                                                            }
+
+                                                            .tim-pemeriksa td, .tim-pemeriksa th {
+                                                                text-align: center;
+                                                                padding: 3px;
+                                                                height: 15px;
+                                                                font-size: 11px;
+                                                            }
+                                                        </style>
+                                                    </head>
+                                                    <body>
+                                                        ${modalContent.innerHTML}
+                                                        <script>
+                                                            window.onload = function() {
+                                                                window.print();
+                                                                window.onafterprint = window.close;
+                                                            }
+                                                        <\/script>
+                                                    </body>
+                                                    </html>
+                                                `);
+                                                printWindow.document.close();
+                                            }
+                                        </script>
