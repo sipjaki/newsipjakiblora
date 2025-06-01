@@ -1088,6 +1088,8 @@ Route::delete('/betertibjakonmanfaat2delete/delete/{id}', [TertibjasakonstruksiC
 // SURAT JAKON PEMANFAATAN 3
 Route::get('/betertibjakonpemanfataansurat3/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat3index'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataansurat3index');
 
+Route::get('/betertibjakonpemanfataansurat3/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat3createberkas'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonpemanfataansurat3createberkas');
+
 
 // ---------------------- MENU SHST KABUPATEN BLORA -----------------------------------------------------
 Route::get('/beshstkabblora', [ShstbloraController::class, 'beshstkabblora'])->middleware(['auth', 'can:super_admin'])->name('beshstkabblora');

@@ -101,7 +101,7 @@
 
        {{-- Tampilkan tombol jika surat kosong --}}
     @if ($datasurat->isEmpty())
-        <a href="{{ route('betertibjakonpemanfataansurat2createberkas', ['id' => $id]) }}">
+        <a href="{{ route('betertibjakonpemanfataansurat3createberkas', ['id' => $id]) }}">
             <button class="btn-create">
                 <i class="bi bi-file-earmark-plus"></i> Buat Berkas
             </button>
@@ -152,11 +152,11 @@
                                                 </th> --}}
 
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Rencana Umur
+                                                    <i class="bi bi-building-fill"></i> Peruntukan Fungsi
                                                 </th>
 
                                                 <th style="width: 200px; text-align: center;">
-                                                    <i class="bi bi-building-fill"></i> Kapasitas & Beban
+                                                    <i class="bi bi-building-fill"></i> Peruntukan Lokasi
                                                 </th>
 
                                                 <th style="width: 100px; text-align: center;">
@@ -169,7 +169,7 @@
                                     @if ($datasurat->isEmpty())
                                         <tr>
                                             <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Tertib Pemanfaatan <strong>Belum Dibuat (Surat 2) </strong>!
+                                                Surat Dukung Tertib Pemanfaatan <strong>Belum Dibuat (Surat 3)</strong>!
                                             </td>
                                         </tr>
                                     @else
@@ -181,9 +181,9 @@
 
                                             @php
                                                 $kesesuaian = $item->kesimpulanpemeriksaan ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Tersedia' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Tersedia' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Tersedia' ? 'bi-check-circle' : 'bi-x-circle';
+                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
                                             @endphp
 
                                             <td style="text-align: center;">
@@ -199,9 +199,9 @@
 
                                         @php
                                                 $kesesuaian = $item->catatan ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+                                                $tertibStatus = $kesesuaian === 'Tersedia' ? 'TERTIB' : 'BELUM TERTIB';
+                                                $color = $kesesuaian === 'Tersedia' ? 'blue' : 'red';
+                                                $icon = $kesesuaian === 'Tersedia' ? 'bi-check-circle' : 'bi-x-circle';
                                             @endphp
 
                                             <td style="text-align: center;">
@@ -260,7 +260,7 @@
                                          <script>
                                          function setDeleteUrl(button) {
                                              var id = button.getAttribute('data-id');
-                                             var deleteUrl = "{{ route('betertibjakonmanfaat2deleteberkas', ':id') }}";
+                                             var deleteUrl = "{{ route('betertibjakonmanfaat1deleteberkas', ':id') }}";
                                              deleteUrl = deleteUrl.replace(':id', encodeURIComponent(id));
 
                                              document.getElementById('deleteForm').action = deleteUrl;
@@ -342,17 +342,65 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
+                                                </td>
+                                           <td>
+                                                <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                        @foreach ($datasurat as $item)
+                                                        {{ $item->lingkuppengawasan ?? '-' }}
+                                                        @endforeach
+                                                </div>
+                                            </td>
 
-                                    </table>
-                    <br>
-                            </table>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
+                                                </td>
+                                            <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                       @foreach ($datasurat as $item)
+                                                        {{ $item->indikator ?? '-' }}
+                                                        @endforeach
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
+                                                </td>
+                                            @foreach ($datasurat as $item)
+    <td class="d-flex gap-2">
+        <div class="form-control bg-light">
+            {{ $item->dokumendiperiksa
+                ? \Carbon\Carbon::parse($item->dokumendiperiksa)->locale('id')->isoFormat('D MMMM YYYY')
+                : '-'
+            }}
+        </div>
+
+        <span class="mx-1">(Sampai Dengan)</span>
+
+        <div class="form-control bg-light">
+            {{ $item->carapemeriksaan
+                ? \Carbon\Carbon::parse($item->carapemeriksaan)->locale('id')->isoFormat('D MMMM YYYY')
+                : '-'
+            }}
+        </div>
+    </td>
+@endforeach
+
+                                            </tr>
+                                        </table>
                     <br>
                     <table class="audit">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>LINGKUP PENGAWASAN</th>
-                                <th>INDIKATOR</th>
+                                <th>Indikator</th>
                                 <th>DOKUMEN YANG DIPERIKSA</th>
                                 <th>CARA PEMERIKSAAN</th>
                                 <th>KESIMPULAN PEMERIKSAAN</th>
@@ -361,50 +409,49 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>2</td>
-                                <td>
-                                    Pengawasan terhadap rencana umur konstruksi
+                                <td rowspan="2">1</td>
+                                <td rowspan="2">
+                                    Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
                                 </td>
                                 <td>
-                                    Terjaminnya bangunan konstruksi tetap laik fungsi sepanjang umur konstruksi yang di buktikan dengan tersedianya dokumen laik fungsi atau dokumen sejenis lainnya  <br>
+                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
+                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan
                                 </td>
-                                <td>Dokumen laik fungsi atau dokumen sejenis yang di terbitkan oleh instansi berwenang </td>
-                                <td>Memerika ketersediaan dokumen laik fungsi atau dokumen sejenis yang diterbitkan oleh instansi berwenang </td>
-                                <td style="text-align: center;">
+                                <td>Dokumen perizinan</td>
+                                <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
                                     @foreach ($datasurat as $item)
-                                    {{$item->kesimpulanpemeriksaan}}
+
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->kesimpulanpemeriksaan ?? '-' }}
+                                        </span>
+                                    </td>
+
                                     @endforeach
-                                </td>
-                                 <td>
-                                    @foreach ($datasurat as $item)
-                                    {{$item->carapemeriksaan}}
-                                    @endforeach
-                                </td>
+
+                                <td></td>
                             </tr>
                             <tr>
-                                <td>3</td>
                                 <td>
-                                    Pengawasan terhadap kapasitas dan beban
+                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
                                 </td>
-                                <td>
-                                    Terjaminnya bangunan konstruksi dari kelebihan kapasitas dan beban yang di buktikan dengan tersedianya surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan<br>
-                                </td>
-                                <td>Surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan </td>
-                                <td>Memerika ketersediaan surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau melakukan konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan</td>
-                                <td style="text-align: center;">
-                                    @foreach ($datasurat as $item)
-                                    {{$item->catatan}}
-                                    @endforeach
-                                </td>
-                                 <td>
-                                    @foreach ($datasurat as $item)
-                                    {{$item->dokumendiperiksa}}
-                                    @endforeach
-                                    </td>
-                            </tr>
+                                <td>Dokumen resmi dari instansi berwenang</td>
+                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+                                @foreach ($datasurat as $item)
 
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->catatan ?? '-' }}
+                                        </span>
+                                    </td>
+
+                                    @endforeach
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
+
                                 </div>
 
 
@@ -474,20 +521,20 @@
 
    <div class="modal fade" id="modalKtp{{ $datasurat_id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $datasurat_id }}" aria-hidden="true">
                                             <div class="modal-dialog modal-xl modal-dialog-centered">
-                                        <div class="modal-content" style="font-size: 0.875rem;">
+                                        <div class="modal-content" style="font-size: 0.875rem; margin-top:-10px;" >
                                             <div class="modal-header d-flex align-items-center">
-                                                {{-- <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
                                                     <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
                                                 </a>
                                                 <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
                                                     <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
                                                 </a>
                                                 <span class="mx-2">:</span>
-                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p> --}}
+                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                {{-- <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Pemanfaatan : <br> Pengawasan Tertib Pemanfaatan Produk Konstruksi Secara Rutin Terhadap Bangunan Konstruksi yang di Biayai dengan dana dari APBD </h5> --}}
+                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Pemanfaatan : <br> Pengawasan Tertib Pemanfaatan Produk Konstruksi Secara Rutin Terhadap Bangunan Konstruksi yang di Biayai dengan dana dari APBD </h5>
                                                 {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
                                                    {{-- <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
@@ -500,15 +547,93 @@
 
                                                 {{-- </table> --}}
 
+                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
+                                         <tr>
+                                                <td style="width: 400px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Nama Bangunan </strong>
+                                                </td>
+                                                <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                    {{-- @foreach ($datainduk as $item) --}}
+                                                    {{ $datainduk->namabangunan ?? '-' }}
+                                                    {{-- @endforeach --}}
 
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 400px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Lokasi Bangunan </strong>
+                                                </td>
+                                                <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                    {{-- @foreach ($datainduk as $item) --}}
+                                                    {{ $datainduk->lokasi ?? '-' }}
+                                                    {{-- @endforeach --}}
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 400px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Nama Pemilik Bangunan </strong>
+                                                </td>
+                                           <td>
+                                                <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                        @foreach ($datasurat as $item)
+                                                        {{ $item->lingkuppengawasan ?? '-' }}
+                                                        @endforeach
+                                                </div>
+                                            </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 400px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Nama Pengelola Bangunan </strong>
+                                                </td>
+                                            <td>
+                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
+                                                       @foreach ($datasurat as $item)
+                                                        {{ $item->indikator ?? '-' }}
+                                                        @endforeach
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="width: 400px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
+                                                </td>
+                                            @foreach ($datasurat as $item)
+    <td class="d-flex gap-2">
+        <div class="form-control bg-light">
+            {{ $item->dokumendiperiksa
+                ? \Carbon\Carbon::parse($item->dokumendiperiksa)->locale('id')->isoFormat('D MMMM YYYY')
+                : '-'
+            }}
+        </div>
+
+        <span class="mx-1">(Sampai Dengan)</span>
+
+        <div class="form-control bg-light">
+            {{ $item->carapemeriksaan
+                ? \Carbon\Carbon::parse($item->carapemeriksaan)->locale('id')->isoFormat('D MMMM YYYY')
+                : '-'
+            }}
+        </div>
+    </td>
+@endforeach
+
+                                            </tr>
+                                        </table>
                     <br>
 
-                                              <table class="audit">
+                                                <table class="audit">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>LINGKUP PENGAWASAN</th>
-                                <th>INDIKATOR</th>
+                                <th>Indikator</th>
                                 <th>DOKUMEN YANG DIPERIKSA</th>
                                 <th>CARA PEMERIKSAAN</th>
                                 <th>KESIMPULAN PEMERIKSAAN</th>
@@ -517,50 +642,49 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>2</td>
-                                <td>
-                                    Pengawasan terhadap rencana umur konstruksi
+                                <td rowspan="2">1</td>
+                                <td rowspan="2">
+                                    Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
                                 </td>
                                 <td>
-                                    Terjaminnya bangunan konstruksi tetap laik fungsi sepanjang umur konstruksi yang di buktikan dengan tersedianya dokumen laik fungsi atau dokumen sejenis lainnya  <br>
+                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
+                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan
                                 </td>
-                                <td>Dokumen laik fungsi atau dokumen sejenis yang di terbitkan oleh instansi berwenang </td>
-                                <td>Memerika ketersediaan dokumen laik fungsi atau dokumen sejenis yang diterbitkan oleh instansi berwenang </td>
-                                <td style="text-align: center;">
+                                <td>Dokumen perizinan</td>
+                                <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
                                     @foreach ($datasurat as $item)
-                                    {{$item->kesimpulanpemeriksaan}}
+
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->kesimpulanpemeriksaan ?? '-' }}
+                                        </span>
+                                    </td>
+
                                     @endforeach
-                                </td>
-                                 <td>
-                                    @foreach ($datasurat as $item)
-                                    {{$item->carapemeriksaan}}
-                                    @endforeach
-                                </td>
+
+                                <td></td>
                             </tr>
                             <tr>
-                                <td>3</td>
                                 <td>
-                                    Pengawasan terhadap kapasitas dan beban
+                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
                                 </td>
-                                <td>
-                                    Terjaminnya bangunan konstruksi dari kelebihan kapasitas dan beban yang di buktikan dengan tersedianya surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan<br>
-                                </td>
-                                <td>Surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan </td>
-                                <td>Memerika ketersediaan surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau melakukan konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan</td>
-                                <td style="text-align: center;">
-                                    @foreach ($datasurat as $item)
-                                    {{$item->catatan}}
-                                    @endforeach
-                                </td>
-                                 <td>
-                                    @foreach ($datasurat as $item)
-                                    {{$item->dokumendiperiksa}}
-                                    @endforeach
-                                    </td>
-                            </tr>
+                                <td>Dokumen resmi dari instansi berwenang</td>
+                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+                                @foreach ($datasurat as $item)
 
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->catatan ?? '-' }}
+                                        </span>
+                                    </td>
+
+                                    @endforeach
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
+
 
                     {{--
                                                 <div class="container" style="margin-top: 10px;">

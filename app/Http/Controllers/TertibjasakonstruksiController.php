@@ -2095,4 +2095,30 @@ public function betertibjakonpemanfataansurat3index($id)
 }
 
 
+
+
+  public function betertibjakonpemanfataansurat3createberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan3')->findOrFail($id);
+
+    $user = Auth::user();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonusaha3;
+
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.03_surat3.buatberkasbaru', [
+        'datanamabangunan' => $datatertibjasapemanfaatan->namabangunan,
+        'datalokasi' => $datatertibjasapemanfaatan->lokasi,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
+        'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
+        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
+        'user' => $user,
+        'data' => $datatertibjasapemanfaatan,
+
+        'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
+        'title' => 'Create Surat Tertib Jakon Pemanfaatan Bagian 3'
+    ]);
+}
+
 }
