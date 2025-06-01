@@ -1792,7 +1792,7 @@ public function betertibjakonpemanfataanjakonindex($id)
         'user' => $user,
         'data' => $datasurat,
         'datasurat' => $datasurat,
-        'datanamabangunan' => $datatertibjakonpemanfaatan->namabangunan,
+        'datainduk' => $datatertibjakonpemanfaatan,
         'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datasurat_id' => $datasurat->first()?->id,
         'id' => $id, // penting untuk route tombol "Buat Berkas"
