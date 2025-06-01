@@ -368,32 +368,7 @@
                                                 </td>
                                             </tr>
 
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
-                                                </td>
-                                            @foreach ($datasurat as $item)
-    <td class="d-flex gap-2">
-        <div class="form-control bg-light">
-            {{ $item->dokumendiperiksa
-                ? \Carbon\Carbon::parse($item->dokumendiperiksa)->locale('id')->isoFormat('D MMMM YYYY')
-                : '-'
-            }}
-        </div>
-
-        <span class="mx-1">(Sampai Dengan)</span>
-
-        <div class="form-control bg-light">
-            {{ $item->carapemeriksaan
-                ? \Carbon\Carbon::parse($item->carapemeriksaan)->locale('id')->isoFormat('D MMMM YYYY')
-                : '-'
-            }}
-        </div>
-    </td>
-@endforeach
-
-                                            </tr>
-                                        </table>
+                                       </table>
                     <br>
                     <table class="audit">
                         <thead>
