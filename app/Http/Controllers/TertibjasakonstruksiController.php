@@ -1893,7 +1893,7 @@ return redirect()->back()->with('error', 'Item not found');
 public function betertibjakonmanfaat1showberkas($id)
 {
 
-    $datasurat1 = surattertibjakonpemanfaatan1::with('tertibjakonpemanfataan')->findOrFail($id);
+    $datasurat1 = surattertibjakonpemanfaatan1::with('tertibjakonpemanfaatan')->findOrFail($id);
 
     // Ambil data tertibjasakonstruksi yang berelasi (bisa null)
     $datatertib = $datasurat1->tertibjakonpemanfaatan;
