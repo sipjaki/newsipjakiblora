@@ -355,7 +355,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>LINGKUP PENGAWASAN</th>
-                                <th>Indikator</th>
+                                <th>INDIKATOR</th>
                                 <th>DOKUMEN YANG DIPERIKSA</th>
                                 <th>CARA PEMERIKSAAN</th>
                                 <th>KESIMPULAN PEMERIKSAAN</th>

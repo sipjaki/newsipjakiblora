@@ -16,10 +16,10 @@ return new class extends Migration
             $table->foreignId('tertibjakonpemanfaatan_id')->nullable()->index();
             $table->text('lingkuppengawasan')->nullable()->index();
             $table->text('indikator')->nullable()->index();
-            $table->text('dokumendiperiksa')->nullable()->index();
-            $table->text('carapemeriksaan')->nullable()->index();
             $table->text('kesimpulanpemeriksaan')->nullable()->index();
             $table->text('catatan')->nullable()->index();
+            $table->text('carapemeriksaan')->nullable()->index(); // catatan pemeriksaaan
+            $table->text('dokumendiperiksa')->nullable()->index(); // catatan permeriksaan 2
 
             $table->softDeletes();
             $table->timestamps();

@@ -301,7 +301,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>LINGKUP PENGAWASAN</th>
-                                <th>Indikator</th>
+                                <th>INDIKATOR</th>
                                 <th>DOKUMEN YANG DIPERIKSA</th>
                                 <th>CARA PEMERIKSAAN</th>
                                 <th>KESIMPULAN PEMERIKSAAN</th>
@@ -312,15 +312,13 @@
                             <tr>
                                 <td rowspan="2">1</td>
                                 <td rowspan="2">
-                                    Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
+                                    Pengawasan terhadap rencana umur konstruksi
                                 </td>
                                 <td>
-                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
-                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
-                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan
+                                    Terjaminnya bangunan konstruksi tetap laik fungsi sepanjang umur konstruksi yang di buktikan dengan tersedianya dokumen laik fungsi atau dokumen sejenis lainnya  <br>
                                 </td>
-                                <td>Dokumen perizinan</td>
-                                <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+                                <td>Dokumen laik fungsi atau dokumen sejenis yang di terbitkan oleh instansi berwenang </td>
+                                <td>Memerika ketersediaan dokumen laik fungsi atau dokumen sejenis yang diterbitkan oleh instansi berwenang </td>
                                 <td style="text-align: center;">
                                     <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                                 </td>
