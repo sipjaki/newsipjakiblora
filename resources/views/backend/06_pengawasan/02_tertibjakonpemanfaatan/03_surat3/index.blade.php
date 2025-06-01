@@ -370,34 +370,32 @@
                                 </td>
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
-                                    @foreach ($datasurat as $item)
-
                                     <td style="text-align: center;">
-                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
-                                            {{ $item->kesimpulanpemeriksaan ?? '-' }}
-                                        </span>
-                                    </td>
-
+                                    @foreach ($datasurat as $item)
+                                    {{$item->kesimpulanpemeriksaan}}
                                     @endforeach
-
-                                <td></td>
-                            </tr>
+                                </td>
+                                 <td>
+                                    @foreach ($datasurat as $item)
+                                    {{$item->carapemeriksaan}}
+                                    @endforeach
+                                </td>                            </tr>
                             <tr>
                                 <td>
                                     b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
-                                @foreach ($datasurat as $item)
-
-                                    <td style="text-align: center;">
-                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
-                                            {{ $item->catatan ?? '-' }}
-                                        </span>
-                                    </td>
-
+                                 <td style="text-align: center;">
+                                    @foreach ($datasurat as $item)
+                                    {{$item->catatan}}
                                     @endforeach
-                                <td></td>
+                                </td>
+                                 <td>
+                                    @foreach ($datasurat as $item)
+                                    {{$item->dokumendiperiksa}}
+                                    @endforeach
+                                    </td>
                             </tr>
                         </tbody>
                     </table>
