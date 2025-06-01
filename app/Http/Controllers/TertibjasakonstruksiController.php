@@ -1900,7 +1900,7 @@ public function betertibjakonmanfaat1showberkas($id)
     // Ambil data relasi surattertibjakonusaha1 jika ada
     $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonpemanfaatan1;
 
-    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberkas', [
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.showberka', [
         'datanamabangunan' => $datatertibjasapemanfaatan->namabangunan,
         'datalokasi' => $datatertibjasapemanfaatan->lokasi,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
