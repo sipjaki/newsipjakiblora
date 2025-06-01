@@ -358,20 +358,17 @@
                                                 <td style="width: 200px; padding:4px 8px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
-                                                @foreach ($datasurat as $item)
-
-                                                <td class="d-flex gap-2">
+                                             <td class="d-flex gap-2">
                                                     <div class="form-control bg-light">
-                                                        {{ $item->dokumendiperiksa ? date('Y-m-d', strtotime($datasurat->dokumendiperiksa)) : '-' }}
+                                                        {{ $datasurat->dokumendiperiksa ? date('Y-m-d', strtotime($datasurat->dokumendiperiksa)) : '-' }}
                                                     </div>
 
                                                     <span class="mx-1">(Sampai Dengan)</span>
 
                                                     <div class="form-control bg-light">
-                                                        {{ $item->carapemeriksaan ? date('Y-m-d', strtotime($datasurat->carapemeriksaan)) : '-' }}
+                                                        {{ $datasurat->carapemeriksaan ? date('Y-m-d', strtotime($datasurat->carapemeriksaan)) : '-' }}
                                                     </div>
                                                 </td>
-                                                @endforeach
 
                                             </tr>
                                         </table>
