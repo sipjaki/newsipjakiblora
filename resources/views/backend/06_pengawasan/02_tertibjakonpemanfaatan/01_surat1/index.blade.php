@@ -349,28 +349,31 @@
                                             <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
                                                 {{-- {{ $datasurat->indikator ?? '-' }} --}}
                                               @foreach ($datasurat as $item)
-                                              {{ $item->indikator ?? '-' }}
-                                              @endforeach
+                                                    {{ $item->indikator ?? '-' }}
+                                                @endforeach
                                             </div>
                                         </td>
 
-                                    </tr>
+                                            </tr>
 
-                                    <tr>
-                                        <td style="width: 200px; padding:4px 8px;">
-                                            <strong style="font-size: 15px;">Waktu Pengawasan</strong>
-                                        </td>
-                                        {{-- @foreach ($datasurat as $item)
+                                            <tr>
+                                                <td style="width: 200px; padding:4px 8px;">
+                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
+                                                </td>
 
-                                        <td>
-                                            <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                {{ $item->dokumendiperiksa ? \Carbon\Carbon::parse($item->dokumendiperiksa)->translatedFormat('d F Y') : '-' }}
-                                                <span class="mx-1">(Sampai Dengan)</span>
-                                                {{ $item->carapemeriksaan ? \Carbon\Carbon::parse($item->carapemeriksaan)->translatedFormat('d F Y') : '-' }}
-                                            </div>
-                                        </td>
-                                        @endforeach --}}
+                                                <td class="d-flex gap-2">
+                                                    <input type="date" class="form-control @error('dokumendiperiksa') is-invalid @enderror" name="dokumendiperiksa" value="{{ old('dokumendiperiksa') }}" placeholder="Dimulai Sejak ... ">
+                                                    @error('dokumendiperiksa')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
 
+                                                    <span class="mx-1">(Sampai Dengan)</span>
+
+                                                    <input type="date" class="form-control @error('carapemeriksaan') is-invalid @enderror" name="carapemeriksaan" value="{{ old('carapemeriksaan') }}" placeholder="Berakhir Tanggal ... ">
+                                                    @error('carapemeriksaan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </td>
                                             </tr>
                                         </table>
                     <br>
