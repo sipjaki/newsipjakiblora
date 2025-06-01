@@ -285,16 +285,50 @@
         <strong style="font-size: 15px;">Waktu Pelaksanaan</strong>
     </td>
     <td style="display: flex; align-items: center; gap: 8px;">
-        <input type="number" name="waktupelaksanaan"
+        <input type="number" name="waktupelaksanaan" id="waktupelaksanaan"
             class="form-control @error('waktupelaksanaan') is-invalid @enderror"
             value="{{ old('waktupelaksanaan', $data->waktupelaksanaan ?? '') }}"
             style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
         <span style="white-space: nowrap;">Hari Kalender</span>
+        <span id="terbilang" style="margin-left: 10px; font-style: italic; color: #555;"></span>
         @error('waktupelaksanaan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </td>
 </tr>
+
+<script>
+    function angkaTerbilang(n) {
+        const satuan = ["", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas"];
+        function terbilang(n) {
+            n = parseInt(n);
+            if (isNaN(n) || n === 0) return "";
+            if (n < 12) return satuan[n];
+            if (n < 20) return satuan[n - 10] + " Belas";
+            if (n < 100) return terbilang(Math.floor(n / 10)) + " Puluh " + terbilang(n % 10);
+            if (n < 200) return "Seratus " + terbilang(n - 100);
+            if (n < 1000) return terbilang(Math.floor(n / 100)) + " Ratus " + terbilang(n % 100);
+            if (n < 2000) return "Seribu " + terbilang(n - 1000);
+            if (n < 1000000) return terbilang(Math.floor(n / 1000)) + " Ribu " + terbilang(n % 1000);
+            if (n < 1000000000) return terbilang(Math.floor(n / 1000000)) + " Juta " + terbilang(n % 1000000);
+            return "Terlalu Besar";
+        }
+        return terbilang(n).trim();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById('waktupelaksanaan');
+        const spanTerbilang = document.getElementById('terbilang');
+
+        function updateTerbilang() {
+            const value = input.value;
+            spanTerbilang.textContent = value ? '(' + angkaTerbilang(value) + ')' : '';
+        }
+
+        input.addEventListener('input', updateTerbilang);
+        updateTerbilang(); // initial load
+    });
+</script>
 
 <tr>
     <td style="width: 200px; padding:4px 8px;">
