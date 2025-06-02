@@ -465,7 +465,7 @@
         @include('frontend.00_android.00_fiturmenu.keterangan')
 
         @include('backend.00_style.01_cssdashboard.perintah')
-        @include('backend.00_style.01_cssdashboard.katakunci')
+        {{-- @include('backend.00_style.01_cssdashboard.katakunci') --}}
 
         @include('frontend.00_android.00_fiturmenu.android')
 
