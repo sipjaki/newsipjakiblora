@@ -91,13 +91,13 @@
                 {{-- <option value="10">10</option> --}}
                 <option value="25">25</option>
                 <option value="50">50</option>
-                <option value="75">75</option>
+                {{-- <option value="75">75</option>
                 <option value="100">100</option>
                 <option value="150">150</option>
                 <option value="200">200</option>
                 <option value="500">500</option>
                 <option value="1000">1000</option>
-                <option value="2000">2000</option>
+                <option value="2000">2000</option> --}}
             </select>
         </div>
 
@@ -166,7 +166,8 @@
  <thead>
      <tr>
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
+        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Nama Lengkap</th>
+        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Tanda Tangan</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
@@ -174,7 +175,24 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{ $item->namasekolah }}</td>
+         <td style="text-align: left;">{{ $item->namalengkap }}</td>
+
+         <td style="text-align: center;">
+
+               <div style="margin-top: 10px;">
+    @if($item->tandatangan && file_exists(public_path('storage/' . $item->tandatangan)))
+        <!-- Menampilkan gambar dari storage -->
+        <img src="{{ asset('storage/' . $item->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+    @elseif($item->tandatangan)
+        <!-- Menampilkan gambar dari path luar storage -->
+        <img src="{{ asset($item->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
+
+        </td>
 
         <td style="text-align: center; vertical-align: middle;">
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
