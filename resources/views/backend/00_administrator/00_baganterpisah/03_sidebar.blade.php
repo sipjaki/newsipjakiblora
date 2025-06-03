@@ -489,7 +489,12 @@
                     </a>
                   </li>
 
-                    <li class="nav-item">
+
+
+                </ul>
+              </li>
+
+                 <li class="nav-item">
                 <a href="/beprofile" class="nav-link">
                   <i class="nav-icon bi bi-person-circle" style="color: white"></i> <!-- Profil Anda -->
                   <p style="color: white">
@@ -497,9 +502,6 @@
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
-              </li>
-
-                </ul>
               </li>
 
 @endcan
