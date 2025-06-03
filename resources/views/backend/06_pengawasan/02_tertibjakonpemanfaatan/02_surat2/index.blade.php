@@ -486,7 +486,7 @@
                                                 <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <p>Surat Tertib Pemanfaatan Halaman 2</p>
+                                            <p style="margin-left: 200px;">Surat Tertib Pemanfaatan Halaman 2</p>
                                             <div class="modal-body">
                                                 {{-- <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Pemanfaatan : <br> Pengawasan Tertib Pemanfaatan Produk Konstruksi Secara Rutin Terhadap Bangunan Konstruksi yang di Biayai dengan dana dari APBD </h5> --}}
                                                 {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
@@ -618,7 +618,6 @@
                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
     function downloadModalPDF(id) {
-        // Ambil elemen modal berdasarkan ID
         const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
         if (!modalContent) {
@@ -629,27 +628,37 @@
         // Kloning isi modal agar tidak mengganggu tampilan asli
         const clone = modalContent.cloneNode(true);
 
-        // Styling opsional untuk hasil PDF
+        // Bersihkan padding dan margin agar konten mepet ke atas
+        clone.style.padding = '0';
+        clone.style.margin = '0';
         clone.style.fontSize = '14px';
-        clone.style.padding = '20px';
 
-        // Format nama file
+        // Hapus margin top dari elemen-elemen dalam modal jika ada
+        const allElements = clone.querySelectorAll('*');
+        allElements.forEach(el => {
+            el.style.marginTop = '0';
+            el.style.paddingTop = '0';
+        });
+
         const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
 
-        // Konversi ke PDF dan download
         html2pdf()
             .from(clone)
             .set({
-                margin: 0.5,
+                margin: [0.07, 0.1, 0.1, 0.1], // Top, Right, Bottom, Left margin (≈2mm atas, 2.5mm lainnya)
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                html2canvas: {
+                    scale: 2,
+                    scrollY: 0,
+                    windowWidth: clone.scrollWidth,
+                    windowHeight: clone.scrollHeight
+                },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
             })
             .save();
     }
 </script>
-
                                         <script>
                                             function printModalContent(id) {
                                                 const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
