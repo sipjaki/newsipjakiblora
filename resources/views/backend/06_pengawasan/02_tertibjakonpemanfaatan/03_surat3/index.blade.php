@@ -622,7 +622,7 @@
         clone.style.fontSize = '14px';
         clone.style.padding = '0';
         clone.style.margin = '0';
-        clone.style.transform = 'translateY(-400px)'; // Dorong ke atas ekstrim
+        clone.style.transform = 'translateY(-100px)'; // Dorong ke atas ekstrim
 
         // Nama file
         const fileName = `Tertibjakonpemanfaatan_surat3_${id}.pdf`;
