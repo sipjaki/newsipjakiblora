@@ -327,13 +327,30 @@
                                     </a>
                                 </td>
 
-                                <td style="text-align: center; vertical-align: middle;">
+                                {{-- <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/buktidukung/create/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-abuabu">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Upload Bukti Dukung
                                         </button>
                                     </a>
-                                </td>
+                                </td> --}}
+
+                                <td style="text-align: center; vertical-align: middle;">
+    @if(empty($item->surattertibjakonpemanfaatan4?->id))
+        <a href="{{ url('/buktidukung/create/' . $item->id) }}" style="text-decoration: none;">
+            <button class="button-abuabu">
+                <i class="bi bi-file-earmark-text icon-create"></i> Upload Bukti Dukung
+            </button>
+        </a>
+    @else
+        <a href="{{ url('/buktidukung/view/' . $item->surattertibjakonpemanfaatan4->id) }}" style="text-decoration: none;">
+            <button class="btn-create">
+                <i class="bi bi-eye icon-create"></i> Show Berkas
+            </button>
+        </a>
+    @endif
+</td>
+
 
 
                                         </div>
