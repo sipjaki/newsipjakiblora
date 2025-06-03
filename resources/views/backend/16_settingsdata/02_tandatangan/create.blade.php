@@ -74,14 +74,51 @@
                                     <div class="col-md-6">
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="namasekolah">
-                                            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Sekolah
+                                        <label class="form-label" for="namalengkap">
+                                            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
                                         </label>
-                                        <input type="text" id="namasekolah" name="namasekolah" class="form-control @error('namasekolah') is-invalid @enderror" value="{{ old('namasekolah') }}" />
-                                        @error('namasekolah')
+                                        <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}" />
+                                        @error('namalengkap')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
+
+                                  <div class="mb-3">
+    <label class="form-label" for="tandatangan">
+        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Tanda Tangan
+    </label>
+    <input type="file" id="tandatangan" name="tandatangan" accept="image/*" class="form-control @error('tandatangan') is-invalid @enderror" onchange="previewImage(event)" />
+    @error('tandatangan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+
+    <!-- Tempat preview gambar -->
+    <div class="mt-3">
+        <img id="imagePreview" src="#" alt="Preview Gambar" style="max-width: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 4px;" />
+    </div>
+</div>
+
+<script>
+function previewImage(event) {
+    const input = event.target;
+    const preview = document.getElementById('imagePreview');
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block'; // tampilkan preview
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        preview.src = '#';
+        preview.style.display = 'none'; // sembunyikan jika tidak ada gambar
+    }
+}
+</script>
+
 
 
                                     </div>
