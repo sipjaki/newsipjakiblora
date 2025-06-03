@@ -1211,7 +1211,7 @@ Route::delete('/settingssekolah/delete/{namasekolah}', [SettingDataController::c
 Route::get('/settingstandatangan', [SettingDataController::class, 'settingstandatangan'])->middleware(['auth', 'can:super_admin']);
 Route::get('/settingstandatangan/create', [SettingDataController::class, 'settingstandatangancreate'])->middleware(['auth', 'can:super_admin']);
 Route::post('/settingstandatangan/createnew', [SettingDataController::class, 'settingstandatangancreatenew'])->middleware(['auth', 'can:super_admin'])->name('create.settingstandatangan');
-// Route::delete('/settingssekolah/delete/{namasekolah}', [SettingDataController::class, 'settingssekolahdelete'])->middleware(['auth', 'can:super_admin']);
+Route::delete('/settingstandatangan/delete/{id}', [SettingDataController::class, 'settingstandatangandelete'])->middleware(['auth', 'can:super_admin']);
 
 
 
