@@ -333,11 +333,11 @@
                                         <i class="bi bi-file-earmark-text icon-create"></i> Upload Bukti Dukung
                                         </button>
                                     </a>
-                              <a href="{{ url('/buktidukung/view/' . $item->surattertibjakonpemanfaatan4->id) }}" style="text-decoration: none;">
-                                    <button class="btn-create">
-                                        <i class="bi bi-eye icon-create"></i> Show Berkas
-                                    </button>
-                                </a>
+                                      <a href="{{ url('/buktidukungindex/index/' . $item->id) }}" style="text-decoration: none;">
+                                        <button class="button-abuabu">
+                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                        </button>
+                                    </a>
                                 </td>
 
 

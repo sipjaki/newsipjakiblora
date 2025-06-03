@@ -2540,4 +2540,41 @@ public function buktidukungcreateupload(Request $request)
 }
 
 
+
+public function buktidukungindexsurat($id)
+{
+    // Ambil data utama berdasarkan ID
+    $datatertibjakonpemanfaatan = tertibjakonpemanfaatan::find($id);
+
+    if (!$datatertibjakonpemanfaatan) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    $user = Auth::user();
+
+    // Ambil semua surat terkait dengan paginate
+    $datasurat = surattertibjakonpemanfaatan4::where('tertibjakonpemanfaatan_id', $id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
+
+    $suratPertama = $datasurat->first();
+
+
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.03_surat3.daftarsuratdukung', [
+        'title' => 'Berkas Surat Bukti Dukung Tertib Jakon Pemanfaatan',
+        'user' => $user,
+        'data' => $datasurat,
+        'datasurat' => $datasurat,
+        // 'datapengelola1' => $datasurat->lingkuppengawasan,
+        // 'datapengelola2' => $datasurat->indikator,
+        'datainduk' => $datatertibjakonpemanfaatan,
+        'firstsurat' => $suratPertama,
+        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id, // penting untuk route tombol "Buat Berkas"
+    ]);
+}
+
+
+
 }
