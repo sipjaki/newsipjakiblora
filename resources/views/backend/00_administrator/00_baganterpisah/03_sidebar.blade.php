@@ -1127,6 +1127,27 @@
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
+
+
+                <ul class="nav nav-treeview">
+
+                  <li class="nav-item">
+                    <a href="/allakun" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-person-gear text-warning"></i>
+                      <p style="color: white;">Semua Akun</p>
+                    </a>
+                  </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer" style="color: white"></i>
+                  <p style="color: white">
+                    Daftar Akun
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
                 <ul class="nav nav-treeview">
 
                   <li class="nav-item">
