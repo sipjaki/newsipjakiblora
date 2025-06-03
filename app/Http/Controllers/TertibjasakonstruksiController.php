@@ -2590,7 +2590,7 @@ if ($entry) {
 $entry->delete();
 
 // Redirect atau memberi respons sesuai kebutuhan
-return redirect('/betertibjakonpenyelenggaraan')->with('delete', 'Data Berhasil Di Hapus !');
+return redirect('/betertibjakonpemanfaaatan')->with('delete', 'Data Berhasil Di Hapus !');
 
 }
 
