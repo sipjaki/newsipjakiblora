@@ -2450,19 +2450,39 @@ public function betertibjakonpenyelenggaraaninformasi(Request $request)
 
 public function buktidukungcreate($id)
 {
+    // Ambil data user
+    $user = Auth::user();
 
-// Ambil data user saat ini
-$user = Auth::user();
+    // Ambil data tertibjakonpemanfaatan berdasarkan ID
+    $datatertib = tertibjakonpemanfaatan::findOrFail($id);
 
-$datapenyedia = penyediastatustertibjakon::all();
+    // Ambil semua penyedia
+    $datapenyedia = penyediastatustertibjakon::all();
 
-return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.uploadbuktidukung', [
-    'title' => 'Upload Bukti Dukung Tertib Jakon Pemanfaatan ',
-    // 'data' => $datatertibjakonusaha,
-    'datapenyedia' => $datapenyedia,
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.create', [
+        'title' => 'Create Tertib Jakon Pemanfaatan',
+        'user' => $user,
+        'datapenyedia' => $datapenyedia,
+        'tertibjakonpemanfaatan_id' => $id,
+        'datatertib' => $datatertib,
+    ]);
+}
 
-    'user' => $user,
-]);
+// public function buktidukungcreate($id)
+// {
+
+// // Ambil data user saat ini
+// $user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+// return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.uploadbuktidukung', [
+//     'title' => 'Upload Bukti Dukung Tertib Jakon Pemanfaatan ',
+//     // 'data' => $datatertibjakonusaha,
+//     'datapenyedia' => $datapenyedia,
+
+//     'user' => $user,
+// ]);
 }
 
 }

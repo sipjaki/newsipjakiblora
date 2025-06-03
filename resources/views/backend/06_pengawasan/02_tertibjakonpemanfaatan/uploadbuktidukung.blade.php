@@ -71,20 +71,47 @@
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-                                    <div class="col-md-6">
+                                   <div class="col-md-12">
+    <!-- Hidden Input untuk ID -->
+    <input type="hidden" name="tertibjakonpemanfaatan_id" value="{{ $tertibjakonpemanfaatan_id }}">
 
-                                    <div class="mb-3">
-                                        <label class="form-label" for="namasekolah">
-                                            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Sekolah
-                                        </label>
-                                        <input type="text" id="namasekolah" name="namasekolah" class="form-control @error('namasekolah') is-invalid @enderror" value="{{ old('namasekolah') }}" />
-                                        @error('namasekolah')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+    <!-- Upload: lingkuppengawasan -->
+    <div class="mb-3">
+        <label class="form-label" for="lingkuppengawasan">
+            <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i>
+            Bukti Dukung Pengawasan Pemanfaatan Jasa Konstruksi
+        </label>
+        <input type="file" id="lingkuppengawasan" name="lingkuppengawasan" accept="application/pdf" class="form-control @error('lingkuppengawasan') is-invalid @enderror">
+        @error('lingkuppengawasan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
+    <!-- Upload: indikator -->
+    <div class="mb-3">
+        <label class="form-label" for="indikator">
+            <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i>
+            Bukti Dukung Pengawasan Rencana Umur Konstruksi & Kapasitas Beban
+        </label>
+        <input type="file" id="indikator" name="indikator" accept="application/pdf" class="form-control @error('indikator') is-invalid @enderror">
+        @error('indikator')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
 
-                                    </div>
+    <!-- Upload: dokumendiperiksa -->
+    <div class="mb-3">
+        <label class="form-label" for="dokumendiperiksa">
+            <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i>
+            Bukti Dukung Pengawasan Pemeliharaan Konstruksi & Struktur
+        </label>
+        <input type="file" id="dokumendiperiksa" name="dokumendiperiksa" accept="application/pdf" class="form-control @error('dokumendiperiksa') is-invalid @enderror">
+        @error('dokumendiperiksa')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
                                 </div>
                                 <!-- End row -->
                             </div>
