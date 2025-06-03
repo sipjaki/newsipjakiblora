@@ -98,9 +98,9 @@
  <thead>
      <tr>
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Pemanfataan</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Rencana Umur <br> Konstruksi & Kapasitas Beban</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Pemeliharaan <br> Konstruksi & Struktur</th>
+        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Pemanfataan</th>
+        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Rencana Umur <br> Konstruksi & Kapasitas Beban</th>
+        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Pemeliharaan <br> Konstruksi & Struktur</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
@@ -166,7 +166,7 @@
             </a> --}}
             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-judul="{{ $item->namasekolah }}"
+               data-judul="{{ $item->id }}"
                onclick="setDeleteUrl(this)">
                 <i class="bi bi-trash"></i>
             </a>
@@ -225,9 +225,9 @@
 
                  <script>
                  function setDeleteUrl(button) {
-                     var namasekolah = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = namasekolah;
-                     var deleteUrl = "/namasekolah/delete/" + encodeURIComponent(namasekolah);
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/buktidukungindex/delete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

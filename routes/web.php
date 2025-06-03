@@ -1097,6 +1097,7 @@ Route::get('/buktidukung/create/{id}', [TertibjasakonstruksiController::class, '
 Route::post('/buktidukung/createnew', [TertibjasakonstruksiController::class, 'buktidukungcreateuploadindex'])->middleware(['auth', 'can:super_admin'])->name('create.uploadpemanfaaatantertib');
 
 Route::get('/buktidukungindex/index/{id}', [TertibjasakonstruksiController::class, 'buktidukungindexsurat'])->middleware('auth')->name('betertibjakonpemanfataansurat3index');
+Route::delete('/buktidukungindex/delete/{id}', [TertibjasakonstruksiController::class, 'buktidukungindexdelete'])->middleware(['auth', 'can:super_admin']);
 
 
 // TERTIB JAKON PENYELENGGARAAN
