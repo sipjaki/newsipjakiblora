@@ -81,10 +81,15 @@
             <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i>
             Bukti Dukung Pengawasan Pemanfaatan Jasa Konstruksi
         </label>
-        <input type="file" id="lingkuppengawasan" name="lingkuppengawasan" accept="application/pdf" class="form-control @error('lingkuppengawasan') is-invalid @enderror">
+        <input type="file" id="lingkuppengawasan" name="lingkuppengawasan" accept="application/pdf" class="form-control @error('lingkuppengawasan') is-invalid @enderror" onchange="previewPDF(this, 'previewLingkup')">
         @error('lingkuppengawasan')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
+
+        <!-- Preview -->
+        <div class="mt-2" style="height:300px;">
+            <embed id="previewLingkup" type="application/pdf" width="100%" height="100%" style="display:none;" />
+        </div>
     </div>
 
     <!-- Upload: indikator -->
@@ -93,10 +98,15 @@
             <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i>
             Bukti Dukung Pengawasan Rencana Umur Konstruksi & Kapasitas Beban
         </label>
-        <input type="file" id="indikator" name="indikator" accept="application/pdf" class="form-control @error('indikator') is-invalid @enderror">
+        <input type="file" id="indikator" name="indikator" accept="application/pdf" class="form-control @error('indikator') is-invalid @enderror" onchange="previewPDF(this, 'previewIndikator')">
         @error('indikator')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
+
+        <!-- Preview -->
+        <div class="mt-2" style="height:300px;">
+            <embed id="previewIndikator" type="application/pdf" width="100%" height="100%" style="display:none;" />
+        </div>
     </div>
 
     <!-- Upload: dokumendiperiksa -->
@@ -105,11 +115,17 @@
             <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i>
             Bukti Dukung Pengawasan Pemeliharaan Konstruksi & Struktur
         </label>
-        <input type="file" id="dokumendiperiksa" name="dokumendiperiksa" accept="application/pdf" class="form-control @error('dokumendiperiksa') is-invalid @enderror">
+        <input type="file" id="dokumendiperiksa" name="dokumendiperiksa" accept="application/pdf" class="form-control @error('dokumendiperiksa') is-invalid @enderror" onchange="previewPDF(this, 'previewDokumen')">
         @error('dokumendiperiksa')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
+
+        <!-- Preview -->
+        <div class="mt-2" style="height:300px;">
+            <embed id="previewDokumen" type="application/pdf" width="100%" height="100%" style="display:none;" />
+        </div>
     </div>
+
 </div>
 
                                 </div>
@@ -221,3 +237,19 @@
       @include('backend.00_administrator.00_baganterpisah.02_footer')
 
 
+
+<script>
+function previewPDF(input, previewId) {
+    const file = input.files[0];
+    const embed = document.getElementById(previewId);
+
+    if (file && file.type === 'application/pdf') {
+        const fileURL = URL.createObjectURL(file);
+        embed.src = fileURL;
+        embed.style.display = "block";
+    } else {
+        embed.src = "";
+        embed.style.display = "none";
+    }
+}
+</script>
