@@ -740,9 +740,10 @@
 
                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <script>
     function downloadModalPDF(id) {
-        // Ambil elemen modal berdasarkan ID
         const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
         if (!modalContent) {
@@ -750,30 +751,46 @@
             return;
         }
 
-        // Kloning isi modal agar tidak mengganggu tampilan asli
         const clone = modalContent.cloneNode(true);
 
-        // Styling opsional untuk hasil PDF
+        // Reset padding dan margin clone supaya gak ada jarak di PDF
+        clone.style.padding = '0';
+        clone.style.margin = '0';
         clone.style.fontSize = '14px';
-        clone.style.padding = '20px';
 
-        // Format nama file
         const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
 
-        // Konversi ke PDF dan download dengan scale 0.9 (90%)
         html2pdf()
             .from(clone)
             .set({
-                margin: 0.5,
+                margin: 0.07, // sekitar 2 mm margin
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 0.9 },
+                html2canvas: { scale: 2, logging: false, dpi: 192, letterRendering: true },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
             })
             .save();
     }
 </script>
 
+<style>
+  /* Modal tetap di tengah atas */
+  .modal {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding-top: 50px !important;
+    overflow-y: auto;
+  }
+  .modal-content {
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    /* Hapus padding dan margin agar di PDF gak ada jarak */
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+</style>
 
                                         <script>
                                             function printModalContent(id) {
