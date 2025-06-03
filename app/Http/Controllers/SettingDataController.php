@@ -6,6 +6,7 @@ use App\Models\rantaipasokblora;
 use App\Models\peralatankonstruksi;
 use App\Models\alatberat;
 use App\Models\namasekolah;
+use App\Models\tandatangan;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -72,5 +73,41 @@ public function settingssekolah(Request $request)
     session()->flash('create', 'Data berhasil dibuat!');
     return redirect('/settingssekolah');
 }
+
+
+// SETTING TANDA TANGAN
+public function settingstandatangan(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = tandatangan::query();
+
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('namalengkap', 'LIKE', "%{$search}%")
+              ->orWhere('tandatangan', 'LIKE', "%{$search}%");
+        });
+    }
+
+    // Urutkan berdasarkan abjad A-Z
+    $query->orderBy('namalengkap', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.16_settingsdata.02_tandatangan.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.02_tandatangan.index', [
+        'title' => 'Daftar Tanda Tangan Bidang Bangunan Gedung',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
 
 }
