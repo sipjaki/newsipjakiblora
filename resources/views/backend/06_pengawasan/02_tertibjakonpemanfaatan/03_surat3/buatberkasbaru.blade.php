@@ -314,44 +314,46 @@
 
                                             </tr>
 
+
                                             <tr>
-    <td style="font-size: 12px; text-align:center;">1</td>
+    <td style="font-size: 12px; text-align:center;">Pemeriksa</td>
     <td style="font-size: 12px;">
-        <select
-            id="selectTandatangan"
-            class="form-control @error('tandatangan1_id') is-invalid @enderror"
-            onchange="handleSelectChange()"
-            name="tandatangan1_id"
-        >
-            <option value="">-- Pilih Pemeriksa --</option>
-            @foreach ($datatandatangan as $tandatangan)
-                <option
-                    value="{{ $tandatangan->id }}"
-                    data-namalengkap="{{ $tandatangan->namalengkap }}"
-                    data-tandatangan="{{ asset('storage/' . $tandatangan->tandatangan) }}"
-                    {{ old('tandatangan1_id', optional($data->surattertibjakonusaha1)->tandatangan1_id) == $tandatangan->id ? 'selected' : '' }}
-                >
-                    {{ $tandatangan->namalengkap }}
+
+
+        <select id="selectTandaTangan" name="lingkuppengawasan">
+            <option value="">-- Pilih Nama Lengkap --</option>
+            @foreach($datatandatangan as $item)
+                <option value="{{ $item->namalengkap }}" data-tandatangan="{{ asset('storage/' . $item->tandatangan) }}">
+                    {{ $item->namalengkap }}
                 </option>
             @endforeach
         </select>
-        @error('tandatangan1_id')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
 
-        <!-- Preview gambar tanda tangan -->
-        <div id="signaturePreview" style="margin-top: 10px;">
-            @php
-                $selected = $datatandatangan->firstWhere('id', old('tandatangan1_id', optional($data->surattertibjakonusaha1)->tandatangan1_id));
-            @endphp
-            @if($selected)
-                <img src="{{ asset('storage/' . $selected->tandatangan) }}" alt="Tanda Tangan" style="max-height: 80px; border: 1px solid #ccc; padding: 4px;">
-            @endif
+        <div id="previewTandaTangan" style="margin-top: 10px;">
+            <!-- Gambar tanda tangan otomatis muncul di sini -->
         </div>
 
-        <!-- Hidden inputs yang akan dikirim -->
-        <input type="hidden" name="lingkuppengawasan" id="lingkuppengawasan" value="{{ old('lingkuppengawasan', optional($data->surattertibjakonusaha1)->lingkuppengawasan) }}">
-        <input type="hidden" name="indikator" id="indikator" value="{{ old('indikator', optional($data->surattertibjakonusaha1)->indikator) }}">
+        <!-- Input indikator untuk simpan path tanda tangan -->
+        <input type="hidden" id="inputIndikator" name="indikator" value="">
+
+
+        <script>
+    document.getElementById('selectTandaTangan').addEventListener('change', function() {
+        const selectedOption = this.options[this.selectedIndex];
+        const tandatanganUrl = selectedOption.getAttribute('data-tandatangan');
+        const previewDiv = document.getElementById('previewTandaTangan');
+        const indikatorInput = document.getElementById('inputIndikator');
+
+        if (tandatanganUrl) {
+            previewDiv.innerHTML = `<img src="${tandatanganUrl}" alt="Tanda Tangan" style="width: 100%; max-height: 100px; object-fit: contain;">`;
+            indikatorInput.value = tandatanganUrl; // Simpan URL ke input indikator supaya bisa submit
+        } else {
+            previewDiv.innerHTML = '<p style="font-size: 11px;">Tidak Ada Tanda Tangan !</p>';
+            indikatorInput.value = '';
+        }
+    });
+</script>
+
     </td>
 </tr>
 
