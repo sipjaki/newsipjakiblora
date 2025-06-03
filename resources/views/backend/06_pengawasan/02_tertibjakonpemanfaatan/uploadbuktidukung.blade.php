@@ -237,19 +237,17 @@
       @include('backend.00_administrator.00_baganterpisah.02_footer')
 
 
-
 <script>
-function previewPDF(input, previewId) {
-    const file = input.files[0];
-    const embed = document.getElementById(previewId);
+document.addEventListener('DOMContentLoaded', function () {
+    ['lingkuppengawasan', 'indikator', 'dokumendiperiksa'].forEach((id) => {
+        const input = document.getElementById(id);
+        if (input && input.files.length > 0) {
+            previewPDF(input, 'preview' + capitalize(id));
+        }
+    });
 
-    if (file && file.type === 'application/pdf') {
-        const fileURL = URL.createObjectURL(file);
-        embed.src = fileURL;
-        embed.style.display = "block";
-    } else {
-        embed.src = "";
-        embed.style.display = "none";
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
-}
+});
 </script>
