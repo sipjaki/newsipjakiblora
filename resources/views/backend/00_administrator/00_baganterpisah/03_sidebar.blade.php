@@ -455,6 +455,54 @@
 
 @endcan
 
+@can('operator')
+
+  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <!-- Ikon untuk Pengawasan -->
+                  <i class="nav-icon bi bi-eye" style="color: white"></i> <!-- Ikon untuk pengawasan -->
+                  <p style="color: white">
+                    Pengawasan
+                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                  <!-- Tertib Jasa Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/betertibjakonusaha" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib Usaha</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/betertibjakonpemanfaatan" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib Pemanfaatan</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/betertibjakonpenyelenggaraan" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib Penyelenggaraan </p>
+                    </a>
+                  </li>
+
+                    <li class="nav-item">
+                <a href="/beprofile" class="nav-link">
+                  <i class="nav-icon bi bi-person-circle" style="color: white"></i> <!-- Profil Anda -->
+                  <p style="color: white">
+                    Profil Anda
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+              </li>
+
+                </ul>
+              </li>
+
+@endcan
 
         {{-- DASHBOARD SUPER ADMIN --}}
 
