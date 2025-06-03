@@ -484,10 +484,9 @@
                                                 </a>
                                                 <span class="mx-2">:</span>
                                                 <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
-                                                <br>
-                                                <p>Tertib Pemanfaatan Halaman 2</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
+                                            <p>Surat Tertib Pemanfaatan Halaman 2</p>
                                             <div class="modal-body">
                                                 {{-- <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Pemanfaatan : <br> Pengawasan Tertib Pemanfaatan Produk Konstruksi Secara Rutin Terhadap Bangunan Konstruksi yang di Biayai dengan dana dari APBD </h5> --}}
                                                 {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
