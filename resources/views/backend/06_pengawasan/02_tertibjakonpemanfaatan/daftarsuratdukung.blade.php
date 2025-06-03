@@ -60,7 +60,7 @@
              <div class="card mb-4">
                  <div class="card-header">
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                 <a href="/beagendaskk">
+                 {{-- <a href="/beagendaskk">
                         <button
                             onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
                             onmouseout="this.style.background='linear-gradient(to right, #004d00, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
@@ -73,7 +73,7 @@
 
                             Agenda SKK
                         </button>
-                    </a>
+                    </a> --}}
 
 
                 </div>
@@ -85,76 +85,8 @@
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                            <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
-            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
-            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
-                {{-- <option value="10">10</option> --}}
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="75">75</option>
-                <option value="100">100</option>
-                <option value="150">150</option>
-                <option value="200">200</option>
-                <option value="500">500</option>
-                <option value="1000">1000</option>
-                <option value="2000">2000</option>
-            </select>
-        </div>
 
 
-        <script>
-                  function updateEntries() {
-                let selectedValue = document.getElementById("entries").value;
-                let url = new URL(window.location.href);
-                url.searchParams.set("perPage", selectedValue);
-                window.location.href = url.toString();
-            }
-        </script>
-
-                        <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Universitas ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                        </div>
-                        <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
-                            }
-
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
-
-                            fetch(`/settingssekolah?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
-
-                                </script>
-<!-- Tombol Download Excel -->
-<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_universitas_sekolah')"
-    onmouseover="this.style.background='white'; this.style.color='black';"
-    onmouseout="this.style.background='linear-gradient(to right, #d4af37, #228B22)'; this.style.color='white';"
-    style="background: linear-gradient(to right, #d4af37, #228B22); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
-    <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
-</button>
-
-<!-- Tombol Create -->
-<a href="/settingssekolah/create">
-    <button
-        onmouseover="this.style.background='white'; this.style.color='black';"
-        onmouseout="this.style.background='linear-gradient(to right, #228B22, #d4af37)'; this.style.color='white';"
-        style="background: linear-gradient(to right, #228B22, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
-        <i class="fa fa-plus" style="margin-right: 8px;"></i> Create
-    </button>
-</a>
 
                         </div>
                  </div>
@@ -166,7 +98,9 @@
  <thead>
      <tr>
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
+        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Pemanfataan</th>
+        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Rencana Umur <br> Konstruksi & Kapasitas Beban</th>
+        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Pemeliharaan <br> Konstruksi & Struktur</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
@@ -174,7 +108,54 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{ $item->namasekolah }}</td>
+         <td style="text-align: left;">
+
+              <div style="margin-top: 10px;">
+                                @if($item->lingkuppengawasan && file_exists(public_path('storage/' . $item->lingkuppengawasan)))
+                                <!-- Display the default iframe when the file exists in the storage -->
+                                <iframe src="{{ asset('storage/' . $item->lingkuppengawasan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @elseif($item->lingkuppengawasan)
+                                <!-- Display the iframe with the updated file -->
+                                <iframe src="{{ asset($item->lingkuppengawasan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @else
+                                <!-- Optional: Show a placeholder if there's no file available -->
+                                <p>Data belum diupdate</p>
+                            @endif
+
+                    </div>
+         </td>
+         <td style="text-align: left;">
+
+              <div style="margin-top: 10px;">
+                                @if($item->indikator && file_exists(public_path('storage/' . $item->indikator)))
+                                <!-- Display the default iframe when the file exists in the storage -->
+                                <iframe src="{{ asset('storage/' . $item->indikator) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @elseif($item->indikator)
+                                <!-- Display the iframe with the updated file -->
+                                <iframe src="{{ asset($item->indikator) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @else
+                                <!-- Optional: Show a placeholder if there's no file available -->
+                                <p>Data belum diupdate</p>
+                            @endif
+
+                    </div>
+         </td>
+         <td style="text-align: left;">
+
+              <div style="margin-top: 10px;">
+                                @if($item->dokumendiperiksa && file_exists(public_path('storage/' . $item->dokumendiperiksa)))
+                                <!-- Display the default iframe when the file exists in the storage -->
+                                <iframe src="{{ asset('storage/' . $item->dokumendiperiksa) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @elseif($item->dokumendiperiksa)
+                                <!-- Display the iframe with the updated file -->
+                                <iframe src="{{ asset($item->dokumendiperiksa) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @else
+                                <!-- Optional: Show a placeholder if there's no file available -->
+                                <p>Data belum diupdate</p>
+                            @endif
+
+                    </div>
+         </td>
 
         <td style="text-align: center; vertical-align: middle;">
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
