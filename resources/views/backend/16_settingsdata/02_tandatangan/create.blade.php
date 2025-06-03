@@ -45,7 +45,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/settingssekolah">
+                <a href="/settingstandatangan">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -65,7 +65,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('create.settingssekolah') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('create.settingstandatangan') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <!-- begin::Body -->
                             <div class="card-body">

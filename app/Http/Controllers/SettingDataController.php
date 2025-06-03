@@ -120,4 +120,44 @@ public function settingstandatangan(Request $request)
             'user' => $user,
         ]);
     }
+
+
+public function settingstandatangancreatenew(Request $request)
+{
+    $request->validate([
+        'namalengkap' => 'required|string|max:255',
+        'tandatangan' => 'required|image|mimes:jpeg,png,jpg|max:2048', // maksimal 2MB
+    ], [
+        'namalengkap.required' => 'Nama lengkap tidak boleh kosong.',
+        'tandatangan.required' => 'Tanda tangan harus diunggah.',
+        'tandatangan.image' => 'File harus berupa gambar.',
+        'tandatangan.mimes' => 'Format gambar harus jpeg, png, atau jpg.',
+        'tandatangan.max' => 'Ukuran gambar tidak boleh lebih dari 2MB.',
+    ]);
+
+    // Simpan file langsung ke folder public/00_pengaturandata/01_tandatangan
+    if ($request->hasFile('tandatangan')) {
+        $file = $request->file('tandatangan');
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $destinationPath = public_path('00_pengaturandata/01_tandatangan');
+
+        // Buat folder jika belum ada
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+    }
+
+    // Simpan ke database
+    tandatangan::create([
+        'namalengkap' => $request->namalengkap,
+        'tandatangan' => '00_pengaturandata/01_tandatangan/' . $filename, // path disimpan di DB
+    ]);
+
+    session()->flash('create', 'Data tanda tangan berhasil ditambahkan!');
+    return redirect('/settingstandatangan');
+}
+
+
 }
