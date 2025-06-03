@@ -2177,7 +2177,7 @@ public function betertibjakonmanfaat3deleteberkas($id)
         $entry->delete();
 
         session()->flash('delete', 'Data Berhasil Dihapus!');
-        return redirect()->route('betertibjakonpemanfataansurat3index', ['id' => $parentId]);
+        return redirect('/betertibjakonpemanfaatan');
 
     }
 
