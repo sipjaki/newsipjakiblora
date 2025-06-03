@@ -173,22 +173,77 @@
                                                                                                                             </tr>
                                                                                                                         </thead>
                                                                                                                         <tbody>
-                                                                                                                                   <tr>
-                                                                                                                                        <td style="font-size: 12px; text-align: center;">1</td>
-                                                                                                                                        <td style="font-size: 12px;">{{$datasurat3->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                                                        <td style="font-size: 12px;">{{$datasurat3->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
-                                                                                                                                    </tr>
-                                                                                                                                    <tr>
-                                                                                                                                        <td style="font-size: 12px; text-align: center;">2</td>
-                                                                                                                                        <td style="font-size: 12px;">{{$datasurat3->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                                                        <td style="font-size: 12px;">{{$datasurat3->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
-                                                                                                                                    </tr>
-                                                                                                                                    <tr>
-                                                                                                                                        <td style="font-size: 12px; text-align: center;">3</td>
-                                                                                                                                        <td style="font-size: 12px;">{{$datasurat3->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                                                        <td style="font-size: 12px;">{{$datasurat3->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
-                                                                                                                                    </tr>
+                                                                                                                                                                <tr>
+        <td style="font-size: 12px; text-align: center;">1</td>
+        <td style="font-size: 12px;">
+            {{ $datasurat2->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+        </td>
+        <td style="font-size: 12px;">
+            <div style="margin-top: 10px;">
+                @if(!empty($datasurat2->tandatangan1->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan1->tandatangan)))
+                    <img src="{{ asset('storage/' . $datasurat2->tandatangan1->tandatangan) }}"
+                        alt="Tanda Tangan 1"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @elseif(!empty($datasurat2->tandatangan1->tandatangan))
+                    <img src="{{ asset($datasurat2->tandatangan1->tandatangan) }}"
+                        alt="Tanda Tangan 1"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @else
+                    <p>Data belum diupdate</p>
+                @endif
+            </div>
+        </td>
+    </tr>
 
+    <tr>
+        <td style="font-size: 12px; text-align: center;">2</td>
+        <td style="font-size: 12px;">
+            {{ $datasurat2->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+        </td>
+        <td style="font-size: 12px;">
+            <div style="margin-top: 10px;">
+                @if(!empty($datasurat2->tandatangan2->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan2->tandatangan)))
+                    <img src="{{ asset('storage/' . $datasurat2->tandatangan2->tandatangan) }}"
+                        alt="Tanda Tangan 2"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @elseif(!empty($datasurat2->tandatangan2->tandatangan))
+                    <img src="{{ asset($datasurat2->tandatangan2->tandatangan) }}"
+                        alt="Tanda Tangan 2"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @else
+                    <p>Data belum diupdate</p>
+                @endif
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td style="font-size: 12px; text-align: center;">3</td>
+        <td style="font-size: 12px;">
+            {{ $datasurat2->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+        </td>
+        <td style="font-size: 12px;">
+            <div style="margin-top: 10px;">
+                @if(!empty($datasurat2->tandatangan3->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan3->tandatangan)))
+                    <img src="{{ asset('storage/' . $datasurat2->tandatangan3->tandatangan) }}"
+                        alt="Tanda Tangan 3"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @elseif(!empty($datasurat2->tandatangan3->tandatangan))
+                    <img src="{{ asset($datasurat2->tandatangan3->tandatangan) }}"
+                        alt="Tanda Tangan 3"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @else
+                    <p>Data belum diupdate</p>
+                @endif
+            </div>
+        </td>
+    </tr>
                                                                                                                         </tbody>
                                                                                                                     </table>
                                                                                                                 </div>
@@ -415,22 +470,22 @@
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
-                                                                                <tr>
+                                                                             <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">1</td>
                                                                                     <td style="font-size: 16px;">
-                                                                                        {{ optional($datasurat3->tandatangan1)->tandatangan ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{ optional($datasurat3->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
                                                                                       <td style="font-size: 16px;">
-                                                                                        {{ optional($datasurat3->tandatangan2)->tandatangan ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{ optional($datasurat3->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
                                                                                     <td style="font-size: 16px;">
-                                                                                        {{ optional($datasurat3->tandatangan3)->tandatangan ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{ optional($datasurat3->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
