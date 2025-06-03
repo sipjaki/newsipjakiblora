@@ -739,6 +739,7 @@
 
 
                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <script>
     function downloadModalPDF(id) {
         // Ambil elemen modal berdasarkan ID
@@ -759,20 +760,36 @@
         // Format nama file
         const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
 
-        // Konversi ke PDF dan download
+        // Konversi ke PDF dan download dengan scale 0.9 (90%)
         html2pdf()
             .from(clone)
             .set({
                 margin: 0.5,
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                html2canvas: { scale: 0.9 },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
             })
             .save();
     }
 </script>
 
+<style>
+  /* Contoh styling modal agar muncul di tengah dan agak ke atas */
+  .modal {
+    display: flex !important;
+    align-items: flex-start !important; /* ke atas, default center */
+    justify-content: center !important;
+    padding-top: 50px !important; /* jarak dari atas layar */
+    overflow-y: auto;
+  }
+
+  .modal-content {
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+</style>
                                         <script>
                                             function printModalContent(id) {
                                                 const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
