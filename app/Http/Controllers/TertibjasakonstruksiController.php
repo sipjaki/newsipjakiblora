@@ -2148,17 +2148,15 @@ public function betertibjakonmanfaat3createberkasnew(Request $request)
         $surat = new surattertibjakonpemanfaatan3();
         $surat->fill($validatedData)->save();
 
-        return redirect()
-            ->route('betertibjakonpemanfataansurat3index', [
-                'id' => $surat->tertibjakonpemanfaatan_id ?? 'default_id'
-            ])
-            ->with('create', 'Berkas berhasil dibuat!');
+         return redirect()
+        ->route('betertibjakonpemanfaatanindexlist')
+        ->with('create', 'Berkas berhasil dibuat!');
+} catch (\Exception $e) {
+    return back()
+        ->withInput()
+        ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+}
 
-    } catch (\Exception $e) {
-        return back()
-            ->withInput()
-            ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
-    }
 }
 
 
