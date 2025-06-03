@@ -471,16 +471,17 @@
                                             <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem; margin-top:-10px;" >
                                             <div class="modal-header d-flex align-items-center">
-                                                {{-- <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
                                                     <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
                                                 </a>
                                                 <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
                                                     <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
                                                 </a>
                                                 <span class="mx-2">:</span>
-                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p> --}}
+                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
+                                            <p style="margin-left: -100px;">Tertib Jakon Pemanfaatan Halaman Ke 3</p>
                                             <div class="modal-body">
                                                 {{-- <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Pemanfaatan : <br> Pengawasan Tertib Pemanfaatan Produk Konstruksi Secara Rutin Terhadap Bangunan Konstruksi yang di Biayai dengan dana dari APBD </h5> --}}
                                                 {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
@@ -607,7 +608,6 @@
                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
     function downloadModalPDF(id) {
-        // Ambil elemen modal berdasarkan ID
         const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
         if (!modalContent) {
@@ -615,21 +615,20 @@
             return;
         }
 
-        // Kloning isi modal agar tidak mengganggu tampilan asli
         const clone = modalContent.cloneNode(true);
 
-        // Styling opsional untuk hasil PDF
+        // Hapus padding & naikkan sedikit jika perlu
         clone.style.fontSize = '14px';
-        clone.style.padding = '20px';
+        clone.style.padding = '2mm'; // padding minimal
+        clone.style.margin = '0';
+        clone.style.transform = 'translateY(-10px)'; // Naikkan konten ~10px
 
-        // Format nama file
         const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
 
-        // Konversi ke PDF dan download
         html2pdf()
             .from(clone)
             .set({
-                margin: 0.5,
+                margin: [0.08, 0.08, 0.08, 0.08], // top, left, bottom, right (sekitar 2mm)
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
