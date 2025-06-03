@@ -208,17 +208,63 @@
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px; text-align: center;">1</td>
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat1->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                    <td style="font-size: 12px;">
+
+                                                                                                        <div style="margin-top: 10px;">
+                                                                                                        @if($datasurat1->tandatangan1->tandatangan && file_exists(public_path('storage/' . $datasurat1->tandatangan1->tandatangan)))
+                                                                                                            <!-- Menampilkan gambar dari storage -->
+                                                                                                            <img src="{{ asset('storage/' . $datasurat1->tandatangan1->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                                                        @elseif($datasurat1->tandatangan1->tandatangan)
+                                                                                                            <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                            <img src="{{ asset($datasurat1->tandatangan1->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                                                        @else
+                                                                                                            <!-- Placeholder jika tidak ada data -->
+                                                                                                            <p>Data belum diupdate</p>
+                                                                                                        @endif
+                                                                                                    </div>
+
+                                                                                                    </td>
+
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px; text-align: center;">2</td>
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat1->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                    <td style="font-size: 12px;">
+                                                                                                                                                                                                            <div style="margin-top: 10px;">
+                                                                                                        @if($datasurat->tandatangan2->tandatangan && file_exists(public_path('storage/' . $datasurat1->tandatangan2->tandatangan)))
+                                                                                                            <!-- Menampilkan gambar dari storage -->
+                                                                                                            <img src="{{ asset('storage/' . $datasurat1->tandatangan2->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                                                        @elseif($datasurat1->tandatangan2->tandatangan)
+                                                                                                            <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                            <img src="{{ asset($datasurat1->tandatangan2->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                                                        @else
+                                                                                                            <!-- Placeholder jika tidak ada data -->
+                                                                                                            <p>Data belum diupdate</p>
+                                                                                                        @endif
+                                                                                                    </div>
+
+                                                                                                    </td>
+
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px; text-align: center;">3</td>
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat1->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
+                                                                                                 <td style="font-size: 12px;">
+                                                                                                                                                                                                            <div style="margin-top: 10px;">
+                                                                                                        @if($datasurat->tandatangan3->tandatangan && file_exists(public_path('storage/' . $datasurat1->tandatangan3->tandatangan)))
+                                                                                                            <!-- Menampilkan gambar dari storage -->
+                                                                                                            <img src="{{ asset('storage/' . $datasurat1->tandatangan3->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                                                        @elseif($datasurat1->tandatangan3->tandatangan)
+                                                                                                            <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                            <img src="{{ asset($datasurat1->tandatangan3->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                                                        @else
+                                                                                                            <!-- Placeholder jika tidak ada data -->
+                                                                                                            <p>Data belum diupdate</p>
+                                                                                                        @endif
+                                                                                                    </div>
+
+                                                                                                    </td>
+
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
