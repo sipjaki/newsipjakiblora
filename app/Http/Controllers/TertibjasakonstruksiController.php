@@ -2560,7 +2560,7 @@ public function buktidukungindexsurat($id)
     $suratPertama = $datasurat->first();
 
 
-    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.03_surat3.daftarsuratdukung', [
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.daftarsuratdukung', [
         'title' => 'Berkas Surat Bukti Dukung Tertib Jakon Pemanfaatan',
         'user' => $user,
         'data' => $datasurat,
