@@ -2459,7 +2459,7 @@ public function buktidukungcreate($id)
     // Ambil semua penyedia
     $datapenyedia = penyediastatustertibjakon::all();
 
-    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.create', [
+    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.uploadbuktidukung', [
         'title' => 'Create Tertib Jakon Pemanfaatan',
         'user' => $user,
         'datapenyedia' => $datapenyedia,
