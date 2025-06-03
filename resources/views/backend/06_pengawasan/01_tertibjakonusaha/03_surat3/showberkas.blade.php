@@ -176,17 +176,17 @@
                                                                                                                                                                 <tr>
         <td style="font-size: 12px; text-align: center;">1</td>
         <td style="font-size: 12px;">
-            {{ $datasurat2->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+            {{ $datasurat3->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
         </td>
         <td style="font-size: 12px;">
             <div style="margin-top: 10px;">
-                @if(!empty($datasurat2->tandatangan1->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan1->tandatangan)))
-                    <img src="{{ asset('storage/' . $datasurat2->tandatangan1->tandatangan) }}"
+                @if(!empty($datasurat3->tandatangan1->tandatangan) && file_exists(public_path('storage/' . $datasurat3->tandatangan1->tandatangan)))
+                    <img src="{{ asset('storage/' . $datasurat3->tandatangan1->tandatangan) }}"
                         alt="Tanda Tangan 1"
                         style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
                         loading="lazy">
-                @elseif(!empty($datasurat2->tandatangan1->tandatangan))
-                    <img src="{{ asset($datasurat2->tandatangan1->tandatangan) }}"
+                @elseif(!empty($datasurat3->tandatangan1->tandatangan))
+                    <img src="{{ asset($datasurat3->tandatangan1->tandatangan) }}"
                         alt="Tanda Tangan 1"
                         style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
                         loading="lazy">
@@ -200,17 +200,17 @@
     <tr>
         <td style="font-size: 12px; text-align: center;">2</td>
         <td style="font-size: 12px;">
-            {{ $datasurat2->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+            {{ $datasurat3->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
         </td>
         <td style="font-size: 12px;">
             <div style="margin-top: 10px;">
-                @if(!empty($datasurat2->tandatangan2->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan2->tandatangan)))
-                    <img src="{{ asset('storage/' . $datasurat2->tandatangan2->tandatangan) }}"
+                @if(!empty($datasurat3->tandatangan2->tandatangan) && file_exists(public_path('storage/' . $datasurat3->tandatangan2->tandatangan)))
+                    <img src="{{ asset('storage/' . $datasurat3->tandatangan2->tandatangan) }}"
                         alt="Tanda Tangan 2"
                         style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
                         loading="lazy">
-                @elseif(!empty($datasurat2->tandatangan2->tandatangan))
-                    <img src="{{ asset($datasurat2->tandatangan2->tandatangan) }}"
+                @elseif(!empty($datasurat3->tandatangan2->tandatangan))
+                    <img src="{{ asset($datasurat3->tandatangan2->tandatangan) }}"
                         alt="Tanda Tangan 2"
                         style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
                         loading="lazy">
@@ -224,17 +224,17 @@
     <tr>
         <td style="font-size: 12px; text-align: center;">3</td>
         <td style="font-size: 12px;">
-            {{ $datasurat2->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+            {{ $datasurat3->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
         </td>
         <td style="font-size: 12px;">
             <div style="margin-top: 10px;">
-                @if(!empty($datasurat2->tandatangan3->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan3->tandatangan)))
-                    <img src="{{ asset('storage/' . $datasurat2->tandatangan3->tandatangan) }}"
+                @if(!empty($datasurat3->tandatangan3->tandatangan) && file_exists(public_path('storage/' . $datasurat3->tandatangan3->tandatangan)))
+                    <img src="{{ asset('storage/' . $datasurat3->tandatangan3->tandatangan) }}"
                         alt="Tanda Tangan 3"
                         style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
                         loading="lazy">
-                @elseif(!empty($datasurat2->tandatangan3->tandatangan))
-                    <img src="{{ asset($datasurat2->tandatangan3->tandatangan) }}"
+                @elseif(!empty($datasurat3->tandatangan3->tandatangan))
+                    <img src="{{ asset($datasurat3->tandatangan3->tandatangan) }}"
                         alt="Tanda Tangan 3"
                         style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
                         loading="lazy">
