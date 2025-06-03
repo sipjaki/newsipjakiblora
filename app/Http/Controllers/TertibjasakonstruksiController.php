@@ -2539,7 +2539,10 @@ public function buktidukungcreateupload(Request $request)
         $dataToSave
     );
 
-    return redirect()->back()->with('success', 'Bukti dukung berhasil diupload dan disimpan!');
+  // Flash message & redirect
+    session()->flash('create', 'Surat Dukung Berhasil di Upload!');
+    return redirect('/betertibjakonpemanfaatan');
+
 }
 
 
