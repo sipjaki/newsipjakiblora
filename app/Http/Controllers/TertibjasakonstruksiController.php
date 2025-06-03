@@ -2468,21 +2468,5 @@ public function buktidukungcreate($id)
     ]);
 }
 
-// public function buktidukungcreate($id)
-// {
-
-// // Ambil data user saat ini
-// $user = Auth::user();
-
-// $datapenyedia = penyediastatustertibjakon::all();
-
-// return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.uploadbuktidukung', [
-//     'title' => 'Upload Bukti Dukung Tertib Jakon Pemanfaatan ',
-//     // 'data' => $datatertibjakonusaha,
-//     'datapenyedia' => $datapenyedia,
-
-//     'user' => $user,
-// ]);
-}
 
 }
