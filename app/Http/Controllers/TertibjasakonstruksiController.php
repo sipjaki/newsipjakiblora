@@ -1633,7 +1633,7 @@ public function betertibjakonpemanfaatan(Request $request)
     $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
-    $query = tertibjakonpemanfaatan::query();
+    $query = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan4');
 
     if ($search) {
         $query->where(function ($q) use ($search) {
@@ -1644,12 +1644,6 @@ public function betertibjakonpemanfaatan(Request $request)
               ->orWhereDate('tanggalpembangunan', $search)
               ->orWhereDate('tanggalpemanfaatan', $search)
               ->orWhere('umurbangunan', 'LIKE', "%{$search}%")
-            //   ->orWhere('peruntukan_fungsi', 'LIKE', "%{$search}%")
-            //   ->orWhere('peruntukan_lokasi', 'LIKE', "%{$search}%")
-            //   ->orWhere('rencanaumur', 'LIKE', "%{$search}%")
-            //   ->orWhere('kapasitasdanbeban', 'LIKE', "%{$search}%")
-            //   ->orWhere('pemeliharaan_konstruksi', 'LIKE', "%{$search}%")
-            //   ->orWhere('pemeliharaan_struktur', 'LIKE', "%{$search}%")
               ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
                   $r->where('penyedia', 'LIKE', "%{$search}%");
               });
