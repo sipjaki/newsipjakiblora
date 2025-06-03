@@ -231,7 +231,7 @@
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="font-size: 12px;">
                                                                                                                                                                                                             <div style="margin-top: 10px;">
-                                                                                                        @if($datasurat->tandatangan2->tandatangan && file_exists(public_path('storage/' . $datasurat1->tandatangan2->tandatangan)))
+                                                                                                        @if($datasurat1->tandatangan2->tandatangan && file_exists(public_path('storage/' . $datasurat1->tandatangan2->tandatangan)))
                                                                                                             <!-- Menampilkan gambar dari storage -->
                                                                                                             <img src="{{ asset('storage/' . $datasurat1->tandatangan2->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                                                                         @elseif($datasurat1->tandatangan2->tandatangan)
@@ -251,7 +251,7 @@
                                                                                                     <td style="font-size: 12px;">{{$datasurat1->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                  <td style="font-size: 12px;">
                                                                                                                                                                                                             <div style="margin-top: 10px;">
-                                                                                                        @if($datasurat->tandatangan3->tandatangan && file_exists(public_path('storage/' . $datasurat1->tandatangan3->tandatangan)))
+                                                                                                        @if($datasurat1->tandatangan3->tandatangan && file_exists(public_path('storage/' . $datasurat1->tandatangan3->tandatangan)))
                                                                                                             <!-- Menampilkan gambar dari storage -->
                                                                                                             <img src="{{ asset('storage/' . $datasurat1->tandatangan3->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                                                                         @elseif($datasurat1->tandatangan3->tandatangan)
