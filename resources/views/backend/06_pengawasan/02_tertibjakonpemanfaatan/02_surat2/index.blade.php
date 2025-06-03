@@ -484,6 +484,7 @@
                                                 </a>
                                                 <span class="mx-2">:</span>
                                                 <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                                <br>
                                                 <p>Tertib Pemanfaatan Halaman 2</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
