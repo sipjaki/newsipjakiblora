@@ -84,9 +84,10 @@
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                        </div>
+                 </div>
 
-
-        <div class="card card-primary card-outline mb-6">
+                    <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/betertibjakonpemanfaatan">
                     <button class="btn-kembali">
@@ -100,9 +101,6 @@
             </a>
         </div>
 
-
-                        </div>
-                 </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
