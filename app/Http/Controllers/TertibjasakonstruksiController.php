@@ -8,6 +8,7 @@ use App\Models\subklasifikasi;
 use App\Models\surattertibjakonpemanfaatan1;
 use App\Models\surattertibjakonpemanfaatan2;
 use App\Models\surattertibjakonpemanfaatan3;
+use App\Models\surattertibjakonpemanfaatan4;
 use App\Models\surattertibjakonusaha1;
 use App\Models\surattertibjakonusaha2;
 use App\Models\surattertibjakonusaha3;
@@ -2466,6 +2467,79 @@ public function buktidukungcreate($id)
         'tertibjakonpemanfaatan_id' => $id,
         'datatertib' => $datatertib,
     ]);
+}
+
+public function buktidukungcreateupload(Request $request)
+{
+    $request->validate([
+        'tertibjakonpemanfaatan_id' => 'required|string',
+        'lingkuppengawasan' => 'required|file|mimes:pdf|max:5120', // max 5MB
+        'indikator' => 'required|file|mimes:pdf|max:5120',
+        'dokumendiperiksa' => 'required|file|mimes:pdf|max:5120',
+    ], [
+        'tertibjakonpemanfaatan_id.required' => 'ID tertib jakon pemanfaatan harus ada.',
+        'lingkuppengawasan.required' => 'File bukti lingkup pengawasan harus diupload.',
+        'lingkuppengawasan.mimes' => 'File harus berformat PDF.',
+        'indikator.required' => 'File bukti indikator harus diupload.',
+        'indikator.mimes' => 'File harus berformat PDF.',
+        'dokumendiperiksa.required' => 'File bukti dokumen diperiksa harus diupload.',
+        'dokumendiperiksa.mimes' => 'File harus berformat PDF.',
+    ]);
+
+    // Inisialisasi array untuk menyimpan path file
+    $dataToSave = [
+        'tertibjakonpemanfaatan_id' => $request->tertibjakonpemanfaatan_id,
+    ];
+
+    // Simpan file lingkuppengawasan
+    if ($request->hasFile('lingkuppengawasan')) {
+        $file = $request->file('lingkuppengawasan');
+        $filename = time() . '_lingkup_' . $file->getClientOriginalName();
+        $destinationPath = public_path('00_tertibjakon/01_pemanfaatan/01_surat');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+        $dataToSave['lingkuppengawasan'] = '00_tertibjakon/01_pemanfaatan/01_surat/' . $filename;
+    }
+
+    // Simpan file indikator
+    if ($request->hasFile('indikator')) {
+        $file = $request->file('indikator');
+        $filename = time() . '_indikator_' . $file->getClientOriginalName();
+        $destinationPath = public_path('00_tertibjakon/01_pemanfaatan/02_surat');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+        $dataToSave['indikator'] = '00_tertibjakon/01_pemanfaatan/02_surat/' . $filename;
+    }
+
+    // Simpan file dokumendiperiksa
+    if ($request->hasFile('dokumendiperiksa')) {
+        $file = $request->file('dokumendiperiksa');
+        $filename = time() . '_dokumen_' . $file->getClientOriginalName();
+        $destinationPath = public_path('00_tertibjakon/01_pemanfaatan/03_surat');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
+        $file->move($destinationPath, $filename);
+        $dataToSave['dokumendiperiksa'] = '00_tertibjakon/01_pemanfaatan/03_surat/' . $filename;
+    }
+
+    // Simpan data ke DB, misalnya modelnya TertibjakonPemanfaatan
+    surattertibjakonpemanfaatan4::updateOrCreate(
+        ['id' => $request->tertibjakonpemanfaatan_id],
+        $dataToSave
+    );
+
+    return redirect()->back()->with('success', 'Bukti dukung berhasil diupload dan disimpan!');
 }
 
 

@@ -1094,6 +1094,7 @@ Route::post('/betertibjakonmanfaat3/createberkasnew', [TertibjasakonstruksiContr
 Route::delete('/betertibjakonmanfaat3delete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat3deleteberkas'])->middleware('auth')->name('betertibjakonmanfaat3deleteberkas');
 
 Route::get('/buktidukung/create/{id}', [TertibjasakonstruksiController::class, 'buktidukungcreate'])->middleware('auth');
+Route::post('/buktidukung/createnew', [SettingDataController::class, 'buktidukungcreateupload'])->middleware(['auth', 'can:super_admin'])->name('create.uploadpemanfaaatantertib');
 
 
 
