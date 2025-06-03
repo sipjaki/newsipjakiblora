@@ -2478,11 +2478,11 @@ public function buktidukungcreateupload(Request $request)
         'dokumendiperiksa' => 'required|file|mimes:pdf|max:5120',
     ], [
         'tertibjakonpemanfaatan_id.required' => 'ID tertib jakon pemanfaatan harus ada.',
-        'lingkuppengawasan.required' => 'File bukti lingkup pengawasan harus diupload.',
+        'lingkuppengawasan.required' => 'File Bukti Dukung harus diupload.',
         'lingkuppengawasan.mimes' => 'File harus berformat PDF.',
-        'indikator.required' => 'File bukti indikator harus diupload.',
+        'indikator.required' => 'File Bukti Dukung harus diupload.',
         'indikator.mimes' => 'File harus berformat PDF.',
-        'dokumendiperiksa.required' => 'File bukti dokumen diperiksa harus diupload.',
+        'dokumendiperiksa.required' => 'File Bukti Dukung diperiksa harus diupload.',
         'dokumendiperiksa.mimes' => 'File harus berformat PDF.',
     ]);
 
