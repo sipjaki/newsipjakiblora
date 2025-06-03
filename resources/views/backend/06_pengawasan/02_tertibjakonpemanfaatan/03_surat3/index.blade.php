@@ -615,20 +615,23 @@
             return;
         }
 
+        // Kloning isi modal
         const clone = modalContent.cloneNode(true);
 
-        // Hapus padding & naikkan sedikit jika perlu
+        // Styling: pangkas padding & naikkan tajam
         clone.style.fontSize = '14px';
-        clone.style.padding = '2mm'; // padding minimal
+        clone.style.padding = '0';
         clone.style.margin = '0';
-        clone.style.transform = 'translateY(-10px)'; // Naikkan konten ~10px
+        clone.style.transform = 'translateY(-400px)'; // Dorong ke atas ekstrim
 
-        const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
+        // Nama file
+        const fileName = `Tertibjakonpemanfaatan_surat3_${id}.pdf`;
 
+        // Convert ke PDF
         html2pdf()
             .from(clone)
             .set({
-                margin: [0.08, 0.08, 0.08, 0.08], // top, left, bottom, right (sekitar 2mm)
+                margin: [0, 0, 0, 0], // benar-benar tanpa margin
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
@@ -637,6 +640,7 @@
             .save();
     }
 </script>
+
 
                                         <script>
                                             function printModalContent(id) {
