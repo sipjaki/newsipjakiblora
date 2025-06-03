@@ -166,8 +166,8 @@
  <thead>
      <tr>
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Nama Lengkap</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Tanda Tangan</th>
+        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Nama Lengkap</th>
+        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Tanda Tangan</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
