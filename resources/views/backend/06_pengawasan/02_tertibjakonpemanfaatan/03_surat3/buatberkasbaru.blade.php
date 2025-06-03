@@ -332,7 +332,7 @@
                 @endforeach
         </select>
 
-        <div id="previewTandaTangan" style="margin-top: 10px;">
+        <div id="previewTandaTangan" style="margin-top: 10px; text-align:left;">
             <!-- Gambar tanda tangan otomatis muncul di sini -->
         </div>
 
