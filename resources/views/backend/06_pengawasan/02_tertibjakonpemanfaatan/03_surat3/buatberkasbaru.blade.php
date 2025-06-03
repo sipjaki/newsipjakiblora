@@ -321,12 +321,15 @@
 
 
         <select id="selectTandaTangan" name="lingkuppengawasan">
-            <option value="">-- Pilih Nama Lengkap --</option>
+            <option value="">-- Pilih Pemeriksa --</option>
             @foreach($datatandatangan as $item)
-                <option value="{{ $item->namalengkap }}" data-tandatangan="{{ asset('storage/' . $item->tandatangan) }}">
-                    {{ $item->namalengkap }}
-                </option>
-            @endforeach
+
+         <option value="{{ $item->namalengkap }}" data-tandatangan="{{ asset($item->tandatangan) }}">
+    {{ $item->namalengkap }}
+</option>
+
+
+                @endforeach
         </select>
 
         <div id="previewTandaTangan" style="margin-top: 10px;">
