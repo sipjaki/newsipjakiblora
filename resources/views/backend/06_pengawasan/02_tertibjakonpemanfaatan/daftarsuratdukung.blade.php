@@ -27,6 +27,8 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('backend.00_style.01_cssdashboard.style')
+
 {{-- ---------------------------------------------------------------------- --}}
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
@@ -96,7 +98,6 @@
                     Kembali
                 </button>
             </a>
-        </div>
 
                         </div>
                  </div>
