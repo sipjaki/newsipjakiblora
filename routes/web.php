@@ -1209,7 +1209,7 @@ Route::delete('/settingssekolah/delete/{namasekolah}', [SettingDataController::c
 
 // DATA PENGATURAN TANDA TANGAN
 Route::get('/settingstandatangan', [SettingDataController::class, 'settingstandatangan'])->middleware(['auth', 'can:super_admin']);
-// Route::get('/settingssekolah/create', [SettingDataController::class, 'settingssekolahcreate'])->middleware(['auth', 'can:super_admin']);
+Route::get('/settingstandatangan/create', [SettingDataController::class, 'settingstandatangancreate'])->middleware(['auth', 'can:super_admin']);
 // Route::post('/settingssekolah/createnew', [SettingDataController::class, 'settingssekolahcreatenew'])->middleware(['auth', 'can:super_admin'])->name('create.settingssekolah');
 // Route::delete('/settingssekolah/delete/{namasekolah}', [SettingDataController::class, 'settingssekolahdelete'])->middleware(['auth', 'can:super_admin']);
 

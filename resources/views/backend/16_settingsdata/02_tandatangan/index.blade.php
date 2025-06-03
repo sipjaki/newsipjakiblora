@@ -60,7 +60,7 @@
              <div class="card mb-4">
                  <div class="card-header">
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                 <a href="/beagendaskk">
+                 {{-- <a href="/beagendaskk">
                         <button
                             onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
                             onmouseout="this.style.background='linear-gradient(to right, #004d00, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
@@ -73,7 +73,7 @@
 
                             Agenda SKK
                         </button>
-                    </a>
+                    </a> --}}
 
 
                 </div>
@@ -147,7 +147,7 @@
 </button>
 
 <!-- Tombol Create -->
-<a href="/settingssekolah/create">
+<a href="/settingstandatangan/create">
     <button
         onmouseover="this.style.background='white'; this.style.color='black';"
         onmouseout="this.style.background='linear-gradient(to right, #228B22, #d4af37)'; this.style.color='white';"

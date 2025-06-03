@@ -110,4 +110,14 @@ public function settingstandatangan(Request $request)
 }
 
 
+ public function settingstandatangancreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.02_tandatangan.create', [
+            'title' => 'Create Tanda Tangan',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
 }
