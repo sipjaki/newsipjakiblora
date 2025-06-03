@@ -774,22 +774,7 @@
     }
 </script>
 
-<style>
-  /* Contoh styling modal agar muncul di tengah dan agak ke atas */
-  .modal {
-    display: flex !important;
-    align-items: flex-start !important; /* ke atas, default center */
-    justify-content: center !important;
-    padding-top: 50px !important; /* jarak dari atas layar */
-    overflow-y: auto;
-  }
 
-  .modal-content {
-    max-width: 90vw;
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-</style>
                                         <script>
                                             function printModalContent(id) {
                                                 const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
