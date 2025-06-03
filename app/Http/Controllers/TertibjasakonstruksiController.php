@@ -2100,6 +2100,8 @@ public function betertibjakonpemanfataansurat3index($id)
 
     $user = Auth::user();
 
+    $datatandatangan = tandatangan::all();
+
     // Ambil data relasi surattertibjakonusaha1 jika ada
     $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonusaha3;
 
@@ -2111,6 +2113,7 @@ public function betertibjakonpemanfataansurat3index($id)
         // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
         'user' => $user,
         'data' => $datatertibjasapemanfaatan,
+        'datatandatangan' => $datatandatangan,
 
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
         'title' => 'Create Surat Tertib Jakon Pemanfaatan Bagian 3'
