@@ -185,6 +185,10 @@
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemeliharaan <br> Konstruksi & Struktur
                                     </th>
 
+                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Upload Bukti Dukung
+                                    </th>
+
                                     <th rowspan="2" style="text-align: center; width:175px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
@@ -319,6 +323,14 @@
                                     <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-abuabu">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                        </button>
+                                    </a>
+                                </td>
+
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <a href="{{ url('/buktidukung/create/' . $item->id) }}" style="text-decoration: none;">
+                                        <button class="button-abuabu">
+                                        <i class="bi bi-file-earmark-text icon-create"></i> Upload Bukti Dukung
                                         </button>
                                     </a>
                                 </td>
