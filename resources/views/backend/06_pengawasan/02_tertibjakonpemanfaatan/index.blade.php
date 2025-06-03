@@ -327,21 +327,18 @@
                                     </a>
                                 </td>
 
-                               @if($item->surattertibjakonpemanfaatan4)
-    <a href="{{ url('/buktidukung/view/' . $item->surattertibjakonpemanfaatan4->id) }}" style="text-decoration: none;">
-        <button class="btn-create">
-            <i class="bi bi-eye icon-create"></i> Show Berkas
-        </button>
-    </a>
-@else
-    <!-- Kalau mau, bisa tampilkan tombol lain misal upload -->
-    <a href="{{ url('/buktidukung/create/' . $item->id) }}" style="text-decoration: none;">
-        <button class="button-abuabu">
-            <i class="bi bi-file-earmark-text icon-create"></i> Upload Bukti Dukung
-        </button>
-    </a>
-@endif
-
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <a href="{{ url('/buktidukung/create/' . $item->id) }}" style="text-decoration: none;">
+                                        <button class="button-abuabu">
+                                        <i class="bi bi-file-earmark-text icon-create"></i> Upload Bukti Dukung
+                                        </button>
+                                    </a>
+                              <a href="{{ url('/buktidukung/view/' . $item->surattertibjakonpemanfaatan4->id) }}" style="text-decoration: none;">
+                                    <button class="btn-create">
+                                        <i class="bi bi-eye icon-create"></i> Show Berkas
+                                    </button>
+                                </a>
+                                </td>
 
 
 
