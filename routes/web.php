@@ -1089,7 +1089,7 @@ Route::delete('/betertibjakonmanfaat2delete/delete/{id}', [TertibjasakonstruksiC
 Route::get('/betertibjakonpemanfataansurat3/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat3index'])->middleware('auth')->name('betertibjakonpemanfataansurat3index');
 
 Route::get('/betertibjakonpemanfataansurat3/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat3createberkas'])->middleware('auth')->name('betertibjakonpemanfataansurat3createberkas');
-Route::post('/betertibjakonmanfaat3/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat3createberkasnew'])->middleware('auth')->name('betertibjakonmanfaat3');
+Route::post('/betertibjakonmanfaat3/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat3createberkasnew'])->middleware('auth')->name('betertibjakonmanfaat3createsurat');
 
 Route::delete('/betertibjakonmanfaat3delete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat3deleteberkas'])->middleware('auth')->name('betertibjakonmanfaat3deleteberkas');
 
