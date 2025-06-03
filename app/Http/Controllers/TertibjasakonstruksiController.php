@@ -1064,7 +1064,7 @@ public function betertibjakonusahasegmentasipasar($id)
             'kesesuaiansbu' => 'required|in:Sesuai,Tidak Sesuai',
             'syaratkualifikasi' => 'required|in:Kecil,Menengah,Besar',
             'sbu' => 'required|in:Sesuai,Tidak Sesuai',
-            'tandatangan1_id' => 'nullable|string|max:255',
+            'tandatangan1_id' => 'required|string|max:255',
             'tandatangan2_id' => 'nullable|string|max:255',
             'tandatangan3_id' => 'nullable|string|max:255',
         ], [
@@ -1105,7 +1105,7 @@ public function betertibjakonusahasegmentasipasar($id)
             'sbu.required' => 'Kesesuaian SBU wajib dipilih',
             'sbu.in' => 'Kesesuaian SBU tidak valid',
 
-            // 'tandatangan1.required' => 'Tim Pemeriksa 1 wajib dipilih',
+            'tandatangan1.required' => 'Tim Pemeriksa 1 wajib dipilih',
             // 'tandatangan1.exists' => 'Tim Pemeriksa 1 tidak valid',
 
             // 'tandatangan2.exists' => 'Tim Pemeriksa 2 tidak valid',
