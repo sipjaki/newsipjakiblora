@@ -185,7 +185,7 @@
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemeliharaan <br> Konstruksi & Struktur
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:600px;">
+                                    <th rowspan="2" style="text-align: center; width:450px;">
                                         <i class="bi bi-geo-alt-fill"></i> Upload Bukti Dukung
                                     </th>
 
