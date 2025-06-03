@@ -190,24 +190,24 @@
                                                                                                 </tr>
                                                                                             </thead>
                                                                                             <tbody>
-                                                                                                   <tr>
-                                                                                                            <td style="font-size: 12px; text-align:center;">1</td>
-                                                                                                            <td style="font-size: 16px;">
-                                                                                                                {{ optional($datasurat2->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                                            <td style="font-size: 16px;">
-                                                                                                                {{ optional($datasurat2->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td style="font-size: 12px; text-align:center;">3</td>
-                                                                                                            <td style="font-size: 16px;">
-                                                                                                                {{ optional($datasurat2->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                                            </td>
-                                                                                                        </tr>
+                                                                                                 <tr>
+                                                                                                        <td style="font-size: 12px; text-align:center;">1</td>
+                                                                                                        <td style="font-size: 16px;">
+                                                                                                            {{ optional($datasurat2->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="font-size: 12px; text-align:center;">2</td>
+                                                                                                        <td style="font-size: 16px;">
+                                                                                                            {{ optional($datasurat2->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td style="font-size: 12px; text-align:center;">3</td>
+                                                                                                        <td style="font-size: 16px;">
+                                                                                                            {{ optional($datasurat2->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                                        </td>
+                                                                                                    </tr>
                                                                                             </tbody>
                                                                                         </table>
                                                                                     </div>
