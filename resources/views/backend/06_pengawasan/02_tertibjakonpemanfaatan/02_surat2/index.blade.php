@@ -618,6 +618,7 @@
                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
     function downloadModalPDF(id) {
+        // Ambil elemen modal berdasarkan ID
         const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
         if (!modalContent) {
@@ -628,37 +629,27 @@
         // Kloning isi modal agar tidak mengganggu tampilan asli
         const clone = modalContent.cloneNode(true);
 
-        // Bersihkan padding dan margin agar konten mepet ke atas
-        clone.style.padding = '0';
-        clone.style.margin = '0';
+        // Styling opsional untuk hasil PDF
         clone.style.fontSize = '14px';
+        clone.style.padding = '20px';
 
-        // Hapus margin top dari elemen-elemen dalam modal jika ada
-        const allElements = clone.querySelectorAll('*');
-        allElements.forEach(el => {
-            el.style.marginTop = '0';
-            el.style.paddingTop = '0';
-        });
-
+        // Format nama file
         const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
 
+        // Konversi ke PDF dan download
         html2pdf()
             .from(clone)
             .set({
-                margin: [0.07, 0.1, 0.1, 0.1], // Top, Right, Bottom, Left margin (≈2mm atas, 2.5mm lainnya)
+                margin: 0.5,
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: {
-                    scale: 2,
-                    scrollY: 0,
-                    windowWidth: clone.scrollWidth,
-                    windowHeight: clone.scrollHeight
-                },
+                html2canvas: { scale: 2 },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
             })
             .save();
     }
 </script>
+
                                         <script>
                                             function printModalContent(id) {
                                                 const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
