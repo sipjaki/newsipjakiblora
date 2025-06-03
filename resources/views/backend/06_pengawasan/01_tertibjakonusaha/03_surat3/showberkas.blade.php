@@ -542,7 +542,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
     function downloadModalPDF(id) {
-        // Ambil elemen modal berdasarkan ID
         const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
         if (!modalContent) {
@@ -550,24 +549,28 @@
             return;
         }
 
-        // Kloning isi modal agar tidak mengganggu tampilan asli
         const clone = modalContent.cloneNode(true);
 
-        // Styling opsional untuk hasil PDF
+        // Hapus margin/padding berlebih agar PDF start dari atas
         clone.style.fontSize = '14px';
-        clone.style.padding = '20px';
+        clone.style.margin = '0';
+        clone.style.padding = '10px';
+        clone.style.position = 'relative';
+        clone.style.top = '0';
 
-        // Format nama file
+        // Buat elemen wrapper agar tetap rapi
+        const wrapper = document.createElement('div');
+        wrapper.appendChild(clone);
+
         const fileName = `Tertibjakonusaha_kesesuaianpemenuhansyarat_${id}.pdf`;
 
-        // Konversi ke PDF dan download
         html2pdf()
-            .from(clone)
+            .from(wrapper)
             .set({
                 margin: 0.5,
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                html2canvas: { scale: 2, scrollY: 0 },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
             })
             .save();
