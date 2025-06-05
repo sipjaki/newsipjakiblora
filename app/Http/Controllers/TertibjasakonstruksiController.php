@@ -2468,9 +2468,9 @@ public function buktidukungcreateupload(Request $request)
 {
     $request->validate([
         'tertibjakonpemanfaatan_id' => 'required|string',
-        'lingkuppengawasan' => 'required|file|mimes:pdf|max:5120', // max 5MB
-        'indikator' => 'required|file|mimes:pdf|max:5120',
-        'dokumendiperiksa' => 'required|file|mimes:pdf|max:5120',
+        'lingkuppengawasan' => 'nullable|file|mimes:pdf|max:5120', // max 5MB
+        'indikator' => 'nullable|file|mimes:pdf|max:5120',
+        'dokumendiperiksa' => 'nullable|file|mimes:pdf|max:5120',
     ], [
         'tertibjakonpemanfaatan_id.required' => 'ID tertib jakon pemanfaatan harus ada.',
         'lingkuppengawasan.required' => 'File Bukti Dukung harus diupload.',
