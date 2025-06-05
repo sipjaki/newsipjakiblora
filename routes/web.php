@@ -1037,7 +1037,7 @@ Route::get('/betertibjakonusahasegmentasipasar/show/{id}', [Tertibjasakonstruksi
 
 // SURAT DUKUNG TERTIB JAKON USAHA SURAT 3 PEMENUHAN SYARAT
 Route::get('/betertibjakonusahapemenuhansyarat/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyarat'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratindex');
-Route::get('/betertibjakonusahapemenuhansyarat/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratshow'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahapemenuhansyaratshow');
+Route::get('/betertibjakonusahapemenuhansyarat/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratshow'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratshow');
 
 Route::get('/betertibjakonusahapemenuhansyarat/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratcreateberkas'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratcreateberkas');
 Route::post('/betertibjakonusahapemenuhansyarat/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratcreateberkasnew'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratnewberkas');
