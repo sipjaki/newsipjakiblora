@@ -1,21 +1,50 @@
-# # /.phpunit.cache
-# # /node_modules
-# # /public/build
-# # /public/hot
-# # /public/storage
-# # /storage/*.key
-# # /vendor
-# # .env
-# # .env.backup
-# # .env.production
-# # .phpunit.result.cache
-# # Homestead.json
-# # Homestead.yaml
-# # auth.json
-# # npm-debug.log
-# # yarn-error.log
-# # /.fleet
-# # /.idea
-# # /.vscode
-# !storage/app/public/
-# !storage/app/public/*
+# Laravel core
+/vendor
+/node_modules
+
+# Environment & keys
+.env
+.env.*.backup
+Homestead.json
+Homestead.yaml
+
+# Laravel logs, cache, and sessions
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+/storage/framework/testing
+
+# Laravel compiled
+/bootstrap/cache/*.php
+
+# IDE/editor configs
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Frontend build artifacts
+/public/hot
+/public/storage
+/public/mix-manifest.json
+/public/js/*.map
+/public/css/*.map
+
+# Test and coverage
+.phpunit.result.cache
+coverage/
+tests/TempTest.php
+
+# Miscellaneous
+*.swp
+*.bak
+*.tmp
+*.log
+*.sql
+*.sqlite
