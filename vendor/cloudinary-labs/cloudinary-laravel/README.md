@@ -44,7 +44,7 @@ composer require cloudinary-labs/cloudinary-laravel
 Publish the configuration file:
 
 ```bash
-php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"
+# php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"
 ```
 
 Add your Cloudinary credentials to your `.env` file:

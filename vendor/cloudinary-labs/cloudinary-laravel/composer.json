@@ -47,16 +47,16 @@
       "Tests\\": "tests"
     }
   },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "CloudinaryLabs\\CloudinaryLaravel\\CloudinaryServiceProvider"
-      ],
-      "aliases": {
-        "Cloudinary": "CloudinaryLabs\\CloudinaryLaravel\\Facades\\Cloudinary"
-      }
-    }
-  },
+//   "extra": {
+//     "laravel": {
+//       "providers": [
+//         "CloudinaryLabs\\CloudinaryLaravel\\CloudinaryServiceProvider"
+//       ],
+//       "aliases": {
+//         "Cloudinary": "CloudinaryLabs\\CloudinaryLaravel\\Facades\\Cloudinary"
+//       }
+//     }
+//   },
   "config": {
     "allow-plugins": {
       "pestphp/pest-plugin": true
