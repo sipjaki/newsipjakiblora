@@ -17,26 +17,30 @@ class User extends Authenticatable
 
     protected $guarded = ['id'];
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    * The attributes that are mass assignable.
+    *
+    * @var array<int, string>
+    */
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+    * The attributes that should be hidden for serialization.
+    *
+    * @var array<int, string>
+    */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
+    protected $fillable = [
+        'name', 'username', 'email', 'statusadmin_id', 'avatar', 'password', 'is_email_verified', 'verification_token',
+    ];
+
     /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+    * The attributes that should be cast.
+    *
+    * @var array<string, string>
+    */
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
