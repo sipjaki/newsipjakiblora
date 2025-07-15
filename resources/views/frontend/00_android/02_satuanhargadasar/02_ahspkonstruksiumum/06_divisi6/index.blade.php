@@ -1,43 +1,68 @@
 <style>
-    .fl-table {
-        margin-top: 15px;
+                                                                                                        <style>
+    /* Gaya untuk tabel */
+    .custom-table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
+    }
+
+    .custom-fl-table {
         width: 100%;
         border-collapse: collapse;
-        border-radius: 10px;
-        table-layout: fixed;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
     }
 
-    .fl-table th, .fl-table td {
-        text-align: center;
-        padding: 12px 10px;
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
         vertical-align: middle;
-        white-space: normal;
-        word-break: break-word;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
     }
 
-    /* Spesifik lebar kolom */
-    .fl-table th:nth-child(1), .fl-table td:nth-child(1) { width: 50px; }   /* No */
-    .fl-table th:nth-child(2), .fl-table td:nth-child(2) { width: 140px; }  /* Kode */
-    .fl-table th:nth-child(3), .fl-table td:nth-child(3) { width: 350px; text-align: left; }  /* Pekerjaan */
-    .fl-table th:nth-child(4), .fl-table td:nth-child(4) { width: 80px; }   /* Satuan */
-    .fl-table th:nth-child(5), .fl-table td:nth-child(5) { width: 60px; }   /* Rp */
-    .fl-table th:nth-child(6), .fl-table td:nth-child(6) { width: 150px; text-align: right; } /* Besaran */
-
-    .fl-table thead {
-        background-color: #374151;
-        color: white;
+    .custom-fl-table th {
+        background-color:#4ADE80;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
     }
 
-    .fl-table tbody tr:nth-child(odd) {
-        background-color: #f9f9f9;
+    .custom-fl-table td {
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.5;
     }
 
-    .fl-table tbody tr:nth-child(even) {
-        background-color: #e6e6e6;
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #f7f7f7;
     }
 
-    .fl-table tbody tr:hover {
-        background-color: #d0d0d0;
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f7f7f7;
+    }
+
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
     }
 </style>
 
@@ -142,16 +167,18 @@
 
 
                             <!-- Table Section -->
-                            <div style="overflow-x: auto; margin-top: 15px; border-radius: 15px; border: 1px solid #ccc;">
-                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden;">
+                                <div class="custom-table-container">
+                                <table class="custom-fl-table" id="sortableTable">
+
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; padding: 5px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; padding: 5px;"> Kode </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; padding: 5px;"> Pekerjaan </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; padding: 5px;"> Satuan </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; padding: 5px;"> Rp </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; padding: 5px;"> Besaran </th>
+                                       <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; padding: 5px; width:50px;"> No </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center;  padding: 5px; width:100px;"> Kode </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;  padding: 5px; width:400px;"> Pekerjaan </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;  padding: 5px; width:100px;"> Satuan </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center;  padding: 5px; width:50px;"> Rp </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center;  padding: 5px; width:200px;"> Besaran </th>
+
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -182,7 +209,7 @@
                                                         alert("ID tidak valid!");
                                                         return;
                                                     }
-                                                    window.location.href = "/satuanhargadivisi1/" + encodeURIComponent(id);
+                                                    window.location.href = "/satuanhargadivisi6/" + encodeURIComponent(id);
                                                 }
                                             </script>
                                             <td style="text-align: center; color:red; padding: 5px;" >{{$item->satuanmaterial}}</td>

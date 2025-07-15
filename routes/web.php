@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\AkunController;
 use App\Http\Controllers\SettingmenuController;
 use App\Http\Controllers\BujkkontraktorController;
 use App\Http\Controllers\BujkkonsultanController;
@@ -842,6 +843,7 @@ Route::delete('/bepengawasanbujk/delete/{id}', [PengawasanbujkController::class,
 // ---------------------- MENU 01 AGENDA PELATIHAN   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beagendapelatihan', [PembinaanController::class, 'beagendapelatihan'])->middleware('auth');
+
 Route::get('/beagendapelatihanpeserta/show/{id}', [PembinaanController::class, 'beagendapelatihanshowpeserta'])->middleware('auth');
 
 Route::get('/beagendapelatihan/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshow'])->middleware('auth');
@@ -1182,27 +1184,27 @@ Route::post('/besatuanhargaperalatan/updatecreate/{id}', [SatuanhargamaterialCon
 // PEKERJAANINI
 // ROUTE UNTUK DAFTAR AKUN
 
-Route::get('/allakun', [LoginController::class, 'allakun'])->middleware(['auth', 'can:super_admin']);
-Route::delete('/allsemuaakun/delete/{name}', [LoginController::class, 'allsemuaakun'])->middleware(['auth', 'can:super_admin']);
-Route::get('/akuncreate', [LoginController::class, 'akuncreate'])->middleware(['auth', 'can:super_admin']);
+Route::get('/allakun', [AkunController::class, 'allakun'])->middleware(['auth', 'can:super_admin']);
+Route::delete('/allsemuaakun/delete/{name}', [AkunController::class, 'allsemuaakun'])->middleware(['auth', 'can:super_admin']);
+Route::get('/akuncreate', [AkunController::class, 'akuncreate'])->middleware(['auth', 'can:super_admin']);
 
-Route::post('/akuncreatenew/createnew', [LoginController::class, 'akuncreatenew'])->middleware(['auth', 'can:super_admin'])->name('akuncreatenew');
+Route::post('/akuncreatenew/createnew', [AkunController::class, 'akuncreatenew'])->middleware(['auth', 'can:super_admin'])->name('akuncreatenew');
 
-Route::get('/allsuperadmin', [LoginController::class, 'allsuperadmin'])->middleware(['auth', 'can:super_admin']);
+Route::get('/allsuperadmin', [AkunController::class, 'allsuperadmin'])->middleware(['auth', 'can:super_admin']);
 
-Route::get('/alladmin', [LoginController::class, 'alladmin'])->middleware(['auth', 'can:super_admin']);
+Route::get('/alladmin', [AkunController::class, 'alladmin'])->middleware(['auth', 'can:super_admin']);
 
-Route::get('/allpekerja', [LoginController::class, 'allpekerja'])->middleware(['auth', 'can:super_admin']);
+Route::get('/allpekerja', [AkunController::class, 'allpekerja'])->middleware(['auth', 'can:super_admin']);
 
-Route::get('/allsupppabrik', [LoginController::class, 'allsupppabrik'])->middleware(['auth', 'can:super_admin']);
+Route::get('/allsupppabrik', [AkunController::class, 'allsupppabrik'])->middleware(['auth', 'can:super_admin']);
 
-Route::get('/allsuppperalatan', [LoginController::class, 'allsuppperalatan'])->middleware(['auth', 'can:super_admin']);
+Route::get('/allsuppperalatan', [AkunController::class, 'allsuppperalatan'])->middleware(['auth', 'can:super_admin']);
 
-Route::get('/allsupptokobangunan', [LoginController::class, 'allsupptokobangunan'])->middleware(['auth', 'can:super_admin']);
+Route::get('/allsupptokobangunan', [AkunController::class, 'allsupptokobangunan'])->middleware(['auth', 'can:super_admin']);
 
-Route::get('/alllsppenerbit', [LoginController::class, 'alllsppenerbit'])->middleware(['auth', 'can:super_admin']);
+Route::get('/alllsppenerbit', [AkunController::class, 'alllsppenerbit'])->middleware(['auth', 'can:super_admin']);
 
-Route::get('/alldinas', [LoginController::class, 'alldinas'])->middleware(['auth', 'can:super_admin']);
+Route::get('/alldinas', [AkunController::class, 'alldinas'])->middleware(['auth', 'can:super_admin']);
 
 
 // DATA PENGATURAN DATABASE DATA ALL
