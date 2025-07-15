@@ -1,39 +1,71 @@
-<style>
+
+                                                                                                        <style>
     /* Gaya untuk tabel */
-    .fl-table {
-        margin-top: 15px;
+    .custom-table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
+    }
+
+    .custom-fl-table {
         width: 100%;
         border-collapse: collapse;
-        border-radius: 10px;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
     }
 
-    .fl-table th, .fl-table td {
-        text-align: center;
-        /* border-radius: 10px; */
-        /* padding: 10px; */
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
+        vertical-align: middle;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
     }
 
-    /* Gaya untuk kepala tabel */
-    .fl-table thead {
-        background-color: #374151; /* Warna latar belakang untuk header tabel */
-        color: white;
-        padding: 5px;
+    .custom-fl-table th {
+        background-color:#4ADE80;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
     }
 
-    /* Gaya belang-belang */
-    .fl-table tbody tr:nth-child(odd) {
-        background-color: #f1f1f1; /* Abu-abu muda untuk baris ganjil */
+    .custom-fl-table td {
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.5;
     }
 
-    .fl-table tbody tr:nth-child(even) {
-        background-color: #e0e0e0; /* Abu-abu lebih gelap untuk baris genap */
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #f7f7f7;
     }
 
-    /* Gaya hover pada baris tabel */
-    .fl-table tbody tr:hover {
-        background-color: #d3d3d3; /* Efek hover dengan warna abu lebih gelap */
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f7f7f7;
+    }
+
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
     }
 </style>
+
 
 
 @include('frontend.00_android.00_fiturmenu.header')
@@ -136,8 +168,10 @@
 
 
                             <!-- Table Section -->
+                               <div class="custom-table-container">
+                                <table class="custom-fl-table" id="sortableTable">
 
-                            <table class="fl-table" id="sortableTable">
+                            {{-- <table class="fl-table" id="sortableTable"> --}}
                                 <thead>
                                     <tr>
                                         <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
@@ -160,6 +194,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            </div>
                             <!-- Description Section -->
                             <br>
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} Kab Blora Tahun 2025</p>

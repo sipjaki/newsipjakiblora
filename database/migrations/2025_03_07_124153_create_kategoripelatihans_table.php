@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('kategoripelatihans', function (Blueprint $table) {
             $table->id();
+
             $table->string('kategoripelatihan')->nullable();
             $table->softDeletes();
+            
             $table->timestamps();
         });
     }

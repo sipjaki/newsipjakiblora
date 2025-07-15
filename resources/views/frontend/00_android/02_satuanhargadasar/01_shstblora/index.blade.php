@@ -1,49 +1,68 @@
 <style>
+                                                                                                        <style>
     /* Gaya untuk tabel */
-
-    /* Membuat tabel dapat digeser secara horizontal */
-.table-wrapper {
-    width: 100%; /* Memastikan elemen pembungkus mengambil lebar penuh */
-    overflow-x: auto; /* Membuat konten dapat digulir secara horizontal */
-    margin-top: 10px; /* Menambah sedikit margin atas jika diperlukan */
-}
-
-.table-scroll {
-    overflow-x: auto;
-}
-
-.fl-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* Memastikan kolom tabel tidak tumpang tindih */
-}
-
-.fl-table th,
-.fl-table td {
-    padding: 8px;
-    text-align: center;
-}
-
-
-    /* Gaya untuk kepala tabel */
-    .fl-table thead {
-        background-color: #374151; /* Warna latar belakang untuk header tabel */
-        color: white;
-        padding: 5px;
+    .custom-table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
     }
 
-    /* Gaya belang-belang */
-    .fl-table tbody tr:nth-child(odd) {
-        background-color: #f1f1f1; /* Abu-abu muda untuk baris ganjil */
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
     }
 
-    .fl-table tbody tr:nth-child(even) {
-        background-color: #e0e0e0; /* Abu-abu lebih gelap untuk baris genap */
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
+        vertical-align: middle;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
     }
 
-    /* Gaya hover pada baris tabel */
-    .fl-table tbody tr:hover {
-        background-color: #d3d3d3; /* Efek hover dengan warna abu lebih gelap */
+    .custom-fl-table th {
+        background-color:#4ADE80;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .custom-fl-table td {
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.5;
+    }
+
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #f7f7f7;
+    }
+
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f7f7f7;
+    }
+
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
     }
 </style>
 
@@ -52,7 +71,7 @@
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
     <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-white overflow-x-hidden">
-        <div class="header flex flex-col bg-[#56BBC5] rounded-b-[50px] overflow-hidden h-[320px] -mb-[181px]" style="background: linear-gradient(to bottom, #28A745, #FFD100);">
+        <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama3.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden; height: 350px;">
             <nav class="pt-5 px-3 flex justify-between items-center">
                 <!-- Logo bagian kiri -->
                 <div class="flex items-center gap-[10px]">
@@ -96,6 +115,7 @@
                             <!-- Table Section -->
                             <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
                                 <div class="table-scroll">
+
                                     <table class="fl-table">
                                         <thead>
                                             <tr>
