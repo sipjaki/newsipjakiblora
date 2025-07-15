@@ -261,10 +261,24 @@
 
                 <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
-                        <a href="details.html">
-                            <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
+                        <a href="#">
+                            {{-- <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
                                 <img src="{{asset('storage/' . $menu->foto)}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                            </div> --}}
+
+                            <div style="margin-top: 10px;">
+                                @if($item->menu && $item->menu->foto1 && file_exists(public_path('storage/' . $item->menu->foto1)))
+                                    <!-- Menampilkan gambar dari storage -->
+                                    <img src="{{ asset('storage/' . $item->menu->foto1) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                @elseif($item->menu && $item->menu->foto1)
+                                    <!-- Menampilkan gambar dari path luar storage -->
+                                    <img src="{{ asset($item->menu->foto1) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                @else
+                                    <!-- Placeholder jika tidak ada data -->
+                                    <p style="font-size: 11px;">Tidak Ada Foto!</p>
+                                @endif
                             </div>
+
                         </a>
                         <div class="flex flex-col gap-[6px]">
                             <p class="text-xs leading-[18px]">Kegiatan : <span class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$menu->namakegiatan}}</span></p>
@@ -416,8 +430,22 @@
                 <a href="/resartikeljakon" class="card">
                     <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                         <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
-                            <img src="{{asset('storage/' . $item->foto1 )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                            {{-- <img src="{{asset('storage/' . $item->foto1 )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy"> --}}
+<div style="margin-top: 10px;">
+    @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
+        <!-- Menampilkan gambar dari storage -->
+        <img src="{{ asset('storage/' . $item->foto1) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+    @elseif($item->foto1)
+        <!-- Menampilkan gambar dari path luar storage -->
+        <img src="{{ asset($item->foto1) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p style="font-size: 11px;">Tidak Ada Foto!</p>
+    @endif
+</div>
+
                         </div>
+
                         <div class="flex flex-col gap-1">
                             <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->judul}}</p>
                             {{-- <p class="text-xs leading-[18px]">Target --}}
