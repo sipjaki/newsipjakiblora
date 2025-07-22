@@ -113,7 +113,7 @@
   </a>
 
   <!-- Informasi -->
-  <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+  <a href="/sertifikat" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
     <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
@@ -121,7 +121,7 @@
         <line x1="12" y1="8" x2="12.01" y2="8"></line>
       </svg>
     </div>
-    <small style="font-size: 11px;">Informasi</small>
+    <small style="font-size: 11px;">Sertifikat</small>
   </a>
 
   <!-- Settings -->
