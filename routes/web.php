@@ -1417,6 +1417,12 @@ Route::post('/logout', [LoginController::class, 'logout']);
 // Route::post('/reset-password', [LoginController::class, 'resetPassword'])->name('password.update');
 
 
+Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+
 // CONTROLLER DOWNLOAD
 Route::get('/asosiasi/export', [DownloadExcelController::class, 'exportasosiasi'])->name('asosiasi.export');
 
