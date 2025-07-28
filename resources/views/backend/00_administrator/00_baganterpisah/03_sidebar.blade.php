@@ -850,7 +850,7 @@
                 <ul class="nav nav-treeview">
                   <!-- Divisi I -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/besatuandiv1" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi I -->
                       <p style="color: white">Divisi I</p>
                     </a>
@@ -858,7 +858,7 @@
 
                   <!-- Divisi II -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/besatuandiv2" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi II -->
                       <p style="color: white">Divisi II</p>
                     </a>
@@ -866,7 +866,7 @@
 
                   <!-- Divisi III -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/besatuandiv3" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi III -->
                       <p style="color: white">Divisi III</p>
                     </a>
@@ -874,7 +874,7 @@
 
                   <!-- Divisi IV -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/besatuandiv4" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi IV -->
                       <p style="color: white">Divisi IV</p>
                     </a>
@@ -882,7 +882,7 @@
 
                   <!-- Divisi V -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/besatuandiv5" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi V -->
                       <p style="color: white">Divisi V</p>
                     </a>
@@ -890,7 +890,7 @@
 
                   <!-- Divisi VI -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/besatuandiv6" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi VI -->
                       <p style="color: white">Divisi VI</p>
                     </a>
@@ -898,7 +898,7 @@
 
                   <!-- Divisi VII -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/besatuandiv7" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi VII -->
                       <p style="color: white">Divisi VII</p>
                     </a>
