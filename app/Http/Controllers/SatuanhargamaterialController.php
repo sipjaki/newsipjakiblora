@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 
 use App\Models\bujkkontraktorsub;
+use App\Models\hspkodepekerjaan;
 use App\Models\satuanhargamaterial;
 use App\Models\satuanhargaperalatan;
 use App\Models\satuanhargaupahtenagakerja;
@@ -2098,6 +2099,476 @@ public function besatuanhargaperalatanupdatecreate(Request $request, $id)
     // Redirect atau response sukses
     session()->flash('update', 'Data Satuan Harga Material Berhasil Diperbarui!');
     return redirect('/besatuanhargaperalatan');
+}
+
+
+public function besatuandiv1(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = hspkonstruksiumum::query()->with([
+        'hspdivisi',
+        'hsppaket',
+        'hspkodepekerjaan',
+        'subhargadiv1',
+        'subhargadiv1bahan',
+        'subhargadiv1peralatan'
+    ]);
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian pada kolom tabel utama
+            $q->where('kode', 'LIKE', "%{$search}%")
+              ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+              ->orWhere('hargasatuan', 'LIKE', "%{$search}%");
+
+            // Pencarian pada relasi
+            $q->orWhereHas('hspdivisi', function ($sub) use ($search) {
+                $sub->where('hspdivisi', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hsppaket', function ($sub) use ($search) {
+                $sub->where('hsppaket', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hspkodepekerjaan', function ($sub) use ($search) {
+                $sub->where('namapekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv1', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv1bahan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv1peralatan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+        });
+    }
+
+    $query->orderBy('kode', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.01_divisi1.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.01_divisi1.01_divisi1', [
+        'title' => 'Daftar Satuan Harga Material',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+public function besatuandiv2(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = hspkonstruksiumum2::query()->with([
+        'hspdivisi',
+        'hsppaket2',
+        'hspkodepekerjaan2',
+        'subhargadiv2',
+        'subhargadiv2bahan',
+        'subhargadiv2peralatan'
+    ]);
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian pada kolom tabel utama
+            $q->where('kode', 'LIKE', "%{$search}%")
+              ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+              ->orWhere('hargasatuan', 'LIKE', "%{$search}%");
+
+            // Pencarian pada relasi
+            $q->orWhereHas('hspdivisi', function ($sub) use ($search) {
+                $sub->where('hspdivisi', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hsppaket', function ($sub) use ($search) {
+                $sub->where('hsppaket', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hspkodepekerjaan', function ($sub) use ($search) {
+                $sub->where('namapekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv1', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv1bahan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv1peralatan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+        });
+    }
+
+    $query->orderBy('kode', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.02_divisi2.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.01_divisi1.02_divisi2', [
+        'title' => 'Daftar Satuan Harga Material',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+public function besatuandiv3(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = hspkonstruksiumum3::query()->with([
+        'hspdivisi',
+        'hsppaket3',
+        'hspkodepekerjaan3',
+        'subhargadiv3',
+        'subhargadiv3bahan',
+        'subhargadiv3peralatan'
+    ]);
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian pada kolom tabel utama
+            $q->where('kode', 'LIKE', "%{$search}%")
+              ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+              ->orWhere('hargasatuan', 'LIKE', "%{$search}%");
+
+            // Pencarian pada relasi
+            $q->orWhereHas('hspdivisi', function ($sub) use ($search) {
+                $sub->where('hspdivisi', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hsppaket', function ($sub) use ($search) {
+                $sub->where('hsppaket', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hspkodepekerjaan', function ($sub) use ($search) {
+                $sub->where('namapekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3bahan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv33peralatan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+        });
+    }
+
+    $query->orderBy('kode', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.03_divisi3.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.01_divisi1.03_divisi3', [
+        'title' => 'Daftar Satuan Harga Material',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+public function besatuandiv4(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = hspkonstruksiumum4::query()->with([
+        'hspdivisi',
+        'hsppaket4',
+        'hspkodepekerjaan4',
+        'subhargadiv4',
+        'subhargadiv4bahan',
+        'subhargadiv4peralatan'
+    ]);
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian pada kolom tabel utama
+            $q->where('kode', 'LIKE', "%{$search}%")
+              ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+              ->orWhere('hargasatuan', 'LIKE', "%{$search}%");
+
+            // Pencarian pada relasi
+            $q->orWhereHas('hspdivisi', function ($sub) use ($search) {
+                $sub->where('hspdivisi', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hsppaket', function ($sub) use ($search) {
+                $sub->where('hsppaket', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hspkodepekerjaan', function ($sub) use ($search) {
+                $sub->where('namapekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3bahan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv33peralatan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+        });
+    }
+
+    $query->orderBy('kode', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.04_divisi4.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.01_divisi1.04_divisi4', [
+        'title' => 'Daftar Satuan Harga Material',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+public function besatuandiv5(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = hspkonstruksiumum5::query()->with([
+        'hspdivisi',
+        'hsppaket5',
+        'hspkodepekerjaan5',
+        'subhargadiv5',
+        'subhargadiv5bahan',
+        'subhargadiv5peralatan'
+    ]);
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian pada kolom tabel utama
+            $q->where('kode', 'LIKE', "%{$search}%")
+              ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+              ->orWhere('hargasatuan', 'LIKE', "%{$search}%");
+
+            // Pencarian pada relasi
+            $q->orWhereHas('hspdivisi', function ($sub) use ($search) {
+                $sub->where('hspdivisi', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hsppaket', function ($sub) use ($search) {
+                $sub->where('hsppaket', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hspkodepekerjaan', function ($sub) use ($search) {
+                $sub->where('namapekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3bahan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv33peralatan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+        });
+    }
+
+    $query->orderBy('kode', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.05_divisi5.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.01_divisi1.05_divisi5', [
+        'title' => 'Daftar Satuan Harga Material',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+public function besatuandiv6(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = hspkonstruksiumum6::query()->with([
+        'hspdivisi',
+        'hsppaket6',
+        'hspkodepekerjaan6',
+        'subhargadiv6',
+        'subhargadiv6bahan',
+        'subhargadiv6peralatan'
+    ]);
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian pada kolom tabel utama
+            $q->where('kode', 'LIKE', "%{$search}%")
+              ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+              ->orWhere('hargasatuan', 'LIKE', "%{$search}%");
+
+            // Pencarian pada relasi
+            $q->orWhereHas('hspdivisi', function ($sub) use ($search) {
+                $sub->where('hspdivisi', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hsppaket', function ($sub) use ($search) {
+                $sub->where('hsppaket', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hspkodepekerjaan', function ($sub) use ($search) {
+                $sub->where('namapekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3bahan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv33peralatan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+        });
+    }
+
+    $query->orderBy('kode', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.06_divisi5.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.01_divisi1.06_divisi5', [
+        'title' => 'Daftar Satuan Harga Material',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+public function besatuandiv7(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = hspkonstruksiumum7::query()->with([
+        'hspdivisi',
+        'hsppaket7',
+        'hspkodepekerjaan7',
+        'subhargadiv7',
+        'subhargadiv7bahan',
+        'subhargadiv7peralatan'
+    ]);
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // Pencarian pada kolom tabel utama
+            $q->where('kode', 'LIKE', "%{$search}%")
+              ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+              ->orWhere('hargasatuan', 'LIKE', "%{$search}%");
+
+            // Pencarian pada relasi
+            $q->orWhereHas('hspdivisi', function ($sub) use ($search) {
+                $sub->where('hspdivisi', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hsppaket', function ($sub) use ($search) {
+                $sub->where('hsppaket', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('hspkodepekerjaan', function ($sub) use ($search) {
+                $sub->where('namapekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv3bahan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+
+            $q->orWhereHas('subhargadiv33peralatan', function ($sub) use ($search) {
+                $sub->where('uraian', 'LIKE', "%{$search}%");
+            });
+        });
+    }
+
+    $query->orderBy('kode', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.07_divisi7.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.02_satuanhargadasar.00_ahspperdivisi.01_divisi1.07_divisi7', [
+        'title' => 'Daftar Satuan Harga Material',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
 }
 
 }
