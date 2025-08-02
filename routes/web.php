@@ -28,10 +28,13 @@ use App\Http\Controllers\AllskktenagakerjabloraController;
 use App\Http\Controllers\PaketpekerjaanmasjakiController;
 use App\Http\Controllers\PesertapelatihanController;
 use App\Http\Controllers\AndroidVersionController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\DownloadExcelController;
 use App\Http\Controllers\HakAksesController;
 use App\Http\Controllers\SettingDataController;
 use App\Http\Controllers\VerifikasiController;
+
 use App\Models\tertibjasakonstruksi;
 // MAS JAKI
 
@@ -1411,14 +1414,9 @@ Route::get('/login', [LoginController::class, 'loginmasuk'])->name('login')->mid
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-// Route::get('/forgot-password', [LoginController::class, 'showForgotPasswordForm'])->name('password.request');
-// Route::post('/forgot-password', [LoginController::class, 'sendResetLinkEmail'])->name('password.email');
-// Route::get('/reset-password/{token}', [LoginController::class, 'showResetForm'])->name('password.reset');
-// Route::post('/reset-password', [LoginController::class, 'resetPassword'])->name('password.update');
-
-
 Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+// Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 
