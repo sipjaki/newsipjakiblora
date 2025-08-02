@@ -173,14 +173,25 @@
                 <!--begin::User Image-->
                 <li class="user-header text-bg-success">
                   <img
-                    src="{{ asset('storage/' . Auth::user()->avatar) }}"
-                    class="rounded-circle shadow"
-                    alt="User Image"
-                  />
-                  <p>
-                    {{ Auth::user()->name }}
-                    <small style="color: navy;">{{ Auth::user()->statusadmin->statusadmin }}</small>
-                  </p>
+  src="{{ Auth::check() && Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : asset('assets/default-avatar.png') }}"
+  class="rounded-circle shadow"
+  alt="User Image"
+/>
+
+                  @if(Auth::check())
+  <p>
+    {{ Auth::user()->name }}
+    <small style="color: navy;">
+      {{ Auth::user()->statusadmin->statusadmin ?? '-' }}
+    </small>
+  </p>
+@else
+  <p>
+    -
+    <small style="color: navy;">-</small>
+  </p>
+@endif
+
                 </li>
                 <!--end::User Image-->
                 <!--begin::Menu Body-->
