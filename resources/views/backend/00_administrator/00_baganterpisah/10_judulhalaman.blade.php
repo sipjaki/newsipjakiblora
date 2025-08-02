@@ -1,13 +1,6 @@
+@include('button')
 
-<div class="card mb-4">
-    <div class="card-header">
-      <div class="halaman-title">
-        📌 Halaman : {{ $title }}
-      </div>
-    </div>
-  </div>
-
-  <style>
+<style>
     @keyframes gradientShift {
         0% {
             background-position: 0% 50%;
@@ -18,9 +11,9 @@
         100% {
             background-position: 0% 50%;
         }
-        }
+    }
 
-        .halaman-title {
+    .halaman-title {
         margin-bottom: 10px;
         font-weight: 900;
         font-size: 16px;
@@ -35,6 +28,13 @@
         background-size: 300% 300%;
         animation: gradientShift 6s ease infinite;
         font-family: 'Poppins', sans-serif;
-        }
+    }
+</style>
 
-  </style>
+<div class="card mb-4">
+    <div class="card-header">
+        <div class="button-hijau">
+            📌 Halaman : {{ $title }}
+        </div>
+    </div>
+</div>
