@@ -97,12 +97,17 @@ table.zebra-table {
         <div class="col-sm-12">
             <h3 class="mb-0 marquee-container" style="font-family: 'Poppins', sans-serif; font-size: 18px;">
                 <span class="marquee-content">
-                    Selamat datang!
-                    <span style="color: black; font-weight:800;">{{ Auth::user()->name }}</span>
-                    di Dashboard
-                    <span style="color: black; font-weight:800;">{{ Auth::user()->statusadmin->statusadmin }}</span>
-                    Sistem Informasi Pembina Jasa Konstruksi Kab Blora
-                </span>
+  Selamat datang!
+  <span style="color: black; font-weight:800;">
+    {{ Auth::user()?->name ?? '-' }}
+  </span>
+  di Dashboard
+  <span style="color: black; font-weight:800;">
+    {{ Auth::user()?->statusadmin?->statusadmin ?? '-' }}
+  </span>
+  Sistem Informasi Pembina Jasa Konstruksi Kab Blora
+</span>
+
             </h3>
         </div>
     </div>
