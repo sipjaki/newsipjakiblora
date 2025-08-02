@@ -30,6 +30,7 @@
 {{-- ---------------------------------------------------------------------- --}}
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+   @include('button')
 
    <!--begin::App Main-->
    <main class="app-main">
@@ -61,26 +62,12 @@
              <!-- /.card -->
              <div class="card mb-4">
                  <div class="card-header">
-                    <div style="
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #00378a, #00378a);
-                    color: white;
-                    padding: 8px 16px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    transition: all 0.3s ease;
-                    cursor: pointer;
-                "
-                onmouseover="this.style.background='white'; this.style.color='black';"
-                onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
+                    <div class="button-baru">
                     ⚙️ Setting Database
                 </div>
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
+{{--
                     <a href="/404">
                         <button
                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -123,7 +110,7 @@
                             <i class="bi bi-calendar-event" style="margin-right: 8px;"></i>
                             Tahun Pelaksanaan
                         </button>
-                    </a>
+                    </a> --}}
 
                 </div>
                                  </div>
@@ -161,10 +148,7 @@
                                 </script> --}}
 
                          <a href="/404">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
-                             style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                             <button class="button-hijau">
                              <!-- Ikon Kembali -->
                              <i class="fa fa-plus" style="margin-right: 8px;"></i>
                              Create
@@ -209,10 +193,7 @@
     <tr class="align-middle">
         <td style="text-align: center;">
             <div style="display: flex; flex-direction: column; align-items: center;">
-                <a href="/bepekerjaandetails/{{$data->id}}"
-                   style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
-                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                   onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+                <a href="/bepekerjaandetails/{{$data->id}}" class="button-baru">
                     <i class="bi bi-pencil" style="margin-right: 6px;"></i> Buat
                 </a>
             </div>
@@ -220,10 +201,7 @@
 
         <td style="text-align: center;">
             <div style="display: flex; flex-direction: column; align-items: center;">
-                <a href="/bedetailspekerjaan/{{$data->id}}"
-                   style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
-                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                   onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+                <a href="/bedetailspekerjaan/{{$data->id}}" class="button-baru">
                     <i class="bi bi-pencil" style="margin-right: 6px;"></i> Buat
                 </a>
             </div>
@@ -231,10 +209,7 @@
 
         <td style="text-align: center;">
             <div style="display: flex; flex-direction: column; align-items: center;">
-                <a href="/bedetailsspk/{{$data->id}}"
-                   style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
-                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                   onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+                <a href="/bedetailsspk/{{$data->id}}" class="button-baru">
                     <i class="bi bi-pencil" style="margin-right: 6px;"></i> Buat
                 </a>
             </div>
@@ -242,10 +217,7 @@
 
         <td style="text-align: center;">
             <div style="display: flex; flex-direction: column; align-items: center;">
-                <a href="/bedetailsskk/{{$data->id}}"
-                   style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
-                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                   onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+                <a href="/bedetailsskk/{{$data->id}}" class="button-baru">
                     <i class="bi bi-pencil" style="margin-right: 6px;"></i> Buat
                 </a>
             </div>
@@ -253,10 +225,7 @@
 
         <td style="text-align: center;">
             <div style="display: flex; flex-direction: column; align-items: center;">
-                <a href="/bedetailsskk/{{$data->id}}"
-                   style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
-                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                   onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+                <a href="/bedetailsskk/{{$data->id}}" class="button-baru">
                     <i class="bi bi-pencil" style="margin-right: 6px;"></i> Buat
                 </a>
             </div>
