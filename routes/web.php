@@ -1138,7 +1138,14 @@ Route::put('/beshstkabblora/updatenew/{id}', [ShstbloraController::class, 'beshs
 // ___________________________________________________________________________________________________________________________________
 
 
-
+// SATUAN HARGA PER DIVISI
+Route::get('/besatuandiv1', [SatuanhargamaterialController::class, 'besatuandiv1'])->middleware(['auth', 'can:super_admin']);
+Route::get('/besatuandiv2', [SatuanhargamaterialController::class, 'besatuandiv2'])->middleware(['auth', 'can:super_admin']);
+Route::get('/besatuandiv3', [SatuanhargamaterialController::class, 'besatuandiv3'])->middleware(['auth', 'can:super_admin']);
+Route::get('/besatuandiv4', [SatuanhargamaterialController::class, 'besatuandiv4'])->middleware(['auth', 'can:super_admin']);
+Route::get('/besatuandiv5', [SatuanhargamaterialController::class, 'besatuandiv5'])->middleware(['auth', 'can:super_admin']);
+Route::get('/besatuandiv6', [SatuanhargamaterialController::class, 'besatuandiv6'])->middleware(['auth', 'can:super_admin']);
+Route::get('/besatuandiv7', [SatuanhargamaterialController::class, 'besatuandiv7'])->middleware(['auth', 'can:super_admin']);
 
 
 // MENU DATA BACKEND SATUAN HARGA DASAR MATERIAL
@@ -1186,6 +1193,7 @@ Route::post('/besatuanhargaperalatan/updatecreate/{id}', [SatuanhargamaterialCon
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
 // PEKERJAANINI
 // ROUTE UNTUK DAFTAR AKUN
+
 
 Route::get('/allakun', [AkunController::class, 'allakun'])->middleware(['auth', 'can:super_admin']);
 Route::delete('/allsemuaakun/delete/{name}', [AkunController::class, 'allsemuaakun'])->middleware(['auth', 'can:super_admin']);

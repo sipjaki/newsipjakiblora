@@ -39,6 +39,7 @@
 {{-- ---------------------------------------------------------------------- --}}
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+   @include('button')
 
    <!--begin::App Main-->
    <main class="app-main">
@@ -122,12 +123,12 @@
                                 </script>
 
 
-                                <button class="btn-create" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
+                                <button class="button-baru" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
                                     <i class="bi bi-download icon-create" style="margin-right: 5px" ></i> Download Excel
                                 </button>
 
                                 <a href="/betertibjakonusaha/create">
-                                    <button class="btn-create";>
+                                    <button class="button-hijau";>
                                     <!-- Ikon Kembali -->
                                     <i class="fa fa-plus icon-create" style="margin-right: 8px;"></i>
                                     Create
@@ -271,7 +272,7 @@
 
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="/betertibjakonusahasuratpercobaan/create/{{$item->id}}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
@@ -279,7 +280,7 @@
 
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonusahasegmentasipasar/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
@@ -288,7 +289,7 @@
 
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonusahapemenuhansyarat/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
@@ -296,7 +297,7 @@
 
                                 <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonusahapelaksana/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
@@ -313,8 +314,8 @@
                               <td style="text-align: center;">
                                 <!-- Tombol Aksi -->
                                 {{-- <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a> --}}
-                                <a href="/betertibjakonusaha/update/{{$item->id}}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                <a href="javascript:void(0)" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
+                                <a href="/betertibjakonusaha/update/{{$item->id}}" class="button-berkas"><i class="bi bi-pencil-square"></i></a>
+                                <a href="javascript:void(0)" class="button-merah" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
                                   <i class="bi bi-trash"></i>
                                 </a>
                               </td>
