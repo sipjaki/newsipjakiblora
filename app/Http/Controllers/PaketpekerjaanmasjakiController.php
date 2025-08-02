@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\bulanrekap;
 use App\Models\paketpekerjaanmasjaki;
+use App\Models\paketstatuspekerjaan;
+use App\Models\profiljenispekerjaan;
+use App\Models\sumberdana;
+use App\Models\tahunlulus;
+use App\Models\tahunpilihan;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -84,56 +91,63 @@ class PaketpekerjaanmasjakiController extends Controller
 
     // MENU BACKEND PROFIL PAKET PEKERJAAN
     public function bepaketpekerjaan(Request $request)
-    {
-            $perPage = $request->input('perPage', 15);
-            $search = $request->input('search');
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
 
-            $query = paketpekerjaanmasjaki::query();
+    $query = paketpekerjaanmasjaki::with([
+        'profiljenispekerjaan',
+        'paketstatuspekerjaan',
+        'sumberdana',
+        'tahunpilihan',
+        'bulanrekap',
+        'user'  // pastikan relasi user eager loaded
+    ]);
 
-            if ($search) {
-                $query->where('namapekerjaan', 'LIKE', "%{$search}%")
-                    ->orWhere('cvptpenyedia', 'LIKE', "%{$search}%")
-                    ->orWhere('nib', 'LIKE', "%{$search}%")
-                    ->orWhere('nilaikontrak', 'LIKE', "%{$search}%")
-                    ->orWhere('jeniskontrak', 'LIKE', "%{$search}%")
-                    ->orWhere('karakteristikkontrak', 'LIKE', "%{$search}%")
-                    ->orWhere('bulanmulai', 'LIKE', "%{$search}%")
-                    ->orWhere('bulanselesai', 'LIKE', "%{$search}%")
-                    ->orWhere('dinas', 'LIKE', "%{$search}%")
-        // -------------------------------------------------------------------------------
-                    ->orWhereHas('profiljenispekerjaan', function ($q) use ($search) {
-                        $q->where('jenispekerjaan', 'LIKE', "%{$search}%");
-                    })
-
-                    ->orWhereHas('paketstatuspekerjaan', function ($q) use ($search) {
-                        $q->where('paketstatuspekerjaan', 'LIKE', "%{$search}%");
-                    })
-
-                    ->orWhereHas('sumberdana', function ($q) use ($search) {
-                        $q->where('sumberdana', 'LIKE', "%{$search}%");
-                    })
-
-                    ->orWhereHas('tahunpilihan', function ($q) use ($search) {
-                        $q->where('tahunpilihan', 'LIKE', "%{$search}%");
-                    });
-
-            }
-
-            $data = $query->paginate($perPage);
-
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('backend.04_datajakon.06_profilpaketpekerjaan.partials.table', compact('data'))->render()
-                ]);
-            }
-
-            return view('backend.04_datajakon.06_profilpaketpekerjaan.index', [
-                'title' => 'Profil Paket Pekerjaan Konstruksi dan Konsultasi Konstruksi',
-                'data' => $data,
-                'perPage' => $perPage,
-                'search' => $search
-            ]);
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+                ->orWhere('cvptpenyedia', 'LIKE', "%{$search}%")
+                ->orWhere('nib', 'LIKE', "%{$search}%")
+                ->orWhere('nilaikontrak', 'LIKE', "%{$search}%")
+                ->orWhere('jeniskontrak', 'LIKE', "%{$search}%")
+                ->orWhere('karakteristikkontrak', 'LIKE', "%{$search}%")
+                ->orWhere('bulanmulai', 'LIKE', "%{$search}%")
+                ->orWhere('bulanselesai', 'LIKE', "%{$search}%")
+                ->orWhere('dinas', 'LIKE', "%{$search}%")
+                ->orWhereHas('profiljenispekerjaan', function ($q2) use ($search) {
+                    $q2->where('jenispekerjaan', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('paketstatuspekerjaan', function ($q2) use ($search) {
+                    $q2->where('paketstatuspekerjaan', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('sumberdana', function ($q2) use ($search) {
+                    $q2->where('sumberdana', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('tahunpilihan', function ($q2) use ($search) {
+                    $q2->where('tahunpilihan', 'LIKE', "%{$search}%");
+                });
+        });
     }
+
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    // $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.04_datajakon.06_profilpaketpekerjaan.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.04_datajakon.06_profilpaketpekerjaan.index', [
+        'title' => 'Profil Paket Pekerjaan Konstruksi dan Konsultasi Konstruksi',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
 
 // HAK AKSES DINAS
 public function bepaketpekerjaandinas(Request $request)
@@ -332,5 +346,85 @@ public function bepaketpekerjaandinas(Request $request)
                 'data' => $datapaketpekerjaan,
             ]);
         }
+
+
+// MENAMBAHKAN PROFIL PAKET PEKERJAAN
+        public function bepaketpekerjaancreate()
+{
+    // Ambil data yang dibutuhkan untuk form dropdown, jika ada
+    // $jenispekerjaan = profiljenispekerjaan::all();
+    $jenispekerjaan = profiljenispekerjaan::orderBy('jenispekerjaan', 'asc')->get();
+    $statuspekerjaan = paketstatuspekerjaan::all();
+    $sumberdana = sumberdana::all();
+    $tahun = tahunpilihan::all();
+    $bulan = bulanrekap::all();
+
+$users = User::with('statusadmin')->where('statusadmin_id', 9)->get();
+
+    return view('backend.04_datajakon.06_profilpaketpekerjaan.buatbarupaket', [
+        'title' => 'Tambah Paket Pekerjaan Konstruksi dan Konsultasi Konstruksi',
+        'jenispekerjaan' => $jenispekerjaan,
+        'statuspekerjaan' => $statuspekerjaan,
+        'sumberdana' => $sumberdana,
+        'tahun' => $tahun,
+        'bulan' => $bulan,
+        'user' => $users
+    ]);
+}
+
+public function bepaketpekerjaancreatenew(Request $request)
+{
+    // Validasi input dengan custom messages
+    $validated = $request->validate([
+        'profiljenispekerjaan_id' => 'nullable|string',
+        'paketstatuspekerjaan_id' => 'nullable|string',
+        'sumberdana_id' => 'nullable|string',
+        'tahunpilihan_id' => 'nullable|string',
+        'bulanrekap_id' => 'nullable|string',
+        'user_id' => 'nullable|string',
+
+        'namapekerjaan' => 'nullable|string',
+        'cvptpenyedia' => 'nullable|string|max:255',
+        'nib' => 'nullable|string|max:255',
+        'nilaikontrak' => 'nullable|string',
+        'jeniskontrak' => 'nullable|string|max:255',
+        'karakteristikkontrak' => 'nullable|string|max:255',
+        'bulanmulai' => 'nullable|string|max:255',
+        'bulanselesai' => 'nullable|string|max:255',
+        'progress' => 'nullable|integer|min:0|max:100',
+    ], [
+        'profiljenispekerjaan_id.exists' => 'Jenis pekerjaan tidak valid.',
+        'paketstatuspekerjaan_id.exists' => 'Status pekerjaan tidak valid.',
+        'sumberdana_id.exists' => 'Sumber dana tidak valid.',
+        'tahunpilihan_id.exists' => 'Tahun pilihan tidak valid.',
+        'bulanrekap_id.exists' => 'Bulan rekap tidak valid.',
+        'user_id.exists' => 'User tidak valid.',
+
+        // Kamu bisa tambah custom message lain jika perlu
+    ]);
+
+    // Simpan data ke database
+    paketpekerjaanmasjaki::create([
+        'profiljenispekerjaan_id' => $validated['profiljenispekerjaan_id'] ?? null,
+        'paketstatuspekerjaan_id' => $validated['paketstatuspekerjaan_id'] ?? null,
+        'sumberdana_id' => $validated['sumberdana_id'] ?? null,
+        'tahunpilihan_id' => $validated['tahunpilihan_id'] ?? null,
+        'bulanrekap_id' => $validated['bulanrekap_id'] ?? null,
+        'user_id' => $validated['user_id'] ?? null,
+
+        'namapekerjaan' => $validated['namapekerjaan'] ?? null,
+        'cvptpenyedia' => $validated['cvptpenyedia'] ?? null,
+        'nib' => $validated['nib'] ?? null,
+        'nilaikontrak' => $validated['nilaikontrak'] ?? null,
+        'jeniskontrak' => $validated['jeniskontrak'] ?? null,
+        'karakteristikkontrak' => $validated['karakteristikkontrak'] ?? null,
+        'bulanmulai' => $validated['bulanmulai'] ?? null,
+        'bulanselesai' => $validated['bulanselesai'] ?? null,
+        'progress' => $validated['progress'] ?? 0,
+    ]);
+
+    session()->flash('create', 'Data Paket Pekerjaan Berhasil Ditambahkan!');
+    return redirect()->route('bepaketpekerjaanindex'); // Ganti dengan route index yang sesuai
+}
 
 }
