@@ -1191,6 +1191,7 @@ Route::post('/besatuanhargaperalatan/updatecreate/{id}', [SatuanhargamaterialCon
 // PEKERJAANINI
 // ROUTE UNTUK DAFTAR AKUN
 
+
 Route::get('/allakun', [AkunController::class, 'allakun'])->middleware(['auth', 'can:super_admin']);
 Route::delete('/allsemuaakun/delete/{name}', [AkunController::class, 'allsemuaakun'])->middleware(['auth', 'can:super_admin']);
 Route::get('/akuncreate', [AkunController::class, 'akuncreate'])->middleware(['auth', 'can:super_admin']);
