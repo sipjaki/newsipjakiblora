@@ -659,6 +659,7 @@ button-delete {
     background: white;
     color: black;
 }
+
 .putih {
     border: none;
     padding: 10px 20px;
@@ -678,6 +679,26 @@ button-delete {
     background-color: #f1f1f1; /* opsional: efek hover ringan */
 }
 
+.hijau {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: linear-gradient(to right, #a8e6cf, #ffffff); /* gradasi hijau muda ke putih */
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.hijau:hover {
+    background: linear-gradient(to right, #98dbc6, #ffffff); /* gradasi hover */
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.2);
+}
+
 
 /* Jika animasi gradientMove belum ada, tambahkan contoh animasinya: */
 @keyframes gradientMove {
@@ -689,8 +710,52 @@ button-delete {
     }
 }
 
+  .tabel-baru {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+  }
 
+  .tabel-baru thead th {
+    background-color: #a8e6a1; /* Hijau muda modern */
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+  }
 
+  .tabel-baru tbody td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+    background-color: white !important;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .tabel-baru tr:hover {
+    background-color: #f1f1f1;
+  }
+
+.tabel-baru thead tr th:first-child {
+  border-top-left-radius: 20px;
+}
+
+.tabel-baru thead tr th:last-child {
+  border-top-right-radius: 20px;
+}
+
+.tabel-baru tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+
+.tabel-baru tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+}
 
 </style>
 

@@ -508,7 +508,7 @@
 
         {{-- DASHBOARD SUPER ADMIN --}}
 
-        @can('super_admin')
+        {{-- @can('super_admin') --}}
 
                 <li class="nav-header" style="color: white;">BERANDA WEB</li>
 
@@ -1266,7 +1266,7 @@
                 </ul>
               </li>
 
-              @endcan
+              {{-- @endcan --}}
 {{--
               <li class="nav-header" style="color: white;" >ADMINISTRATOR DATABASE</li>
 

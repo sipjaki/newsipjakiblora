@@ -614,7 +614,8 @@ Route::get('/tokobangunanbloralist/{namatokobangunan}', [TokobangunanbloraContro
 // BACKEND MENU APLIKASI SIPJAKI DINAS PUPR PEMERINTAH KABUPATEN BLORA PROVINSI JAWA TENGAH
 // ================================================================================================================================================
 
-Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware('auth');
+// Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard', [AdminDashboardController::class, 'index']);
 
 // ======================================= BERANDA WEB -------------------------------------------------------------
 // ---------------------- MENU 2 BERANDA  -----------------------------------------------------
@@ -725,12 +726,14 @@ Route::delete('/beartikeljakon/delete/{judulberita}', [BeritajakonController::cl
 // ======================================= DATA JAKON BACKEND -------------------------------------------------------------
 // ---------------------- MENU 01 BUJK KONSTRUKSI   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
-Route::get('/bebujkjakon', [BujkkontraktorController::class, 'bebujkjakon'])->middleware(['auth', 'can:super_admin']);
+// Route::get('/bebujkjakon', [BujkkontraktorController::class, 'bebujkjakon'])->middleware(['auth', 'can:super_admin']);
+Route::get('/bebujkjakon', [BujkkontraktorController::class, 'bebujkjakon']);
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 1 BUJK KONSTRUKSI   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
-Route::get('/bebujkkonstruksi', [BujkkontraktorController::class, 'bebujkkonstruksi'])->middleware(['auth', 'can:super_admin']);
+// Route::get('/bebujkkonstruksi', [BujkkontraktorController::class, 'bebujkkonstruksi'])->middleware(['auth', 'can:super_admin']);
+Route::get('/bebujkkonstruksi', [BujkkontraktorController::class, 'bebujkkonstruksi']);
 Route::get('/bebujkkonstruksi/show/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksishow'])->middleware(['auth', 'can:super_admin']);
 Route::get('/bebujkkonstruksi/showsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasi'])->middleware(['auth', 'can:super_admin'])->name('bebujkkonstruksi.showsubklasifikasi');
 
@@ -802,9 +805,12 @@ Route::post('/beskkallblora/createnew', [SkktenagakerjabloraController::class, '
 // ________________________________________________________________________________________________________________
 // ---------------------- MENU 3 PROFIL PAKET PEKERJAAN -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
-Route::get('/bepaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaan'])->middleware(['auth', 'can:super_admin']);
+// Route::get('/bepaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaan'])->middleware(['auth', 'can:super_admin']);
+Route::get('/bepaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaan'])->name('bepaketpekerjaanindex');
 Route::get('/bepaketpekerjaan/showsurat/{id}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaanshowsurat'])->middleware(['auth', 'can:super_admin']);
 
+Route::get('/bepaketpekerjaancreate', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaancreate']);
+Route::post('/bepaketpekerjaancreatenew', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaancreatenew'])->name('bepaketpekerjaancreatenew');
 
 // BELUM DI BUATKAN
 // Route::get('/bebujkkonstruksi/createsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasi'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasi');
@@ -817,7 +823,8 @@ Route::get('/bepaketpekerjaandinas', [PaketpekerjaanmasjakiController::class, 'b
 
 
 Route::get('/bepaketpekerjaan/show/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaanshow'])->middleware(['auth', 'can:super_admin']);
-Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaandelete'])->middleware(['auth', 'can:super_admin']);
+// Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaandelete'])->middleware(['auth', 'can:super_admin']);
+Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaandelete']);
 
 // SURAT SURAT PROFIL PAKET PEKERJAAN
 Route::get('/bepekerjaandetails/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaandetails'])->middleware(['auth', 'can:super_admin']);
