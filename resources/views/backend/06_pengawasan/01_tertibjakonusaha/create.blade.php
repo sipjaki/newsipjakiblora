@@ -1,82 +1,223 @@
+{{-- ------------------------------------ --}}
+<style>
+ body {
+        font-family: 'Poppins', sans-serif;
+    }
+    .zebra-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+.zebra-table th {
+    background-color: #ADD8E6; /* biru muda */
+    color: black;
+    text-align: center;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.zebra-table td {
+    text-align: center;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.zebra-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.zebra-table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.zebra-table tbody tr:hover {
+    background-color: #ffd100 !important;
+}
+
+th {
+    background-color: #ADD8E6;
+}
+
+</style>
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
-    <div class="app-wrapper">
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+ <!--begin::App Wrapper-->
+ <div class="app-wrapper">
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
-      @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+   @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+   @include('backend.00_administrator.00_baganterpisah.11_alert')
 
-      <!--begin::App Main-->
-      <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
 
-        <!--begin::App Content Header-->
-        <div class="app-content-header">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row">
 
-                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
-                @include('backend.00_administrator.00_baganterpisah.11_alert')
-            </div>
-            <!--end::Row-->
-          </div>
-          <!--end::Container-->
-        </div>
+   <!--begin::App Main-->
+   <main class="app-main"
+style="
+  background: linear-gradient(to bottom, #a8e6cf, #ffffff); /* hijau muda ke putih */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 0;
+"
+>
+     <!--begin::App Content Header-->
+     <div class="app-content-header">
+       <!--begin::Container-->
+       <div class="container-fluid">
+         <!--begin::Row-->
+         <div class="row">
 
-        <br>
+                  @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+           {{-- <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div> --}}
 
-        <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row" style="margin-right: 10px; margin-left:10px;">
-                <!-- /.card -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
-                    </div>
+         </div>
+         <!--end::Row-->
+       </div>
+       <!--end::Container-->
+     </div>
 
-                           {{-- ======================================================= --}}
+     <!-- Menampilkan pesan sukses -->
+<br>
+     {{-- ======================================================= --}}
+     {{-- ALERT --}}
 
-        <div class="card card-primary card-outline mb-6">
-            <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/betertibjakonusaha/">
-                    <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                    <!-- Ikon Kembali -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" style="margin-right: 8px;">
-                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-               </svg>
-                    Kembali
-                </button>
-            </a>
-        </div>
-        <hr>
+     {{-- @include('backend.00_administrator.00_baganterpisah.06_alert') --}}
 
+     {{-- ======================================================= --}}
+
+     <div class="container-fluid">
+         <!--begin::Row-->
+         <div class="putih row" style="margin-right: 10px; margin-left:10px;">
+             <!-- /.card -->
+             <div class="card mb-4">
+                 {{-- <div class="card-header">
+                    <div style="
+                    font-weight: 900;
+                    font-size: 16px;
+                    text-align: center;
+                    background: linear-gradient(135deg, #00378a, #00378a);
+                    color: white;
+                    padding: 8px 10px;
+                    border-radius: 10px;
+                    display: inline-block;
+                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                ">
+                    ⚙️ Setting Database
+                </div> --}}
+
+                     {{-- <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                         <a href="/404">
+                             <button
+                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                             onmouseout="this.style.backgroundColor='#00378a'; this.style.color='white';"
+                             style="background-color: #00378a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                             <!-- Ikon Kembali -->
+                             <i class="fa fa-database" style="margin-right: 8px;"></i>
+                             Asosiasi
+                         </button>
+                         </a>
+
+                     </div> --}}
+                 </div>
+                 <!-- /.card-header -->
+                 <div class="card-header">
+                    <div
+                style="
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(135deg, #a8e6cf, #ffffff); /* gradasi hijau muda ke putih */
+    color: #004d40; /* teks hijau gelap agar kontras */
+    padding: 10px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+"
+>
+                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
+                </div>
+
+
+
+
+
+                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
+{{-- <button class="button-kembali" type="button"
+    onclick="window.location.href='{{ url()->previous() }}';"
+    style="cursor: pointer; margin-left:10px; color:black;">
+    <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
+</button> --}}
+
+
+
+                                <!-- Tombol Create -->
+                                {{-- <a href="/settingssekolah/create">
+                                    <button
+                                        onmouseover="this.style.background='white'; this.style.color='black';"
+                                        onmouseout="this.style.background='linear-gradient(to right, #228B22, #d4af37)'; this.style.color='white';"
+                                        style="background: linear-gradient(to right, #228B22, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
+                                        <i class="fa fa-plus" style="margin-right: 8px;"></i> Create
+                                    </button>
+                                </a> --}}
+
+
+
+                        {{-- <a href="/bekrkindex">
+                             <button
+                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                             onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                             style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                             <!-- Ikon Kembali -->
+                             <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+
+                         </button>
+                         </a> --}}
+
+                     </div>
+                 </div>
+<br>
+                 <hr>
+                 <!-- /.card-header -->
+                 <div class="card-body p-0">
 
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-
-                        <form action="{{ route('betertibjakonusahacreatenew') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
+                  <form action="{{ route('betertibjakonusahacreatenew') }}" method="POST" enctype="multipart/form-data">
+          @csrf
+                            <!-- begin::Body -->
                             <div class="card-body">
-                                <div class="row">
+                                    <!-- Left Column (6/12) -->
+<div class="row">
+    <div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed green; width: 60%; margin: auto;">
+    <h5 style="color: green; font-weight: bold; margin-top: 5px; font-size:16px;">
+        <i class="bi bi-upload" style="margin-right: 6px;"></i>
+        Tambahkan Data Baru Tertib Usaha Jasa Konstruksi
+    </h5>
+    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+</div>
+<div class="row">
                                     <!-- Kolom Kiri -->
-                                    <div class="col-md-6">
-                                        <!-- Kategori Pelatihan -->
-                                     <!-- Kategori Pelatihan -->
+<div class="col-md-6">
 <div class="mb-3">
     <label for="penyediastatustertibjakon_id" class="form-label">
-        <i class="bi bi-card-text text-primary"></i> Status Penyedia
+        <i class="bi bi-card-text" style="color: #800000;"></i> Status Penyedia
     </label>
     <select id="penyediastatustertibjakon_id" name="penyediastatustertibjakon_id" class="form-control @error('penyediastatustertibjakon_id') is-invalid @enderror">
         <option value="">-- Pilih Status Penyedia --</option>
@@ -94,7 +235,7 @@
 <!-- NIB -->
 <div class="mb-3">
     <label for="nib" class="form-label">
-        <i class="bi bi-123 text-primary"></i> NIB
+        <i class="bi bi-123" style="color: #800000;"></i> NIB
     </label>
     <input type="number" id="nib" name="nib"
         class="form-control @error('nib') is-invalid @enderror"
@@ -107,7 +248,7 @@
 <!-- Nama Pekerjaan -->
 <div class="mb-3">
     <label for="namapekerjaan" class="form-label">
-        <i class="bi bi-briefcase text-primary"></i> Nama Pekerjaan
+        <i class="bi bi-briefcase" style="color: #800000;"></i> Nama Pekerjaan
     </label>
     <input type="text" id="namapekerjaan" name="namapekerjaan"
         class="form-control @error('namapekerjaan') is-invalid @enderror"
@@ -124,7 +265,7 @@
 <!-- Tahun Pelaksanaan -->
 <div class="mb-3">
     <label for="tahunpelaksanaan" class="form-label">
-        <i class="bi bi-calendar-event text-primary"></i> Tahun Pelaksanaan
+        <i class="bi bi-calendar-event" style="color: #800000;"></i> Tahun Pelaksanaan
     </label>
     <select id="tahunpelaksanaan" name="tahunpelaksanaan"
         class="form-select @error('tahunpelaksanaan') is-invalid @enderror">
@@ -144,7 +285,7 @@
 <!-- Nama Badan Usaha -->
 <div class="mb-3">
     <label for="namabadanusaha" class="form-label">
-        <i class="bi bi-building text-primary"></i> Nama Badan Usaha
+        <i class="bi bi-building" style="color: #800000;"></i> Nama Badan Usaha
     </label>
     <input type="text" id="namabadanusaha" name="namabadanusaha"
         class="form-control @error('namabadanusaha') is-invalid @enderror"
@@ -157,7 +298,7 @@
 <!-- PJBU -->
 <div class="mb-3">
     <label for="pjbu" class="form-label">
-        <i class="bi bi-person-badge text-primary"></i> Penanggung Jawab Badan Usaha (PJBU)
+        <i class="bi bi-person-badge" style="color: #800000;"></i> Penanggung Jawab Badan Usaha (PJBU)
     </label>
     <input type="text" id="pjbu" name="pjbu"
         class="form-control @error('pjbu') is-invalid @enderror"
@@ -168,117 +309,154 @@
 </div>
 
 </div>
-                                <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                    <div class="flex justify-end">
-                                        <button type="button" onclick="openModal()"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-                                        style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
 
-                                        <!-- Ikon SVG Pensil -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                        fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                   </svg>
-                                        <span style="font-family: 'Poppins', sans-serif;">Create</span>
-                                    </button>
+
                                     </div>
-                                    <!-- Modal Konfirmasi -->
-                                    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-                                        <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                                          <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                            Apakah Anda ingin menambahkan data?
-                                        </p>
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- end::Body -->
 
-                                          <!-- Tombol -->
-                                          <div style="display: flex; justify-content: center; gap: 12px;">
-                                            <button id="confirmSubmitBtn"
-                                            onclick="submitForm()"
-                                            style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                            onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                        <!-- Telegram SVG -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
-                                            <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
-                                        </svg>
-                                        Ya
+                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+                                <div class="flex justify-end">
+                               <button class="button-hijau" type="button" onclick="openModal()">
+                                    <i class="bi bi-save" style="margin-right: 5px;"></i>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
                                     </button>
 
-                                    <!-- Tombol Batal dengan ikon X (SVG) -->
-                                    <button type="button"
-                                            onclick="closeModal()"
-                                            style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                            onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                                            <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                                        </svg>
-                                        Batal
-                                    </button>
+                                </div>
+                                <!-- Modal Konfirmasi -->
+                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+                                        Apakah Anda ingin membuat data baru ?
+                                    </p>
 
-                                          </div>
-                                        </div>
+                                      <!-- Tombol -->
+                                      <div style="display: flex; justify-content: center; gap: 12px;">
+                                        <button id="confirmSubmitBtn"
+                                        onclick="submitForm()"
+                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <!-- Telegram SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
+                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
+                                    </svg>
+                                    Ya
+                                </button>
+
+                                <!-- Tombol Batal dengan ikon X (SVG) -->
+                                <button type="button"
+                                        onclick="closeModal()"
+                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                                    </svg>
+                                    Batal
+                                </button>
+
+                                      </div>
                                     </div>
+                                </div>
 
-                                    <!-- Script -->
-                                    <script>
-                                    function openModal() {
-                                        const modal = document.getElementById("confirmModal");
-                                        if (modal) modal.style.display = "flex";
-                                    }
+                                <!-- Script -->
+                                <script>
+                                function openModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "flex";
+                                }
 
-                                    function closeModal() {
-                                        const modal = document.getElementById("confirmModal");
-                                        if (modal) modal.style.display = "none";
-                                    }
+                                function closeModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "none";
+                                }
 
-                                    </script>
+                                </script>
+
+                            </div>
+
 
                         </form>
 
-                        <script>
-                            function openModal() {
-                                document.getElementById("confirmModal").style.display = "flex";
-                            }
-
-                            function closeModal() {
-                                document.getElementById("confirmModal").style.display = "none";
-                            }
-
-                            function submitForm() {
-                                document.querySelector('form').submit();
-                            }
-                        </script>
-
-
-                </div>
-                        <!--end::Quick Example-->
                     </div>
+                 </div>
+
+                 {{-- @include('backend.00_administrator.00_baganterpisah.07_paginations') --}}
+
+                 <br><br>
 
 
-                    <br><br>
+                 <!-- Modal Konfirmasi Hapus -->
+                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
+                                 <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                             </div>
+                             <div class="modal-body">
+                                 <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
+                             </div>
+                             <div class="modal-footer">
+                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                 <form id="deleteForm" method="POST" action="">
+                                     @csrf
+                                     @method('DELETE')
+                                     <button type="submit" class="btn btn-danger">Hapus</button>
+                                 </form>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
 
-                    <!-- /.card -->
-                    <!-- Button Section -->
+                 <script>
+                 function setDeleteUrl(button) {
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/bebantuanteknisdelete/" + encodeURIComponent(id);
+                     document.getElementById('deleteForm').action = deleteUrl;
+                 }
+                 </script>
 
-                    </div>
-                    <!--end::Row-->
-                    </div>
+                 <style>
+                     .table-responsive {
+                         max-width: 100%;
+                         overflow-x: auto;
+                     }
+                 </style>
 
-        </div>
-        <!--end::Row-->
-        </div>
-                  <!--end::Container-->
-        <!--end::App Content Header-->
-        <!--begin::App Content-->
-          <!--end::App Content-->
+             </div>
+             <!-- /.card -->
+         </div>
+         <!-- /.col -->
+     </div>
+     <!--end::Row-->
+     </div>
+               <!--end::Container-->
+     <!--end::App Content Header-->
+     <!--begin::App Content-->
+       <!--end::App Content-->
+   </main>
+   <!--end::App Main-->
+ </div>
+ </div>
 
-        </section>
-        </main>
-      <!--end::App Main-->
-    </div>
-    </div>
 
+   @include('backend.00_administrator.00_baganterpisah.02_footer')
 
-      @include('backend.00_administrator.00_baganterpisah.02_footer')
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+   <script>
+    function exportTableToExcel(tableID, filename = '') {
+        var table = document.getElementById(tableID);
+        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
+        return XLSX.writeFile(wb, filename + '.xlsx');
+    }
+    </script>
+
