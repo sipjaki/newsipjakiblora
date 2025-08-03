@@ -444,7 +444,7 @@ class TertibjasakonstruksiController extends Controller
 
     public function betertibjakonusaha(Request $request)
     {
-        $perPage = $request->input('perPage', 15);
+        $perPage = $request->input('perPage', 10);
         $search = $request->input('search');
 
         $query = tertibjasakonstruksi::query();
@@ -585,7 +585,7 @@ $user = Auth::user();
 $datapenyedia = penyediastatustertibjakon::all();
 
 return view('backend.06_pengawasan.01_tertibjakonusaha.create', [
-    'title' => 'Create Tertib Jakon Usaha ',
+    'title' => 'Tambah Data Tertib Usaha Jasa Konstruksi ',
     // 'data' => $datatertibjakonusaha,
     'datapenyedia' => $datapenyedia,
 
