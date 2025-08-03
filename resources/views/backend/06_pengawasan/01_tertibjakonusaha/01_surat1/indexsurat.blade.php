@@ -55,6 +55,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
+@include('button')
 
 {{-- ---------------------------------------------------------------------- --}}
 
@@ -62,7 +63,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -84,7 +86,7 @@
         <!-- Menampilkan pesan sukses -->
         <div class="container-fluid">
             <!--begin::Row-->
-            <div class="row" style="margin-right: 10px; margin-left:10px;">
+            <div class="putih row" style="margin-right: 10px; margin-left:10px;">
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
@@ -92,7 +94,7 @@
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                     <a href="/betertibjakonusaha">
-                        <button class="btn-kembali">
+                        <button class="button-newvalidasi">
                         <i class="bi bi-arrow-left icon-create"></i>
                             Kembali
                         </button>
@@ -102,7 +104,7 @@
                                     {{-- @if(empty($data->surattertibjakonusaha1->id)) --}}
                                    @if ($datasurat->isEmpty())
                                         <a href="{{ route('betertibjakonusahasurat1newberkas', ['id' => $data->id]) }}">
-                                            <button class="btn-create">
+                                            <button class="button-berkas">
                                                 <i class="bi bi-file-earmark-plus icon-create"></i>
                                                 Buat Berkas
                                             </button>
@@ -120,7 +122,7 @@
                 @endif
 
 
-                <button class="btn-create">
+                <button class="button-baru">
                     <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
                 </button>
 
@@ -131,7 +133,7 @@
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                            <table class="zebra-table table-striped">
+                            <table class="tabel-baru table-striped">
                                 <thead>
                                     <tr>
                                      <th style="width: 25px; text-align: center;">
@@ -159,16 +161,8 @@
                                 </thead>
                                 <tbody>
 
-                                    @if ($datasurat->isEmpty())
-                                        <tr>
-                                            <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Kesesuaian Kegiatan Konstruksi <strong>Belum Dibuat</strong>!
-                                            </td>
-                                        </tr>
-                                    @else
 
-
-                                @foreach ($datasurat as $item )
+                                    @forelse($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->namapaketpekerjaan }}</td>
@@ -313,8 +307,37 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
-                                        @endif
+        @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Berkas Dukung Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 
                                 </tbody>
                             </table>
