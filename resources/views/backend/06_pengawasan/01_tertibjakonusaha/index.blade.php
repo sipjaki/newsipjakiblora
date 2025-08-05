@@ -43,7 +43,7 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -131,7 +131,7 @@
                                     <button class="button-hijau";>
                                     <!-- Ikon Kembali -->
                                     <i class="fa fa-plus icon-create" style="margin-right: 8px;"></i>
-                                    Create
+                                    Buat Baru
                                 </button>
                                 </a>
 
@@ -141,7 +141,7 @@
                  <div class="card-body p-0">
 
                     <div class="table-responsive" style="width: 100%; overflow-x: auto;">
-                        <table id="tabeltertibjakonusaha" class="zebra-table table-bordered table-striped" style="white-space: nowrap;">
+                        <table id="tabeltertibjakonusaha" class="tabel-baru table-bordered table-striped" style="white-space: nowrap;">
                             <thead>
                                 <tr>
                                     <th rowspan="2" style="text-align: center; width:75px;">
@@ -183,7 +183,7 @@
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
 
@@ -200,9 +200,7 @@
                                 @if($item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat')
                                   {{ $item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat' }}
                                 @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                                  <button class="button-berkas">
                                     Data Belum Di Update
                                   </button>
                                 @endif
@@ -212,9 +210,7 @@
                                 @if($item->nib)
                                   {{ $item->nib }}
                                 @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                                  <button class="button-berkas">
                                     Data Belum Di Update
                                   </button>
                                 @endif
@@ -224,9 +220,7 @@
                                 @if($item->namapekerjaan)
                                   {{ $item->namapekerjaan }}
                                 @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                                  <button class="button-berkas">
                                     Data Belum Di Update
                                   </button>
                                 @endif
@@ -236,24 +230,20 @@
                                 @if($item->tahunpelaksanaan)
                                   {{ $item->tahunpelaksanaan }}
                                 @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                               <button class="button-berkas">
                                     Data Belum Di Update
                                   </button>
-                                @endif
+                                   @endif
                               </td>
 
                               <td style="text-align: left;">
                                 @if($item->namabadanusaha)
                                   {{ $item->namabadanusaha }}
                                 @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                                   <button class="button-berkas">
                                     Data Belum Di Update
                                   </button>
-                                @endif
+                               @endif
                               </td>
 
 
@@ -262,9 +252,7 @@
                                 @if($item->pjbu)
                                   {{ $item->pjbu }}
                                 @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; text-transform: uppercase;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                                  <button class="button-berkas">
                                     Data Belum Di Update
                                   </button>
                                 @endif
@@ -314,9 +302,9 @@
                               <td style="text-align: center;">
                                 <!-- Tombol Aksi -->
                                 {{-- <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a> --}}
-                                <a href="/betertibjakonusaha/update/{{$item->id}}" class="button-berkas"><i class="bi bi-pencil-square"></i></a>
+                                <a href="/betertibjakonusaha/update/{{$item->id}}" class="button-berkas"><i class="bi bi-pencil-square"></i>Edit</a>
                                 <a href="javascript:void(0)" class="button-merah" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                  <i class="bi bi-trash"></i>
+                                  <i class="bi bi-trash"></i>Hapus
                                 </a>
                               </td>
                             </tr>
