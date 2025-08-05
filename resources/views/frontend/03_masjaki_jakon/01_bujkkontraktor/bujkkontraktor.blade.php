@@ -187,7 +187,7 @@ table.zebra-table {
                             <th style="text-align: center;">Alamat</th>
                             {{-- <th style="text-align: center;">No Telepon</th> --}}
                             <th style="text-align: center;">Email</th>
-                            <th style="text-align: center;">View</th>
+                            {{-- <th style="text-align: center;">View</th> --}}
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -217,11 +217,11 @@ table.zebra-table {
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
-                            <td style="text-align: center">
+                            {{-- <td style="text-align: center">
                                 <a href="/datajakon/bujkkontraktor/{{$item->namalengkap}}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                 </a>
-                            </td>
+                            </td> --}}
                         </tr>
                         @endforeach
                     </tbody>
