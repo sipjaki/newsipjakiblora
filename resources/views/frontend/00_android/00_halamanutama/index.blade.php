@@ -267,12 +267,12 @@
                             </div> --}}
 
                             <div style="margin-top: 10px;">
-                                @if($item->menu && $item->menu->foto1 && file_exists(public_path('storage/' . $item->menu->foto1)))
+                                @if($item->menu && $item->menu->foto && file_exists(public_path('storage/' . $item->menu->foto)))
                                     <!-- Menampilkan gambar dari storage -->
-                                    <img src="{{ asset('storage/' . $item->menu->foto1) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                @elseif($item->menu && $item->menu->foto1)
+                                    <img src="{{ asset('storage/' . $item->menu->foto) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                @elseif($item->menu && $item->menu->foto)
                                     <!-- Menampilkan gambar dari path luar storage -->
-                                    <img src="{{ asset($item->menu->foto1) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                    <img src="{{ asset($item->menu->foto) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                 @else
                                     <!-- Placeholder jika tidak ada data -->
                                     <p style="font-size: 11px;">Tidak Ada Foto!</p>
