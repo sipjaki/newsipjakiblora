@@ -164,7 +164,7 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none text-sm" style="color: #28A745;">SHST Kab Blora 2025</a>
+                            <a class="font-bold line-clamp-2 hover:line-clamp-none text-sm" style="color: #28A745;">SHST Kab Blora 2025</a>
                             {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 12.000.000</span></p> --}}
                         </div>
                         {{-- <progress id="fund" value="10" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
@@ -186,7 +186,7 @@
 
                 <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
-                        <a href="details.html">
+                        <a >
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
 
                                 <div style="margin-top: 10px;">
