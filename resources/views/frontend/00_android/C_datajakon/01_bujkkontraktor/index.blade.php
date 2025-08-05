@@ -179,9 +179,9 @@
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;">
                                                 <i class="bi bi-geo-alt"></i> Alamat
                                             </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
+                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
                                                 <i class="bi bi-eye"></i> View
-                                            </th>
+                                            </th> --}}
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -192,11 +192,11 @@
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->namalengkap)) }}</td>
                                             <td>{{$item->alamat}}</td>
                                             {{-- <td style="text-align: center;">{{$item->no_telepon}}</td> --}}
-                                            <td style="text-align: center">
+                                            {{-- <td style="text-align: center">
                                                 <a href="/resbujkkontraktor/{{$item->namalengkap}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                         @endforeach
                                     </tbody>
