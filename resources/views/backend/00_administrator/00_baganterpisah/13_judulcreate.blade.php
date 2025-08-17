@@ -1,6 +1,6 @@
 <div class="card mb-4">
     <div class="card-header">
-      <div class="halaman-title">
+      <div class="button-hijau">
         📌 Halaman : {{ $title }}
       </div>
     </div>
