@@ -18,4 +18,20 @@ class surattertibjakonusaha4 extends Model
                 return $this->hasOne(tertibjasakonstruksi::class, 'surattertibjakonusaha4_id')->oldest();
             }
 
+    public function tandatangan1()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan1_id');
+    }
+
+    public function tandatangan2()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan2_id');
+    }
+
+    public function tandatangan3()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan3_id');
+    }
+
+
 }
