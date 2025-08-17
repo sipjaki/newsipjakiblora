@@ -183,6 +183,14 @@
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
+                                  <th rowspan="2" style="text-align: center; width:300px;">
+    <i class="bi bi-tools"></i> Berkas Dukung <br> Kesesuaian Kegiatan Konstruksi
+</th>
+
+                                  <th rowspan="2" style="text-align: center; width:300px;">
+    <i class="bi bi-tools"></i> Berkas Dukung <br> Segmentasi Pasar
+</th>
+
                                     <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
@@ -290,6 +298,65 @@
                                         </button>
                                     </a>
                                 </td>
+
+
+                           <td style="text-align: center; vertical-align: middle;">
+    <a href="{{ url('/beuploadberkasusaha1/upload/' . $item->id) }}" style="text-decoration: none;">
+        @if(!empty($item->cadangan1))
+         <span style="
+    font-weight: bold;
+    color: white;
+    background-color: #28a745; /* Hijau awal */
+    padding: 5px 10px;
+    border-radius: 15px; /* Border radius lebih bulat */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+"
+onmouseover="this.style.backgroundColor='#218838'; this.style.color='#ffffff';"
+onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+>
+    <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Dukung Ada (Lihat)
+</span>
+
+        @else
+            <button class="button-newvalidasi">
+                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+            </button>
+        @endif
+    </a>
+</td>
+
+
+                           <td style="text-align: center; vertical-align: middle;">
+    <a href="{{ url('/beuploadberkasusaha1/upload/' . $item->id) }}" style="text-decoration: none;">
+        @if(!empty($item->cadangan2))
+         <span style="
+    font-weight: bold;
+    color: white;
+    background-color: #28a745; /* Hijau awal */
+    padding: 5px 10px;
+    border-radius: 15px; /* Border radius lebih bulat */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+"
+onmouseover="this.style.backgroundColor='#218838'; this.style.color='#ffffff';"
+onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+>
+    <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Dukung Ada (Lihat)
+</span>
+
+        @else
+            <button class="button-newvalidasi">
+                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+            </button>
+        @endif
+    </a>
+</td>
+
 
 
                                         </div>
