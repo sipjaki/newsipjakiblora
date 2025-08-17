@@ -28,5 +28,10 @@ class tandatangan extends Model
         return $this->hasMany(surattertibjakonusaha3::class);
     }
 
+    public function surattertibjakonusaha4()
+    {
+        return $this->hasMany(surattertibjakonusaha4::class);
+    }
+
 
 }
