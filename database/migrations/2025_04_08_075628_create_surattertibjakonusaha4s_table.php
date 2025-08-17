@@ -15,14 +15,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('tertibjasakonstruksi_id')->nullable()->index();
             $table->string('status')->nullable()->index();
-            // $table->string('subvarian')->nullable()->index();
-            // $table->string('merkproduk')->nullable()->index();
-            // $table->string('sertifikat')->nullable()->index();
-            // $table->string('sni')->nullable()->index();
-            // $table->string('simpk')->nullable()->index();
             $table->softDeletes();
             $table->timestamps();
         });
+
+        // $table->string('subvarian')->nullable()->index();
+        // $table->string('merkproduk')->nullable()->index();
+        // $table->string('sertifikat')->nullable()->index();
+        // $table->string('sni')->nullable()->index();
+        // $table->string('simpk')->nullable()->index();
     }
 
     /**
