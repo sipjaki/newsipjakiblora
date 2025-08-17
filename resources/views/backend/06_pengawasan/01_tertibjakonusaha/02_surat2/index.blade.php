@@ -55,6 +55,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
+@include('button')
 
 {{-- ---------------------------------------------------------------------- --}}
 
@@ -62,7 +63,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -92,7 +94,7 @@
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                     <a href="/betertibjakonusaha">
-                        <button class="btn-kembali">
+                        <button class="button-newvalidasi">
                         <i class="bi bi-arrow-left icon-create"></i>
                             Kembali
                         </button>
@@ -102,7 +104,7 @@
                                     {{-- @if(empty($data->surattertibjakonusaha1->id)) --}}
                                    @if ($datasurat->isEmpty())
                                         <a href="{{ route('betertibjakonusahasegmentasipasarberkas', ['id' => $data->id]) }}">
-                                            <button class="btn-create">
+                                            <button class="button-berkas">
                                                 <i class="bi bi-file-earmark-plus icon-create"></i>
                                                 Buat Berkas
                                             </button>
@@ -113,14 +115,14 @@
 
                    @if ($datasurat->isNotEmpty())
                     <a href="{{ url('betertibjakonusahasegmentasipasar/show/' . $datasurat_id) }}">
-                        <button class="btn-create">
+                        <button class="button-berkas">
                             <i class="bi bi-file-earmark icon-create"></i> Dokumen
                         </button>
                     </a>
                 @endif
 
 
-                <button class="btn-create">
+                <button class="button-baru">
                     <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
                 </button>
 
@@ -154,57 +156,45 @@
                                 </thead>
                                 <tbody>
 
-                                    @if ($datasurat->isEmpty())
-                                        <tr>
-                                            <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Segmentasi Pasar <strong>Belum Dibuat</strong>!
-                                            </td>
-                                        </tr>
-                                    @else
 
-
-                                @foreach ($datasurat as $item )
+                                    @forelse($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->namapaketpekerjaan }}</td>
 
                                                @php
-                                                $kesesuaian = $item->kesesuaiansbu ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-                                            @endphp
+    $kesesuaian = $item->kesesuaiansbu ?? 'Surat Belum Di Buat';
+    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+    $buttonClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
+    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+@endphp
 
-                                            <td style="text-align: center;">
-                                                <button
-                                                    style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                                    onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-                                                >
-                                                    <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                                                    {{ $tertibStatus }}
-                                                </button>
-                                            </td>
+<td style="text-align: center;">
+    <button
+        class="{{ $buttonClass }}"
+        onmouseover="this.style.opacity=0.8;"
+        onmouseout="this.style.opacity=1;"
+    >
+        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+        {{ $tertibStatus }}
+    </button>
+</td>
 
 
-                          @php
-                          $kesesuaian = $item->sbu ?? 'Surat Belum Di Buat';
-                          $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-                          $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-                          $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-                      @endphp
 
-                      <td style="text-align: center;">
-                          <button
-                              style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                              onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-                          >
-                              <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                              {{ $tertibStatus }}
-                          </button>
-                      </td>
+     @php
+    $kesesuaian = $item->sbu ?? 'Surat Belum Di Buat';
+    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+    $buttonClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
+    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+@endphp
 
+<td style="text-align: center;">
+    <button class="{{ $buttonClass }}">
+        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+        {{ $tertibStatus }}
+    </button>
+</td>
 
                                         <td style="text-align: center;">
                                             <!-- Show Icon -->
@@ -217,9 +207,9 @@
                                             </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-id="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                             <i class="bi bi-trash"></i>
+                                             <i class="bi bi-trash"></i>Hapus
                                          </a>
 
                                          <!-- Modal -->
@@ -271,8 +261,33 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
-                                        @endif
+
+
+
+        @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Berkas Dukung Tidak Di Temukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
 
                                 </tbody>
                             </table>
