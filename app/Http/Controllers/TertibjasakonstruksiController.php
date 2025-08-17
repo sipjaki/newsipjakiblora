@@ -819,7 +819,7 @@ public function betertibjakonusahasurat1create(Request $request)
             'kesesuaianklasifikasi' => 'required|in:Sesuai,Tidak Sesuai',
             'layananusaha' => 'required|in:Pekerjaan Konstruksi,Pekerjaan Konsultasi Konstruksi',
             'kesesuaianlayananusaha' => 'required|in:Sesuai,Tidak Sesuai',
-            'tandatangan1_id' => 'required|string',
+            'tandatangan1_id' => 'nullable|string',
             'tandatangan2_id' => 'nullable|string',
             'tandatangan3_id' => 'nullable|string',
         ], [
