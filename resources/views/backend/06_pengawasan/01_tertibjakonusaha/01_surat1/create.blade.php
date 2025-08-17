@@ -8,6 +8,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
+@include('button')
 
 {{-- ---------------------------------------------------------------------- --}}
 
@@ -15,7 +16,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -51,7 +53,7 @@
                                 <!-- Kontainer Kiri -->
                                 <div style="display: flex; gap: 10px; margin-right:25px; margin-left:25px;">
                                     <!-- Tombol Nama Pekerjaan -->
-                                    <button class="btn-create">
+                                    <button class="button-baru">
                                         <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
                                         Nama Pekerjaan: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
                                     </button>
@@ -67,17 +69,17 @@
                                                     Perbaikan Data
                                                 </button>
                                             </a> --}}
-                                        <button onclick="printModalContent({{ $datasurat1->id }})" class="btn-create">
+                                        <button onclick="printModalContent({{ $datasurat1->id }})" class="button-berkas">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
                                         </button>
 
-                                        <button class="btn-create" onclick="downloadModalPDF({{ $datasurat1->id }})">
+                                        <button class="button-berkas" onclick="downloadModalPDF({{ $datasurat1->id }})">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                                         </button>
 
-                                        <button class="btn-create"
+                                        <button class="button-berkas"
                                             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat1->id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
@@ -299,7 +301,7 @@
 
                                 <!-- Kontainer Kanan -->
                                 <div>
-                                    <a href="javascript:history.back()" class="btn-kembali" style="text-decoration: none;">
+                                    <a href="javascript:history.back()" class="button-newvalidasi" style="text-decoration: none;">
                                             <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
                                             Kembali
                                         </a>
@@ -334,77 +336,61 @@
 </tr>
 
 <tr>
-    @php
-        $kesesuaian = $datasurat1->kesesuaian ?? 'Surat Belum Di Buat';
-        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-    @endphp
+@php
+    $kesesuaian = $datasurat1->kesesuaian ?? 'Surat Belum Di Buat';
+    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+    $buttonClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
+    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+@endphp
 
-    <td colspan="2" style="text-align: center;">
-        <button
-            style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-        >
-            <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-            {{ $tertibStatus }}
-        </button>
-    </td>
+<td colspan="2" style="text-align: center;">
+    <button class="{{ $buttonClass }}">
+        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+        {{ $tertibStatus }}
+    </button>
+</td>
 
 @php
-        $kesesuaian = $datasurat1->kesesuaiansbu ?? 'Surat Belum Di Buat';
-        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-    @endphp
+    $kesesuaian = $datasurat1->kesesuaiansbu ?? 'Surat Belum Di Buat';
+    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+    $buttonClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
+    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+@endphp
 
-    <td colspan="2" style="text-align: center;">
-        <button
-            style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-        >
-            <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-            {{ $tertibStatus }}
-        </button>
-    </td>
+<td colspan="2" style="text-align: center;">
+    <button class="{{ $buttonClass }}">
+        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+        {{ $tertibStatus }}
+    </button>
+</td>
 
 @php
-        $kesesuaian = $datasurat1->kesesuaianklasifikasi ?? 'Surat Belum Di Buat';
-        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-    @endphp
+    $kesesuaian = $datasurat1->kesesuaianklasifikasi ?? 'Surat Belum Di Buat';
+    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+    $buttonClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
+    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+@endphp
 
-    <td colspan="2" style="text-align: center;">
-        <button
-            style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-        >
-            <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-            {{ $tertibStatus }}
-        </button>
-    </td>
+<td colspan="2" style="text-align: center;">
+    <button class="{{ $buttonClass }}">
+        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+        {{ $tertibStatus }}
+    </button>
+</td>
 
 @php
-        $kesesuaian = $datasurat1->kesesuaianlayananusaha ?? 'Surat Belum Di Buat';
-        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-    @endphp
+    $kesesuaian = $datasurat1->kesesuaianlayananusaha ?? 'Surat Belum Di Buat';
+    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+    $buttonClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
+    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+@endphp
 
-    <td colspan="2" style="text-align: center;">
-        <button
-            style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-        >
-            <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-            {{ $tertibStatus }}
-        </button>
-    </td>
+<td colspan="2" style="text-align: center;">
+    <button class="{{ $buttonClass }}">
+        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+        {{ $tertibStatus }}
+    </button>
+</td>
 
 </tr>
 
