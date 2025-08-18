@@ -8,6 +8,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
+@include('button')
 
 {{-- ---------------------------------------------------------------------- --}}
 
@@ -15,7 +16,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -51,7 +53,7 @@
                                 <!-- Kontainer Kiri -->
                                 <div style="display: flex; gap: 10px; margin-right:25px; margin-left:25px;">
                                     <!-- Tombol Nama Pekerjaan -->
-                                    <button class="btn-create">
+                                    <button class="button-berkas">
                                         <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
                                         Nama Bangunan: {{ $datanamabangunan ?? 'Masih Kosong' }}
                                     </button>
@@ -196,7 +198,7 @@
                                 <!-- Kontainer Kanan -->
                                 <div>
                              <a href="{{ url()->previous() }}">
-                                    <button class="btn-kembali">
+                                    <button class="button-newvalidasi">
                                         <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
                                         Kembali
                                     </button>
@@ -291,7 +293,7 @@
                                             <tr>
 
                                                 <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Kesimpulan Pemeriksaan</strong>
+                                                    <strong style="font-size: 15px;">Kesimpulan Pemeriksaan 1</strong>
                                                 </td>
 <!-- Pilihan Kesimpulan -->
     <td>
@@ -312,7 +314,7 @@
 
                                             <tr>
                                                 <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Catatan</strong>
+                                                    <strong style="font-size: 15px;">Kesimpulan Pemeriksaan 2</strong>
                                                 </td>
                                                 <td>
                                                     <select name="catatan"
@@ -328,6 +330,38 @@
                                                     @enderror
                                                 </td>
                                                 </tr>
+
+                                                <tr>
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Catatan Pemeriksaan 1</strong>
+    </td>
+    <td>
+        <textarea name="catatan1" rows="3"
+            class="form-control @error('catatan1') is-invalid @enderror"
+            id="catatan1"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">{{ old('catatan1') }}</textarea>
+
+        @error('catatan1')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</tr>
+
+<tr>
+    <td style="width: 200px; padding:4px 8px;">
+        <strong style="font-size: 15px;">Catatan Pemeriksaan 2</strong>
+    </td>
+    <td>
+        <textarea name="catatan2" rows="3"
+            class="form-control @error('catatan2') is-invalid @enderror"
+            id="catatan2"
+            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">{{ old('catatan2') }}</textarea>
+
+        @error('catatan2')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </td>
+</tr>
 
 
                                             <tr>
@@ -378,7 +412,33 @@
                                 <td style="text-align: center;">
                                     <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                                 </td>
-                                <td></td>
+ <td id="outputCatatan1" style="padding:6px 12px; border:1px solid #ddd; border-radius:4px; white-space:pre-line;">
+</td>
+
+<script>
+    document.getElementById('catatan1').addEventListener('input', function() {
+        let text = this.value.trim();
+        if (!text) {
+            document.getElementById('outputCatatan1').innerText = '';
+            return;
+        }
+
+        // Pecah jadi kata-kata
+        let words = text.split(/\s+/);
+        let result = '';
+
+        for (let i = 0; i < words.length; i++) {
+            result += words[i] + ' ';
+            // setiap 5 kata kasih enter
+            if ((i + 1) % 5 === 0) {
+                result = result.trim() + '\n';
+            }
+        }
+
+        document.getElementById('outputCatatan1').innerText = result.trim();
+    });
+</script>
+
                             </tr>
                             <tr>
                                 <td>
@@ -389,8 +449,33 @@
                              <td style="text-align: center;">
                                  <span id="textCatatan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                             </td>
+<td id="outputCatatan2" style="padding:6px 12px; border:1px solid #ddd; border-radius:4px; white-space:pre-line;"></td>
 
-                                <td></td>
+<script>
+    document.getElementById('catatan2').addEventListener('input', function() {
+        let text = this.value.trim();
+        if (!text) {
+            document.getElementById('outputCatatan2').innerText = 'hay';
+            return;
+        }
+
+        // Pisahkan per kata
+        let words = text.split(/\s+/);
+        let result = '';
+
+        for (let i = 0; i < words.length; i++) {
+            result += words[i] + ' ';
+            // setiap 5 kata, tambahkan line break
+            if ((i + 1) % 5 === 0) {
+                result = result.trim() + '\n';
+            }
+        }
+
+        document.getElementById('outputCatatan2').innerText = result.trim();
+    });
+</script>
+
+
                             </tr>
                         </tbody>
                     </table>
@@ -398,11 +483,99 @@
                                 </div>
 
 
+
+                                <div class="container" style="margin-top: 10px;">
+                                    <!-- Modal Card -->
+
+                                            <div class="container" style="margin-top: 10px;">
+                                                <div class="row">
+                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
+                                                        <!-- Modal Card -->
+                                                        <div class="card" style="border: 1px solid white;">
+                                                            <div class="card-body">
+                                                                <!-- Tim Pemeriksa -->
+                                                                <div class="tim-pemeriksa-container">
+                                                                    <div class="tim-pemeriksa">
+                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa:</h6>
+                                                                        <table class="table table-sm">
+                                                                            <thead class="table-secondary">
+                                                                                <tr>
+                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
+                                                                                  <td style="font-size: 12px;">
+                                                                                    <select name="tandatangan1_id" class="form-control @error('tandatangan1_id') is-invalid @enderror">
+                                                                                        <option value="">-- Pilih Pemeriksa --</option>
+                                                                                        @foreach ($datatandatangan as $tandatangan)
+                                                                                            <option value="{{ $tandatangan->id }}"
+                                                                                                {{ old('tandatangan1_id', optional($data->surattertibjakonpemanfaatan1)->tandatangan1_id) == $tandatangan->id ? 'selected' : '' }}>
+                                                                                                {{ $tandatangan->namalengkap }}
+                                                                                            </option>
+                                                                                        @endforeach
+                                                                                    </select>
+                                                                                    @error('tandatangan1_id')
+                                                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                                                    @enderror
+                                                                                </td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
+                                                                                    <td style="font-size: 12px;">
+    <select name="tandatangan2_id" class="form-control @error('tandatangan2_id') is-invalid @enderror">
+        <option value="">-- Pilih Pemeriksa --</option>
+        @foreach ($datatandatangan as $tandatangan)
+            <option value="{{ $tandatangan->id }}"
+                {{ old('tandatangan2_id', optional($data->surattertibjakonpemanfaatan1)->tandatangan2_id) == $tandatangan->id ? 'selected' : '' }}>
+                {{ $tandatangan->namalengkap }}
+            </option>
+        @endforeach
+    </select>
+    @error('tandatangan2_id')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
+                                                                                    <td style="font-size: 12px;">
+    <select name="tandatangan3_id" class="form-control @error('tandatangan3_id') is-invalid @enderror">
+        <option value="">-- Pilih Pemeriksa --</option>
+        @foreach ($datatandatangan as $tandatangan)
+            <option value="{{ $tandatangan->id }}"
+                {{ old('tandatangan3_id', optional($data->surattertibjakonpemanfaatan1)->tandatangan3_id) == $tandatangan->id ? 'selected' : '' }}>
+                {{ $tandatangan->namalengkap }}
+            </option>
+        @endforeach
+    </select>
+    @error('tandatangan3_id')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</td>
+
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                 <br><br>
 <!-- Tombol Submit -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
     <div class="flex justify-end">
-        <button class="btn-create" type="button" onclick="openModal()">
+        <button class="button-hijau" type="button" onclick="openModal()">
         <!-- Ikon SVG Pensil -->
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
         fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
