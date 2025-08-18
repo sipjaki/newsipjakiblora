@@ -197,27 +197,27 @@
                                         <i class="bi bi-geo-alt-fill"></i> Informasi Pekerjaan
                                     </th> --}}
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Pemilihan <br> Penyedia Jasa
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Penyusunan <br> Pelaksanaan Kontrak Kerja
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Terhadap <br> Standar K3 Konstruksi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Terhadap <br> Manajemen Mutu Konstruksi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Terhadap <br> Penggunaan Material Peralatan
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-geo-alt-fill"></i> Pengawasan Terhadap <br> Pengelolaan & Pemanfaatan Sumber Material
                                     </th>
 
@@ -298,52 +298,143 @@
                             </td> --}}
 
 
-                             <td style="text-align: center; vertical-align: middle;">
-                                    <a href="/betertibjakonpenyelenggaraan1/{{$item->id}}" style="text-decoration: none;">
-                                        <button class="button-baru">
+                        <td style="text-align: center; vertical-align: middle;">
+                            <div style="display: flex; justify-content: center; gap: 8px;">
+                                <a href="/betertibjakonpenyelenggaraan1/{{$item->id}}" style="text-decoration: none;">
+                                    <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                    </button>
+                                </a>
+
+                                <a href="/beuploadberkaspenyelenggaraan1/{{$item->id}}" style="text-decoration: none;">
+                                    @if(!empty($item->berkasdukung1))
+                                    <button class="button-berkas">
+                                        <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+                                    </button>
+                                    @else
+                                    <button class="button-newvalidasi">
+                                        <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                                    </button>
+                                    @endif
+                                </a>
+
+
+                            </div>
+                        </td>
+
+
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <div style="display: flex; justify-content: center; gap: 8px;">
+                                        <a href="{{ url('/betertibjakonpenyelenggaraan2/' . $item->id) }}" style="text-decoration: none;">
+                                            <button class="button-baru">
+                                                <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                            </button>
+                                        </a>
+
+                                        <a href="/beuploadberkaspenyelenggaraan2/{{$item->id}}" style="text-decoration: none;">
+                                            @if(!empty($item->berkasdukung2))
+                                        <button class="button-berkas">
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
                                         </button>
+                                        @else
+                                        <button class="button-newvalidasi">
+                                            <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                                        </button>
+                                        @endif
                                     </a>
+                                </div>
+
+                            </td>
+
+                            <td style="text-align: center; vertical-align: middle;">
+                                    <div style="display: flex; justify-content: center; gap: 8px;">
+                                        <a href="{{ url('/betertibjakonpenyelenggaraan3/' . $item->id) }}" style="text-decoration: none;">
+                                            <button class="button-baru">
+                                                <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                            </button>
+                                        </a>
+
+
+                                        <a href="/beuploadberkaspenyelenggaraan3/{{$item->id}}" style="text-decoration: none;">
+                                            @if(!empty($item->berkasdukung3))
+                                            <button class="button-berkas">
+                                                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+                                            </button>
+                                            @else
+                                            <button class="button-newvalidasi">
+                                                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                                            </button>
+                                            @endif
+                                        </a>
+                                    </div>
                                 </td>
 
                                 <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonpenyelenggaraan2/' . $item->id) }}" style="text-decoration: none;">
+                                    <div style="display: flex; justify-content: center; gap: 8px;">
+                                        <a href="{{ url('/betertibjakonpenyelenggaraan4/' . $item->id) }}" style="text-decoration: none;">
+                                            <button class="button-baru">
+                                                <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                            </button>
+                                        </a>
+
+
+                                    <a href="/beuploadberkaspenyelenggaraan4/{{$item->id}}" style="text-decoration: none;">
+                                        @if(!empty($item->berkasdukung4))
+                                        <button class="button-berkas">
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+                                        </button>
+                                        @else
+                                        <button class="button-newvalidasi">
+                                            <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                                        </button>
+                                        @endif
+                                    </a>
+                                </div>
+                            </td>
+
+                            <td style="text-align: center; vertical-align: middle;">
+                                    <div style="display: flex; justify-content: center; gap: 8px;">
+                                        <a href="{{ url('/betertibjakonpenyelenggaraan5/' . $item->id) }}" style="text-decoration: none;">
+                                            <button class="button-baru">
+                                                <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                            </button>
+                                        </a>
+
+
+                                        <a href="/beuploadberkaspenyelenggaraan5/{{$item->id}}" style="text-decoration: none;">
+                                            @if(!empty($item->berkasdukung5))
+                                            <button class="button-berkas">
+                                                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+                                            </button>
+                                            @else
+                                            <button class="button-newvalidasi">
+                                                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                                            </button>
+                                            @endif
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <div style="display: flex; justify-content: center; gap: 8px;">
+                                    <a href="{{ url('/betertibjakonpenyelenggaraan6/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-baru">
                                             <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
-                                </td>
 
-                                <td style="text-align: center; vertical-align: middle;">
-                                    {{-- <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;"> --}}
-                                        <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
-                                        </button>
-                                    {{-- </a> --}}
-                                </td>
-
-                                <td style="text-align: center; vertical-align: middle;">
-                                    {{-- <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;"> --}}
-                                        <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
-                                        </button>
-                                    {{-- </a> --}}
-                                </td>
-
-                                <td style="text-align: center; vertical-align: middle;">
-                                    {{-- <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;"> --}}
-                                        <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
-                                        </button>
-                                    {{-- </a> --}}
-                                </td>
-
-                                <td style="text-align: center; vertical-align: middle;">
-                                    {{-- <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;"> --}}
-                                        <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
-                                        </button>
-                                    {{-- </a> --}}
+                                    <a href="/beuploadberkaspenyelenggaraan6/{{$item->id}}" style="text-decoration: none;">
+                                        @if(!empty($item->berkasdukung6))
+                                            <button class="button-berkas">
+                                                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+                                            </button>
+                                            @else
+                                            <button class="button-newvalidasi">
+                                                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                                            </button>
+                                            @endif
+                                        </a>
+                                    </div>
                                 </td>
 
 
