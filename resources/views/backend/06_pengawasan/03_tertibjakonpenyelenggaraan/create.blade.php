@@ -8,13 +8,15 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -47,7 +49,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/betertibjakonpenyelenggaraan">
-                    <button class="btn-kembali">
+                    <button class="button-newvalidasi">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -146,8 +148,8 @@
 
                     <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                        <button class="btn-create" type="button" onclick="openModal()">
-                                            <i class="bi bi-plus-circle-fill"></i>Create
+                                        <button class="button-hijau" type="button" onclick="openModal()">
+                                            <i class="bi bi-plus-circle-fill"></i>Buat Baru
                                         </button>
                                     </div>
                                     <!-- Modal Konfirmasi -->
