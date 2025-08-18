@@ -20,6 +20,8 @@ return new class extends Migration
             $table->text('carapemeriksaan')->nullable()->index(); // TANGGAL SELESAI
             $table->text('kesimpulanpemeriksaan')->nullable()->index();
             $table->text('catatan')->nullable()->index();
+
+
             $table->softDeletes();
             $table->timestamps();
         });
