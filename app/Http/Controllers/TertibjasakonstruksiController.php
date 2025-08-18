@@ -9,6 +9,12 @@ use App\Models\surattertibjakonpemanfaatan1;
 use App\Models\surattertibjakonpemanfaatan2;
 use App\Models\surattertibjakonpemanfaatan3;
 use App\Models\surattertibjakonpemanfaatan4;
+use App\Models\surattertibjakonpenyelenggaraan1;
+use App\Models\surattertibjakonpenyelenggaraan2;
+use App\Models\surattertibjakonpenyelenggaraan3;
+use App\Models\surattertibjakonpenyelenggaraan4;
+use App\Models\surattertibjakonpenyelenggaraan5;
+use App\Models\surattertibjakonpenyelenggaraan6;
 use App\Models\surattertibjakonusaha1;
 use App\Models\surattertibjakonusaha2;
 use App\Models\surattertibjakonusaha3;
@@ -1065,7 +1071,7 @@ public function betertibjakonusahasegmentasipasar($id)
             'kesesuaiansbu' => 'required|in:Sesuai,Tidak Sesuai',
             'syaratkualifikasi' => 'required|in:Kecil,Menengah,Besar',
             'sbu' => 'required|in:Sesuai,Tidak Sesuai',
-            'tandatangan1_id' => 'required|string|max:255',
+            'tandatangan1_id' => 'nullable|string|max:255',
             'tandatangan2_id' => 'nullable|string|max:255',
             'tandatangan3_id' => 'nullable|string|max:255',
         ], [
@@ -1106,7 +1112,7 @@ public function betertibjakonusahasegmentasipasar($id)
             'sbu.required' => 'Kesesuaian SBU wajib dipilih',
             'sbu.in' => 'Kesesuaian SBU tidak valid',
 
-            'tandatangan1.required' => 'Tim Pemeriksa 1 wajib dipilih',
+            // 'tandatangan1.nullable' => 'Tim Pemeriksa 1 wajib dipilih',
             // 'tandatangan1.exists' => 'Tim Pemeriksa 1 tidak valid',
 
             // 'tandatangan2.exists' => 'Tim Pemeriksa 2 tidak valid',
@@ -1378,14 +1384,14 @@ $validatedData = $request->validate([
     'catatanpemeriksaan.string' => 'Catatan Pemeriksaan harus berupa teks.',
     'catatanpemeriksaan.max' => 'Catatan Pemeriksaan maksimal 500 karakter.',
 
-    'tandatangan1_id.string' => 'ID Tanda Tangan 1 harus berupa teks.',
-    'tandatangan1_id.max' => 'ID Tanda Tangan 1 maksimal 255 karakter.',
+    // 'tandatangan1_id.string' => 'ID Tanda Tangan 1 harus berupa teks.',
+    // 'tandatangan1_id.max' => 'ID Tanda Tangan 1 maksimal 255 karakter.',
 
-    'tandatangan2_id.string' => 'ID Tanda Tangan 2 harus berupa teks.',
-    'tandatangan2_id.max' => 'ID Tanda Tangan 2 maksimal 255 karakter.',
+    // 'tandatangan2_id.string' => 'ID Tanda Tangan 2 harus berupa teks.',
+    // 'tandatangan2_id.max' => 'ID Tanda Tangan 2 maksimal 255 karakter.',
 
-    'tandatangan3_id.string' => 'ID Tanda Tangan 3 harus berupa teks.',
-    'tandatangan3_id.max' => 'ID Tanda Tangan 3 maksimal 255 karakter.',
+    // 'tandatangan3_id.string' => 'ID Tanda Tangan 3 harus berupa teks.',
+    // 'tandatangan3_id.max' => 'ID Tanda Tangan 3 maksimal 255 karakter.',
 ]);
 
         try {
@@ -1560,44 +1566,47 @@ public function betertibjakonusahapelaksanashow($id)
     ]);
 }
 
+public function betertibjakonusahapelaksananewberkascreate(Request $request)
+{
+    // Validasi data input dengan pesan custom
+    $validatedData = $request->validate([
+        'tertibjasakonstruksi_id' => 'required|string',
+        'status' => 'required|in:Tertib,Tidak Tertib',
+        'tandatangan1_id' => 'nullable|string',
+        'tandatangan2_id' => 'nullable|string',
+        'tandatangan3_id' => 'nullable|string',
+    ], [
+        'tertibjasakonstruksi_id.required' => 'ID Tertib Jasa Konstruksi wajib diisi.',
+        'tertibjasakonstruksi_id.string' => 'ID Tertib Jasa Konstruksi harus berupa teks.',
+        'status.required' => 'Status Pengembangan wajib dipilih.',
+        'status.in' => 'Status Pengembangan yang dipilih tidak valid.',
+    ]);
 
- public function betertibjakonusahapelaksananewberkascreate(Request $request)
-    {
-        // Validasi data input dengan pesan custom
-$validatedData = $request->validate([
-    'tertibjasakonstruksi_id' => 'required|string',
-    'status' => 'required|in:Tertib,Tidak Tertib',
-], [
-    'tertibjasakonstruksi_id.required' => 'ID Tertib Jasa Konstruksi wajib diisi.',
-    'tertibjasakonstruksi_id.string' => 'ID Tertib Jasa Konstruksi harus berupa teks.',
+    try {
+        // Buat record baru
+        $surat = new surattertibjakonusaha4();
 
-    'status.required' => 'Status Pengembangan wajib dipilih.',
-    'status.in' => 'Status Pengembangan yang dipilih tidak valid.',
+        $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'] ?? null;
+        $surat->status = $validatedData['status'] ?? null;
 
-]);
+        // Tambahkan kolom tanda tangan
+        $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+        $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+        $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
 
-        try {
-            // Buat record baru
-                $surat = new surattertibjakonusaha4();
+        $surat->save();
 
-                $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'] ?? null;
-                $surat->status = $validatedData['status'] ?? null;
+        // Ambil parentId dari object yang sudah disimpan
+        $parentId = $surat->tertibjasakonstruksi_id;
 
-                $surat->save();
+        session()->flash('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
+        return redirect()->route('betertibjakonusahapelaksanaindex', ['id' => $parentId]);
 
-
-             // Ambil parentId dari object yang sudah disimpan
-                    $parentId = $surat->tertibjasakonstruksi_id;
-
-                    session()->flash('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
-                    return redirect()->route('betertibjakonusahapelaksanaindex', ['id' => $parentId]);
-
-                } catch (\Exception $e) {
-                    return back()->withInput()
-                        ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
-                }
+    } catch (\Exception $e) {
+        return back()->withInput()
+                     ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
     }
-
+}
 
 
 
@@ -1677,7 +1686,7 @@ $user = Auth::user();
 $datapenyedia = penyediastatustertibjakon::all();
 
 return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.create', [
-    'title' => 'Create Tertib Jakon Pemanfaatan ',
+    'title' => 'Buat Data Baru Tertib Jakon Pemanfaatan ',
     // 'data' => $datatertibjakonusaha,
     'datapenyedia' => $datapenyedia,
 
@@ -1809,6 +1818,7 @@ public function betertibjakonpemanfataanjakonindex($id)
     $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan1')->findOrFail($id);
 
     $user = Auth::user();
+    $datatandatangan = tandatangan::all();
 
     // Ambil data relasi surattertibjakonusaha1 jika ada
     $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonusaha3;
@@ -1821,20 +1831,15 @@ public function betertibjakonpemanfataanjakonindex($id)
         // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
         'user' => $user,
         'data' => $datatertibjasapemanfaatan,
+        'datatandatangan' => $datatandatangan,
 
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
         'title' => 'Create Surat Tertib Jakon Pemanfaatan Bagian 2'
     ]);
 }
 
-
 public function betertibjakonmanfaatcreateberkasnew(Request $request)
 {
-    // Pastikan user masih login
-    // if (!auth()->check()) {
-    //     return redirect()->route('login')->with('error', 'Sesi habis, silakan login kembali.');
-    // }
-
     // Validasi input
     $validatedData = $request->validate([
         'tertibjakonpemanfaatan_id' => 'required|string',
@@ -1844,6 +1849,13 @@ public function betertibjakonmanfaatcreateberkasnew(Request $request)
         'carapemeriksaan' => 'required|date',
         'kesimpulanpemeriksaan' => 'required|in:Sesuai,Tidak Sesuai',
         'catatan' => 'required|in:Tersedia,Tidak Tersedia',
+
+        // Tambahan validasi untuk field baru
+        'tandatangan1_id' => 'nullable|integer|exists:users,id',
+        'tandatangan2_id' => 'nullable|integer|exists:users,id',
+        'tandatangan3_id' => 'nullable|integer|exists:users,id',
+        'catatan1' => 'nullable|string',
+        'catatan2' => 'nullable|string',
     ], [
         'lingkuppengawasan.required' => 'Nama Pemilik Bangunan Wajib Diisi !.',
         'indikator.required' => 'Nama Pengelola Bangunan Wajib Diisi !.',
@@ -1855,6 +1867,8 @@ public function betertibjakonmanfaatcreateberkasnew(Request $request)
 
     try {
         $surat = new surattertibjakonpemanfaatan1();
+
+        // Simpan semua data termasuk field tambahan
         $surat->fill($validatedData)->save();
 
         return redirect()
@@ -2597,6 +2611,1395 @@ return redirect('/betertibjakonpemanfaatan')->with('delete', 'Data Berhasil Di H
 
 return redirect()->back()->with('error', 'Item not found');
 }
+// penambahan upload berkas tertib jakon usaha 1
 
+public function beuploadberkasusaha1($id)
+{
+    $datatertibjakonusaha = tertibjasakonstruksi::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.01_tertibjakonusaha.05_uploadberkasdukung.01_berkasdukung1.01_berkasdukung', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Usaha Kegiatan Konstruksi ',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+
+// upload berkas baru
+public function beuploadberkasusaha1new(Request $request, $id)
+{
+    // Validasi hanya file cadangan1
+    $validated = $request->validate([
+        'cadangan1' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'cadangan1.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'cadangan1.max'   => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $datatertibjakonusaha = tertibjasakonstruksi::findOrFail($id);
+
+    if ($request->hasFile('cadangan1')) {
+        $file = $request->file('cadangan1');
+
+        // Nama file unik biar tidak ketimpa
+        $filename = 'berkas1_' . time() . '.' . $file->getClientOriginalExtension();
+
+        // Path folder public
+        $folder = public_path('06_tertibjakonusaha');
+
+        // Buat folder jika belum ada
+        if (!file_exists($folder)) {
+            mkdir($folder, 0755, true);
+        }
+
+        // Pindahkan file ke folder public
+        $file->move($folder, $filename);
+
+        // Simpan path relatif ke database (langsung bisa diakses lewat domain)
+        $datatertibjakonusaha->cadangan1 = '06_tertibjakonusaha/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+    // Pesan sukses
+    session()->flash('update', 'Berkas Berhasil di Upload !');
+    return redirect('/betertibjakonusaha');
+}
+
+
+public function beuploadberkasusaha2($id)
+{
+    $datatertibjakonusaha = tertibjasakonstruksi::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.01_tertibjakonusaha.05_uploadberkasdukung.01_berkasdukung1.02_berkasdukung', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Usaha Segmentasi Pasar ',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+public function beuploadberkasusaha2new(Request $request, $id)
+{
+    // Validasi file cadangan2
+    $validated = $request->validate([
+        'cadangan2' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'cadangan2.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'cadangan2.max' => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $datatertibjakonusaha = tertibjasakonstruksi::findOrFail($id);
+
+    // Jika ada file cadangan2 yang diupload
+    if ($request->hasFile('cadangan2')) {
+        $file = $request->file('cadangan2');
+        $filename = 'berkas2.' . $file->getClientOriginalExtension();
+        $path = public_path('06_tertibjakonusaha/02_berkas');
+
+        // Buat folder jika belum ada
+        if (!file_exists($path)) {
+            mkdir($path, 0755, true);
+        }
+
+        // Pindahkan file ke folder public
+        $file->move($path, $filename);
+
+        // Simpan path relatif ke database
+        $datatertibjakonusaha->cadangan2 = '06_tertibjakonusaha/02_berkas/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+    // Notifikasi sukses
+    session()->flash('update', 'Berkas Berhasil di Upload !');
+    return redirect('/betertibjakonusaha');
+}
+
+
+public function beuploadberkasusaha3($id)
+{
+    $datatertibjakonusaha = tertibjasakonstruksi::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.01_tertibjakonusaha.05_uploadberkasdukung.01_berkasdukung1.03_berkasdukung', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Usaha Pemenuhan Syarat ',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+public function beuploadberkasusaha3new(Request $request, $id)
+{
+    // Validasi file cadangan3
+    $validated = $request->validate([
+        'cadangan3' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'cadangan3.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'cadangan3.max' => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    // Cari data tertib jasakonstruksi
+    $datatertibjakonusaha = tertibjasakonstruksi::findOrFail($id);
+
+    if ($request->hasFile('cadangan3')) {
+        $file = $request->file('cadangan3');
+        $filename = 'berkas3.' . $file->getClientOriginalExtension();
+        $path = public_path('06_tertibjakonusaha/03_berkas');
+
+        // Buat folder jika belum ada
+        if (!file_exists($path)) {
+            mkdir($path, 0755, true);
+        }
+
+        // Pindahkan file ke folder public
+        $file->move($path, $filename);
+
+        // Simpan path relatif ke database
+        $datatertibjakonusaha->cadangan3 = '06_tertibjakonusaha/03_berkas/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+    // Pesan sukses
+    session()->flash('update', 'Berkas Berhasil di Upload !');
+    return redirect('/betertibjakonusaha');
+}
+
+
+public function beuploadberkasusaha4($id)
+{
+    $datatertibjakonusaha = tertibjasakonstruksi::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.01_tertibjakonusaha.05_uploadberkasdukung.01_berkasdukung1.04_berkasdukung', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Usaha Pelaksana Pengembangan Usaha ',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+public function beuploadberkasusaha4new(Request $request, $id)
+{
+    // Validasi file
+    $request->validate([
+        'cadangan4' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'cadangan4.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'cadangan4.max' => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    $datatertibjakonusaha = tertibjasakonstruksi::findOrFail($id);
+
+    if ($request->hasFile('cadangan4')) {
+        $file = $request->file('cadangan4');
+
+        // Nama file unik biar tidak ketimpa
+        $filename = 'berkas4_' . time() . '.' . $file->getClientOriginalExtension();
+
+        // Path folder di public
+        $path = '06_tertibjakonusaha/04_berkas';
+
+        // Buat folder kalau belum ada
+        if (!file_exists(public_path($path))) {
+            mkdir(public_path($path), 0755, true);
+        }
+
+        // Simpan file langsung ke public/
+        $file->move(public_path($path), $filename);
+
+        // Simpan path relatif ke database (biar bisa langsung diakses via URL)
+        $datatertibjakonusaha->cadangan4 = $path . '/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+    session()->flash('update', 'Berkas Berhasil di Upload !');
+    return redirect('/betertibjakonusaha');
+}
+
+
+
+// tertib jakon peneyelenggaraan
+
+public function betertibjakonpenyelenggaraan1($id)
+{
+    // Ambil data utama berdasarkan ID
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::find($id);
+
+    if (!$datatertibjakonpenyelenggaraan) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    $user = Auth::user();
+
+    // Ambil semua surat terkait dengan paginate
+    $datasurat = surattertibjakonpenyelenggaraan1::where('tertibjakonpenyelenggaraan_id', $id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
+
+    $suratPertama = $datasurat->first();
+
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.01_suratpenyelenggaraan1.penyelenggaraan1', [
+        'title' => 'Berkas Surat | Tertib Jakon Penyelenggaraan',
+        'user' => $user,
+        'data' => $datasurat,
+        'datasurat' => $datasurat,
+        // 'datapengelola1' => $datasurat->lingkuppengawasan,
+        // 'datapengelola2' => $datasurat->indikator,
+        'datainduk' => $datatertibjakonpenyelenggaraan,
+        'firstsurat' => $suratPertama,
+        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id, // penting untuk route tombol "Buat Berkas"
+    ]);
+}
+
+
+ public function betertibjakonpenyelenggaraan1createberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::with('surattertibjakonpenyelenggaraan1')->findOrFail($id);
+
+    $user = Auth::user();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakopemanfaatan1 = $datatertibjakonpenyelenggaraan->surattertibjakonpenyelenggaraan1;
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.01_suratpenyelenggaraan1.buatberkaspenyelenggaraan', [
+        'datanamabangunan' => $datatertibjakonpenyelenggaraan->namabangunan,
+        'datalokasi' => $datatertibjakonpenyelenggaraan->lokasi,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjakonpenyelenggaraan->kegiatankonstruksi,
+        'datatertibjasakonstruksi_id' => $datatertibjakonpenyelenggaraan->id,
+        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
+        'user' => $user,
+        'data' => $datatertibjakonpenyelenggaraan,
+        'datatandatangan' => $datatandatangan,
+
+        'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
+        'title' => 'Buat Berkas Dukung Surat Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Pemilihan Penyedia Jasa Konstruksi BUJK'
+    ]);
+}
+
+
+public function betertibjakonpenyelenggaraan1createnew(Request $request)
+{
+    // Validasi data input
+    $validatedData = $request->validate([
+        'tertibjakonpenyelenggaraan_id' => 'required|string',
+        'lingkuppengawasan' => 'nullable|string',
+        'indikator' => 'nullable|string',
+        'dokumenperiksa' => 'nullable|string',
+        'carapemerksaan1' => 'nullable|string',
+        'carapemerksaan2' => 'nullable|string',
+        'kesimpulan1' => 'nullable|string',
+        'kesimpulan2' => 'nullable|string',
+        'cadangan1' => 'nullable|string',
+        'cadangan2' => 'nullable|string',
+        'tandatangan1_id' => 'nullable|integer',
+        'tandatangan2_id' => 'nullable|integer',
+        'tandatangan3_id' => 'nullable|integer',
+    ], [
+        'tertibjakonpenyelenggaraan_id.required' => 'ID Tertib Jakon Penyelenggaraan wajib diisi',
+        'tertibjakonpenyelenggaraan_id.exists' => 'ID Tertib Jakon Penyelenggaraan tidak valid',
+    ]);
+
+    try {
+        // Buat record baru sesuai tabel baru
+        $surat = new surattertibjakonpenyelenggaraan1();
+        $surat->tertibjakonpenyelenggaraan_id = $validatedData['tertibjakonpenyelenggaraan_id'];
+        $surat->lingkuppengawasan = $validatedData['lingkuppengawasan'] ?? null;
+        $surat->indikator = $validatedData['indikator'] ?? null;
+        $surat->dokumenperiksa = $validatedData['dokumenperiksa'] ?? null;
+        $surat->carapemerksaan1 = $validatedData['carapemerksaan1'] ?? null;
+        $surat->carapemerksaan2 = $validatedData['carapemerksaan2'] ?? null;
+        $surat->kesimpulan1 = $validatedData['kesimpulan1'] ?? null;
+        $surat->kesimpulan2 = $validatedData['kesimpulan2'] ?? null;
+        $surat->cadangan1 = $validatedData['cadangan1'] ?? null;
+        $surat->cadangan2 = $validatedData['cadangan2'] ?? null;
+        $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+        $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+        $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
+        $surat->save();
+
+        // Ambil parentId dari object yang sudah disimpan
+        $parentId = $surat->tertibjakonpenyelenggaraan_id;
+
+        session()->flash('create', 'Berkas Dukung Tertib Penyelenggaraan Bagian 1 Berhasil dibuat!');
+        return redirect()->route('betertibjakonpenyelenggaraan1', ['id' => $parentId]);
+
+    } catch (\Exception $e) {
+        return back()->withInput()
+            ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+    }
+}
+
+
+public function betertibjakonpenyelenggaraan1delete($id)
+{
+    $entry = surattertibjakonpenyelenggaraan1::where('id', $id)->first();
+
+    if ($entry) {
+        // Hapus file jika perlu
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Ambil ID dari relasi tertibjasakonstruksi, misalnya:
+        $parentId = $entry->tertibjakonpenyelenggaraan_id; // pastikan ini ada di tabel
+
+        $entry->delete();
+
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect()->route('betertibjakonpenyelenggaraan1', ['id' => $parentId]);
+
+    }
+
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
+
+
+public function betertibjakonpenyelenggaraan2($id)
+{
+    // Ambil data utama berdasarkan ID
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::find($id);
+
+    if (!$datatertibjakonpenyelenggaraan) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    $user = Auth::user();
+
+    // Ambil semua surat terkait dengan paginate
+    $datasurat = surattertibjakonpenyelenggaraan2::where('tertibjakonpenyelenggaraan_id', $id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
+
+    $suratPertama = $datasurat->first();
+
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.02_suratpenyelenggaran2.penyelenggaraan2', [
+        'title' => 'Berkas Surat | Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Penyusunan Pelaksanaan Kontrak Kerja',
+        'user' => $user,
+        'data' => $datasurat,
+        'datasurat' => $datasurat,
+        // 'datapengelola1' => $datasurat->lingkuppengawasan,
+        // 'datapengelola2' => $datasurat->indikator,
+        'datainduk' => $datatertibjakonpenyelenggaraan,
+        'firstsurat' => $suratPertama,
+        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id, // penting untuk route tombol "Buat Berkas"
+    ]);
+}
+
+
+
+ public function betertibjakonpenyelenggaraan2createberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::with('surattertibjakonpenyelenggaraan2')->findOrFail($id);
+
+    $user = Auth::user();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakopemanfaatan2 = $datatertibjakonpenyelenggaraan->surattertibjakonpenyelenggaraan2;
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.02_suratpenyelenggaran2.buatberkaspenyelenggaraan', [
+        'datanamabangunan' => $datatertibjakonpenyelenggaraan->namabangunan,
+        'datalokasi' => $datatertibjakonpenyelenggaraan->lokasi,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjakonpenyelenggaraan->kegiatankonstruksi,
+        'datatertibjasakonstruksi_id' => $datatertibjakonpenyelenggaraan->id,
+        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
+        'user' => $user,
+        'data' => $datatertibjakonpenyelenggaraan,
+        'datatandatangan' => $datatandatangan,
+
+        'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan2,
+        'title' => 'Buat Berkas Dukung Surat Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Penyusunan Pelaksanaan Kontrak Kerja'
+    ]);
+}
+
+
+public function betertibjakonpenyelenggaraan2createnew(Request $request)
+{
+    // Validasi data input
+    $validatedData = $request->validate([
+        'tertibjakonpenyelenggaraan_id' => 'required|string',
+        'catatan1' => 'nullable|string',
+        'catatan2' => 'nullable|string',
+        'tandatangan1_id' => 'nullable|string',
+        'tandatangan2_id' => 'nullable|string',
+        'tandatangan3_id' => 'nullable|string',
+    ], [
+        'tertibjakonpenyelenggaraan_id.required' => 'ID Tertib Jakon Penyelenggaraan wajib diisi',
+        'tertibjakonpenyelenggaraan_id.exists' => 'ID Tertib Jakon Penyelenggaraan tidak valid',
+    ]);
+
+    try {
+        // Buat record baru sesuai tabel surattertibjakonpenyelenggaraan2s
+        $surat = new surattertibjakonpenyelenggaraan2();
+        $surat->tertibjakonpenyelenggaraan_id = $validatedData['tertibjakonpenyelenggaraan_id'];
+        $surat->catatan1 = $validatedData['catatan1'] ?? null;
+        $surat->catatan2 = $validatedData['catatan2'] ?? null;
+        $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+        $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+        $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
+        $surat->save();
+
+        // Ambil parentId dari object yang sudah disimpan
+        $parentId = $surat->tertibjakonpenyelenggaraan_id;
+
+        session()->flash('create', 'Berkas Dukung Tertib Penyelenggaraan Bagian 2 Berhasil dibuat!');
+        return redirect()->route('betertibjakonpenyelenggaraan2', ['id' => $parentId]);
+
+    } catch (\Exception $e) {
+        return back()->withInput()
+            ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+    }
+}
+
+
+public function betertibjakonpenyelenggaraan2delete($id)
+{
+    $entry = surattertibjakonpenyelenggaraan2::where('id', $id)->first();
+
+    if ($entry) {
+        // Hapus file jika perlu
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Ambil ID dari relasi tertibjasakonstruksi, misalnya:
+        $parentId = $entry->tertibjakonpenyelenggaraan_id; // pastikan ini ada di tabel
+
+        $entry->delete();
+
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect()->route('betertibjakonpenyelenggaraan2', ['id' => $parentId]);
+
+    }
+
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
+
+
+public function betertibjakonpenyelenggaraan3($id)
+{
+    // Ambil data utama berdasarkan ID
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::find($id);
+
+    if (!$datatertibjakonpenyelenggaraan) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    $user = Auth::user();
+
+    // Ambil semua surat terkait dengan paginate
+    $datasurat = surattertibjakonpenyelenggaraan3::where('tertibjakonpenyelenggaraan_id', $id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
+
+    $suratPertama = $datasurat->first();
+
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.03_suratpenyelenggaraan3.penyelenggaraan3', [
+        'title' => 'Berkas Surat | Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Standar K3 Konstruksi',
+        'user' => $user,
+        'data' => $datasurat,
+        'datasurat' => $datasurat,
+        // 'datapengelola1' => $datasurat->lingkuppengawasan,
+        // 'datapengelola2' => $datasurat->indikator,
+        'datainduk' => $datatertibjakonpenyelenggaraan,
+        'firstsurat' => $suratPertama,
+        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id, // penting untuk route tombol "Buat Berkas"
+    ]);
+}
+
+
+ public function betertibjakonpenyelenggaraan3createberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::with('surattertibjakonpenyelenggaraan3')->findOrFail($id);
+
+    $user = Auth::user();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakopemanfaatan2 = $datatertibjakonpenyelenggaraan->surattertibjakonpenyelenggaraan3;
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.03_suratpenyelenggaraan3.buatberkaspenyelenggaraan', [
+        'datanamabangunan' => $datatertibjakonpenyelenggaraan->namabangunan,
+        'datalokasi' => $datatertibjakonpenyelenggaraan->lokasi,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjakonpenyelenggaraan->kegiatankonstruksi,
+        'datatertibjasakonstruksi_id' => $datatertibjakonpenyelenggaraan->id,
+        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
+        'user' => $user,
+        'data' => $datatertibjakonpenyelenggaraan,
+        'datatandatangan' => $datatandatangan,
+
+        'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan2,
+        'title' => 'Buat Berkas Dukung Surat Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Standar K3 Konstruksi'
+    ]);
+}
+
+
+public function betertibjakonpenyelenggaraan3createnew(Request $request)
+{
+    // Validasi data input sesuai kolom terbaru
+    $validatedData = $request->validate([
+        'tertibjakonpenyelenggaraan_id' => 'nullable|string',
+        'kesimpulan1' => 'nullable|string',
+        'kesimpulan2' => 'nullable|string',
+        'catatan1' => 'nullable|string',
+        'catatan2' => 'nullable|string',
+        'tandatangan1_id' => 'nullable|string',
+        'tandatangan2_id' => 'nullable|string',
+        'tandatangan3_id' => 'nullable|string',
+    ], [
+        'tertibjakonpenyelenggaraan_id.exists' => 'ID Tertib Jakon Penyelenggaraan tidak valid',
+        'tandatangan1_id.exists' => 'Tanda tangan 1 tidak valid',
+        'tandatangan2_id.exists' => 'Tanda tangan 2 tidak valid',
+        'tandatangan3_id.exists' => 'Tanda tangan 3 tidak valid',
+    ]);
+
+    try {
+        // Buat record baru sesuai tabel surattertibjakonpenyelenggaraan2s
+        $surat = new surattertibjakonpenyelenggaraan3();
+        $surat->tertibjakonpenyelenggaraan_id = $validatedData['tertibjakonpenyelenggaraan_id'] ?? null;
+        $surat->kesimpulan1 = $validatedData['kesimpulan1'] ?? null;
+        $surat->kesimpulan2 = $validatedData['kesimpulan2'] ?? null;
+        $surat->catatan1 = $validatedData['catatan1'] ?? null;
+        $surat->catatan2 = $validatedData['catatan2'] ?? null;
+        $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+        $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+        $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
+        $surat->save();
+
+        $parentId = $surat->tertibjakonpenyelenggaraan_id;
+
+        session()->flash('create', 'Berkas Dukung Tertib Penyelenggaraan Bagian 3 Berhasil dibuat!');
+        return redirect()->route('betertibjakonpenyelenggaraan3', ['id' => $parentId]);
+
+    } catch (\Exception $e) {
+        return back()->withInput()
+                     ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+    }
+}
+
+
+public function betertibjakonpenyelenggaraan3delete($id)
+{
+    $entry = surattertibjakonpenyelenggaraan3::where('id', $id)->first();
+
+    if ($entry) {
+        // Hapus file jika perlu
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Ambil ID dari relasi tertibjasakonstruksi, misalnya:
+        $parentId = $entry->tertibjakonpenyelenggaraan_id; // pastikan ini ada di tabel
+
+        $entry->delete();
+
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect()->route('betertibjakonpenyelenggaraan3', ['id' => $parentId]);
+
+    }
+
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
+
+
+
+
+public function betertibjakonpenyelenggaraan4($id)
+{
+    // Ambil data utama berdasarkan ID
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::find($id);
+
+    if (!$datatertibjakonpenyelenggaraan) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    $user = Auth::user();
+
+    // Ambil semua surat terkait dengan paginate
+    $datasurat = surattertibjakonpenyelenggaraan4::where('tertibjakonpenyelenggaraan_id', $id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
+
+    $suratPertama = $datasurat->first();
+
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.04_penyelenggaraan.penyelenggaraan4', [
+        'title' => 'Berkas Surat | Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Manajemen Mutu Konstruksi',
+        'user' => $user,
+        'data' => $datasurat,
+        'datasurat' => $datasurat,
+        // 'datapengelola1' => $datasurat->lingkuppengawasan,
+        // 'datapengelola2' => $datasurat->indikator,
+        'datainduk' => $datatertibjakonpenyelenggaraan,
+        'firstsurat' => $suratPertama,
+        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id, // penting untuk route tombol "Buat Berkas"
+    ]);
+}
+
+
+
+ public function betertibjakonpenyelenggaraan4createberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::with('surattertibjakonpenyelenggaraan4')->findOrFail($id);
+
+    $user = Auth::user();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakopemanfaatan2 = $datatertibjakonpenyelenggaraan->surattertibjakonpenyelenggaraan4;
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.04_penyelenggaraan.buatberkaspenyelenggaraan', [
+        'datanamabangunan' => $datatertibjakonpenyelenggaraan->namabangunan,
+        'datalokasi' => $datatertibjakonpenyelenggaraan->lokasi,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjakonpenyelenggaraan->kegiatankonstruksi,
+        'datatertibjasakonstruksi_id' => $datatertibjakonpenyelenggaraan->id,
+        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
+        'user' => $user,
+        'data' => $datatertibjakonpenyelenggaraan,
+        'datatandatangan' => $datatandatangan,
+
+        'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan2,
+        'title' => 'Buat Berkas Dukung Surat Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Manajemen Mutu Konstruksi'
+    ]);
+}
+
+
+public function betertibjakonpenyelenggaraan4createnew(Request $request)
+{
+    // Validasi data input sesuai kolom terbaru
+    $validatedData = $request->validate([
+        'tertibjakonpenyelenggaraan_id' => 'nullable|string',
+        'kesimpulan1' => 'nullable|string',
+        'kesimpulan2' => 'nullable|string',
+        'catatan1' => 'nullable|string',
+        'catatan2' => 'nullable|string',
+        'tandatangan1_id' => 'nullable|string',
+        'tandatangan2_id' => 'nullable|string',
+        'tandatangan3_id' => 'nullable|string',
+    ], [
+        'tertibjakonpenyelenggaraan_id.exists' => 'ID Tertib Jakon Penyelenggaraan tidak valid',
+        'tandatangan1_id.exists' => 'Tanda tangan 1 tidak valid',
+        'tandatangan2_id.exists' => 'Tanda tangan 2 tidak valid',
+        'tandatangan3_id.exists' => 'Tanda tangan 3 tidak valid',
+    ]);
+
+    try {
+        // Buat record baru sesuai tabel surattertibjakonpenyelenggaraan2s
+        $surat = new surattertibjakonpenyelenggaraan4();
+        $surat->tertibjakonpenyelenggaraan_id = $validatedData['tertibjakonpenyelenggaraan_id'] ?? null;
+        $surat->kesimpulan1 = $validatedData['kesimpulan1'] ?? null;
+        $surat->kesimpulan2 = $validatedData['kesimpulan2'] ?? null;
+        $surat->catatan1 = $validatedData['catatan1'] ?? null;
+        $surat->catatan2 = $validatedData['catatan2'] ?? null;
+        $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+        $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+        $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
+        $surat->save();
+
+        $parentId = $surat->tertibjakonpenyelenggaraan_id;
+
+        session()->flash('create', 'Berkas Dukung Tertib Penyelenggaraan Bagian 4 Berhasil dibuat!');
+        return redirect()->route('betertibjakonpenyelenggaraan4', ['id' => $parentId]);
+
+    } catch (\Exception $e) {
+        return back()->withInput()
+                     ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+    }
+}
+
+
+public function betertibjakonpenyelenggaraan4delete($id)
+{
+    $entry = surattertibjakonpenyelenggaraan4::where('id', $id)->first();
+
+    if ($entry) {
+        // Hapus file jika perlu
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Ambil ID dari relasi tertibjasakonstruksi, misalnya:
+        $parentId = $entry->tertibjakonpenyelenggaraan_id; // pastikan ini ada di tabel
+
+        $entry->delete();
+
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect()->route('betertibjakonpenyelenggaraan4', ['id' => $parentId]);
+
+    }
+
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
+
+
+public function betertibjakonpenyelenggaraan5($id)
+{
+    // Ambil data utama berdasarkan ID
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::find($id);
+
+    if (!$datatertibjakonpenyelenggaraan) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    $user = Auth::user();
+
+    // Ambil semua surat terkait dengan paginate
+    $datasurat = surattertibjakonpenyelenggaraan5::where('tertibjakonpenyelenggaraan_id', $id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
+
+    $suratPertama = $datasurat->first();
+
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.05_penyelenggaraan.penyelenggaraan5', [
+        'title' => 'Berkas Surat | Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Penggunaan Material Peralatan',
+        'user' => $user,
+        'data' => $datasurat,
+        'datasurat' => $datasurat,
+        // 'datapengelola1' => $datasurat->lingkuppengawasan,
+        // 'datapengelola2' => $datasurat->indikator,
+        'datainduk' => $datatertibjakonpenyelenggaraan,
+        'firstsurat' => $suratPertama,
+        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id, // penting untuk route tombol "Buat Berkas"
+    ]);
+}
+
+
+ public function betertibjakonpenyelenggaraan5createberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::with('surattertibjakonpenyelenggaraan5')->findOrFail($id);
+
+    $user = Auth::user();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakopemanfaatan2 = $datatertibjakonpenyelenggaraan->surattertibjakonpenyelenggaraan4;
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.05_penyelenggaraan.buatberkaspenyelenggaraan', [
+        'datanamabangunan' => $datatertibjakonpenyelenggaraan->namabangunan,
+        'datalokasi' => $datatertibjakonpenyelenggaraan->lokasi,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjakonpenyelenggaraan->kegiatankonstruksi,
+        'datatertibjasakonstruksi_id' => $datatertibjakonpenyelenggaraan->id,
+        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
+        'user' => $user,
+        'data' => $datatertibjakonpenyelenggaraan,
+        'datatandatangan' => $datatandatangan,
+
+        'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan2,
+        'title' => 'Buat Berkas Dukung Surat Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Penggunaan Material Peralatan'
+    ]);
+}
+
+
+public function betertibjakonpenyelenggaraan5createnew(Request $request)
+{
+    // Validasi data input sesuai kolom terbaru
+    $validatedData = $request->validate([
+        'tertibjakonpenyelenggaraan_id' => 'nullable|string',
+        'kesimpulan1' => 'nullable|string',
+        'kesimpulan2' => 'nullable|string',
+        'catatan1' => 'nullable|string',
+        'catatan2' => 'nullable|string',
+        'tandatangan1_id' => 'nullable|string',
+        'tandatangan2_id' => 'nullable|string',
+        'tandatangan3_id' => 'nullable|string',
+    ], [
+        'tertibjakonpenyelenggaraan_id.exists' => 'ID Tertib Jakon Penyelenggaraan tidak valid',
+        'tandatangan1_id.exists' => 'Tanda tangan 1 tidak valid',
+        'tandatangan2_id.exists' => 'Tanda tangan 2 tidak valid',
+        'tandatangan3_id.exists' => 'Tanda tangan 3 tidak valid',
+    ]);
+
+    try {
+        // Buat record baru sesuai tabel surattertibjakonpenyelenggaraan2s
+        $surat = new surattertibjakonpenyelenggaraan5();
+        $surat->tertibjakonpenyelenggaraan_id = $validatedData['tertibjakonpenyelenggaraan_id'] ?? null;
+        $surat->kesimpulan1 = $validatedData['kesimpulan1'] ?? null;
+        $surat->kesimpulan2 = $validatedData['kesimpulan2'] ?? null;
+        $surat->catatan1 = $validatedData['catatan1'] ?? null;
+        $surat->catatan2 = $validatedData['catatan2'] ?? null;
+        $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+        $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+        $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
+        $surat->save();
+
+        $parentId = $surat->tertibjakonpenyelenggaraan_id;
+
+        session()->flash('create', 'Berkas Dukung Tertib Penyelenggaraan Bagian 5 Berhasil dibuat!');
+        return redirect()->route('betertibjakonpenyelenggaraan5', ['id' => $parentId]);
+
+    } catch (\Exception $e) {
+        return back()->withInput()
+                     ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+    }
+}
+
+
+
+public function betertibjakonpenyelenggaraan5delete($id)
+{
+    $entry = surattertibjakonpenyelenggaraan5::where('id', $id)->first();
+
+    if ($entry) {
+        // Hapus file jika perlu
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Ambil ID dari relasi tertibjasakonstruksi, misalnya:
+        $parentId = $entry->tertibjakonpenyelenggaraan_id; // pastikan ini ada di tabel
+
+        $entry->delete();
+
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect()->route('betertibjakonpenyelenggaraan5', ['id' => $parentId]);
+
+    }
+
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
+
+
+
+public function betertibjakonpenyelenggaraan6($id)
+{
+    // Ambil data utama berdasarkan ID
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::find($id);
+
+    if (!$datatertibjakonpenyelenggaraan) {
+        return redirect()->back()->with('error', 'Data Tertib Jasa Konstruksi tidak ditemukan.');
+    }
+
+    $user = Auth::user();
+
+    // Ambil semua surat terkait dengan paginate
+    $datasurat = surattertibjakonpenyelenggaraan6::where('tertibjakonpenyelenggaraan_id', $id)
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(50);
+
+    $suratPertama = $datasurat->first();
+
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.06_penyelenggaraan.penyelenggaraan6', [
+        'title' => 'Berkas Surat | Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Pengelolaan & Pemanfaatan Sumber Material',
+        'user' => $user,
+        'data' => $datasurat,
+        'datasurat' => $datasurat,
+        // 'datapengelola1' => $datasurat->lingkuppengawasan,
+        // 'datapengelola2' => $datasurat->indikator,
+        'datainduk' => $datatertibjakonpenyelenggaraan,
+        'firstsurat' => $suratPertama,
+        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
+        'datasurat_id' => $datasurat->first()?->id,
+        'id' => $id, // penting untuk route tombol "Buat Berkas"
+    ]);
+}
+
+
+ public function betertibjakonpenyelenggaraan6createberkas($id)
+{
+    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+    $datatertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::with('surattertibjakonpenyelenggaraan6')->findOrFail($id);
+
+    $user = Auth::user();
+    $datatandatangan = tandatangan::all();
+
+    // Ambil data relasi surattertibjakonusaha1 jika ada
+    $datasurattertibjakopemanfaatan2 = $datatertibjakonpenyelenggaraan->surattertibjakonpenyelenggaraan6;
+
+    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.06_penyelenggaraan.buatberkaspenyelenggaraan', [
+        'datanamabangunan' => $datatertibjakonpenyelenggaraan->namabangunan,
+        'datalokasi' => $datatertibjakonpenyelenggaraan->lokasi,
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjakonpenyelenggaraan->kegiatankonstruksi,
+        'datatertibjasakonstruksi_id' => $datatertibjakonpenyelenggaraan->id,
+        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
+        'user' => $user,
+        'data' => $datatertibjakonpenyelenggaraan,
+        'datatandatangan' => $datatandatangan,
+
+        'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan2,
+        'title' => 'Buat Berkas Dukung Surat Tertib Jakon Penyelenggaraan | Pengawasan Terhadap Pengelolaan & Pemanfataan Sumber Material'
+    ]);
+}
+
+
+public function betertibjakonpenyelenggaraan6createnew(Request $request)
+{
+    // Validasi data input sesuai kolom terbaru
+    $validatedData = $request->validate([
+        'tertibjakonpenyelenggaraan_id' => 'nullable|string',
+        'kesimpulan1' => 'nullable|string',
+        'kesimpulan2' => 'nullable|string',
+        'catatan1' => 'nullable|string',
+        'catatan2' => 'nullable|string',
+        'tandatangan1_id' => 'nullable|string',
+        'tandatangan2_id' => 'nullable|string',
+        'tandatangan3_id' => 'nullable|string',
+    ], [
+        'tertibjakonpenyelenggaraan_id.exists' => 'ID Tertib Jakon Penyelenggaraan tidak valid',
+        'tandatangan1_id.exists' => 'Tanda tangan 1 tidak valid',
+        'tandatangan2_id.exists' => 'Tanda tangan 2 tidak valid',
+        'tandatangan3_id.exists' => 'Tanda tangan 3 tidak valid',
+    ]);
+
+    try {
+        // Buat record baru sesuai tabel surattertibjakonpenyelenggaraan2s
+        $surat = new surattertibjakonpenyelenggaraan6();
+        $surat->tertibjakonpenyelenggaraan_id = $validatedData['tertibjakonpenyelenggaraan_id'] ?? null;
+        $surat->kesimpulan1 = $validatedData['kesimpulan1'] ?? null;
+        $surat->kesimpulan2 = $validatedData['kesimpulan2'] ?? null;
+        $surat->catatan1 = $validatedData['catatan1'] ?? null;
+        $surat->catatan2 = $validatedData['catatan2'] ?? null;
+        $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+        $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+        $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
+        $surat->save();
+
+        $parentId = $surat->tertibjakonpenyelenggaraan_id;
+
+        session()->flash('create', 'Berkas Dukung Tertib Penyelenggaraan Bagian 6 Berhasil dibuat!');
+        return redirect()->route('betertibjakonpenyelenggaraan6', ['id' => $parentId]);
+
+    } catch (\Exception $e) {
+        return back()->withInput()
+                     ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+    }
+}
+
+
+
+public function betertibjakonpenyelenggaraan6delete($id)
+{
+    $entry = surattertibjakonpenyelenggaraan6::where('id', $id)->first();
+
+    if ($entry) {
+        // Hapus file jika perlu
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Ambil ID dari relasi tertibjasakonstruksi, misalnya:
+        $parentId = $entry->tertibjakonpenyelenggaraan_id; // pastikan ini ada di tabel
+
+        $entry->delete();
+
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect()->route('betertibjakonpenyelenggaraan6', ['id' => $parentId]);
+
+    }
+
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
+
+
+
+public function beuploadberkaspenyelenggaraan1($id)
+{
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_berkasdukung.01_berkasdukung', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Penyelenggaraan Pengawasan Pemilihan Penyedia Jasa ',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+public function beuploadberkaspenyelenggaraan1upload(Request $request, $id)
+{
+    // Validasi file
+    $request->validate([
+        'berkasdukung1' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'berkasdukung1.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'berkasdukung1.max' => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::findOrFail($id);
+
+    if ($request->hasFile('berkasdukung1')) {
+        $file = $request->file('berkasdukung1');
+
+        // Nama file unik
+        $filename = 'berkas1_' . time() . '.' . $file->getClientOriginalExtension();
+
+        // Path folder langsung di public/
+        $path = '06_tertibjakonpenyelenggaraan/berkas1';
+
+        // Buat folder jika belum ada
+        if (!file_exists(public_path($path))) {
+            mkdir(public_path($path), 0755, true);
+        }
+
+        // Pindahkan file ke public
+        $file->move(public_path($path), $filename);
+
+        // Simpan path relatif ke database
+        $datatertibjakonusaha->berkasdukung1 = $path . '/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+session()->flash('update', 'Berkas Berhasil di Upload !');
+return redirect()->back();
+
+}
+
+
+public function beuploadberkaspenyelenggaraan2($id)
+{
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_berkasdukung.02_berkasdukungpenyelenggaraan', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Penyelenggaraan Pengawasan Terhadap Pelaksanaan Kontrak Kerja ',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+public function beuploadberkaspenyelenggaraan2upload(Request $request, $id)
+{
+    // Validasi file
+    $request->validate([
+        'berkasdukung2' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'berkasdukung2.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'berkasdukung2.max' => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::findOrFail($id);
+
+    if ($request->hasFile('berkasdukung2')) {
+        $file = $request->file('berkasdukung2');
+
+        // Nama file unik
+        $filename = 'berkas2_' . time() . '.' . $file->getClientOriginalExtension();
+
+        // Path folder langsung di public/
+        $path = '06_tertibjakonpenyelenggaraan/berkas2';
+
+        // Buat folder jika belum ada
+        if (!file_exists(public_path($path))) {
+            mkdir(public_path($path), 0755, true);
+        }
+
+        // Pindahkan file ke public
+        $file->move(public_path($path), $filename);
+
+        // Simpan path relatif ke database
+        $datatertibjakonusaha->berkasdukung2 = $path . '/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+    session()->flash('update', 'Berkas Berhasil di Upload !');
+    return redirect()->back();
+}
+
+
+public function beuploadberkaspenyelenggaraan3($id)
+{
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_berkasdukung.03_berkasdukungpenyelenggaraan', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Penyelenggaraan Pengawasan Terhadap Standar K3 Konstruksi ',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+public function beuploadberkaspenyelenggaraan3upload(Request $request, $id)
+{
+    // Validasi file
+    $request->validate([
+        'berkasdukung3' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'berkasdukung3.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'berkasdukung3.max' => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::findOrFail($id);
+
+    if ($request->hasFile('berkasdukung3')) {
+        $file = $request->file('berkasdukung3');
+
+        // Nama file unik
+        $filename = 'berkas3_' . time() . '.' . $file->getClientOriginalExtension();
+
+        // Path folder langsung di public/
+        $path = '06_tertibjakonpenyelenggaraan/berkas3';
+
+        // Buat folder jika belum ada
+        if (!file_exists(public_path($path))) {
+            mkdir(public_path($path), 0755, true);
+        }
+
+        // Pindahkan file ke public
+        $file->move(public_path($path), $filename);
+
+        // Simpan path relatif ke database
+        $datatertibjakonusaha->berkasdukung3 = $path . '/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+    session()->flash('update', 'Berkas Berhasil di Upload !');
+    return redirect()->back();
+}
+
+
+public function beuploadberkaspenyelenggaraan4($id)
+{
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_berkasdukung.04_berkasdukungpenyelenggaraan', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Penyelenggaraan Pengawasan Terhadap Manajemen Mutu Konstruksi ',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+public function beuploadberkaspenyelenggaraan4upload(Request $request, $id)
+{
+    // Validasi file
+    $request->validate([
+        'berkasdukung4' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'berkasdukung4.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'berkasdukung4.max' => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::findOrFail($id);
+
+    if ($request->hasFile('berkasdukung4')) {
+        $file = $request->file('berkasdukung4');
+
+        // Nama file unik
+        $filename = 'berkas4_' . time() . '.' . $file->getClientOriginalExtension();
+
+        // Path folder langsung di public/
+        $path = '06_tertibjakonpenyelenggaraan/berkas4';
+
+        // Buat folder jika belum ada
+        if (!file_exists(public_path($path))) {
+            mkdir(public_path($path), 0755, true);
+        }
+
+        // Pindahkan file ke public
+        $file->move(public_path($path), $filename);
+
+        // Simpan path relatif ke database
+        $datatertibjakonusaha->berkasdukung4 = $path . '/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+    session()->flash('update', 'Berkas Berhasil di Upload !');
+    return redirect()->back();
+}
+
+
+
+public function beuploadberkaspenyelenggaraan5($id)
+{
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_berkasdukung.05_berkasdukungpenyelenggaraan', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Penyelenggaraan Pengawasan Terhadap Penggunaan Material Peralatan',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+public function beuploadberkaspenyelenggaraan5upload(Request $request, $id)
+{
+    // Validasi file
+    $request->validate([
+        'berkasdukung5' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'berkasdukung5.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'berkasdukung5.max' => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::findOrFail($id);
+
+    if ($request->hasFile('berkasdukung5')) {
+        $file = $request->file('berkasdukung5');
+
+        // Nama file unik
+        $filename = 'berkas5_' . time() . '.' . $file->getClientOriginalExtension();
+
+        // Path folder langsung di public/
+        $path = '06_tertibjakonpenyelenggaraan/berkas5';
+
+        // Buat folder jika belum ada
+        if (!file_exists(public_path($path))) {
+            mkdir(public_path($path), 0755, true);
+        }
+
+        // Pindahkan file ke public
+        $file->move(public_path($path), $filename);
+
+        // Simpan path relatif ke database
+        $datatertibjakonusaha->berkasdukung5 = $path . '/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+    session()->flash('update', 'Berkas Berhasil di Upload !');
+    return redirect()->back();
+}
+
+
+public function beuploadberkaspenyelenggaraan6($id)
+{
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+// $datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.00_berkasdukung.06_berkasdukungpenyelenggaraan', [
+    'title' => 'Update Berkas Dukung Tertib Jakon Penyelenggaraan Pengawasan Terhadap Pengelolaan & Pemanfaatan Sumber Material',
+    'data' => $datatertibjakonusaha,
+    // 'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
+public function beuploadberkaspenyelenggaraan6upload(Request $request, $id)
+{
+    // Validasi file
+    $request->validate([
+        'berkasdukung6' => 'nullable|file|mimes:pdf,doc,docx|max:15120', // max 15MB
+    ], [
+        'berkasdukung6.mimes' => 'Berkas harus berupa PDF, DOC, atau DOCX.',
+        'berkasdukung6.max' => 'Ukuran berkas maksimal 15MB.',
+    ]);
+
+    // Cari data berdasarkan ID
+    $datatertibjakonusaha = tertibjakonpenyelenggaraan::findOrFail($id);
+
+    if ($request->hasFile('berkasdukung6')) {
+        $file = $request->file('berkasdukung6');
+
+        // Nama file unik
+        $filename = 'berkas6_' . time() . '.' . $file->getClientOriginalExtension();
+
+        // Path folder langsung di public/
+        $path = '06_tertibjakonpenyelenggaraan/berkas6';
+
+        // Buat folder jika belum ada
+        if (!file_exists(public_path($path))) {
+            mkdir(public_path($path), 0755, true);
+        }
+
+        // Pindahkan file ke public
+        $file->move(public_path($path), $filename);
+
+        // Simpan path relatif ke database
+        $datatertibjakonusaha->berkasdukung6 = $path . '/' . $filename;
+        $datatertibjakonusaha->save();
+    }
+
+    session()->flash('update', 'Berkas Berhasil di Upload !');
+    return redirect()->back();
+}
 
 }
