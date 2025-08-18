@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+
         Schema::create('surattertibjakonpenyelenggaraan4s', function (Blueprint $table) {
             $table->id();
             $table->text('lingkuppengawasan')->nullable()->index();
