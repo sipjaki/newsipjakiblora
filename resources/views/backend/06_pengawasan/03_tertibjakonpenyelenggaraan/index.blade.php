@@ -1,4 +1,31 @@
 <style>
+    /* import khusus buat tabel tertib jaku usaha */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+    #tabeltertibjakonusaha th {
+        background-color: #4ae28a;
+        color: #000; /* tulisan hitam */
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        padding: 8px;
+    }
+
+    #tabeltertibjakonusaha {
+        border-collapse: collapse;
+        width: 100%;
+    }
+</style>
+
+<style>
+  /* Hilangkan zebra striping / belang */
+  table tbody tr:nth-child(odd),
+  table tbody tr:nth-child(even) {
+      background-color: #ffffff !important; /* semua putih */
+  }
+</style>
+
+
+<style>
     table {
      table-layout: fixed;
      width: 100%;
@@ -35,6 +62,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
+@include('button')
 
 {{-- ---------------------------------------------------------------------- --}}
 
@@ -42,7 +70,8 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+    {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -122,15 +151,15 @@
                                 </script>
 
 
-                                <button class="btn-create" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
+                                <button class="button-baru" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
                                     <i class="bi bi-download icon-create" style="margin-right: 5px" ></i> Download Excel
                                 </button>
 
                                 <a href="/betertibjakonpenyelenggaraan/create">
-                                    <button class="btn-create";>
+                                    <button class="button-hijau";>
                                     <!-- Ikon Kembali -->
                                     <i class="fa fa-plus icon-create" style="margin-right: 8px;"></i>
-                                    Create
+                                    Buat Baru
                                 </button>
                                 </a>
 
@@ -208,35 +237,28 @@
                                 @if($item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat')
                                   {{ $item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat' }}
                                 @else
-                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                                  <button class="button-berkas">
                                     Data Belum Di Update
                                   </button>
                                 @endif
                               </td>
 
 
-<td style="text-align: left;">
+<td style="text-align: left; white-space: normal; word-wrap: break-word; max-width: 300px;">
   @if($item->kegiatankonstruksi)
     {{ $item->kegiatankonstruksi }}
   @else
-    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+    <button class="button-berkas">
       Data Belum Di Update
     </button>
   @endif
 </td>
 
-
-<td style="text-align: left;">
+<td style="text-align: left; white-space: normal; word-wrap: break-word; max-width: 300px;">
   @if($item->namapekerjaan)
     {{ $item->namapekerjaan }}
   @else
-    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+    <button class="button-berkas">
       Data Belum Di Update
     </button>
   @endif
@@ -277,51 +299,51 @@
 
 
                              <td style="text-align: center; vertical-align: middle;">
-                                    <a href="/betertibjakonpemanfataanjakon/index/{{$item->id}}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                    <a href="/betertibjakonpenyelenggaraan1/{{$item->id}}" style="text-decoration: none;">
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
                                 </td>
 
                                 <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonpemanfataansurat2/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                    <a href="{{ url('/betertibjakonpenyelenggaraan2/' . $item->id) }}" style="text-decoration: none;">
+                                        <button class="button-baru">
                                             <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
                                 </td>
 
                                 <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                    {{-- <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;"> --}}
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
-                                    </a>
+                                    {{-- </a> --}}
                                 </td>
 
                                 <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                    {{-- <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;"> --}}
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
-                                    </a>
+                                    {{-- </a> --}}
                                 </td>
 
                                 <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                    {{-- <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;"> --}}
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
-                                    </a>
+                                    {{-- </a> --}}
                                 </td>
 
                                 <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                    {{-- <a href="{{ url('/betertibjakonpemanfataansurat3/index/' . $item->id) }}" style="text-decoration: none;"> --}}
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
-                                    </a>
+                                    {{-- </a> --}}
                                 </td>
 
 
@@ -335,16 +357,16 @@
                               <td style="text-align: center;">
                                 <!-- Tombol Aksi -->
                                 {{-- <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a> --}}
-                                <a href="/betertibjakonpenyelenggaraan/update/{{$item->id}}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                <a href="/betertibjakonpenyelenggaraan/update/{{$item->id}}" class="button-berkas"><i class="bi bi-pencil-square"></i>Edit</a>
                                 {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
                                   <i class="bi bi-trash"></i>
                                 </a> --}}
-                                <a href="javascript:void(0)" class="btn btn-sm btn-danger"
+                                <a href="javascript:void(0)" class="button-merah"
                                 data-bs-toggle="modal"
                                 data-bs-target="#deleteModal"
                                 data-url="{{ route('betertibjakonpenyelenggaraandeletedata', $item->id) }}"
                                 onclick="setDeleteUrl(this)">
-                                    <i class="bi bi-trash"></i>
+                                    <i class="bi bi-trash"></i>Hapus
                                 </a>
 
                               </td>
