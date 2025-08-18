@@ -15,7 +15,24 @@ class surattertibjakonpenyelenggaraan1 extends Model
 
     public function tertibjakonpenyelenggaraan()
     {
-        return $this->hasOne(tertibjakonpenyelenggaraan::class);
+        return $this->belongsTo(tertibjakonpenyelenggaraan::class, 'tertibjakonpenyelenggaraan_id');
     }
+
+
+        public function tandatangan1()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan1_id');
+    }
+
+    public function tandatangan2()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan2_id');
+    }
+
+    public function tandatangan3()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan3_id');
+    }
+
 
 }
