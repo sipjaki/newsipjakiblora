@@ -25,32 +25,37 @@ class tertibjakonpenyelenggaraan extends Model
 
     public function surattertibjakonpenyelenggaraan1()
     {
-        return $this->belongsTo(surattertibjakonpenyelenggaraan1::class);
+        return $this->hasMany(surattertibjakonpenyelenggaraan1::class);
     }
 
     public function surattertibjakonpenyelenggaraan2()
     {
-        return $this->belongsTo(surattertibjakonpenyelenggaraan2::class);
+        return $this->hasMany(surattertibjakonpenyelenggaraan2::class);
     }
 
-    public function surattertibjakonpenyelenggaraan3()
-    {
-        return $this->belongsTo(surattertibjakonpenyelenggaraan3::class);
-    }
+    // public function surattertibjakonpenyelenggaraan2()
+    // {
+    //     return $this->belongsTo(surattertibjakonpenyelenggaraan2::class);
+    // }
 
-    public function surattertibjakonpenyelenggaraan4()
-    {
-        return $this->belongsTo(surattertibjakonpenyelenggaraan4::class);
-    }
+    // public function surattertibjakonpenyelenggaraan3()
+    // {
+    //     return $this->belongsTo(surattertibjakonpenyelenggaraan3::class);
+    // }
 
-    public function surattertibjakonpenyelenggaraan5()
-    {
-        return $this->belongsTo(surattertibjakonpenyelenggaraan5::class);
-    }
+    // public function surattertibjakonpenyelenggaraan4()
+    // {
+    //     return $this->belongsTo(surattertibjakonpenyelenggaraan4::class);
+    // }
 
-    public function surattertibjakonpenyelenggaraan6()
-    {
-        return $this->belongsTo(surattertibjakonpenyelenggaraan6::class);
-    }
+    // public function surattertibjakonpenyelenggaraan5()
+    // {
+    //     return $this->belongsTo(surattertibjakonpenyelenggaraan5::class);
+    // }
+
+    // public function surattertibjakonpenyelenggaraan6()
+    // {
+    //     return $this->belongsTo(surattertibjakonpenyelenggaraan6::class);
+    // }
 
 }
