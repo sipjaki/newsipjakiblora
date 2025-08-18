@@ -615,7 +615,7 @@ Route::get('/tokobangunanbloralist/{namatokobangunan}', [TokobangunanbloraContro
 // ================================================================================================================================================
 
 // Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware('auth');
-Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware('auth');
 
 // ======================================= BERANDA WEB -------------------------------------------------------------
 // ---------------------- MENU 2 BERANDA  -----------------------------------------------------
@@ -1020,10 +1020,22 @@ Route::get('/betertibjakonusaha/create', [TertibjasakonstruksiController::class,
 // Route::post('/betertibjakonusaha/createnew', [TertibjasakonstruksiController::class, 'betertibjakonusahacreatenew'])->middleware('auth')->name('betertibjakonusahacreatenew');
 Route::post('/betertibjakonusaha/createnew', [TertibjasakonstruksiController::class, 'betertibjakonusahacreatenew'])->name('betertibjakonusahacreatenew');
 
-Route::get('/betertibjakonusaha/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahaupdate'])->middleware('auth')->name('betertibjakonusahaupdate');
+Route::get('/betertibjakonusaha/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahaupdate'])->name('betertibjakonusahaupdate');
 Route::post('/betertibjakonusaha/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahaupdatecreate'])->middleware('auth')->name('betertibjakonusahaupdatecreate');
 
-Route::delete('/betertibjakonusahadel/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahadeletejakonusaha'])->middleware('auth')->name('betertibjakonusahadeletejakonusaha');
+Route::delete('/betertibjakonusahadel/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahadeletejakonusaha'])->name('betertibjakonusahadeletejakonusaha');
+
+Route::get('/beuploadberkasusaha1/upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkasusaha1'])->name('beuploadberkasusaha1uploadindex');
+Route::post('/beuploadberkasusaha1new/{id}', [TertibjasakonstruksiController::class, 'beuploadberkasusaha1new'])->name('beuploadberkasusaha1new');
+
+Route::get('/beuploadberkasusaha2/upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkasusaha2'])->name('beuploadberkasusaha2uploadindex');
+Route::post('/beuploadberkasusaha2new/{id}', [TertibjasakonstruksiController::class, 'beuploadberkasusaha2new'])->name('beuploadberkasusaha2new');
+
+Route::get('/beuploadberkasusaha3/upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkasusaha3'])->name('beuploadberkasusaha3uploadindex');
+Route::post('/beuploadberkasusaha3new/{id}', [TertibjasakonstruksiController::class, 'beuploadberkasusaha3new'])->name('beuploadberkasusaha3new');
+
+Route::get('/beuploadberkasusaha4/upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkasusaha4'])->name('beuploadberkasusaha4uploadindex');
+Route::post('/beuploadberkasusaha4new/{id}', [TertibjasakonstruksiController::class, 'beuploadberkasusaha4new'])->name('beuploadberkasusaha4new');
 
 
 // SURAT DUKUNG TERTIB JAKON USAHA
@@ -1034,67 +1046,69 @@ Route::get('/betertibjakonusahasurat1/create/{id}', [TertibjasakonstruksiControl
 
 // Route::get('/betertibjakonusahasuratpercobaan/create/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasuratpercobaan'])->middleware('auth')->name('betertibjakonusahasurat1indexsurat');
 Route::get('/betertibjakonusahasuratpercobaan/create/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasuratpercobaan'])->name('betertibjakonusahasurat1indexsurat');
-Route::get('/betertibjakonusahasurat1/createnew/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasuratnewberkas'])->middleware('auth')->name('betertibjakonusahasurat1');
+Route::get('/betertibjakonusahasurat1/createnew/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasuratnewberkas'])->name('betertibjakonusahasurat1');
 // Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1create'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonusahasurat1create');
-Route::get('/betertibjakonusahasurat1/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1createnew'])->middleware('auth')->name('betertibjakonusahasurat1newberkas');
-Route::post('/betertibjakonusahasurat1/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1createnewsurat'])->middleware('auth')->name('betertibjakonusahasurat1createnewsurat');
+// Route::get('/betertibjakonusahasurat1/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1createnew'])->middleware('auth')->name('betertibjakonusahasurat1newberkas'); // PERUBAHAN SUPERADMIN
+Route::get('/betertibjakonusahasurat1/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1createnew'])->name('betertibjakonusahasurat1newberkas');
+// Route::post('/betertibjakonusahasurat1/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1createnewsurat'])->middleware('auth')->name('betertibjakonusahasurat1createnewsurat'); // PERUBAHAN SUPERADMIN
+Route::post('/betertibjakonusahasurat1/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1createnewsurat'])->name('betertibjakonusahasurat1createnewsurat');
 
 Route::get('/betertibjakonusahasurat1/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1updatenew'])->middleware('auth')->name('betertibjakonusahasurat1updatenew');
 
 
 // SURAT DUKUNG TERTIB JAKON USAHA SURAT 2 SEGMENTASI PASAR
-Route::get('/betertibjakonusahasegmentasipasar/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasar'])->middleware('auth')->name('betertibjakonusahasurat2indexsurat');
-Route::get('/betertibjakonusahasegmentasipasar/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasarcreateberkas'])->middleware('auth')->name('betertibjakonusahasegmentasipasarberkas');
+Route::get('/betertibjakonusahasegmentasipasar/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasar'])->name('betertibjakonusahasurat2indexsurat');
+Route::get('/betertibjakonusahasegmentasipasar/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasarcreateberkas'])->name('betertibjakonusahasegmentasipasarberkas');
 
-Route::post('/betertibjakonusahasegmentasipasar/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasarcreatenewberkas'])->middleware('auth')->name('betertibjakonusahasegmentasipasarbuatberkas');
+Route::post('/betertibjakonusahasegmentasipasar/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasarcreatenewberkas'])->name('betertibjakonusahasegmentasipasarbuatberkas');
 
 Route::delete('/betertibjakonusahasegmentasipasar/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasardelete'])->middleware('auth')->name('betertibjakonusahadeletesegmentasipasar');
-Route::get('/betertibjakonusahasegmentasipasar/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasarshow'])->middleware('auth')->name('betertibjakonusahasegmentasipasarshow');
+Route::get('/betertibjakonusahasegmentasipasar/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasegmentasipasarshow'])->name('betertibjakonusahasegmentasipasarshow');
 
 // SURAT DUKUNG TERTIB JAKON USAHA SURAT 3 PEMENUHAN SYARAT
-Route::get('/betertibjakonusahapemenuhansyarat/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyarat'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratindex');
-Route::get('/betertibjakonusahapemenuhansyarat/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratshow'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratshow');
+Route::get('/betertibjakonusahapemenuhansyarat/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyarat'])->name('betertibjakonusahapemenuhansyaratindex');
+Route::get('/betertibjakonusahapemenuhansyarat/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratshow'])->name('betertibjakonusahapemenuhansyaratshow');
 
-Route::get('/betertibjakonusahapemenuhansyarat/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratcreateberkas'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratcreateberkas');
-Route::post('/betertibjakonusahapemenuhansyarat/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratcreateberkasnew'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratnewberkas');
+Route::get('/betertibjakonusahapemenuhansyarat/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratcreateberkas'])->name('betertibjakonusahapemenuhansyaratcreateberkas');
+Route::post('/betertibjakonusahapemenuhansyarat/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratcreateberkasnew'])->name('betertibjakonusahapemenuhansyaratnewberkas');
 
 Route::delete('/betertibjakonusahapemenuhansyaratdelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapemenuhansyaratdelete'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratdelete');
 
 
 // SURAT DUKUNG TERTIB JAKON USAHA 4 PELAKSANA PENGEMBANGAN USAHA
-Route::get('/betertibjakonusahapelaksana/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksana'])->middleware('auth')->name('betertibjakonusahapelaksanaindex');
-Route::get('/betertibjakonusahapelaksana/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksanashow'])->middleware('auth')->name('betertibjakonusahapelaksanashow');
+Route::get('/betertibjakonusahapelaksana/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksana'])->name('betertibjakonusahapelaksanaindex');
+Route::get('/betertibjakonusahapelaksana/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksanashow'])->name('betertibjakonusahapelaksanashow');
 
-Route::get('/betertibjakonusahapelaksana/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksanacreateberkas'])->middleware('auth')->name('betertibjakonusahapelaksanacreateberkas');
-Route::post('/betertibjakonusahapelaksana/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksananewberkascreate'])->middleware('auth')->name('betertibjakonusahapelaksananewberkas');
+Route::get('/betertibjakonusahapelaksana/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksanacreateberkas'])->name('betertibjakonusahapelaksanacreateberkas');
+Route::post('/betertibjakonusahapelaksana/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksananewberkascreate'])->name('betertibjakonusahapelaksananewberkas');
 
 Route::delete('/betertibjakonusahapelaksanadelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahapelaksanadelete'])->middleware('auth')->name('betertibjakonusahapelaksanadelete');
 
 // SURAT TERTIB JAKON PEMANFAATAN
-Route::get('/betertibjakonpemanfaatan', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatan'])->middleware('auth')->name('betertibjakonpemanfaatanindexlist');
+Route::get('/betertibjakonpemanfaatan', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatan'])->name('betertibjakonpemanfaatanindexlist');
 
-Route::get('/betertibjakonpemanfaatan/create', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreate'])->middleware('auth');
-Route::post('/betertibjakonpemanfaatan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreatenew'])->middleware('auth')->name('betertibjakonpemanfaatanupdatecreatenew');
+Route::get('/betertibjakonpemanfaatan/create', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreate']);
+Route::post('/betertibjakonpemanfaatan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreatenew'])->name('betertibjakonpemanfaatanupdatecreatenew');
 
-Route::get('/betertibjakonpemanfaatan/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatanupdate'])->middleware('auth')->name('betertibjakonpemanfaatanupdate');
-Route::post('/betertibjakonpemanfaatan/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatanupdatecreate'])->middleware('auth')->name('betertibjakonpemanfaatanupdatecreate');
+Route::get('/betertibjakonpemanfaatan/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatanupdate'])->name('betertibjakonpemanfaatanupdate');
+Route::post('/betertibjakonpemanfaatan/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatanupdatecreate'])->name('betertibjakonpemanfaatanupdatecreate');
 
 // Route::delete('/betertibjakonpemanfaatandelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatandeletedata'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratdeletedata');
-Route::delete('/betertibjakonpemanfaatandelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatandeletedata'])->middleware('auth')->name('betertibjakonusahapemenuhansyaratdeletedata');
+Route::delete('/betertibjakonpemanfaatandelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatandeletedata'])->name('betertibjakonusahapemenuhansyaratdeletedata');
 
 // SURAT JAKON PEMANFAATAAN 1
-Route::get('/betertibjakonpemanfataanjakon/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataanjakonindex'])->middleware('auth')->name('betertibjakonpemanfataansuratjasakonstruksiindex');
+Route::get('/betertibjakonpemanfataanjakon/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataanjakonindex'])->name('betertibjakonpemanfataansuratjasakonstruksiindex');
 
-Route::get('/betertibjakonpemanfataanjakon/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataanjakoncreateberkas'])->middleware('auth')->name('betertibjakonpemanfataanjakoncreateberkas');
-Route::post('/betertibjakonmanfaat1/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaatcreateberkasnew'])->middleware('auth')->name('betertibjakonmanfaat1');
+Route::get('/betertibjakonpemanfataanjakon/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataanjakoncreateberkas'])->name('betertibjakonpemanfataanjakoncreateberkas');
+Route::post('/betertibjakonmanfaat1/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaatcreateberkasnew'])->name('betertibjakonmanfaat1');
 
 // Route::get('/betertibjakonmanfaat1/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat1showdata'])->middleware(['auth', 'can:super_admin'])->name('betertibjakonmanfaat1show');
-Route::get('/betertibjakonmanfaat1showberkassurat/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat1showberkas'])->middleware('auth')->name('betertibjakonmanfaat1showberkas');
-Route::delete('/betertibjakonmanfaat1delete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat1deleteberkas'])->middleware('auth')->name('betertibjakonmanfaat1deleteberkas');
+Route::get('/betertibjakonmanfaat1showberkassurat/show/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat1showberkas'])->name('betertibjakonmanfaat1showberkas');
+Route::delete('/betertibjakonmanfaat1delete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat1deleteberkas'])->name('betertibjakonmanfaat1deleteberkas');
 
 
 // SURAT JAKON PEMANFAATAAN 2
-Route::get('/betertibjakonpemanfataansurat2/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat2index'])->middleware('auth')->name('betertibjakonpemanfataansurat2index');
+Route::get('/betertibjakonpemanfataansurat2/index/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat2index'])->name('betertibjakonpemanfataansurat2index');
 Route::get('/betertibjakonpemanfataansurat2/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpemanfataansurat2createberkas'])->middleware('auth')->name('betertibjakonpemanfataansurat2createberkas');
 
 Route::post('/betertibjakonmanfaat2/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat2createberkasnew'])->middleware('auth')->name('betertibjakonmanfaat2');
@@ -1117,15 +1131,15 @@ Route::delete('/buktidukungindex/delete/{id}', [TertibjasakonstruksiController::
 
 
 // TERTIB JAKON PENYELENGGARAAN
-Route::get('/betertibjakonpenyelenggaraan', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanindex'])->middleware('auth')->name('betertibjakonpenyelenggaraanindexlist');
+Route::get('/betertibjakonpenyelenggaraan', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanindex'])->name('betertibjakonpenyelenggaraanindexlist');
 
-Route::get('/betertibjakonpenyelenggaraan/create', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraancreate'])->middleware('auth');
-Route::post('/betertibjakonpenyelenggaraan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraancreatenew'])->middleware('auth')->name('betertibjakonpenyelenggaraancreatenewupdate');
+Route::get('/betertibjakonpenyelenggaraan/create', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraancreate']);
+Route::post('/betertibjakonpenyelenggaraan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraancreatenew'])->name('betertibjakonpenyelenggaraancreatenewupdate');
 
-Route::delete('/betertibjakonpenyelenggaraandelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraandeletedata'])->middleware('auth')->name('betertibjakonpenyelenggaraandeletedata');
+Route::delete('/betertibjakonpenyelenggaraandelete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraandeletedata'])->name('betertibjakonpenyelenggaraandeletedata');
 
-Route::get('/betertibjakonpenyelenggaraan/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanupdate'])->middleware('auth')->name('betertibjakonpenyelenggaraanupdate');
-Route::post('/betertibjakonpenyelenggaraan/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanupdatecreate'])->middleware('auth')->name('betertibjakonpenyelenggaraancreatenupdate');
+Route::get('/betertibjakonpenyelenggaraan/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanupdate'])->name('betertibjakonpenyelenggaraanupdate');
+Route::post('/betertibjakonpenyelenggaraan/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraanupdatecreate'])->name('betertibjakonpenyelenggaraancreatenupdate');
 
 
 // SURAT JAKON PENYELENGGARAN  INFORMASI PEKERJAAN
@@ -1136,9 +1150,76 @@ Route::post('/betertibjakonpenyelenggaraan/createberkasnew', [Tertibjasakonstruk
 
 
 
+// BRO IGIT
+// TERTIB JAKON PENYELENGARAAN
 
+// SURAT JAKON PEMANFAATAAN 1
+Route::get('/betertibjakonpenyelenggaraan1/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan1'])->name('betertibjakonpenyelenggaraan1');
 
+Route::get('/betertibjakonpenyelenggaraan1/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan1createberkas'])->name('betertibjakonpenyelenggaraan1create');
+Route::post('/betertibjakonpenyelenggaraan1createnew/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan1createnew'])->name('betertibjakonpenyelenggaraan1createnew');
 
+Route::delete('/betertibjakonpenyelenggaraan1delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan1delete'])->name('betertibjakonpenyelenggaraan1delete');
+
+// SURAT JAKON PENYELENGGARAAN 2
+Route::get('/betertibjakonpenyelenggaraan2/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan2'])->name('betertibjakonpenyelenggaraan2');
+
+Route::get('/betertibjakonpenyelenggaraan2/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan2createberkas'])->name('betertibjakonpenyelenggaraan2create');
+Route::post('/betertibjakonpenyelenggaraan2createnew/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan2createnew'])->name('betertibjakonpenyelenggaraan2createnew');
+
+Route::delete('/betertibjakonpenyelenggaraan2delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan2delete'])->name('betertibjakonpenyelenggaraan2delete');
+
+// SURAT JAKON PENYELENGGARAAN 3
+Route::get('/betertibjakonpenyelenggaraan3/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan3'])->name('betertibjakonpenyelenggaraan3');
+
+Route::get('/betertibjakonpenyelenggaraan3/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan3createberkas'])->name('betertibjakonpenyelenggaraan3create');
+Route::post('/betertibjakonpenyelenggaraan3createnew/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan3createnew'])->name('betertibjakonpenyelenggaraan3createnew');
+
+Route::delete('/betertibjakonpenyelenggaraan3delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan3delete'])->name('betertibjakonpenyelenggaraan3delete');
+
+// SURAT JAKON PENYELENGGARAAN 4
+Route::get('/betertibjakonpenyelenggaraan4/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan4'])->name('betertibjakonpenyelenggaraan4');
+
+Route::get('/betertibjakonpenyelenggaraan4/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan4createberkas'])->name('betertibjakonpenyelenggaraan4create');
+Route::post('/betertibjakonpenyelenggaraan4createnew/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan4createnew'])->name('betertibjakonpenyelenggaraan4createnew');
+
+Route::delete('/betertibjakonpenyelenggaraan4delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan4delete'])->name('betertibjakonpenyelenggaraan4delete');
+
+// SURAT JAKON PENYELENGGARAAN 5
+Route::get('/betertibjakonpenyelenggaraan5/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan5'])->name('betertibjakonpenyelenggaraan5');
+
+Route::get('/betertibjakonpenyelenggaraan5/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan5createberkas'])->name('betertibjakonpenyelenggaraan5create');
+Route::post('/betertibjakonpenyelenggaraan5createnew/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan5createnew'])->name('betertibjakonpenyelenggaraan5createnew');
+
+Route::delete('/betertibjakonpenyelenggaraan5delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan5delete'])->name('betertibjakonpenyelenggaraan5delete');
+
+// SURAT JAKON PENYELENGGARAAN 6
+Route::get('/betertibjakonpenyelenggaraan6/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan6'])->name('betertibjakonpenyelenggaraan6');
+
+Route::get('/betertibjakonpenyelenggaraan6/createberkas/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan6createberkas'])->name('betertibjakonpenyelenggaraan6create');
+Route::post('/betertibjakonpenyelenggaraan6createnew/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan6createnew'])->name('betertibjakonpenyelenggaraan6createnew');
+
+Route::delete('/betertibjakonpenyelenggaraan6delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonpenyelenggaraan6delete'])->name('betertibjakonpenyelenggaraan6delete');
+
+// Route::post('/betertibjakonmanfaat1/createberkasnew', [TertibjasakonstruksiController::class, 'betertibjakonmanfaatcreateberkasnew'])->name('betertibjakonmanfaat1');
+
+Route::get('/beuploadberkaspenyelenggaraan1/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan1'])->name('beuploadberkaspenyelenggaraan1');
+Route::post('/beuploadberkaspenyelenggaraan1upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan1upload'])->name('beuploadberkaspenyelenggaraan1upload');
+
+Route::get('/beuploadberkaspenyelenggaraan2/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan2'])->name('beuploadberkaspenyelenggaraan2');
+Route::post('/beuploadberkaspenyelenggaraan2upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan2upload'])->name('beuploadberkaspenyelenggaraan2upload');
+
+Route::get('/beuploadberkaspenyelenggaraan3/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan3'])->name('beuploadberkaspenyelenggaraan3');
+Route::post('/beuploadberkaspenyelenggaraan3upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan3upload'])->name('beuploadberkaspenyelenggaraan3upload');
+
+Route::get('/beuploadberkaspenyelenggaraan4/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan4'])->name('beuploadberkaspenyelenggaraan4');
+Route::post('/beuploadberkaspenyelenggaraan4upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan4upload'])->name('beuploadberkaspenyelenggaraan4upload');
+
+Route::get('/beuploadberkaspenyelenggaraan5/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan5'])->name('beuploadberkaspenyelenggaraan5');
+Route::post('/beuploadberkaspenyelenggaraan5upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan5upload'])->name('beuploadberkaspenyelenggaraan5upload');
+
+Route::get('/beuploadberkaspenyelenggaraan6/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan6'])->name('beuploadberkaspenyelenggaraan6');
+Route::post('/beuploadberkaspenyelenggaraan6upload/{id}', [TertibjasakonstruksiController::class, 'beuploadberkaspenyelenggaraan6upload'])->name('beuploadberkaspenyelenggaraan6upload');
 
 
 
