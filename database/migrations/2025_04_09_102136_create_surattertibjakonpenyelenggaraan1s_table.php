@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+
         Schema::create('surattertibjakonpenyelenggaraan1s', function (Blueprint $table) {
             $table->id();
             // $table->foreignId('tertibjakonpenyelenggaraan_id')->nullable()->index();
-            $table->text('lingkuppengawasan')->nullable()->index();
-            $table->text('indikator')->nullable()->index();
-            $table->text('dokumenperiksa')->nullable()->index();
-            $table->text('carapemerksaan1')->nullable()->index();
-            $table->text('carapemerksaan2')->nullable()->index();
-            $table->text('kesimpulan1')->nullable()->index();
-            $table->text('kesimpulan2')->nullable()->index();
+            $table->text('lingkuppengawasan')->nullable()->index(); // Nilai Proyek
+            $table->text('indikator')->nullable()->index(); // Nomor Kontrak
+            $table->text('dokumenperiksa')->nullable()->index(); // Waktu Pelaksanaan
+            $table->text('carapemerksaan1')->nullable()->index(); // Penyedia Jasa CV PT
+            $table->text('carapemerksaan2')->nullable()->index(); // Nama Satuan OPD
+            $table->text('kesimpulan1')->nullable()->index(); // Waktu Pengawasan awal
+            $table->text('kesimpulan2')->nullable()->index(); // Waktu Pengawasan Akhir
             $table->text('catatan1')->nullable()->index();
             $table->text('catatan2')->nullable()->index();
             $table->softDeletes();
