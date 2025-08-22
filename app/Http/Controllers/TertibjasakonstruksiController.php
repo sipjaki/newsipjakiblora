@@ -1796,6 +1796,10 @@ public function betertibjakonpemanfataanjakonindex($id)
 
     $suratPertama = $datasurat->first();
 
+    $datatandatangan1 = tandatangan::find(10);
+    $datatandatangan2 = tandatangan::find(6);
+    $datatandatangan3 = tandatangan::find(7);
+
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.index', [
         'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan',
@@ -1809,6 +1813,9 @@ public function betertibjakonpemanfataanjakonindex($id)
         // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datasurat_id' => $datasurat->first()?->id,
         'id' => $id, // penting untuk route tombol "Buat Berkas"
+        'tandatangan1' => $datatandatangan1, // penting untuk route tombol "Buat Berkas"
+        'tandatangan2' => $datatandatangan2, // penting untuk route tombol "Buat Berkas"
+        'tandatangan3' => $datatandatangan3, // penting untuk route tombol "Buat Berkas"
     ]);
 }
 
@@ -1834,7 +1841,7 @@ public function betertibjakonpemanfataanjakonindex($id)
         'datatandatangan' => $datatandatangan,
 
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
-        'title' => 'Create Surat Tertib Jakon Pemanfaatan Bagian 2'
+        'title' => 'Buat Berkas Dukung Surat Tertib Jakon Pemanfaatan Bagian 2'
     ]);
 }
 
@@ -1949,6 +1956,8 @@ public function betertibjakonpemanfataansurat2index($id)
 
     $user = Auth::user();
 
+
+
     // Ambil semua surat terkait dengan paginate
     $datasurat = surattertibjakonpemanfaatan2::where('tertibjakonpemanfaatan_id', $id)
                     ->orderBy('created_at', 'desc')
@@ -1956,9 +1965,13 @@ public function betertibjakonpemanfataansurat2index($id)
 
     $suratPertama = $datasurat->first();
 
+    $datatandatangan1 = tandatangan::find(10);
+    $datatandatangan2 = tandatangan::find(6);
+    $datatandatangan3 = tandatangan::find(7);
+
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.02_surat2.index', [
-        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan Bagian 2',
+        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan Pengawasan Rencana Umur Konstruksi & Kapasitas Beban',
         'user' => $user,
         'data' => $datasurat,
         'datasurat' => $datasurat,
@@ -1969,6 +1982,11 @@ public function betertibjakonpemanfataansurat2index($id)
         // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datasurat_id' => $datasurat->first()?->id,
         'id' => $id, // penting untuk route tombol "Buat Berkas"
+
+        'tandatangan1' => $datatandatangan1, // penting untuk route tombol "Buat Berkas"
+        'tandatangan2' => $datatandatangan2, // penting untuk route tombol "Buat Berkas"
+        'tandatangan3' => $datatandatangan3, // penting untuk route tombol "Buat Berkas"
+
     ]);
 }
 
@@ -2088,9 +2106,12 @@ public function betertibjakonpemanfataansurat3index($id)
 
     $suratPertama = $datasurat->first();
 
+    $datatandatangan1 = tandatangan::find(10);
+    $datatandatangan2 = tandatangan::find(6);
+    $datatandatangan3 = tandatangan::find(7);
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.03_surat3.index', [
-        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan Bagian 3',
+        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan Pengawasan Terhadap Pemeliharaan Konstruksi dan Struktur',
         'user' => $user,
         'data' => $datasurat,
         'datasurat' => $datasurat,
@@ -2101,6 +2122,11 @@ public function betertibjakonpemanfataansurat3index($id)
         // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datasurat_id' => $datasurat->first()?->id,
         'id' => $id, // penting untuk route tombol "Buat Berkas"
+
+        'tandatangan1' => $datatandatangan1, // penting untuk route tombol "Buat Berkas"
+        'tandatangan2' => $datatandatangan2, // penting untuk route tombol "Buat Berkas"
+        'tandatangan3' => $datatandatangan3, // penting untuk route tombol "Buat Berkas"
+
     ]);
 }
 
