@@ -8,6 +8,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
+@include('button')
 
 {{-- ---------------------------------------------------------------------- --}}
 
@@ -15,7 +16,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -51,7 +53,7 @@
                                 <!-- Kontainer Kiri -->
                                 <div style="display: flex; gap: 10px; margin-right:25px; margin-left:25px;">
                                     <!-- Tombol Nama Pekerjaan -->
-                                    <button class="btn-create">
+                                    <button class="button-berkas">
                                         <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
                                         Nama Bangunan: {{ $datanamabangunan ?? 'Masih Kosong' }}
                                     </button>
@@ -196,7 +198,7 @@
                                 <!-- Kontainer Kanan -->
                                 <div>
                              <a href="{{ url()->previous() }}">
-                                    <button class="btn-kembali">
+                                    <button class="button-newvalidasi">
                                         <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
                                         Kembali
                                     </button>
@@ -381,7 +383,7 @@
 <!-- Tombol Submit -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
     <div class="flex justify-end">
-        <button class="btn-create" type="button" onclick="openModal()">
+        <button class="button-hijau" type="button" onclick="openModal()">
         <!-- Ikon SVG Pensil -->
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
         fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
