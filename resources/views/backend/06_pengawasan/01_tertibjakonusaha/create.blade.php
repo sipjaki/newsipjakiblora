@@ -217,10 +217,10 @@ style="
 <div class="col-md-6">
 <div class="mb-3">
     <label for="penyediastatustertibjakon_id" class="form-label">
-        <i class="bi bi-card-text" style="color: #800000;"></i> Status Penyedia
+        <i class="bi bi-card-text" style="color: #800000;"></i> Sektor
     </label>
     <select id="penyediastatustertibjakon_id" name="penyediastatustertibjakon_id" class="form-control @error('penyediastatustertibjakon_id') is-invalid @enderror">
-        <option value="">-- Pilih Status Penyedia --</option>
+        <option value="">-- Pilih Sektor --</option>
         @foreach ($datapenyedia as $penyedia)
             <option value="{{ $penyedia->id }}" {{ (old('penyediastatustertibjakon_id', $data->penyediastatustertibjakon_id ?? '') == $penyedia->id) ? 'selected' : '' }}>
                 {{ $penyedia->penyedia }}
