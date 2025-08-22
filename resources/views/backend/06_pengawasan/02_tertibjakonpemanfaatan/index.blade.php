@@ -219,7 +219,7 @@
                                         <i class="bi bi-geo-alt-fill"></i> Upload Bukti Dukung
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:175px;">
+                                    <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
 
@@ -363,7 +363,7 @@
                                         </button>
                                     </a>
                                       <a href="{{ url('/buktidukungindex/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-abuabu">
+                                        <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
