@@ -414,6 +414,7 @@
                                             </tr>
                                         </table>
                     <br>
+
                     <table class="audit">
                         <thead>
                             <tr>
@@ -428,14 +429,68 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowspan="2">1</td>
-                                <td rowspan="2">
+                                <td rowspan="1">1</td>
+                                <td rowspan="1">
                                     Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
                                 </td>
                                 <td>
-                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    {{-- a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
+                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan --}}
+                                </td>
+                                <td>
+                                    {{-- Dokumen perizinan --}}
+                                </td>
+                                <td>
+                                    {{-- Membandingkan izin pembangunan dengan fakta di lapangan --}}
+                                </td>
+                                    @foreach ($datasurat as $item)
+
+                                    <td style="text-align: center;">
+                                        {{-- <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->kesimpulanpemeriksaan ?? '-' }}
+                                        </span> --}}
+                                    </td>
+
+                                    @endforeach
+<td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
+    {{-- {{ $item->catatan1 ?? '-' }} --}}
+</td>
+
+                            </tr>
+                            {{-- <tr>
+                                <td>
+                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+                                </td>
+                                <td>Dokumen resmi dari instansi berwenang</td>
+                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+                                @foreach ($datasurat as $item)
+
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->catatan ?? '-' }}
+                                        </span>
+                                    </td>
+
+                                    @endforeach
+                                <td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
+    {{ $item->catatan2 ?? '-' }}
+</td> --}}
+
+                                    {{-- <td></td> --}}
+                            {{-- </tr> --}}
+                            <tr>
+
+                                <td>
+
+                            </td>
+                            <td>
+                                a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
                                     &bull; Bangunan gedung sesuai dengan perizinan<br>
                                     &bull; Bangunan sipil sesuai dengan peraturan perundangan
+                                </td>
+                                <td>
+                                    Pemanfaatan Bangunan Konstruksi Sesuai dengan perizinannya
                                 </td>
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
@@ -448,14 +503,18 @@
                                     </td>
 
                                     @endforeach
-<td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
-    {{ $item->catatan1 ?? '-' }}
-</td>
+                                    <td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
+                                        {{ $item->catatan1 ?? '-' }}
+                                    </td>
 
-                            </tr>
-                            <tr>
+                                </tr>
+
+                       <tr>
+                        <td></td>
+                        <td>b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+</td>
                                 <td>
-                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat pernyataan dari instansi berwenang
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
@@ -474,6 +533,7 @@
 
                                     {{-- <td></td> --}}
                             </tr>
+
                         </tbody>
                     </table>
 
@@ -492,7 +552,8 @@
                                                                 <!-- Tim Pemeriksa -->
                                                                 <div class="tim-pemeriksa-container">
                                                                     <div class="tim-pemeriksa">
-                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa:</h6>
+                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa : Tertib Jakon Pengawasan Pemanfaatan Jasa Konstruksi </h6>
+                                                                        {{-- <p></p> --}}
                                                                         <table class="table table-sm">
                                                                             <thead class="table-secondary">
                                                                                 <tr>
@@ -501,29 +562,32 @@
                                                                                 </tr>
                                                                             </thead>
 
-                                                                            @foreach ($datasurat as $item)
+                                                                            {{-- @foreach ($datasurat as $item) --}}
 
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">1</td>
                                                                                     <td style="font-size: 16px;">
-                                                                                        {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{-- {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan1->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                      <td style="font-size: 16px;">
-                                                                                        {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan2->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
                                                                                     <td style="font-size: 16px;">
-                                                                                        {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                        {{-- {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan3->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
-                                                                            @endforeach
+                                                                            {{-- @endforeach --}}
                                                                         </table>
                                                                     </div>
                                                                 </div>
@@ -704,10 +768,7 @@
 @endforeach
 
                                             </tr>
-                                        </table>
-                    <br>
-
-                                                <table class="audit">
+                                        <table class="audit">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -721,30 +782,36 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowspan="2">1</td>
-                                <td rowspan="2">
+                                <td rowspan="1">1</td>
+                                <td rowspan="1">
                                     Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
                                 </td>
                                 <td>
-                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    {{-- a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
                                     &bull; Bangunan gedung sesuai dengan perizinan<br>
-                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan
+                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan --}}
                                 </td>
-                                <td>Dokumen perizinan</td>
-                                <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+                                <td>
+                                    {{-- Dokumen perizinan --}}
+                                </td>
+                                <td>
+                                    {{-- Membandingkan izin pembangunan dengan fakta di lapangan --}}
+                                </td>
                                     @foreach ($datasurat as $item)
 
                                     <td style="text-align: center;">
-                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                        {{-- <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
                                             {{ $item->kesimpulanpemeriksaan ?? '-' }}
-                                        </span>
+                                        </span> --}}
                                     </td>
 
                                     @endforeach
+<td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
+    {{-- {{ $item->catatan1 ?? '-' }} --}}
+</td>
 
-                                <td></td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td>
                                     b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
                                 </td>
@@ -759,199 +826,296 @@
                                     </td>
 
                                     @endforeach
-                                <td></td>
+                                <td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
+    {{ $item->catatan2 ?? '-' }}
+</td> --}}
+
+                                    {{-- <td></td> --}}
+                            {{-- </tr> --}}
+                            <tr>
+
+                                <td>
+
+                            </td>
+                            <td>
+                                a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
+                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan
+                                </td>
+                                <td>
+                                    Pemanfaatan Bangunan Konstruksi Sesuai dengan perizinannya
+                                </td>
+                                <td>Dokumen perizinan</td>
+                                <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
+                                    @foreach ($datasurat as $item)
+
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->kesimpulanpemeriksaan ?? '-' }}
+                                        </span>
+                                    </td>
+
+                                    @endforeach
+                                    <td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
+                                        {{ $item->catatan1 ?? '-' }}
+                                    </td>
+
+                                </tr>
+
+                       <tr>
+                        <td></td>
+                        <td>b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+</td>
+                                <td>
+Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat pernyataan dari instansi berwenang
+                                </td>
+                                <td>Dokumen resmi dari instansi berwenang</td>
+                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+                                @foreach ($datasurat as $item)
+
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->catatan ?? '-' }}
+                                        </span>
+                                    </td>
+
+                                    @endforeach
+                                <td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
+    {{ $item->catatan2 ?? '-' }}
+</td>
+
+                                    {{-- <td></td> --}}
                             </tr>
+
                         </tbody>
                     </table>
 
+                                                    <div class="container" style="margin-top: 10px;">
+                                    <!-- Modal Card -->
 
-                    {{--
-                                                <div class="container" style="margin-top: 10px;">
-                                                    <!-- Modal Card -->
+                                            <div class="container" style="margin-top: 10px;">
+                                                <div class="row">
+                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
+                                                        <!-- Modal Card -->
+                                                        <div class="card" style="border: 1px solid white;">
+                                                            <div class="card-body">
+                                                                <!-- Tim Pemeriksa -->
+                                                                <div class="tim-pemeriksa-container">
+                                                                    <div class="tim-pemeriksa">
+                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa : Tertib Jakon Pengawasan Pemanfaatan Jasa Konstruksi</h6>
+                                                                        <table class="table table-sm">
+                                                                            <thead class="table-secondary">
+                                                                                <tr>
+                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
+                                                                                </tr>
+                                                                            </thead>
 
-                                                            <div class="container" style="margin-top: 10px;">
-                                                                <div class="row">
-                                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
-                                                                        <!-- Modal Card -->
-                                                                        <div class="card" style="border: 1px solid white;">
-                                                                            <div class="card-body">
-                                                                                <!-- Tim Pemeriksa -->
-                                                                                <div class="tim-pemeriksa-container">
-                                                                                    <div class="tim-pemeriksa">
-                                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
-                                                                                        <table class="table table-sm">
-                                                                                            <thead class="table-secondary">
-                                                                                                <tr>
-                                                                                                    <th style="width: 60px; font-size: 12px;" >No</th>
-                                                                                                    <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
-                                                                                                    <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
-                                                                                                </tr>
-                                                                                            </thead>
-                                                                                            <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="font-size: 12px; text-align: center;">1</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan1->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td style="font-size: 12px; text-align: center;">2</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan2->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td style="font-size: 12px; text-align: center;">3</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
-                                                                                                    <td style="font-size: 12px;">{{$datasurat4->tandatangan3->tandatangan ?? 'Belum Di Tanda Tangan'}}</td>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                            {{-- @foreach ($datasurat as $item) --}}
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan1->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan2->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan3->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                            {{-- @endforeach --}}
+                                                                        </table>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div> --}}
-                                                        <br><br><br><br>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    <br><br><br><br>
                                             </div>
 
 
                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-    function downloadModalPDF(id) {
-        // Ambil elemen modal berdasarkan ID
-        const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
+function downloadModalPDF(id) {
+    const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
-        if (!modalContent) {
-            alert('Konten modal tidak ditemukan.');
-            return;
-        }
-
-        // Kloning isi modal agar tidak mengganggu tampilan asli
-        const clone = modalContent.cloneNode(true);
-
-        // Styling opsional untuk hasil PDF
-        clone.style.fontSize = '14px';
-        clone.style.padding = '20px';
-
-        // Format nama file
-        const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
-
-        // Konversi ke PDF dan download
-        html2pdf()
-            .from(clone)
-            .set({
-                margin: 0.5,
-                filename: fileName,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
-            })
-            .save();
+    if (!modalContent) {
+        alert('Konten modal tidak ditemukan.');
+        return;
     }
+
+    // Kloning modal
+    const clone = modalContent.cloneNode(true);
+
+    // Bungkus di div untuk html2pdf
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.justifyContent = 'center'; // horizontal center
+    wrapper.style.marginTop = '20px'; // jarak 20px dari atas
+    wrapper.appendChild(clone);
+
+    // Styling konten
+    clone.style.fontSize = '9px';  // lebih kecil
+    clone.style.padding = '5px';
+    clone.style.lineHeight = '1';
+    clone.style.transform = 'scale(0.75)';  // skala paksa
+    clone.style.transformOrigin = 'top center'; // tengah horizontal
+
+    // Nama file
+    const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
+
+    // Konversi ke PDF
+    html2pdf()
+        .from(wrapper)
+        .set({
+            margin: 0.1,
+            filename: fileName,
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 3 },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
+        })
+        .save();
+}
 </script>
 
                                         <script>
-                                            function printModalContent(id) {
-                                                const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
-                                                if (!modalContent) {
-                                                    alert("Konten tidak ditemukan.");
-                                                    return;
-                                                }
+function printModalContent(id) {
+    const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
+    if (!modalContent) {
+        alert("Konten tidak ditemukan.");
+        return;
+    }
 
-                                                const printWindow = window.open('', '', 'width=1200,height=800');
-                                                printWindow.document.write(`
-                                                    <html>
-                                                    <head>
-                                                        <title>Print Dokumen</title>
-                                                        <style>
-                                                            @media print {
-                                                                @page {
-                                                                    size: A4 landscape;
-                                                                    margin: 0mm;
-                                                                }
-                                                                body {
-                                                                    font-family: Arial, sans-serif;
-                                                                    font-size: 12px;
-                                                                    color: #000;
-                                                                }
-                                                                table {
-                                                                    border-collapse: collapse;
-                                                                    width: 100%;
-                                                                    page-break-inside: auto;
-                                                                }
-                                                                th, td {
-                                                                    border: 1px solid #000;
-                                                                    padding: 4px;
-                                                                    vertical-align: top;
-                                                                }
-                                                                .no-border td {
-                                                                    border: none;
-                                                                }
-                                                            }
+    const printWindow = window.open('', '', 'width=1200,height=800');
 
-                                                            body {
-                                                                margin: 10mm;
-                                                                font-family: Arial, sans-serif;
-                                                                font-size: 12px;
-                                                            }
+    // Bungkus konten untuk skala dan center
+    const wrapperStyle = `
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    `;
+    const cloneStyle = `
+        transform: scale(0.85); /* diperbesar sedikit */
+        transform-origin: top center;
+        font-size: 9px;        /* tetap kecil */
+        line-height: 1;        /* rapatkan */
+    `;
 
-                                                            h5 {
-                                                                font-size: 1rem;
-                                                                margin-bottom: 10px;
-                                                            }
+    printWindow.document.write(`
+        <html>
+        <head>
+            <title>Print Dokumen</title>
+            <style>
+                @media print {
+                    @page {
+                        size: A4 landscape;
+                        margin: 0mm;
+                    }
+                    body {
+                        font-family: Arial, sans-serif;
+                        color: #000;
+                        text-align: center;
+                    }
+                    table {
+                        border-collapse: collapse;
+                        width: 100%;
+                        table-layout: fixed; /* kolom tidak melebar */
+                    }
+                    th, td {
+                        border: 1px solid #000;
+                        padding: 3px;
+                        vertical-align: top;
+                        word-wrap: break-word; /* memecah teks panjang */
+                    }
+                    .no-border td {
+                        border: none;
+                    }
+                }
 
-                                                            .table-bordered {
-                                                                border: 1px solid #000;
-                                                                width: 100%;
-                                                                margin-top: 10px;
-                                                            }
+                body {
+                    margin: 10mm;
+                    font-family: Arial, sans-serif;
+                }
 
-                                                            .table-bordered th, .table-bordered td {
-                                                                border: 1px solid #000;
-                                                                padding: 6px;
-                                                                text-align: left;
-                                                            }
+                h5 {
+                    font-size: 0.9rem;
+                    margin-bottom: 5px;
+                }
 
-                                                            .table-secondary {
-                                                                background-color: #f8f9fa;
-                                                            }
+                .table-bordered {
+                    border: 1px solid #000;
+                    width: 100%;
+                    margin-top: 5px;
+                }
 
-                                                            /* Penyesuaian khusus untuk bagian tim pemeriksa */
-                                                            .tim-pemeriksa-container {
-                                                                display: flex;
-                                                                justify-content: flex-end;
-                                                            }
+                .table-bordered th, .table-bordered td {
+                    border: 1px solid #000;
+                    padding: 3px;
+                    text-align: left;
+                }
 
-                                                            .tim-pemeriksa {
-                                                                width: 50%;
-                                                            }
+                .table-secondary {
+                    background-color: #f8f9fa;
+                }
 
-                                                            .tim-pemeriksa table {
-                                                                width: 100%;
-                                                                border: 1px solid #000;
-                                                            }
+                .tim-pemeriksa-container {
+                    display: flex;
+                    justify-content: flex-end;
+                }
 
-                                                            .tim-pemeriksa td, .tim-pemeriksa th {
-                                                                text-align: center;
-                                                                padding: 3px;
-                                                                height: 15px;
-                                                                font-size: 11px;
-                                                            }
-                                                        </style>
-                                                    </head>
-                                                    <body>
-                                                        ${modalContent.innerHTML}
-                                                        <script>
-                                                            window.onload = function() {
-                                                                window.print();
-                                                                window.onafterprint = window.close;
-                                                            }
-                                                        <\/script>
-                                                    </body>
-                                                    </html>
-                                                `);
-                                                printWindow.document.close();
-                                            }
-                                        </script>
+                .tim-pemeriksa {
+                    width: 50%;
+                }
+
+                .tim-pemeriksa table {
+                    width: 100%;
+                    border: 1px solid #000;
+                }
+
+                .tim-pemeriksa td, .tim-pemeriksa th {
+                    text-align: center;
+                    padding: 2px;
+                    height: 12px;
+                    font-size: 9px;
+                }
+            </style>
+        </head>
+        <body>
+            <div style="${wrapperStyle}">
+                <div style="${cloneStyle}">
+                    ${modalContent.innerHTML}
+                </div>
+            </div>
+
+            <script>
+                window.onload = function() {
+                    window.print();
+                    window.onafterprint = window.close;
+                }
+            <\/script>
+        </body>
+        </html>
+    `);
+    printWindow.document.close();
+}
+</script>
