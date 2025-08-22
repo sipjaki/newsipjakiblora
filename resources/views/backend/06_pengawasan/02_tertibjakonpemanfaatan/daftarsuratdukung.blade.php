@@ -35,7 +35,10 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+    {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -89,7 +92,7 @@
 
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/betertibjakonpemanfaatan">
-                    <button class="btn-kembali">
+                    <button class="button-newvalidasi">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -104,108 +107,132 @@
 
 
                  <!-- /.card-header -->
-                 <div class="card-body p-0">
-                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+<div class="card-body p-0">
+    <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+        <table id="tabelBujkkonstruksi" class="zebra-table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 75px; text-align:center;">
+                        <i class="bi bi-list-ol"></i> No
+                    </th>
+                    <th style="width: 400px; text-align:center;">
+                        <i class="bi bi-people-fill"></i> Pengawasan Pemanfataan
+                    </th>
+                    <th style="width: 400px; text-align:center;">
+                        <i class="bi bi-people-fill"></i> Pengawasan Rencana Umur <br> Konstruksi & Kapasitas Beban
+                    </th>
+                    <th style="width: 400px; text-align:center;">
+                        <i class="bi bi-people-fill"></i> Pengawasan Pemeliharaan <br> Konstruksi & Struktur
+                    </th>
+                    <th style="width: 200px; text-align:center;">
+                        <i class="bi bi-tools"></i> Aksi
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @forelse ($data as $item)
+                    <tr class="align-middle">
+                        <td style="text-align: center;">{{ $loop->iteration }}</td>
 
-<table id="tabelBujkkonstruksi" class="zebra-table table-striped" >
- <thead>
-     <tr>
-        <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Pemanfataan</th>
-        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Rencana Umur <br> Konstruksi & Kapasitas Beban</th>
-        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Pengawasan Pemeliharaan <br> Konstruksi & Struktur</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
-     </tr>
- </thead>
- <tbody id="tableBody">
-     @foreach ($data as $item )
-     <tr class="align-middle">
-         <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">
-
-              <div style="margin-top: 10px;">
+                        <!-- Pengawasan Pemanfaatan -->
+                        <td style="text-align: left;">
+                            <div style="margin-top: 10px;">
                                 @if($item->lingkuppengawasan && file_exists(public_path('storage/' . $item->lingkuppengawasan)))
-                                <!-- Display the default iframe when the file exists in the storage -->
-                                <iframe src="{{ asset('storage/' . $item->lingkuppengawasan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @elseif($item->lingkuppengawasan)
-                                <!-- Display the iframe with the updated file -->
-                                <iframe src="{{ asset($item->lingkuppengawasan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @else
-                                <!-- Optional: Show a placeholder if there's no file available -->
-                                <p>Data belum diupdate</p>
-                            @endif
+                                    <iframe src="{{ asset('storage/' . $item->lingkuppengawasan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                @elseif($item->lingkuppengawasan)
+                                    <iframe src="{{ asset($item->lingkuppengawasan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                @else
+                                    <p>Data belum diupdate</p>
+                                @endif
+                            </div>
+                        </td>
 
-                    </div>
-         </td>
-         <td style="text-align: left;">
-
-              <div style="margin-top: 10px;">
+                        <!-- Pengawasan Rencana Umur -->
+                        <td style="text-align: left;">
+                            <div style="margin-top: 10px;">
                                 @if($item->indikator && file_exists(public_path('storage/' . $item->indikator)))
-                                <!-- Display the default iframe when the file exists in the storage -->
-                                <iframe src="{{ asset('storage/' . $item->indikator) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @elseif($item->indikator)
-                                <!-- Display the iframe with the updated file -->
-                                <iframe src="{{ asset($item->indikator) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @else
-                                <!-- Optional: Show a placeholder if there's no file available -->
-                                <p>Data belum diupdate</p>
-                            @endif
+                                    <iframe src="{{ asset('storage/' . $item->indikator) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                @elseif($item->indikator)
+                                    <iframe src="{{ asset($item->indikator) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                @else
+                                    <p>Data belum diupdate</p>
+                                @endif
+                            </div>
+                        </td>
 
-                    </div>
-         </td>
-         <td style="text-align: left;">
-
-              <div style="margin-top: 10px;">
+                        <!-- Pengawasan Pemeliharaan -->
+                        <td style="text-align: left;">
+                            <div style="margin-top: 10px;">
                                 @if($item->dokumendiperiksa && file_exists(public_path('storage/' . $item->dokumendiperiksa)))
-                                <!-- Display the default iframe when the file exists in the storage -->
-                                <iframe src="{{ asset('storage/' . $item->dokumendiperiksa) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @elseif($item->dokumendiperiksa)
-                                <!-- Display the iframe with the updated file -->
-                                <iframe src="{{ asset($item->dokumendiperiksa) }}" frameborder="0" width="100%" height="300px"></iframe>
-                            @else
-                                <!-- Optional: Show a placeholder if there's no file available -->
-                                <p>Data belum diupdate</p>
-                            @endif
+                                    <iframe src="{{ asset('storage/' . $item->dokumendiperiksa) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                @elseif($item->dokumendiperiksa)
+                                    <iframe src="{{ asset($item->dokumendiperiksa) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                @else
+                                    <p>Data belum diupdate</p>
+                                @endif
+                            </div>
+                        </td>
 
-                    </div>
-         </td>
+                        <!-- Aksi -->
+                        <td style="text-align: center; vertical-align: middle;">
+                            <a href="javascript:void(0)" class="button-merah" title="Delete"
+                               data-bs-toggle="modal" data-bs-target="#deleteModal"
+                               data-judul="{{ $item->id }}"
+                               onclick="setDeleteUrl(this)">
+                                <i class="bi bi-trash"></i>Hapus
+                            </a>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="100%">
+                            <div style="
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 30px;
+                                font-weight: 600;
+                                font-family: 'Poppins', sans-serif;
+                                color: #6c757d;
+                                background-color: #f8f9fa;
+                                border: 2px dashed #ced4da;
+                                border-radius: 12px;
+                                font-size: 16px;
+                                animation: fadeIn 0.5s ease-in-out;
+                            ">
+                                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                                Data Tidak Ditemukan !!
+                            </div>
+                        </td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
+</div>
 
-        <td style="text-align: center; vertical-align: middle;">
-            {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
-                <i class="bi bi-eye"></i>
-            </a>
-            <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
-                <i class="bi bi-pencil-square"></i>
-            </a> --}}
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
-               data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-judul="{{ $item->id }}"
-               onclick="setDeleteUrl(this)">
-                <i class="bi bi-trash"></i>
-            </a>
-        </td>
+<!-- Style -->
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-        <!-- CSS untuk Hover -->
-        <style>
-            .btn-info:hover, .btn-warning:hover, .btn-danger:hover {
-                background-color: white !important; /* Ganti background menjadi putih */
-                color: white !important; /* Ganti warna teks menjadi putih */
-                border-color: transparent !important; /* Menyembunyikan border saat hover */
-            }
+    .btn-info:hover,
+    .btn-warning:hover,
+    .btn-danger:hover {
+        background-color: white !important;
+        color: white !important;
+        border-color: transparent !important;
+    }
 
-            /* Ganti warna ikon untuk tombol hover agar tetap terlihat */
-            .btn-info:hover i, .btn-warning:hover i, .btn-danger:hover i {
-                color: navy !important; /* Ganti ikon menjadi navy atau warna lain yang diinginkan */
-            }
-        </style>
-
-        </tr>
-
-     @endforeach
- </tbody>
-</table>
-                     </div>
-                 </div>
+    .btn-info:hover i,
+    .btn-warning:hover i,
+    .btn-danger:hover i {
+        color: navy !important;
+    }
+</style>
 
                  @include('backend.00_administrator.00_baganterpisah.07_paginations')
 
