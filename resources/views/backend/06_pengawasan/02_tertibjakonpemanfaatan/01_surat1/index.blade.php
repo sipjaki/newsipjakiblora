@@ -559,6 +559,7 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                                                                                 <tr>
                                                                                     <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
                                                                                     <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Tanda Tangan</th>
                                                                                 </tr>
                                                                             </thead>
 
@@ -571,6 +572,21 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                                                                                         {{-- {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
                                                                                         {{ $tandatangan1->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
+                                                                                        <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan1 && $tandatangan1->tandatangan && file_exists(public_path('storage/' . $tandatangan1->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan1 && $tandatangan1->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
@@ -578,6 +594,22 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                                                                                         {{-- {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
                                                                                         {{ $tandatangan2->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
+                                                                                     <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan2 && $tandatangan2->tandatangan && file_exists(public_path('storage/' . $tandatangan2->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan2 && $tandatangan2->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
+
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
@@ -585,6 +617,21 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                                                                                         {{-- {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
                                                                                         {{ $tandatangan3->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
+                                                                                    <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan3 && $tandatangan3->tandatangan && file_exists(public_path('storage/' . $tandatangan3->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan3 && $tandatangan3->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
                                                                                 </tr>
                                                                             </tbody>
                                                                             {{-- @endforeach --}}
@@ -890,7 +937,8 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                         </tbody>
                     </table>
 
-                                                    <div class="container" style="margin-top: 10px;">
+
+                                <div class="container" style="margin-top: 10px;">
                                     <!-- Modal Card -->
 
                                             <div class="container" style="margin-top: 10px;">
@@ -902,12 +950,14 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                                                                 <!-- Tim Pemeriksa -->
                                                                 <div class="tim-pemeriksa-container">
                                                                     <div class="tim-pemeriksa">
-                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa : Tertib Jakon Pengawasan Pemanfaatan Jasa Konstruksi</h6>
+                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa : Tertib Jakon Pengawasan Pemanfaatan Jasa Konstruksi </h6>
+                                                                        {{-- <p></p> --}}
                                                                         <table class="table table-sm">
                                                                             <thead class="table-secondary">
                                                                                 <tr>
                                                                                     <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
                                                                                     <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Tanda Tangan</th>
                                                                                 </tr>
                                                                             </thead>
 
@@ -920,6 +970,21 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                                                                                         {{-- {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
                                                                                         {{ $tandatangan1->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
+                                                                                        <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan1 && $tandatangan1->tandatangan && file_exists(public_path('storage/' . $tandatangan1->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan1 && $tandatangan1->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
@@ -927,6 +992,22 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                                                                                         {{-- {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
                                                                                         {{ $tandatangan2->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
+                                                                                     <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan2 && $tandatangan2->tandatangan && file_exists(public_path('storage/' . $tandatangan2->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan2 && $tandatangan2->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
+
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
@@ -934,6 +1015,21 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                                                                                         {{-- {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
                                                                                         {{ $tandatangan3->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
+                                                                                    <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan3 && $tandatangan3->tandatangan && file_exists(public_path('storage/' . $tandatangan3->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan3 && $tandatangan3->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
                                                                                 </tr>
                                                                             </tbody>
                                                                             {{-- @endforeach --}}
@@ -946,7 +1042,6 @@ Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat
                                                 </div>
                                             </div>
                                         </div>
-
 
 
 
@@ -998,7 +1093,7 @@ function downloadModalPDF(id) {
 }
 </script>
 
-                                        <script>
+<script>
 function printModalContent(id) {
     const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
     if (!modalContent) {
@@ -1006,92 +1101,99 @@ function printModalContent(id) {
         return;
     }
 
-    const printWindow = window.open('', '', 'width=1200,height=800');
+    // Buat iframe tersembunyi
+    let iframe = document.createElement('iframe');
+    iframe.style.position = 'absolute';
+    iframe.style.top = '-10000px';
+    document.body.appendChild(iframe);
 
-    // Bungkus konten untuk skala dan center
     const wrapperStyle = `
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 40px;
     `;
     const cloneStyle = `
-        transform: scale(0.85); /* diperbesar sedikit */
+        transform: scale(0.85);
         transform-origin: top center;
-        font-size: 9px;        /* tetap kecil */
-        line-height: 1;        /* rapatkan */
+        font-size: 9px;
+        line-height: 1;
     `;
 
-    printWindow.document.write(`
+    const doc = iframe.contentWindow.document;
+    doc.open();
+    doc.write(`
         <html>
         <head>
-            <title>Print Dokumen</title>
             <style>
                 @media print {
                     @page {
                         size: A4 landscape;
-                        margin: 0mm;
+                        margin: 10mm;
                     }
                     body {
                         font-family: Arial, sans-serif;
                         color: #000;
-                        text-align: center;
+                        -webkit-print-color-adjust: exact;
+                        print-color-adjust: exact;
                     }
                     table {
                         border-collapse: collapse;
                         width: 100%;
-                        table-layout: fixed; /* kolom tidak melebar */
+                        table-layout: fixed;
+                        border: 1px solid #000;
                     }
                     th, td {
                         border: 1px solid #000;
                         padding: 3px;
                         vertical-align: top;
-                        word-wrap: break-word; /* memecah teks panjang */
+                        word-wrap: break-word;
+                    }
+                    table tr td:first-child,
+                    table tr th:first-child {
+                        width: 50px;
+                        text-align: center;
                     }
                     .no-border td {
                         border: none;
                     }
+                    /* Hilangkan header/footer print default (beberapa browser tetap perlu manual off) */
+                    @page {
+                        margin-header: 0;
+                        margin-footer: 0;
+                    }
                 }
-
                 body {
                     margin: 10mm;
                     font-family: Arial, sans-serif;
                 }
-
                 h5 {
                     font-size: 0.9rem;
                     margin-bottom: 5px;
                 }
-
                 .table-bordered {
                     border: 1px solid #000;
                     width: 100%;
                     margin-top: 5px;
                 }
-
                 .table-bordered th, .table-bordered td {
                     border: 1px solid #000;
                     padding: 3px;
                     text-align: left;
                 }
-
                 .table-secondary {
                     background-color: #f8f9fa;
                 }
-
                 .tim-pemeriksa-container {
                     display: flex;
                     justify-content: flex-end;
                 }
-
                 .tim-pemeriksa {
                     width: 50%;
                 }
-
                 .tim-pemeriksa table {
                     width: 100%;
                     border: 1px solid #000;
                 }
-
                 .tim-pemeriksa td, .tim-pemeriksa th {
                     text-align: center;
                     padding: 2px;
@@ -1106,16 +1208,17 @@ function printModalContent(id) {
                     ${modalContent.innerHTML}
                 </div>
             </div>
-
-            <script>
-                window.onload = function() {
-                    window.print();
-                    window.onafterprint = window.close;
-                }
-            <\/script>
         </body>
         </html>
     `);
-    printWindow.document.close();
+    doc.close();
+
+    // Tunggu dokumen load, lalu print
+    iframe.onload = function() {
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+        // Hapus iframe setelah print
+        setTimeout(() => document.body.removeChild(iframe), 1000);
+    };
 }
 </script>
