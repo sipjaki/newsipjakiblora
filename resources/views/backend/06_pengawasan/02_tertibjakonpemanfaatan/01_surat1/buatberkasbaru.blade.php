@@ -389,7 +389,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>LINGKUP PENGAWASAN</th>
-                                <th>INDIKATOR</th>
+                                <th>Indikator</th>
                                 <th>DOKUMEN YANG DIPERIKSA</th>
                                 <th>CARA PEMERIKSAAN</th>
                                 <th>KESIMPULAN PEMERIKSAAN</th>
@@ -398,20 +398,75 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowspan="2">1</td>
-                                <td rowspan="2">
+                                <td rowspan="1">1</td>
+                                <td rowspan="1">
                                     Pengawasan fungsi peruntukan terhadap tertib pemanfaatan produk Jasa Konstruksi
                                 </td>
                                 <td>
-                                    a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    {{-- a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
+                                    &bull; Bangunan gedung sesuai dengan perizinan<br>
+                                    &bull; Bangunan sipil sesuai dengan peraturan perundangan --}}
+                                </td>
+                                <td>
+                                    {{-- Dokumen perizinan --}}
+                                </td>
+                                <td>
+                                    {{-- Membandingkan izin pembangunan dengan fakta di lapangan --}}
+                                </td>
+
+                                    <td style="text-align: center;">
+                                        {{-- <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->kesimpulanpemeriksaan ?? '-' }}
+                                        </span> --}}
+                                    </td>
+
+
+<td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
+    {{-- {{ $item->catatan1 ?? '-' }} --}}
+</td>
+
+                            </tr>
+                            {{-- <tr>
+                                <td>
+                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+                                </td>
+                                <td>Dokumen resmi dari instansi berwenang</td>
+                                <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+                                @foreach ($datasurat as $item)
+
+                                    <td style="text-align: center;">
+                                        <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;">
+                                            {{ $item->catatan ?? '-' }}
+                                        </span>
+                                    </td>
+
+                                    @endforeach
+                                <td style="white-space: normal; word-wrap: break-word; max-width: 300px;">
+    {{ $item->catatan2 ?? '-' }}
+</td> --}}
+
+                                    {{-- <td></td> --}}
+                            {{-- </tr> --}}
+                            <tr>
+
+                                <td>
+
+                            </td>
+                            <td>
+                                a. Kesesuaian pemanfaatan bangunan konstruksi dengan fungsi yang direncanakan:<br>
                                     &bull; Bangunan gedung sesuai dengan perizinan<br>
                                     &bull; Bangunan sipil sesuai dengan peraturan perundangan
                                 </td>
+                                <td>
+                                    Pemanfaatan Bangunan Konstruksi Sesuai dengan perizinannya
+                                </td>
                                 <td>Dokumen perizinan</td>
                                 <td>Membandingkan izin pembangunan dengan fakta di lapangan</td>
-                                <td style="text-align: center;">
+                                  <td style="text-align: center;">
                                     <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                                 </td>
+
+
  <td id="outputCatatan1" style="padding:6px 12px; border:1px solid #ddd; border-radius:4px; white-space:pre-line;">
 </td>
 
@@ -439,17 +494,24 @@
     });
 </script>
 
-                            </tr>
-                            <tr>
+
+                                </tr>
+
+                       <tr>
+                        <td></td>
+                        <td>b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+</td>
                                 <td>
-                                    b. Kesesuaian lokasi bangunan konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR)
+Lokasi Bangunan Konstruksi sesuai peruntukan tata ruang di buktikan dengan surat pernyataan dari instansi berwenang
                                 </td>
                                 <td>Dokumen resmi dari instansi berwenang</td>
                                 <td>Memeriksa ketersediaan Dokumen resmi dari instansi berwenang</td>
+
+
                              <td style="text-align: center;">
                                  <span id="textCatatan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
                             </td>
-<td id="outputCatatan2" style="padding:6px 12px; border:1px solid #ddd; border-radius:4px; white-space:pre-line;"></td>
+                                <td id="outputCatatan2" style="padding:6px 12px; border:1px solid #ddd; border-radius:4px; white-space:pre-line;"></td>
 
 <script>
     document.getElementById('catatan2').addEventListener('input', function() {
@@ -476,7 +538,11 @@
 </script>
 
 
+
+
+                                    {{-- <td></td> --}}
                             </tr>
+
                         </tbody>
                     </table>
 
