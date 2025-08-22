@@ -55,6 +55,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
+@include('button')
 
 {{-- ---------------------------------------------------------------------- --}}
 
@@ -62,7 +63,9 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -92,7 +95,7 @@
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                     <a href="/betertibjakonpemanfaatan">
-                        <button class="btn-kembali">
+                        <button class="button-newvalidasi">
                         <i class="bi bi-arrow-left icon-create"></i>
                             Kembali
                         </button>
@@ -102,7 +105,7 @@
        {{-- Tampilkan tombol jika surat kosong --}}
     @if ($datasurat->isEmpty())
         <a href="{{ route('betertibjakonpemanfataansurat3createberkas', ['id' => $id]) }}">
-            <button class="btn-create">
+            <button class="button-berkas">
                 <i class="bi bi-file-earmark-plus"></i> Buat Berkas
             </button>
         </a>
@@ -111,17 +114,17 @@
 
                    @if ($datasurat->isNotEmpty())
 
-                   <button onclick="printModalContent({{ $datasurat_id }})" class="btn-create">
+                   <button onclick="printModalContent({{ $datasurat_id }})" class="button-berkas">
                                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Print
                     </button>
 
-                    <button class="btn-create" onclick="downloadModalPDF({{ $datasurat_id }})">
+                    <button class="button-berkas" onclick="downloadModalPDF({{ $datasurat_id }})">
                             <i class="bi bi-file-earmark-arrow-down icon-create"></i>
                                             Download
                     </button>
 
-                   <button class="btn-create"
+                   <button class="button-berkas"
                                             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat_id }}">
                                             <i class="bi bi-file-earmark-text icon-create"></i>
                                             Lihat Berkas
@@ -130,7 +133,7 @@
 
                     @endif
 
-                <button class="btn-create">
+                <button class="button-baru  ">
                     <i class="bi bi-file-earmark icon-create"></i> {{ $title }}
                 </button>
 
@@ -166,55 +169,37 @@
                                 </thead>
                                 <tbody>
 
-                                    @if ($datasurat->isEmpty())
-                                        <tr>
-                                            <td colspan="100%" class="text-center p-4 bg-yellow-100 text-yellow-800 font-semibold rounded-lg">
-                                                Surat Dukung Tertib Pemanfaatan <strong>Belum Dibuat (Surat 3)</strong>!
-                                            </td>
-                                        </tr>
-                                    @else
-
-                                @foreach ($datasurat as $item )
+                                @forelse($datasurat as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         {{-- <td style="text-align: left;">{{ $item->tertibjakonpemanfaatan->namabangunan }}</td> --}}
+@php
+    $kesesuaian = $item->kesimpulanpemeriksaan ?? 'Surat Belum Di Buat';
+    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+    $btnClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
+    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+@endphp
 
-                                            @php
-                                                $kesesuaian = $item->kesimpulanpemeriksaan ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-                                            @endphp
+<td style="text-align: center;">
+    <button class="status-button {{ $btnClass }}">
+        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+        {{ $tertibStatus }}
+    </button>
+</td>
 
-                                            <td style="text-align: center;">
-                                                <button
-                                                    style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                                    onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-                                                >
-                                                    <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                                                    {{ $tertibStatus }}
-                                                </button>
-                                            </td>
+@php
+    $kesesuaian = $item->catatan ?? 'Surat Belum Di Buat';
+    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+    $btnClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
+    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+@endphp
 
-                                        @php
-                                                $kesesuaian = $item->catatan ?? 'Surat Belum Di Buat';
-                                                $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-                                                $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
-                                                $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-                                            @endphp
-
-                                            <td style="text-align: center;">
-                                                <button
-                                                    style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
-                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                                    onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
-                                                >
-                                                    <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                                                    {{ $tertibStatus }}
-                                                </button>
-                                            </td>
-
+<td style="text-align: center;">
+    <button class="status-button {{ $btnClass }}">
+        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+        {{ $tertibStatus }}
+    </button>
+</td>
 
                                         <td style="text-align: center;">
                                             <!-- Show Icon -->
@@ -227,9 +212,9 @@
                                             </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-id="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                             <i class="bi bi-trash"></i>
+                                             <i class="bi bi-trash"></i>Hapus
                                          </a>
 
                                          <!-- Modal -->
@@ -281,8 +266,38 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
-                                        @endif
+                                            @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Berkas Dukung Jakon Pemanfaatan Pengawasan Terhadap Pemeliharaan Konstruksi & Struktur Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 
                                 </tbody>
                             </table>
@@ -401,6 +416,112 @@
                     </table>
 
                                 </div>
+
+
+                                <div class="container" style="margin-top: 10px;">
+                                    <!-- Modal Card -->
+
+                                            <div class="container" style="margin-top: 10px;">
+                                                <div class="row">
+                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
+                                                        <!-- Modal Card -->
+                                                        <div class="card" style="border: 1px solid white;">
+                                                            <div class="card-body">
+                                                                <!-- Tim Pemeriksa -->
+                                                                <div class="tim-pemeriksa-container">
+                                                                    <div class="tim-pemeriksa">
+                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa : Tertib Jakon Pengawasan Pemanfaatan <br> Terhadap Pemeliharaan Konstruksi dan Struktur </h6>
+                                                                        {{-- <p></p> --}}
+                                                                        <table class="table table-sm">
+                                                                            <thead class="table-secondary">
+                                                                                <tr>
+                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Tanda Tangan</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            {{-- @foreach ($datasurat as $item) --}}
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan1->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                        <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan1 && $tandatangan1->tandatangan && file_exists(public_path('storage/' . $tandatangan1->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan1 && $tandatangan1->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan2->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                     <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan2 && $tandatangan2->tandatangan && file_exists(public_path('storage/' . $tandatangan2->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan2 && $tandatangan2->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan3->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan3 && $tandatangan3->tandatangan && file_exists(public_path('storage/' . $tandatangan3->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan3 && $tandatangan3->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
+                                                                                </tr>
+                                                                            </tbody>
+                                                                            {{-- @endforeach --}}
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
 
                                 <br><br><br><br>
@@ -554,9 +675,115 @@
                     </table>
 
 
+                                <div class="container" style="margin-top: 10px;">
+                                    <!-- Modal Card -->
+
+                                            <div class="container" style="margin-top: 10px;">
+                                                <div class="row">
+                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
+                                                        <!-- Modal Card -->
+                                                        <div class="card" style="border: 1px solid white;">
+                                                            <div class="card-body">
+                                                                <!-- Tim Pemeriksa -->
+                                                                <div class="tim-pemeriksa-container">
+                                                                    <div class="tim-pemeriksa">
+                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa : Tertib Jakon Pengawasan Pemanfaatan <br> Terhadap Pemeliharaan Konstruksi dan Struktur </h6>
+                                                                        {{-- <p></p> --}}
+                                                                        <table class="table table-sm">
+                                                                            <thead class="table-secondary">
+                                                                                <tr>
+                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Tanda Tangan</th>
+                                                                                </tr>
+                                                                            </thead>
+
+                                                                            {{-- @foreach ($datasurat as $item) --}}
+
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan1->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                        <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan1 && $tandatangan1->tandatangan && file_exists(public_path('storage/' . $tandatangan1->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan1 && $tandatangan1->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan2->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                     <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan2 && $tandatangan2->tandatangan && file_exists(public_path('storage/' . $tandatangan2->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan2 && $tandatangan2->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
 
 
-                                                <div class="container" style="margin-top: 10px;">
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{-- {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }} --}}
+                                                                                        {{ $tandatangan3->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                            <div style="text-align: center;">
+                                                                                                @if($tandatangan3 && $tandatangan3->tandatangan && file_exists(public_path('storage/' . $tandatangan3->tandatangan)))
+                                                                                                    <!-- Kalau file tanda tangan ada di storage -->
+                                                                                                    <img src="{{ asset('storage/' . $tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @elseif($tandatangan3 && $tandatangan3->tandatangan)
+                                                                                                    <!-- Kalau file tanda tangan ada tapi path langsung -->
+                                                                                                    <img src="{{ asset($tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height: 60px; width: auto;">
+                                                                                                @else
+                                                                                                    <!-- Kalau belum ada tanda tangan -->
+                                                                                                    <p>-</p>
+                                                                                                @endif
+                                                                                            </div>
+                                                                                        </td>
+
+                                                                                </tr>
+                                                                            </tbody>
+                                                                            {{-- @endforeach --}}
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                                {{-- <div class="container" style="margin-top: 10px;">
                                                     <!-- Modal Card -->
 
                                                             <div class="container" style="margin-top: 10px;">
@@ -601,7 +828,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <br><br><br><br>
+                                                        <br><br><br><br> --}}
                                             </div>
 
 
@@ -716,11 +943,13 @@
 
                                                             .tim-pemeriksa {
                                                                 width: 50%;
-                                                            }
+                                                                margin-top:-40px;
+                                                                }
 
-                                                            .tim-pemeriksa table {
-                                                                width: 100%;
-                                                                border: 1px solid #000;
+                                                                .tim-pemeriksa table {
+                                                                    width: 100%;
+                                                                    border: 1px solid #000;
+                                                                    margin-top:-35px;
                                                             }
 
                                                             .tim-pemeriksa td, .tim-pemeriksa th {
