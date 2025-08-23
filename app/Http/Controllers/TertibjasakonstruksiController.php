@@ -1797,7 +1797,7 @@ public function betertibjakonpemanfataanjakonindex($id)
     $suratPertama = $datasurat->first();
 
     $datatandatangan1 = tandatangan::find(8);
-    $datatandatangan2 = tandatangan::find(7);
+    $datatandatangan2 = tandatangan::find(20);
     $datatandatangan3 = tandatangan::find(9);
 
 
@@ -1966,7 +1966,7 @@ public function betertibjakonpemanfataansurat2index($id)
     $suratPertama = $datasurat->first();
 
     $datatandatangan1 = tandatangan::find(8);
-    $datatandatangan2 = tandatangan::find(7);
+    $datatandatangan2 = tandatangan::find(20);
     $datatandatangan3 = tandatangan::find(9);
 
 
@@ -2107,7 +2107,7 @@ public function betertibjakonpemanfataansurat3index($id)
     $suratPertama = $datasurat->first();
 
     $datatandatangan1 = tandatangan::find(8);
-    $datatandatangan2 = tandatangan::find(7);
+    $datatandatangan2 = tandatangan::find(20);
     $datatandatangan3 = tandatangan::find(9);
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.03_surat3.index', [
