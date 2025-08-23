@@ -1796,9 +1796,9 @@ public function betertibjakonpemanfataanjakonindex($id)
 
     $suratPertama = $datasurat->first();
 
-    $datatandatangan1 = tandatangan::find(10);
-    $datatandatangan2 = tandatangan::find(6);
-    $datatandatangan3 = tandatangan::find(7);
+    $datatandatangan1 = tandatangan::find(8);
+    $datatandatangan2 = tandatangan::find(7);
+    $datatandatangan3 = tandatangan::find(9);
 
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.index', [
@@ -1965,9 +1965,9 @@ public function betertibjakonpemanfataansurat2index($id)
 
     $suratPertama = $datasurat->first();
 
-    $datatandatangan1 = tandatangan::find(10);
-    $datatandatangan2 = tandatangan::find(6);
-    $datatandatangan3 = tandatangan::find(7);
+    $datatandatangan1 = tandatangan::find(8);
+    $datatandatangan2 = tandatangan::find(7);
+    $datatandatangan3 = tandatangan::find(9);
 
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.02_surat2.index', [
@@ -2106,9 +2106,9 @@ public function betertibjakonpemanfataansurat3index($id)
 
     $suratPertama = $datasurat->first();
 
-    $datatandatangan1 = tandatangan::find(10);
-    $datatandatangan2 = tandatangan::find(6);
-    $datatandatangan3 = tandatangan::find(7);
+    $datatandatangan1 = tandatangan::find(8);
+    $datatandatangan2 = tandatangan::find(7);
+    $datatandatangan3 = tandatangan::find(9);
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.03_surat3.index', [
         'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan Pengawasan Terhadap Pemeliharaan Konstruksi dan Struktur',
