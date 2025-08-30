@@ -22,42 +22,41 @@ class AgendaskkController extends Controller
 {
     //
     public function index(Request $request)
-    {
-        $perPage = $request->input('perPage', 10);
-        $search = $request->input('search');
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
 
-        $query = agendaskk::query();
+    $query = agendaskk::query();
 
-        if ($search) {
-            $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                  ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
-                  ->orWhere('lokasi', 'LIKE', "%{$search}%")
-                  ->orWhere('keterangan', 'LIKE', "%{$search}%");
-                //   ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
-                //       $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
-                //   }
-                // );
+    if ($search) {
+        $query->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
+              ->orWhere('lokasi', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%");
+            // ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+            //     $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+            // });
+    }
 
-        }
+    // urutkan berdasarkan created_at terbaru
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
-        $data = $query->paginate($perPage);
-
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('frontend.04_pembinaan.02_agendaskk.partials.table', compact('data'))->render()
-            ]);
-        }
-
-        $user = Auth::user();
-
-        return view('frontend.04_pembinaan.02_agendaskk.01_daftaragendaskk', [
-            'title' => 'Agenda SKK Tenaga Konstruksi Kab Blora',
-            'data' => $data,
-            'perPage' => $perPage,
-            'search' => $search,
-            'user' => $user
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.04_pembinaan.02_agendaskk.partials.table', compact('data'))->render()
         ]);
     }
+
+    $user = Auth::user();
+
+    return view('frontend.04_pembinaan.02_agendaskk.01_daftaragendaskk', [
+        'title' => 'Agenda SKK Tenaga Konstruksi Kab Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => $user
+    ]);
+}
 
 
     public function daftaragendaskk($namakegiatan)
@@ -375,7 +374,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
     // Validasi input
     $validated = $request->validate([
         // 'jabatanskkanda_id' => 'nullable|string',
-        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
+        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
         'jenjangpendidikan_id' => 'required|string',
         'jabatankerja_id' => 'required|string',
         'namasekolah_id' => 'required|string',
@@ -390,13 +389,13 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'tahunlulus' => 'required|integer|min:1900|max:' . date('Y'),
 
         // Upload dokumen
-        'uploadktp' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:5048',
-        'uploadijazah' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploadnpwp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadktp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploadfoto' => 'nullable|mimes:jpg,jpeg,png|max:15048',
+        'uploadijazah' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploadpengalaman' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploadnpwp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploaddaftarriwayathidup' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploadkebenarandata' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
 
         'namaasosiasi' => 'required|string|max:255',
         'punyaskk' => 'required|in:Ya,Tidak',
@@ -425,26 +424,29 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'punyasiki.required' => 'Pilih apakah memiliki SIKI.',
         'siappatuh.required' => 'Pilih kesiapan mematuhi kode etik.',
         'portalpupr.required' => 'Pilih apakah sudah memiliki !.',
-        'uploadktp.required' => 'Wajib Upload KTP.',
-        'uploadktp.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadktp.max' => 'Ukuran file KTP maksimal 5 MB.',
-        'uploadfoto.required' => 'Wajib Upload Pas Foto.',
+
+        // 'uploadktp.required' => 'Wajib Upload KTP.',
+        'uploadktp.mimes' => 'File KTP harus PDF atau Gambar/Foto.',
+        'uploadktp.max' => 'Ukuran file KTP maksimal 15 MB.',
+        // 'uploadfoto.required' => 'Wajib Upload Pas Foto.',
         'uploadfoto.mimes' => 'File Foto harus PDF atau gambar.',
-        'uploadfoto.max' => 'Ukuran file Foto maksimal 5 MB.',
-        'uploadijazah.required' => 'Wajib Upload Ijazah.',
-        'uploadijazah.mimes' => 'File Ijazah harus PDF atau gambar.',
-        'uploadijazah.max' => 'Ukuran file Ijazah maksimal 5 MB.',
-        'uploadpengalaman.required' => 'Wajib Upload Pengalaman.',
-        'uploadpengalaman.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadpengalaman.max' => 'Ukuran file Pengalaman maksimal 5 MB.',
+        'uploadfoto.max' => 'Ukuran file Foto maksimal 15 MB.',
+        // 'uploadijazah.required' => 'Wajib Upload Ijazah.',
+        'uploadijazah.mimes' => 'File Ijazah harus PDF .',
+        'uploadijazah.max' => 'Ukuran file Ijazah maksimal 15 MB.',
+        // 'uploadpengalaman.required' => 'Wajib Upload Pengalaman.',
+        'uploadpengalaman.mimes' => 'File KTP harus PDF.',
+        'uploadpengalaman.max' => 'Ukuran file Pengalaman maksimal 15 MB.',
         // 'uploadpengalaman.required' => 'Wajib Upload Bukti Kebenaran.',
-        'uploadkebenarandata.required' => 'Wajib Upload Bukti Kebenaran.',
+        // 'uploadkebenarandata.required' => 'Wajib Upload Bukti Kebenaran.',
+        'uploadkebenarandata.mimes' => 'File Surat Kebanaran harus PDF.',
+        'uploadkebenarandata.max' => 'Ukuran file Surat Kebenaran maksimal 15 MB.',
         // 'uploadnpwp.required' => 'Wajib Upload NPWP.',
-        // 'uploadnpwp.mimes' => 'File KTP harus PDF atau gambar.',
-        // 'uploadnpwp.max' => 'Ukuran file KTP maksimal 2 MB.',
-        'uploaddaftarriwayathidup.required' => 'Wajib Upload Daftar Riwayat Hidup.',
-        'uploaddaftarriwayathidup.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploaddaftarriwayathidup.max' => 'Ukuran file Riwayat Hidup maksimal 5 MB.',
+        'uploadnpwp.mimes' => 'File KTP harus PDF atau gambar.',
+        'uploadnpwp.max' => 'Ukuran file KTP maksimal 15 MB.',
+        // 'uploaddaftarriwayathidup.required' => 'Wajib Upload Daftar Riwayat Hidup.',
+        'uploaddaftarriwayathidup.mimes' => 'File Daftar Riwayat Hidup Harus PDF.',
+        'uploaddaftarriwayathidup.max' => 'Ukuran file Riwayat Hidup maksimal 15 MB.',
         // Custom error messages...
     ]);
 
@@ -542,13 +544,13 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'tahunlulus' => 'required|integer|min:1900|max:' . date('Y'),
 
         // Upload dokumen
-        'uploadktp' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:5048',
-        'uploadijazah' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploadnpwp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
-        'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadktp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploadfoto' => 'nullable|mimes:jpg,jpeg,png|max:15048',
+        'uploadijazah' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploadpengalaman' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploadnpwp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploaddaftarriwayathidup' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
+        'uploadkebenarandata' => 'nullable|mimes:pdf,jpg,jpeg,png|max:15048',
 
         'namaasosiasi' => 'required|string|max:255',
         'punyaskk' => 'required|in:Ya,Tidak',
@@ -577,26 +579,28 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'punyasiki.required' => 'Pilih apakah memiliki SIKI.',
         'siappatuh.required' => 'Pilih kesiapan mematuhi kode etik.',
         'portalpupr.required' => 'Pilih apakah sudah memiliki !.',
-        'uploadktp.required' => 'Wajib Upload KTP.',
-        'uploadktp.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadktp.max' => 'Ukuran file KTP maksimal 5 MB.',
-        'uploadfoto.required' => 'Wajib Upload Pas Foto.',
-        'uploadfoto.mimes' => 'File Foto harus PDF atau gambar.',
-        'uploadfoto.max' => 'Ukuran file Foto maksimal 5 MB.',
-        'uploadijazah.required' => 'Wajib Upload Ijazah.',
-        'uploadijazah.mimes' => 'File Ijazah harus PDF atau gambar.',
-        'uploadijazah.max' => 'Ukuran file Ijazah maksimal 5 MB.',
-        'uploadpengalaman.required' => 'Wajib Upload Pengalaman.',
-        'uploadpengalaman.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadpengalaman.max' => 'Ukuran file Pengalaman maksimal 5 MB.',
+
+        // 'uploadktp.required' => 'Wajib Upload KTP.',
+        'uploadktp.mimes' => 'File KTP harus PDF atau Gambar/Foto.',
+        'uploadktp.max' => 'Ukuran file KTP maksimal 15 MB.',
+        // 'uploadfoto.required' => 'Wajib Upload Pas Foto.',
+        'uploadfoto.mimes' => 'File Foto harus PDF atau Gambar/Foto.',
+        'uploadfoto.max' => 'Ukuran file Foto maksimal 15 MB.',
+        // 'uploadijazah.required' => 'Wajib Upload Ijazah.',
+        'uploadijazah.mimes' => 'File Ijazah harus PDF.',
+        'uploadijazah.max' => 'Ukuran file Ijazah maksimal 15 MB.',
+        // 'uploadpengalaman.required' => 'Wajib Upload Pengalaman.',
+        'uploadpengalaman.mimes' => 'File KTP harus PDF.',
+        'uploadpengalaman.max' => 'Ukuran file Pengalaman maksimal 15 MB.',
         // 'uploadpengalaman.required' => 'Wajib Upload Bukti Kebenaran.',
-        'uploadkebenarandata.required' => 'Wajib Upload Bukti Kebenaran.',
+        'uploadkebenarandata.mimes' => 'File Surat Kebenaran harus PDF.',
+        'uploadkebenarandata.max' => 'Ukuran file Surat maksimal 15 MB.',
         // 'uploadnpwp.required' => 'Wajib Upload NPWP.',
-        // 'uploadnpwp.mimes' => 'File KTP harus PDF atau gambar.',
-        // 'uploadnpwp.max' => 'Ukuran file KTP maksimal 2 MB.',
-        'uploaddaftarriwayathidup.required' => 'Wajib Upload Daftar Riwayat Hidup.',
-        'uploaddaftarriwayathidup.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploaddaftarriwayathidup.max' => 'Ukuran file Riwayat Hidup maksimal 5 MB.',
+        'uploadnpwp.mimes' => 'File NPWP harus PDF atau gambar.',
+        'uploadnpwp.max' => 'Ukuran file NPWP maksimal 15 MB.',
+        // 'uploaddaftarriwayathidup.required' => 'Wajib Upload Daftar Riwayat Hidup.',
+        'uploaddaftarriwayathidup.mimes' => 'File Riwayat Hidup harus PDF atau Gambar/Foto.',
+        'uploaddaftarriwayathidup.max' => 'Ukuran file Riwayat Hidup maksimal 15 MB.',
         // Custom error messages...
     ]);
 
