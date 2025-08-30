@@ -8,6 +8,7 @@
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
+@include('button')
 
 {{-- ---------------------------------------------------------------------- --}}
 
@@ -15,7 +16,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -75,7 +77,7 @@
         </script>
 
 
-                        <button class="hide-on-mobile btn-create"
+                        <button class="hide-on-mobile button-baru"
                         onclick="exportTableToExcel('daftarpesertaskk', 'Data Peserta {{$data->namakegiatan}}')">
                         <i class="bi bi-file-earmark-excel-fill icon-create" style="margin-right: 8px; font-size: 16px;"></i> Download Excel
                     </button>
@@ -120,7 +122,7 @@
     }
 </script>
 
-<button class="hide-on-mobile btn-create"
+<button class="hide-on-mobile button-baru"
     onclick="generatePDF()">
     <i class="bi bi-download" style="margin-right: 8px;"></i> Download PDF
 </button>
@@ -222,7 +224,7 @@
 
 
                     <a href="/beagendaskkdatapeserta">
-  <button class="btn-kembali">
+  <button class="button-newvalidasi">
         <i class="bi bi-arrow-left icon-create"></i> Kembali
 </button>
 
@@ -348,13 +350,7 @@
 
 <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
     <a href="{{ url('/bepesertaskkshowberkas/show/' . $item->id) }}" style="text-decoration: none;">
-        <button
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-            style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                   border-radius: 15px; font-size: 14px; cursor: pointer;
-                   display: flex; align-items: center; justify-content: center;
-                   transition: background-color 0.3s, color 0.3s;">
+        <button class="button-baru">
             <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
         </button>
     </a>
@@ -362,13 +358,7 @@
 
 
                                         <td style="text-align: center;">
-                                            <button
-                                            style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                                                   border-radius: 15px; font-size: 14px; cursor: pointer;
-                                                   display: flex; align-items: center; justify-content: center;
-                                                   transition: background-color 0.3s, color 0.3s;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                            onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+                                            <button class="button-baru"
                                             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
                                             <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
                                         </button>
@@ -406,12 +396,12 @@
          <td style="text-align: center;">
             @if($item->verifikasipu == false)
                 <button type="button" onclick="openModal({{ $item->id }})"
-                    class="btn btn-danger">
+                    class="button-merah">
                     <i class="bi bi-x-circle"></i> BELUM LOLOS
                 </button>
             @else
                 <button type="button" disabled
-                    class="btn"
+                    class="button-hijau"
                     style="
                         background-color: rgba(16, 185, 129, 0.85); /* Warna hijau dengan transparansi */
                         color: white;
@@ -432,11 +422,11 @@
 
         <td style="text-align: center;">
             @if($item->verifikasilps == false)
-                <button type="button" onclick="openKehadiranModal({{ $item->id }})" class="btn btn-danger">
+                <button type="button" onclick="openKehadiranModal({{ $item->id }})" class="button-merah">
                     <i class="bi bi-x-circle"></i> Belum Di Verifikasi
                 </button>
             @else
-                <button type="button" disabled class="btn"
+                <button type="button" disabled class="button-hijau"
                     style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: not-allowed;">
                     <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
                 </button>
@@ -488,11 +478,11 @@
 
 <td style="text-align: center;">
     @if($item->verifikasihadirsertifikasi == false)
-        <button type="button" onclick="openModalVerifikasiHadirLSP({{ $item->id }})" class="btn btn-danger">
+        <button type="button" onclick="openModalVerifikasiHadirLSP({{ $item->id }})" class="button-merah">
             <i class="bi bi-x-circle"></i> Belum Terbit
         </button>
     @else
-        <button type="button" disabled class="btn"
+        <button type="button" disabled class="button-hijau"
             style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: not-allowed;">
             <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> TERBIT
         </button>
@@ -547,8 +537,8 @@
                                                 <i class="bi bi-eye"></i>
                                             </a>
                                             <!-- Update Icon --> --}}
-                                            <a href="{{ url('/besertifikatskk/' . $item->id . '?user_id=' . $item->user_id) }}" class="btn btn-sm btn-warning me-2" title="Upload Sertifikat">
-                                                <i class="bi bi-file-earmark-arrow-up"></i>
+                                            <a href="{{ url('/besertifikatskk/' . $item->id . '?user_id=' . $item->user_id) }}" class="button-berkas" title="Upload Sertifikat">
+                                                <i class="bi bi-file-earmark-arrow-up"></i>Upload
                                             </a>
 
                                             <!-- Delete Icon -->
