@@ -173,7 +173,7 @@ public function validasidokumenpesertaskk(Request $request, $id)
         'validasi_kebenarandata' => 'required|in:sesuai,tidak_sesuai',
         'validasi_npwp' => 'required|in:sesuai,tidak_sesuai',
         'validasi_daftarriwayathidup' => 'required|in:sesuai,tidak_sesuai',
-        'catatanvalidasi' => 'nullable|string|max:255', // ← tambahkan validasi catatan
+        'catatanvalidasi' => 'nullable', // ← tambahkan validasi catatan
     ]);
 
     // Cari peserta berdasarkan ID
