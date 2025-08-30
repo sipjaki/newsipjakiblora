@@ -1,5 +1,20 @@
+<style>
+/* Sembunyikan button-berkas di layar ≤ 768px */
+@media (max-width: 768px) {
+    .button-berkas {
+        display: none;
+    }
+}
+</style>
 
 <style>
+
+@media (max-width: 768px) {
+    #searchInput,
+    #searchInput + i { /* sembunyikan ikon juga */
+        display: none;
+    }
+}
 
 .zebra-table {
   width: 100%;
