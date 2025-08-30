@@ -738,26 +738,9 @@ h5 {
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-image" style="{{ $iconStyle }}"></i> Syarat Pengalaman Kerja!
     </label>
-    <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
-        <!-- Tombol atau ikon kecil untuk buka modal -->
-        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#gambarModal">
-            <i class="bi bi-eye"></i> Lihat Gambar
-        </button>
-    </div>
-</div>
-
-<!-- Modal: Gambar tampil hanya saat modal dibuka -->
-<div class="modal fade" id="gambarModal" tabindex="-1" aria-labelledby="gambarModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="gambarModalLabel">Syarat Pengalaman Kerja</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img src="/assets/icon/jenjangsyarat.jpg" alt="Preview" class="img-fluid rounded shadow">
-            </div>
-        </div>
+    <div class="text-center mt-2">
+        <img src="/assets/icon/jenjangbaru.jpg" alt="Preview 1" class="img-fluid rounded shadow mb-3">
+        <img src="/assets/icon/jenjangsyarat.jpg" alt="Preview 2" class="img-fluid rounded shadow">
     </div>
 </div>
 
@@ -873,12 +856,12 @@ h5 {
 <div class="row" style="margin-top: -20px;">
 <div class="col-md-4" style="{{ $divStyle }}">
     @php
-    $fileDownloaddata = asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx');
+    $fileDownloaddata = asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATA_PESERTA.docx');
 @endphp
 
 
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data <br> .pdf | Max 5MB
+        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data <br> .pdf | Max 15MB
         <br>
         @if ($fileDownloaddata)
             <a href="{{ $fileDownloaddata }}" download style="color:rgb(0, 26, 255);">
@@ -1334,7 +1317,7 @@ function previewFile(previewId, input) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
             </div>
             <div class="modal-body text-center">
-                <img src="/assets/icon/jenjangsyarat.jpg" alt="Preview" class="img-fluid rounded shadow">
+                <img src="/assets/icon/jenjangbaru.jpg" alt="Preview" class="img-fluid rounded shadow">
             </div>
         </div>
     </div>
