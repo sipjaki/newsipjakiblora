@@ -7,13 +7,15 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -45,12 +47,7 @@
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                  <a href="/beagendaskk">
-<button
-    onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
-    onmouseout="this.style.background='linear-gradient(135deg, #4B5563, #E5E7EB)'; this.style.color='white'; this.style.border='none';"
-    style="background: linear-gradient(135deg, #4B5563, #E5E7EB); color: white; border: none; margin-right: 10px; padding: 10px 20px;
-           border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-           transition: background 0.3s, color 0.3s, border 0.3s;">
+<button class="button-newvalidasi">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
          viewBox="0 0 16 16" style="margin-right: 8px;">
         <path fill-rule="evenodd"
@@ -120,7 +117,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($datapeserta as $item )
+
+                                    @forelse($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                       <td style="text-align: left; text-transform: uppercase;">
@@ -184,14 +182,8 @@
 
 <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
     <a href="{{ url('/bepesertaskkshowberkas/show/' . $item->id) }}" style="text-decoration: none;">
-        <button
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-            style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                   border-radius: 15px; font-size: 14px; cursor: pointer;
-                   display: flex; align-items: center; justify-content: center;
-                   transition: background-color 0.3s, color 0.3s;">
-            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> LIHAT PROFIL
+        <button class="button-baru">
+            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat Informasi
         </button>
     </a>
 </td>
@@ -199,15 +191,15 @@
 <!-- Tombol Verifikasi -->
 <td style="text-align: center;">
     @if($item->verifikasipu == 'lolos')
-        <button type="button" onclick="openModal({{ $item->id }})" class="btn" style="background-color: #10B981; color: white;">
+        <button type="button" onclick="openModal({{ $item->id }})" class="button-hijau">
             <i class="bi bi-patch-check-fill"></i> LOLOS
         </button>
     @elseif($item->verifikasipu == 'dikembalikan')
-        <button type="button" onclick="openModal({{ $item->id }})" class="btn" style="background-color: #0400ff; color: white;">
+        <button type="button" onclick="openModal({{ $item->id }})" class="button-merah">
             <i class="bi bi-x-circle"></i> DIKEMBALIKAN
         </button>
     @else
-        <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button type="button" onclick="openModal({{ $item->id }})" class="button-newvalidasi">
             <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
         </button>
     @endif
@@ -270,9 +262,9 @@
                                             </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                            <i class="bi bi-trash"></i>
+                                            <i class="bi bi-trash"></i>Hapus
                                         </a>
 
                                         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -329,7 +321,38 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
+                                    @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Belum Ada Peserta Yang Mendaftar !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
 
                                 </tbody>
                             </table>

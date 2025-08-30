@@ -498,13 +498,16 @@ button:hover {
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+            <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -536,25 +539,7 @@ button:hover {
 
 @canany(['super_admin', 'admin'])
            <a href="{{ url()->previous() }}">
-    <button
-  onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-  onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
-  style="
-    background: linear-gradient(45deg, #6c757d, #adb5bd);
-    color: white;
-    border: none;
-    margin-right: 10px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-  "
->
+    <button class="button-newvalidasi">
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       viewBox="0 0 16 16">
       <path fill-rule="evenodd"
@@ -572,25 +557,7 @@ button:hover {
 
 <form action="{{ route('peserta.downloadSemua', $datapeserta->id) }}" method="POST">
     @csrf
-<button type="submit"
-    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-    onmouseout="this.style.background='linear-gradient(135deg, #d4af37, #4CAF50)'; this.style.color='white'; this.style.transform='scale(1)'"
-    style="
-        background: linear-gradient(135deg, #d4af37, #4CAF50);
-        color: white;
-        border: none;
-        margin-right: 10px;
-        padding: 10px 20px;
-        border-radius: 15px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-    "
->
+<button type="submit" class="button-berkas">
     <!-- Ikon Download -->
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         viewBox="0 0 16 16">
@@ -609,25 +576,7 @@ button:hover {
 @can('pekerja')
 
            <a href="/hakaksespekerjaberkas">
-    <button
-  style="
-    background: linear-gradient(45deg, #6c757d, #adb5bd);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-right:10px;
-  "
-  onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-  onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
->
+    <button class="button-newvalidasi">
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
     viewBox="0 0 16 16">
     <path fill-rule="evenodd"
@@ -642,11 +591,8 @@ button:hover {
 @endcan
 
 @can('lsppenerbit')
-   <button
-    onclick="history.back();"
-    onmouseover="this.style.background = 'white'; this.style.color = 'black';"
-    onmouseout="this.style.background = 'linear-gradient(to right, black, white)'; this.style.color = 'white';"
-    style="background: linear-gradient(to right, black, white); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+   <button class="button-newvalidasi"
+    onclick="history.back();">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         viewBox="0 0 16 16" style="margin-right: 8px;">
         <path fill-rule="evenodd"
@@ -658,25 +604,7 @@ button:hover {
 @endcan
 
 
-<button class="btn-nama-peserta"
-    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-    onmouseout="this.style.background='linear-gradient(135deg, #d4af37, #4CAF50)'; this.style.color='white'; this.style.transform='scale(1)'"
-    style="
-        background: linear-gradient(135deg, #d4af37, #4CAF50);
-        color: white;
-        border: none;
-        margin-right: 10px;
-        padding: 10px 20px;
-        border-radius: 15px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-    "
->
+<button class="button-berkas">
     <!-- Ikon User -->
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         viewBox="0 0 16 16">
@@ -1118,7 +1046,7 @@ button:hover {
                         <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Pas Foto 4 x 6 " style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                     @else
                         <!-- Placeholder jika tidak ada data -->
-                        <p>Data belum diupdate</p>
+                        <p style="font-size: 14px;">Data belum diupdate</p>
                     @endif
                 </div>
             </td>
@@ -1244,7 +1172,7 @@ button:hover {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <p style="font-size: 14px;">Data belum diupdate</p>
     @endif
 </div>
 
@@ -1272,7 +1200,7 @@ button:hover {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <p style="font-size: 14px;">Data belum diupdate</p>
     @endif
 </div>
             </td>
@@ -1299,7 +1227,7 @@ button:hover {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <p style="font-size: 14px;">Data belum diupdate</p>
     @endif
 </div>
             </td>
@@ -1334,7 +1262,7 @@ button:hover {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <p style="font-size: 14px;">Data belum diupdate</p>
     @endif
 </div>
             </td>
@@ -1360,7 +1288,7 @@ button:hover {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <p style="font-size: 14px;">Data belum diupdate</p>
     @endif
 </div>
             </td>
@@ -1386,7 +1314,7 @@ button:hover {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <p style="font-size: 14px;">Data belum diupdate</p>
     @endif
 </div>
             </td>
@@ -1419,7 +1347,7 @@ button:hover {
         </iframe>
     @else
         <!-- Optional: Show a placeholder if there's no file available -->
-        <p>Data belum diupdate</p>
+        <p style="font-size: 14px;">Data belum diupdate</p>
     @endif
 </div>
             </td>
@@ -1486,7 +1414,7 @@ button:hover {
 
     </style>
 
-<table class="borderbaru" style="border-collapse: collapse; border: none;">
+{{-- <table class="borderbaru" style="border-collapse: collapse; border: none;">
 
         <tr>
             <td style="width: 45%;"></td>
@@ -1534,30 +1462,14 @@ button:hover {
                 <td style="width: 55%;"></td>
             </tr>
 
-    </table>
+    </table> --}}
 
     </div>
 
   <div class="hide-on-mobile" style="display: flex; justify-content: flex-end; padding: 10px;">
-   <button
-  id="downloadPDF"
-  style="
-    background: linear-gradient(45deg, #6c757d, #adb5bd); /* abu-abu tua ke abu-abu muda */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  "
-  onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-  onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
->
+   <button class="button-berkas"
+
+  id="downloadPDF">
   <i class="bi bi-download" style="margin-right: 5px;"></i>
   <span>Download PDF</span>
 </button>
@@ -1599,7 +1511,8 @@ button:hover {
     });
 </script>
 
-@can('pekerja')
+@canany(['super_admin', 'admin', 'pekerja'])
+
 <hr>
 
         @if ($datapeserta->verifikasipu === 'dikembalikan')
@@ -1611,24 +1524,7 @@ button:hover {
     </p>
 
     <a href="/perbaikandataskk/{{$datapeserta->id}}">
-      <button
-        style="
-          background: linear-gradient(45deg, #FFD700, #28a745);
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 10px;
-          font-size: 16px;
-          font-weight: bold;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-        "
-        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-        onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #28a745)'; this.style.color='white'; this.style.transform='scale(1)'"
-      >
+      <button class="button-baru">
         <i class="bi bi-pencil-square"></i> Perbaikan Data
       </button>
     </a>
@@ -1637,7 +1533,7 @@ button:hover {
 
         @endif
 
-@endcan
+@endcanany
 
 
 <hr>
@@ -1654,10 +1550,7 @@ button:hover {
                                         {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> SKK Saudara  </th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                            <button type="button" class="button-berkas"
                                                 data-bs-toggle="modal" data-bs-target="#modalSKK{{ $datapeserta->id }}">
                                                 <i class="bi bi-eye"></i> Lihat
                                             </button>
@@ -1697,10 +1590,7 @@ button:hover {
                                         {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP </th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                            <button type="button" class="button-berkas"
                                                 data-bs-toggle="modal" data-bs-target="#modalKTP{{ $datapeserta->id }}">
                                                 <i class="bi bi-eye"></i> Lihat
                                             </button>
@@ -1744,7 +1634,7 @@ button:hover {
                                                                     @endif
                                                                 @endif
                                                             @else
-                                                                <p style="color: red; font-weight: bold;">Data belum diupdate</p>
+                                                                <p style="color: red; font-weight: bold; font-size:14px;" >Data belum diupdate</p>
                                                             @endif
                                                         </div>
 
@@ -1753,48 +1643,157 @@ button:hover {
                                             </div>
                                         </th>
 
+                                        <style>
+/* Container status */
+.custom-status {
+    position: relative;
+    padding-left: 35px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    border: 2px solid #cbd5e0;
+    border-radius: 12px;
+    font-weight: 600;
+    user-select: none;
+    display: inline-block;
+    min-width: 180px;
+    color: #555;
+    text-align: center;
+    cursor: pointer;
+     font-size: 16px;
+}
+
+/* Kotak untuk tanda centang */
+.custom-status .custom-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: 2px solid #cbd5e0;
+    border-radius: 4px;
+}
+
+/* Centang muncul HANYA saat radio dipilih */
+.custom-status input[type="radio"]:checked + .custom-box::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid #1d4ed8; /* default biru, bisa disesuaikan */
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Warna container sesuai status */
+.custom-status.sesuai {
+    border-color: #3b82f6;
+    background-color: #bfdbfe;
+    color: #1d4ed8;
+}
+
+.custom-status.tidak_sesuai {
+    border-color: #ef4444;
+    background-color: #fecaca;
+    color: #b91c1c;
+}
+
+.custom-status.pending {
+    border-color: #f59e0b;
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+/* Kotak sesuai warna status */
+.custom-status.sesuai .custom-box {
+    border-color: #3b82f6;
+    background-color: #bfdbfe;
+}
+
+.custom-status.tidak_sesuai .custom-box {
+    border-color: #ef4444;
+    background-color: #fecaca;
+}
+
+.custom-status.pending .custom-box {
+    border-color: #f59e0b;
+    background-color: #fef3c7;
+}
+        </style>
+
                                         @canany(['pekerja', 'lsppenerbit'])
-                                        <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                            <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
-                                            @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
-                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
-                                            @elseif ($datapeserta->validasi_ktp === 'sesuai')
-                                                <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
-                                            @else
-                                                <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
-                                                @endif
-                                            </div>
-                                        </th>
-                                        @endcanany
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="margin-top: 10px; font-size: 16px; display: flex; justify-content: center;">
+        @if ($datapeserta->validasi_ktp === 'tidak_sesuai')
+            <div class="custom-status tidak_sesuai">
+                <span class="custom-box"></span>
+                Silahkan Lakukan Perbaikan
+            </div>
+        @elseif ($datapeserta->validasi_ktp === 'sesuai')
+            <div class="custom-status sesuai">
+                <span class="custom-box"></span>
+                Berkas Anda Sudah Sesuai
+            </div>
+        @else
+            <div class="custom-status pending">
+                <span class="custom-box"></span>
+                Sedang Di Verifikasi DPUPR, Silahkan Menunggu !
+            </div>
+        @endif
+    </div>
+</th>
+@endcanany
 
-                                        @canany(['super_admin', 'admin'])
-                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                <div style="display: flex; justify-content: center; gap: 20px;">
-                                                    <label class="custom-radio">
-                                                        <input type="radio" name="validasi_ktp" value="sesuai"
-                                                            {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }}>
-                                                        <span class="custom-box"></span>
-                                                        Sesuai
-                                                    </label>
+@canany(['super_admin', 'admin'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <label class="custom-status {{ $datapeserta->validasi_ktp == 'sesuai' ? 'sesuai' : '' }}" style="cursor:pointer;" data-status="sesuai">
+            <input type="radio" name="validasi_ktp" value="sesuai"
+                {{ $datapeserta->validasi_ktp == 'sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Sesuai
+        </label>
 
-                                                    <label class="custom-radio">
-                                                        <input type="radio" name="validasi_ktp" value="tidak_sesuai"
-                                                            {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }}>
-                                                        <span class="custom-box"></span>
-                                                        Tidak Sesuai
-                                                    </label>
-                                                </div>
-                                            </th>
-                                        @endcanany
+        <label class="custom-status {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'tidak_sesuai' : '' }}" style="cursor:pointer;" data-status="tidak_sesuai">
+            <input type="radio" name="validasi_ktp" value="tidak_sesuai"
+                {{ $datapeserta->validasi_ktp == 'tidak_sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Tidak Sesuai
+        </label>
+    </div>
+</th>
+@endcanany
+
+<script>
+    // Tangani semua radio dengan class custom-status
+    const allLabels = document.querySelectorAll('label.custom-status');
+
+    allLabels.forEach(label => {
+        label.addEventListener('click', () => {
+            const name = label.querySelector('input').name;
+            // Reset semua label dengan radio yang sama
+            document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                radio.closest('label').classList.remove('sesuai', 'tidak_sesuai');
+            });
+            // Tambahkan class sesuai pilihan
+            const status = label.getAttribute('data-status');
+            label.classList.add(status);
+        });
+    });
+</script>
+
 
                                     </tr>
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4 </th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                            <button type="button" class="button-berkas"
                                                 data-bs-toggle="modal" data-bs-target="#modalFoto{{ $datapeserta->id }}">
                                                 <i class="bi bi-eye"></i> Lihat
                                             </button>
@@ -1817,7 +1816,7 @@ button:hover {
                                                                 <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Foto" style="max-width:100%; max-height:600px;">
                                                                 <a href="{{ asset($datapeserta->uploadfoto) }}" class="btn btn-primary mt-2" download>Download Foto</a>
                                                             @else
-                                                                <p>Data belum diupdate</p>
+                                                                <p style="font-size: 14px;">Data belum diupdate</p>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1826,49 +1825,75 @@ button:hover {
                                         </th>
 
 
-                                            @canany(['pekerja', 'lsppenerbit'])
-                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                    <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
-                                                        @if ($datapeserta->validasi_foto === 'tidak_sesuai')
-                                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
-                                                        @elseif ($datapeserta->validasi_foto === 'sesuai')
-                                                            <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
-                                                        @else
-                                                            <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
-                                                        @endif
-                                                    </div>
-                                                </th>
-                                            @endcanany
+                                         @canany(['pekerja', 'lsppenerbit'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="margin-top: 10px; font-size: 16px; display: flex; justify-content: center;">
+        @if ($datapeserta->validasi_foto === 'tidak_sesuai')
+            <div class="custom-status tidak_sesuai">
+                <span class="custom-box"></span>
+                Silahkan Lakukan Perbaikan
+            </div>
+        @elseif ($datapeserta->validasi_foto === 'sesuai')
+            <div class="custom-status sesuai">
+                <span class="custom-box"></span>
+                Berkas Anda Sudah Sesuai
+            </div>
+        @else
+            <div class="custom-status pending">
+                <span class="custom-box"></span>
+                Sedang Di Verifikasi DPUPR, Silahkan Menunggu !
+            </div>
+        @endif
+    </div>
+</th>
+@endcanany
 
-                                            @canany(['super_admin', 'admin'])
-                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                    <div style="display: flex; justify-content: center; gap: 20px;">
-                                                        <label class="custom-radio">
-                                                            <input type="radio" name="validasi_foto" value="sesuai"
-                                                                {{ $datapeserta->validasi_foto == 'sesuai' ? 'checked' : '' }}>
-                                                            <span class="custom-box"></span>
-                                                            Sesuai
-                                                        </label>
+@canany(['super_admin', 'admin'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <label class="custom-status {{ $datapeserta->validasi_foto == 'sesuai' ? 'sesuai' : '' }}" style="cursor:pointer;" data-status="sesuai">
+            <input type="radio" name="validasi_foto" value="sesuai"
+                {{ $datapeserta->validasi_foto == 'sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Sesuai
+        </label>
 
-                                                        <label class="custom-radio">
-                                                            <input type="radio" name="validasi_foto" value="tidak_sesuai"
-                                                                {{ $datapeserta->validasi_foto == 'tidak_sesuai' ? 'checked' : '' }}>
-                                                            <span class="custom-box"></span>
-                                                            Tidak Sesuai
-                                                        </label>
-                                                    </div>
-                                                </th>
-                                            @endcanany
+        <label class="custom-status {{ $datapeserta->validasi_foto == 'tidak_sesuai' ? 'tidak_sesuai' : '' }}" style="cursor:pointer;" data-status="tidak_sesuai">
+            <input type="radio" name="validasi_foto" value="tidak_sesuai"
+                {{ $datapeserta->validasi_foto == 'tidak_sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Tidak Sesuai
+        </label>
+    </div>
+</th>
+@endcanany
+
+<script>
+    const fotoLabels = document.querySelectorAll('label.custom-status');
+
+    fotoLabels.forEach(label => {
+        label.addEventListener('click', () => {
+            const name = label.querySelector('input').name;
+            // Reset semua label dengan radio yang sama
+            document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                radio.closest('label').classList.remove('sesuai', 'tidak_sesuai');
+            });
+            // Tambahkan class sesuai pilihan
+            const status = label.getAttribute('data-status');
+            label.classList.add(status);
+        });
+    });
+</script>
+
 
                                     </tr>
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah  </th>
                                         <th class="text-center" style="background-color: #e2e8f0; color: black;">
 
-                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                <button type="button" class="button-berkas"
                                                     data-bs-toggle="modal" data-bs-target="#modalIjazah{{ $datapeserta->id }}">
                                                     <i class="bi bi-eye"></i> Lihat
                                                 </button>
@@ -1893,7 +1918,7 @@ button:hover {
                                                                     <iframe src="{{ asset($datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p style="font-size: 14px;">Data belum diupdate</p>
                                                                 @endif
 
                                                                 </div>
@@ -1903,49 +1928,75 @@ button:hover {
                                                 </div>
                                         </th>
 
-                                              @canany(['pekerja', 'lsppenerbit'])
-                                          <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                    <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
-                                                        @if ($datapeserta->validasi_ijazah === 'tidak_sesuai')
-                                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
-                                                        @elseif ($datapeserta->validasi_ijazah === 'sesuai')
-                                                            <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
-                                                        @else
-                                                            <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
-                                                        @endif
-                                                    </div>
-                                                </th>
-                                            @endcanany
+                                          @canany(['pekerja', 'lsppenerbit'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="margin-top: 10px; font-size: 16px; display: flex; justify-content: center;">
+        @if ($datapeserta->validasi_ijazah === 'tidak_sesuai')
+            <div class="custom-status tidak_sesuai">
+                <span class="custom-box"></span>
+                Silahkan Lakukan Perbaikan
+            </div>
+        @elseif ($datapeserta->validasi_ijazah === 'sesuai')
+            <div class="custom-status sesuai">
+                <span class="custom-box"></span>
+                Berkas Anda Sudah Sesuai
+            </div>
+        @else
+            <div class="custom-status pending">
+                <span class="custom-box"></span>
+                Sedang Di Verifikasi DPUPR, Silahkan Menunggu !
+            </div>
+        @endif
+    </div>
+</th>
+@endcanany
 
-                                            @canany(['super_admin', 'admin'])
-                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                    <div style="display: flex; justify-content: center; gap: 20px;">
-                                                        <label class="custom-radio">
-                                                            <input type="radio" name="validasi_ijazah" value="sesuai"
-                                                                {{ $datapeserta->validasi_ijazah == 'sesuai' ? 'checked' : '' }}>
-                                                            <span class="custom-box"></span>
-                                                            Sesuai
-                                                        </label>
+@canany(['super_admin', 'admin'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <label class="custom-status {{ $datapeserta->validasi_ijazah == 'sesuai' ? 'sesuai' : '' }}" style="cursor:pointer;" data-status="sesuai">
+            <input type="radio" name="validasi_ijazah" value="sesuai"
+                {{ $datapeserta->validasi_ijazah == 'sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Sesuai
+        </label>
 
-                                                        <label class="custom-radio">
-                                                            <input type="radio" name="validasi_ijazah" value="tidak_sesuai"
-                                                                {{ $datapeserta->validasi_ijazah == 'tidak_sesuai' ? 'checked' : '' }}>
-                                                            <span class="custom-box"></span>
-                                                            Tidak Sesuai
-                                                        </label>
-                                                    </div>
-                                                </th>
-                                            @endcanany
+        <label class="custom-status {{ $datapeserta->validasi_ijazah == 'tidak_sesuai' ? 'tidak_sesuai' : '' }}" style="cursor:pointer;" data-status="tidak_sesuai">
+            <input type="radio" name="validasi_ijazah" value="tidak_sesuai"
+                {{ $datapeserta->validasi_ijazah == 'tidak_sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Tidak Sesuai
+        </label>
+    </div>
+</th>
+@endcanany
+
+<script>
+    const ijazahLabels = document.querySelectorAll('label.custom-status');
+
+    ijazahLabels.forEach(label => {
+        label.addEventListener('click', () => {
+            const name = label.querySelector('input').name;
+            // Reset semua label dengan radio yang sama
+            document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                radio.closest('label').classList.remove('sesuai', 'tidak_sesuai');
+            });
+            // Tambahkan class sesuai pilihan
+            const status = label.getAttribute('data-status');
+            label.classList.add(status);
+        });
+    });
+</script>
+
 
                                     </tr>
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
                                        <th class="text-center align-middle" style="background-color: #e2e8f0; color: black;">
 
-                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                <button type="button" class="button-berkas"
                                                     data-bs-toggle="modal" data-bs-target="#modalPengalaman{{ $datapeserta->id }}">
                                                     <i class="bi bi-eye"></i> Lihat
                                                 </button>
@@ -1970,7 +2021,7 @@ button:hover {
                                                                     <iframe src="{{ asset($datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p style="font-size: 14px;">Data belum diupdate</p>
                                                                 @endif
 
                                                                 </div>
@@ -1980,48 +2031,74 @@ button:hover {
                                                 </div>
                                                 </div>
                                         </th>
-                                                  @canany(['pekerja', 'lsppenerbit'])
-                                                  <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                    <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
-                                                        @if ($datapeserta->validasi_pengalaman === 'tidak_sesuai')
-                                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
-                                                        @elseif ($datapeserta->validasi_pengalaman === 'sesuai')
-                                                            <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
-                                                        @else
-                                                            <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
-                                                        @endif
-                                                    </div>
-                                                    </th>
-                                                @endcanany
+                                                @canany(['pekerja', 'lsppenerbit'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="margin-top: 10px; font-size: 16px; display: flex; justify-content: center;">
+        @if ($datapeserta->validasi_pengalaman === 'tidak_sesuai')
+            <div class="custom-status tidak_sesuai">
+                <span class="custom-box"></span>
+                Silahkan Lakukan Perbaikan
+            </div>
+        @elseif ($datapeserta->validasi_pengalaman === 'sesuai')
+            <div class="custom-status sesuai">
+                <span class="custom-box"></span>
+                Berkas Anda Sudah Sesuai
+            </div>
+        @else
+            <div class="custom-status pending">
+                <span class="custom-box"></span>
+                Sedang Di Verifikasi DPUPR, Silahkan Menunggu !
+            </div>
+        @endif
+    </div>
+</th>
+@endcanany
 
-                                            @canany(['super_admin', 'admin'])
-                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                    <div style="display: flex; justify-content: center; gap: 20px;">
-                                                        <label class="custom-radio">
-                                                            <input type="radio" name="validasi_pengalaman" value="sesuai"
-                                                                {{ $datapeserta->validasi_pengalaman == 'sesuai' ? 'checked' : '' }}>
-                                                            <span class="custom-box"></span>
-                                                            Sesuai
-                                                        </label>
+@canany(['super_admin', 'admin'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <label class="custom-status {{ $datapeserta->validasi_pengalaman == 'sesuai' ? 'sesuai' : '' }}" style="cursor:pointer;" data-status="sesuai">
+            <input type="radio" name="validasi_pengalaman" value="sesuai"
+                {{ $datapeserta->validasi_pengalaman == 'sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Sesuai
+        </label>
 
-                                                        <label class="custom-radio">
-                                                            <input type="radio" name="validasi_pengalaman" value="tidak_sesuai"
-                                                                {{ $datapeserta->validasi_pengalaman == 'tidak_sesuai' ? 'checked' : '' }}>
-                                                            <span class="custom-box"></span>
-                                                            Tidak Sesuai
-                                                        </label>
-                                                    </div>
-                                                </th>
-                                            @endcanany
+        <label class="custom-status {{ $datapeserta->validasi_pengalaman == 'tidak_sesuai' ? 'tidak_sesuai' : '' }}" style="cursor:pointer;" data-status="tidak_sesuai">
+            <input type="radio" name="validasi_pengalaman" value="tidak_sesuai"
+                {{ $datapeserta->validasi_pengalaman == 'tidak_sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Tidak Sesuai
+        </label>
+    </div>
+</th>
+@endcanany
+
+<script>
+    // Ambil semua label custom-status di halaman
+    const allLabels = document.querySelectorAll('label.custom-status');
+
+    allLabels.forEach(label => {
+        label.addEventListener('click', () => {
+            const name = label.querySelector('input').name;
+            // Reset semua label dengan radio yang sama
+            document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                radio.closest('label').classList.remove('sesuai', 'tidak_sesuai');
+            });
+            // Tambahkan class sesuai pilihan
+            const status = label.getAttribute('data-status');
+            label.classList.add(status);
+        });
+    });
+</script>
 
                                     </tr>
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
                                         <th class="text-center align-middle" style="background-color: #e2e8f0; color: black;">
-                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                <button type="button" class="button-berkas"
                                                     data-bs-toggle="modal" data-bs-target="#modalKebenaranData{{ $datapeserta->id }}">
                                                     <i class="bi bi-eye"></i> Lihat
                                                 </button>
@@ -2046,7 +2123,7 @@ button:hover {
                                                                     <iframe src="{{ asset($datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
-                                                                    <p>Data belum diupdate</p>
+                                                                    <p style="font-size: 14px;">Data belum diupdate</p>
                                                                 @endif
 
                                                                 </div>
@@ -2056,48 +2133,74 @@ button:hover {
                                                 </div>
                                         </th>
                                        @canany(['pekerja', 'lsppenerbit'])
-                                             <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
-                                                    @if ($datapeserta->validasi_kebenarandata === 'tidak_sesuai')
-                                                        <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
-                                                    @elseif ($datapeserta->validasi_kebenarandata === 'sesuai')
-                                                        <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
-                                                    @else
-                                                        <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
-                                                    @endif
-                                                </div>
-                                            </th>
-                                        @endcanany
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="margin-top: 10px; font-size: 16px; display: flex; justify-content: center;">
+        @if ($datapeserta->validasi_kebenarandata === 'tidak_sesuai')
+            <div class="custom-status tidak_sesuai">
+                <span class="custom-box"></span>
+                Silahkan Lakukan Perbaikan
+            </div>
+        @elseif ($datapeserta->validasi_kebenarandata === 'sesuai')
+            <div class="custom-status sesuai">
+                <span class="custom-box"></span>
+                Berkas Anda Sudah Sesuai
+            </div>
+        @else
+            <div class="custom-status pending">
+                <span class="custom-box"></span>
+                Sedang Di Verifikasi DPUPR, Silahkan Menunggu !
+            </div>
+        @endif
+    </div>
+</th>
+@endcanany
 
-                                        @canany(['super_admin', 'admin'])
-                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                <div style="display: flex; justify-content: center; gap: 20px;">
-                                                    <label class="custom-radio">
-                                                        <input type="radio" name="validasi_kebenarandata" value="sesuai"
-                                                            {{ $datapeserta->validasi_kebenarandata == 'sesuai' ? 'checked' : '' }}>
-                                                        <span class="custom-box"></span>
-                                                        Sesuai
-                                                    </label>
+@canany(['super_admin', 'admin'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <label class="custom-status {{ $datapeserta->validasi_kebenarandata == 'sesuai' ? 'sesuai' : '' }}" style="cursor:pointer;" data-status="sesuai">
+            <input type="radio" name="validasi_kebenarandata" value="sesuai"
+                {{ $datapeserta->validasi_kebenarandata == 'sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Sesuai
+        </label>
 
-                                                    <label class="custom-radio">
-                                                        <input type="radio" name="validasi_kebenarandata" value="tidak_sesuai"
-                                                            {{ $datapeserta->validasi_kebenarandata == 'tidak_sesuai' ? 'checked' : '' }}>
-                                                        <span class="custom-box"></span>
-                                                        Tidak Sesuai
-                                                    </label>
-                                                </div>
-                                            </th>
-                                        @endcanany
+        <label class="custom-status {{ $datapeserta->validasi_kebenarandata == 'tidak_sesuai' ? 'tidak_sesuai' : '' }}" style="cursor:pointer;" data-status="tidak_sesuai">
+            <input type="radio" name="validasi_kebenarandata" value="tidak_sesuai"
+                {{ $datapeserta->validasi_kebenarandata == 'tidak_sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Tidak Sesuai
+        </label>
+    </div>
+</th>
+@endcanany
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const allLabels = document.querySelectorAll('label.custom-status');
+    allLabels.forEach(label => {
+        label.addEventListener('click', () => {
+            const name = label.querySelector('input').name;
+            document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                radio.closest('label').classList.remove('sesuai', 'tidak_sesuai');
+            });
+            const status = label.getAttribute('data-status');
+            label.classList.add(status);
+        });
+    });
+});
+
+</script>
+
 
                                     </tr>
 
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
                                         <th class="text-center align-middle" style="background-color: #e2e8f0; color: black;">
-                                                    <button type="button" class="btn btn-secondary btn-sm"
-                                                        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                    <button type="button" class="button-berkas"
                                                         data-bs-toggle="modal" data-bs-target="#modalNPWP{{ $datapeserta->id }}">
                                                         <i class="bi bi-eye"></i> Lihat
                                                     </button>
@@ -2138,7 +2241,7 @@ button:hover {
                                                                             @endif
                                                                         @endif
                                                                     @else
-                                                                        <p style="color: red; font-weight: bold;">Data belum diupdate</p>
+                                                                        <p style="color: red; font-weight: bold; font-size:14px;">Data belum diupdate</p>
                                                                     @endif
                                                                 </div>
 
@@ -2148,48 +2251,74 @@ button:hover {
                                                 </div>
                                         </th>
 
-                                        @canany(['pekerja', 'lsppenerbit'])
-                                                       <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
-                                                    @if ($datapeserta->validasi_npwp === 'tidak_sesuai')
-                                                        <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
-                                                    @elseif ($datapeserta->validasi_npwp === 'sesuai')
-                                                        <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
-                                                    @else
-                                                        <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
-                                                    @endif
-                                                </div>
-                                            </th>
-                                        @endcanany
+                                    @canany(['pekerja', 'lsppenerbit'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="margin-top: 10px; font-size: 16px; display: flex; justify-content: center;">
+        @if ($datapeserta->validasi_npwp === 'tidak_sesuai')
+            <div class="custom-status tidak_sesuai">
+                <span class="custom-box"></span>
+                Silahkan Lakukan Perbaikan
+            </div>
+        @elseif ($datapeserta->validasi_npwp === 'sesuai')
+            <div class="custom-status sesuai">
+                <span class="custom-box"></span>
+                Berkas Anda Sudah Sesuai
+            </div>
+        @else
+            <div class="custom-status pending">
+                <span class="custom-box"></span>
+                Sedang Di Verifikasi DPUPR, Silahkan Menunggu !
+            </div>
+        @endif
+    </div>
+</th>
+@endcanany
 
-                                        @canany(['super_admin', 'admin'])
-                                            <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                <div style="display: flex; justify-content: center; gap: 20px;">
-                                                    <label class="custom-radio">
-                                                        <input type="radio" name="validasi_npwp" value="sesuai"
-                                                            {{ $datapeserta->validasi_npwp == 'sesuai' ? 'checked' : '' }}>
-                                                        <span class="custom-box"></span>
-                                                        Sesuai
-                                                    </label>
+@canany(['super_admin', 'admin'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <label class="custom-status {{ $datapeserta->validasi_npwp == 'sesuai' ? 'sesuai' : '' }}" style="cursor:pointer;" data-status="sesuai">
+            <input type="radio" name="validasi_npwp" value="sesuai"
+                {{ $datapeserta->validasi_npwp == 'sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Sesuai
+        </label>
 
-                                                    <label class="custom-radio">
-                                                        <input type="radio" name="validasi_npwp" value="tidak_sesuai"
-                                                            {{ $datapeserta->validasi_npwp == 'tidak_sesuai' ? 'checked' : '' }}>
-                                                        <span class="custom-box"></span>
-                                                        Tidak Sesuai
-                                                    </label>
-                                                </div>
-                                            </th>
-                                        @endcanany
+        <label class="custom-status {{ $datapeserta->validasi_npwp == 'tidak_sesuai' ? 'tidak_sesuai' : '' }}" style="cursor:pointer;" data-status="tidak_sesuai">
+            <input type="radio" name="validasi_npwp" value="tidak_sesuai"
+                {{ $datapeserta->validasi_npwp == 'tidak_sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Tidak Sesuai
+        </label>
+    </div>
+</th>
+@endcanany
+
+<script>
+    // Tangani semua radio dengan class custom-status
+    const allLabels = document.querySelectorAll('label.custom-status');
+
+    allLabels.forEach(label => {
+        label.addEventListener('click', () => {
+            const name = label.querySelector('input').name;
+            // Reset semua label dengan radio yang sama
+            document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                radio.closest('label').classList.remove('sesuai', 'tidak_sesuai');
+            });
+            // Tambahkan class sesuai pilihan
+            const status = label.getAttribute('data-status');
+            label.classList.add(status);
+        });
+    });
+</script>
 
                                     </tr>
                                     <tr>
                                         <th style="width: 400px; text-align:left; font-size: 16px; background-color: #e2e8f0; color: black;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
                                             <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                <button type="button" class="btn btn-secondary btn-sm"
-                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                <button type="button" class="button-berkas"
                                                     data-bs-toggle="modal" data-bs-target="#modalDaftarRiwayatHidup{{ $datapeserta->id }}">
                                                     <i class="bi bi-eye"></i> Lihat
                                                 </button>
@@ -2212,7 +2341,7 @@ button:hover {
                                                                     @elseif($datapeserta->uploaddaftarriwayathidup)
                                                                         <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="750px"></iframe>
                                                                     @else
-                                                                        <p>Data belum diupdate</p>
+                                                                        <p style="font-size: 14px;">Data belum diupdate</p>
                                                                     @endif
                                                                 </div>
                                                             </div>
@@ -2221,39 +2350,68 @@ button:hover {
                                                 </div>
                                             </th>
 
-                                         @canany(['pekerja', 'lsppenerbit'])
-                                               <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                    <div style="margin-top: 10px; font-weight: bold; color: #333; font-size: 16px; border: 1px solid black; padding: 8px; border-radius: 5px;">
-                                                        @if ($datapeserta->validasi_daftarriwayathidup === 'tidak_sesuai')
-                                                            <span style="color: red; font-size:16px;">Silahkan Lakukan Perbaikan</span>
-                                                        @elseif ($datapeserta->validasi_daftarriwayathidup === 'sesuai')
-                                                            <span style="color: green; font-size:16px;">Berkas Anda Sudah Sesuai</span>
-                                                        @else
-                                                            <span style="color: orange; font-size:16px;">Sedang Di Verifikasi DPUPR</span>
-                                                        @endif
-                                                    </div>
-                                                </th>
-                                            @endcanany
+                                     @canany(['pekerja', 'lsppenerbit'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="margin-top: 10px; font-size: 16px; display: flex; justify-content: center;">
+        @if ($datapeserta->validasi_daftarriwayathidup === 'tidak_sesuai')
+            <div class="custom-status tidak_sesuai">
+                <span class="custom-box"></span>
+                Silahkan Lakukan Perbaikan
+            </div>
+        @elseif ($datapeserta->validasi_daftarriwayathidup === 'sesuai')
+            <div class="custom-status sesuai">
+                <span class="custom-box"></span>
+                Berkas Anda Sudah Sesuai
+            </div>
+        @else
+            <div class="custom-status pending">
+                <span class="custom-box"></span>
+                Sedang Di Verifikasi DPUPR, Silahkan Menunggu !
+            </div>
+        @endif
+    </div>
+</th>
+@endcanany
 
-                                            @canany(['super_admin', 'admin'])
-                                                <th class="text-center" style="background-color: #e2e8f0; color: black;">
-                                                    <div style="display: flex; justify-content: center; gap: 20px;">
-                                                        <label class="custom-radio">
-                                                            <input type="radio" name="validasi_daftarriwayathidup" value="sesuai"
-                                                                {{ $datapeserta->validasi_daftarriwayathidup == 'sesuai' ? 'checked' : '' }}>
-                                                            <span class="custom-box"></span>
-                                                            Sesuai
-                                                        </label>
+@canany(['super_admin', 'admin'])
+<th class="text-center" style="background-color: #e2e8f0; color: black;">
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <label class="custom-status {{ $datapeserta->validasi_daftarriwayathidup == 'sesuai' ? 'sesuai' : '' }}" style="cursor:pointer;" data-status="sesuai">
+            <input type="radio" name="validasi_daftarriwayathidup" value="sesuai"
+                {{ $datapeserta->validasi_daftarriwayathidup == 'sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Sesuai
+        </label>
 
-                                                        <label class="custom-radio">
-                                                            <input type="radio" name="validasi_daftarriwayathidup" value="tidak_sesuai"
-                                                                {{ $datapeserta->validasi_daftarriwayathidup == 'tidak_sesuai' ? 'checked' : '' }}>
-                                                            <span class="custom-box"></span>
-                                                            Tidak Sesuai
-                                                        </label>
-                                                    </div>
-                                                </th>
-                                            @endcanany
+        <label class="custom-status {{ $datapeserta->validasi_daftarriwayathidup == 'tidak_sesuai' ? 'tidak_sesuai' : '' }}" style="cursor:pointer;" data-status="tidak_sesuai">
+            <input type="radio" name="validasi_daftarriwayathidup" value="tidak_sesuai"
+                {{ $datapeserta->validasi_daftarriwayathidup == 'tidak_sesuai' ? 'checked' : '' }}
+                style="display:none;">
+            <span class="custom-box"></span>
+            Tidak Sesuai
+        </label>
+    </div>
+</th>
+@endcanany
+
+<script>
+    // Tangani semua radio dengan class custom-status
+    const allLabels = document.querySelectorAll('label.custom-status');
+
+    allLabels.forEach(label => {
+        label.addEventListener('click', () => {
+            const name = label.querySelector('input').name;
+            // Reset semua label dengan radio yang sama
+            document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                radio.closest('label').classList.remove('sesuai', 'tidak_sesuai');
+            });
+            // Tambahkan class sesuai pilihan
+            const status = label.getAttribute('data-status');
+            label.classList.add(status);
+        });
+    });
+</script>
 
                                             <tr>
 
@@ -2282,11 +2440,11 @@ button:hover {
 
                     <div class="mb-3" style="margin-top: -50px;">
                         <label for="catatanvalidasi" class="form-label">
-                            <i class="bi bi-card-text me-1"></i> Catatan Keterangan Berkas | Max 255 Karakter
+                            <i class="bi bi-card-text me-1"></i> Catatan Keterangan Berkas
                         </label>
 
                         <textarea name="catatanvalidasi" id="catatanvalidasi" class="form-control"
-                        rows="4" style="resize: vertical; width: 100%;"
+                        rows="8" style="resize: vertical; width: 100%;"
                         placeholder="Tulis catatan jika diperlukan...">{{ old('catatanvalidasi', $datapeserta->catatanvalidasi ?? '') }}</textarea>
                     </div>
 
@@ -2298,27 +2456,7 @@ button:hover {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                            <button type="button" onclick="openModal()"
-                                            onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                                            onmouseout="this.style.background='linear-gradient(45deg, #189200, #28a745)'; this.style.color='white'; this.style.transform='scale(1)'"
-                                            style="
-                                                background: linear-gradient(45deg, #189200, #28a745);
-                                                color: white;
-                                                border: none;
-                                                margin-right: 10px;
-                                                padding: 10px 20px;
-                                                border-radius: 10px;
-                                                font-size: 16px;
-                                                font-weight: bold;
-                                                cursor: pointer;
-                                                display: inline-flex;
-                                                align-items: center;
-                                                gap: 8px;
-                                                transition: all 0.3s ease;
-                                                text-decoration: none;
-                                                font-family: 'Poppins', sans-serif;
-                                            "
-                                            >
+                                            <button class="button-hijau" type="button" onclick="openModal()">
                                             <!-- Ikon SVG Save -->
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                                 class="bi bi-save" viewBox="0 0 16 16">
@@ -2434,3 +2572,4 @@ button:hover {
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
+
