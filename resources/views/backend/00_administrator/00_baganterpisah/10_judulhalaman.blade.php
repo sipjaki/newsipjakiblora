@@ -31,6 +31,15 @@
     }
 </style>
 
+<style>
+/* Sembunyikan button-hijau di mobile */
+@media (max-width: 768px) {
+    .card-header {
+        display: none;
+    }
+}
+</style>
+
 <div class="card mb-4">
     <div class="card-header">
         <div class="button-hijau">

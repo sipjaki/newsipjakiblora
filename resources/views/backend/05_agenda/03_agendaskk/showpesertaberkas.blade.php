@@ -604,6 +604,15 @@ button:hover {
 @endcan
 
 
+<style>
+/* Sembunyikan button-berkas di layar kecil (mobile) */
+@media (max-width: 768px) {
+    .button-berkas {
+        display: none;
+    }
+}
+</style>
+
 <button class="button-berkas">
     <!-- Ikon User -->
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -614,7 +623,6 @@ button:hover {
     </svg>
     Nama Peserta : {{ $datapeserta->user->name ?? 'Nama Lengkap Belum Diisi !!' }}
 </button>
-
 
 
                      {{-- <a href="/beagendapelatihanmateri/createmateri/{{$datapeserta->id}}">

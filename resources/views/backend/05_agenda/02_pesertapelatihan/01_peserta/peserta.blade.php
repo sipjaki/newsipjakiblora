@@ -13,7 +13,9 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -350,14 +352,8 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tableBody">
-                                    @if ($datapeserta->isEmpty())
-                                    <div style="background-color: #f6f8fa; color: white; padding: 15px; width: 100%; margin: 0;">
-                                        <marquee behavior="scroll" direction="left" scrollamount="6" style="font-weight: 400; color:red;">
-                                            Peserta Belum Tersedia || Peserta Belum Tersedia || Peserta Belum Tersedia || Peserta Belum Tersedia ||
-                                        </marquee>
-                                    </div>
-                                @else
-                                @foreach ($datapeserta as $item )
+
+                                @forelse($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         {{-- <td style="text-align: left;">{{ $data->namakegiatan }}</td> --}}
@@ -574,8 +570,38 @@
 
 
                                     </tr>
-                                        @endforeach
-                                        @endif
+
+        @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Peserta Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 
                                 </tbody>
                             </table>

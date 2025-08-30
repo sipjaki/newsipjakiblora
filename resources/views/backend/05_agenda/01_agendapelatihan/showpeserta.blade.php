@@ -13,7 +13,9 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -45,12 +47,7 @@
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                     <a href="/beagendapelatihan">
-                        <button
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px;
-                           border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                           transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                        <button class="button-newvalidasi">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         viewBox="0 0 16 16" style="margin-right: 8px;">
                         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
@@ -107,7 +104,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($datapeserta as $item )
+
+                                @forelse($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                                     <td>
@@ -151,17 +149,17 @@
 <td style="text-align: center;">
     @if($item->verifikasi == false)
         <!-- Tombol DI VERIFIKASI -->
-        <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
+        <button type="button" onclick="openModal({{ $item->id }})" class="button-newvalidasi">
             <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
         </button>
     @elseif($item->verifikasi == 'gugur')
         <!-- Tombol GUGUR -->
-        <button type="button" disabled class="btn" style="background-color: #EF4444; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: not-allowed;">
+        <button type="button" disabled class="button-merah">
             <i class="bi bi-x-circle"></i> GUGUR
         </button>
     @elseif($item->verifikasi == 'lolos')
         <!-- Tombol LOLOS -->
-        <button type="button" disabled class="btn" style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: not-allowed;">
+        <button type="button" disabled class="button-hijau">
             <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
         </button>
     @endif
@@ -226,9 +224,9 @@
                                             </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                            <i class="bi bi-trash"></i>
+                                            <i class="bi bi-trash"></i>Hapus
                                         </a>
 
                                         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -285,7 +283,38 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
+
+                                            @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Belum Ada Peserta Yang Mendaftar !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 
                                 </tbody>
                             </table>

@@ -28,13 +28,16 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+    {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -78,38 +81,6 @@
                 onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
                     ⚙️ Setting Database
                 </div> --}}
-
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                      <a href="/404">
-                            <button
-                                onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                onmouseout="this.style.background='linear-gradient(to right, #006400, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
-                                style="background: linear-gradient(to right, #006400, #000000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: all 0.3s ease; text-decoration: none;">
-
-                                <!-- SVG kategori -->
-                                <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px; fill: white; transition: fill 0.3s;" width="20" height="20" viewBox="0 0 24 24">
-                                    <path d="M5 4h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1zm0 6h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1v-2a1 1 0 011-1zm0 6h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1v-2a1 1 0 011-1z"/>
-                                </svg>
-                                Kategori Pelatihan
-                            </button>
-                        </a>
-
-
-                        {{-- <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-
-                                <!-- SVG users -->
-                                <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px; fill: white; transition: fill 0.3s;" width="20" height="20" viewBox="0 0 24 24">
-                                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.07 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                                </svg>
-                                Data LSP Pelaksana
-                            </button>
-                        </a> --}}
-
-                     </div>
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
@@ -146,13 +117,10 @@
                                 </script>
 
                          <a href="/beagendapelatihan/create">
-                             <button class="hide-on-mobile"
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
-                             style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                             <button class="button-baru" class="hide-on-mobile">
                              <!-- Ikon Kembali -->
                              <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                             Create
+                             Buat Agenda Pelatihan
                          </button>
                          </a>
                      </div>
@@ -185,7 +153,7 @@
           <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-calendar-x"></i> Penutupan
           </th>
-          <th style="width: 100px; text-align:center; vertical-align: middle;">
+          <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-check-circle"></i> Status
           </th>
           <th style="width: 200px; text-align:center; vertical-align: middle;">
@@ -206,10 +174,10 @@
           <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-list-ul"></i> Daftar Materi
           </th>
-          <th style="width: 200px; text-align:center; vertical-align: middle;">
+          <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-people-fill"></i> Peserta
           </th>
-          <th style="width: 200px; text-align:center; vertical-align: middle;">
+          <th style="width: 400px; text-align:center; vertical-align: middle;">
             <i class="bi bi-tools"></i> Aksi
           </th>
 
@@ -238,28 +206,27 @@
         <td style="text-align: center;">
             <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
         </td>
+<script>
+    function updateStatus() {
+        let now = new Date().getTime();
+        let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->penutupan)->format('Y-m-d H:i:s') }}").getTime();
+        let statusButton = document.getElementById("status-{{ $item->id }}");
 
-        <script>
-            function updateStatus() {
-                let now = new Date().getTime();
-                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->penutupan)->format('Y-m-d H:i:s') }}").getTime();
-                let statusButton = document.getElementById("status-{{ $item->id }}");
+        if (now > tanggalHabis) {
+            statusButton.innerHTML = '<i class="bi bi-lock-fill" style="margin-right:5px;"></i>DITUTUP';
+            statusButton.className = "button-merah";
+        } else {
+            statusButton.innerHTML = '<i class="bi bi-unlock-fill" style="margin-right:5px;"></i>DIBUKA';
+            statusButton.className = "button-hijau";
+        }
+    }
 
-                if (now > tanggalHabis) {
-                    statusButton.innerText = "DITUTUP";
-                    statusButton.className = "btn btn-danger btn-sm";
-                } else {
-                    statusButton.innerText = "DIBUKA";
-                    statusButton.className = "btn btn-success btn-sm";
-                }
-            }
+    // Jalankan pertama kali saat halaman dimuat
+    updateStatus();
 
-            // Jalankan pertama kali saat halaman dimuat
-            updateStatus();
-
-            // Update setiap 1 detik untuk realtime
-            setInterval(updateStatus, 1000);
-        </script>
+    // Update setiap 1 detik untuk realtime
+    setInterval(updateStatus, 1000);
+</script>
 
         <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
          <td style="text-align: left;">{{$item->lokasi}}</td>
@@ -283,12 +250,7 @@
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendapelatihanmateri/' . $item->id) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           transition: background-color 0.3s, color 0.3s;">
+                <button class="button-baru">
              <i class="bi bi-eye"></i> Lihat
             </button>
             </a>
@@ -296,13 +258,7 @@
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->id) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 20px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           transition: background-color 0.3s, color 0.3s;
-                           display: inline-flex; align-items: center;">
+                <button class="button-newvalidasi">
                     <span style="display: inline-flex; align-items: center;">
                         <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
                         {{ $item->pesertapelatihan_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota
@@ -313,17 +269,17 @@
 
 
          <td style="text-align: center; vertical-align: middle;">
-             <a href="/beagendapelatihan/show/{{$item->namakegiatan}}" class="btn btn-sm btn-info me-2" title="Show">
-                 <i class="bi bi-eye"></i>
+             <a href="/beagendapelatihan/show/{{$item->namakegiatan}}" class="button-newvalidasi" title="Show">
+                 <i class="bi bi-eye"></i>View
              </a>
-             <a href="/beagendapelatihan/update/{{$item->namakegiatan}}" class="btn btn-sm btn-warning me-2" title="Update">
-                 <i class="bi bi-pencil-square"></i>
+             <a href="/beagendapelatihan/update/{{$item->namakegiatan}}" class="button-berkas" title="Update">
+                 <i class="bi bi-pencil-square"></i>Update
              </a>
-             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+             <a href="javascript:void(0)" class="button-merah" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
                    data-judul="{{ $item->namakegiatan }}"
                    onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>
+                    <i class="bi bi-trash"></i>Hapus
             </a>
          </td>
 

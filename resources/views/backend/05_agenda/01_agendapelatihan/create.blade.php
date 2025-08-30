@@ -13,7 +13,9 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -46,10 +48,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/beagendapelatihan">
-                    <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                    <button class="button-newvalidasi">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -130,18 +129,15 @@
         <i class="bi bi-people-fill text-primary"></i> Penyelenggara
     </label>
     <select id="asosiasimasjaki_id" name="asosiasimasjaki_id"
-    class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
-    <option value="">-- Pilih Penyelengara --</option>
-    @if ($dataasosiasi)
-        <option value="{{ $dataasosiasi->id }}"
-            {{ old('asosiasimasjaki_id', $data->asosiasimasjaki_id ?? '') == $dataasosiasi->id ? 'selected' : '' }}>
+        class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
+        <option value="">-- Pilih Penyelenggara --</option>
+        <option value="{{ $dataasosiasi->id }}" selected>
             {{ $dataasosiasi->namaasosiasi }}
         </option>
-    @endif
-</select>
-@error('asosiasimasjaki_id')
-    <div class="invalid-feedback">{{ $message }}</div>
-@enderror
+    </select>
+    @error('asosiasimasjaki_id')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 </div>
 
 <!-- Waktu Pelaksanaan -->
@@ -246,39 +242,61 @@
 
     <!-- Foto Kegiatan -->
     <div class="mb-3">
-        <label for="foto" class="form-label">
-            <i class="bi bi-image text-primary"></i> Foto Kegiatan
-        </label>
-        <input type="file" id="foto" name="foto"
-            class="form-control @error('foto') is-invalid @enderror">
-        @error('foto')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+    <label for="foto" class="form-label">
+        <i class="bi bi-image text-primary"></i> Foto Kegiatan
+    </label>
+    <input type="file" id="foto" name="foto"
+        class="form-control @error('foto') is-invalid @enderror" accept="image/*">
+    @error('foto')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
 
-        <!-- Preview Foto -->
-        <div class="mt-2">
-            @php
-                $fotoPath = $data->foto ?? null;
-                $fileInStorage = $fotoPath && file_exists(public_path('storage/' . $fotoPath));
-            @endphp
+    <!-- Preview Foto -->
+    <div class="mt-2">
+        @php
+            $fotoPath = $data->foto ?? null;
+            $fileInStorage = $fotoPath && file_exists(public_path('storage/' . $fotoPath));
+        @endphp
 
-            @if ($fotoPath)
-                <img src="{{ $fileInStorage ? asset('storage/' . $fotoPath) : asset($fotoPath) }}"
-                    alt="Foto Kegiatan"
-                    style="max-width: 100%; max-height: 300px;">
-            @else
-                <p class="text-muted">Belum ada foto kegiatan.</p>
-            @endif
-        </div>
+        <img id="fotoPreview"
+            src="{{ $fotoPath ? ($fileInStorage ? asset('storage/' . $fotoPath) : asset($fotoPath)) : '' }}"
+            alt="Foto Kegiatan"
+            style="max-width: 100%; max-height: 300px; {{ $fotoPath ? '' : 'display:none;' }}">
+
+        @if (!$fotoPath)
+            <p id="noFotoText" class="text-muted">Belum ada foto kegiatan.</p>
+        @endif
     </div>
+</div>
+
+<script>
+    const fotoInput = document.getElementById('foto');
+    const fotoPreview = document.getElementById('fotoPreview');
+    const noFotoText = document.getElementById('noFotoText');
+
+    fotoInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                fotoPreview.src = event.target.result;
+                fotoPreview.style.display = 'block';
+                if (noFotoText) noFotoText.style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        } else {
+            fotoPreview.src = '';
+            fotoPreview.style.display = 'none';
+            if (noFotoText) noFotoText.style.display = 'block';
+        }
+    });
+</script>
+
 </div>
 
                                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                        <button type="button" onclick="openModal()"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-                                        style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                        <button class="button-hijau" type="button" onclick="openModal()">
 
                                         <!-- Ikon SVG Pensil -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -286,7 +304,7 @@
                                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                    </svg>
-                                        <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                        <span style="font-family: 'Poppins', sans-serif;">Buat Agenda</span>
                                     </button>
                                     </div>
                                     <!-- Modal Konfirmasi -->

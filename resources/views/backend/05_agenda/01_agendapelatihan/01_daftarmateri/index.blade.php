@@ -54,13 +54,16 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -90,11 +93,8 @@
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                     <a href="/beagendapelatihan">
-                        <button
-                        onclick="window.history.back();"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+                        <button class="button-newvalidasi"
+                        onclick="window.history.back();">
 
                         <!-- Ikon Kembali -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -108,13 +108,10 @@
 
 
                      <a href="/beagendapelatihanmateri/createmateri/{{$data->id}}">
-                        <button
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
-                         style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                        <button class="button-hijau">
                          <!-- Ikon Kembali -->
                          <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                         Create
+                         Upload Materi
                      </button>
                      </a>
                  </div>
@@ -133,15 +130,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($subdata as $item )
+                                @forelse($subdata as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->judulmateripelatihan }}</td>
                                         <td style="text-align: center;">
-                                            <button class="btn btn-secondary btn-sm"
-                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                            <button class="button-baru"
                                                 data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
                                                 <i class="bi bi-eye"></i> Lihat
                                             </button>
@@ -155,7 +149,7 @@
                                                             <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                                             <span>:</span>
                                                             <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">
-                                                                Sertifikat : <i class="bi bi-file-earmark-pdf-fill text-danger"></i> {{ $data->namakegiatan }}
+                                                                Materi : <i class="bi bi-file-earmark-pdf-fill text-danger"></i> {{ $data->namakegiatan }}
                                                             </h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
@@ -164,7 +158,7 @@
                                                                 @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
                                                                     <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @elseif($item->materipelatihan)
-                                                                    <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                    <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="700px"></iframe>
                                                                 @else
                                                                     <p>Data belum diupdate</p>
                                                                 @endif
@@ -186,9 +180,9 @@
                                             </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-id="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                             <i class="bi bi-trash"></i>
+                                             <i class="bi bi-trash"></i>Hapus
                                          </a>
 
                                          <!-- Modal -->
@@ -240,7 +234,37 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
+                                            @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Materi Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 
                                 </tbody>
                             </table>
