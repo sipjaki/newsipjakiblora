@@ -52,7 +52,8 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+    {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -113,7 +114,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 </a> --}}
 
 <!-- Tombol Data LSP Pelaksana -->
-<a href="/settingssekolah">
+{{-- <a href="/settingssekolah">
     <button class="responsive-button"
         onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
         onmouseout="this.style.background='linear-gradient(to right, #004d00, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
@@ -123,10 +124,10 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
         </svg>
         <span class="responsive-button-text">Universitas/Sekolah</span>
     </button>
-</a>
+</a> --}}
 
 
-<a href="/404">
+{{-- <a href="/404">
     <button class="responsive-button"
         onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
         onmouseout="this.style.background='linear-gradient(to right, #004d00, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
@@ -136,7 +137,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
         </svg>
         <span class="responsive-button-text">Data LSP Pelaksana</span>
     </button>
-</a>
+</a> --}}
 
                      </div>
                  </div>
@@ -175,15 +176,10 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                                 </script>
 
                  <a href="/beagendaskk/create">
-    <button class="responsive-hide-button"
-        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
-        onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
-        style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px;
-               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-               transition: background 0.3s, color 0.3s, border 0.3s;">
+    <button class="button-baru">
         <!-- Ikon Plus -->
         <i class="fa fa-plus" style="margin-right: 8px;"></i>
-        <span>Create</span>
+        <span>Buat Agenda SKK</span>
     </button>
 </a>
 
@@ -214,7 +210,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
           <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-calendar-x"></i> Penutupan
           </th>
-          <th style="width: 100px; text-align:center; vertical-align: middle;">
+          <th style="width: 150px; text-align:center; vertical-align: middle;">
             <i class="bi bi-check-circle"></i> Status
           </th>
           <th style="width: 200px; text-align:center; vertical-align: middle;">
@@ -235,11 +231,11 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
           <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-list-ul"></i> Daftar Materi
           </th>
-          <th style="width: 200px; text-align:center; vertical-align: middle;">
+          <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-people-fill"></i> Peserta
           </th>
 
-          <th style="width: 200px; text-align:center; vertical-align: middle;">
+          <th style="width: 400px; text-align:center; vertical-align: middle;">
             <i class="bi bi-tools"></i> Aksi
           </th>
 
@@ -268,10 +264,10 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
                 if (now > tanggalHabis) {
                     statusButton.innerText = "DITUTUP";
-                    statusButton.className = "btn btn-danger btn-sm";
+                    statusButton.className = "button-merah";
                 } else {
                     statusButton.innerText = "DIBUKA";
-                    statusButton.className = "btn btn-success btn-sm";
+                    statusButton.className = "button-hijau";
                 }
             }
 
@@ -304,26 +300,15 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           transition: background-color 0.3s, color 0.3s;">
-             <i class="bi bi-eye"></i> Lihat
+                <button class="button-baru">
+             <i class="bi bi-eye"></i> Lihat Materi
             </button>
             </a>
         </td>
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendaskkpeserta/show/' . $item->id) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 20px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           transition: background-color 0.3s, color 0.3s;
-                           display: inline-flex; align-items: center;">
+                <button class="button-newvalidasi">
                  <span style="display: inline-flex; align-items: center;">
                     <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
                     {{ $item->allskktenagakerjablora_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota
@@ -334,17 +319,17 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
 
          <td style="text-align: center; vertical-align: middle;">
-             <a href="/beagendaskk/show/{{$item->namakegiatan}}" class="btn btn-sm btn-info me-2" title="Show">
-                 <i class="bi bi-eye"></i>
+             <a href="/beagendaskk/show/{{$item->namakegiatan}}" class="button-newvalidasi" title="Show">
+                 <i class="bi bi-eye"></i>View
              </a>
-             <a href="/beagendaskk/update/{{$item->namakegiatan}}" class="btn btn-sm btn-warning me-2" title="Update">
-                 <i class="bi bi-pencil-square"></i>
+             <a href="/beagendaskk/update/{{$item->namakegiatan}}" class="button-berkas" title="Update">
+                 <i class="bi bi-pencil-square"></i>Update
              </a>
-             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+             <a href="javascript:void(0)" class="button-merah" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
                    data-judul="{{ $item->namakegiatan }}"
                    onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>
+                    <i class="bi bi-trash"></i>Hapus
             </a>
          </td>
 
