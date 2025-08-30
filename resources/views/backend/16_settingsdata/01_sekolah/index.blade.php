@@ -27,13 +27,15 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+    {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -59,7 +61,7 @@
              <!-- /.card -->
              <div class="card mb-4">
                  <div class="card-header">
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                {{-- <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                  <a href="/beagendaskk">
                         <button
                             onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
@@ -76,7 +78,7 @@
                     </a>
 
 
-                </div>
+                </div> --}}
 
                  </div>
                  <!-- /.card-header -->
@@ -139,20 +141,15 @@
 
                                 </script>
 <!-- Tombol Download Excel -->
-<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_universitas_sekolah')"
-    onmouseover="this.style.background='white'; this.style.color='black';"
-    onmouseout="this.style.background='linear-gradient(to right, #d4af37, #228B22)'; this.style.color='white';"
-    style="background: linear-gradient(to right, #d4af37, #228B22); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
+<button class="button-baru" onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_universitas_sekolah')">
+
     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
 </button>
 
 <!-- Tombol Create -->
 <a href="/settingssekolah/create">
-    <button
-        onmouseover="this.style.background='white'; this.style.color='black';"
-        onmouseout="this.style.background='linear-gradient(to right, #228B22, #d4af37)'; this.style.color='white';"
-        style="background: linear-gradient(to right, #228B22, #d4af37); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background 0.3s, color 0.3s; text-decoration: none;">
-        <i class="fa fa-plus" style="margin-right: 8px;"></i> Create
+    <button class="button-baru">
+        <i class="fa fa-plus" style="margin-right: 8px;"></i> Buat Baru
     </button>
 </a>
 
@@ -183,11 +180,11 @@
             <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                 <i class="bi bi-pencil-square"></i>
             </a> --}}
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+            <a href="javascript:void(0)" class="button-merah" title="Delete"
                data-bs-toggle="modal" data-bs-target="#deleteModal"
                data-judul="{{ $item->namasekolah }}"
                onclick="setDeleteUrl(this)">
-                <i class="bi bi-trash"></i>
+                <i class="bi bi-trash"></i>Hapus
             </a>
         </td>
 
