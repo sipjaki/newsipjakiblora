@@ -7,13 +7,16 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+          {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+        <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -48,25 +51,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                        <a href="{{ url()->previous() }}">
-                            <button
-                        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-                        onmouseout="this.style.background='linear-gradient(45deg, #6c757d, #adb5bd)'; this.style.color='white'; this.style.transform='scale(1)'"
-                        style="
-                            background: linear-gradient(45deg, #6c757d, #adb5bd);
-                            color: white;
-                            border: none;
-                            margin-right: 10px;
-                            padding: 10px 20px;
-                            border-radius: 10px;
-                            font-size: 16px;
-                            font-weight: bold;
-                            cursor: pointer;
-                            display: inline-flex;
-                            align-items: center;
-                            gap: 8px;
-                            transition: all 0.3s ease;
-                        "
-                        >
+                            <button class="button-newvalidasi">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -79,7 +64,19 @@
 
         </div>
         <hr>
+{{--  --}}
 
+
+<div class="text-center">
+    <hr class="my-4" style="border-top: 2px dashed #03157e; width: 60%; margin: auto;">
+    <h5 style="color: #03157e; font-weight: bold; margin-top: 5px; font-size:16px;">
+        <i class="bi bi-upload" style="margin-right: 6px;"></i>
+        Upload Perbaikan Berkas Saudara !
+    </h5>
+    <hr class="my-4" style="border-top: 2px dashed #03157e; width: 60%; margin: auto;">
+</div>
+
+{{--  --}}
 
         {{-- ======================================================= --}}
                     <div class="col-md-12">
@@ -97,25 +94,33 @@
                                         {{--  --}}
 <div class="mb-3">
     <label class="form-label" for="skkanda">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i>  Upload Screenshot SKK Saudara | .pdf maksimal 5MB
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i>
+        Upload Screenshot SKK Saudara | .pdf maksimal 15 MB
     </label>
 
+    {{-- Preview File Lama --}}
     @if($data->skkanda)
         @php
-            $relativePath = $data->skkanda; // path relatif dari public/
-            $fullPath = public_path($relativePath); // path lengkap
+            $relativePath = $data->skkanda;
+            $fullPath = public_path($relativePath);
             $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
         @endphp
 
-        <div class="mb-2 text-center">
+        <div class="mb-2 text-center" id="old-preview">
             @if(file_exists($fullPath))
-                @if($isImage)
-                    <img src="{{ asset($relativePath) }}" alt="Preview SKK" style="max-height: 300px; border: 1px solid #ccc;">
+                @if(in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']))
+                    <img src="{{ asset($relativePath) }}" alt="Preview SKK Lama"
+                         style="max-height: 300px; border: 1px solid #ccc;">
                 @elseif($ext === 'pdf')
-                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0"
+                            width="100%" height="300px"></iframe>
                 @else
-                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                    <p>
+                        <a href="{{ asset($relativePath) }}" target="_blank"
+                           class="btn btn-sm btn-outline-primary">
+                           Download File Lama
+                        </a>
+                    </p>
                 @endif
             @else
                 <p class="text-danger">File lama tidak ditemukan di server.</p>
@@ -123,36 +128,72 @@
         </div>
     @endif
 
-    <input type="file" id="skkanda" name="skkanda" class="form-control @error('skkanda') is-invalid @enderror">
-    {{-- <small class="text-muted">Ket: Untuk Peserta yang belum punya SKK, kosongkan saja.</small> --}}
+    {{-- Preview File Baru --}}
+    <div id="new-preview" class="mb-2 text-center" style="display:none;"></div>
+
+    {{-- Input Upload --}}
+    <input type="file" id="skkanda" name="skkanda"
+           class="form-control @error('skkanda') is-invalid @enderror"
+           accept=".pdf,.jpg,.jpeg,.png,.gif,.webp">
+    <small class="text-muted">Jika upload file baru, maka file lama akan ditimpa.</small>
+
     @error('skkanda')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
-<br>
+{{-- Script Preview Baru --}}
+<script>
+document.getElementById('skkanda').addEventListener('change', function (e) {
+    let file = e.target.files[0];
+    let preview = document.getElementById('new-preview');
+    preview.innerHTML = '';
+    if (!file) {
+        preview.style.display = 'none';
+        return;
+    }
 
+    let ext = file.name.split('.').pop().toLowerCase();
+    let url = URL.createObjectURL(file);
+
+    if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+        preview.innerHTML = `<img src="${url}" alt="Preview Baru"
+                              style="max-height:300px; border:1px solid #ccc;">`;
+    } else if (ext === 'pdf') {
+        preview.innerHTML = `<iframe src="${url}" frameborder="0"
+                              width="100%" height="300px"></iframe>`;
+    } else {
+        preview.innerHTML = `<p><strong>File dipilih:</strong> ${file.name}</p>`;
+    }
+    preview.style.display = 'block';
+});
+</script>
+
+<br>
 <div class="mb-3">
     <label class="form-label" for="uploadktp">
-        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload KTP | .pdf,jpg,jpeg,png | Max 5MB
+        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i>
+        Upload KTP | .pdf, .jpg, .jpeg, .png | Max 15 MB
     </label>
 
+    {{-- Preview File Lama --}}
     @if($data->uploadktp)
         @php
-            $relativePath = $data->uploadktp; // sudah relatif ke public
-            $fullPath = public_path($relativePath); // akses file langsung
+            $relativePath = $data->uploadktp;
+            $fullPath = public_path($relativePath);
             $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
         @endphp
 
-        <div class="mb-2 text-center">
+        <div class="mb-2 text-center" id="old-preview-ktp">
             @if(file_exists($fullPath))
-                @if($isImage)
-                    <img src="{{ asset($relativePath) }}" alt="Preview KTP" style="max-height: 300px; border: 1px solid #ccc;">
+                @if(in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']))
+                    <img src="{{ asset($relativePath) }}" alt="Preview KTP Lama"
+                         class="img-fluid border" style="max-height: 300px;">
                 @elseif($ext === 'pdf')
-                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0"
+                            class="w-100 border" style="height: 300px;"></iframe>
                 @else
-                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                    <a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File Lama</a>
                 @endif
             @else
                 <p class="text-danger">File KTP tidak ditemukan di server.</p>
@@ -160,35 +201,75 @@
         </div>
     @endif
 
-    <input type="file" id="uploadktp" name="uploadktp" class="form-control @error('uploadktp') is-invalid @enderror">
+    {{-- Preview File Baru --}}
+    <div id="new-preview-ktp" class="mb-2 text-center" style="display:none;"></div>
+
+    {{-- Input Upload --}}
+    <input type="file" id="uploadktp" name="uploadktp"
+           class="form-control @error('uploadktp') is-invalid @enderror"
+           accept=".pdf,.jpg,.jpeg,.png,.gif,.webp">
+    <small class="text-muted">Jika upload file baru, maka file lama akan ditimpa.</small>
+
     @error('uploadktp')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
+{{-- Script Preview Baru --}}
+<script>
+document.getElementById('uploadktp').addEventListener('change', function (e) {
+    let file = e.target.files[0];
+    let preview = document.getElementById('new-preview-ktp');
+    preview.innerHTML = '';
+    if (!file) {
+        preview.style.display = 'none';
+        return;
+    }
+
+    let ext = file.name.split('.').pop().toLowerCase();
+    let url = URL.createObjectURL(file);
+
+    if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+        preview.innerHTML = `<img src="${url}" alt="Preview Baru"
+                              class="img-fluid border" style="max-height:300px;">`;
+    } else if (ext === 'pdf') {
+        preview.innerHTML = `<iframe src="${url}" frameborder="0"
+                              class="w-100 border" style="height: 300px;"></iframe>`;
+    } else {
+        preview.innerHTML = `<p><strong>File dipilih:</strong> ${file.name}</p>`;
+    }
+    preview.style.display = 'block';
+});
+</script>
+
+
 <br>
 
 <div class="mb-3">
     <label class="form-label" for="uploadfoto">
-        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i>  Upload Pas Foto 4X6 Background Merah jpg,jpeg,png | Max 5MB
+        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i>
+        Upload Pas Foto 4X6 Background Merah | jpg, jpeg, png | Max 15 MB
     </label>
 
+    {{-- Preview File Lama --}}
     @if($data->uploadfoto)
         @php
-            $relativePath = $data->uploadfoto; // path relatif dari public/
+            $relativePath = $data->uploadfoto;
             $fullPath = public_path($relativePath);
             $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
         @endphp
 
-        <div class="mb-2 text-center">
+        <div class="mb-2 text-center" id="old-preview-foto">
             @if(file_exists($fullPath))
-                @if($isImage)
-                    <img src="{{ asset($relativePath) }}" alt="Preview Foto" style="max-height: 300px; border: 1px solid #ccc;">
+                @if(in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']))
+                    <img src="{{ asset($relativePath) }}" alt="Preview Foto Lama"
+                         class="img-fluid border" style="max-height: 300px;">
                 @elseif($ext === 'pdf')
-                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0"
+                            class="w-100 border" style="height: 300px;"></iframe>
                 @else
-                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                    <a href="{{ asset($relativePath) }}" target="_blank"
+                       class="btn btn-sm btn-outline-primary">Download File Lama</a>
                 @endif
             @else
                 <p class="text-danger">File lama tidak ditemukan di server.</p>
@@ -196,36 +277,74 @@
         </div>
     @endif
 
-    <input type="file" id="uploadfoto" name="uploadfoto" class="form-control @error('uploadfoto') is-invalid @enderror">
-    {{-- <small class="text-muted">Ket: Masukkan foto terbaru dengan format JPG/PNG/PDF.</small> --}}
+    {{-- Preview File Baru --}}
+    <div id="new-preview-foto" class="mb-2 text-center" style="display:none;"></div>
+
+    {{-- Input Upload --}}
+    <input type="file" id="uploadfoto" name="uploadfoto"
+           class="form-control @error('uploadfoto') is-invalid @enderror"
+           accept=".jpg,.jpeg,.png,.gif,.webp,.pdf">
+    <small class="text-muted">Jika upload file baru, maka file lama akan ditimpa.</small>
+
     @error('uploadfoto')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
+{{-- Script Preview Baru --}}
+<script>
+document.getElementById('uploadfoto').addEventListener('change', function (e) {
+    let file = e.target.files[0];
+    let preview = document.getElementById('new-preview-foto');
+    preview.innerHTML = '';
+    if (!file) {
+        preview.style.display = 'none';
+        return;
+    }
+
+    let ext = file.name.split('.').pop().toLowerCase();
+    let url = URL.createObjectURL(file);
+
+    if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+        preview.innerHTML = `<img src="${url}" alt="Preview Baru"
+                              class="img-fluid border" style="max-height:300px;">`;
+    } else if (ext === 'pdf') {
+        preview.innerHTML = `<iframe src="${url}" frameborder="0"
+                              class="w-100 border" style="height: 300px;"></iframe>`;
+    } else {
+        preview.innerHTML = `<p><strong>File dipilih:</strong> ${file.name}</p>`;
+    }
+    preview.style.display = 'block';
+});
+</script>
+
 <br>
 
 <div class="mb-3">
     <label class="form-label" for="uploadijazah">
-        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i> Upload Ijazah | .pdf | Max 5MB
+        <i class="bi bi-file-earmark-person" style="margin-right: 8px; color: navy;"></i>
+        Upload Ijazah | .pdf | Max 15 MB
     </label>
 
+    {{-- Preview File Lama --}}
     @if($data->uploadijazah)
         @php
-            $relativePath = $data->uploadijazah; // path relatif dari public/
+            $relativePath = $data->uploadijazah;
             $fullPath = public_path($relativePath);
             $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
         @endphp
 
-        <div class="mb-2 text-center">
+        <div class="mb-2 text-center" id="old-preview-ijazah">
             @if(file_exists($fullPath))
-                @if($isImage)
-                    <img src="{{ asset($relativePath) }}" alt="Preview Ijazah" style="max-height: 300px; border: 1px solid #ccc;">
+                @if(in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']))
+                    <img src="{{ asset($relativePath) }}" alt="Preview Ijazah Lama"
+                         class="img-fluid border" style="max-height: 300px;">
                 @elseif($ext === 'pdf')
-                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0"
+                            class="w-100 border" style="height: 300px;"></iframe>
                 @else
-                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                    <a href="{{ asset($relativePath) }}" target="_blank"
+                       class="btn btn-sm btn-outline-primary">Download File Lama</a>
                 @endif
             @else
                 <p class="text-danger">File lama tidak ditemukan di server.</p>
@@ -233,12 +352,46 @@
         </div>
     @endif
 
-    <input type="file" id="uploadijazah" name="uploadijazah" class="form-control @error('uploadijazah') is-invalid @enderror">
-    {{-- <small class="text-muted">Ket: Masukkan file ijazah terbaru dengan format JPG/PNG/PDF.</small> --}}
+    {{-- Preview File Baru --}}
+    <div id="new-preview-ijazah" class="mb-2 text-center" style="display:none;"></div>
+
+    {{-- Input Upload --}}
+    <input type="file" id="uploadijazah" name="uploadijazah"
+           class="form-control @error('uploadijazah') is-invalid @enderror"
+           accept=".pdf,.jpg,.jpeg,.png,.gif,.webp">
+    <small class="text-muted">Jika upload file baru, maka file lama akan ditimpa.</small>
+
     @error('uploadijazah')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+
+{{-- Script Preview Baru --}}
+<script>
+document.getElementById('uploadijazah').addEventListener('change', function (e) {
+    let file = e.target.files[0];
+    let preview = document.getElementById('new-preview-ijazah');
+    preview.innerHTML = '';
+    if (!file) {
+        preview.style.display = 'none';
+        return;
+    }
+
+    let ext = file.name.split('.').pop().toLowerCase();
+    let url = URL.createObjectURL(file);
+
+    if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+        preview.innerHTML = `<img src="${url}" alt="Preview Baru"
+                              class="img-fluid border" style="max-height:300px;">`;
+    } else if (ext === 'pdf') {
+        preview.innerHTML = `<iframe src="${url}" frameborder="0"
+                              class="w-100 border" style="height: 300px;"></iframe>`;
+    } else {
+        preview.innerHTML = `<p><strong>File dipilih:</strong> ${file.name}</p>`;
+    }
+    preview.style.display = 'block';
+});
+</script>
 
 <br>
 
@@ -247,64 +400,31 @@
                                     <!-- Right Column -->
                                     <div class="col-md-6">
 
-                                        <div class="mb-3">
-                                    <label class="form-label" for="uploadpengalaman">
-                                        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Pengalaman | .pdf | Max 5MB
-                                    </label>
-
-                                    @if($data->uploadpengalaman)
-                                        @php
-                                            $relativePath = $data->uploadpengalaman; // path relatif dari public/
-                                            $fullPath = public_path($relativePath);
-                                            $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-                                            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
-                                        @endphp
-
-                                        <div class="mb-2 text-center">
-                                            @if(file_exists($fullPath))
-                                                @if($isImage)
-                                                    <img src="{{ asset($relativePath) }}" alt="Preview Pengalaman" style="max-height: 300px; border: 1px solid #ccc;">
-                                                @elseif($ext === 'pdf')
-                                                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                @else
-                                                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
-                                                @endif
-                                            @else
-                                                <p class="text-danger">File lama tidak ditemukan di server.</p>
-                                            @endif
-                                        </div>
-                                    @endif
-
-                                    <input type="file" id="uploadpengalaman" name="uploadpengalaman" class="form-control @error('uploadpengalaman') is-invalid @enderror">
-                                    {{-- <small class="text-muted">Ket: Masukkan file pengalaman terbaru dengan format JPG/PNG/PDF.</small> --}}
-                                    @error('uploadpengalaman')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-<br>
-
-                                <div class="mb-3">
-    <label class="form-label" for="uploadkebenarandata">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
+<div class="mb-3">
+    <label class="form-label" for="uploadpengalaman">
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i>
+        Upload Pengalaman | .pdf | Max 15 MB
     </label>
 
-    @if($data->uploadkebenarandata)
+    {{-- Preview File Lama --}}
+    @if($data->uploadpengalaman)
         @php
-            $relativePath = $data->uploadkebenarandata; // path relatif dari public/
+            $relativePath = $data->uploadpengalaman;
             $fullPath = public_path($relativePath);
             $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
         @endphp
 
-        <div class="mb-2 text-center">
+        <div class="mb-2 text-center" id="old-preview-pengalaman">
             @if(file_exists($fullPath))
-                @if($isImage)
-                    <img src="{{ asset($relativePath) }}" alt="Preview Kebenaran Data" style="max-height: 300px; border: 1px solid #ccc;">
+                @if(in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']))
+                    <img src="{{ asset($relativePath) }}" alt="Preview Pengalaman Lama"
+                         class="img-fluid border" style="max-height: 300px;">
                 @elseif($ext === 'pdf')
-                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0"
+                            class="w-100 border" style="height: 300px;"></iframe>
                 @else
-                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                    <a href="{{ asset($relativePath) }}" target="_blank"
+                       class="btn btn-sm btn-outline-primary">Download File Lama</a>
                 @endif
             @else
                 <p class="text-danger">File lama tidak ditemukan di server.</p>
@@ -312,35 +432,148 @@
         </div>
     @endif
 
-    <input type="file" id="uploadkebenarandata" name="uploadkebenarandata" class="form-control @error('uploadkebenarandata') is-invalid @enderror">
-    {{-- <small class="text-muted">Ket: Masukkan file kebenaran data terbaru dengan format JPG/PNG/PDF.</small> --}}
+    {{-- Preview File Baru --}}
+    <div id="new-preview-pengalaman" class="mb-2 text-center" style="display:none;"></div>
+
+    {{-- Input Upload --}}
+    <input type="file" id="uploadpengalaman" name="uploadpengalaman"
+           class="form-control @error('uploadpengalaman') is-invalid @enderror"
+           accept=".pdf,.jpg,.jpeg,.png,.gif,.webp">
+    <small class="text-muted">Jika upload file baru, maka file lama akan ditimpa.</small>
+
+    @error('uploadpengalaman')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+{{-- Script Preview Baru --}}
+<script>
+document.getElementById('uploadpengalaman').addEventListener('change', function (e) {
+    let file = e.target.files[0];
+    let preview = document.getElementById('new-preview-pengalaman');
+    preview.innerHTML = '';
+    if (!file) {
+        preview.style.display = 'none';
+        return;
+    }
+
+    let ext = file.name.split('.').pop().toLowerCase();
+    let url = URL.createObjectURL(file);
+
+    if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+        preview.innerHTML = `<img src="${url}" alt="Preview Baru"
+                              class="img-fluid border" style="max-height:300px;">`;
+    } else if (ext === 'pdf') {
+        preview.innerHTML = `<iframe src="${url}" frameborder="0"
+                              class="w-100 border" style="height: 300px;"></iframe>`;
+    } else {
+        preview.innerHTML = `<p><strong>File dipilih:</strong> ${file.name}</p>`;
+    }
+    preview.style.display = 'block';
+});
+</script>
+
+<br>
+
+<div class="mb-3">
+    <label class="form-label" for="uploadkebenarandata">
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i>
+        Upload Kebenaran Data | .pdf | Max 15 MB
+    </label>
+
+    {{-- Preview File Lama --}}
+    @if($data->uploadkebenarandata)
+        @php
+            $relativePath = $data->uploadkebenarandata;
+            $fullPath = public_path($relativePath);
+            $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
+        @endphp
+
+        <div class="mb-2 text-center" id="old-preview-kebenarandata">
+            @if(file_exists($fullPath))
+                @if(in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']))
+                    <img src="{{ asset($relativePath) }}" alt="Preview Kebenaran Data Lama"
+                         class="img-fluid border" style="max-height: 300px;">
+                @elseif($ext === 'pdf')
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0"
+                            class="w-100 border" style="height: 300px;"></iframe>
+                @else
+                    <a href="{{ asset($relativePath) }}" target="_blank"
+                       class="btn btn-sm btn-outline-primary">Download File Lama</a>
+                @endif
+            @else
+                <p class="text-danger">File lama tidak ditemukan di server.</p>
+            @endif
+        </div>
+    @endif
+
+    {{-- Preview File Baru --}}
+    <div id="new-preview-kebenarandata" class="mb-2 text-center" style="display:none;"></div>
+
+    {{-- Input Upload --}}
+    <input type="file" id="uploadkebenarandata" name="uploadkebenarandata"
+           class="form-control @error('uploadkebenarandata') is-invalid @enderror"
+           accept=".pdf,.jpg,.jpeg,.png,.gif,.webp">
+    <small class="text-muted">Jika upload file baru, maka file lama akan ditimpa.</small>
+
     @error('uploadkebenarandata')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
+{{-- Script Preview Baru --}}
+<script>
+document.getElementById('uploadkebenarandata').addEventListener('change', function (e) {
+    let file = e.target.files[0];
+    let preview = document.getElementById('new-preview-kebenarandata');
+    preview.innerHTML = '';
+    if (!file) {
+        preview.style.display = 'none';
+        return;
+    }
+
+    let ext = file.name.split('.').pop().toLowerCase();
+    let url = URL.createObjectURL(file);
+
+    if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+        preview.innerHTML = `<img src="${url}" alt="Preview Baru"
+                              class="img-fluid border" style="max-height:300px;">`;
+    } else if (ext === 'pdf') {
+        preview.innerHTML = `<iframe src="${url}" frameborder="0"
+                              class="w-100 border" style="height: 300px;"></iframe>`;
+    } else {
+        preview.innerHTML = `<p><strong>File dipilih:</strong> ${file.name}</p>`;
+    }
+    preview.style.display = 'block';
+});
+</script>
+
 <br>
+
 <div class="mb-3">
     <label class="form-label" for="uploadnpwp">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload NPWP | .pdf | Max 5MB
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload NPWP | .pdf | Max 15 MB
     </label>
 
+    {{-- Preview File Lama --}}
     @if($data->uploadnpwp)
         @php
             $relativePath = $data->uploadnpwp;
             $fullPath = public_path($relativePath);
             $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
         @endphp
 
-        <div class="mb-2 text-center">
+        <div class="mb-2 text-center" id="old-preview-npwp">
             @if(file_exists($fullPath))
-                @if($isImage)
-                    <img src="{{ asset($relativePath) }}" alt="Preview NPWP" style="max-height: 300px; border: 1px solid #ccc;">
+                @if(in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']))
+                    <img src="{{ asset($relativePath) }}" alt="Preview NPWP Lama"
+                         class="img-fluid border" style="max-height: 300px;">
                 @elseif($ext === 'pdf')
-                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0"
+                            class="w-100 border" style="height: 300px;"></iframe>
                 @else
-                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                    <a href="{{ asset($relativePath) }}" target="_blank"
+                       class="btn btn-sm btn-outline-primary">Download File Lama</a>
                 @endif
             @else
                 <p class="text-danger">File lama tidak ditemukan di server.</p>
@@ -348,37 +581,72 @@
         </div>
     @endif
 
-    <input type="file" id="uploadnpwp" name="uploadnpwp" class="form-control @error('uploadnpwp') is-invalid @enderror">
-    {{-- <small class="text-muted">Ket: Masukkan file NPWP terbaru dengan format JPG/PNG/PDF.</small> --}}
+    {{-- Preview File Baru --}}
+    <div id="new-preview-npwp" class="mb-2 text-center" style="display:none;"></div>
+
+    {{-- Input Upload --}}
+    <input type="file" id="uploadnpwp" name="uploadnpwp"
+           class="form-control @error('uploadnpwp') is-invalid @enderror"
+           accept=".pdf,.jpg,.jpeg,.png,.gif,.webp">
+    <small class="text-muted">Jika upload file baru, maka file lama akan ditimpa.</small>
+
     @error('uploadnpwp')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
+{{-- Script Preview Baru --}}
+<script>
+document.getElementById('uploadnpwp').addEventListener('change', function (e) {
+    let file = e.target.files[0];
+    let preview = document.getElementById('new-preview-npwp');
+    preview.innerHTML = '';
+    if (!file) {
+        preview.style.display = 'none';
+        return;
+    }
+
+    let ext = file.name.split('.').pop().toLowerCase();
+    let url = URL.createObjectURL(file);
+
+    if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+        preview.innerHTML = `<img src="${url}" alt="Preview Baru"
+                              class="img-fluid border" style="max-height:300px;">`;
+    } else if (ext === 'pdf') {
+        preview.innerHTML = `<iframe src="${url}" frameborder="0"
+                              class="w-100 border" style="height: 300px;"></iframe>`;
+    } else {
+        preview.innerHTML = `<p><strong>File dipilih:</strong> ${file.name}</p>`;
+    }
+    preview.style.display = 'block';
+});
+</script>
 
 <br>
 
 <div class="mb-3">
     <label class="form-label" for="uploaddaftarriwayathidup">
-        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Daftar Riwayat Hidup | .pdf | Max 5MB
+        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Upload Daftar Riwayat Hidup | .pdf | Max 15 MB
     </label>
 
+    {{-- Preview File Lama --}}
     @if($data->uploaddaftarriwayathidup)
         @php
             $relativePath = $data->uploaddaftarriwayathidup;
             $fullPath = public_path($relativePath);
             $ext = strtolower(pathinfo($fullPath, PATHINFO_EXTENSION));
-            $isImage = in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
         @endphp
 
-        <div class="mb-2 text-center">
+        <div class="mb-2 text-center" id="old-preview-riwayathidup">
             @if(file_exists($fullPath))
-                @if($isImage)
-                    <img src="{{ asset($relativePath) }}" alt="Preview Daftar Riwayat Hidup" style="max-height: 300px; border: 1px solid #ccc;">
+                @if(in_array($ext, ['jpg','jpeg','png','gif','webp']))
+                    <img src="{{ asset($relativePath) }}" alt="Preview Lama"
+                         class="img-fluid border" style="max-height: 300px;">
                 @elseif($ext === 'pdf')
-                    <iframe src="{{ asset($relativePath) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    <iframe src="{{ asset($relativePath) }}" frameborder="0"
+                            class="w-100 border" style="height: 300px;"></iframe>
                 @else
-                    <p><a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File</a></p>
+                    <a href="{{ asset($relativePath) }}" target="_blank" class="btn btn-sm btn-outline-primary">Download File Lama</a>
                 @endif
             @else
                 <p class="text-danger">File lama tidak ditemukan di server.</p>
@@ -386,13 +654,44 @@
         </div>
     @endif
 
-    <input type="file" id="uploaddaftarriwayathidup" name="uploaddaftarriwayathidup" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror">
-    {{-- <small class="text-muted">Ket: Masukkan file Daftar Riwayat Hidup terbaru dengan format JPG/PNG/PDF.</small> --}}
+    {{-- Preview File Baru --}}
+    <div id="new-preview-riwayathidup" class="mb-2 text-center" style="display:none;"></div>
+
+    {{-- Input Upload --}}
+    <input type="file" id="uploaddaftarriwayathidup" name="uploaddaftarriwayathidup"
+           class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror"
+           accept=".pdf,.jpg,.jpeg,.png,.gif,.webp">
+    <small class="text-muted">Jika upload file baru, maka file lama akan ditimpa.</small>
+
     @error('uploaddaftarriwayathidup')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
+{{-- Script Preview Baru --}}
+<script>
+document.getElementById('uploaddaftarriwayathidup').addEventListener('change', function(e) {
+    let file = e.target.files[0];
+    let preview = document.getElementById('new-preview-riwayathidup');
+    preview.innerHTML = '';
+    if (!file) {
+        preview.style.display = 'none';
+        return;
+    }
+
+    let ext = file.name.split('.').pop().toLowerCase();
+    let url = URL.createObjectURL(file);
+
+    if (['jpg','jpeg','png','gif','webp'].includes(ext)) {
+        preview.innerHTML = `<img src="${url}" alt="Preview Baru" class="img-fluid border" style="max-height:300px;">`;
+    } else if (ext === 'pdf') {
+        preview.innerHTML = `<iframe src="${url}" frameborder="0" class="w-100 border" style="height:300px;"></iframe>`;
+    } else {
+        preview.innerHTML = `<p><strong>File dipilih:</strong> ${file.name}</p>`;
+    }
+    preview.style.display = 'block';
+});
+</script>
 
 <input type="hidden" name="verifikasipu" value="">
 <input type="hidden" name="validasi_ktp" value="">
@@ -410,19 +709,14 @@
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                                    <button type="button" onclick="openModal()"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-                                    style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                <button type="button" onclick="openModal()"
+                                        class="button-berkas flex items-center gap-2 px-4 py-2">
+                                    <!-- Ikon Pensil dari Bootstrap Icons -->
+                                    <i class="bi bi-pencil" style="font-size: 20px;"></i>
 
-                                    <!-- Ikon SVG Pensil -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                         fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                      <path d="M15.502 1.94a1.5 1.5 0 0 1 0 2.12L5.207 14.354a1 1 0 0 1-.39.243l-4 1.5a.5.5 0 0 1-.641-.641l1.5-4a1 1 0 0 1 .243-.39L13.44.44a1.5 1.5 0 0 1 2.12 0zm-2.121 1.415L4.854 11.882l-.708 2.122 2.121-.707L15.5 3.354l-2.12-2.121z"/>
-                                    </svg>
-
-                                    <span style="font-family: 'Poppins', sans-serif;">Update</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Perbaikan Data ?</span>
                                 </button>
+
                                 </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
