@@ -114,41 +114,47 @@ class PembinaanController extends Controller
 
 
 // DAFTAR PESERTA PELATIHAN AGENDA PELATIHAN WORKSHOP DAN LAINLAIN
+public function daftarpesertapelatihan(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
 
-    public function daftarpesertapelatihan(Request $request)
-    {
-        $perPage = $request->input('perPage', 10);
-        $search = $request->input('search');
+    // Query utama
+    $query = agendapelatihan::query();
 
-        $query = agendapelatihan::query();
+    // Tambahkan urutan terbaru dulu
+    $query->orderBy('created_at', 'desc');
 
-        if ($search) {
-            $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                  ->orWhere('keterangan', 'LIKE', "%{$search}%")
-                  ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
-                      $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
-                  });
+    // Jika ada pencarian
+    if ($search) {
+        $query->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%")
+              ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+                  $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+              });
+    }
 
-        }
+    // Pagination
+    $data = $query->paginate($perPage);
 
-        $data = $query->paginate($perPage);
-
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('frontend.04_pembinaan.01_agendapembinaan.partials.table', compact('data'))->render()
-            ]);
-        }
-
-        $user = Auth::user();
-
-        return view('frontend.04_pembinaan.01_agendapembinaan.daftaragenda', [
-            'title' => 'Daftar Peserta Pelatihan Jakon Blora',
-            'data' => $data,
-            'perPage' => $perPage,
-            'search' => $search,
-            'user' => $user
+    // Jika request ajax, kembalikan partial table
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.04_pembinaan.01_agendapembinaan.partials.table', compact('data'))->render()
         ]);
     }
+
+    $user = Auth::user();
+
+    // Tampilkan view utama
+    return view('frontend.04_pembinaan.01_agendapembinaan.daftaragenda', [
+        'title' => 'Daftar Peserta Pelatihan Jakon Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => $user
+    ]);
+}
 
     public function daftarpesertapelatihanshow(Request $request, $namakegiatan)
     {
@@ -441,43 +447,43 @@ public function beagendapelatihanupdatecreate(Request $request, $id)
     $validatedData = $request->validate([
         'kategoripelatihan_id' => 'required|string',
         'user_id'              => 'required|string',
-        'namakegiatan'         => 'required|string|max:255',
-        'asosiasimasjaki_id'              => 'required|string',
+        'namakegiatan'         => 'nullable|string|max:255',
+        'asosiasimasjaki_id'              => 'nullable|string',
         // 'penyelenggara'        => 'nullable|string|max:255',
-        'waktupelaksanaan'     => 'required|date',
-        'penutupan'            => 'required|date|after_or_equal:waktupelaksanaan',
-        'jumlahpeserta'        => 'required|string',
-        'lokasi'               => 'required|string|max:255',
-        'keterangan'           => 'required|string|max:255',
-        'isiagenda'            => 'required|string',
-        'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
+        'waktupelaksanaan'     => 'nullable|date',
+        'penutupan'            => 'nullable|date',
+        'jumlahpeserta'        => 'nullable|string',
+        'lokasi'               => 'nullable|string|max:255',
+        'keterangan'           => 'nullable|string|max:255',
+        'isiagenda'            => 'nullable|string',
+        'foto'                 => 'nullable|image|mimes:jpg,jpeg,png|max:15048',
     ], [
         'kategoripelatihan_id.required' => 'Kategori pelatihan wajib dipilih.',
         'kategoripelatihan_id.exists' => 'Kategori pelatihan yang dipilih tidak valid.',
-        'user_id.required' => 'ID pengguna wajib diisi.',
-        'user_id.exists' => 'ID pengguna yang dipilih tidak valid.',
-        'asosiasimasjaki_id.required' => 'ID pengguna wajib diisi.',
-        'asosiasimasjaki_id.exists' => 'ID pengguna yang dipilih tidak valid.',
-        'namakegiatan.required' => 'Nama kegiatan wajib diisi.',
-        'namakegiatan.string' => 'Nama kegiatan harus berupa teks.',
-        'namakegiatan.max' => 'Nama kegiatan maksimal 255 karakter.',
-        // 'penyelenggara.string' => 'Penyelenggara harus berupa teks.',
-        // 'penyelenggara.max' => 'Penyelenggara maksimal 255 karakter.',
-        'waktupelaksanaan.required' => 'Tanggal pelaksanaan wajib diisi.',
-        'waktupelaksanaan.date' => 'Tanggal pelaksanaan tidak valid.',
-        'penutupan.required' => 'Tanggal penutupan wajib diisi.',
-        'penutupan.date' => 'Tanggal penutupan tidak valid.',
-        'penutupan.after_or_equal' => 'Tanggal penutupan harus lebih besar atau sama dengan tanggal pelaksanaan.',
-        'jumlahpeserta.required' => 'Jumlah peserta harus berupa angka.',
-        'jumlahpeserta.min' => 'Jumlah peserta minimal 1 orang.',
-        'lokasi.required' => 'Lokasi harus berupa teks.',
-        'lokasi.max' => 'Lokasi maksimal 255 karakter.',
-        'keterangan.required' => 'Keterangan harus berupa teks.',
-        'keterangan.max' => 'Keterangan maksimal 255 karakter.',
-        'isiagenda.required' => 'Isi agenda harus berupa teks.',
-        'foto.required' => 'File Gambar terbaru belum di upload.',
+        // 'user_id.required' => 'ID pengguna wajib diisi.',
+        // 'user_id.exists' => 'ID pengguna yang dipilih tidak valid.',
+        // 'asosiasimasjaki_id.required' => 'ID pengguna wajib diisi.',
+        // 'asosiasimasjaki_id.exists' => 'ID pengguna yang dipilih tidak valid.',
+        // 'namakegiatan.required' => 'Nama kegiatan wajib diisi.',
+        // 'namakegiatan.string' => 'Nama kegiatan harus berupa teks.',
+        // 'namakegiatan.max' => 'Nama kegiatan maksimal 255 karakter.',
+        // // 'penyelenggara.string' => 'Penyelenggara harus berupa teks.',
+        // // 'penyelenggara.max' => 'Penyelenggara maksimal 255 karakter.',
+        // 'waktupelaksanaan.required' => 'Tanggal pelaksanaan wajib diisi.',
+        // 'waktupelaksanaan.date' => 'Tanggal pelaksanaan tidak valid.',
+        // 'penutupan.required' => 'Tanggal penutupan wajib diisi.',
+        // 'penutupan.date' => 'Tanggal penutupan tidak valid.',
+        // 'penutupan.after_or_equal' => 'Tanggal penutupan harus lebih besar atau sama dengan tanggal pelaksanaan.',
+        // 'jumlahpeserta.required' => 'Jumlah peserta harus berupa angka.',
+        // 'jumlahpeserta.min' => 'Jumlah peserta minimal 1 orang.',
+        // 'lokasi.required' => 'Lokasi harus berupa teks.',
+        // 'lokasi.max' => 'Lokasi maksimal 255 karakter.',
+        // 'keterangan.required' => 'Keterangan harus berupa teks.',
+        // 'keterangan.max' => 'Keterangan maksimal 255 karakter.',
+        // 'isiagenda.required' => 'Isi agenda harus berupa teks.',
+        // 'foto.required' => 'File Gambar terbaru belum di upload.',
         'foto.mimes' => 'Foto harus berformat jpg, jpeg, atau png.',
-        'foto.max' => 'Ukuran foto maksimal 5MB.',
+        'foto.max' => 'Ukuran foto maksimal 15 MB.',
     ]);
     // Ambil data agenda berdasarkan ID
     $agenda = agendapelatihan::findOrFail($id);
@@ -537,7 +543,7 @@ public function beagendapelatihancreate()
     $dataasosiasi = asosiasimasjaki::where('id', 99)->first();
 
     return view('backend.05_agenda.01_agendapelatihan.create', [
-        'title' => 'Create Agenda Pelatihan ',
+        'title' => 'Buat Agenda Pelatihan ',
         'data' => null, // <<--- penting!
         'kategoriList' => $datakategoripelatihan,
         'lspList' => $datalsp,
@@ -554,22 +560,22 @@ public function beagendapelatihancreatenew(Request $request)
     $validatedData = $request->validate([
         'kategoripelatihan_id' => 'required|string',
         'jabatankerja_id' => 'required|string',
-        // 'user_id'              => 'required|string',
+        'user_id'              => 'nullable|string',
         'namakegiatan'         => 'required|string|max:255',
-        // 'asosiasimasjaki_id'   => 'required|string',
+        'asosiasimasjaki_id'   => 'required|string',
         'waktupelaksanaan'     => 'required|date',
-        'penutupan'            => 'required|date|after_or_equal:waktupelaksanaan',
+        'penutupan'            => 'required|date',
         'jumlahpeserta'        => 'required|string',
         'lokasi'               => 'required|string|max:255',
-        // 'keterangan'           => 'required|string|max:255',
-        'isiagenda'            => 'required|string',
-        'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
+        'keterangan'           => 'nullable|string|max:255',
+        'isiagenda'            => 'nullable|string',
+        'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:15048',
     ], [
         'kategoripelatihan_id.required' => 'Kategori pelatihan wajib dipilih.',
         'jabatankerja_id.required' => 'Jabatan Kerja wajib dipilih.',
         // 'user_id.required'              => 'LSP Penerbit wajib dipilih.',
         'namakegiatan.required'         => 'Nama kegiatan wajib diisi.',
-        // 'asosiasimasjaki_id.required'   => 'Penyelenggara wajib dipilih.',
+        'asosiasimasjaki_id.required'   => 'Penyelenggara wajib dipilih.',
         'waktupelaksanaan.required'     => 'Tanggal pelaksanaan wajib diisi.',
         'penutupan.required'            => 'Tanggal penutupan wajib diisi.',
         'penutupan.after_or_equal'      => 'Tanggal penutupan harus setelah atau sama dengan tanggal pelaksanaan.',
@@ -580,7 +586,7 @@ public function beagendapelatihancreatenew(Request $request)
         'foto.required'                 => 'Foto kegiatan wajib diunggah.',
         'foto.image'                    => 'File harus berupa gambar atau foto.',
         'foto.mimes'                    => 'Foto harus berformat jpg, jpeg, atau png.',
-        'foto.max'                      => 'Ukuran foto maksimal 5MB.',
+        'foto.max'                      => 'Ukuran foto maksimal 15 MB.',
     ]);
 
     // Proses file foto
