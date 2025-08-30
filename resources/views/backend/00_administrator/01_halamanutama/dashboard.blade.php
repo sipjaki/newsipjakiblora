@@ -244,150 +244,239 @@ button:hover {
 
 @can('pekerja')
 
-<div class="row">
-    <!-- Baris 1: 3 kolom -->
-    <div class="col-md-4 col-sm-6 col-12 mb-4">
-        <div class="info-box"
-             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
-            <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
-                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
-{{$jumlahKegiatan}} <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-                </h4>
-            </span>
-            <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 16px;">
-                <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-tools" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
-                </span>
-                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Kegiatan Konstruksi</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4 col-sm-6 col-12 mb-4">
-        <div class="info-box"
-             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
-            <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
-                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
-                    {{$jumlahDikembalikan}} <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-                </h4>
-            </span>
-            <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 16px;">
-                <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-arrow-repeat" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
-                </span>
-                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Berkas Di Kembalikan</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4 col-sm-6 col-12 mb-4">
-        <div class="info-box"
-             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
-            <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
-                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
-                    {{$jumlahLolos}} <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-                </h4>
-            </span>
-            <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 16px;">
-                <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-check-circle" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
-                </span>
-                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Verifikasi DPUPR</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <!-- Baris 2: 2 kolom -->
-    <div class="col-md-6 col-sm-6 col-12 mb-4">
-        <div class="info-box"
-             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
-            <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
-                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
-                    {{$jumlahVerifikasiLps}} <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-                </h4>
-            </span>
-            <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 16px;">
-                <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-check2-circle" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
-                </span>
-                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">LOLOS LSP</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6 col-sm-6 col-12 mb-4">
-        <div class="info-box"
-             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
-            <!-- Icon dan Angka -->
-            <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 16px; margin-right: 16px;">
-                <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
-                    {{$jumlahDenganSertifikat}} <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-                </h4>
-            </span>
-            <!-- Konten -->
-            <div class="info-box-content" style="padding: 10px 16px;">
-                <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-file-earmark-check" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
-                </span>
-                <span class="info-box-text" style="font-size: 16px; font-weight: bold; color: navy;">Sertifikat Terbit</span>
-            </div>
-        </div>
-    </div>
-</div>
-
 <style>
-    /* Animasi Zoom Out */
-    .animated-number {
-        font-size: 2rem;
-        font-weight: bold;
-        color: white;
-        text-align: center;
-        margin-bottom: 10px;
-        text-decoration: none;
-        background-color: #bdc3c7; /* Background abu-abu */
-        padding: 16px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out;
-    }
+        :root {
+            --primary-green: #42b549; /* Hijau Tokopedia */
+            --dark-green: #2c9e32;
+            --light-green: #e8f5e9;
+            --accent-green: #c8e6c9;
+        }
 
-    /* Efek Zoom Out saat hover */
-    .info-box:hover .animated-number {
-        transform: scale(1.1); /* Zoom out effect */
-    }
 
-    /* Memberikan efek transisi latar belakang */
-    .info-box:hover {
-        background: linear-gradient(45deg, #27ae60, #f39c12);
-        color: black;
-    }
+        .dashboard-card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            height: 100%;
+            position: relative;
+        }
 
-    .info-box:hover .info-box-text,
-    .info-box:hover .animated-number {
-        color: black;
-    }
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--primary-green);
+        }
 
-    .info-box-icon h4 {
-        margin-bottom: 0; /* Menghapus margin bawah dari h4 */
-        margin-right: 25px; /* Menghapus margin bawah dari h4 */
-        margin-left: 25px; /* Menghapus margin bawah dari h4 */
-    }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
 
-    /* Styling tambahan untuk konten info-box */
-    .info-box-content {
-        padding: 10px;
-    }
-</style>
+        .card-content {
+            padding: 25px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .number-container {
+            background-color: var(--primary-green);
+            border-radius: 14px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(66, 181, 73, 0.3);
+        }
+
+        .animated-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            color: white;
+        }
+
+        .info-content {
+            flex-grow: 1;
+        }
+
+        .info-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--primary-green);
+        }
+
+        .info-text {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+
+        /* Warna khusus untuk setiap kartu */
+        .card-1 .number-container {
+            background-color: #42b549;
+        }
+
+        .card-2 .number-container {
+            background-color: #3fa845;
+        }
+
+        .card-3 .number-container {
+            background-color: #3b9a40;
+        }
+
+        .card-4 .number-container {
+            background-color: #378d3c;
+        }
+
+        .card-5 .number-container {
+            background-color: #338037;
+        }
+
+        .card-1 .info-icon {
+            color: #42b549;
+        }
+
+        .card-2 .info-icon {
+            color: #3fa845;
+        }
+
+        .card-3 .info-icon {
+            color: #3b9a40;
+        }
+
+        .card-4 .info-icon {
+            color: #378d3c;
+        }
+
+        .card-5 .info-icon {
+            color: #338037;
+        }
+
+        @media (max-width: 576px) {
+            .number-container {
+                width: 60px;
+                height: 60px;
+            }
+
+            .animated-number {
+                font-size: 1.5rem;
+            }
+
+            .info-icon {
+                font-size: 22px;
+            }
+
+            .info-text {
+                font-size: 14px;
+            }
+
+            .card-content {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Baris 1: 3 kolom -->
+            <div class="col-md-4 col-sm-6 col-12 mb-4">
+                <div class="dashboard-card card-1">
+                    <div class="card-content">
+                        <div class="number-container">
+                            <h4 class="animated-number">{{$jumlahKegiatan}}</h4>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon">
+                                <i class="bi bi-tools"></i>
+                            </div>
+                            <p class="info-text">Kegiatan Konstruksi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-12 mb-4">
+                <div class="dashboard-card card-2">
+                    <div class="card-content">
+                        <div class="number-container">
+                            <h4 class="animated-number">{{$jumlahDikembalikan}}</h4>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </div>
+                            <p class="info-text">Berkas Di Kembalikan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-12 mb-4">
+                <div class="dashboard-card card-3">
+                    <div class="card-content">
+                        <div class="number-container">
+                            <h4 class="animated-number">{{$jumlahLolos}}</h4>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                            <p class="info-text">Verifikasi DPUPR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Baris 2: 2 kolom -->
+            <div class="col-md-6 col-sm-6 col-12 mb-4">
+                <div class="dashboard-card card-4">
+                    <div class="card-content">
+                        <div class="number-container">
+                            <h4 class="animated-number">{{$jumlahVerifikasiLps}}</h4>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon">
+                                <i class="bi bi-check2-circle"></i>
+                            </div>
+                            <p class="info-text">LOLOS LSP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-12 mb-4">
+                <div class="dashboard-card card-5">
+                    <div class="card-content">
+                        <div class="number-container">
+                            <h4 class="animated-number">{{$jumlahDenganSertifikat}}</h4>
+                        </div>
+                        <div class="info-content">
+                            <div class="info-icon">
+                                <i class="bi bi-file-earmark-check"></i>
+                            </div>
+                            <p class="info-text">Sertifikat Terbit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 @endcan
 
