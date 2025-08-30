@@ -1,4 +1,133 @@
 <style>
+/* Sidebar umum */
+.app-sidebar {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a291c, #0f3d2d, #1a533c);
+    background-size: 400% 400%;
+    animation: sidebarGradientMove 15s ease infinite;
+    min-height: 100vh;
+    width: 280px;
+    z-index: 1;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1),
+                5px 0 15px rgba(0, 0, 0, 0.1);
+    padding: 25px 0;
+    color: white;
+    transition: left 0.3s ease; /* animasi smooth */
+}
+
+/* Animasi gradient */
+@keyframes sidebarGradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header sidebar */
+.sidebar-header {
+    padding: 0 25px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 25px;
+}
+
+.sidebar-header h2 {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.sidebar-header h2::before {
+    content: "🌿";
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+/* Menu items */
+.menu-items {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.menu-items li {
+    margin-bottom: 8px;
+}
+
+.menu-items a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.menu-items a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateX(5px);
+}
+
+.menu-items a.active {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), transparent);
+    color: white;
+    border-left: 4px solid #4caf7d;
+}
+
+.menu-items a i {
+    margin-right: 12px;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* Footer sidebar */
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive: sembunyikan sidebar di mobile */
+@media (max-width: 768px) {
+    .app-sidebar {
+        position: fixed;
+        left: -280px; /* sembunyi di kiri */
+        top: 0;
+        height: 100%;
+        z-index: 1050; /* pastikan di atas konten */
+        overflow-y: auto;
+    }
+
+    .app-sidebar.active {
+        left: 0; /* muncul saat toggle */
+    }
+}
+
+/* Toggle button */
+#toggleSidebar {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: black;
+}
+
+#toggleSidebar i {
+    font-size: 1.2rem;
+}
+</style>
+
+
+{{-- <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
     .app-sidebar,
@@ -96,7 +225,7 @@
         position: relative;
         z-index: 2;
     }
-</style>
+</style> --}}
 
 {{-- <style>
     /* Import Font Poppins */
@@ -303,7 +432,7 @@
                 <a href="/hakaksespekerjaberkas" class="nav-link">
                   <i class="nav-icon bi bi-graph-up" style="color: white"></i> <!-- Status -->
                   <p style="color: white">
-                    Status Pendaftaran
+                    Status <br> Pendaftaran
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
@@ -313,13 +442,13 @@
   <a href="/downsertifikatskk" class="nav-link">
     <i class="nav-icon bi bi-file-earmark-arrow-down" style="color: white"></i>
     <p style="color: white">
-      Download Sertifikat
+      Download <br> Sertifikat
       <i class="nav-arrow bi bi-chevron-right"></i>
     </p>
   </a>
 </li>
 
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="/beprofile" class="nav-link">
                   <i class="nav-icon bi bi-person-circle" style="color: white"></i> <!-- Profil Anda -->
                   <p style="color: white">
@@ -327,7 +456,7 @@
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
-              </li>
+              </li> --}}
 
                 @endcan
 
@@ -361,7 +490,7 @@
   </li>
 
   <!-- Menu Profil Anda -->
-  <li class="nav-item">
+  {{-- <li class="nav-item">
     <a href="/beprofile" class="nav-link">
       <!-- Ikon untuk Profil Anda -->
       <i class="nav-icon bi bi-person-circle" style="color: white;"></i>
@@ -370,7 +499,7 @@
         <i class="nav-arrow bi bi-chevron-right"></i>
       </p>
     </a>
-  </li>
+  </li> --}}
 
         @endcan
 
@@ -390,7 +519,7 @@
   </li>
 
   <!-- Menu Profil Anda -->
-  <li class="nav-item">
+  {{-- <li class="nav-item">
     <a href="/beprofile" class="nav-link">
       <!-- Ikon untuk Profil Anda -->
       <i class="nav-icon bi bi-person-circle" style="color: white;"></i>
@@ -399,7 +528,7 @@
         <i class="nav-arrow bi bi-chevron-right"></i>
       </p>
     </a>
-  </li>
+  </li> --}}
 
         @endcan
 
@@ -456,6 +585,65 @@
 @endcan
 
 @can('operator')
+<li class="nav-header" style="color: white;">DASHBOARD KONSULTAN</li>
+
+
+<li class="nav-item">
+                <a href="#" class="nav-link">
+                    <!-- Ikon untuk Data Jakon -->
+                    <i class="nav-icon bi bi-bar-chart" style="color: white"></i>
+                    <p style="color: white">
+                      Data Jakon
+                      <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                      <i class="nav-arrow bi bi-chevron-right"></i>
+                    </p>
+                  </a>
+
+                <ul class="nav nav-treeview">
+
+                  <!-- Badan Usaha Jasa Konstruksi -->
+                  {{-- <li class="nav-item">
+                    <a href="/bebujkjakon" class="nav-link">
+                      <i class="nav-icon bi bi-building text-warning"></i> <!-- Ikon untuk Badan Usaha Jasa Konstruksi -->
+                      <p style="color: white">BUJK</p>
+                    </a>
+                  </li> --}}
+
+                  <!-- Tenaga Kerja Konstruksi -->
+                  {{-- <li class="nav-item">
+                    <a href="/beskkdpupr" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
+                      <p style="color: white">TKK DPUPR</p>
+                    </a>
+                  </li> --}}
+
+                  <!-- Tenaga Kerja Konstruksi (Duplicate) -->
+                  {{-- <li class="nav-item">
+                    <a href="/beskkallblora" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
+                      <p style="color: white">Semua TKK</p>
+                    </a>
+                  </li> --}}
+
+                  <!-- Profil Paket Pekerjaan Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/bepaketpekerjaan" class="nav-link">
+                      <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
+                      <p style="color: white">Profil Paket Pekerjaan</p>
+                    </a>
+                  </li>
+
+                  <!-- Profil Paket Pekerjaan Konstruksi -->
+                  {{-- <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-bar-chart-line text-warning"></i> <!-- Ikon untuk Data Statistik -->
+                      <p style="color: white">Data Statistik</p>
+                    </a>
+                  </li> --}}
+
+
+                </ul>
+              </li>
 
   <li class="nav-item">
                 <a href="#" class="nav-link">
@@ -494,7 +682,7 @@
                 </ul>
               </li>
 
-                 <li class="nav-item">
+                 {{-- <li class="nav-item">
                 <a href="/beprofile" class="nav-link">
                   <i class="nav-icon bi bi-person-circle" style="color: white"></i> <!-- Profil Anda -->
                   <p style="color: white">
@@ -502,7 +690,7 @@
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
-              </li>
+              </li> --}}
 
 @endcan
 
@@ -703,7 +891,26 @@
                   </p>
                 </a>
 
+
                 <ul class="nav nav-treeview">
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
                   <!-- Agenda Pelatihan -->
                   <li class="nav-item">
                     <a href="/beagendapelatihan" class="nav-link">
@@ -735,8 +942,49 @@
                       <p style="color: white">Peserta SKK</p>
                     </a>
                   </li>
+
+                                    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
+    </p>
+</div>
+
+   <!-- Peserta SKK -->
+<li class="nav-item">
+  <a href="/settingssekolah" class="nav-link">
+    <i class="nav-icon bi bi-building text-warning"></i> <!-- Ikon Universitas/Sekolah -->
+    <p style="color: white">Universitas/Sekolah</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/alllsppenerbit" class="nav-link">
+    <i class="nav-icon bi bi-person-badge text-warning"></i> <!-- Ikon Akun LSP SKK -->
+    <p style="color: white">Akun LSP SKK</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/404" class="nav-link">
+    <i class="nav-icon bi bi-card-list text-warning"></i> <!-- Ikon Kategori Pelatihan -->
+    <p style="color: white">Kategori Pelatihan</p>
+  </a>
+</li>
+
                 </ul>
               </li>
+
 
 
             {{-- ========================== --}}
@@ -1267,7 +1515,7 @@
               </li>
 
               @endcan
-
+{{-- super admin endcan --}}
 {{--
               <li class="nav-header" style="color: white;" >ADMINISTRATOR DATABASE</li>
 
@@ -1366,8 +1614,9 @@
             <li class="nav-item">
                 {{-- <li class="nav-item"> --}}
                     <li class="nav-item">
-                        <form action="/logout" method="POST" style="display: inline;">
-                            @csrf  <!-- This is for CSRF protection -->
+
+                        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
                             <button type="submit" class="nav-link" style="background: none; border: none; color: red;">
                                 <!-- Ikon untuk Logout -->
                                 <i class="nav-icon bi bi-box-arrow-right text-danger"></i> <!-- Ikon untuk Logout -->
