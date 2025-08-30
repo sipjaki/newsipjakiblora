@@ -130,44 +130,45 @@ public function downsertifikatskk(Request $request)
     ]);
 }
 
+public function hakaksespekerjaskkdaftar(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
 
-    public function hakaksespekerjaskkdaftar(Request $request)
-    {
-        $perPage = $request->input('perPage', 10);
-        $search = $request->input('search');
+    $query = agendaskk::query();
 
-        $query = agendaskk::query();
+    if ($search) {
+        $query->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
+              ->orWhere('lokasi', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%");
+              // ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+              //     $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+              // });
+    }
 
-        if ($search) {
-            $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                  ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
-                  ->orWhere('lokasi', 'LIKE', "%{$search}%")
-                  ->orWhere('keterangan', 'LIKE', "%{$search}%");
-                //   ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
-                //       $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
-                //   }
-                // );
+    // Urutkan data terbaru paling atas
+    $query->orderBy('created_at', 'desc');
 
-        }
+    $data = $query->paginate($perPage);
 
-        $data = $query->paginate($perPage);
-
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('backend.15_hakakses.01_pekerja.03_daftarskk.partials.table', compact('data'))->render()
-            ]);
-        }
-
-        $user = Auth::user();
-
-        return view('backend.15_hakakses.01_pekerja.03_daftarskk.index', [
-            'title' => 'Agenda SKK Tenaga Konstruksi Kab Blora, Silahkan Daftar !',
-            'data' => $data,
-            'perPage' => $perPage,
-            'search' => $search,
-            'user' => $user
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.15_hakakses.01_pekerja.03_daftarskk.partials.table', compact('data'))->render()
         ]);
     }
+
+    $user = Auth::user();
+
+    return view('backend.15_hakakses.01_pekerja.03_daftarskk.index', [
+        'title' => 'Agenda SKK Tenaga Konstruksi Kab Blora, Silahkan Daftar !',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => $user
+    ]);
+}
+
 
 }
 
