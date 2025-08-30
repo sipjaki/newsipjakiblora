@@ -54,7 +54,8 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+    {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -194,7 +195,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
           <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-calendar-x"></i> Penutupan
           </th>
-          <th style="width: 100px; text-align:center; vertical-align: middle;">
+          <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-check-circle"></i> Status
           </th>
           {{-- <th style="width: 200px; text-align:center; vertical-align: middle;">
@@ -212,7 +213,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
           <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-image"></i> Foto
           </th>
-          <th style="width: 150px; text-align:center; vertical-align: middle;">
+          <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-list-ul"></i> Daftar Materi
           </th>
           {{-- <th style="width: 200px; text-align:center; vertical-align: middle;">
@@ -241,27 +242,27 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
         </td>
 
-        <script>
-            function updateStatus() {
-                let now = new Date().getTime();
-                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->penutupan)->format('Y-m-d H:i:s') }}").getTime();
-                let statusButton = document.getElementById("status-{{ $item->id }}");
+       <script>
+    function updateStatus() {
+        let now = new Date().getTime();
+        let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->penutupan)->format('Y-m-d H:i:s') }}").getTime();
+        let statusButton = document.getElementById("status-{{ $item->id }}");
 
-                if (now > tanggalHabis) {
-                    statusButton.innerText = "DITUTUP";
-                    statusButton.className = "btn btn-danger btn-sm";
-                } else {
-                    statusButton.innerText = "DIBUKA";
-                    statusButton.className = "btn btn-success btn-sm";
-                }
-            }
+        if (now > tanggalHabis) {
+            statusButton.innerHTML = `<i class="bi bi-x-circle" style="margin-right:5px;"></i> DITUTUP`;
+            statusButton.className = "button-merah";
+        } else {
+            statusButton.innerHTML = `<i class="bi bi-check-circle" style="margin-right:5px;"></i> DIBUKA`;
+            statusButton.className = "button-hijau";
+        }
+    }
 
-            // Jalankan pertama kali saat halaman dimuat
-            updateStatus();
+    // Jalankan pertama kali saat halaman dimuat
+    updateStatus();
 
-            // Update setiap 1 detik untuk realtime
-            setInterval(updateStatus, 1000);
-        </script>
+    // Update setiap 1 detik untuk realtime
+    setInterval(updateStatus, 1000);
+</script>
 
         {{-- <td style="text-align: center;">{{$item->jumlahpeserta}}</td> --}}
          {{-- <td style="text-align: left;">{{$item->lokasi}}</td> --}}
@@ -285,30 +286,46 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           transition: background-color 0.3s, color 0.3s;">
-             <i class="bi bi-eye"></i> Lihat
+                <button class="button-baru">
+             <i class="bi bi-eye"></i> Lihat Materi
             </button>
             </a>
         </td>
 
         </tr>
 
-     @empty
+        @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Saudara Belum Mengikuti Agenda Sertifikasi ! Silahkan -> <a href="/hakaksespekerjaskkdaftar"><span class="button-hijau">Daftar</span></a>
+            </div>
+        </td>
+    </tr>
+@endforelse
 
-             <div class="col-12">
-  <div class="alert alert-warning text-center position-relative overflow-hidden" role="alert" style="background-color: #fff3cd; border-color: #ffeeba; height: 50px; line-height: 50px; padding-left: 10px;">
-    <div class="marquee-text" style="height: 50px; line-height: 50px;">
-      <i class="bi bi-exclamation-circle"></i> <span style="color: red;"> Saudara Belum Menguti Agenda Sertifikasi !! </span>
-    </div>
-  </div>
-</div>
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 
-     @endforelse
  </tbody>
 </table>
                      </div>

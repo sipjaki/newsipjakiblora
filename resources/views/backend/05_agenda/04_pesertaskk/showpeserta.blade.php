@@ -381,7 +381,7 @@
                                                                 @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
                                                                     <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @elseif($item->sertifikat)
-                                                                    <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                    <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="700px"></iframe>
                                                                 @else
                                                                     <p>Sertifikat Belum Di Upload !!</p>
                                                                 @endif

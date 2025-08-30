@@ -185,7 +185,7 @@
                                             <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:400px;">
                                                 <i class="bi bi-file-earmark-text"></i> Nama Pekerjaan
                                             </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:150px;">
+                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:150px;">
                                                 <i class="bi bi-journal-text"></i> Rekap
                                             </th>
                                             <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;">
@@ -208,7 +208,7 @@
                                             </th>
                                             <th onclick="sortTable(12)" style="cursor:pointer; text-align:center; width:150px;">
                                                 <i class="bi bi-eye"></i> View
-                                            </th>
+                                            </th> --}}
                                                    </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -221,8 +221,8 @@
                                             <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan ?? 'Data Belum Di Update'}}</td>
                                             <td style="text-align: left;" style="width:1500px;">{{$item->namapekerjaan ?? 'Data Belum Di Update' }}</td>
                                             {{-- <td style="text-align: left;">Selesai</td> --}}
-                                            <td style="text-align: center;">{{$item->bulanrekap->bulanrekap ?? 'Data Belum Di Update' }}</td>
-                                            <td style="text-align: left;">
+                                            {{-- <td style="text-align: center;">{{$item->bulanrekap->bulanrekap ?? 'Data Belum Di Update' }}</td> --}}
+                                            {{-- <td style="text-align: left;">
                                                 @php
                                                     // Mendapatkan progress dalam bentuk persentase
                                                     $progress = $item->progress;
@@ -264,10 +264,10 @@
                                                         {{ $progress }}%
                                                     </span>
                                                 </div>
-                                            </td>
+                                            </td> --}}
 
 
-                                            <td class="text-center" style="text-align: center;">
+                                            {{-- <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->detailspaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -279,13 +279,12 @@
                                                     }
                                                 @endphp
                                                 <a href="/404">
-                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
-                                            </td>
-                                            <td class="text-center" style="text-align: center;">
+                                            </td> --}}
+                                            {{-- <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -298,14 +297,14 @@
                                                     }
                                                 @endphp
                                                 <a href="/404">
-                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
                                             </td>
+                                             --}}
 
-                                            <td class="text-center" style="text-align: center;">
+                                             {{-- <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->sppbj) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -318,14 +317,13 @@
                                                     }
                                                 @endphp
                                                 <a href="/404">
-                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
-                                            </td>
+                                            </td> --}}
 
-                                            <td class="text-center" style="text-align: center;">
+                                            {{-- <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->spk) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -339,14 +337,13 @@
                                                     }
                                                 @endphp
                                                 <a href="/404">
-                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
-                                            </td>
+                                            </td> --}}
 
-                                            <td class="text-center" style="text-align: center;">
+                                            {{-- <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->sskk) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -360,13 +357,12 @@
                                                     }
                                                 @endphp
                                                 <a href="/404">
-                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
                                             </td>
-
+ --}}
                                             {{-- <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->suratperjanjianpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
@@ -388,12 +384,12 @@
                                             </td> --}}
 
 
-                                            <td style="text-align: center" style="text-align: center;">
+                                            {{-- <td style="text-align: center" style="text-align: center;">
                                                 <a href="/404">
-                                                {{-- <a href="/resprofilpaketpekerjaan/{{$item->id}}"> --}}
+                                                <a href="/resprofilpaketpekerjaan/{{$item->id}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                         @endforeach
                                     </tbody>

@@ -167,9 +167,9 @@
                                         {{ $truncatedText }}
                                     </span>
                                 </p>
-                                <button class="bg-red-700 text-red px-6 py-3 rounded-full font-extrabold shadow-xl hover:bg-red-800 transition duration-300 border-b-4 border-red-900 hover:border-red-950 active:translate-y-1">
+                                {{-- <button class="bg-red-700 text-red px-6 py-3 rounded-full font-extrabold shadow-xl hover:bg-red-800 transition duration-300 border-b-4 border-red-900 hover:border-red-950 active:translate-y-1">
                                     � PENDAFTARAN DITUTUP 30 MEI 2025 !!
-                                </button>
+                                </button> --}}
 
                                 <p class="text-xs text-blue-500 cursor-pointer line-clamp-1 hover:line-clamp-none" id="moreText" style="display: none;">
                                     <span class="text-[#ffffff] line-clamp-1 hover:line-clamp-none">{{ $item->keterangan }}</span>

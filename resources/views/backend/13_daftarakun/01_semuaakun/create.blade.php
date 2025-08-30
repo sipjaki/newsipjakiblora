@@ -7,13 +7,16 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -46,10 +49,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/allakun">
-                    <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                    <button class="button-newvalidasi">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -68,130 +68,144 @@
                         <form action="{{ route('akuncreatenew') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <!-- begin::Body -->
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Left Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Asosiasi Masjaki -->
-                                     <!-- User ID (Hidden) -->
-                             <!-- Tampilkan Status Admin -->
-                             <div class="mb-3">
-                                <label class="form-label" for="status_admin_select">
-                                    <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Status Admin
-                                </label>
-                                <select id="status_admin_select" name="statusadmin_id" class="form-control">
-                                    @foreach ($data as $item)
-                                        <option value="{{ $item->id }}">
-                                            {{ $item->statusadmin }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
+<div class="card-body">
+    <div class="row">
+        <!-- Kolom Kiri -->
+        <div class="col-md-6">
+            <!-- Status Admin -->
+            <div class="mb-3">
+                <label class="form-label" for="status_admin_select">
+                    <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Status Admin
+                </label>
+                <select id="status_admin_select" name="statusadmin_id" class="form-control">
+                    @foreach ($data as $item)
+                        <option value="{{ $item->id }}">{{ $item->statusadmin }}</option>
+                    @endforeach
+                </select>
+            </div>
 
+            <!-- Nama Lengkap -->
+            <div class="mb-3">
+                <label class="form-label" for="name">
+                    <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
+                </label>
+                <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}">
+            </div>
 
-<!-- Nama Lengkap -->
-<div class="mb-3">
-    <label class="form-label" for="name">
-        <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
-    </label>
-    <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" />
-    @error('name')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
+            <!-- Username -->
+            <div class="mb-3">
+                <label class="form-label" for="username">
+                    <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Username
+                </label>
+                <input type="text" id="username" name="username" class="form-control" value="{{ old('username') }}">
+            </div>
+
+            <!-- Nomor HP -->
+            <div class="mb-3">
+                <label class="form-label" for="phone_number">
+                    <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> Nomor HP
+                </label>
+                <input type="text" id="phone_number" name="phone_number" class="form-control" value="{{ old('phone_number') }}">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label" for="email">
+                    <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
+                </label>
+                <input type="email" id="email" name="email" class="form-control" value="{{ old('email') }}">
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3 position-relative">
+                <label class="form-label" for="password">
+                    <i class="bi bi-key" style="margin-right: 8px; color: navy;"></i> Password
+                </label>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" class="form-control">
+                    <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('password', this)">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Konfirmasi Password -->
+            <div class="mb-3 position-relative">
+                <label class="form-label" for="password_confirmation">
+                    <i class="bi bi-shield-lock" style="margin-right: 8px; color: navy;"></i> Konfirmasi Password
+                </label>
+                <div class="input-group">
+                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control">
+                    <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('password_confirmation', this)">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kolom Kanan -->
+        <div class="col-md-6">
+            <!-- Upload Foto Profil -->
+            <div class="mb-3">
+                <label class="form-label" for="avatar">
+                    <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Upload Foto Profil
+                </label>
+                <input type="file" id="avatar" name="avatar"
+                       class="form-control @error('avatar') is-invalid @enderror"
+                       accept="image/*" onchange="previewImage('avatar', 'previewFoto')" />
+
+                <div class="mt-2" id="previewContainer">
+                    <img id="previewFoto"
+                         src="{{ old('avatar') ? asset('storage/' . old('avatar')) : '' }}"
+                         style="max-width: 100%; max-height: 200px; margin-top: 10px; {{ old('avatar') ? '' : 'display: none;' }}" />
+                </div>
+
+                @error('avatar')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+        </div>
+    </div>
 </div>
 
-<!-- Username -->
-<div class="mb-3">
-    <label class="form-label" for="username">
-        <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Username
-    </label>
-    <input type="text" id="username" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" />
-    @error('username')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
+<!-- Script untuk Preview Gambar & Show/Hide Password -->
+<script>
+    function previewImage(inputId, previewId) {
+        const file = document.getElementById(inputId).files[0];
+        const imgPreview = document.getElementById(previewId);
 
-<!-- Nomor HP -->
-<div class="mb-3">
-    <label class="form-label" for="phone_number">
-        <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> Nomor HP
-    </label>
-    <input type="text" id="phone_number" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror" value="{{ old('phone_number') }}" />
-    @error('phone_number')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                imgPreview.src = e.target.result;
+                imgPreview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        } else {
+            imgPreview.src = '';
+            imgPreview.style.display = 'none';
+        }
+    }
 
-<!-- Email -->
-<div class="mb-3">
-    <label class="form-label" for="email">
-        <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
-    </label>
-    <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" />
-    @error('email')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
+    function togglePassword(inputId, btn) {
+        const input = document.getElementById(inputId);
+        const icon = btn.querySelector("i");
 
-</div>
-                                    <!-- End Left Column -->
-
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="avatar">
-                                                <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Upload Foto Profil
-                                            </label>
-                                            <input type="file" id="avatar" name="avatar"
-                                                class="form-control @error('avatar') is-invalid @enderror"
-                                                accept="image/*" onchange="previewImage('avatar', 'previewFoto')" />
-
-                                            <div class="mt-2" id="previewContainer">
-                                                <img id="previewFoto"
-                                                    src="{{ old('avatar') ? asset('storage/' . old('avatar')) : '' }}"
-                                                    style="max-width: 100%; max-height: 200px; margin-top: 10px; {{ old('avatar') ? '' : 'display: none;' }}" />
-                                            </div>
-
-                                            @error('avatar')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-
-                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-
-                                        <script>
-                                            function previewImage(inputId, previewId) {
-                                                const file = document.getElementById(inputId).files[0];
-                                                const imgPreview = document.getElementById(previewId);
-
-                                                if (file && file.type.startsWith('image/')) {
-                                                    const reader = new FileReader();
-                                                    reader.onload = function(e) {
-                                                        imgPreview.src = e.target.result;
-                                                        imgPreview.style.display = 'block';
-                                                    }
-                                                    reader.readAsDataURL(file);
-                                                } else {
-                                                    imgPreview.src = '';
-                                                    imgPreview.style.display = 'none';
-                                                }
-                                            }
-                                        </script>
-
-                                    </div>
-                                    <!-- End Right Column -->
-                                </div>
-                                <!-- End row -->
-                            </div>
-                            <!-- end::Body -->
+        if (input.type === "password") {
+            input.type = "text";
+            icon.classList.remove("bi-eye");
+            icon.classList.add("bi-eye-slash");
+        } else {
+            input.type = "password";
+            icon.classList.remove("bi-eye-slash");
+            icon.classList.add("bi-eye");
+        }
+    }
+</script>
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                                    <button type="button" onclick="openModal()"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-                                    style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                    <button class="button-hijau" type="button" onclick="openModal()">
 
                                     <!-- Ikon SVG Pensil -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -199,7 +213,7 @@
                                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                </svg>
-                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Buat Akun</span>
                                 </button>
                                 </div>
                                 <!-- Modal Konfirmasi -->

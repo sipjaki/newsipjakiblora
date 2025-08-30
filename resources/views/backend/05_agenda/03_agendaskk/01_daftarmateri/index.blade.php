@@ -116,11 +116,8 @@
 
                     @can('pekerja')
                     <a href="/hakaksespekerjaskk">
-                        <button
-                        onclick="window.history.back();"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+                        <button class="button-newvalidasi"
+                        onclick="window.history.back();">
 
                         <!-- Ikon Kembali -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -211,7 +208,7 @@
                                                                 @if($item->materipelatihanskk && file_exists(public_path('storage/' . $item->materipelatihanskk)))
                                                                     <iframe src="{{ asset('storage/' . $item->materipelatihanskk) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @elseif($item->materipelatihanskk)
-                                                                    <iframe src="{{ asset($item->materipelatihanskk) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                    <iframe src="{{ asset($item->materipelatihanskk) }}" frameborder="0" width="100%" height="700px"></iframe>
                                                                 @else
                                                                     <p>Data belum diupdate</p>
                                                                 @endif

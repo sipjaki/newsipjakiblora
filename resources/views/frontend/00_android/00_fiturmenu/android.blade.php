@@ -90,20 +90,23 @@
     </div>
     <small style="font-size: 11px;">Dashboard</small>
   </a>
-
-  <!-- Tracking -->
-  <a href="/404" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
+<!-- Informasi -->
+<a href="/dashboard" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; color: #757C98; text-decoration: none;">
     <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-      </svg>
+        <!-- SVG Info Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+        </svg>
     </div>
-    <small style="font-size: 11px;">Tracking</small>
-  </a>
+    <small style="font-size: 11px;">Informasi</small>
+</a>
+
 
   <!-- Home (Center Button) -->
   <a href="/" class="nav-icon" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 56px; transform: translateY(-24px); text-decoration: none;">
-    <div style="width: 56px; height: 56px; display: flex; justify-content: center; align-items: center; background-color: #1B3358; border-radius: 50%; box-shadow: 0 4px 12px rgba(27,51,88,0.3); color: white;">
+    <div style="width: 56px; height: 56px; display: flex; justify-content: center; align-items: center; background-color: #046904; border-radius: 50%; box-shadow: 0 4px 12px rgba(27,51,88,0.3); color: white;">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
         <polyline points="9 22 9 12 15 12 15 22"></polyline>

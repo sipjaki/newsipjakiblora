@@ -9,7 +9,7 @@
 
 
 <style>
-  .btn-custom {
+  .button-hijau {
     background: linear-gradient(45deg, #FFD700, #008000);
     color: white;
     border: none;
@@ -25,7 +25,7 @@
     transition: all 0.3s ease;
   }
 
-  .btn-custom:hover {
+  .button-hijau:hover {
     background: white !important;
     color: black !important;
     transform: scale(1.05);
@@ -40,14 +40,14 @@
 
   /* Optional: Responsive font-size atau padding */
   @media (max-width: 768px) {
-    .btn-custom {
+    .button-hijau {
       font-size: 14px;
       padding: 8px 16px;
     }
   }
 
   @media (max-width: 480px) {
-    .btn-custom {
+    .button-hijau {
       width: 100%;
       justify-content: center;
     }
@@ -83,13 +83,16 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+    {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -135,7 +138,7 @@
 <div class="button-container">
 
     <a href="/allpekerja">
-        <button class="btn-custom pekerja">
+        <button class="button-hijau pekerja">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-person-workspace" viewBox="0 0 16 16">
             <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -147,7 +150,7 @@
 </button>
 </a>
 
-  {{-- <button class="btn-custom superadmin">
+  {{-- <button class="button-hijau superadmin">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       class="bi bi-person-workspace" viewBox="0 0 16 16">
       <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -159,7 +162,7 @@
   </button> --}}
 <a href="/alladmin">
 
-    <button class="btn-custom admin">
+    <button class="button-hijau admin">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       class="bi bi-person-workspace" viewBox="0 0 16 16">
       <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -173,7 +176,7 @@
 
 <a href="/allsupppabrik">
 
-    <button class="btn-custom supp-pabrik">
+    <button class="button-hijau supp-pabrik">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         class="bi bi-person-workspace" viewBox="0 0 16 16">
         <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -187,7 +190,7 @@
 
 <a href="/allsuppperalatan">
 
-    <button class="btn-custom supp-peralatan">
+    <button class="button-hijau supp-peralatan">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         class="bi bi-person-workspace" viewBox="0 0 16 16">
         <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -201,7 +204,7 @@
 
 <a href="/allsupptokobangunan">
 
-    <button class="btn-custom supp-toko">
+    <button class="button-hijau supp-toko">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         class="bi bi-person-workspace" viewBox="0 0 16 16">
         <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -215,7 +218,7 @@
 
 <a href="/alllsppenerbit">
 
-    <button class="btn-custom lsp-penerbit">
+    <button class="button-hijau lsp-penerbit">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         class="bi bi-person-workspace" viewBox="0 0 16 16">
         <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -229,7 +232,7 @@
 
 <a href="/alldinas">
 
-    <button class="btn-custom dinas">
+    <button class="button-hijau dinas">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         class="bi bi-person-workspace" viewBox="0 0 16 16">
         <path d="M6 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -280,19 +283,14 @@
 <!-- Tombol Download Excel -->
 <!-- Tombol Download Excel -->
 <button onclick="exportTableToExcel('tabelSemuaakun', 'data_semuaakun')"
-  class="hide-on-mobile"
-  onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-  onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #4caf50)'; this.style.color='white'; this.style.transform='scale(1)'"
-  style="background: linear-gradient(45deg, #d4af37, #4caf50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+  class="button-baru hide-on-mobile">
   <i class="bi bi-download"></i> Download Excel
 </button>
 
 <!-- Tombol Create -->
 <a href="/akuncreate" class="hide-on-mobile">
-  <button onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)'"
-    onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #4caf50)'; this.style.color='white'; this.style.transform='scale(1)'"
-    style="background: linear-gradient(45deg, #d4af37, #4caf50); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
-    <i class="fa fa-plus"></i> Create
+  <button class="button-baru">
+    <i class="fa fa-plus"></i> Buat Akun
   </button>
 </a>
                      </div>
@@ -311,8 +309,8 @@
         <th style="width: 250px; text-align:center;"><i class="bi bi-person-badge-fill"></i> Username</th>
         <th style="width: 400px; text-align:center;"><i class="bi bi-phone-fill"></i> No Telepon</th>
         <th style="width: 350px; text-align:center;"><i class="bi bi-envelope-fill"></i> Email</th>
-        <th style="width: 150px; text-align:center;"><i class="bi bi-image-fill"></i> Foto Profil</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th>
+        <th style="width: 150px; text-align:center; width:200px;"><i class="bi bi-image-fill"></i> Foto Profil</th>
+        <th style="width: 200px; text-align:center; width:300px;"><i class="bi bi-gear-fill"></i> Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
@@ -324,9 +322,7 @@
             @if($item->name)
                 {{ $item->name }}
             @else
-                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                <button class="button-berkas" >
                     Data Belum Di Update !
                 </button>
             @endif
@@ -336,19 +332,17 @@
             @if($item->statusadmin->statusadmin)
                 {{ $item->statusadmin->statusadmin }}
             @else
-                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                <button class="button-berkas" >
                     Data Belum Di Update !
                 </button>
             @endif
         </td>
 
-        <td>
+        <td style="text-align: center;">
     @if($item->password)
-        <button onclick="showTempPassword({{ $item->id }})"
-                style="background: #2196F3; color: white; padding: 5px 10px; border: none; border-radius: 4px;">
-            Generate
+        <button class="button-newvalidasi" onclick="showTempPassword({{ $item->id }})">
+
+                Generate
         </button>
     @else
         <span style="color: red;">No password set</span>
@@ -367,9 +361,7 @@ function showTempPassword(userId) {
             @if($item->username)
                 {{ $item->username }}
             @else
-                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                <button class="button-berkas" >
                     Data Belum Di Update !
                 </button>
             @endif
@@ -379,9 +371,9 @@ function showTempPassword(userId) {
             @if($item->phone_number)
                 {{ $item->phone_number }}
             @else
-                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                <button
+                class="button-berkas"
+                >
                     Data Belum Di Update !
                 </button>
             @endif
@@ -400,12 +392,9 @@ function showTempPassword(userId) {
         </td>
 
             <td style="text-align: center;">
-                    <button class="btn btn-secondary btn-sm"
-                        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                    <button class="button-baru"
                         data-bs-toggle="modal" data-bs-target="#modalKtp3">
-                        <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+                        <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat Profil
                     </button>
 
                     <!-- Modal KTP -->
@@ -429,7 +418,7 @@ function showTempPassword(userId) {
                                             <img src="{{ asset($item->avatar) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                         @else
                                             <!-- Placeholder jika tidak ada data -->
-                                            <p>Data belum diupdate</p>
+                                            <p class="button-berkas">Data belum diupdate</p>
                                         @endif
                                     </div>
 
@@ -444,14 +433,14 @@ function showTempPassword(userId) {
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
                 <i class="bi bi-eye"></i>
             </a> --}}
-            <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
-                <i class="bi bi-pencil-square"></i>
+            <a href="/bebujkkonstruksi/update/{{$item->id}}" class="button-berkas" title="Update">
+                <i class="bi bi-pencil-square"></i>Update
             </a>
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+            <a href="javascript:void(0)" class="button-merah" title="Delete"
                data-bs-toggle="modal" data-bs-target="#deleteModal"
                data-judul="{{ $item->name }}"
                onclick="setDeleteUrl(this)">
-                <i class="bi bi-trash"></i>
+                <i class="bi bi-trash"></i>Hapus
             </a>
         </td>
 

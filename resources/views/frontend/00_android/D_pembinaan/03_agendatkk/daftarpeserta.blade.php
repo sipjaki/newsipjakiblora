@@ -410,7 +410,7 @@ h5 {
 <div class="row" style="margin-top:25px;" class="text-center;">
     <div class="col-md-6" style="{{ $divStyle }} width:350px;">
         <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Screenshot SKK Saudara <br> .pdf maksimal 5MB
+            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Screenshot SKK Saudara <br> .pdf maksimal 15 MB
         </label>
         <input type="file" name="skkanda" id="skkanda"
                accept="application/pdf"
@@ -418,7 +418,7 @@ h5 {
                class="form-control @error('skkanda') is-invalid @enderror">
         <br>
         <p style="text-align: left; font-size:13px; margin:0; color:navy;"><span style="color: navy; font-size:13px;">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !!</span> </p>
-        {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small> --}}
+        {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 15 MB</small> --}}
         @error('skkanda') <div class="invalid-feedback"><span style="color: red;">{{ $message }}</span></div> @enderror
 
         {{-- Preview --}}
@@ -740,7 +740,7 @@ h5 {
     </label>
     <div class="text-center mt-2">
         <img src="/assets/icon/jenjangbaru.jpg" alt="Preview 1" class="img-fluid rounded shadow mb-3">
-        <img src="/assets/icon/jenjangsyarat.jpg" alt="Preview 2" class="img-fluid rounded shadow">
+        {{-- <img src="/assets/icon/jenjangsyarat.jpg" alt="Preview 2" class="img-fluid rounded shadow"> --}}
     </div>
 </div>
 
@@ -761,7 +761,7 @@ h5 {
 <!-- Upload KTP -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP <br> .pdf,jpg,jpeg,png | Max 5MB
+        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP <br> .pdf,jpg,jpeg,png | Max 15 MB
     </label>
     <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
     <div class="invalid-feedback">@error('uploadktp') <span style="color: red;"> {{ $message }} </span> @enderror</div>
@@ -771,7 +771,7 @@ h5 {
 <!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 4x6 Background <br> Merah jpg,jpeg,png | Max 5MB
+        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 4x6 Background <br> Merah jpg,jpeg,png | Max 15 MB
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
     <div class="invalid-feedback">@error('uploadfoto') <span style="color: red;">{{ $message }}</span> @enderror</div>
@@ -781,7 +781,7 @@ h5 {
 <!-- Upload Ijazah -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah | .pdf | Max 5MB
+        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah | .pdf | Max 15 MB
     </label>
     <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
     <div class="invalid-feedback">@error('uploadijazah') <span style="color: red;">{{ $message }}</span> @enderror</div>
@@ -812,7 +812,7 @@ h5 {
 
 
 <label class="form-label" style="{{ $labelStyle }}">
-<i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf | Max 5MB
+<i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf | Max 15 MB
 @if ($fileDownload) <br>
 <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
     Contoh Pengalaman Kerja <i class="bi bi-download"></i>
@@ -833,7 +833,7 @@ h5 {
 <!-- Upload NPWP -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP <br> jpg,jpeg,png | Max 5MB
+        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP <br> jpg,jpeg,png | Max 15 MB
     </label>
     <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
     <div class="invalid-feedback">@error('uploadnpwp') <span style="color: red;">{{ $message }}</span> @enderror</div>
@@ -844,7 +844,7 @@ h5 {
 <!-- Upload Daftar Riwayat Hidup -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup <br> .pdf | Max 5MB
+        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup <br> .pdf | Max 15 MB
     </label>
     <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
     <div class="invalid-feedback">@error('uploaddaftarriwayathidup') <span style="color:red;">{{ $message }}</span> @enderror</div>
@@ -861,7 +861,7 @@ h5 {
 
 
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data <br> .pdf | Max 15MB
+        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data <br> .pdf | Max 15 MB
         <br>
         @if ($fileDownloaddata)
             <a href="{{ $fileDownloaddata }}" download style="color:rgb(0, 26, 255);">
@@ -1341,7 +1341,7 @@ function previewFile(previewId, input) {
 <!-- Upload KTP -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP <br> .pdf,jpg,jpeg,png | Max 5MB
+        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP <br> .pdf,jpg,jpeg,png | Max 15 MB
     </label>
     <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
     <div class="invalid-feedback">@error('uploadktp') <span style="color: red;"> {{ $message }}</span> @enderror</div>
@@ -1351,7 +1351,7 @@ function previewFile(previewId, input) {
 <!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 4X6 Background <br> Merah jpg,jpeg,png | Max 5MB
+        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 4X6 Background <br> Merah jpg,jpeg,png | Max 15 MB
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
     <div class="invalid-feedback">@error('uploadfoto') <span style="color:red;"> {{ $message }}</span> @enderror</div>
@@ -1361,7 +1361,7 @@ function previewFile(previewId, input) {
 <!-- Upload Ijazah -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah | .pdf | Max 5MB
+        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah | .pdf | Max 15 MB
     </label>
     <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
     <div class="invalid-feedback">@error('uploadijazah') <span style="color:red;"> {{ $message }} </span> @enderror</div>
@@ -1392,7 +1392,7 @@ function previewFile(previewId, input) {
 @endphp
 
 <label class="form-label text-center" style="{{ $labelStyle }}">
-<i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf | Max 5MB
+<i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf | Max 15 MB
 @if ($fileDownload) <br>
 <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
     Contoh Pengalaman Kerja <i class="bi bi-download"></i>
@@ -1413,7 +1413,7 @@ function previewFile(previewId, input) {
 <!-- Upload NPWP -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP <br> jpg,jpeg,png | Max 5MB
+        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP <br> jpg,jpeg,png | Max 15 MB
     </label>
     <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
     <div class="invalid-feedback">@error('uploadnpwp') <span style="color:red;"> {{ $message }} </span> @enderror</div>
@@ -1424,7 +1424,7 @@ function previewFile(previewId, input) {
 <!-- Upload Daftar Riwayat Hidup -->
 <div class="col-md-4" style="{{ $divStyle }}">
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup <br> .pdf | Max 5MB
+        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup <br> .pdf | Max 15 MB
     </label>
     <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
     <div class="invalid-feedback">@error('uploaddaftarriwayathidup') <span style="color:red;"> {{ $message }} </span> @enderror</div>
@@ -1441,7 +1441,7 @@ function previewFile(previewId, input) {
 
 
     <label class="form-label text-center" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data <br> .pdf | Max 5MB
+        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data <br> .pdf | Max 15 MB
         <br>
         @if ($fileDownloaddata)
             <a href="{{ $fileDownloaddata }}" download style="color:rgb(0, 26, 255);">

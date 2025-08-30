@@ -155,11 +155,11 @@
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Penyelenggaran</th>
                                             <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Nama Badan Usaha </th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:600px;"> PJBU  </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;"> Kesesuaian Kegiatan Konstruksi</th>
+                                            {{-- <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;"> Kesesuaian Kegiatan Konstruksi</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Segmentasi Pasar Konstruksi </th>
                                             <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:300px;"> Pemenuhan Syarat Usaha</th>
                                             <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:300px;"> Pengembangan Usaha</th>
-                                            <th onclick="sortTable(12)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
+                                            <th onclick="sortTable(12)" style="cursor:pointer; text-align:center; width:200px;"> View </th> --}}
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -170,7 +170,7 @@
                                             <td style="text-align: left;">{{$item->penyediastatustertibjakon->penyedia}}</td>
                                             <td style="text-align: left;">{{$item->namabadanusaha}}</td>
                                             <td style="text-align: left;">{{$item->pjbu}}</td>
-                                            <td class="text-center" style="text-align: center;">
+                                            {{-- <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->surattertibjakonusaha1) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -240,10 +240,11 @@
                                             </td>
                                             <td style="text-align: center" style="text-align: center;">
                                                 <a href="/404">
-                                                {{-- <a href="/resprofilpaketpekerjaan/{{$item->id}}"> --}}
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
-                                            </td>
+                                            </td> --}}
+                                                                                            {{-- <a href="/resprofilpaketpekerjaan/{{$item->id}}"> --}}
+
                                         </tr>
                                         @endforeach
                                     </tbody>
