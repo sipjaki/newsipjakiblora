@@ -811,40 +811,40 @@ public function beagendaskkupdatecreate(Request $request, $id)
     // Validasi data input
     $validatedData = $request->validate([
         'user_id'              => 'required|string',
-        'jabatankerja_id'              => 'required|string',
-        'namakegiatan'         => 'required|string|max:255',
-        'asosiasimasjaki_id'   => 'required|string',
-        'waktupelaksanaan'     => 'required|date',
-        'penutupan'            => 'required|date',
-        'jumlahpeserta'        => 'required|string',
-        'lokasi'               => 'required|string|max:255',
-        'keterangan'           => 'required|string|max:255',
-        'isiagenda'            => 'required|string',
-        'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
+        'jabatankerja_id'              => 'nullable|string',
+        'namakegiatan'         => 'nullable|string|max:255',
+        'asosiasimasjaki_id'   => 'nullable|string',
+        'waktupelaksanaan'     => 'nullable|date',
+        'penutupan'            => 'nullable|date',
+        'jumlahpeserta'        => 'nullable|string',
+        'lokasi'               => 'nullable|string|max:255',
+        'keterangan'           => 'nullable|string|max:255',
+        'isiagenda'            => 'nullable|string',
+        'foto'                 => 'nullable|image|mimes:jpg,jpeg,png|max:15048',
     ], [
-        'jabatankerja_id.required' => 'ID Jabatan kerja wajib diisi.',
-        'user_id.required' => 'ID pengguna wajib diisi.',
-        'user_id.exists' => 'ID pengguna yang dipilih tidak valid.',
-        'namakegiatan.required' => 'Nama kegiatan wajib diisi.',
-        'namakegiatan.string' => 'Nama kegiatan harus berupa teks.',
-        'namakegiatan.max' => 'Nama kegiatan maksimal 255 karakter.',
-        'asosiasimasjaki_id.required' => 'ID pengguna wajib diisi.',
-        'asosiasimasjaki_id.exists' => 'ID pengguna yang dipilih tidak valid.',
-        'waktupelaksanaan.required' => 'Tanggal pelaksanaan wajib diisi.',
-        'waktupelaksanaan.date' => 'Tanggal pelaksanaan tidak valid.',
-        'penutupan.required' => 'Tanggal penutupan wajib diisi.',
-        'penutupan.date' => 'Tanggal penutupan tidak valid.',
-        'penutupan.after_or_equal' => 'Tanggal penutupan harus lebih besar atau sama dengan tanggal pelaksanaan.',
-        'jumlahpeserta.required' => 'Jumlah peserta harus berupa angka.',
-        'jumlahpeserta.min' => 'Jumlah peserta minimal 1 orang.',
-        'lokasi.required' => 'Lokasi harus berupa teks.',
-        'lokasi.max' => 'Lokasi maksimal 255 karakter.',
-        'keterangan.required' => 'Keterangan harus berupa teks.',
-        'keterangan.max' => 'Keterangan maksimal 255 karakter.',
-        'isiagenda.required' => 'Isi agenda harus berupa teks.',
-        'foto.required' => 'File Gambar terbaru belum di upload.',
-        'foto.mimes' => 'Foto harus berformat jpg, jpeg, atau png.',
-        'foto.max' => 'Ukuran foto maksimal 5MB.',
+        // 'jabatankerja_id.required' => 'ID Jabatan kerja wajib diisi.',
+        // 'user_id.required' => 'ID pengguna wajib diisi.',
+        // 'user_id.exists' => 'ID pengguna yang dipilih tidak valid.',
+        // 'namakegiatan.required' => 'Nama kegiatan wajib diisi.',
+        // 'namakegiatan.string' => 'Nama kegiatan harus berupa teks.',
+        // 'namakegiatan.max' => 'Nama kegiatan maksimal 255 karakter.',
+        // 'asosiasimasjaki_id.required' => 'ID pengguna wajib diisi.',
+        // 'asosiasimasjaki_id.exists' => 'ID pengguna yang dipilih tidak valid.',
+        // 'waktupelaksanaan.required' => 'Tanggal pelaksanaan wajib diisi.',
+        // 'waktupelaksanaan.date' => 'Tanggal pelaksanaan tidak valid.',
+        // 'penutupan.required' => 'Tanggal penutupan wajib diisi.',
+        // 'penutupan.date' => 'Tanggal penutupan tidak valid.',
+        // 'penutupan.after_or_equal' => 'Tanggal penutupan harus lebih besar atau sama dengan tanggal pelaksanaan.',
+        // 'jumlahpeserta.required' => 'Jumlah peserta harus berupa angka.',
+        // 'jumlahpeserta.min' => 'Jumlah peserta minimal 1 orang.',
+        // 'lokasi.required' => 'Lokasi harus berupa teks.',
+        // 'lokasi.max' => 'Lokasi maksimal 255 karakter.',
+        // 'keterangan.required' => 'Keterangan harus berupa teks.',
+        // 'keterangan.max' => 'Keterangan maksimal 255 karakter.',
+        // 'isiagenda.required' => 'Isi agenda harus berupa teks.',
+        // 'foto.required' => 'File Gambar terbaru belum di upload.',
+        // 'foto.mimes' => 'Foto harus berformat jpg, jpeg, atau png.',
+        // 'foto.max' => 'Ukuran foto maksimal 5MB.',
     ]);
     // Ambil data agenda berdasarkan ID
     $agenda = agendaskk::findOrFail($id);
@@ -900,7 +900,7 @@ public function beagendaskkcreate()
     $dataasosiasi = asosiasimasjaki::all();
 
     return view('backend.05_agenda.03_agendaskk.create', [
-        'title' => 'Create Agenda Sertifikasi TKK Kabupaten Blora ',
+        'title' => 'Buat Agenda Baru Sertifikasi TKK Kabupaten Blora ',
         'data' => null, // <<--- penting!
         'lspList' => $datalsp,
         'dataasosiasi' => $dataasosiasi,
@@ -917,12 +917,12 @@ public function beagendaskkcreatenew(Request $request)
         'namakegiatan'         => 'required|string|max:255',
         'user_id'              => 'required|string',
         'waktupelaksanaan'     => 'required|date',
-        'penutupan'            => 'required|date|after_or_equal:waktupelaksanaan',
-        'jumlahpeserta'        => 'required|string',
-        'lokasi'               => 'required|string|max:255',
-        'keterangan'           => 'required|string|max:255',
-        'isiagenda'            => 'required|string',
-        'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
+        'penutupan'            => 'required|date',
+        'jumlahpeserta'        => 'nullable|string',
+        'lokasi'               => 'nullable|string|max:255',
+        'keterangan'           => 'nullable|string|max:255',
+        'isiagenda'            => 'nullable|string',
+        'foto'                 => 'nullable|image|mimes:jpg,jpeg,png|max:15048',
     ], [
         'user_id.required'              => 'LSP Penerbit wajib dipilih.',
         'namakegiatan.required'         => 'Nama kegiatan wajib diisi.',
@@ -1050,7 +1050,7 @@ public function beagendaskkpesertashow(Request $request, $id)
 {
     $id_agendaskk = $id; // simpan id asli
     // Menentukan jumlah per halaman, default 50 jika tidak ada input dari request
-    $perPage = $request->input('perPage', 50);
+    $perPage = $request->input('perPage', 100);
     $search = $request->input('search');
 
     // Pastikan agenda pelatihan dengan ID ini ada
@@ -1386,17 +1386,17 @@ public function perbaikandataskk($id)
 {
     // Validasi dengan pesan kustom
     $validator = Validator::make($request->all(), [
-        'skkanda' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-        'uploadktp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-        'uploadfoto' => 'nullable|file|mimes:jpg,jpeg,png|max:5048',
-        'uploadijazah' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-        'uploadpengalaman' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-        'uploadkebenarandata' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-        'uploadnpwp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
-        'uploaddaftarriwayathidup' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:5048',
+        'skkanda' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:15048',
+        'uploadktp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:15048',
+        'uploadfoto' => 'nullable|file|mimes:jpg,jpeg,png|max:15048',
+        'uploadijazah' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:15048',
+        'uploadpengalaman' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:15048',
+        'uploadkebenarandata' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:15048',
+        'uploadnpwp' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:15048',
+        'uploaddaftarriwayathidup' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:15048',
     ], [
         'file.mimes' => 'File :attribute harus berupa format JPG, JPEG, PNG atau PDF.',
-        'file.max' => 'Ukuran file :attribute maksimal 5MB.',
+        'file.max' => 'Ukuran file :attribute maksimal 15 MB.',
     ]);
 
     if ($validator->fails()) {
@@ -1468,8 +1468,8 @@ public function perbaikandataskk($id)
 
     $data->save();
 
-    session()->flash('create', 'Berkas Berhasil Di Perbarui !');
-    return redirect('hakaksespekerjaberkas');
+session()->flash('create', 'Berkas Berhasil Di Perbarui !');
+return redirect()->back();
 
 
 }
