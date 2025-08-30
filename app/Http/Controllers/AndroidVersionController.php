@@ -616,39 +616,43 @@ public function reasasosiasimasjakikontraktor($id)
         }
 
         // MENU AGENDA PELATIHAN ------------------
+public function menuresagendapelatihan(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
 
-        public function menuresagendapelatihan(Request $request)
-        {
-            $perPage = $request->input('perPage', 5);
-            $search = $request->input('search');
+    $query = agendapelatihan::query();
 
-            $query = agendapelatihan::query();
+    // Tambahkan urutan terbaru paling atas
+    $query->orderBy('created_at', 'desc'); // ganti 'id' kalau tabel tidak punya created_at
 
-            if ($search) {
-                $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                ->orWhere('keterangan', 'LIKE', "%{$search}%")
-                ->orWhere('penutupan', 'LIKE', "%{$search}%")
-                ->orWhere('foto', 'LIKE', "%{$search}%");
-                // ->orWhere('no_telepon', 'LIKE', "%{$search}%");
-            }
+    if ($search) {
+        $query->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%")
+              ->orWhere('penutupan', 'LIKE', "%{$search}%")
+              ->orWhere('foto', 'LIKE', "%{$search}%");
+              // ->orWhere('no_telepon', 'LIKE', "%{$search}%"); // opsional
+    }
 
-            $data = $query->paginate($perPage);
+    $data = $query->paginate($perPage);
 
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('frontend.00_android.D_pembinaan.01_agendapelatihan.partials.table', compact('data'))->render()
-                ]);
-            }
-            $user = Auth::user();
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.D_pembinaan.01_agendapelatihan.partials.table', compact('data'))->render()
+        ]);
+    }
 
-            return view('frontend.00_android.D_pembinaan.01_agendapelatihan.index', [
-                'title' => 'Agenda Pelatihan Jasa Konstruksi Kabupaten Blora',
-                'data' => $data,
-                'perPage' => $perPage,
-                'search' => $search,
-                'user' => $user, // Mengirimkan data paginasi ke view
-            ]);
-        }
+    $user = Auth::user();
+
+    return view('frontend.00_android.D_pembinaan.01_agendapelatihan.index', [
+        'title' => 'Agenda Pelatihan Jasa Konstruksi Kabupaten Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => $user, // Mengirimkan data paginasi ke view
+    ]);
+}
+
 
              // MENU DETAILS AGENDA PELATIHAN JASA KONSTRKSI KABUPATEN BLORA
 
@@ -681,47 +685,48 @@ public function reasasosiasimasjakikontraktor($id)
              }
 
 
-             public function respesertapelatihan(Request $request)
-    {
-        $perPage = $request->input('perPage', 10);
-        $search = $request->input('search');
+public function respesertapelatihan(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
 
-        $query = agendapelatihan::query();
+    $query = agendapelatihan::query();
 
-        if ($search) {
-            $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                  ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
-                  ->orWhere('lokasi', 'LIKE', "%{$search}%")
-                  ->orWhere('keterangan', 'LIKE', "%{$search}%")
-                  ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
-                      $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
-                  });
+    // Urutkan data terbaru paling atas
+    $query->orderBy('created_at', 'desc'); // ganti 'id' jika tabel tidak punya created_at
 
-        }
+    if ($search) {
+        $query->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
+              ->orWhere('lokasi', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%")
+              ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+                  $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+              });
+    }
 
-        $data = $query->paginate($perPage);
+    $data = $query->paginate($perPage);
 
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('frontend.00_android.D_pembinaan.02_pesertapelatihan.table', compact('data'))->render()
-            ]);
-        }
-
-        $user = Auth::user();
-        $datasub = jenjang::all();
-        $datasubkategori = kategoripelatihan::all();
-
-
-        return view('frontend.00_android.D_pembinaan.02_pesertapelatihan.index', [
-            'title' => 'Daftar Peserta Pelatihan Jasa Konstruksi Kab Blora',
-            'data' => $data,
-            'perPage' => $perPage,
-            'search' => $search,
-            'datasub' => $datasub,
-            'datasubkategori' => $datasubkategori,
-            'user' => $user
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.D_pembinaan.02_pesertapelatihan.table', compact('data'))->render()
         ]);
     }
+
+    $user = Auth::user();
+    $datasub = jenjang::all();
+    $datasubkategori = kategoripelatihan::all();
+
+    return view('frontend.00_android.D_pembinaan.02_pesertapelatihan.index', [
+        'title' => 'Daftar Peserta Pelatihan Jasa Konstruksi Kab Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'datasub' => $datasub,
+        'datasubkategori' => $datasubkategori,
+        'user' => $user
+    ]);
+}
 
             //  MENU PESERTA AGENDA PERLATIHAN ===================================================
 
@@ -780,39 +785,50 @@ public function reasasosiasimasjakikontraktor($id)
 
 
         // MENU AGENDA SERTIFIKASI TKK JASA KONSTRUKSI KAB BLORA  ------------------
+public function menuresagendatkk(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
 
-        public function menuresagendatkk(Request $request)
-        {
-            $perPage = $request->input('perPage', 10);
-            $search = $request->input('search');
+    // Mulai query
+    $query = agendaskk::query();
 
-            $query = agendaskk::query();
+    // Urutkan data terbaru paling atas
+    // Ganti 'created_at' dengan 'id' kalau tabel tidak punya created_at
+    $query->orderBy('created_at', 'desc');
 
-            if ($search) {
-                $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                ->orWhere('keterangan', 'LIKE', "%{$search}%")
-                ->orWhere('penutupan', 'LIKE', "%{$search}%")
-                ->orWhere('foto', 'LIKE', "%{$search}%");
-                // ->orWhere('no_telepon', 'LIKE', "%{$search}%");
-            }
+    // Filter pencarian jika ada
+    if ($search) {
+        $query->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%")
+              ->orWhere('penutupan', 'LIKE', "%{$search}%")
+              ->orWhere('foto', 'LIKE', "%{$search}%");
+              // ->orWhere('no_telepon', 'LIKE', "%{$search}%"); // opsional
+    }
 
-            $data = $query->paginate($perPage);
+    // Pagination
+    $data = $query->paginate($perPage);
 
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('frontend.00_android.D_pembinaan.03_agendatkk.partials.table', compact('data'))->render()
-                ]);
-            }
-            $user = Auth::user();
+    // Jika request ajax, return partial view
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.D_pembinaan.03_agendatkk.partials.table', compact('data'))->render()
+        ]);
+    }
 
-            return view('frontend.00_android.D_pembinaan.03_agendatkk.index', [
-                'title' => 'Agenda Pelatihan Jasa Konstruksi Kabupaten Blora',
-                'data' => $data,
-                'perPage' => $perPage,
-                'search' => $search,
-                'user' => $user, // Mengirimkan data paginasi ke view
-            ]);
-        }
+    // Ambil user login
+    $user = Auth::user();
+
+    // Return view utama
+    return view('frontend.00_android.D_pembinaan.03_agendatkk.index', [
+        'title' => 'Agenda Pelatihan Jasa Konstruksi Kabupaten Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => $user, // Mengirimkan data paginasi ke view
+    ]);
+}
+
 
              // MENU DETAILS AGENDA TKK SERTIFIKASI JASA KONSTRKSI KABUPATEN BLORA
 
@@ -845,46 +861,43 @@ public function reasasosiasimasjakikontraktor($id)
              }
 
              public function menurespesertaskk(Request $request)
-             {
-                 $perPage = $request->input('perPage', 10);
-                 $search = $request->input('search');
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
 
-                 $query = agendaskk::query();
+    $query = agendaskk::query();
 
-                 if ($search) {
-                     $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                           ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
-                           ->orWhere('lokasi', 'LIKE', "%{$search}%")
-                           ->orWhere('keterangan', 'LIKE', "%{$search}%")
-                           ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
-                               $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
-                           });
+    // Tambahkan urutan terbaru paling atas
+    $query->orderBy('created_at', 'desc'); // ganti 'id' kalau tabel tidak punya created_at
 
-                 }
+    if ($search) {
+        $query->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
+              ->orWhere('lokasi', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%")
+              ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+                  $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+              });
+    }
 
-                 $data = $query->paginate($perPage);
+    $data = $query->paginate($perPage);
 
-                 if ($request->ajax()) {
-                     return response()->json([
-                         'html' => view('frontend.00_android.D_pembinaan.04_pesertaskk.table', compact('data'))->render()
-                     ]);
-                 }
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.D_pembinaan.04_pesertaskk.table', compact('data'))->render()
+        ]);
+    }
 
-                 $user = Auth::user();
-                //  $datasub = jenjang::all();
-                //  $datasubkategori = kategoripelatihan::all();
+    $user = Auth::user();
 
-
-                 return view('frontend.00_android.D_pembinaan.04_pesertaskk.index', [
-                     'title' => 'Agenda Sertifikasi Tenaga Kerja Konstruksi Kabupaten Blora',
-                     'data' => $data,
-                     'perPage' => $perPage,
-                     'search' => $search,
-                    //  'datasub' => $datasub,
-                    //  'datasubkategori' => $datasubkategori,
-                     'user' => $user
-                 ]);
-             }
+    return view('frontend.00_android.D_pembinaan.04_pesertaskk.index', [
+        'title' => 'Agenda Sertifikasi Tenaga Kerja Konstruksi Kabupaten Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => $user
+    ]);
+}
 
                      //  MENU PESERTA AGENDA PERLATIHAN ===================================================
 public function menuresskkpeserta(Request $request, $namakegiatan)
