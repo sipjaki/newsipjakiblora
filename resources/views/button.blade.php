@@ -1,4 +1,55 @@
+
 <style>
+
+.zebra-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 12px; /* ukuran teks fix 12px */
+  text-align: left;
+  border-radius: 8px;
+  overflow: hidden; /* biar pojok rapi */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Header hijau modern */
+.zebra-table th {
+background-color: #0E3B2E;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 12px;
+  border-bottom: 2px solid #1b5e20; /* garis bawah lebih gelap */
+  letter-spacing: 0.5px;
+}
+
+/* Isi tabel */
+.zebra-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e0f2f1; /* hijau pastel */
+  color: #333333;
+}
+
+/* Zebra effect baris */
+.zebra-table tbody tr:nth-child(even) {
+  background-color: #f1f8f6; /* hijau muda */
+}
+
+/* Hilangkan garis vertikal */
+.zebra-table th,
+.zebra-table td {
+  border-left: none;
+  border-right: none;
+}
+
+/* Efek hover modern */
+.zebra-table tbody tr:hover {
+  background-color: #e8f5e9; /* hijau lebih lembut */
+  transition: background-color 0.2s ease-in-out;
+}
+
+
 .button-abgblora {
     border: none;
     padding: 10px 20px;
