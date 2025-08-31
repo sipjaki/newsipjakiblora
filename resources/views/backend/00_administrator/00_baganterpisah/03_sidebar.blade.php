@@ -799,6 +799,23 @@
 
                 <ul class="nav nav-treeview">
 
+                        <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
                     <li class="nav-item">
                         <a href="/beberitajakon" class="nav-link">
                           <!-- Ikon untuk Berita Jakon -->
@@ -813,6 +830,23 @@
                           <p style="color: white">Artikel Jakon</p>
                         </a>
                       </li>
+
+                                              <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
+    </p>
+</div>
 
                 </ul>
             </li>
@@ -1596,6 +1630,7 @@
               </li>
 
               @endcan
+
 {{-- super admin endcan --}}
 {{--
               <li class="nav-header" style="color: white;" >ADMINISTRATOR DATABASE</li>
