@@ -50,7 +50,38 @@ class LoginController extends Controller
             'phone_number' => 'required|string|max:15',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
-        ]);
+        ], [
+        // Pesan untuk field name
+        'name.required' => 'Nama lengkap wajib diisi.',
+        'name.string' => 'Nama lengkap harus berupa teks.',
+        'name.max' => 'Nama lengkap maksimal 255 karakter.',
+
+        // Pesan untuk field username
+        'username.required' => 'Username wajib diisi.',
+        'username.string' => 'Username harus berupa teks.',
+        'username.max' => 'Username maksimal 255 karakter.',
+        'username.unique' => 'Username sudah digunakan, silakan pilih yang lain.',
+
+        // Pesan untuk statusadmin_id
+        'statusadmin_id.required' => 'Silahkan Pilih Akun Anda !.',
+        'statusadmin_id.string' => 'Status admin harus berupa teks.',
+
+        // Pesan untuk nomor telepon
+        'phone_number.required' => 'Nomor telepon wajib diisi.',
+        'phone_number.string' => 'Nomor telepon harus berupa teks.',
+        'phone_number.max' => 'Nomor telepon maksimal 15 digit.',
+
+        // Pesan untuk email
+        'email.required' => 'Email wajib diisi.',
+        'email.email' => 'Format email tidak valid.',
+        'email.unique' => 'Email sudah terdaftar, silakan gunakan email lain.',
+
+        // Pesan untuk password
+        'password.required' => 'Password wajib diisi.',
+        'password.string' => 'Password harus berupa teks.',
+        'password.min' => 'Password minimal 8 karakter.',
+        'password.confirmed' => 'Konfirmasi password tidak sesuai.',
+    ]);
 
         // Buat user baru
         $user = User::create([
