@@ -257,82 +257,89 @@
 
                 @endforeach
 
-                @foreach ($agendaskk as $menu)
-
-                <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
-                    <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
-                        <a href="#">
-                            {{-- <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="{{asset('storage/' . $menu->foto)}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                            </div> --}}
-
-                            <div style="margin-top: 10px;">
-                                @if($item->menu && $item->menu->foto && file_exists(public_path('storage/' . $item->menu->foto)))
-                                    <!-- Menampilkan gambar dari storage -->
-                                    <img src="{{ asset('storage/' . $item->menu->foto) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                @elseif($item->menu && $item->menu->foto)
-                                    <!-- Menampilkan gambar dari path luar storage -->
-                                    <img src="{{ asset($item->menu->foto) }}" alt="Foto 1" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                @else
-                                    <!-- Placeholder jika tidak ada data -->
-                                    <p style="font-size: 11px;">Tidak Ada Foto!</p>
-                                @endif
-                            </div>
-
-                        </a>
-                        <div class="flex flex-col gap-[6px]">
-                            <p class="text-xs leading-[18px]">Kegiatan : <span class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$menu->namakegiatan}}</span></p>
-                            @php
-                            $eventDate = \Carbon\Carbon::parse($menu->penutupan)->subDays(0);
-                            $today = \Carbon\Carbon::now();
-                            $isClosed = $today->greaterThanOrEqualTo($eventDate);
-                            @endphp
-                            @if ($isClosed)
-                                <button style="
-                                    background-color: #FF0000;
-                                    color: white;
-                                    border: 2px solid #FF0000;
-                                    padding: 8px 12px;
-                                    font-size: 14px;
-                                    font-weight: bold;
-                                    border-radius: 6px;
-                                    cursor: not-allowed;
-                                    opacity: 0.6;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    gap: 6px;
-                                " disabled>
-                                    <i class="fas fa-times-circle"></i> Ditutup
-                                </button>
-                            @else
-                                <a href="/resagendatkk/{{$menu->namakegiatan}}" style="text-decoration: none;">
-                                    <button style="
-                                    background-color: #00098d;
-                                    color: white;
-                                    border: 2px solid #00098d;
-                                    padding: 8px 12px;
-                                    font-size: 14px;
-                                    font-weight: bold;
-                                    border-radius: 6px;
-                                    opacity: 0.6;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    gap: 6px;
-                                    width:100%;
-                                    " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
-                                       onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
-                                        <i class="fas fa-user-check"></i> Daftar
-                                    </button>
-                                </a>
-                            @endif
-                        </div>
-                        {{-- <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
-                    </div>
+@foreach ($agendaskk as $menu)
+    <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
+        <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
+            <a href="#">
+                <div style="margin-top: 10px;">
+                    @if($menu->foto && file_exists(public_path('storage/' . $menu->foto)))
+                        <!-- Menampilkan gambar dari storage -->
+                        <img src="{{ asset('storage/' . $menu->foto) }}"
+                             alt="Foto Agenda"
+                             style="width: 100%; max-height: 100px; object-fit: contain;"
+                             loading="lazy">
+                    @elseif($menu->foto)
+                        <!-- Menampilkan gambar dari path luar storage -->
+                        <img src="{{ asset($menu->foto) }}"
+                             alt="Foto Agenda"
+                             style="width: 100%; max-height: 100px; object-fit: contain;"
+                             loading="lazy">
+                    @else
+                        <!-- Placeholder jika tidak ada data -->
+                        <p style="font-size: 11px; text-align:center; color:#999;">Tidak Ada Foto!</p>
+                    @endif
                 </div>
+            </a>
 
-                @endforeach
+            <div class="flex flex-col gap-[6px]">
+                <p class="text-xs leading-[18px]">
+                    Kegiatan :
+                    <span class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">
+                        {{ $menu->namakegiatan }}
+                    </span>
+                </p>
+
+                @php
+                    $eventDate = \Carbon\Carbon::parse($menu->penutupan)->subDays(0);
+                    $today = \Carbon\Carbon::now();
+                    $isClosed = $today->greaterThanOrEqualTo($eventDate);
+                @endphp
+
+                @if ($isClosed)
+                    <button style="
+                        background-color: #FF0000;
+                        color: white;
+                        border: 2px solid #FF0000;
+                        padding: 8px 12px;
+                        font-size: 14px;
+                        font-weight: bold;
+                        border-radius: 6px;
+                        cursor: not-allowed;
+                        opacity: 0.6;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 6px;
+                        width: 100%;
+                    " disabled>
+                        <i class="fas fa-times-circle"></i> Ditutup
+                    </button>
+                @else
+                    <a href="/resagendatkk/{{ $menu->namakegiatan }}" style="text-decoration: none; width:100%;">
+                        <button style="
+                            background-color: #00098d;
+                            color: white;
+                            border: 2px solid #00098d;
+                            padding: 8px 12px;
+                            font-size: 14px;
+                            font-weight: bold;
+                            border-radius: 6px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 6px;
+                            width: 100%;
+                        "
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
+                        onmouseout="this.style.backgroundColor='#00098d'; this.style.color='white';">
+                            <i class="fas fa-user-check"></i> Daftar
+                        </button>
+                    </a>
+                @endif
+            </div>
+        </div>
+    </div>
+@endforeach
 
             </div>
         </div>
