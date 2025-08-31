@@ -284,21 +284,21 @@
 
             <div class="input-group">
             <i class="fas fa-user input-icon" style="margin-top:-23px;"></i>
-            <input style="text-transform: uppercase;" type="text" name="name" class="input-field" placeholder="Nama Lengkap" value="{{ old('name') }}" required>
-            @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
-            <span style="font-size:13px; color:red;">Ket : Isi Nama Lengkap Sesuai Dengan KTP, dan HURUF CAPITAL</span>
+            <input style="text-transform: uppercase;" type="text" name="name" class="input-field" placeholder="Nama Lengkap" value="{{ old('name') }}" >
+            @error('name') <div class="invalid-feedback" style="color: red">{{ $message }}</div> @enderror
+            <span style="font-size:13px; color:red;">Ket : Nama Lengkap Sesuai Dengan KTP</span>
         </div>
 
         <div class="input-group">
             <i class="fas fa-user-tag input-icon" style="margin-top:-23px;"></i>
-            <input type="text" name="username" class="input-field" placeholder="Username" value="{{ old('username') }}" required>
-            @error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            <input type="text" name="username" class="input-field" placeholder="Username" value="{{ old('username') }}" >
+            @error('username') <div class="invalid-feedback" style="color: red">{{ $message }}</div> @enderror
             <span style="font-size:13px; color:red;">Ket : Isi dengan TKK-( NIK - Anda ) Contoh : TKK-331611XXX... </span>
         </div>
 
             <div class="input-group">
                 <i class="fas fa-users input-icon"></i>
-                <select name="statusadmin_id" class="input-field" required>
+                <select name="statusadmin_id" class="input-field" >
                     <option value="">-- Pilih Akun --</option>
                     @foreach($statusadmin as $status)
                         <option value="{{ $status->id }}">
@@ -321,31 +321,31 @@
                         </option>
                     @endforeach
                 </select>
-                @error('statusadmin_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                @error('statusadmin_id') <div class="invalid-feedback" style="color: red;">{{ $message }}</div> @enderror
             </div>
 
           <div class="input-group">
     <i class="fas fa-phone input-icon"></i>
-    <input type="text" name="phone_number" class="input-field" placeholder="Nomor HP" value="{{ old('phone_number') }}" required>
-    @error('phone_number') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    <input type="text" name="phone_number" class="input-field" placeholder="Nomor HP" value="{{ old('phone_number') }}" >
+    @error('phone_number') <div class="invalid-feedback" style="color: red;">{{ $message }}</div> @enderror
 </div>
 
 <div class="input-group">
     <i class="fas fa-envelope input-icon"></i>
-    <input type="email" name="email" class="input-field" placeholder="Email" value="{{ old('email') }}" required>
-    @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    <input type="email" name="email" class="input-field" placeholder="Email" value="{{ old('email') }}" >
+    @error('email') <div class="invalid-feedback" style="color: red;">{{ $message }}</div> @enderror
 </div>
 
             <div class="input-group position-relative">
                 <i class="fas fa-lock input-icon"></i>
-                <input type="password" id="password" name="password" class="input-field" placeholder="Password" required>
+                <input type="password" id="password" name="password" class="input-field" placeholder="Password" >
                 <i class="fas fa-eye toggle-password" toggle="#password"></i>
-                @error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                @error('password') <div class="invalid-feedback" style="color: red;">{{ $message }}</div> @enderror
             </div>
 
             <div class="input-group position-relative">
                 <i class="fas fa-lock input-icon"></i>
-                <input type="password" id="password_confirmation" name="password_confirmation" class="input-field" placeholder="Konfirmasi Password" required>
+                <input type="password" id="password_confirmation" name="password_confirmation" class="input-field" placeholder="Konfirmasi Password" >
                 <i class="fas fa-eye toggle-password" toggle="#password_confirmation"></i>
             </div>
 
