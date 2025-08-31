@@ -19,7 +19,7 @@
   <div class="login-container">
     <div class="header-section">
       <img src="/assets/00_masjaki/images/maskotjakon.png" class="logo" alt="ABG Blora">
-      <h1>Sign in to Mas Jaki Blora</h1>
+      <h1>Mas Jaki Blora</h1>
     </div>
 
     {{-- Tampilkan pesan error khusus dari controller --}}
@@ -69,21 +69,19 @@
         });
       </script>
 
-
-      <br>
       <div class="footer-links">
         {{-- <a href="/forgot-password">Lupa Password?</a> --}}
-        <a href="{{ route('password.request') }}">Lupa Password?</a>
+        <a href="{{ route('password.request') }}">Lupa Password ?</a>
 
         {{-- <a href="/forgot-password">Lupa Password?</a> --}}
 
       </div>
-
+<br>
       <button type="submit" class="btn-login">Login</button>
 
       <div class="footer-links">
         <a href="/daftar">
-          Belum punya akun? <strong>Register</strong>
+          Belum punya akun ? <strong>Silahkan Daftar</strong>
         </a>
       </div>
     </form>
