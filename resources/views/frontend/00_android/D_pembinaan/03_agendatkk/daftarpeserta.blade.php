@@ -1435,7 +1435,7 @@ function previewFile(previewId, input) {
 <div class="row" style="margin-top: -20px;">
 <div class="col-md-4" style="{{ $divStyle }}">
     @php
-    $fileDownloaddata = asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATANEW.docx');
+    $fileDownloaddata = asset('assets/00_contohsurat/02_BUKTI_KEBENARAN_DATA_PESERTA.docx');
 @endphp
 
 
