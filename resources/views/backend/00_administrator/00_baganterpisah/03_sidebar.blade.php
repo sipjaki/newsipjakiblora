@@ -941,12 +941,33 @@
                   </li>
 
                   <!-- Profil Paket Pekerjaan Konstruksi -->
-                  {{-- <li class="nav-item">
-                    <a href="/404" class="nav-link">
-                      <i class="nav-icon bi bi-bar-chart-line text-warning"></i> <!-- Ikon untuk Data Statistik -->
-                      <p style="color: white">Data Statistik</p>
-                    </a>
-                  </li> --}}
+<li class="nav-item">
+  <a href="/404" class="nav-link">
+    <i class="nav-icon bi bi-briefcase text-warning"></i> <!-- Ikon untuk Jenis Pekerjaan -->
+    <p style="color: white">Jenis Pekerjaan</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/404" class="nav-link">
+    <i class="nav-icon bi bi-clipboard-check text-warning"></i> <!-- Ikon untuk Status Pekerjaan -->
+    <p style="color: white">Status Pekerjaan</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/404" class="nav-link">
+    <i class="nav-icon bi bi-cash-stack text-warning"></i> <!-- Ikon untuk Sumber Dana -->
+    <p style="color: white">Sumber Dana</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/404" class="nav-link">
+    <i class="nav-icon bi bi-calendar-event text-warning"></i> <!-- Ikon untuk Tahun Pelaksanaan -->
+    <p style="color: white">Tahun Pelaksanaan</p>
+  </a>
+</li>
 
 
                 </ul>
