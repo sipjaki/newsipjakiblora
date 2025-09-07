@@ -49,7 +49,7 @@
                     <!--begin::Row-->
                     <div class="putih row" style="margin-right: 10px; margin-left:10px;">
                         <!-- /.card -->
-                        <div class="card mb-4">
+                        {{-- <div class="card mb-4">
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                                 <a href="/404">
                                     <button class="button-baru">
@@ -79,7 +79,7 @@
                                     </button>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="card-header">
                             @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
@@ -151,9 +151,9 @@
                                             <th style="width: 400px; text-align:center;">
                                                 <i class="bi bi-diagram-3" style="margin-right: 5px;"></i>Satuan Kerja
                                             </th>
-                                            <th style="width: 200px; text-align:center;">
+                                            {{-- <th style="width: 200px; text-align:center;">
                                                 <i class="bi bi-file-earmark-text-fill" style="margin-right: 5px;"></i>Buat Draft SPK
-                                            </th>
+                                            </th> --}}
                                             <th style="width: 300px; text-align:center;">
                                                 <i class="bi bi-gear" style="margin-right: 5px;"></i>Aksi
                                             </th>
@@ -163,15 +163,45 @@
                                         @foreach ($data as $item)
                                         <tr class="align-middle">
                                             <td style="text-align: center;">{{$loop->iteration }}</td>
-                                            <td style="text-align: left;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
-                                            <td style="text-align: left; max-width: 380px; word-wrap: break-word; white-space: normal;">
-                                                {{ ucfirst(strtolower($item->namapekerjaan)) }}
-                                            </td>
-                                            <td style="text-align: center;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
-                                            <td style="text-align: center;">{{$item->sumberdana->sumberdana}}</td>
-                                            <td style="text-align: center;">{{$item->tahunpilihan->tahunpilihan}}</td>
-                                            <td style="text-align: left;">{{$item->cvptpenyedia}}</td>
-                                            <td style="text-align: center;">{{$item->nib}}</td>
+<td style="text-align: left;">
+    @if(!empty($item->profiljenispekerjaan->jenispekerjaan))
+        {{ $item->profiljenispekerjaan->jenispekerjaan }}
+    @else
+        <span class="button-berkas">Data Belum Di Update !</span>
+    @endif
+</td>
+<td style="text-align: left; max-width: 380px; word-wrap: break-word; white-space: normal;">
+    {!! $item->namapekerjaan
+        ? ucfirst(strtolower($item->namapekerjaan))
+        : '<span class="button-berkas">Data Belum Di Update !</span>' !!}
+</td>
+
+<td style="text-align: center;">
+    {!! $item->paketstatuspekerjaan->paketstatuspekerjaan
+        ?? '<span class="button-berkas">Data Belum Di Update !</span>' !!}
+</td>
+
+<td style="text-align: center;">
+    {!! $item->sumberdana->sumberdana
+        ?? '<span class="button-berkas">Data Belum Di Update !</span>' !!}
+</td>
+
+<td style="text-align: center;">
+    {!! $item->tahunpilihan->tahunpilihan
+        ?? '<span class="button-berkas">Data Belum Di Update !</span>' !!}
+</td>
+
+<td style="text-align: left;">
+    {!! $item->cvptpenyedia
+        ? $item->cvptpenyedia
+        : '<span class="button-berkas">Data Belum Di Update !</span>' !!}
+</td>
+
+<td style="text-align: center;">
+    {!! $item->nib
+        ? $item->nib
+        : '<span class="button-berkas">Data Belum Di Update !</span>' !!}
+</td>
                                             <td style="text-align: right;">
                                                 <span style="float: left;">Rp.</span>{{ number_format($item->nilaikontrak, 0, ',', '.') }}
                                             </td>
@@ -254,20 +284,18 @@
                                             {{ ucwords(strtolower($item->user->name)) }}
                                             </td>
 
-                                            <td style="text-align: center;">
+                                            {{-- <td style="text-align: center;">
                                                 <div style="display: flex; flex-direction: column; align-items: center;">
                                                     <a href="/bepaketpekerjaan/showsurat/{{$item->id}}" class="button-baru">
                                                         <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Buat Draft
                                                     </a>
                                                 </div>
-                                            </td>
+                                            </td> --}}
 <td style="text-align: center; vertical-align: middle; white-space: nowrap;">
   <div style="display: inline-flex; gap: 10px; align-items: center; justify-content: center;">
-    <a href="/404" class="button-berkas" title="Update"
-    {{-- style="display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; background-color: #4caf50; color: white; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px;" --}}
-    >
+    {{-- <a href="/404" class="button-berkas" title="Update">
       <i class="bi bi-pencil-square"></i> Edit
-    </a>
+    </a> --}}
     <a href="javascript:void(0)" class="button-merah" title="Delete"
        data-bs-toggle="modal" data-bs-target="#deleteModal"
        data-judul="{{ $item->namapekerjaan }}"
