@@ -243,7 +243,7 @@
                                             ];
 
 
-                                            $id = $item->bulanrekap->id;
+                                            $id = $item->bulanrekap->id ?? 'Data Belum Di Update';
                                             $bgColor = $bulanColors[$id] ?? '#6c757d';
                                             @endphp
 
@@ -252,14 +252,14 @@
                                                     style="background-color: {{ $bgColor }}; color: white; border: none; transition: 0.3s;"
                                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                                     onmouseout="this.style.backgroundColor='{{ $bgColor }}'; this.style.color='white';">
-                                                    {{ $item->bulanrekap->bulanrekap }}
+                                                    {{ $item->bulanrekap->bulanrekap ?? 'Data Belum Di Update' }}
                                                 </button>
                                             </td>
 
                                             <td style="text-align: left;">
                                                 <div style="width: 100%; background-color: #ddd; border-radius: 10px; height: 20px; position: relative;">
                                                     <div
-                                                        style="width: {{$item->progress}}%;
+                                                        style="width: {{$item->progress }}%;
                                                             background-color:
                                                             @if($item->progress < 25)
                                                                 red;
@@ -281,7 +281,7 @@
                                                 </div>
                                             </td>
                                         <td style="text-align: left; max-width: 380px; word-wrap: break-word; white-space: normal;">
-                                            {{ ucwords(strtolower($item->user->name)) }}
+                                            {{ ucwords(strtolower($item->user->name ?? 'Data Belum Di Update'))  }}
                                             </td>
 
                                             {{-- <td style="text-align: center;">
