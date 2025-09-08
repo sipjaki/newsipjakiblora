@@ -76,7 +76,7 @@
 <div class="mb-3">
     <label class="form-label" for="lingkuppengawasan">
         <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i>
-        Bukti Dukung Pengawasan Pemanfaatan Jasa Konstruksi
+        Bukti Dukung Pengawasan Pemanfaatan Jasa Konstruksi | Max 20 MB
     </label>
     <input type="file" id="lingkuppengawasan" name="lingkuppengawasan" accept="application/pdf"
         class="form-control @error('lingkuppengawasan') is-invalid @enderror"
@@ -95,7 +95,7 @@
 <div class="mb-3">
     <label class="form-label" for="indikator">
         <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i>
-        Bukti Dukung Pengawasan Rencana Umur Konstruksi & Kapasitas Beban
+        Bukti Dukung Pengawasan Rencana Umur Konstruksi & Kapasitas Beban | Max 20 MB
     </label>
     <input type="file" id="indikator" name="indikator" accept="application/pdf"
         class="form-control @error('indikator') is-invalid @enderror"
@@ -114,7 +114,7 @@
 <div class="mb-3">
     <label class="form-label" for="dokumendiperiksa">
         <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i>
-        Bukti Dukung Pengawasan Pemeliharaan Konstruksi & Struktur
+        Bukti Dukung Pengawasan Pemeliharaan Konstruksi & Struktur | Max 20 MB
     </label>
     <input type="file" id="dokumendiperiksa" name="dokumendiperiksa" accept="application/pdf"
         class="form-control @error('dokumendiperiksa') is-invalid @enderror"
