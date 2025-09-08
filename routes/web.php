@@ -1100,6 +1100,7 @@ Route::delete('/betertibjakonusahapelaksanadelete/delete/{id}', [Tertibjasakonst
 
 // SURAT TERTIB JAKON PEMANFAATAN
 Route::get('/betertibjakonpemanfaatan', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatan'])->middleware(['auth', 'can:admin3'])->name('betertibjakonpemanfaatanindexlist');
+// Route::get('/betertibjakonpemanfaatan', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatan'])->name('betertibjakonpemanfaatanindexlist');
 
 Route::get('/betertibjakonpemanfaatan/create', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreate'])->middleware(['auth', 'can:admin3']);
 Route::post('/betertibjakonpemanfaatan/createnew', [TertibjasakonstruksiController::class, 'betertibjakonpemanfaatancreatenew'])->middleware(['auth', 'can:admin3'])->name('betertibjakonpemanfaatanupdatecreatenew');
@@ -1138,9 +1139,11 @@ Route::post('/betertibjakonmanfaat3/createberkasnew', [TertibjasakonstruksiContr
 Route::delete('/betertibjakonmanfaat3delete/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonmanfaat3deleteberkas'])->middleware(['auth', 'can:admin3'])->name('betertibjakonmanfaat3deleteberkas');
 
 Route::get('/buktidukung/create/{id}', [TertibjasakonstruksiController::class, 'buktidukungcreate'])->middleware(['auth', 'can:admin3']);
+// Route::get('/buktidukung/create/{id}', [TertibjasakonstruksiController::class, 'buktidukungcreate']);
 Route::post('/buktidukung/createnew', [TertibjasakonstruksiController::class, 'buktidukungcreateupload'])->middleware(['auth', 'can:admin3'])->name('create.uploadpemanfaaatantertib');
 
 Route::get('/buktidukungindex/index/{id}', [TertibjasakonstruksiController::class, 'buktidukungindexsurat'])->middleware(['auth', 'can:admin3'])->name('betertibjakonpemanfataansurat3index');
+// Route::get('/buktidukungindex/index/{id}', [TertibjasakonstruksiController::class, 'buktidukungindexsurat'])->name('betertibjakonpemanfataansurat3index');
 Route::delete('/buktidukungindex/delete/{id}', [TertibjasakonstruksiController::class, 'buktidukungindexdelete'])->middleware(['auth', 'can:admin3']);
 
 
