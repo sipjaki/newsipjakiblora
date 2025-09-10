@@ -1,3 +1,149 @@
+<style>
+        :root {
+            --primary-green: #42b549; /* Hijau Tokopedia */
+            --dark-green: #2c9e32;
+            --light-green: #e8f5e9;
+            --accent-green: #c8e6c9;
+        }
+
+
+        .dashboard-card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            height: 100%;
+            position: relative;
+        }
+
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--primary-green);
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-content {
+            padding: 25px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .number-container {
+            background-color: var(--primary-green);
+            border-radius: 14px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(66, 181, 73, 0.3);
+        }
+
+        .animated-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            color: white;
+        }
+
+        .info-content {
+            flex-grow: 1;
+        }
+
+        .info-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--primary-green);
+        }
+
+        .info-text {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+
+        /* Warna khusus untuk setiap kartu */
+        .card-1 .number-container {
+            background-color: #42b549;
+        }
+
+        .card-2 .number-container {
+            background-color: #3fa845;
+        }
+
+        .card-3 .number-container {
+            background-color: #3b9a40;
+        }
+
+        .card-4 .number-container {
+            background-color: #378d3c;
+        }
+
+        .card-5 .number-container {
+            background-color: #338037;
+        }
+
+        .card-1 .info-icon {
+            color: #42b549;
+        }
+
+        .card-2 .info-icon {
+            color: #3fa845;
+        }
+
+        .card-3 .info-icon {
+            color: #3b9a40;
+        }
+
+        .card-4 .info-icon {
+            color: #378d3c;
+        }
+
+        .card-5 .info-icon {
+            color: #338037;
+        }
+
+        @media (max-width: 576px) {
+            .number-container {
+                width: 60px;
+                height: 60px;
+            }
+
+            .animated-number {
+                font-size: 1.5rem;
+            }
+
+            .info-icon {
+                font-size: 22px;
+            }
+
+            .info-text {
+                font-size: 14px;
+            }
+
+            .card-content {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+
+
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -38,190 +184,172 @@
   <!--begin::Row-->
 
             <div class="row">
-
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/beinformasiopd">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Informasi Judul OPD</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
+<div class="col-md-3 col-sm-6 col-12">
+    <a href="/beinformasiopd" style="text-decoration: none;">
+        <div class="dashboard-card card-1">
+            <div class="card-content">
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
                 </div>
-                <!-- /.col -->
-
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/beinfoopd">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Informasi OPD</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
+                <div class="info-content">
+                    <i class="bi bi-building info-icon"></i>
+                    <p class="info-text">Informasi Judul OPD</p>
+                    <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+                        <div class="progress-bar" style="width: 70%; background-color: var(--primary-green);"></div>
+                    </div>
+                    <small class="text-muted">Pengaturan</small>
                 </div>
-                <!-- /.col -->
+            </div>
+        </div>
+    </a>
+</div>
 
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/bekepaladinas">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Informasi Kepala Dinas</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
+<div class="col-md-3 col-sm-6 col-12">
+    <a href="/beinfoopd" style="text-decoration: none;">
+        <div class="dashboard-card card-2">
+            <div class="card-content">
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
                 </div>
-                <!-- /.col -->
-
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/bekabid">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Informasi Kepala Bidang</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
+                <div class="info-content">
+                    <i class="bi bi-bank info-icon"></i>
+                    <p class="info-text">Informasi OPD</p>
+                    <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+                        <div class="progress-bar" style="width: 50%; background-color: #3fa845;"></div>
+                    </div>
+                    <small class="text-muted">Pengaturan</small>
                 </div>
-                <!-- /.col -->
+            </div>
+        </div>
+    </a>
+</div>
 
+<div class="col-md-3 col-sm-6 col-12">
+    <a href="/bekepaladinas" style="text-decoration: none;">
+        <div class="dashboard-card card-3">
+            <div class="card-content">
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                </div>
+                <div class="info-content">
+                    <i class="bi bi-person-badge info-icon"></i>
+                    <p class="info-text">Informasi Kepala Dinas</p>
+                    <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+                        <div class="progress-bar" style="width: 80%; background-color: #3b9a40;"></div>
+                    </div>
+                    <small class="text-muted">Pengaturan</small>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="col-md-3 col-sm-6 col-12">
+    <a href="/bekabid" style="text-decoration: none;">
+        <div class="dashboard-card card-4">
+            <div class="card-content">
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                </div>
+                <div class="info-content">
+                    <i class="bi bi-people info-icon"></i>
+                    <p class="info-text">Informasi Kepala Bidang</p>
+                    <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+                        <div class="progress-bar" style="width: 65%; background-color: #378d3c;"></div>
+                    </div>
+                    <small class="text-muted">Pengaturan</small>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
 
             </div>
-
+<br>
 
             {{-- ================================================================================================= --}}
 
             <div class="row">
-
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/besubbid">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Informasi Sub Koordinator <br> Bangunan Gedung</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
+<div class="col-md-3 col-sm-6 col-12">
+    <a href="/besubbid" style="text-decoration: none;">
+        <div class="dashboard-card card-1">
+            <div class="card-content">
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
                 </div>
-                <!-- /.col -->
-
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/beinformasi">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Keterangan OPD</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
+                <div class="info-content">
+                    <i class="bi bi-diagram-3 info-icon"></i>
+                    <p class="info-text">Informasi Sub Koordinator <br> Bangunan Gedung</p>
+                    <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+                        <div class="progress-bar" style="width: 70%; background-color: var(--primary-green);"></div>
+                    </div>
+                    <small class="text-muted">Pengaturan</small>
                 </div>
-                <!-- /.col -->
+            </div>
+        </div>
+    </a>
+</div>
 
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/besipjaki">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Operator SIPJAKI</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
+<div class="col-md-3 col-sm-6 col-12">
+    <a href="/beinformasi" style="text-decoration: none;">
+        <div class="dashboard-card card-2">
+            <div class="card-content">
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
                 </div>
-                <!-- /.col -->
-
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/bejabatan">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Personil Jabatan Fungsional</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
+                <div class="info-content">
+                    <i class="bi bi-info-circle info-icon"></i>
+                    <p class="info-text">Keterangan OPD</p>
+                    <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+                        <div class="progress-bar" style="width: 60%; background-color: #3fa845;"></div>
+                    </div>
+                    <small class="text-muted">Pengaturan</small>
                 </div>
-                <!-- /.col -->
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="col-md-3 col-sm-6 col-12">
+    <a href="/besipjaki" style="text-decoration: none;">
+        <div class="dashboard-card card-3">
+            <div class="card-content">
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                </div>
+                <div class="info-content">
+                    <i class="bi bi-person-workspace info-icon"></i>
+                    <p class="info-text">Operator SIPJAKI</p>
+                    <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+                        <div class="progress-bar" style="width: 75%; background-color: #3b9a40;"></div>
+                    </div>
+                    <small class="text-muted">Pengaturan</small>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="col-md-3 col-sm-6 col-12">
+    <a href="/bejabatan" style="text-decoration: none;">
+        <div class="dashboard-card card-4">
+            <div class="card-content">
+                <div class="number-container">
+                    <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                </div>
+                <div class="info-content">
+                    <i class="bi bi-people-fill info-icon"></i>
+                    <p class="info-text">Personil Jabatan Fungsional</p>
+                    <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+                        <div class="progress-bar" style="width: 65%; background-color: #378d3c;"></div>
+                    </div>
+                    <small class="text-muted">Pengaturan</small>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
 
 
             </div>

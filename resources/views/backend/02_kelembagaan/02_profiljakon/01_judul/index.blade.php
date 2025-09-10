@@ -13,7 +13,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -75,8 +76,8 @@
                                                 <i class="bi bi-eye"></i>
                                             </a> --}}
                                             <!-- Update Icon -->
-                                            <a href="/beinformasiopd/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
-                                                <i class="bi bi-pencil-square"></i>
+                                            <a href="/beinformasiopd/update/{{$item->id}}" class="button-berkas" title="Update">
+                                                <i class="bi bi-pencil-square"></i>Update
                                             </a>
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
@@ -112,10 +113,7 @@
 
                                 <div style="display: flex; justify-content: flex-end; margin-top:10px; margin-bottom:10px;">
                                     <a href="/beprofiljakon">
-                                        <button
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                            onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                            style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                        <button class="button-newvalidasi">
 
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                                  viewBox="0 0 16 16" style="margin-right: 8px;">

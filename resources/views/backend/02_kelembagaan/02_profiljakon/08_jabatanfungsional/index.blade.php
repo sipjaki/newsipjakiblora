@@ -13,7 +13,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -47,13 +48,10 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
 
                                 <a href="/bejabatan/create">
-                                    <button
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';"
-                                    style="background-color: #007bff; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                    <button class="button-baru">
                                     <!-- Ikon Kembali -->
                                     <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                                    Create
+                                    Buat Baru
                                 </button>
                             </a>
                         </div>
@@ -64,7 +62,7 @@
                                         <th style="width: 10px; text-align:center;">No</th>
                                         <th style="width: 500px; text-align:center;">Jabatan</th>
                                         <th style="width: 500px; text-align:center;">Nama Lengkap</th>
-                                        <th style="width: 200px; text-align: center;">Aksi</th>
+                                        <th style="width: 300px; text-align: center;">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -79,14 +77,14 @@
                                                 <i class="bi bi-eye"></i>
                                             </a> --}}
                                             <!-- Update Icon -->
-                                            <a href="/bejabatan/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
-                                                <i class="bi bi-pencil-square"></i>
+                                            <a href="/bejabatan/update/{{$item->id}}" class="button-berkas" title="Update">
+                                                <i class="bi bi-pencil-square"></i>Update
                                             </a>
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-judul="{{ $item->namalengkap }}" onclick="setDeleteUrl(this)">
-                                            <i class="bi bi-trash"></i>
+                                            <i class="bi bi-trash"></i> Hapus
                                         </a>
 
                                         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -150,10 +148,7 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 20px; margin-top: 20px;">
 
                                 <a href="/beprofiljakon">
-                                    <button
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                    <button class="button-newvalidasi">
                                     <!-- Ikon Kembali -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     viewBox="0 0 16 16" style="margin-right: 8px;">

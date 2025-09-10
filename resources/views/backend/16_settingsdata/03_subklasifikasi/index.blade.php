@@ -113,7 +113,7 @@
         </script>
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Tanda Tangan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Nama Pekerjaan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -145,7 +145,7 @@
 </button>
 
 <!-- Tombol Create -->
-<a href="/settingstandatangan/create">
+<a href="/settingssubklasifikasi/create">
     <button class="button-baru">
         <i class="fa fa-plus" style="margin-right: 8px;"></i> Buat Baru
     </button>
@@ -161,20 +161,23 @@
  <thead>
      <tr>
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Nama Lengkap</th>
-        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Tanda Tangan</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
+        <th style="width: 100px; text-align:center;"><i class="bi bi-people-fill"></i> Kode Pekerjaan </th>
+        <th style="width: 400px; text-align:center;"><i class="bi bi-people-fill"></i> Nama Pekerjaan </th>
+        <th style="width: 100px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{ $item->namalengkap }}</td>
+         <td style="text-align: left;" >
+            {{ $item->kode }}
+        </td>
 
-         <td style="text-align: center;">
+        <td style="text-align: left;">
+             {{ $item->pekerjaan }}
 
-               <div style="margin-top: 10px;">
+               {{-- <div style="margin-top: 10px;">
     @if($item->tandatangan && file_exists(public_path('storage/' . $item->tandatangan)))
         <!-- Menampilkan gambar dari storage -->
         <img src="{{ asset('storage/' . $item->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 80px; object-fit: contain;" loading="lazy">
@@ -185,7 +188,7 @@
         <!-- Placeholder jika tidak ada data -->
         <p>Data belum diupdate</p>
     @endif
-</div>
+</div> --}}
 
         </td>
 
@@ -259,7 +262,7 @@
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/settingstandatangan/delete/" + encodeURIComponent(id);
+                     var deleteUrl = "/settingssubklasifikasi/delete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
