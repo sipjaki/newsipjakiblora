@@ -93,9 +93,10 @@ class LoginController extends Controller
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
             'verification_token' => Str::random(50),
+            'is_email_verified' => 1,
         ]);
 
-        Mail::to($user->email)->send(new VerifyEmail($user));
+        //Mail::to($user->email)->send(new VerifyEmail($user));
 
         // Redirect atau beri notifikasi
         return redirect('/login')->with('success', 'Akun berhasil dibuat, silakan login!');
