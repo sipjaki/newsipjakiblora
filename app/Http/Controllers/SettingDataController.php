@@ -6,6 +6,7 @@ use App\Models\rantaipasokblora;
 use App\Models\peralatankonstruksi;
 use App\Models\alatberat;
 use App\Models\namasekolah;
+use App\Models\subklasifikasi;
 use App\Models\tandatangan;
 use Illuminate\Http\Request;
 
@@ -109,6 +110,40 @@ public function settingstandatangan(Request $request)
     ]);
 }
 
+public function settingssubklasifikasi(Request $request)
+{
+
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search');
+
+    $query = subklasifikasi::query();
+
+    if ($search) {
+        $query->where(function($q) use ($search) {
+            $q->where('kode', 'LIKE', "%{$search}%")
+              ->orWhere('pekerjaan', 'LIKE', "%{$search}%");
+        });
+    }
+
+    // Urutkan berdasarkan abjad A-Z sesuai kolom pekerjaan
+    $query->orderBy('pekerjaan', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.16_settingsdata.02_tandatangan.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.03_subklasifikasi.index', [
+        'title' => 'Daftar Sub Klasifikasi Pekerjaan Konstruksi',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+
+}
 
  public function settingstandatangancreate()
     {
@@ -180,6 +215,59 @@ return redirect('/settingstandatangan')->with('delete', 'Data Berhasil Di Hapus 
 }
 
 return redirect()->back()->with('error', 'Item not found');
+}
+
+ public function settingssubklasifikasicreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.03_subklasifikasi.create', [
+            'title' => 'Buat Data Sub Klasifikasi Layanan',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
+
+    public function settingssubklasifikasinewcreate(Request $request)
+{
+    $request->validate([
+        'kode' => 'required|string|max:50',
+        'pekerjaan' => 'required|string|max:255',
+    ], [
+        'kode.required' => 'Kode tidak boleh kosong.',
+        'pekerjaan.required' => 'Pekerjaan tidak boleh kosong.',
+    ]);
+
+    // Simpan ke database
+    subklasifikasi::create([
+        'kode' => $request->kode,
+        'pekerjaan' => $request->pekerjaan,
+    ]);
+
+    session()->flash('create', 'Data sub klasifikasi berhasil ditambahkan!');
+    return redirect('/settingssubklasifikasi');
+}
+
+
+
+public function settingssubklasifikasidelete($id)
+{
+// Cari item berdasarkan judul
+$entry = subklasifikasi::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/settingssubklasifikasi')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
 }
 
 
