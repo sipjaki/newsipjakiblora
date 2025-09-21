@@ -33,8 +33,11 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
-    <!--begin::App Content Header-->
+    {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+
+        <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
        <div class="container-fluid">
@@ -93,13 +96,10 @@
 
 
                          <a href="/beartikeljakon/create">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';"
-                             style="background-color: #007bff; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                             <button class="button-baru">
                              <!-- Ikon Kembali -->
                              <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                             Create
+                             Buat Artikel
                          </button>
                          </a>
                      </div>
@@ -115,7 +115,7 @@
          <th style="width: 200px; text-align:center; background:white; color:black;">Penulis</th>
          <th style="width: 500px; text-align:center;">Artikel Jakon</th>
          <th style="width: 150px; text-align:center;">Tanggal</th>
-         <th style="width: 200px; text-align:center;">Aksi</th>
+         <th style="width: 350px; text-align:center;">Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
@@ -127,17 +127,17 @@
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</td>
 
          <td style="text-align: center; vertical-align: middle;">
-             <a href="/beartikeljakon/show/{{$item->id}}" class="btn btn-sm btn-info me-2" title="Show">
-                 <i class="bi bi-eye"></i>
+             <a href="/beartikeljakon/show/{{$item->id}}" class="button-baru" title="Show">
+                 <i class="bi bi-eye"></i>View
              </a>
-             <a href="/beartikeljakon/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
-                 <i class="bi bi-pencil-square"></i>
+             <a href="/beartikeljakon/update/{{$item->id}}" class="button-berkas" title="Update">
+                 <i class="bi bi-pencil-square"></i>Update
              </a>
-             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+             <a href="javascript:void(0)" class="button-merah" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
                    data-judul="{{ $item->judul }}"
                    onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>
+                    <i class="bi bi-trash"></i>Hapus
             </a>
          </td>
 
