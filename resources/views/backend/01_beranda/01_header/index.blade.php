@@ -19,11 +19,11 @@
           <!--begin::Container-->
           <div class="container-fluid">
             <!--begin::Row-->
-            <div class="row">
+            {{-- <div class="row">
 
               <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
 
-            </div>
+            </div> --}}
             <!--end::Row-->
           </div>
           <!--end::Container-->
@@ -34,13 +34,15 @@
         {{-- ======================================================= --}}
         {{-- ALERT --}}
 
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
+        {{-- @include('backend.00_administrator.00_baganterpisah.06_alert') --}}
+  @include('backend.00_administrator.00_baganterpisah.11_alert')
 
         {{-- ======================================================= --}}
 
         <div class="container-fluid">
             <!--begin::Row-->
             <div class="row" style="margin-right: 10px; margin-left:10px;">
+                
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
@@ -56,7 +58,7 @@
                                         <th style="width: 100px; text-align:center;">No</th>
                                         <th style="width: 400px; text-align:center;">Judul</th>
                                         <th style="width: 500px; text-align:center;">Gambar/Foto</th>
-                                        <th style="width: 150px; text-align: center;">Aksi</th>
+                                        <th style="width: 250px; text-align: center;">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,18 +71,18 @@
                                         </td>
                                         <td style="text-align: center;">
                                             <!-- Show Icon -->
-                                            <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
+                                            {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                                                 <i class="bi bi-eye"></i>
-                                            </a>
+                                            </a> --}}
                                             <!-- Update Icon -->
-                                            <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
-                                                <i class="bi bi-pencil-square"></i>
+                                            <a href="/header/update/{{ $item->id }}" class="button-berkas" title="Update">
+                                                <i class="bi bi-pencil-square"></i>Update
                                             </a>
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-judul="{{ $item->judul }}" onclick="setDeleteUrl(this)">
-                                            <i class="bi bi-trash"></i>
+                                            <i class="bi bi-trash"></i> Hapus
                                         </a>
 
 

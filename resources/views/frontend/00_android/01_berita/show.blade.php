@@ -63,7 +63,11 @@
                         </div>
                         <div class="flex gap-1 items-center">
                             <p class="font-semibold text-sm">{{$data->user->name}}</p>
+<div style="font-weight: bold; color: #333; font-size: 14px;">
+    {{ \Carbon\Carbon::parse($data->tanggal)->translatedFormat('d F Y') }}
+</div>
 
+                            {{-- <p class="font-semibold text-sm">{{$data->tanggal}}</p> --}}
                         </div>
                     </div>
                 </div>
