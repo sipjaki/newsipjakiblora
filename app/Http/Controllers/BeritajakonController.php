@@ -20,20 +20,34 @@ class BeritajakonController extends Controller
 {
     //
 
+    // public function index()
+    // {
+    //     $user = Auth::user();
+    //     $users = user::all();
+    //     $databerita = beritajakon::paginate(20);
+
+
+    //     return view('frontend.02_beritajakon.index', [
+    //         'title' => 'Berita Jasa Konstruksi',
+    //         'user' => $user, // Mengirimkan data paginasi ke view
+    //         'users' => $users, // Mengirimkan data paginasi ke view
+    //         'data' => $databerita, // Mengirimkan data paginasi ke view
+    //     ]);
+    // }
+
     public function index()
-    {
-        $user = Auth::user();
-        $users = user::all();
-        $databerita = beritajakon::paginate(6);
+{
+    $user = Auth::user();
+    $users = user::all();
+    $databerita = beritajakon::orderBy('created_at', 'desc')->paginate(20);
 
-
-        return view('frontend.02_beritajakon.index', [
-            'title' => 'Berita Jasa Konstruksi',
-            'user' => $user, // Mengirimkan data paginasi ke view
-            'users' => $users, // Mengirimkan data paginasi ke view
-            'data' => $databerita, // Mengirimkan data paginasi ke view
-        ]);
-    }
+    return view('frontend.02_beritajakon.index', [
+        'title' => 'Berita Jasa Konstruksi',
+        'user' => $user,
+        'users' => $users,
+        'data' => $databerita,
+    ]);
+}
 
     public function artikeljakon()
     {
@@ -47,21 +61,35 @@ class BeritajakonController extends Controller
         ]);
     }
 
+    // public function showjudulberita($judulberita)
+    // {
+    //     $databeritajakon = beritajakon::where('judulberita', $judulberita)->first();
+    //     $databerita = beritajakon::paginate(20);
+    //     $user = Auth::user();
+
+    // return view('frontend.02_beritajakon.showberita', [
+    //     'title' => 'Berita Jasa Konstruksi',
+    //     'data' => $databeritajakon,
+    //     'databerita' => $databerita,
+    //     // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+    //     'user' => $user,
+    //     // 'start' => $start,
+    // ]);
+    // }
+
     public function showjudulberita($judulberita)
-    {
-        $databeritajakon = beritajakon::where('judulberita', $judulberita)->first();
-        $databerita = beritajakon::paginate(6);
-        $user = Auth::user();
+{
+    $databeritajakon = beritajakon::where('judulberita', $judulberita)->first();
+    $databerita = beritajakon::orderBy('created_at', 'desc')->paginate(20);
+    $user = Auth::user();
 
     return view('frontend.02_beritajakon.showberita', [
         'title' => 'Berita Jasa Konstruksi',
         'data' => $databeritajakon,
         'databerita' => $databerita,
-        // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
         'user' => $user,
-        // 'start' => $start,
     ]);
-    }
+}
 
     public function artikeljakonshow($judul)
         {
@@ -597,35 +625,62 @@ public function beartikeljakoncreatenew(Request $request)
     // ================================================================= MENU FRONTEND ANDROID =================================================================
 
 
-    public function androidberita()
-    {
-        $user = Auth::user();
-        $databerita = beritajakon::paginate(6);
+    // public function androidberita()
+    // {
+    //     $user = Auth::user();
+    //     $databerita = beritajakon::paginate(20);
 
-        return view('frontend.00_android.01_berita.index', [
-            'title' => 'Berita Jasa Konstruksi',
-            'user' => $user, // Mengirimkan data paginasi ke view
-            'data' => $databerita, // Mengirimkan data paginasi ke view
-        ]);
-    }
+    //     return view('frontend.00_android.01_berita.index', [
+    //         'title' => 'Berita Jasa Konstruksi',
+    //         'user' => $user, // Mengirimkan data paginasi ke view
+    //         'data' => $databerita, // Mengirimkan data paginasi ke view
+    //     ]);
+    // }
+
+public function androidberita()
+{
+    $user = Auth::user();
+    $databerita = beritajakon::orderBy('created_at', 'desc')->paginate(20);
+
+    return view('frontend.00_android.01_berita.index', [
+        'title' => 'Berita Jasa Konstruksi',
+        'user' => $user,
+        'data' => $databerita,
+    ]);
+}
+    // public function androidberitashow($judulberita)
+    // {
+    //     $databeritajakon = beritajakon::where('judulberita', $judulberita)->first();
+    //     $databerita = beritajakon::paginate(20);
+    //     $user = Auth::user();
+    //     $users = user::all();
+
+    //     return view('frontend.00_android.01_berita.show', [
+    //     'title' => 'Berita Jasa Konstruksi',
+    //     'data' => $databeritajakon,
+    //     'databerita' => $databerita,
+    //     // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+    //     'user' => $user,
+    //     'users' => $users,
+    //     // 'start' => $start,
+    // ]);
+    // }
 
     public function androidberitashow($judulberita)
-    {
-        $databeritajakon = beritajakon::where('judulberita', $judulberita)->first();
-        $databerita = beritajakon::paginate(6);
-        $user = Auth::user();
-        $users = user::all();
+{
+    $databeritajakon = beritajakon::where('judulberita', $judulberita)->first();
+    $databerita = beritajakon::orderBy('created_at', 'desc')->paginate(20);
+    $user = Auth::user();
+    $users = user::all();
 
-        return view('frontend.00_android.01_berita.show', [
+    return view('frontend.00_android.01_berita.show', [
         'title' => 'Berita Jasa Konstruksi',
         'data' => $databeritajakon,
         'databerita' => $databerita,
-        // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
         'user' => $user,
         'users' => $users,
-        // 'start' => $start,
     ]);
-    }
+}
 
 
     public function androidartikeljakon()
