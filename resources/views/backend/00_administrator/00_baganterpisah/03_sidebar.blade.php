@@ -723,20 +723,20 @@
                     <p style="color: white">Header</p>
                   </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                   <a href="/404" class="nav-link">
                     <!-- Ikon untuk Informasi Kantor -->
                     <i class="nav-icon bi bi-building text-warning"></i>
                     <p style="color: white">Informasi Kantor</p>
                   </a>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                   <a href="/404" class="nav-link">
                     <!-- Ikon untuk Sosial Media -->
                     <i class="nav-icon bi bi-facebook text-warning"></i> <!-- Bisa diganti dengan bi-twitter atau bi-instagram sesuai kebutuhan -->
                     <p style="color: white">Sosial Media</p>
                   </a>
-                </li>
+                </li> --}}
 
           </ul>
         </li>
@@ -830,6 +830,14 @@
                           <p style="color: white">Artikel Jakon</p>
                         </a>
                       </li>
+                      <li class="nav-item">
+  <a href="/404" class="nav-link">
+    <!-- Ikon untuk Dokumentasi Jakon -->
+    <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+    <p style="color: white">Dokumentasi Jakon</p>
+  </a>
+</li>
+
 
                                               <div style="margin-bottom: 10px; margin-top: 10px;">
     <p style="
@@ -1153,7 +1161,7 @@
                     </a>
                   </li>
 
-                                                <div style="margin-bottom: 10px; margin-top: 10px;">
+<div style="margin-bottom: 10px; margin-top: 10px;">
     <p style="
         font-size: 13px;
         margin-left: 12px;
@@ -1170,7 +1178,14 @@
     </p>
 </div>
 
-                <li class="nav-item">
+<li class="nav-item">
+  <a href="/settingssubklasifikasi" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-diagram-3 text-warning"></i>
+    <p style="color: white;">Sub Klasifikasi</p>
+  </a>
+</li>
+
+<li class="nav-item">
   <a href="/settingstandatangan" target="_blank" class="nav-link">
     <i class="nav-icon bi bi-pen text-warning"></i>
     <p style="color: white;">Tanda Tangan</p>
@@ -1651,6 +1666,7 @@
               </li>
 
               @endcan
+              {{-- GEMBOK --}}
 
 {{-- super admin endcan --}}
 {{--
