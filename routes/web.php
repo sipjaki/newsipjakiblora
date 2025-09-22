@@ -621,7 +621,9 @@ Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware
 // ---------------------- MENU 2 BERANDA  -----------------------------------------------------
 // ---------------------- MENU 1 HEADER -----------------------------------------------------
 Route::get('/header', [AdminDashboardController::class, 'header'])->middleware('auth');
-Route::get('/header/update', [AdminDashboardController::class, 'headerupdate'])->middleware('auth');
+Route::get('/header/update/{id}', [AdminDashboardController::class, 'headerupdate'])->middleware('auth');
+Route::post('/header/updatecreate/{id}', [AdminDashboardController::class, 'headerupdatecreate'])->middleware(['auth'])->name('update.header');
+
 // Route::get('/header/delete/{judul}', [AdminDashboardController::class, 'headerdelete'])->middleware('auth');
 Route::delete('/header/delete/{judul}', [AdminDashboardController::class, 'headerdelete'])->middleware('auth');
 
@@ -631,95 +633,130 @@ Route::delete('/header/delete/{judul}', [AdminDashboardController::class, 'heade
 
 // ======================================= KELEMBAGAAN BACKEND -------------------------------------------------------------
 // ---------------------- MENU 1 STRUKTUR ORGANISASI  -----------------------------------------------------
-Route::get('/bestrukturdinas', [StrukturController::class, 'strukturkedinasan'])->middleware(['auth', 'can:admin2']);
+Route::get('/bestrukturdinas', [StrukturController::class, 'strukturkedinasan'])->middleware(['auth', 'can:admin2']); //
+// Route::get('/bestrukturdinas', [StrukturController::class, 'strukturkedinasan'])->middleware(['auth']);
 // Route::get('/header/update', [AdminDashboardController::class, 'headerupdate'])->middleware('auth');
 // Route::delete('/header/delete/{judul}', [AdminDashboardController::class, 'headerdelete'])->middleware('auth');
 
 // ---------------------- MENU 2 PROFIL JASA KONSTRUKSI MAS JAKI   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beprofiljakon', [StrukturController::class, 'beprofiljakon'])->middleware(['auth', 'can:admin2']);
+// Route::get('/beprofiljakon', [StrukturController::class, 'beprofiljakon'])->middleware(['auth']);
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beinformasiopd', [StrukturController::class, 'beinformasiopd'])->middleware(['auth', 'can:admin2']);
+// Route::get('/beinformasiopd', [StrukturController::class, 'beinformasiopd'])->middleware(['auth']);
 // Route::get('/beinformasiopd/update/{judul}', [StrukturController::class, 'beinformasiopdupdate'])->middleware('auth');
-Route::get('/beinformasiopd/update/{id}', [StrukturController::class, 'beinformasiopdupdate'])->middleware(['auth', 'can:admin2'])->name('update.beinformasiopd');
+Route::get('/beinformasiopd/update/{id}', [StrukturController::class, 'beinformasiopdupdate'])->middleware(['auth', 'can:admin2'])->name('update.beinformasiopd'); //
+// Route::get('/beinformasiopd/update/{id}', [StrukturController::class, 'beinformasiopdupdate'])->middleware(['auth'])->name('update.beinformasiopd');
 Route::post('/beinformasiopd/updatecreate/{id}', [StrukturController::class, 'beinformasiopdupdatecreate'])->middleware(['auth', 'can:admin2'])->name('update.beinformasiopdupdatecreate');
 
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beinfoopd', [StrukturController::class, 'beinfoopd'])->middleware(['auth', 'can:admin2']);
+// Route::get('/beinfoopd', [StrukturController::class, 'beinfoopd'])->middleware(['auth']);
 // Route::get('/beinfoopd/update/{judul}', [StrukturController::class, 'beinfoopdupdate'])->middleware('auth');
 Route::get('/beinfoopd/update/{id}', [StrukturController::class, 'beinfoopdupdate'])->middleware(['auth', 'can:admin2'])->name('update.beinfoopd');
+// Route::get('/beinfoopd/update/{id}', [StrukturController::class, 'beinfoopdupdate'])->middleware(['auth'])->name('update.beinfoopd');
 Route::post('/beinfoopd/updatecreate/{id}', [StrukturController::class, 'beinfoopdupdatecreate'])->middleware(['auth', 'can:admin2'])->name('update.beinfoopdupdatecreate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bekepaladinas', [StrukturController::class, 'bekepaladinas'])->middleware(['auth', 'can:admin2']);
+// Route::get('/bekepaladinas', [StrukturController::class, 'bekepaladinas'])->middleware(['auth']);
 // Route::get('/bekepaladinas/update/{namalengkap}', [StrukturController::class, 'bekepaladinasupdate'])->middleware('auth');
 Route::get('/bekepaladinas/update/{id}', [StrukturController::class, 'bekepaladinasupdate'])->middleware(['auth', 'can:admin2'])->name('update.bekepaladinas');
+// Route::get('/bekepaladinas/update/{id}', [StrukturController::class, 'bekepaladinasupdate'])->middleware(['auth'])->name('update.bekepaladinas');
 Route::post('/bekepaladinas/updatecreate/{id}', [StrukturController::class, 'bekepaladinasupdatecreate'])->middleware(['auth', 'can:admin2'])->name('update.bekepaladinasupdatecreate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bekabid', [StrukturController::class, 'bekabidbaru'])->middleware(['auth', 'can:admin2']);
-// Route::get('/bekabid/update/{namalengkap}', [StrukturController::class, 'bekabidshow'])->middleware('auth');
-Route::get('/bekabid/update/{id}', [StrukturController::class, 'bekabidbaruupdate'])->middleware(['auth', 'can:admin2'])->name('update.bekabidbaru');
+// Route::get('/bekabid', [StrukturController::class, 'bekabidbaru'])->middleware(['auth']);
+Route::get('/bekabid/update/{namalengkap}', [StrukturController::class, 'bekabidshow'])->middleware('auth');
+Route::get('/bekabid/updatebaru/{id}', [StrukturController::class, 'bekabidbaruupdate'])->middleware(['auth', 'can:admin2'])->name('update.bekabidbaru');
+// Route::get('/bekabid/updatebaru/{id}', [StrukturController::class, 'bekabidbaruupdate'])->middleware(['auth'])->name('update.bekabidbaru');
 Route::post('/bekabid/updatecreate/{id}', [StrukturController::class, 'bekabidbaruupdatecreate'])->middleware(['auth', 'can:admin2'])->name('update.bekabidbaruupdatecreate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/besubbid', [StrukturController::class, 'besubbid'])->middleware(['auth', 'can:admin2']);
+// Route::get('/besubbid', [StrukturController::class, 'besubbid'])->middleware(['auth']);
 // Route::get('/besubbid/update/{namalengkap}', [StrukturController::class, 'besubbidupdate'])->middleware('auth');
 Route::get('/besubbid/update/{id}', [StrukturController::class, 'besubbidupdate'])->middleware(['auth', 'can:admin2'])->name('update.besubbidupdate');
+// Route::get('/besubbid/update/{id}', [StrukturController::class, 'besubbidupdate'])->middleware(['auth'])->name('update.besubbidupdate');
 Route::post('/besubbid/updatecreate/{id}', [StrukturController::class, 'besubbidcreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.besubbidcreateupdate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beinformasi', [StrukturController::class, 'beinformasi'])->middleware(['auth', 'can:admin2']);
+// Route::get('/beinformasi', [StrukturController::class, 'beinformasi'])->middleware(['auth']);
 // Route::get('/beinformasi/update/{id}', [StrukturController::class, 'beinformasiupdate'])->middleware('auth');
 Route::get('/beinformasi/update/{id}', [StrukturController::class, 'beinformasiupdate'])->middleware(['auth', 'can:admin2'])->name('update.beinformasiupdate');
+// Route::get('/beinformasi/update/{id}', [StrukturController::class, 'beinformasiupdate'])->middleware(['auth'])->name('update.beinformasiupdate');
 Route::post('/beinformasi/updatecreate/{id}', [StrukturController::class, 'beinformasicreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.beinformasiupdatecreate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/besipjaki', [StrukturController::class, 'besipjaki'])->middleware(['auth', 'can:admin2']);
+// Route::get('/besipjaki', [StrukturController::class, 'besipjaki'])->middleware(['auth']);
 // Route::get('/besipjaki/update/{id}', [StrukturController::class, 'besipjakiupdate'])->middleware('auth');
 Route::get('/besipjaki/update/{id}', [StrukturController::class, 'besipjakiupdate'])->middleware(['auth', 'can:admin2'])->name('update.besipjakiupdate');
+// Route::get('/besipjaki/update/{id}', [StrukturController::class, 'besipjakiupdate'])->middleware(['auth'])->name('update.besipjakiupdate');
 Route::post('/besipjaki/updatecreate/{id}', [StrukturController::class, 'besipjakicreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.besipjakicreateupdate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bejabatan', [StrukturController::class, 'bejabatan'])->middleware(['auth', 'can:admin2']);
+// Route::get('/bejabatan', [StrukturController::class, 'bejabatan'])->middleware(['auth']);
 Route::get('/bejabatan/update/{id}', [StrukturController::class, 'bejabatanupdate'])->middleware(['auth', 'can:admin2'])->name('update.bejabatanupdate');
+// Route::get('/bejabatan/update/{id}', [StrukturController::class, 'bejabatanupdate'])->middleware(['auth'])->name('update.bejabatanupdate');
 Route::post('/bejabatan/updatecreate/{id}', [StrukturController::class, 'bejabatancreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.bejabatancreateupdate');
 Route::get('/bejabatan/create', [StrukturController::class, 'bejabatancreate'])->middleware(['auth', 'can:admin2'])->name('create.bejabatancreate');
+// Route::get('/bejabatan/create', [StrukturController::class, 'bejabatancreate'])->middleware(['auth'])->name('create.bejabatancreate');
 Route::post('/bejabatan/createnew', [StrukturController::class, 'bejabatancreatenew'])->middleware(['auth', 'can:admin2'])->name('create.bejabatancreatenew');
 Route::delete('/bejabatan/delete/{namalengkap}', [StrukturController::class, 'bejabatandelete'])->middleware(['auth', 'can:admin2']);
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 3 TUPOKSI PROGRAM MAS JAKI -----------------------------------------------------
-Route::get('/betupoksi', [StrukturController::class, 'betupoksi'])->middleware(['auth', 'can:admin2']);
+// Route::get('/betupoksi', [StrukturController::class, 'betupoksi'])->middleware(['auth', 'can:admin2']); // DI RUBAH
+Route::get('/betupoksi', [StrukturController::class, 'betupoksi'])->middleware(['auth']);
 // Route::get('/betupoksi/update/{id}', [StrukturController::class, 'betupoksiupdate'])->middleware('auth');
-Route::get('/betupoksi/update/{id}', [StrukturController::class, 'betupoksiupdate'])->middleware(['auth', 'can:admin2'])->name('update.betupoksiupdate');
+// Route::get('/betupoksi/update/{id}', [StrukturController::class, 'betupoksiupdate'])->middleware(['auth', 'can:admin2'])->name('update.betupoksiupdate'); // DI RUBAH
+Route::get('/betupoksi/update/{id}', [StrukturController::class, 'betupoksiupdate'])->middleware(['auth'])->name('update.betupoksiupdate');
 Route::post('/betupoksi/updatecreate/{id}', [StrukturController::class, 'betupoksicreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.betupoksicreateupdate');
 
 
 // ======================================= BERITA JAKON BACKEND -------------------------------------------------------------
 // ---------------------- MENU 1 DAFTAR BERITA MAS JAKI JAKON   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
-Route::get('/beberitajakon', [BeritajakonController::class, 'beberitajakon'])->middleware(['auth', 'can:admin2']);
-Route::get('/beberitajakon/show/{id}', [BeritajakonController::class, 'beberitajakonshow'])->middleware(['auth', 'can:admin2']);
-Route::get('/beberitajakon/update/{id}', [BeritajakonController::class, 'beberitajakonupdate'])->middleware(['auth', 'can:admin2'])->name('update.beberitajakonupdate');
-Route::post('/beberitajakon/updatecreate/{id}', [BeritajakonController::class, 'beberitajakoncreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.beberitajakoncreateupdate');
-Route::get('/beberitajakon/create', [BeritajakonController::class, 'beberitajakoncreate'])->middleware(['auth', 'can:admin2'])->name('create.beberitajakoncreate');
-Route::post('/beberitajakon/createnew', [BeritajakonController::class, 'beberitajakoncreatenew'])->middleware(['auth', 'can:admin2'])->name('create.beberitajakoncreatenew');
-Route::delete('/beberitajakon/delete/{judulberita}', [BeritajakonController::class, 'beberitajakondelete'])->middleware(['auth', 'can:admin2']);
+Route::get('/beberitajakon', [BeritajakonController::class, 'beberitajakon'])->middleware(['auth', 'can:admin2']); // DIRUBAH
+// Route::get('/beberitajakon', [BeritajakonController::class, 'beberitajakon'])->middleware(['auth']);
+Route::get('/beberitajakon/show/{id}', [BeritajakonController::class, 'beberitajakonshow'])->middleware(['auth', 'can:admin2']); // DIRUBAH
+// Route::get('/beberitajakon/show/{id}', [BeritajakonController::class, 'beberitajakonshow'])->middleware(['auth']);
+Route::get('/beberitajakon/update/{id}', [BeritajakonController::class, 'beberitajakonupdate'])->middleware(['auth', 'can:admin2'])->name('update.beberitajakonupdate'); // DIRUBAH
+// Route::get('/beberitajakon/update/{id}', [BeritajakonController::class, 'beberitajakonupdate'])->middleware(['auth'])->name('update.beberitajakonupdate');
+Route::post('/beberitajakon/updatecreate/{id}', [BeritajakonController::class, 'beberitajakoncreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.beberitajakoncreateupdate'); // DIRUBAH
+// Route::post('/beberitajakon/updatecreate/{id}', [BeritajakonController::class, 'beberitajakoncreateupdate'])->middleware(['auth'])->name('update.beberitajakoncreateupdate');
+Route::get('/beberitajakon/create', [BeritajakonController::class, 'beberitajakoncreate'])->middleware(['auth', 'can:admin2'])->name('create.beberitajakoncreate'); // DIRUBAH
+// Route::get('/beberitajakon/create', [BeritajakonController::class, 'beberitajakoncreate'])->middleware(['auth'])->name('create.beberitajakoncreate');
+Route::post('/beberitajakon/createnew', [BeritajakonController::class, 'beberitajakoncreatenew'])->middleware(['auth', 'can:admin2'])->name('create.beberitajakoncreatenew'); // DIRUBAH
+// Route::post('/beberitajakon/createnew', [BeritajakonController::class, 'beberitajakoncreatenew'])->middleware(['auth'])->name('create.beberitajakoncreatenew');
+Route::delete('/beberitajakon/delete/{judulberita}', [BeritajakonController::class, 'beberitajakondelete'])->middleware(['auth', 'can:admin2']); // DOIRUBAH
+// Route::delete('/beberitajakon/delete/{judulberita}', [BeritajakonController::class, 'beberitajakondelete'])->middleware(['auth']);
 
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 2 ARTIKEL JAKON MAS JAKI BLORA   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
-Route::get('/beartikeljakon', [BeritajakonController::class, 'beartikeljakon'])->middleware(['auth', 'can:admin2']);
-Route::get('/beartikeljakon/show/{id}', [BeritajakonController::class, 'beartikeljakonshow'])->middleware(['auth', 'can:admin2']);
-Route::get('/beartikeljakon/update/{id}', [BeritajakonController::class, 'beartikeljakonupdate'])->middleware(['auth', 'can:admin2'])->name('update.beartikeljakonupdate');
-Route::post('/beartikeljakon/updatecreate/{id}', [BeritajakonController::class, 'beartikeljakoncreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.beartikeljakoncreateupdate');
-Route::get('/beartikeljakon/create', [BeritajakonController::class, 'beartikeljakoncreate'])->middleware(['auth', 'can:admin2'])->name('create.beartikeljakoncreate');
-Route::post('/beartikeljakon/createnew', [BeritajakonController::class, 'beartikeljakoncreatenew'])->middleware(['auth', 'can:admin2'])->name('create.beartikeljakoncreatenew');
-Route::delete('/beartikeljakon/delete/{judulberita}', [BeritajakonController::class, 'beartikeljakondelete'])->middleware(['auth', 'can:admin2']);
+Route::get('/beartikeljakon', [BeritajakonController::class, 'beartikeljakon'])->middleware(['auth', 'can:admin2']); // DIRUBAH
+// Route::get('/beartikeljakon', [BeritajakonController::class, 'beartikeljakon'])->middleware(['auth']);
+Route::get('/beartikeljakon/show/{id}', [BeritajakonController::class, 'beartikeljakonshow'])->middleware(['auth', 'can:admin2']); // DIRUBAH
+// Route::get('/beartikeljakon/show/{id}', [BeritajakonController::class, 'beartikeljakonshow'])->middleware(['auth']);
+Route::get('/beartikeljakon/update/{id}', [BeritajakonController::class, 'beartikeljakonupdate'])->middleware(['auth', 'can:admin2'])->name('update.beartikeljakonupdate'); // DIRUBAH
+// Route::get('/beartikeljakon/update/{id}', [BeritajakonController::class, 'beartikeljakonupdate'])->middleware(['auth'])->name('update.beartikeljakonupdate');
+Route::post('/beartikeljakon/updatecreate/{id}', [BeritajakonController::class, 'beartikeljakoncreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.beartikeljakoncreateupdate'); // DIRUBAH
+// Route::post('/beartikeljakon/updatecreate/{id}', [BeritajakonController::class, 'beartikeljakoncreateupdate'])->middleware(['auth'])->name('update.beartikeljakoncreateupdate');
+Route::get('/beartikeljakon/create', [BeritajakonController::class, 'beartikeljakoncreate'])->middleware(['auth', 'can:admin2'])->name('create.beartikeljakoncreate'); // DIRUBAH
+// Route::get('/beartikeljakon/create', [BeritajakonController::class, 'beartikeljakoncreate'])->middleware(['auth'])->name('create.beartikeljakoncreate');
+Route::post('/beartikeljakon/createnew', [BeritajakonController::class, 'beartikeljakoncreatenew'])->middleware(['auth', 'can:admin2'])->name('create.beartikeljakoncreatenew'); // DIRUBAH
+// Route::post('/beartikeljakon/createnew', [BeritajakonController::class, 'beartikeljakoncreatenew'])->middleware(['auth'])->name('create.beartikeljakoncreatenew');
+Route::delete('/beartikeljakon/delete/{judulberita}', [BeritajakonController::class, 'beartikeljakondelete'])->middleware(['auth', 'can:admin2']); // DIRUBAH
+// Route::delete('/beartikeljakon/delete/{judulberita}', [BeritajakonController::class, 'beartikeljakondelete'])->middleware(['auth']);
 // ___________________________________________________________________________________________________________________________________
 
 
@@ -1338,8 +1375,15 @@ Route::get('/settingssekolah/create', [SettingDataController::class, 'settingsse
 Route::post('/settingssekolah/createnew', [SettingDataController::class, 'settingssekolahcreatenew'])->middleware(['auth', 'can:admin2'])->name('create.settingssekolah');
 Route::delete('/settingssekolah/delete/{namasekolah}', [SettingDataController::class, 'settingssekolahdelete'])->middleware(['auth', 'can:admin2']);
 
+// DATA PENGATURAN SUB KLASIFIKASI TERTIB JASA KONSTRUKSI
+Route::get('/settingssubklasifikasi', [SettingDataController::class, 'settingssubklasifikasi'])->middleware(['auth']);
+Route::get('/settingssubklasifikasi/create', [SettingDataController::class, 'settingssubklasifikasicreate'])->middleware(['auth']);
+Route::post('/settingssubklasifikasi/createnew', [SettingDataController::class, 'settingssubklasifikasinewcreate'])->middleware(['auth'])->name('create.settingssubklasifikasi');
+Route::delete('/settingssubklasifikasi/delete/{id}', [SettingDataController::class, 'settingssubklasifikasidelete'])->middleware(['auth']);
+
 // DATA PENGATURAN TANDA TANGAN
-Route::get('/settingstandatangan', [SettingDataController::class, 'settingstandatangan'])->middleware(['auth', 'can:admin2']);
+// Route::get('/settingstandatangan', [SettingDataController::class, 'settingstandatangan'])->middleware(['auth', 'can:admin2']);
+Route::get('/settingstandatangan', [SettingDataController::class, 'settingstandatangan'])->middleware(['auth']);
 Route::get('/settingstandatangan/create', [SettingDataController::class, 'settingstandatangancreate'])->middleware(['auth', 'can:admin2']);
 Route::post('/settingstandatangan/createnew', [SettingDataController::class, 'settingstandatangancreatenew'])->middleware(['auth', 'can:admin2'])->name('create.settingstandatangan');
 Route::delete('/settingstandatangan/delete/{id}', [SettingDataController::class, 'settingstandatangandelete'])->middleware(['auth', 'can:admin2']);
@@ -1351,9 +1395,11 @@ Route::delete('/settingstandatangan/delete/{id}', [SettingDataController::class,
 // -------- BAGIAN 01 BACKEND PROFIL ---------------------------------p
 Route::get('/struktur', [StrukturController::class, 'index'])->middleware(['auth', 'can:admin2']);
 Route::get('/struktur/update/{judul}', [StrukturController::class, 'updatestruktur'])->middleware(['auth', 'can:admin2'])->name('update.struktur');
+// Route::get('/struktur/update/{judul}', [StrukturController::class, 'updatestruktur'])->middleware(['auth'])->name('update.struktur');
 // Route::post('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware('auth')->name('update.strukturcreatebaru');
 // Route::post('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware('auth')->name('update.strukturcreate');
-Route::put('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware(['auth', 'can:admin2'])->name('update.strukturcreatebaru');
+Route::put('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware(['auth', 'can:admin2'])->name('update.strukturcreatebaru'); //
+// Route::put('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware(['auth'])->name('update.strukturcreatebaru');
 
 
 Route::post('/struktur/{judul}', [StrukturController::class, 'createupdatestruktur'])->middleware(['auth', 'can:admin2'])->name('updatestore.struktur');

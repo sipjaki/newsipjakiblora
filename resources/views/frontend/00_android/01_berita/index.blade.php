@@ -52,6 +52,10 @@
                     </div>
                     <div class="flex flex-col gap-1">
                         <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->judulberita}}</p>
+                        <div style="font-weight: bold; color: #333; font-size: 14px;">
+    {{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') }}
+</div>
+
                         {{-- <p class="text-xs leading-[18px]">Target --}}
                             <span class="text-[#ffffff]">
                                 @php

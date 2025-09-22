@@ -14,9 +14,9 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-       <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
-            <!--begin::App Content Header-->
+        <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
           <div class="container-fluid">
@@ -25,7 +25,6 @@
 
                 @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
                 @include('backend.00_administrator.00_baganterpisah.11_alert')
-
             </div>
             <!--end::Row-->
           </div>
@@ -33,9 +32,6 @@
         </div>
 
         <br>
-        <!-- Menampilkan pesan sukses -->
-
-            <!-- Menyertakan FontAwesome untuk ikon -->
 
         <div class="container-fluid">
             <!--begin::Row-->
@@ -44,19 +40,13 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
-
                     </div>
 
                            {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/bejabatan">
+                <a href="/settingstandatangan">
                     <button class="button-newvalidasi">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -73,56 +63,62 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('create.bejabatancreatenew') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('create.settingssubklasifikasi') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
-                                    <!-- Kolom Kiri (6/12) -->
+                                    <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
-                                        <!-- Nama Lengkap -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
-                                            </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}" />
-                                            @error('namalengkap')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <!-- Akhir Kolom Kiri -->
 
-                                    <!-- Kolom Kanan (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Jabatan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="jabatan">
-                                                <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Jabatan
-                                            </label>
-                                            <input type="text" id="jabatan" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" value="{{ old('jabatan') }}" />
-                                            @error('jabatan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <!-- Akhir Kolom Kanan -->
+    <!-- Input Kode -->
+    <div class="mb-3">
+        <label class="form-label" for="kode">
+            <i class="bi bi-upc-scan" style="margin-right: 8px; color: navy;"></i> Kode
+        </label>
+        <input type="text" id="kode" name="kode"
+               class="form-control @error('kode') is-invalid @enderror"
+               value="{{ old('kode') }}" />
+        @error('kode')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <!-- Input Pekerjaan -->
+
+</div>
+
+<div class="col-md-12">
+    <div class="mb-3">
+        <label class="form-label" for="pekerjaan">
+            <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Pekerjaan
+        </label>
+        <textarea id="pekerjaan" name="pekerjaan" rows="4"
+                  class="form-control form-control-lg @error('pekerjaan') is-invalid @enderror"
+                  style="min-height: 100px; resize: vertical;">{{ old('pekerjaan') }}</textarea>
+        @error('pekerjaan')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+
+
+
                                 </div>
-                                <!-- Akhir baris -->
+                                <!-- End row -->
                             </div>
-                            <!-- akhir::Body -->
+                            <!-- end::Body -->
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                                    <button type="button" onclick="openModal()" class="button-baru">
-
+                                    <button class="button-baru" type="button" onclick="openModal()">
                                     <!-- Ikon SVG Pensil -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                     fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
                                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                </svg>
-                                    <span style="font-family: 'Poppins', sans-serif;">Buat Baru </span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Simpan Data ?</span>
                                 </button>
                                 </div>
                                 <!-- Modal Konfirmasi -->
@@ -178,12 +174,16 @@
 
                             </div>
 
+
                         </form>
 
                                                      </div>
                         <!--end::Quick Example-->
-
                     </div>
+
+
+                    <br><br>
+
                     <!-- /.card -->
                     <!-- Button Section -->
 
@@ -198,6 +198,7 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
+
         </section>
         </main>
       <!--end::App Main-->
@@ -206,3 +207,5 @@
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
+
+
