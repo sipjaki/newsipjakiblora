@@ -286,9 +286,9 @@ public function beberitajakoncreatenew(Request $request)
         'judulberita' => 'required|string|max:255',
         'tanggal' => 'required|date',
         'keterangan' => 'required|string',
-        'foto' => 'required|image|max:7168',
-        'foto1' => 'required|image|max:7168',
-        'foto2' => 'required|image|max:7168',
+        'foto' => 'required|image|max:17168',
+        'foto1' => 'required|image|max:17168',
+        'foto2' => 'required|image|max:17168',
     ], [
         'judulberita.required' => 'Judul berita wajib diisi!',
         'judulberita.string' => 'Judul berita harus berupa teks!',
@@ -299,13 +299,13 @@ public function beberitajakoncreatenew(Request $request)
         'keterangan.string' => 'Keterangan harus berupa teks!',
         'foto.required' => 'Foto wajib diisi!',
         'foto.image' => 'Foto harus berupa gambar!',
-        'foto.max' => 'Foto maksimal 7MB!',
+        'foto.max' => 'Foto maksimal 17MB!',
         'foto1.required' => 'Foto 1 wajib diisi!',
         'foto1.image' => 'Foto 1 harus berupa gambar!',
-        'foto1.max' => 'Foto 1 maksimal 7MB!',
+        'foto1.max' => 'Foto 1 maksimal 17MB!',
         'foto2.required' => 'Foto 2 wajib diisi!',
         'foto2.image' => 'Foto 2 harus berupa gambar!',
-        'foto2.max' => 'Foto 2 maksimal 7MB!',
+        'foto2.max' => 'Foto 2 maksimal 17MB!',
     ]);
 
     // Fungsi menyimpan file ke public
