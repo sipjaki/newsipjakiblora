@@ -223,7 +223,8 @@ table.zebra-table {
                             <div class="sidebar-widget sidebar-widget-recent-post">
                                     <h4 style="font-family: 'Poppins', sans-serif;">Daftar Berita</h4>
 
-                                    @foreach ($databerita->skip(1)->take(7) as $item)
+                                    {{-- @foreach ($databerita->skip(1)->take(7) as $item) --}}
+@foreach ($databerita as $item)
 
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-img">

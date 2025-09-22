@@ -47,7 +47,7 @@
                             {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
                             {{-- <img src="{{asset('storage/' . $data->user->avatar)}}" class="w-full h-full object-cover" alt="photo"> --}}
 
-                            <div style="margin-top: 10px;">
+                            {{-- <div style="margin-top: 10px;">
                                 @if($data->user->avatar && file_exists(public_path('storage/' . $data->user->avatar)))
                                     <!-- Menampilkan gambar dari storage -->
                                     <img src="{{ asset('storage/' . $data->user->avatar) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
@@ -58,17 +58,19 @@
                                     <!-- Placeholder jika tidak ada data -->
                                     <p>Data belum diupdate</p>
                                 @endif
-                            </div>
+                            </div> --}}
 
                         </div>
                         <div class="flex gap-1 items-center">
-                            <p class="font-semibold text-sm">{{$data->user->name}}</p>
-<div style="font-weight: bold; color: #333; font-size: 14px;">
+<p class="font-semibold text-sm d-flex align-items-center">
+    <i class="bi bi-person-circle me-2 text-primary"></i>
+    Penulis : {{$data->user->name ?? 'DPUPR Kab Blora'}}
+</p>
+{{-- <p class="font-semibold text-sm">{{$data->tanggal}}</p> --}}
+                        </div>
+                        <div style="font-weight: bold; color: #333; font-size: 14px;">
     {{ \Carbon\Carbon::parse($data->tanggal)->translatedFormat('d F Y') }}
 </div>
-
-                            {{-- <p class="font-semibold text-sm">{{$data->tanggal}}</p> --}}
-                        </div>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">

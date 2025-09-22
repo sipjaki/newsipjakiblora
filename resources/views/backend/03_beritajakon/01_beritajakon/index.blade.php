@@ -104,8 +104,8 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: center;">{{$item->user->name}}</td>
-         <td style="text-align: left;">{{$item->judulberita}}</td>
+         <td style="text-align: center;">{{$item->user->name ?? 'Data Tidak Ditemukan !'}}</td>
+         <td style="text-align: left;">{{$item->judulberita ?? 'Data Tidak Ditemukan !'}}</td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</td>
 
          <td style="text-align: center; vertical-align: middle;">
