@@ -726,6 +726,34 @@ button-delete {
     color: black;
 }
 
+.button-data {
+    background: linear-gradient(145deg, #f3e8ff, #e0caff); /* Ungu lembut */
+    color: #4b0082; /* Teks ungu tua */
+    border: 1px solid #c9a6ff; /* Border ungu */
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: max-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button-data:hover {
+    background: #ffffff !important;        /* Latar belakang putih */
+    color: #4b0082 !important;            /* Teks tetap ungu tua */
+    border: 1px solid #a065ff !important; /* Border ungu sedikit lebih terang */
+    box-shadow: 0 4px 12px rgba(160, 101, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+
 .putih {
     border: none;
     padding: 10px 20px;
