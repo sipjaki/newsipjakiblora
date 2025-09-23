@@ -4,6 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{$title}}</title>
+
+      <meta name="description" content="Sistem Informasi Pembina Jasa Konstruksi Kabupaten Blora (Mas Jaki Blora) adalah platform resmi untuk informasi, pembinaan, dan layanan jasa konstruksi di Kabupaten Blora.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="Sistem Informasi Pembina Jasa Konstruksi, Mas Jaki Blora, Jasa Konstruksi Kab Blora, Pembina Jasa Konstruksi, DPUPR Kab Blora, Aplikasi Jasa Konstruksi">
+
+    <!-- Meta Author -->
+    <meta name="author" content="Mas Jaki Blora">
 <!-- google font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

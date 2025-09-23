@@ -95,6 +95,7 @@ table.zebra-table {
 
     {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
+    @include('button')
 
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
@@ -215,10 +216,7 @@ table.zebra-table {
                                         @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
                                             <!-- Tombol aktif dengan file dari storage -->
                                             <div class="ml-auto">
-                                                <button id="sertifikat-btn" class="badge"
-                                                    style="background-color: navy; color: white; border: none; transition: 0.3s; padding:20px 20px; font-size: 13px; border-radius:5px;"
-                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                                <button id="sertifikat-btn" class="button-baru">
                                                     <i class="fas fa-download" style="margin-right:5px;"></i><span style="font-family: 'Poppins', sans-serif;">Download .pdf</span>
                                                 </button>
                                             </div>

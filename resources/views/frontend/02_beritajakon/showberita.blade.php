@@ -208,7 +208,7 @@ table.zebra-table {
                                     </div>
                                 </div>
                                 <br>
-                                <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$data->keterangan}}
+                                <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{!! $data->keterangan !!}
 
                                 </p>
 
@@ -246,7 +246,8 @@ table.zebra-table {
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
                                                         <span class="author" style="font-family: 'Poppins', sans-serif;">
-                                                            Penulis : <a href="news-details.html">Mas Zaki</a>
+                                                                     Penulis : <a href="#">{{$item->user->name ?? 'DPUPR Kab Blora'}}</a>
+
                                                         </span><!-- author -->
                                                     </div><!-- sidebar-meta-icon -->
                                                 </div><!-- sidebar-meta-item -->

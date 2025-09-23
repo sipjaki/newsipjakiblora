@@ -183,7 +183,7 @@
                                                                                 <div class="tim-pemeriksa-container">
                                                                                     <div class="tim-pemeriksa">
                                                                                         <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
-                                                                                        <table class="table table-sm">
+                                                                                        <table class="table table-sm" style="margin-top: -20px;">
                                                                                             <thead class="table-secondary">
                                                                                                 <tr>
                                                                                                     <th style="width: 60px; font-size: 12px;" >No</th>
@@ -245,6 +245,7 @@
         <td style="font-size: 12px;">
             {{ $datasurat2->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
         </td>
+
         <td style="font-size: 12px;">
             <div style="margin-top: 10px;">
                 @if(!empty($datasurat2->tandatangan3->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan3->tandatangan)))
@@ -523,6 +524,7 @@
                                                                                 <tr>
                                                                                     <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
                                                                                     <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Tanda Tangan</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
@@ -531,18 +533,71 @@
                                                                                     <td style="font-size: 16px;">
                                                                                         {{ optional($datasurat2->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
+
+                                                                                     <td style="font-size: 12px;">
+            <div style="margin-top: 10px; text-align:center;">
+                @if(!empty($datasurat2->tandatangan1->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan1->tandatangan)))
+                    <img src="{{ asset('storage/' . $datasurat2->tandatangan1->tandatangan) }}"
+                        alt="Tanda Tangan 1"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @elseif(!empty($datasurat2->tandatangan1->tandatangan))
+                    <img src="{{ asset($datasurat2->tandatangan1->tandatangan) }}"
+                        alt="Tanda Tangan 1"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @else
+                    <p>Data belum diupdate</p>
+                @endif
+            </div>
+        </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
                                                                                       <td style="font-size: 16px;">
                                                                                         {{ optional($datasurat2->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
+                                                                                     <td style="font-size: 12px;">
+            <div style="margin-top: 10px; text-align:center;">
+                @if(!empty($datasurat2->tandatangan2->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan2->tandatangan)))
+                    <img src="{{ asset('storage/' . $datasurat2->tandatangan2->tandatangan) }}"
+                        alt="Tanda Tangan 2"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @elseif(!empty($datasurat2->tandatangan2->tandatangan))
+                    <img src="{{ asset($datasurat2->tandatangan2->tandatangan) }}"
+                        alt="Tanda Tangan 2"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @else
+                    <p>Data belum diupdate</p>
+                @endif
+            </div>
+        </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
                                                                                     <td style="font-size: 16px;">
                                                                                         {{ optional($datasurat2->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}
                                                                                     </td>
+
+                                                                                    <td style="font-size: 12px;">
+            <div style="margin-top: 10px; text-align:center;">
+                @if(!empty($datasurat2->tandatangan3->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan3->tandatangan)))
+                    <img src="{{ asset('storage/' . $datasurat2->tandatangan3->tandatangan) }}"
+                        alt="Tanda Tangan 3"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @elseif(!empty($datasurat2->tandatangan3->tandatangan))
+                    <img src="{{ asset($datasurat2->tandatangan3->tandatangan) }}"
+                        alt="Tanda Tangan 3"
+                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
+                        loading="lazy">
+                @else
+                    <p>Data belum diupdate</p>
+                @endif
+            </div>
+        </td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
@@ -597,40 +652,44 @@
 <!-- CDN html2pdf -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-    function downloadModalPDF(id) {
-        const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
+function downloadModalPDF(id) {
+    const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
 
-        if (!modalContent) {
-            alert('Konten modal tidak ditemukan.');
-            return;
-        }
-
-        // Kloning isi modal
-        const clone = modalContent.cloneNode(true);
-
-        // Bungkus dalam div agar lebih fleksibel stylingnya
-        const wrapper = document.createElement('div');
-        wrapper.style.padding = '20px';
-        wrapper.style.fontSize = '14px';
-        wrapper.style.display = 'block';
-        wrapper.style.margin = '0'; // reset margin
-        wrapper.style.textAlign = 'left';
-        wrapper.style.alignItems = 'flex-start'; // kalau pakai flex di dalam
-        wrapper.appendChild(clone);
-
-        const fileName = `Tertibjakonusaha_segmentasipasar_${id}.pdf`;
-
-        html2pdf()
-            .from(wrapper)
-            .set({
-                margin: 0.5,
-                filename: fileName,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
-            })
-            .save();
+    if (!modalContent) {
+        alert('Konten modal tidak ditemukan.');
+        return;
     }
+
+    // Kloning isi modal
+    const clone = modalContent.cloneNode(true);
+
+    // Bungkus dalam div agar lebih fleksibel stylingnya
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.flexDirection = 'column';
+    wrapper.style.alignItems = 'flex-start'; // konten mulai dari atas
+    wrapper.style.justifyContent = 'flex-start'; // pastikan tidak tengah vertikal
+    wrapper.style.height = '100%';
+    wrapper.style.width = '100%';
+    wrapper.style.boxSizing = 'border-box';
+    wrapper.style.padding = '30px 20px 20px 20px'; // padding top 30px, kiri/kanan 20px, bawah 20px
+    wrapper.style.fontSize = '14px';
+    wrapper.style.textAlign = 'left';
+    wrapper.appendChild(clone);
+
+    const fileName = `Tertibjakonusaha_segmentasipasar_${id}.pdf`;
+
+    html2pdf()
+        .from(wrapper)
+        .set({
+            margin: 0, // PDF mulai dari atas
+            filename: fileName,
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
+        })
+        .save();
+}
 </script>
 
 

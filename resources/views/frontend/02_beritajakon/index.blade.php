@@ -209,7 +209,7 @@ table.zebra-table {
 
                                 <br>
 
-                                <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$item->keterangan}}
+                                <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{!! $item->keterangan !!}
 
                                 </p>
 
@@ -228,6 +228,7 @@ table.zebra-table {
                             @foreach ($data as $item)
 
                                     <div class="sidebar-recent-post">
+
                                         <div class="sidebar-recent-post-img">
                                             <div style="margin-top: 10px;">
                                                 @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
@@ -241,13 +242,14 @@ table.zebra-table {
                                                     <p>Data belum diupdate</p>
                                                 @endif
                                             </div>
-                                        </div><!-- sidebar-recent-post-img -->
+                                        </div>
+                                        <!-- sidebar-recent-post-img -->
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
                                                         <span class="author" style="font-family: 'Poppins', sans-serif;">
-                                                            Penulis : <a href="news-details.html">{{$item->user->name ?? 'DPUPR Kab Blora'}}</a>
+                                                            Penulis : <a href="#">{{$item->user->name ?? 'DPUPR Kab Blora'}}</a>
                                                         </span><!-- author -->
                                                     </div><!-- sidebar-meta-icon -->
                                                 </div><!-- sidebar-meta-item -->
