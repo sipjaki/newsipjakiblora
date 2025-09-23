@@ -49,17 +49,32 @@ class BeritajakonController extends Controller
     ]);
 }
 
-    public function artikeljakon()
-    {
-        $user = Auth::user();
-        $dataartikel = artikeljakonmasjaki::paginate(6);
+    // public function artikeljakon()
+    // {
+    //     $user = Auth::user();
+    //     $dataartikel = artikeljakonmasjaki::paginate(6);
 
-        return view('frontend.02_beritajakon.artikeljakon', [
-            'title' => 'Artikel Jasa Konstruksi',
-            'user' => $user, // Mengirimkan data paginasi ke view
-            'data' => $dataartikel, // Mengirimkan data paginasi ke view
-        ]);
-    }
+    //     return view('frontend.02_beritajakon.artikeljakon', [
+    //         'title' => 'Artikel Jasa Konstruksi',
+    //         'user' => $user, // Mengirimkan data paginasi ke view
+    //         'data' => $dataartikel, // Mengirimkan data paginasi ke view
+    //     ]);
+    // }
+
+
+    public function artikeljakon()
+{
+    $user = Auth::user();
+    $dataartikel = artikeljakonmasjaki::orderBy('created_at', 'desc')->paginate(6);
+    // atau kalau pakai id yang selalu naik
+    // $dataartikel = artikeljakonmasjaki::orderBy('id', 'desc')->paginate(6);
+
+    return view('frontend.02_beritajakon.artikeljakon', [
+        'title' => 'Artikel Jasa Konstruksi',
+        'user' => $user,
+        'data' => $dataartikel,
+    ]);
+}
 
     // public function showjudulberita($judulberita)
     // {
