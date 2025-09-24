@@ -839,7 +839,7 @@
 </li>
 
 
-                                              <div style="margin-bottom: 10px; margin-top: 10px;">
+                                              {{-- <div style="margin-bottom: 10px; margin-top: 10px;">
     <p style="
         font-size: 13px;
         margin-left: 12px;
@@ -854,7 +854,7 @@
     ">
         <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
     </p>
-</div>
+</div> --}}
 
                 </ul>
             </li>

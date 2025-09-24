@@ -98,7 +98,7 @@
                                             <div class="modal-body">
                                                 <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha dengan Kegiatan Usaha Jasa Konstruksi Secara Rutin</h5>
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                                    <tr>
+                                                <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
                                                         <td>{{ $data->surattertibjakonusaha1->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>

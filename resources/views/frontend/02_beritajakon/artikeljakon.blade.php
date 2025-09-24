@@ -95,6 +95,7 @@ table.zebra-table {
 
     {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
+    @include('button')
 
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
@@ -211,6 +212,27 @@ table.zebra-table {
 
                                 <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$item->keterangan}}
 
+                                    <br><br>
+                                    @if($item->berkas && file_exists(public_path('storage/' . $item->berkas)))
+    <a href="{{ asset('storage/' . $item->berkas) }}"
+       class="button-baru"
+       style="font-size: 12px; border-radius: 6px;"
+       download>
+        <i class="bi bi-download me-1" style="font-size: 12px;"></i> Download Artikel
+    </a>
+@elseif($item->berkas)
+    <a href="{{ asset($item->berkas) }}"
+       class="button-baru"
+       style="font-size: 12px; border-radius: 6px;"
+       download>
+        <i class="bi bi-download me-1" style="font-size: 12px;"></i> Download Artikel
+    </a>
+@else
+    <button class="button-baru"
+            style="font-size: 12px; border-radius: 6px;" disabled>
+        <i class="bi bi-x-circle me-1" style="font-size: 12px;"></i> Belum ada
+    </button>
+@endif
                                 </p>
 
                             </div><!-- /.news-details-content-box -->

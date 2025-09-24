@@ -445,7 +445,7 @@ ul.list-unstyled {
                 </style>
 
                 <div class="masuk-admin">
-                    <a href="/404" class="btn-primary">
+                    <a href="/daftar" class="btn-primary">
                         <i class="fas fa-user-plus"></i> Daftar
                     </a>
 

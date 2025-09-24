@@ -356,8 +356,20 @@
                 <a href="/resberita" class="card">
                     <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                         <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
-                            <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                        </div>
+    @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+        <!-- Jika file foto ada di folder storage -->
+        <img src="{{ asset('storage/' . $item->foto) }}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+    @elseif($item->foto)
+        <!-- Jika path foto sudah tersimpan tanpa prefix storage -->
+        <img src="{{ asset($item->foto) }}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+    @else
+        <!-- Placeholder jika tidak ada foto -->
+        <div class="w-full h-full flex items-center justify-center bg-gray-200 text-xs text-gray-500">
+            Data Belum Diupdate
+        </div>
+    @endif
+</div>
+
                         <div class="flex flex-col gap-1">
                             <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->judulberita}}</p>
                             {{-- <p class="text-xs leading-[18px]">Target --}}

@@ -133,7 +133,7 @@
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                            <table class="tabel-baru table-striped">
+                            <table class="zebra-table table-striped">
                                 <thead>
                                     <tr>
                                      <th style="width: 25px; text-align: center;">

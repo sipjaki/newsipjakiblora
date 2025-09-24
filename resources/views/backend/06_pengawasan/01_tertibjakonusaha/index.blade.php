@@ -76,7 +76,10 @@
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
 
+
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
+
                         <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
                             <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
                             <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
@@ -93,35 +96,61 @@
                             </select>
                         </div>
 
-                        <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                        </div>
 
-                        <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
-                            }
+                    <button class="button-data">
+    <i class="bi bi-file-earmark icon-create" style="margin-right: 5px"></i> {{$totalpenyedia1}} (PU)
+</button>
 
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
 
-                            fetch(`/betertibjakonusaha?search=${encodeURIComponent(input)}`, {
-                                headers: {
-                                    'X-Requested-With': 'XMLHttpRequest'
-                                }
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                document.querySelector("#tableBody").innerHTML = data.html;
-                            })
-                            .catch(error => console.error("Error fetching search results:", error));
-                        }
+                    <button class="button-data">
+    <i class="bi bi-file-earmark icon-create" style="margin-right: 5px"></i> {{$totalpenyedia2}} (NON-PU)
+</button>
 
-                                </script>
+
+                    <button class="button-data">
+    <i class="bi bi-file-earmark icon-create" style="margin-right: 5px"></i> {{$totalpenyedia3}} (SWASTA)
+</button>
+
+<div style="position: relative; display: inline-block; margin-right:10px;">
+    <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...." style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+    <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+</div>
+
+<script>
+    let searchTimeout;
+
+// Event search
+document.getElementById('searchInput').addEventListener('keyup', function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(fetchData, 500);
+});
+
+// Intercept klik pagination
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('.pagination a');
+    if(link) {
+        e.preventDefault();
+        const url = link.getAttribute('href');
+        fetchData(url);
+    }
+});
+
+function fetchData(url = null) {
+    const input = document.getElementById("searchInput").value;
+    const fetchUrl = url ? url : `/betertibjakonusaha?search=${encodeURIComponent(input)}`;
+
+    fetch(fetchUrl, {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.querySelector("#tabeltertibjakonusahasearc").innerHTML = data.html;
+        window.history.pushState({}, '', fetchUrl); // update URL tanpa reload
+    })
+    .catch(error => console.error("Error fetching data:", error));
+}
+
+</script>
 
 
                                 <button class="button-baru" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
@@ -141,8 +170,8 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
 
-                    <div class="table-responsive" style="width: 100%; overflow-x: auto;">
-                        <table id="tabeltertibjakonusaha" class="tabel-baru table-bordered table-striped" style="white-space: nowrap;">
+                    <div style="width: 100%; overflow-x: auto;">
+                        <table id="tabeltertibjakonusaha" class="zebra-table table-striped">
                             <thead>
                                 <tr>
                                     <th rowspan="2" style="text-align: center; width:75px;">
@@ -168,23 +197,23 @@
                                         <i class="bi bi-building-fill"></i> PJBU
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-building-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-building-fill"></i> Segmentasi Pasar
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-building-fill"></i> Pemenuhan Syarat
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
-                                  <th rowspan="2" style="text-align: center; width:300px;">
+                                  {{-- <th rowspan="2" style="text-align: center; width:300px;">
     <i class="bi bi-tools"></i> Berkas Dukung <br> Kesesuaian Kegiatan Konstruksi
 </th>
 
@@ -198,7 +227,7 @@
 
 <th rowspan="2" style="text-align: center; width:300px;">
     <i class="bi bi-tools"></i> Berkas Dukung <br> Pelaksana Pengembangan Usaha
-</th>
+</th> --}}
 
                                     <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-tools"></i> Aksi
@@ -209,78 +238,49 @@
 
                             </thead>
 
-                          <tbody>
+                          <tbody id="tabeltertibjakonusahasearc">
                             @foreach ($data as $item)
                             <tr>
+
                               <td style="text-align: center;">{{ $loop->iteration }}</td>
-                              <td style="text-align: center;">
-                                @if($item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat')
-                                  {{ $item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat' }}
-                                @else
-                                  <button class="button-berkas">
-                                    Data Belum Di Update
-                                  </button>
-                                @endif
-                              </td>
+    <td style="text-align: center;">
+        @if($item->penyediastatustertibjakon && $item->penyediastatustertibjakon->penyedia)
+            {{ $item->penyediastatustertibjakon->penyedia }}
+        @else
+            <button class="button-berkas">Data Belum Di Update</button>
+        @endif
+    </td>
+    <td>{{ $item->nib ?? 'Data Belum Di Update' }}</td>
+    <td>
+        @if($item->namapekerjaan)
+            <span style="white-space: pre-line;">
+                {{ preg_replace('/((?:\S+\s+){10})/', "$1\n", $item->namapekerjaan) }}
+            </span>
+        @else
+            <button class="button-berkas">Data Belum Di Update</button>
+        @endif
+    </td>
+    <td style="text-align: center;">{{ $item->tahunpelaksanaan ?? 'Data Belum Di Update' }}</td>
+    <td>{{ $item->namabadanusaha ?? 'Data Belum Di Update' }}</td>
+    <td style="text-transform: uppercase;">{{ $item->pjbu ?? 'Data Belum Di Update' }}</td>
 
-                              <td style="text-align: left;">
-                                @if($item->nib)
-                                  {{ $item->nib }}
-                                @else
-                                  <button class="button-berkas">
-                                    Data Belum Di Update
-                                  </button>
-                                @endif
-                              </td>
-
-                              <td style="text-align: left;">
-                                @if($item->namapekerjaan)
-                                  {{ $item->namapekerjaan }}
-                                @else
-                                  <button class="button-berkas">
-                                    Data Belum Di Update
-                                  </button>
-                                @endif
-                              </td>
-
-                              <td style="text-align: center;">
-                                @if($item->tahunpelaksanaan)
-                                  {{ $item->tahunpelaksanaan }}
-                                @else
-                               <button class="button-berkas">
-                                    Data Belum Di Update
-                                  </button>
-                                   @endif
-                              </td>
-
-                              <td style="text-align: left;">
-                                @if($item->namabadanusaha)
-                                  {{ $item->namabadanusaha }}
-                                @else
-                                   <button class="button-berkas">
-                                    Data Belum Di Update
-                                  </button>
-                               @endif
-                              </td>
-
-
-
-                              <td style="text-align: left; text-transform: uppercase;">
-                                @if($item->pjbu)
-                                  {{ $item->pjbu }}
-                                @else
-                                  <button class="button-berkas">
-                                    Data Belum Di Update
-                                  </button>
-                                @endif
-                              </td>
-
-                               <td style="text-align: center; vertical-align: middle;">
+    <td style="text-align: center; vertical-align: middle;">
                                     <a href="/betertibjakonusahasuratpercobaan/create/{{$item->id}}" style="text-decoration: none;">
                                         <button class="button-baru">
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
+                                        <a href="{{ url('/beuploadberkasusaha1/upload/' . $item->id) }}" style="text-decoration: none;">
+        @if(!empty($item->cadangan1))
+            <button class="button-berkas">
+                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+            </button>
+        @else
+            <button class="button-newvalidasi">
+                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+            </button>
+        @endif
+    </a>
                                 </td>
 
                                <td style="text-align: center; vertical-align: middle;">
@@ -289,6 +289,18 @@
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
+
+                                    <a href="{{ url('/beuploadberkasusaha2/upload/' . $item->id) }}" style="text-decoration: none;">
+        @if(!empty($item->cadangan2))
+            <button class="button-berkas">
+                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+            </button>
+        @else
+            <button class="button-newvalidasi">
+                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+            </button>
+        @endif
+    </a>
                                 </td>
 
 
@@ -298,6 +310,17 @@
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
+                                    <a href="{{ url('/beuploadberkasusaha3/upload/' . $item->id) }}" style="text-decoration: none;">
+        @if(!empty($item->cadangan3))
+            <button class="button-berkas">
+                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+            </button>
+        @else
+            <button class="button-newvalidasi">
+                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+            </button>
+        @endif
+    </a>
                                 </td>
 
                                 <td style="text-align: center; vertical-align: middle;">
@@ -306,10 +329,21 @@
                                         <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
                                         </button>
                                     </a>
+                                    <a href="{{ url('/beuploadberkasusaha4/upload/' . $item->id) }}" style="text-decoration: none;">
+        @if(!empty($item->cadangan4))
+            <button class="button-berkas">
+                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
+            </button>
+        @else
+            <button class="button-newvalidasi">
+                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+            </button>
+        @endif
+    </a>
                                 </td>
 
-
-<td style="text-align: center; vertical-align: middle;">
+{{-- PERUBAHAN YANG DI PINDAHKAN  --}}
+{{-- <td style="text-align: center; vertical-align: middle;">
     <a href="{{ url('/beuploadberkasusaha1/upload/' . $item->id) }}" style="text-decoration: none;">
         @if(!empty($item->cadangan1))
             <button class="button-berkas">
@@ -365,7 +399,7 @@
             </button>
         @endif
     </a>
-</td>
+</td> --}}
 
                                         </div>
                                     </div>

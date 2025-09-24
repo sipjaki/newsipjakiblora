@@ -175,7 +175,19 @@
             @foreach ($dataheaderberanda as $item)
             <div class="item">
                 <!-- Bright Background Image -->
-                <div class="item-slider-bg" style="background-image: url('{{ asset('storage/' . $item->header) }}');"></div>
+
+           @if($item->header && file_exists(public_path('storage/' . $item->header)))
+    <!-- Jika file ada di storage -->
+    <div class="item-slider-bg" style="background-image: url('{{ asset('storage/' . $item->header) }}');"></div>
+@elseif($item->header)
+    <!-- Jika file ada tapi bukan di storage (langsung path publik) -->
+    <div class="item-slider-bg" style="background-image: url('{{ asset($item->header) }}');"></div>
+@else
+    <!-- Placeholder jika tidak ada data -->
+    <div class="item-slider-bg" style="background:#f0f0f0; display:flex; align-items:center; justify-content:center; height:300px;">
+        <p style="color:#999;">Data belum diupdate</p>
+    </div>
+@endif
 
                 <!-- Vibrant Text Content -->
                 <div class="container h-100">
@@ -261,7 +273,7 @@
         }
     </style>
 
-<section class="pricing-section">
+{{-- <section class="pricing-section">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Analisa Harga Satuan Pekerjaan Kab Blora 2025</h2>
@@ -309,7 +321,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 <style>
     .pricing-section {
@@ -439,7 +451,17 @@
                 @foreach ($data->skip(0)->take(1) as $item)
                 <article class="featured-article">
                     <div class="article-image">
-                        <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt="{{ $item->judulberita }}" loading="lazy">
+                        @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+    <!-- Jika file ada di storage -->
+    <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt="{{ $item->judulberita }}" loading="lazy">
+@elseif($item->foto)
+    <!-- Jika file ada tapi bukan di storage (langsung path publik) -->
+    <img src="{{ asset($item->foto) }}" class="img-fluid" alt="{{ $item->judulberita }}" loading="lazy">
+@else
+    <!-- Placeholder jika tidak ada foto -->
+    <img src="{{ asset('images/placeholder.png') }}" class="img-fluid" alt="Data belum diupdate" loading="lazy">
+@endif
+
                         <span class="article-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</span>
                     </div>
 
@@ -475,13 +497,23 @@
                     <div class="sidebar-widget recent-news">
                         <h4 class="widget-title" style="font-family: 'Poppins', sans-serif;"><span style="font-family: 'Poppins', sans-serif;">Daftar Berita Jakon</span></h4>
 
-                        @foreach ($data->skip(1)->take(5) as $item)
+                        @foreach ($data as $item)
+{{-- @foreach ($data as $item) --}}
                         <div class="news-item">
                             <div class="news-thumbnail">
-                                <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->judulberita }}" loading="lazy">
+                        @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+    <!-- Jika file ada di storage -->
+    <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt="{{ $item->judulberita }}" loading="lazy">
+@elseif($item->foto)
+    <!-- Jika file ada tapi bukan di storage (langsung path publik) -->
+    <img src="{{ asset($item->foto) }}" class="img-fluid" alt="{{ $item->judulberita }}" loading="lazy">
+@else
+    <!-- Placeholder jika tidak ada foto -->
+    <img src="{{ asset('images/placeholder.png') }}" class="img-fluid" alt="Data belum diupdate" loading="lazy">
+@endif
                             </div>
                             <div class="news-info">
-                                <span class="news-author" style="font-family: 'Poppins', sans-serif;">Penulis: Anam</span>
+                                <span class="news-author" style="font-family: 'Poppins', sans-serif;">Penulis : {{$item->user->name ?? 'DPUPR Kabupaten Blora'}}</span>
                                 <h5 class="news-title" style="font-family: 'Poppins', sans-serif;">
                                     <a href="/beritajakon/{{ $item->judulberita }}"><span style="font-family: 'Poppins', sans-serif;">{{ $item->judulberita }}</span></a>
                                 </h5>
@@ -716,13 +748,23 @@
             <br><br>
 
             <div class="row row-gutter-y-30">
-                @foreach ($dataartikel->take(4) as $item)
+                @foreach ($dataartikel as $item)
                 <div class="col-6 col-lg-6 col-xl-6">
                     <div class="event-card">
                         <div class="event-card-image">
                             <div class="event-card-image-inner">
                                 <a href="{{ url('/artikeljakon') }}">
-                                    <img src="{{ asset('storage/' . $item->foto1) }}" class="img-fluid" alt="Gambar" width="200px">
+                          @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
+    <!-- Jika file ada di storage -->
+    <img src="{{ asset('storage/' . $item->foto1) }}" class="img-fluid" alt="Gambar" width="200px">
+@elseif($item->foto1)
+    <!-- Jika file ada tapi bukan di storage (langsung path publik) -->
+    <img src="{{ asset($item->foto1) }}" class="img-fluid" alt="Gambar" width="200px">
+@else
+    <!-- Placeholder jika tidak ada foto -->
+    <img src="{{ asset('images/placeholder.png') }}" class="img-fluid" alt="Data belum diupdate" width="200px">
+@endif
+
                                 </a>
 
                                 <div class="event-card-meta">
@@ -755,7 +797,7 @@
 </section><!-- event-three-section -->
 
 <!-- Wrapper Background Section -->
-<section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
+{{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
 
    <!-- Konten Data -->
@@ -798,7 +840,7 @@
        </div>
     </div>
 </section>
-
+ --}}
 
 
 

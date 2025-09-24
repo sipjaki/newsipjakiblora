@@ -449,54 +449,59 @@ class TertibjasakonstruksiController extends Controller
     // MENU BACKEND TERTIB JAKON USAHA JASA KONSTRUKSI
 
     public function betertibjakonusaha(Request $request)
-    {
-        $perPage = $request->input('perPage', 10);
-        $search = $request->input('search');
+{
 
-        $query = tertibjasakonstruksi::query();
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
 
-        if ($search) {
-            $query->where(function ($q) use ($search) {
-                $q->where('nib', 'LIKE', "%{$search}%")
-                  ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
-                  ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
-                  ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
-                  ->orWhere('pjbu', 'LIKE', "%{$search}%")
-                //   ->orWhere('sesuai_jenis', 'LIKE', "%{$search}%")
-                //   ->orWhere('sesuai_sifat', 'LIKE', "%{$search}%")
-                //   ->orWhere('sesuai_klasifikasi', 'LIKE', "%{$search}%")
-                //   ->orWhere('sesuai_layanan', 'LIKE', "%{$search}%")
-                //   ->orWhere('segmentasipasar_bentuk', 'LIKE', "%{$search}%")
-                //   ->orWhere('segmentasipasar_kualifikasi', 'LIKE', "%{$search}%")
-                //   ->orWhere('syarat_SBU', 'LIKE', "%{$search}%")
-                //   ->orWhere('syarat_NIB', 'LIKE', "%{$search}%")
-                //   ->orWhere('pelaksanaanpengembangan', 'LIKE', "%{$search}%")
-                  ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
-                      $r->where('penyedia', 'LIKE', "%{$search}%");
-                  });
-            });
-        }
+    $query = tertibjasakonstruksi::query();
 
-        // Muat relasi dengan `surattertibjakonusaha1`
-        $data = $query->with('surattertibjakonusaha1') // Muat relasi di sini
-                      ->orderBy('updated_at', 'desc')
-                      ->paginate($perPage);
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('nib', 'LIKE', "%{$search}%")
+              ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+              ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+              ->orWhere('pjbu', 'LIKE', "%{$search}%")
+              ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+                  $r->where('penyedia', 'LIKE', "%{$search}%");
+              });
+        });
+    }
 
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('backend.06_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render()
-            ]);
-        }
+    $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
+                  ->orderBy('updated_at', 'desc')
+                  ->paginate($perPage)
+                  ->appends($request->only('search', 'perPage'));
 
-        return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
-            'title' => 'Data Tertib Jakon Usaha',
-            'data' => $data,
-            'perPage' => $perPage,
-            'search' => $search
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.06_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render()
         ]);
     }
 
+    $totalpenyedia1 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+    $q->where('id', 1);
+        })->count();
 
+    $totalpenyedia2 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+    $q->where('id', 2);
+        })->count();
+
+    $totalpenyedia3 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+    $q->where('id', 3);
+        })->count();
+
+    return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
+        'title' => 'Data Tertib Jakon Usaha',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'totalpenyedia1' => $totalpenyedia1,
+        'totalpenyedia2' => $totalpenyedia2,
+        'totalpenyedia3' => $totalpenyedia3,
+    ]);
+}
 
 public function betertibjakonusahadelete($id)
 {
@@ -1317,7 +1322,7 @@ public function betertibjakonusahapemenuhansyarat($id)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurattertibjakonusaha2' => $datasurattertibjakonusaha3,
-        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar'
+        'title' => 'Berkas Surat Pemenuhan Syarat'
     ]);
 }
 
@@ -1333,7 +1338,7 @@ $validatedData = $request->validate([
     'namabujk' => 'required|string|max:255',
     'nib' => 'required|string|max:255',
     'pjbu' => 'required|string|max:255',
-    'jenisusaha' => 'required|in:Pekerjaan Konstruksi,Pekerjaan Konsultasi Konstruksi',
+    'jenisusaha' => 'required|string',
     'subklasifikasi_id' => 'required|string',
     'nomorsertifikat' => 'required|string|max:255',
     'kesimpulan' => 'required|in:Tertib,Tidak Tertib',
