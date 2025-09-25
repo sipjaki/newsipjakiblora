@@ -95,7 +95,7 @@ $jumlahDenganSertifikat = $jumlahDenganSertifikat ?: 0;
         $user = Auth::user();
         // return view('backend.00_adminmasjaki.01_fiturterpisah.01_dashboard', [
         return view('backend.01_beranda.01_header.index', [
-            'title' => 'Beranda | Header',
+            'title' => 'Beranda | Informasi Header Web Mas Jaki ',
             'user' => $user,
             'data' => $data,
         ]);

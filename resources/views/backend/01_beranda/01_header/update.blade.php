@@ -99,7 +99,7 @@
         <!-- Header (Upload Gambar) -->
         <div class="mb-3">
             <label class="form-label" for="header">
-                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Header (Gambar)
+                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar Header Sebelumnya
             </label>
             <input type="file" id="header" name="header"
                    class="form-control @error('header') is-invalid @enderror"
@@ -110,12 +110,23 @@
 
             <!-- Preview Gambar jika sudah ada -->
             @if(!empty($data->header))
-                <div class="mt-2">
-                    <img src="{{ asset('storage/' . $data->header) }}"
-                         alt="Header"
-                         style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 6px; padding: 4px;">
-                </div>
-            @endif
+    <div class="mt-2">
+        @if(file_exists(public_path('storage/' . $data->header)))
+            <!-- Gambar dari storage -->
+            <img src="{{ asset('storage/' . $data->header) }}"
+                 alt="Header"
+                 style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 6px; padding: 4px;">
+        @else
+            <!-- Gambar dari path langsung -->
+            <img src="{{ asset($data->header) }}"
+                 alt="Header"
+                 style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 6px; padding: 4px;">
+        @endif
+    </div>
+@else
+    <p>Data belum diupdate</p>
+@endif
+
         </div>
     </div>
     <!-- End Right Column -->

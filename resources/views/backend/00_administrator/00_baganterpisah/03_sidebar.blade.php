@@ -831,7 +831,7 @@
                         </a>
                       </li>
                       <li class="nav-item">
-  <a href="/404" class="nav-link">
+  <a href="/bedokumentasijakon" class="nav-link">
     <!-- Ikon untuk Dokumentasi Jakon -->
     <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
     <p style="color: white">Dokumentasi Jakon</p>
@@ -904,7 +904,7 @@
                   <li class="nav-item">
                     <a href="/beskkdpupr" class="nav-link">
                       <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
-                      <p style="color: white">TKK DPUPR</p>
+                      <p style="color: white">TKK DPUPR (2024) </p>
                     </a>
                   </li>
 

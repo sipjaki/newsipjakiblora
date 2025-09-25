@@ -1198,7 +1198,7 @@ public function betupoksicreateupdate(Request $request, $id)
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
         'judul' => 'required|string|max:255', // Validasi untuk Nama Lengkap
-        'keterangan' => 'required|string|max:255', // Validasi untuk NIP
+        'keterangan' => 'required|string', // Validasi untuk NIP
     ], [
         'judul.required' => 'Judul wajib diisi!',
         'keterangan.required' => 'Keterangan wajib diisi!',

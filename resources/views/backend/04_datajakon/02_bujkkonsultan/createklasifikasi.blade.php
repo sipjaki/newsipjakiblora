@@ -13,7 +13,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -45,12 +46,9 @@
 
                            {{-- ======================================================= --}}
                            <div class="card card-primary card-outline mb-6">
-                            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="display: flex; justify-content: space-between; margin-top: 10px; margin-bottom: 10px;">
                                 <!-- Tombol Kiri -->
-                                <button
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#7105ec'; this.style.color='white';"
-                                    style="background-color: #7105ec; color: white; border: none; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none; margin-left: 15px; margin-right: 15px; margin-bottom: 15px;">
+                                <button class="button-baru">
                                     <!-- Ikon File -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -60,19 +58,17 @@
                                 </button>
 
                                 <!-- Tombol Kanan -->
-                                <a href="/bebujkkonsultan">
-                                    <button
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                        style="background-color: #374151; color: white; border: none; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none; margin-left: 15px; margin-right: 15px; margin-bottom: 15px;">
-                                        <!-- Ikon Kembali -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            viewBox="0 0 16 16" style="margin-right: 8px;">
-                                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-                                        </svg>
-                                        Kembali
-                                    </button>
-                                </a>
+                                <a href="{{ url()->previous() }}">
+    <button class="button-newvalidasi">
+        <!-- Ikon Kembali -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            viewBox="0 0 16 16" style="margin-right: 8px;">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+        </svg>
+        Kembali
+    </button>
+</a>
+
                             </div>
                         </div>
 
@@ -209,10 +205,7 @@
                                 <!-- Tombol Submit -->
                                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                        <button type="button" onclick="openModal()"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-                                        style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                        <button type="button" onclick="openModal()" class="button-hijau">
 
                                         <!-- Ikon SVG Pensil -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -220,7 +213,7 @@
                                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                    </svg>
-                                        <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                        <span style="font-family: 'Poppins', sans-serif;">Tambah Baru</span>
                                     </button>
                                     </div>
                                     <!-- Modal Konfirmasi -->

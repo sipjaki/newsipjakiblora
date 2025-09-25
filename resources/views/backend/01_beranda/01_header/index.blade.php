@@ -42,7 +42,7 @@
         <div class="container-fluid">
             <!--begin::Row-->
             <div class="row" style="margin-right: 10px; margin-left:10px;">
-                
+
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
@@ -67,8 +67,18 @@
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{!! $item->judul !!}</td>
                                         <td style="text-align: center;">
-                                            <img src="{{ asset('storage/'. $item->header) }}" alt="Image" width="300">
-                                        </td>
+    @if($item->header && file_exists(public_path('storage/' . $item->header)))
+        <!-- Tampilkan gambar dari storage -->
+        <img src="{{ asset('storage/' . $item->header) }}" alt="Image" width="300">
+    @elseif($item->header)
+        <!-- Tampilkan gambar dari path langsung -->
+        <img src="{{ asset($item->header) }}" alt="Image" width="300">
+    @else
+        <!-- Placeholder jika tidak ada gambar -->
+        <p>Data belum diupdate</p>
+    @endif
+</td>
+
                                         <td style="text-align: center;">
                                             <!-- Show Icon -->
                                             {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
@@ -80,10 +90,10 @@
                                             </a>
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            {{-- <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-judul="{{ $item->judul }}" onclick="setDeleteUrl(this)">
                                             <i class="bi bi-trash"></i> Hapus
-                                        </a>
+                                        </a> --}}
 
 
                                         @include('backend.00_administrator.00_baganterpisah.05_modalcarddelete')

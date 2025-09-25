@@ -60,7 +60,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -90,10 +91,7 @@
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                     <a href="/bebujkkonsultan">
-                         <button
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                         style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                         <button class="button-newvalidasi">
                          <!-- Ikon Kembali -->
                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -104,10 +102,7 @@
                      </button>
                      </a>
                      <a href="/bebujkkonsultan/createsubklasifikasi/{{$data->id}}">
-                        <button
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
-                         style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                        <button class="button-baru">
                          <!-- Ikon Kembali -->
                          <i class="fa fa-plus" style="margin-right: 8px;"></i>
                          Create
@@ -137,7 +132,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($subdata as $item )
+                                @forelse ($subdata as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->nama_pengurus }}</td>
@@ -167,9 +162,9 @@
                                             </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-id="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                             <i class="bi bi-trash"></i>
+                                             <i class="bi bi-trash"></i>Hapus
                                          </a>
 
                                          <!-- Modal -->
@@ -221,7 +216,41 @@
                                         </td>
 
                                     </tr>
-                                        @endforeach
+
+
+        @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+
 
                                 </tbody>
                             </table>
@@ -260,17 +289,17 @@
 
                 // Cek jika masa berlaku kosong
                 if (!masaBerlaku || masaBerlaku === '') {
-                    button.classList.add('btn-suspend'); // Tambahkan class untuk suspend
+                    button.classList.add('button-berkas'); // Tambahkan class untuk suspend
                     button.textContent = 'SUSPEND';
                 } else {
                     const masaBerlakuDate = new Date(masaBerlaku); // Jika ada, ubah menjadi tanggal
 
                     // Cek jika masa berlaku sudah lewat
                     if (masaBerlakuDate < today) {
-                        button.classList.add('btn-expired'); // Warna merah jika tidak berlaku
+                        button.classList.add('button-merah'); // Warna merah jika tidak berlaku
                         button.textContent = 'TIDAK BERLAKU';
                     } else {
-                        button.classList.add('btn-active'); // Warna hijau jika masih berlaku
+                        button.classList.add('button-hijau'); // Warna hijau jika masih berlaku
                         button.textContent = 'BERLAKU';
                     }
                 }
