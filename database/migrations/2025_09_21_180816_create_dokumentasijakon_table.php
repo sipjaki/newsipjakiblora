@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
+
         Schema::create('dokumentasijakon', function (Blueprint $table) {
             $table->id();
+
             $table->string('judul');
 
             // Foto kegiatan 1 sampai 12 (manual, tanpa loop)

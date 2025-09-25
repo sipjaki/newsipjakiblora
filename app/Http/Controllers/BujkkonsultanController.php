@@ -234,18 +234,18 @@ public function bebujkkonsultancreateupdate(Request $request, $id)
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
         // 'bujkkontraktorsub_id' => 'required|string|max:255', // Validasi untuk ID kontraktor
-        'asosiasimasjaki_id' => 'required|integer', // Validasi untuk ID asosiasi
-        'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
-        'alamat' => 'required|string', // Validasi untuk Alamat
-        'no_telepon' => 'required|string|max:255', // Validasi untuk No Telepon
-        'email' => 'required|email', // Validasi untuk Email
-        'nomorindukberusaha' => 'required|string|max:255', // Validasi untuk Nomor Induk Berusaha
-        'pju' => 'required|string|max:255', // Validasi untuk PJU
-        'no_akte' => 'required|string|max:255', // Validasi untuk No Akte
-        'tanggal' => 'required|date', // Validasi untuk Tanggal
-        'nama_notaris' => 'required|string|max:255', // Validasi untuk Nama Notaris
-        'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
-        'uploadberkas' => 'required|mimes:pdf',
+        'asosiasimasjaki_id' => 'nullable|integer', // Validasi untuk ID asosiasi
+        'namalengkap' => 'nullable|string|max:255', // Validasi untuk Nama Lengkap
+        'alamat' => 'nullable|string', // Validasi untuk Alamat
+        'no_telepon' => 'nullable|string|max:255', // Validasi untuk No Telepon
+        'email' => 'nullable|email', // Validasi untuk Email
+        'nomorindukberusaha' => 'nullable|string|max:255', // Validasi untuk Nomor Induk Berusaha
+        'pju' => 'nullable|string|max:255', // Validasi untuk PJU
+        'no_akte' => 'nullable|string|max:255', // Validasi untuk No Akte
+        'tanggal' => 'nullable|date', // Validasi untuk Tanggal
+        'nama_notaris' => 'nullable|string|max:255', // Validasi untuk Nama Notaris
+        'no_pengesahan' => 'nullable|string|max:255', // Validasi untuk No Pengesahan
+        'uploadberkas' => 'nullable|mimes:pdf|max:15360',
     ], [
 
         'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
@@ -305,6 +305,7 @@ public function bebujkkonsultancreateupdate(Request $request, $id)
 
     // Redirect ke halaman yang sesuai
     return redirect('/bebujkkonsultan');
+
 }
 
 
@@ -320,7 +321,7 @@ public function bebujkkonsultancreate()
         // 'data' => $jakonjabatanfungsional,
         'user' => $user,
         'asosiasimasjaki' => $asosiasimasjaki,
-        'title' => 'Create BUJK Konsultasi Konstruksi'
+        'title' => 'Tambah Data BUJK Konsultasi Konstruksi'
     ]);
 }
 
@@ -329,18 +330,18 @@ public function bebujkkonsultancreatenew(Request $request)
 {
     // Validasi input form
     $validatedData = $request->validate([
-        'asosiasimasjaki_id' => 'required|integer',
-        'namalengkap' => 'required|string|max:255',
-        'alamat' => 'required|string',
-        'no_telepon' => 'required|string|max:255',
-        'email' => 'required|email',
-        'nomorindukberusaha' => 'required|string|max:255',
-        'pju' => 'required|string|max:255',
-        'no_akte' => 'required|string|max:255',
-        'tanggal' => 'required|date',
-        'nama_notaris' => 'required|string|max:255',
-        'no_pengesahan' => 'required|string|max:255',
-        'uploadberkas' => 'required|mimes:pdf',
+        'asosiasimasjaki_id' => 'nullable|integer',
+        'namalengkap' => 'nullable|string|max:255',
+        'alamat' => 'nullable|string',
+        'no_telepon' => 'nullable|string|max:255',
+        'email' => 'nullable|email',
+        'nomorindukberusaha' => 'nullable|string|max:255',
+        'pju' => 'nullable|string|max:255',
+        'no_akte' => 'nullable|string|max:255',
+        'tanggal' => 'nullable|date',
+        'nama_notaris' => 'nullable|string|max:255',
+        'no_pengesahan' => 'nullable|string|max:255',
+        'uploadberkas' => 'nullable|mimes:pdf|max:15360',
     ], [
         'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
@@ -384,18 +385,18 @@ public function bebujkkonsultancreatenew(Request $request)
     bujkkonsultan::create([
         'user_id' => $user_id, // Menyimpan user_id berdasarkan login
         'bujkkonsultansub_id' => $bujkkonsultansub_id,
-        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'],
-        'namalengkap' => $validatedData['namalengkap'],
-        'alamat' => $validatedData['alamat'],
-        'no_telepon' => $validatedData['no_telepon'],
-        'email' => $validatedData['email'],
-        'nomorindukberusaha' => $validatedData['nomorindukberusaha'],
-        'pju' => $validatedData['pju'],
-        'no_akte' => $validatedData['no_akte'],
-        'tanggal' => $validatedData['tanggal'],
-        'nama_notaris' => $validatedData['nama_notaris'],
-        'no_pengesahan' => $validatedData['no_pengesahan'],
-        'uploadberkas' => $validatedData['uploadberkas'],
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'] ?? null,
+        'namalengkap' => $validatedData['namalengkap'] ?? null,
+        'alamat' => $validatedData['alamat'] ?? null,
+        'no_telepon' => $validatedData['no_telepon'] ?? null,
+        'email' => $validatedData['email'] ?? null,
+        'nomorindukberusaha' => $validatedData['nomorindukberusaha'] ?? null,
+        'pju' => $validatedData['pju'] ?? null,
+        'no_akte' => $validatedData['no_akte'] ?? null,
+        'tanggal' => $validatedData['tanggal'] ?? null,
+        'nama_notaris' => $validatedData['nama_notaris'] ?? null,
+        'no_pengesahan' => $validatedData['no_pengesahan'] ?? null,
+        'uploadberkas' => $validatedData['uploadberkas'] ?? null,
     ]);
 
     session()->flash('create', 'Data Berhasil Dibuat!');
@@ -460,14 +461,19 @@ public function bebujkkonsultancreateklasifikasicreate(Request $request)
         'tanggal_berlaku' => $validated['tanggal_berlaku'],
     ]);
 
-    // Ambil bujkkontraktor_id yang baru saja disimpan
-    $bujkkonsultanId = $bujkkonsultanSub->bujkkonsultan_id;
+// Ambil bujkkonsultan_id yang baru saja disimpan
+$bujkkonsultanId = $bujkkonsultanSub->bujkkonsultan_id;
 
-    // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
-    session()->flash('create', 'Data Sub Klasifikasi Layanan berhasil di buat.');
+// Ambil data Bujkkonsultan utama
+$bujkkonsultan = Bujkkonsultan::find($bujkkonsultanId);
 
-    // Redirect ke route 'bebujkkonstruksi.showsubklasifikasi' dengan parameter bujkkontraktor_id
-    return redirect('bebujkkonsultan');
+// Flash message
+session()->flash('create', 'Data Sub Klasifikasi Layanan berhasil dibuat.');
+
+// Redirect ke URL show sub-klasifikasi
+return redirect(url('/bebujkkonsultan/showsubklasifikasi/' . $bujkkonsultan->namalengkap));
+
+
 }
 
 
@@ -481,19 +487,17 @@ public function bebujkkonsultanshowklasifikasidelete($id)
         //     Storage::disk('public')->delete($entry->header);
         // }
 
-        $parentId = $entry->bujkkonsultan_id;
         $entry->delete();
 
         // Pakai session()->flash supaya konsisten dengan create
         session()->flash('delete', 'Data Berhasil Dihapus!');
-        return redirect('/bebujkkonsultan');
+        return redirect()->back(); // <-- redirect ke halaman sebelumnya
     }
 
     // Kalau tidak ketemu, flash error
     session()->flash('error', 'Item tidak ditemukan');
     return redirect()->back();
 }
-
 
 
 }
