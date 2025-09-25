@@ -75,7 +75,7 @@ class AndroidVersionController extends Controller
         $user = Auth::user();
 
         return view('frontend.00_android.A_menuberita.index', [
-        'title' => 'Menu Berita',
+        'title' => 'Berita Jasa Konstruksi Kabupaten Blora',
         'user' => $user,
     ]);
     }
