@@ -1,3 +1,149 @@
+<style>
+        :root {
+            --primary-green: #42b549; /* Hijau Tokopedia */
+            --dark-green: #2c9e32;
+            --light-green: #e8f5e9;
+            --accent-green: #c8e6c9;
+        }
+
+
+        .dashboard-card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            height: 100%;
+            position: relative;
+        }
+
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--primary-green);
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-content {
+            padding: 25px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .number-container {
+            background-color: var(--primary-green);
+            border-radius: 14px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(66, 181, 73, 0.3);
+        }
+
+        .animated-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            color: white;
+        }
+
+        .info-content {
+            flex-grow: 1;
+        }
+
+        .info-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--primary-green);
+        }
+
+        .info-text {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+
+        /* Warna khusus untuk setiap kartu */
+        .card-1 .number-container {
+            background-color: #42b549;
+        }
+
+        .card-2 .number-container {
+            background-color: #3fa845;
+        }
+
+        .card-3 .number-container {
+            background-color: #3b9a40;
+        }
+
+        .card-4 .number-container {
+            background-color: #378d3c;
+        }
+
+        .card-5 .number-container {
+            background-color: #338037;
+        }
+
+        .card-1 .info-icon {
+            color: #42b549;
+        }
+
+        .card-2 .info-icon {
+            color: #3fa845;
+        }
+
+        .card-3 .info-icon {
+            color: #3b9a40;
+        }
+
+        .card-4 .info-icon {
+            color: #378d3c;
+        }
+
+        .card-5 .info-icon {
+            color: #338037;
+        }
+
+        @media (max-width: 576px) {
+            .number-container {
+                width: 60px;
+                height: 60px;
+            }
+
+            .animated-number {
+                font-size: 1.5rem;
+            }
+
+            .info-icon {
+                font-size: 22px;
+            }
+
+            .info-text {
+                font-size: 14px;
+            }
+
+            .card-content {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+
+
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -47,102 +193,79 @@
   {{-- <h5 class="mt-4 mb-2">Info Box With <code>bg-*</code></h5> --}}
   <!--begin::Row-->
 
+
+
             <div class="row">
 
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/bebujkkonstruksi">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">BUJK Konstruksi</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <!-- /.col -->
-
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/bebujkkonsultan">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">BUJK Konsultasi Konstruksi</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <!-- /.col -->
-
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/beasosiasi">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Asosiasi Jasa Konstruksi</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
-                <!-- /.col -->
-{{--
-                <div class="col-md-3 col-sm-6 col-12">
-                    <a href="/404">
-                        <div class="info-box"
-                             style="transition: background-color 0.3s, color 0.3s; background-color: #156f2a; color: white;"
-                             onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                            <span class="info-box-icon">
-                                <img src="/assets/icon/pupr.png" alt="" width="40">
-                            </span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Data Statistik BUJK</span>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width: 70%"></div>
-                                </div>
-                                <span class="progress-description"> Pengaturan </span>
-                            </div>
-                        </div>
-                    </a>
-
-                </div> --}}
-                <!-- /.col -->
-
+  <div class="col-md-3 col-sm-6 col-12">
+    <a href="/bebujkkonstruksi" style="text-decoration: none;">
+      <div class="dashboard-card card-1">
+        <div class="card-content">
+          <div class="number-container">
+            <img src="/assets/icon/pupr.png" alt="icon" width="40">
+          </div>
+          <div class="info-content">
+            <i class="bi bi-building-gear info-icon"></i>
+            <p class="info-text">BUJK Konstruksi</p>
+            <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+              <div class="progress-bar" style="width: 70%; background-color: var(--primary-green);"></div>
             </div>
+            <small class="text-muted">Pengaturan</small>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-md-3 col-sm-6 col-12">
+    <a href="/bebujkkonsultan" style="text-decoration: none;">
+      <div class="dashboard-card card-2">
+        <div class="card-content">
+          <div class="number-container">
+            <img src="/assets/icon/pupr.png" alt="icon" width="40">
+          </div>
+          <div class="info-content">
+            <i class="bi bi-file-earmark-text info-icon"></i>
+            <p class="info-text">BUJK Konsultasi Konstruksi</p>
+            <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+              <div class="progress-bar" style="width: 60%; background-color: #3fa845;"></div>
+            </div>
+            <small class="text-muted">Pengaturan</small>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-md-3 col-sm-6 col-12">
+    <a href="/beasosiasi" style="text-decoration: none;">
+      <div class="dashboard-card card-3">
+        <div class="card-content">
+          <div class="number-container">
+            <img src="/assets/icon/pupr.png" alt="icon" width="40">
+          </div>
+          <div class="info-content">
+            <i class="bi bi-people info-icon"></i>
+            <p class="info-text">Asosiasi Jasa Konstruksi</p>
+            <div class="progress mt-2" style="height: 6px; border-radius: 4px;">
+              <div class="progress-bar" style="width: 75%; background-color: #3b9a40;"></div>
+            </div>
+            <small class="text-muted">Pengaturan</small>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+</div>
 
                 <!-- /.col -->
 
 
             </div>
+
+                  {{-- ================================================================================================= --}}
+
 
   {{-- ================================================================================== --}}
             <!-- /.col -->

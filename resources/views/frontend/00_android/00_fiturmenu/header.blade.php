@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Sistem Informasi Pembina Jasa Konstruksi, Jasa Konstruksi Kabupaten Blora, Sertifikasi Tenaga Kerja Konstruksi, Persetujuan Bangunan Gedung, Sertifikat Laik Fungsi, BUJK, Asosiasi Konstruksi Blora, Rantai Pasok Konstruksi Blora, PUPR Blora, Infrastruktur Blora">
-    <meta name="description" content="Sistem Informasi Pembina Jasa Konstruksi Kabupaten Blora. Solusi digital untuk pengelolaan jasa konstruksi, sertifikasi tenaga kerja, dan perizinan bangunan gedung.">
+    <meta name="keywords" content="SIPJAKI, Sistem Informasi Pembina Jasa Konstruksi, Jasa Konstruksi, Jasa Konstruksi Kabupaten Blora, Sertifikasi Tenaga Kerja Konstruksi, Persetujuan Bangunan Gedung, Sertifikat Laik Fungsi, BUJK, Asosiasi Konstruksi Blora, Rantai Pasok Konstruksi Blora, PUPR Blora, Infrastruktur Blora">
+    <meta name="description" content="SIPJAKI, Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Blora adalah platform digital untuk meningkatkan efisiensi dan transparansi dalam pengelolaan proyek konstruksi. Sistem ini memantau pelaksanaan proyek, memastikan kepatuhan terhadap standar, dan memfasilitasi komunikasi antara pemerintah, kontraktor, pengawas, tenaga ahli, dan masyarakat. Hal ini diharapkan dapat meningkatkan kualitas infrastruktur dan mempercepat proses administrasi.">
     <meta name="robots" content="index, follow">
 
     <link href="/assets/00_android/output.css" rel="stylesheet">

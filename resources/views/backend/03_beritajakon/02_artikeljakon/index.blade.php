@@ -108,11 +108,11 @@
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<table class="table table-striped">
+<table class="zebra-table table-striped">
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 200px; text-align:center; background:white; color:black;">Penulis</th>
+         <th style="width: 200px; text-align:center;">Penulis</th>
          <th style="width: 500px; text-align:center;">Artikel Jakon</th>
          <th style="width: 150px; text-align:center;">Tanggal</th>
          <th style="width: 350px; text-align:center;">Aksi</th>
