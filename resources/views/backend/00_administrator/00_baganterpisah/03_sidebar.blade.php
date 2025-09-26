@@ -908,6 +908,13 @@
                     </a>
                   </li>
 
+                  <li class="nav-item">
+                    <a href="/beagendaskktkk" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
+                      <p style="color: white">TKK DPUPR (2025) </p>
+                    </a>
+                  </li>
+
                   <!-- Tenaga Kerja Konstruksi (Duplicate) -->
                   <li class="nav-item">
                     <a href="/beskkallblora" class="nav-link">
@@ -937,7 +944,53 @@
         border-radius: 8px;
         box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     ">
-        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan <br> SKK Tenaga Kerja
+    </p>
+</div>
+<li class="nav-item">
+    <a href="/settingssekolah" class="nav-link">
+        <i class="nav-icon bi bi-building text-warning"></i> <!-- Ikon Universitas/Sekolah -->
+        <p style="color: white">Universitas/Sekolah</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="nav-icon bi bi-mortarboard-fill text-warning"></i> <!-- Ikon Jenjang Pendidikan -->
+        <p style="color: white">Jenjang Pendidikan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="nav-icon bi bi-person-badge-fill text-warning"></i> <!-- Ikon Jabatan Kerja -->
+        <p style="color: white">Jabatan Kerja</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="nav-icon bi bi-journal-bookmark-fill text-warning"></i> <!-- Ikon Jurusan -->
+        <p style="color: white">Jurusan</p>
+    </a>
+</li>
+
+
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan <br> Profil Paket Pekerjaan
     </p>
 </div>
 

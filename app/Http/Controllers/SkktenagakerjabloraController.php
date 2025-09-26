@@ -350,7 +350,7 @@ return redirect()->back()->with('error', 'Item not found');
 
     public function beskkall(Request $request)
     {
-            $perPage = $request->input('perPage', 15);
+            $perPage = $request->input('perPage', 10);
             $search = $request->input('search');
 
             $query = skktenagakerjablora::query();
@@ -637,21 +637,21 @@ public function beskkallbloraupdate($nama)
 {
     // Validasi inputan
     $validatedData = $request->validate([
-        'nama' => 'required|string|max:255',
-        'alamat' => 'required|string',
-        'tahunlulus' => 'required|string',
-        'tahunbimtek' => 'required|string',
-        'namasekolah_id' => 'required|integer',
-        'jenjangpendidikan_id' => 'required|integer',
-        'jurusan_id' => 'required|integer',
-        'jabatankerja_id' => 'required|integer',
-        'jenjang_id' => 'required|integer',
-        'asosiasimasjaki_id' => 'required|integer',
-        'lpspenerbit_id' => 'required|integer',
-        'tanggalterbit' => 'required|date',
-        'tanggalhabis' => 'required|date',
-        'statusterbit' => 'required|string',
-        'sertifikat' => 'required|mimes:pdf',
+        'nama' => 'nullable|string|max:255',
+        'alamat' => 'nullable|string',
+        'tahunlulus' => 'nullable|string',
+        'tahunbimtek' => 'nullable|string',
+        'namasekolah_id' => 'nullable|integer',
+        'jenjangpendidikan_id' => 'nullable|integer',
+        'jurusan_id' => 'nullable|integer',
+        'jabatankerja_id' => 'nullable|integer',
+        'jenjang_id' => 'nullable|integer',
+        'asosiasimasjaki_id' => 'nullable|integer',
+        'lpspenerbit_id' => 'nullable|integer',
+        'tanggalterbit' => 'nullable|date',
+        'tanggalhabis' => 'nullable|date',
+        'statusterbit' => 'nullable|string',
+        'sertifikat' => 'nullable|mimes:pdf|max:20480',
     ], [
         'nama.required' => 'Nama wajib diisi!',
         'nama.string' => 'Nama harus berupa teks!',
@@ -742,7 +742,7 @@ public function beskkallbloraupdate($nama)
     ]);
 
     // Flash success
-    session()->flash('create', 'Data Berhasil Dibuat!');
+    session()->flash('update', 'Data Berhasil Diperbaiki!');
     return redirect('/beskkallblora');
     // return redirect('/beskkdpupr')->back();
 }
@@ -787,21 +787,21 @@ public function beskkallbloracreatenew(Request $request)
 {
     // Validasi inputan
     $validatedData = $request->validate([
-        'nama' => 'required|string|max:255',
-        'alamat' => 'required|string',
-        'tahunlulus' => 'required|string',
-        'tahunbimtek' => 'required|string',
-        'namasekolah_id' => 'required|integer',
-        'jenjangpendidikan_id' => 'required|integer',
-        'jurusan_id' => 'required|integer',
-        'jabatankerja_id' => 'required|integer',
-        'jenjang_id' => 'required|integer',
-        'asosiasimasjaki_id' => 'required|integer',
-        'lpspenerbit_id' => 'required|integer',
-        'tanggalterbit' => 'required|date',
-        'tanggalhabis' => 'required|date',
-        'statusterbit' => 'required|string',
-        'sertifikat' => 'required|mimes:pdf',
+        'nama' => 'nullable|string|max:255',
+        'alamat' => 'nullable|string',
+        'tahunlulus' => 'nullable|string',
+        'tahunbimtek' => 'nullable|string',
+        'namasekolah_id' => 'nullable|integer',
+        'jenjangpendidikan_id' => 'nullable|integer',
+        'jurusan_id' => 'nullable|integer',
+        'jabatankerja_id' => 'nullable|integer',
+        'jenjang_id' => 'nullable|integer',
+        'asosiasimasjaki_id' => 'nullable|integer',
+        'lpspenerbit_id' => 'nullable|integer',
+        'tanggalterbit' => 'nullable|date',
+        'tanggalhabis' => 'nullable|date',
+        'statusterbit' => 'nullable|string',
+        'sertifikat' => 'nullable|mimes:pdf|max:20480',
     ], [
         'nama.required' => 'Nama wajib diisi!',
         'nama.string' => 'Nama harus berupa teks!',

@@ -13,7 +13,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
 
         <!--begin::App Content Header-->
@@ -45,16 +46,16 @@
                     @include('backend.00_administrator.00_baganterpisah.14_judulshow')
 
                     <div class="card-header">
-                        <h2 class="card-title" style="color: black;">
+                        {{-- <h2 class="card-title" style="color: black;">
                             Data Details :
-                            <button class="btn btn-success"
+                            <button class="button-hijau"
                                     style="background-color: #1d643b; border-color: #1d643b; font-weight: bold; padding: 10px 20px;
                                            border-radius: 5px; font-size: 16px; margin-right: 10px;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000'; this.style.borderColor='#1d643b';"
                                     onmouseout="this.style.backgroundColor='#1d643b'; this.style.color='#ffffff'; this.style.borderColor='#1d643b';">
                                 {{ $data->nama }}
                             </button>
-                        </h2>
+                        </h2> --}}
                         <button id="status-{{ $data->id }}" class="btn btn-sm"></button>
 
                         <script>
@@ -69,7 +70,7 @@
                                 if (now > tanggalHabis) {
                                     statusButton.innerText = "TIDAK BERLAKU";
                                     statusButton.setAttribute("style", buttonStyle + " background-color: red; border-color: red; color: white;"); // Set to red for "TIDAK BERLAKU"
-                                    statusButton.className = "btn btn-danger btn-sm"; // Update class for 'danger' status
+                                    statusButton.className = "button-merah"; // Update class for 'danger' status
 
                                     // Hover effect: keep background white on hover
                                     statusButton.onmouseover = function() {
@@ -85,7 +86,7 @@
                                 } else {
                                     statusButton.innerText = "BERLAKU";
                                     statusButton.setAttribute("style", buttonStyle + " background-color: #1d643b; border-color: #1d643b; color: white;");
-                                    statusButton.className = "btn btn-success btn-sm"; // Update class for 'success' status
+                                    statusButton.className = "button-hijau"; // Update class for 'success' status
 
                                     // Hover effect: keep background white on hover
                                     statusButton.onmouseover = function() {
@@ -253,23 +254,17 @@
                     <br><br>
                     <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
                         <a href="/beskkallblora/update/{{$data->nama}}">
-                            <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#22C55E'; this.style.color='white';"
-                            style="background-color: #22C55E; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <button class="button-berkas">
                             <!-- Ikon Kembali -->
                             <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 384 512" fill="white" style="margin-right: 8px;">
                                 <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM384 121.9V128H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/>
                             </svg>
 
-                            Update
+                            Perbaikan Data ?
                         </button>
                         </a>
                         <a href="/beskkallblora">
-                            <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                            style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <button class="button-newvalidasi">
                             <!-- Ikon Kembali -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16" style="margin-right: 8px;">

@@ -1034,6 +1034,8 @@ Route::post('/peserta/downloadberkas/{id}', [PembinaanController::class, 'downlo
 Route::get('/perbaikandataskk/{id}', [PembinaanController::class, 'perbaikandataskk'])->middleware('auth');
 Route::post('/perbaikandataskk/createnew/{id}', [PembinaanController::class, 'perbaikandataskkupdate'])->middleware('auth')->name('berkasperbaikandatapeserta');
 
+// TKK DPUPR 2025
+Route::get('/beagendaskktkk', [PembinaanController::class, 'beagendaskktkk2025'])->middleware('auth');
 
 
 // DASHBOARD PESERTA
