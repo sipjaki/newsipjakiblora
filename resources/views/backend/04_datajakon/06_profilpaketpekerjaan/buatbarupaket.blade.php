@@ -117,51 +117,22 @@ style="
                     ⚙️ Setting Database
                 </div> --}}
 
-                     {{-- <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                         <a href="/404">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#00378a'; this.style.color='white';"
-                             style="background-color: #00378a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-database" style="margin-right: 8px;"></i>
-                             Asosiasi
-                         </button>
-                         </a>
-
-                     </div> --}}
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div
-                style="
-    margin-bottom: 10px;
-    font-weight: 900;
-    font-size: 16px;
-    text-align: center;
-    background: linear-gradient(135deg, #a8e6cf, #ffffff); /* gradasi hijau muda ke putih */
-    color: #004d40; /* teks hijau gelap agar kontras */
-    padding: 10px 25px;
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
-"
->
+                    <div class="button-hijau">
                 <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
                 </div>
 
-
-
-
+<hr>
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-{{-- <button class="button-kembali" type="button"
+<button class="button-newvalidasi" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
-</button> --}}
+</button>
 
 
 
@@ -191,7 +162,7 @@ style="
                      </div>
                  </div>
 <br>
-                 <hr>
+
                  <!-- /.card-header -->
                  <div class="card-body p-0">
 
@@ -624,7 +595,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
                                 <div class="flex justify-end">
                                <button class="button-hijau" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
-                                    <span style="font-family: 'Poppins', sans-serif;">Simpan</span>
+                                    <span style="font-family: 'Poppins', sans-serif;">Tambah Data </span>
                                     </button>
 
                                 </div>
