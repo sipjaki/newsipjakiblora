@@ -2244,33 +2244,43 @@ public function betertibjakonpenyelenggaraanindex(Request $request)
 
     $query = tertibjakonpenyelenggaraan::query();
 
+    // Filtering by search
     if ($search) {
         $query->where(function ($q) use ($search) {
-          $q->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
-            ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
-            ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
-            ->orWhere('bujk', 'LIKE', "%{$search}%")
-
+            $q->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
+              ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+              ->orWhere('bujk', 'LIKE', "%{$search}%")
               ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
                   $r->where('penyedia', 'LIKE', "%{$search}%");
               });
         });
     }
 
-    $data = $query->orderBy('updated_at', 'desc')
-                  ->paginate($perPage);
+    // Statistik tambahan (opsional kalau mau ditampilkan di view utama)
+    $totalpenyedia1 = tertibjakonpenyelenggaraan::whereHas('penyediastatustertibjakon', fn($q) => $q->where('id', 1))->count();
+    $totalpenyedia2 = tertibjakonpenyelenggaraan::whereHas('penyediastatustertibjakon', fn($q) => $q->where('id', 2))->count();
+    $totalpenyedia3 = tertibjakonpenyelenggaraan::whereHas('penyediastatustertibjakon', fn($q) => $q->where('id', 3))->count();
 
+    // Data utama
+    $data = $query->orderBy('updated_at', 'desc')->paginate($perPage);
+
+    // Kalau request dari AJAX → return JSON berisi partial table
     if ($request->ajax()) {
         return response()->json([
             'html' => view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.partials.table', compact('data'))->render()
         ]);
     }
 
+    // Kalau bukan AJAX → render full view
     return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.index', [
-        'title' => 'Data Tertib Jakon Penyelenggaraan',
-        'data' => $data,
-        'perPage' => $perPage,
-        'search' => $search
+        'title'          => 'Data Tertib Jakon Penyelenggaraan',
+        'data'           => $data,
+        'perPage'        => $perPage,
+        'search'         => $search,
+        'totalpenyedia1' => $totalpenyedia1,
+        'totalpenyedia2' => $totalpenyedia2,
+        'totalpenyedia3' => $totalpenyedia3
     ]);
 }
 
@@ -2900,7 +2910,7 @@ public function betertibjakonpenyelenggaraan1($id)
 
 
     return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.01_suratpenyelenggaraan1.penyelenggaraan1', [
-        'title' => 'Berkas Surat | Tertib Jakon Penyelenggaraan',
+        'title' => 'Berkas Surat | Tertib Jakon Penyelenggaraan Pengawasan Terhadap Proses Pemilihan Penyedia Jasa',
         'user' => $user,
         'data' => $datasurat,
         'datasurat' => $datasurat,
