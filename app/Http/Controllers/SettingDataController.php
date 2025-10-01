@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\rantaipasokblora;
 use App\Models\peralatankonstruksi;
 use App\Models\alatberat;
+use App\Models\jenjangpendidikan;
 use App\Models\namasekolah;
 use App\Models\subklasifikasi;
 use App\Models\tandatangan;
@@ -270,5 +271,90 @@ return redirect('/settingssubklasifikasi')->with('delete', 'Data Berhasil Di Hap
 }
 }
 
+public function settingspendidikan(Request $request)
+{
+    $perPage = $request->input('perPage', 25);
+    $search  = $request->input('search');
+
+    $query = jenjangpendidikan::query();
+
+    if ($search) {
+        $query->where('jenjangpendidikan', 'LIKE', "%{$search}%");
+    }
+
+    // Urutkan berdasarkan abjad A-Z
+    $query->orderBy('jenjangpendidikan', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view(
+                'backend.16_settingsdata.04_jenjangpendidikan.partials.table',
+                compact('data')
+            )->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.04_jenjangpendidikan.index', [
+        'title'   => 'Daftar Jenjang Pendidikan',
+        'data'    => $data,
+        'perPage' => $perPage,
+        'search'  => $search
+    ]);
+}
+
+
+    public function settingspendidikancreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.04_jenjangpendidikan.create', [
+            'title' => 'Tambah Jenjang Pendidikan',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
+
+
+    public function settingsjenjangpencreatenew(Request $request)
+{
+    $request->validate([
+        'jenjangpendidikan' => 'required|string|max:50|unique:jenjangpendidikans,jenjangpendidikan',
+    ], [
+        'jenjangpendidikan.required' => 'Jenjang pendidikan tidak boleh kosong.',
+        'jenjangpendidikan.string'   => 'Jenjang pendidikan harus berupa teks.',
+        'jenjangpendidikan.max'      => 'Jenjang pendidikan tidak boleh lebih dari 50 karakter.',
+        'jenjangpendidikan.unique'   => 'Jenjang pendidikan ini sudah terdaftar.',
+    ]);
+
+jenjangpendidikan::create([
+        'jenjangpendidikan' => $request->jenjangpendidikan,
+    ]);
+
+    session()->flash('create', 'Data berhasil dibuat!');
+    return redirect('/settingsjenjangpendidikan');
+}
+
+
+public function settingspendidikandelete($id)
+{
+// Cari item berdasarkan judul
+$entry = jenjangpendidikan::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/settingsjenjangpendidikan')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+}
 
 }
