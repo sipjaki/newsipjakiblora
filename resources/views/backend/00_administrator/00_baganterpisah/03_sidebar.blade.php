@@ -955,7 +955,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="/404" class="nav-link">
+    <a href="/settingsjenjangpendidikan" class="nav-link">
         <i class="nav-icon bi bi-mortarboard-fill text-warning"></i> <!-- Ikon Jenjang Pendidikan -->
         <p style="color: white">Jenjang Pendidikan</p>
     </a>
