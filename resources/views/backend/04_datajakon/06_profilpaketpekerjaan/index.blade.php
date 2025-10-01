@@ -175,7 +175,7 @@
 
                         <div class="card-body p-0">
                             <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                                <table id="tablePaket" class="tabel-baru">
+                                <table id="tablePaket" class="zebra-table table-striped">
                                     <thead>
                                         <tr>
                                             <th style="width: 75px; text-align:center;">

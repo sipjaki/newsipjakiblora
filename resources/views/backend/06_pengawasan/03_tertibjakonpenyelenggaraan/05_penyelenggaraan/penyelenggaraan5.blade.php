@@ -331,7 +331,7 @@
                                     </div>
                                     <br>
                                     <div class="modal-body">
-                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Penyelenggaraan : Pengawasan Tertib Penyelenggaraan Konstruksi Secara Rutin <br> Penyelenggaraan Konstruksi dengan Sumber Dana dari APBD</h5>
+                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Penyelenggaraan : Pengawasan Tertib Penyelenggaraan Konstruksi Secara Rutin <br> Penyelenggaraan Konstruksi dengan Sumber Dana dari APBD <br> <strong> Pengawasan Terhadap Penggunaan Material Peralatan </strong></h5>
                                             <br>
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
 <tr>
@@ -476,8 +476,8 @@
             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Indikator</th>
             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Dokumen yang diperiksa</th>
             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Cara Pemeriksaan</th>
-            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; width:200px;">Kesimpulan Pemeriksaan</th>
-            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; width:300px;">Catatan Pemeriksaan</th>
+            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; width:100px;">Kesimpulan <br> Pemeriksaan</th>
+            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; width:120px;">Catatan <br> Pemeriksaan</th>
         </tr>
     </thead>
 
@@ -555,43 +555,103 @@
                                                         <div class="card" style="border: 1px solid white;">
                                                             <div class="card-body">
                                                                 <!-- Tim Pemeriksa -->
-                                                                <div class="tim-pemeriksa-container">
-                                                                    <div class="tim-pemeriksa">
-                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa:</h6>
-                                                                        <table class="table table-sm">
-                                                                            <thead class="table-secondary">
-                                                                                <tr>
-                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
-                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
-                                                                                </tr>
-                                                                            </thead>
+                                                                   <style>
+    /* Styling khusus untuk tabel tim pemeriksa */
+    .tim-pemeriksa-container table {
+        font-size: 10px !important;   /* kecilin font */
+        width: 100%;
+        border-collapse: collapse;    /* rapetin border */
+    }
 
-                                                                            @foreach ($datasurat as $item)
+    .tim-pemeriksa-container th,
+    .tim-pemeriksa-container td {
+        font-size: 10px !important;   /* kecilin font */
+        padding: 2px 4px !important;  /* rapetin padding */
+        text-align: center;
+        vertical-align: middle;
+    }
 
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
-                                                                                    <td style="font-size: 16px;">
-                                                                                        {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                      <td style="font-size: 16px;">
-                                                                                        {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
-                                                                                    <td style="font-size: 16px;">
-                                                                                        {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                            @endforeach
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
+    .tim-pemeriksa-container th {
+        background: #e9ecef; /* warna thead biar tetap ada highlight */
+        font-weight: bold;
+    }
+
+    .tim-pemeriksa-container img {
+        max-width: 50px;  /* perkecil gambar tanda tangan */
+        height: auto;
+    }
+</style>
+
+
+<div class="tim-pemeriksa-container">
+    <div class="tim-pemeriksa" style="margin-top:10px; font-size: 0.75rem;">
+        <h6 style="font-size: 0.8rem; margin-bottom: 5px;">Tim Pemeriksa:</h6>
+        <table class="table table-bordered table-sm" style="margin-top:-5px; font-size: 0.75rem;">
+            <thead class="table-secondary">
+                <tr>
+                    <th style="width: 30px; text-align:center;">No</th>
+                    <th style="text-align:center;">Nama Lengkap</th>
+                    <th style="width: 100px; text-align:center;">Tanda Tangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">1</td>
+                    <td>
+                        {{ $firstsurat->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+                    </td>
+                    <td style="text-align:center;">
+                        <div>
+                            @if(optional($firstsurat->tandatangan1)->tandatangan && file_exists(storage_path('app/public/' . $firstsurat->tandatangan1->tandatangan)))
+                                <img src="{{ asset('storage/' . $firstsurat->tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height:40px;">
+                            @elseif(optional($firstsurat->tandatangan1)->tandatangan)
+                                <img src="{{ asset($firstsurat->tandatangan1->tandatangan) }}" alt="Tanda Tangan" style="max-height:40px;">
+                            @else
+                                <small><i>Belum upload</i></small>
+                            @endif
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align:center;">2</td>
+                    <td>
+                        {{ $firstsurat->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+                    </td>
+                    <td style="text-align:center;">
+                        <div>
+                            @if(optional($firstsurat->tandatangan2)->tandatangan && file_exists(storage_path('app/public/' . $firstsurat->tandatangan2->tandatangan)))
+                                <img src="{{ asset('storage/' . $firstsurat->tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height:40px;">
+                            @elseif(optional($firstsurat->tandatangan2)->tandatangan)
+                                <img src="{{ asset($firstsurat->tandatangan2->tandatangan) }}" alt="Tanda Tangan" style="max-height:40px;">
+                            @else
+                                <small><i>Belum upload</i></small>
+                            @endif
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align:center;">3</td>
+                    <td>
+                        {{ $firstsurat->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+                    </td>
+                    <td style="text-align:center;">
+                        <div>
+                            @if(optional($firstsurat->tandatangan3)->tandatangan && file_exists(storage_path('app/public/' . $firstsurat->tandatangan3->tandatangan)))
+                                <img src="{{ asset('storage/' . $firstsurat->tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height:40px;">
+                            @elseif(optional($firstsurat->tandatangan3)->tandatangan)
+                                <img src="{{ asset($firstsurat->tandatangan3->tandatangan) }}" alt="Tanda Tangan" style="max-height:40px;">
+                            @else
+                                <small><i>Belum upload</i></small>
+                            @endif
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -678,7 +738,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Penyelenggaraan : <br> Pengawasan Tertib Penyelenggaraan Konstruksi Secara Rutin <br> Penyelenggaraan Konstruksi dengan Sumber Dana dari APBD </h5>
+                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Penyelenggaraan : <br> Pengawasan Tertib Penyelenggaraan Konstruksi Secara Rutin <br> Penyelenggaraan Konstruksi dengan Sumber Dana dari APBD <br> <strong> Pengawasan Terhadap Penggunaan Material Peralatan </strong> </h5>
                                                 {{-- <table class="table table-bordered table-sm" style="font-size: 14px;"> --}}
                                                    {{-- <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
@@ -837,8 +897,8 @@
             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Indikator</th>
             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Dokumen yang diperiksa</th>
             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Cara Pemeriksaan</th>
-            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; width:200px;">Kesimpulan Pemeriksaan</th>
-            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; width:300px;">Catatan Pemeriksaan</th>
+            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; width:100px;">Kesimpulan <br> Pemeriksaan</th>
+            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; width:120px;">Catatan <br> Pemeriksaan</th>
         </tr>
     </thead>
 
@@ -902,6 +962,7 @@
 
 </table>
 
+
 <div class="container" style="margin-top: 10px;">
     <!-- Modal Card -->
     <div class="container" style="margin-top: 10px;">
@@ -912,92 +973,100 @@
                     <div class="card-body">
                         <!-- Tim Pemeriksa -->
                         <div class="tim-pemeriksa-container">
-                            <div class="tim-pemeriksa">
-                                <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
-                                <table class="table table-sm">
-                                    <thead class="table-secondary">
-                                        <tr>
-                                            <th style="width: 60px; font-size: 12px; text-align: center;">No</th>
-                                            <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
-                                            <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="font-size: 12px; text-align: center;">1</td>
-                                            <td style="font-size: 12px;">
-                                                {{ $firstsurat->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
-                                            </td>
-                                            <td style="font-size: 12px;">
-                                                <div style="margin-top: 10px;">
-                                                    @if(!empty($firstsurat->tandatangan1->tandatangan) && file_exists(public_path('storage/' . $firstsurat->tandatangan1->tandatangan)))
-                                                        <img src="{{ asset('storage/' . $firstsurat->tandatangan1->tandatangan) }}"
-                                                            alt="Tanda Tangan 1"
-                                                            style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                                                            loading="lazy">
-                                                    @elseif(!empty($firstsurat->tandatangan1->tandatangan))
-                                                        <img src="{{ asset($firstsurat->tandatangan1->tandatangan) }}"
-                                                            alt="Tanda Tangan 1"
-                                                            style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                                                            loading="lazy">
-                                                    @else
-                                                        <p>Data belum diupdate</p>
-                                                    @endif
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                                    <div class="tim-pemeriksa" style="margin-top: -15px;">
+                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa:</h6>
+                                                                        <table class="table table-sm" style="margin-top: -5px;">
+                                                                            <thead class="table-secondary">
+                                                                                <tr>
+                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Tanda Tangan</th>
+                                                                                </tr>
+                                                                            </thead>
 
-                                        <tr>
-                                            <td style="font-size: 12px; text-align: center;">2</td>
-                                            <td style="font-size: 12px;">
-                                                {{ $firstsurat->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
-                                            </td>
-                                            <td style="font-size: 12px;">
-                                                <div style="margin-top: 10px;">
-                                                    @if(!empty($firstsurat->tandatangan2->tandatangan) && file_exists(public_path('storage/' . $firstsurat->tandatangan2->tandatangan)))
-                                                        <img src="{{ asset('storage/' . $firstsurat->tandatangan2->tandatangan) }}"
-                                                            alt="Tanda Tangan 2"
-                                                            style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                                                            loading="lazy">
-                                                    @elseif(!empty($firstsurat->tandatangan2->tandatangan))
-                                                        <img src="{{ asset($firstsurat->tandatangan2->tandatangan) }}"
-                                                            alt="Tanda Tangan 2"
-                                                            style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                                                            loading="lazy">
-                                                    @else
-                                                        <p>Data belum diupdate</p>
-                                                    @endif
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                                            @foreach ($datasurat as $item)
 
-                                        <tr>
-                                            <td style="font-size: 12px; text-align: center;">3</td>
-                                            <td style="font-size: 12px;">
-                                                {{ $firstsurat->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
-                                            </td>
-                                            <td style="font-size: 12px;">
-                                                <div style="margin-top: 10px;">
-                                                    @if(!empty($firstsurat->tandatangan3->tandatangan) && file_exists(public_path('storage/' . $firstsurat->tandatangan3->tandatangan)))
-                                                        <img src="{{ asset('storage/' . $firstsurat->tandatangan3->tandatangan) }}"
-                                                            alt="Tanda Tangan 3"
-                                                            style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                                                            loading="lazy">
-                                                    @elseif(!empty($firstsurat->tandatangan3->tandatangan))
-                                                        <img src="{{ asset($firstsurat->tandatangan3->tandatangan) }}"
-                                                            alt="Tanda Tangan 3"
-                                                            style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                                                            loading="lazy">
-                                                    @else
-                                                        <p>Data belum diupdate</p>
-                                                    @endif
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                                                 <td>
+    <div style="margin-top: 10px; text-align: center;">
+        @if(optional($item->tandatangan1)->tandatangan && file_exists(storage_path('app/public/' . $item->tandatangan1->tandatangan)))
+            <!-- Jika tanda tangan ada di storage -->
+            <img src="{{ asset('storage/' . $item->tandatangan1->tandatangan) }}"
+                 alt="Tanda Tangan"
+                 style="max-width: 70px; height: auto; display: inline-block;">
+        @elseif(optional($item->tandatangan1)->tandatangan)
+            <!-- Jika tanda tangan ada tapi path langsung -->
+            <img src="{{ asset($item->tandatangan1->tandatangan) }}"
+                 alt="Tanda Tangan"
+                 style="max-width: 70px; height: auto; display: inline-block;">
+        @else
+            <!-- Kalau belum ada -->
+            <p><i>Tanda tangan belum diupload</i></p>
+        @endif
+    </div>
+</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
+                                                                                      <td style="font-size: 16px;">
+                                                                                        {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                                                 <td>
+    <div style="margin-top: 10px; text-align: center;">
+        @if(optional($item->tandatangan2)->tandatangan && file_exists(storage_path('app/public/' . $item->tandatangan2->tandatangan)))
+            <!-- Jika tanda tangan ada di storage -->
+            <img src="{{ asset('storage/' . $item->tandatangan2->tandatangan) }}"
+                 alt="Tanda Tangan"
+                 style="max-width: 70px; height: auto; display: inline-block;">
+        @elseif(optional($item->tandatangan2)->tandatangan)
+            <!-- Jika tanda tangan ada tapi path langsung -->
+            <img src="{{ asset($item->tandatangan2->tandatangan) }}"
+                 alt="Tanda Tangan"
+                 style="max-width: 70px; height: auto; display: inline-block;">
+        @else
+            <!-- Kalau belum ada -->
+            <p><i>Tanda tangan belum diupload</i></p>
+        @endif
+    </div>
+</td>
+
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
+                                                                                    <td style="font-size: 16px;">
+                                                                                        {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}
+                                                                                    </td>
+                                                                                                                 <td>
+    <div style="margin-top: 10px; text-align: center;">
+        @if(optional($item->tandatangan3)->tandatangan && file_exists(storage_path('app/public/' . $item->tandatangan3->tandatangan)))
+            <!-- Jika tanda tangan ada di storage -->
+            <img src="{{ asset('storage/' . $item->tandatangan3->tandatangan) }}"
+                 alt="Tanda Tangan"
+                 style="max-width: 70px; height: auto; display: inline-block;">
+        @elseif(optional($item->tandatangan3)->tandatangan)
+            <!-- Jika tanda tangan ada tapi path langsung -->
+            <img src="{{ asset($item->tandatangan3->tandatangan) }}"
+                 alt="Tanda Tangan"
+                 style="max-width: 70px; height: auto; display: inline-block;">
+        @else
+            <!-- Kalau belum ada -->
+            <p><i>Tanda tangan belum diupload</i></p>
+        @endif
+    </div>
+</td>
+
+                                                                                </tr>
+                                                                            </tbody>
+                                                                            @endforeach
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
                     </div>
                 </div>
             </div>
@@ -1073,27 +1142,45 @@
         // Kloning isi modal agar tidak mengganggu tampilan asli
         const clone = modalContent.cloneNode(true);
 
-        // Styling opsional untuk hasil PDF
+        // Styling untuk hasil PDF
         clone.style.fontSize = '14px';
-        clone.style.padding = '20px';
+        clone.style.padding = '10px'; // padding 10px
+        clone.style.margin = '0';     // buang semua margin
+
+        // Cari elemen tim-pemeriksa-container di dalam clone
+        const timPemeriksa = clone.querySelector('.tim-pemeriksa-container');
+        if (timPemeriksa) {
+            timPemeriksa.style.marginTop = '150px'; // kasih jarak ke bawah
+        }
+
+        // Bungkus clone agar posisi terjaga
+        const wrapper = document.createElement("div");
+        wrapper.style.width = "100%";
+        wrapper.style.height = "100%";
+        wrapper.style.display = "flex";
+        wrapper.style.flexDirection = "column";
+        wrapper.style.justifyContent = "flex-start"; // dorong ke atas
+        wrapper.style.alignItems = "flex-start";
+        wrapper.style.margin = "0";
+        wrapper.style.padding = "0";
+        wrapper.appendChild(clone);
 
         // Format nama file
-        const fileName = `Tertibjakonpemanfaatan_surat1_${id}.pdf`;
+        const fileName = `Tertibjakonpenyelenggaraan_surat5_${id}.pdf`;
 
         // Konversi ke PDF dan download
         html2pdf()
-            .from(clone)
+            .from(wrapper)
             .set({
-                margin: 0.5,
+                margin: [0, 0, 0, 0], // top, right, bottom, left
                 filename: fileName,
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
+                html2canvas: { scale: 2, scrollY: 0 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
             })
             .save();
     }
 </script>
-
                                         <script>
                                             function printModalContent(id) {
                                                 const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);

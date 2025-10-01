@@ -47,7 +47,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/settingssekolah">
+                <a href="/settingsjenjangpendidikan">
                     <button class="button-newvalidasi">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -64,23 +64,25 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('create.settingssekolah') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('create.jenjangpendidikan') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
+<div class="mb-3">
+    <label class="form-label" for="jenjangpendidikan">
+        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Jenjang Pendidikan
+    </label>
+    <input type="text" id="jenjangpendidikan" name="jenjangpendidikan"
+           class="form-control @error('jenjangpendidikan') is-invalid @enderror"
+           value="{{ old('jenjangpendidikan') }}" />
+    @error('jenjangpendidikan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label" for="namasekolah">
-                                            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama Universitas/Sekolah
-                                        </label>
-                                        <input type="text" id="namasekolah" name="namasekolah" class="form-control @error('namasekolah') is-invalid @enderror" value="{{ old('namasekolah') }}" />
-                                        @error('namasekolah')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
 
 
                                     </div>
