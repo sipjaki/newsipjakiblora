@@ -1034,6 +1034,8 @@ Route::post('/peserta/downloadberkas/{id}', [PembinaanController::class, 'downlo
 Route::get('/perbaikandataskk/{id}', [PembinaanController::class, 'perbaikandataskk'])->middleware('auth');
 Route::post('/perbaikandataskk/createnew/{id}', [PembinaanController::class, 'perbaikandataskkupdate'])->middleware('auth')->name('berkasperbaikandatapeserta');
 
+// TKK DPUPR 2025
+Route::get('/beagendaskktkk', [PembinaanController::class, 'beagendaskktkk2025'])->middleware('auth');
 
 
 // DASHBOARD PESERTA
@@ -1396,6 +1398,11 @@ Route::get('/settingssekolah', [SettingDataController::class, 'settingssekolah']
 Route::get('/settingssekolah/create', [SettingDataController::class, 'settingssekolahcreate'])->middleware(['auth', 'can:admin2']);
 Route::post('/settingssekolah/createnew', [SettingDataController::class, 'settingssekolahcreatenew'])->middleware(['auth', 'can:admin2'])->name('create.settingssekolah');
 Route::delete('/settingssekolah/delete/{namasekolah}', [SettingDataController::class, 'settingssekolahdelete'])->middleware(['auth', 'can:admin2']);
+
+Route::get('/settingsjenjangpendidikan', [SettingDataController::class, 'settingspendidikan'])->middleware(['auth', 'can:admin2']);
+Route::get('/settingsjenjangpendidikan/create', [SettingDataController::class, 'settingspendidikancreate'])->middleware(['auth', 'can:admin2']);
+Route::post('/settingsjenjangpendidikan/createnew', [SettingDataController::class, 'settingsjenjangpencreatenew'])->middleware(['auth', 'can:admin2'])->name('create.jenjangpendidikan');
+Route::delete('/jenjangpendidikan/delete/{id}', [SettingDataController::class, 'settingspendidikandelete'])->middleware(['auth', 'can:admin2']);
 
 // DATA PENGATURAN SUB KLASIFIKASI TERTIB JASA KONSTRUKSI
 Route::get('/settingssubklasifikasi', [SettingDataController::class, 'settingssubklasifikasi'])->middleware(['auth']);

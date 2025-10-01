@@ -115,7 +115,7 @@
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
     <input type="search" id="searchInput"
-           placeholder="Cari Universitas ...."
+           placeholder="Cari Jenjang Pendidikan ...."
            onkeyup="searchTable()"
            style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
 
@@ -134,7 +134,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/settingssekolah?search=${input}`)
+                            fetch(`/settingsjenjangpendidikan?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -153,7 +153,7 @@
 </button>
 
 <!-- Tombol Create -->
-<a href="/settingssekolah/create">
+<a href="/settingsjenjangpendidikan/create">
     <button class="button-baru">
         <i class="fa fa-plus" style="margin-right: 8px;"></i> Buat Baru
     </button>
@@ -169,15 +169,15 @@
  <thead>
      <tr>
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
+        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Jenjang Pendidikan</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
-     @foreach ($data as $item )
+     @forelse ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{ $item->namasekolah }}</td>
+         <td style="text-align: left;">{{ $item->jenjangpendidikan }}</td>
 
         <td style="text-align: center; vertical-align: middle;">
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
@@ -188,7 +188,7 @@
             </a> --}}
             <a href="javascript:void(0)" class="button-merah" title="Delete"
                data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-judul="{{ $item->namasekolah }}"
+               data-judul="{{ $item->id }}"
                onclick="setDeleteUrl(this)">
                 <i class="bi bi-trash"></i>Hapus
             </a>
@@ -210,7 +210,37 @@
 
         </tr>
 
-     @endforeach
+     @empty
+    <tr>
+        <td colspan="100%"> {{-- Memenuhi semua kolom --}}
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
  </tbody>
 </table>
                      </div>
@@ -247,9 +277,9 @@
 
                  <script>
                  function setDeleteUrl(button) {
-                     var namasekolah = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = namasekolah;
-                     var deleteUrl = "/namasekolah/delete/" + encodeURIComponent(namasekolah);
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/jenjangpendidikan/delete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>

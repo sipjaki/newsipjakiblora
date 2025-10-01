@@ -119,39 +119,60 @@
                                 <option value="2000">2000</option>
                             </select>
                         </div>
-
-                        <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                        </div>
-
-                        <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
-                            }
-
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
-
-                            fetch(`/betertibjakonpemanfaatan?search=${encodeURIComponent(input)}`, {
-                                headers: {
-                                    'X-Requested-With': 'XMLHttpRequest'
-                                }
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                document.querySelector("#tableBody").innerHTML = data.html;
-                            })
-                            .catch(error => console.error("Error fetching search results:", error));
-                        }
-
-                                </script>
+                                   <button class="button-data">
+    <i class="bi bi-file-earmark icon-create" style="margin-right: 5px"></i> {{$totalpenyedia1}} (PU)
+</button>
 
 
-                                <button class="button-baru" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
+                    <button class="button-data">
+    <i class="bi bi-file-earmark icon-create" style="margin-right: 5px"></i> {{$totalpenyedia2}} (NON-PU)
+</button>
+
+
+                    <button class="button-data">
+    <i class="bi bi-file-earmark icon-create" style="margin-right: 5px"></i> {{$totalpenyedia3}} (SWASTA)
+</button>
+
+<div style="position: relative; display: inline-block; margin-right:10px;">
+    <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...."
+           onkeyup="searchTable()"
+           style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+    <i class="bi bi-search"
+       style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+</div>
+
+<script>
+    function updateEntries() {
+        let selectedValue = document.getElementById("entries").value;
+        let url = new URL(window.location.href);
+        url.searchParams.set("perPage", selectedValue);
+        window.location.href = url.toString();
+    }
+
+    let debounceTimer;
+    function searchTable() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            let input = document.getElementById("searchInput").value;
+
+            fetch(`/betertibjakonpenyelenggaraan?search=${encodeURIComponent(input)}`, {
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector("#tableBody").innerHTML = data.html;
+            })
+            .catch(error => console.error("Error fetching search results:", error));
+        }, 400); // kasih jeda 0.4 detik biar ga spam server
+    }
+</script>
+
+
+
+                                <button class="button-baru" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonPenyelenggaraan')">
                                     <i class="bi bi-download icon-create" style="margin-right: 5px" ></i> Download Excel
                                 </button>
 
@@ -169,7 +190,7 @@
                  <div class="card-body p-0">
 
                     <div class="table-responsive" style="width: 100%; overflow-x: auto;">
-                        <table id="tabeltertibjakonusaha" class="zebra-table table-bordered table-striped" style="white-space: nowrap;">
+                        <table id="tabeltertibjakonusaha" class="zebra-table table-striped" style="white-space: nowrap;">
                             <thead>
                                 <tr>
                                     <th rowspan="2" style="text-align: center; width:75px;">
@@ -229,7 +250,7 @@
 
                             </thead>
 
-                          <tbody>
+                          <tbody id="tableBody">
                             @foreach ($data as $item)
                             <tr>
                               <td style="text-align: center;">{{ $loop->iteration }}</td>

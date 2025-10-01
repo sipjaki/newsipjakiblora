@@ -1286,12 +1286,12 @@ public function beakseslsppenerbitskk(Request $request)
 public function besertifikatskkputupdate(Request $request, $id)
 {
     $request->validate([
-        'sertifikat' => 'required|file|mimes:pdf|max:5120',
+        'sertifikat' => 'required|file|mimes:pdf|max:20120',
     ], [
         'sertifikat.required' => 'Sertifikat harus diupload.',
         'sertifikat.file' => 'File sertifikat harus berupa file yang valid.',
         'sertifikat.mimes' => 'File sertifikat harus berformat PDF.',
-        'sertifikat.max' => 'Ukuran file sertifikat maksimal 5 MB.',
+        'sertifikat.max' => 'Ukuran file sertifikat maksimal 20 MB.',
     ]);
 
     $peserta = allskktenagakerjablora::findOrFail($id);
@@ -1479,6 +1479,65 @@ return redirect()->back();
 
 
 }
+
+public function beagendaskktkk2025(Request $request)
+{
+    // Default jumlah data per halaman = 100
+    $perPage = $request->input('perPage', 15);
+    $search  = $request->input('search');
+
+    // Ambil user login
+    $user = Auth::user();
+
+    // Query semua data dari allskktenagakerjablora
+    $query = allskktenagakerjablora::select([
+        'id', 'user_id', 'agendaskk_id', 'jenjangpendidikan_id', 'jabatankerja_id',
+        'namasekolah_id', 'tahunpilihan_id', 'nik', 'tempatlahir', 'ttl', 'jeniskelamin',
+        'alamat', 'notelepon', 'email', 'tahunlulus', 'uploadktp', 'uploadfoto', 'uploadijazah',
+        'uploadpengalaman', 'uploadnpwp', 'uploaddaftarriwayathidup', 'namaasosiasi', 'punyaskk',
+        'punyasiki', 'siappatuh', 'verifikasipu', 'verifikasilps', 'sertifikat'
+    ]);
+
+    // Filter pencarian jika ada input "search"
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            // cari dari relasi user -> username
+            $q->whereHas('user', function ($u) use ($search) {
+                $u->where('username', 'LIKE', "%{$search}%");
+            })
+            ->orWhere('nik', 'LIKE', "%{$search}%")
+            ->orWhere('jeniskelamin', 'LIKE', "%{$search}%")
+            ->orWhereDate('ttl', $search) // cocokkan full tanggal (YYYY-MM-DD)
+            ->orWhere('tahunlulus', 'LIKE', "%{$search}%");
+        });
+    }
+
+    // Urutkan berdasarkan data terbaru
+    $query->orderBy('created_at', 'desc');
+
+    // Pagination
+    $datapesertaskk = $query->paginate($perPage);
+
+    // Kalau request dari Ajax → balikin partial view (untuk filter dinamis di frontend)
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view(
+                'backend.05_agenda.03_agendaskk.partials.table',
+                compact('datapesertaskk')
+            )->render()
+        ]);
+    }
+
+    // Return ke view utama
+    return view('backend.05_agenda.04_pesertaskk.02_sertifikasi2025.index', [
+        'title'   => 'Daftar SKK DPUPR Tahun 2025',
+        'data'    => $datapesertaskk,
+        'perPage' => $perPage,
+        'search'  => $search,
+        'user'    => $user,
+    ]);
+}
+
 
 }
 
