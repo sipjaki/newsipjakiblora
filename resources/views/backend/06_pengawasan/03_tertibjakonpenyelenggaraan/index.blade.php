@@ -199,18 +199,18 @@
 <th rowspan="2" style="text-align: center; width:125px;">
     <i class="bi bi-buildings"></i> Penyedia
 </th>
-<th rowspan="2" style="text-align: center; width:500px;">
+{{-- <th rowspan="2" style="text-align: center; width:500px;">
     <i class="bi bi-clipboard-check-fill"></i> Kegiatan Konstruksi
-</th>
+</th> --}}
 <th rowspan="2" style="text-align: center; width:500px;">
     <i class="bi bi-house-fill"></i> Nama Pekerjaan
 </th>
 <th rowspan="2" style="text-align: center; width:250px;">
     <i class="bi bi-file-earmark-text-fill"></i> Nomor Kontrak
 </th>
-<th rowspan="2" style="text-align: center; width:500px;">
+{{-- <th rowspan="2" style="text-align: center; width:500px;">
     <i class="bi bi-geo-alt-fill"></i> BUJK
-</th>
+</th> --}}
 
 
 
@@ -265,7 +265,7 @@
                               </td>
 
 
-<td style="text-align: left; white-space: normal; word-wrap: break-word; max-width: 300px;">
+{{-- <td style="text-align: left; white-space: normal; word-wrap: break-word; max-width: 300px;">
   @if($item->kegiatankonstruksi)
     {{ $item->kegiatankonstruksi }}
   @else
@@ -273,7 +273,7 @@
       Data Belum Di Update
     </button>
   @endif
-</td>
+</td> --}}
 
 <td style="text-align: left; white-space: normal; word-wrap: break-word; max-width: 300px;">
   @if($item->namapekerjaan)
@@ -289,25 +289,21 @@
   @if($item->nomorkontrak)
     {{ $item->nomorkontrak }}
   @else
-    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+    <button class="button-berkas">
       Data Belum Di Update
     </button>
   @endif
 </td>
 
-<td style="text-align: left;">
+{{-- <td style="text-align: left;">
   @if($item->bujk)
     {{ $item->bujk }}
   @else
-    <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+    <button class="button-berkas">
       Data Belum Di Update
     </button>
   @endif
-</td>
+</td> --}}
 
 
                            {{-- <td style="text-align: center; vertical-align: middle;">

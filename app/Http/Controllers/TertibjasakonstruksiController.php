@@ -2239,7 +2239,7 @@ public function betertibjakonmanfaat3deleteberkas($id)
 
 public function betertibjakonpenyelenggaraanindex(Request $request)
 {
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     $query = tertibjakonpenyelenggaraan::query();
