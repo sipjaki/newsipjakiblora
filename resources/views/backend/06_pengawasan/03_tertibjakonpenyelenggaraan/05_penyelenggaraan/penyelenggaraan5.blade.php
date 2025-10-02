@@ -986,101 +986,92 @@
                     <div class="card-body">
                         <!-- Tim Pemeriksa -->
                         <div class="tim-pemeriksa-container">
-                                                                    <div class="tim-pemeriksa" style="margin-top: -15px;">
-                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa:</h6>
-                                                                        <table class="table table-sm" style="margin-top: -5px;">
-                                                                            <thead class="table-secondary">
-                                                                                <tr>
-                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
-                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
-                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Tanda Tangan</th>
-                                                                                </tr>
-                                                                            </thead>
+    <div class="tim-pemeriksa" style="margin-top:10px; font-size: 0.75rem;">
+        <h6 style="font-size: 0.8rem; margin-bottom: 5px;">Tim Pemeriksa:</h6>
+        <table class="table table-bordered table-sm" style="margin-top:-5px; font-size: 0.75rem;">
+            <thead class="table-secondary">
+                <tr>
+                    <th style="width: 30px; text-align:center;">No</th>
+                    <th style="text-align:center;">Nama Lengkap</th>
+                    <th style="width: 100px; text-align:center;">Tanda Tangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:center;">1</td>
+                    <td>
+                        {{ $firstsurat->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
 
-                                                                            @foreach ($datasurat as $item)
+<td style="text-align:center;">
+    <div>
+        @php
+            $tanda = optional($firstsurat)->tandatangan1->tandatangan ?? null;
+            $tandaPath = $tanda ? storage_path('app/public/' . $tanda) : null;
+        @endphp
 
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
-                                                                                    <td style="font-size: 16px;">
-                                                                                        {{ optional($item->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-                                                       <td>
-    <div style="margin-top: 10px; text-align: center;">
-        @if(($item->tandatangan1->tandatangan ?? null) && file_exists(storage_path('app/public/' . ($item->tandatangan1->tandatangan ?? ''))))
-            <!-- Jika tanda tangan ada di storage -->
-            <img src="{{ asset('storage/' . ($item->tandatangan1->tandatangan ?? '')) }}"
-                 alt="Tanda Tangan"
-                 style="max-width: 70px; height: auto; display: inline-block;">
-        @elseif($item->tandatangan1->tandatangan ?? null)
-            <!-- Jika tanda tangan ada tapi path langsung -->
-            <img src="{{ asset($item->tandatangan1->tandatangan ?? '') }}"
-                 alt="Tanda Tangan"
-                 style="max-width: 70px; height: auto; display: inline-block;">
+        @if($tanda && file_exists($tandaPath))
+            <img src="{{ asset('storage/' . $tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
+        @elseif($tanda)
+            <img src="{{ asset($tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
         @else
-            <!-- Kalau belum ada -->
-            <p><i>Tanda tangan belum diupload</i></p>
+            <small><i>Belum upload</i></small>
         @endif
     </div>
 </td>
 
+                </tr>
 
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                      <td style="font-size: 16px;">
-                                                                                        {{ optional($item->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-<td>
-    <div style="margin-top: 10px; text-align: center;">
-        @if(($item->tandatangan2->tandatangan ?? null) && file_exists(storage_path('app/public/' . ($item->tandatangan2->tandatangan ?? ''))))
-            <!-- Jika tanda tangan ada di storage -->
-            <img src="{{ asset('storage/' . ($item->tandatangan2->tandatangan ?? '')) }}"
-                 alt="Tanda Tangan"
-                 style="max-width: 70px; height: auto; display: inline-block;">
-        @elseif($item->tandatangan2->tandatangan ?? null)
-            <!-- Jika tanda tangan ada tapi path langsung -->
-            <img src="{{ asset($item->tandatangan2->tandatangan ?? '') }}"
-                 alt="Tanda Tangan"
-                 style="max-width: 70px; height: auto; display: inline-block;">
+                <tr>
+                    <td style="text-align:center;">2</td>
+                    <td>
+                        {{ $firstsurat->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+                    </td>
+<td style="text-align:center;">
+    <div>
+        @php
+            $tanda = optional($firstsurat)->tandatangan2->tandatangan ?? null;
+            $tandaPath = $tanda ? storage_path('app/public/' . $tanda) : null;
+        @endphp
+
+        @if($tanda && file_exists($tandaPath))
+            <img src="{{ asset('storage/' . $tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
+        @elseif($tanda)
+            <img src="{{ asset($tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
         @else
-            <!-- Kalau belum ada -->
-            <p><i>Tanda tangan belum diupload</i></p>
+            <small><i>Belum upload</i></small>
         @endif
     </div>
 </td>
+                </tr>
 
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
-                                                                                    <td style="font-size: 16px;">
-                                                                                        {{ optional($item->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-<td>
-    <div style="margin-top: 10px; text-align: center;">
-        @if(($item->tandatangan3->tandatangan ?? null) && file_exists(storage_path('app/public/' . ($item->tandatangan3->tandatangan ?? ''))))
-            <!-- Jika tanda tangan ada di storage -->
-            <img src="{{ asset('storage/' . ($item->tandatangan3->tandatangan ?? '')) }}"
-                 alt="Tanda Tangan"
-                 style="max-width: 70px; height: auto; display: inline-block;">
-        @elseif($item->tandatangan3->tandatangan ?? null)
-            <!-- Jika tanda tangan ada tapi path langsung -->
-            <img src="{{ asset($item->tandatangan3->tandatangan ?? '') }}"
-                 alt="Tanda Tangan"
-                 style="max-width: 70px; height: auto; display: inline-block;">
+                <tr>
+                    <td style="text-align:center;">3</td>
+                    <td>
+                        {{ $firstsurat->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
+                    </td>
+
+<td style="text-align:center;">
+    <div>
+        @php
+            $tanda = optional($firstsurat)->tandatangan3->tandatangan ?? null;
+            $tandaPath = $tanda ? storage_path('app/public/' . $tanda) : null;
+        @endphp
+
+        @if($tanda && file_exists($tandaPath))
+            <img src="{{ asset('storage/' . $tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
+        @elseif($tanda)
+            <img src="{{ asset($tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
         @else
-            <!-- Kalau belum ada -->
-            <p><i>Tanda tangan belum diupload</i></p>
+            <small><i>Belum upload</i></small>
         @endif
     </div>
 </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                                                                                </tr>
-                                                                            </tbody>
-                                                                            @endforeach
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
                     </div>
                 </div>
             </div>
