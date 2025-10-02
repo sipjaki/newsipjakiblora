@@ -936,12 +936,17 @@
                     <td>
                         {{ $firstsurat->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
 
-                        <td style="text-align:center;">
+<td style="text-align:center;">
     <div>
-        @if((optional($firstsurat->tandatangan1)->tandatangan ?? null) && file_exists(storage_path('app/public/' . (optional($firstsurat->tandatangan1)->tandatangan ?? ''))))
-            <img src="{{ asset('storage/' . (optional($firstsurat->tandatangan1)->tandatangan ?? '')) }}" alt="Tanda Tangan" style="max-height:40px;">
-        @elseif(optional($firstsurat->tandatangan1)->tandatangan ?? null)
-            <img src="{{ asset(optional($firstsurat->tandatangan1)->tandatangan ?? '') }}" alt="Tanda Tangan" style="max-height:40px;">
+        @php
+            $tanda = optional($firstsurat)->tandatangan1->tandatangan ?? null;
+            $tandaPath = $tanda ? storage_path('app/public/' . $tanda) : null;
+        @endphp
+
+        @if($tanda && file_exists($tandaPath))
+            <img src="{{ asset('storage/' . $tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
+        @elseif($tanda)
+            <img src="{{ asset($tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
         @else
             <small><i>Belum upload</i></small>
         @endif
@@ -957,10 +962,15 @@
                     </td>
 <td style="text-align:center;">
     <div>
-        @if((optional($firstsurat->tandatangan2)->tandatangan ?? null) && file_exists(storage_path('app/public/' . (optional($firstsurat->tandatangan2)->tandatangan ?? ''))))
-            <img src="{{ asset('storage/' . (optional($firstsurat->tandatangan2)->tandatangan ?? '')) }}" alt="Tanda Tangan" style="max-height:40px;">
-        @elseif(optional($firstsurat->tandatangan2)->tandatangan ?? null)
-            <img src="{{ asset(optional($firstsurat->tandatangan2)->tandatangan ?? '') }}" alt="Tanda Tangan" style="max-height:40px;">
+        @php
+            $tanda = optional($firstsurat)->tandatangan2->tandatangan ?? null;
+            $tandaPath = $tanda ? storage_path('app/public/' . $tanda) : null;
+        @endphp
+
+        @if($tanda && file_exists($tandaPath))
+            <img src="{{ asset('storage/' . $tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
+        @elseif($tanda)
+            <img src="{{ asset($tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
         @else
             <small><i>Belum upload</i></small>
         @endif
@@ -974,12 +984,17 @@
                         {{ $firstsurat->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
                     </td>
 
-                    <td style="text-align:center;">
+<td style="text-align:center;">
     <div>
-        @if((optional($firstsurat->tandatangan3)->tandatangan ?? null) && file_exists(storage_path('app/public/' . (optional($firstsurat->tandatangan3)->tandatangan ?? ''))))
-            <img src="{{ asset('storage/' . (optional($firstsurat->tandatangan3)->tandatangan ?? '')) }}" alt="Tanda Tangan" style="max-height:40px;">
-        @elseif(optional($firstsurat->tandatangan3)->tandatangan ?? null)
-            <img src="{{ asset(optional($firstsurat->tandatangan3)->tandatangan ?? '') }}" alt="Tanda Tangan" style="max-height:40px;">
+        @php
+            $tanda = optional($firstsurat)->tandatangan3->tandatangan ?? null;
+            $tandaPath = $tanda ? storage_path('app/public/' . $tanda) : null;
+        @endphp
+
+        @if($tanda && file_exists($tandaPath))
+            <img src="{{ asset('storage/' . $tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
+        @elseif($tanda)
+            <img src="{{ asset($tanda) }}" alt="Tanda Tangan" style="max-height:40px;">
         @else
             <small><i>Belum upload</i></small>
         @endif
