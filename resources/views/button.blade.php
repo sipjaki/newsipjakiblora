@@ -1,5 +1,10 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* Sembunyikan button-berkas di layar ≤ 768px */
+    * {
+        font-family: 'Poppins', sans-serif !important;
+    }
+    /* Sembunyikan button-berkas di layar ≤ 768px */
 @media (max-width: 768px) {
     .button-berkas {
         display: none;
@@ -20,35 +25,38 @@
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 12px; /* ukuran teks fix 12px */
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px; /* Diperbesar jadi 15px */
   text-align: left;
-  border-radius: 8px;
-  overflow: hidden; /* biar pojok rapi */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 10px; /* Sedikit diperbesar */
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Header hijau modern */
+/* Header elegant dengan font weight lebih ringan */
 .zebra-table th {
-background-color: #0E3B2E;
+  background-color: #1a3c34;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
-  padding: 12px 12px;
-  border-bottom: 2px solid #1b5e20; /* garis bawah lebih gelap */
-  letter-spacing: 0.5px;
+  padding: 16px 14px; /* Padding diperbesar */
+  border-bottom: 1px solid #2a5247;
+  letter-spacing: 0.8px;
+  font-size: 14px; /* Header juga diperbesar */
+  opacity: 0.95;
 }
 
-/* Isi tabel */
+/* Isi tabel dengan font Poppins */
 .zebra-table td {
-  padding: 10px 12px;
-  border-bottom: 1px solid #e0f2f1; /* hijau pastel */
-  color: #333333;
+  padding: 14px 14px; /* Padding diperbesar */
+  border-bottom: 1px solid #f0f5f3;
+  color: #444444;
+  font-weight: 400;
 }
 
-/* Zebra effect baris */
+/* Zebra effect yang lebih subtle */
 .zebra-table tbody tr:nth-child(even) {
-  background-color: #f1f8f6; /* hijau muda */
+  background-color: #fafdfc;
 }
 
 /* Hilangkan garis vertikal */
@@ -58,12 +66,20 @@ background-color: #0E3B2E;
   border-right: none;
 }
 
-/* Efek hover modern */
+/* Efek hover yang smooth */
 .zebra-table tbody tr:hover {
-  background-color: #e8f5e9; /* hijau lebih lembut */
-  transition: background-color 0.2s ease-in-out;
+  background-color: #f1f8f5;
+  transition: all 0.3s ease;
 }
 
+/* Tambahan untuk membuat lebih minimalis dan elegant */
+.zebra-table th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.zebra-table th:last-child {
+  border-top-right-radius: 10px;
+}
 
 .button-abgblora {
     border: none;

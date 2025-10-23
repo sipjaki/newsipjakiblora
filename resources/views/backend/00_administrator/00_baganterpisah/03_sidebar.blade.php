@@ -746,6 +746,7 @@
               <li class="nav-item">
 
                     <li class="nav-item">
+
                     <a href="#" class="nav-link">
                     <!-- Ikon untuk Beranda -->
                     <i class="nav-icon bi bi-house-door" style="color: white;"></i>
@@ -757,6 +758,23 @@
                   </a>
 
                 <ul class="nav nav-treeview">
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
 
                     <li class="nav-item">
                         <a href="/bestrukturdinas" class="nav-link">
@@ -995,7 +1013,7 @@
 </div>
 
    <li class="nav-item">
-                    <a href="/bepaketpekerjaan" class="nav-link">
+                    <a href="/beasosiasi" class="nav-link">
                       <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
                       <p style="color: white">Daftar Asosiasi</p>
                     </a>

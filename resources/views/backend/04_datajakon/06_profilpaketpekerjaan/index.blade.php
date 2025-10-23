@@ -110,35 +110,26 @@
     <i class="bi bi-search"
        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
 </div>
-
 <script>
-    function searchTable() {
-        let input = document.getElementById("searchInput").value;
+function searchTable() {
+    const input = document.getElementById("searchInput").value;
 
-        fetch(`/bepaketpekerjaan?search=${encodeURIComponent(input)}`, {
-            headers: {
-                "X-Requested-With": "XMLHttpRequest"
-            }
-        })
-        .then(response => response.text())
-        .then(html => {
-            let parser = new DOMParser();
-            let doc = parser.parseFromString(html, "text/html");
-            let newTableBody = doc.querySelector("#tableBody");
-            if (newTableBody) {
-                document.querySelector("#tableBody").innerHTML = newTableBody.innerHTML;
-            }
-        })
-        .catch(error => console.error("Error fetching search results:", error));
-    }
-
-    function updateEntries() {
-        let selectedValue = document.getElementById("entries").value;
-        let url = new URL(window.location.href);
-        url.searchParams.set("perPage", selectedValue);
-        window.location.href = url.toString();
-    }
+    fetch(`/bepaketpekerjaan?search=${encodeURIComponent(input)}`, {
+        headers: { "X-Requested-With": "XMLHttpRequest" }
+    })
+    .then(res => res.text())
+    .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        const newTbody = doc.querySelector("#tableBody");
+        if (newTbody) {
+            document.querySelector("#tableBody").innerHTML = newTbody.innerHTML;
+        }
+    })
+    .catch(err => console.error("Error fetching search results:", err));
+}
 </script>
+
 <button onclick="exportTableToExcel('tablePaket', 'data_profilpaketpekerjaan')" class="button-baru">
     <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
 </button>
@@ -368,9 +359,12 @@
                                             </td> --}}
 <td style="text-align: center; vertical-align: middle; white-space: nowrap;">
   <div style="display: inline-flex; gap: 10px; align-items: center; justify-content: center;">
-    <a href="/404" class="button-berkas" title="Update">
-      <i class="bi bi-pencil-square"></i> Update
-    </a>
+ <a href="{{ url('/bepaketpekerjaan/update/' . $item->id) }}"
+   class="button-berkas"
+   title="Update">
+  <i class="bi bi-pencil-square"></i> Update
+</a>
+
     <a href="javascript:void(0)" class="button-merah" title="Delete"
        data-bs-toggle="modal" data-bs-target="#deleteModal"
        data-judul="{{ $item->id }}"

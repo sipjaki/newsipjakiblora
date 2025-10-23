@@ -111,10 +111,17 @@
 <table class="zebra-table table-striped">
  <thead>
      <tr>
-         <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 1000px; text-align:center;">Nama Kegiatan</th>
-         <th style="width: 350px; text-align:center;">Aksi</th>
-     </tr>
+    <th style="width: 75px; text-align:center;">
+        <i class="bi bi-list-ol"></i> No
+    </th>
+    <th style="width: 1000px; text-align:center;">
+        <i class="bi bi-clipboard-check"></i> Nama Kegiatan
+    </th>
+    <th style="width: 350px; text-align:center;">
+        <i class="bi bi-gear"></i> Aksi
+    </th>
+</tr>
+
  </thead>
  <tbody id="tableBody">
      @forelse ($data as $item )
@@ -123,16 +130,16 @@
          <td style="text-align: left;">{{$item->judul ?? 'Data Tidak Di Temukan'}}</td>
          <td style="text-align: center; vertical-align: middle;">
              <a href="/bedokumentasijakon/show/{{$item->id}}" class="button-baru" title="Show">
-                 <i class="bi bi-eye"></i>View
+                 <i class="bi bi-eye"></i>
              </a>
              <a href="/bedokumentasijakon/update/{{$item->id}}" class="button-berkas" title="Update">
-                 <i class="bi bi-pencil-square"></i>Update
+                 <i class="bi bi-pencil-square"></i>
              </a>
              <a href="javascript:void(0)" class="button-merah" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
                    data-judul="{{ $item->judul }}"
                    onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>Hapus
+                    <i class="bi bi-trash"></i>
             </a>
          </td>
 

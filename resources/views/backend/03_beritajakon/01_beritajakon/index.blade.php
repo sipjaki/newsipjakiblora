@@ -93,12 +93,23 @@
 <table class="zebra-table table-striped">
  <thead>
      <tr>
-         <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 200px; text-align:center;">Penulis</th>
-         <th style="width: 500px; text-align:center;">Judul Berita</th>
-         <th style="width: 150px; text-align:center;">Tanggal</th>
-         <th style="width: 200px; text-align:center;">Aksi</th>
-     </tr>
+    <th style="width: 75px; text-align:center;">
+        <i class="bi bi-list-ol"></i> No
+    </th>
+    <th style="width: 200px; text-align:center;">
+        <i class="bi bi-person-circle"></i> Penulis
+    </th>
+    <th style="width: 500px; text-align:center;">
+        <i class="bi bi-newspaper"></i> Judul Berita
+    </th>
+    <th style="width: 150px; text-align:center;">
+        <i class="bi bi-calendar3"></i> Tanggal
+    </th>
+    <th style="width: 200px; text-align:center;">
+        <i class="bi bi-gear"></i> Aksi
+    </th>
+</tr>
+
  </thead>
  <tbody id="tableBody">
      @foreach ($data as $item )
