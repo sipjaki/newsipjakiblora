@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreignId('paketstatuspekerjaan_id')->nullable(); // ADA
             $table->foreignId('sumberdana_id')->nullable();  // ADA
             $table->foreignId('tahunpilihan_id')->nullable(); // ADA
-            $table->foreignId('user_id')->nullable(); // ADA
+            $table->foreignId('user_id')->nullable(); // SATUUAN KERJA YANG NANTI ADA AKUN MASING MASING UNTUK SETIAP OPD
             $table->foreignId('bulanrekap_id')->nullable(); // ADA
             // ----------------------------------------------------------------
             $table->text('namapekerjaan')->nullable(); // ADA

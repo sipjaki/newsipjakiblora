@@ -1,3 +1,4 @@
+
 <style>
     /* Reset dan Base Styles */
 * {
@@ -192,6 +193,7 @@ button:hover {
 }
 </style>
 
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -239,6 +241,742 @@ button:hover {
             <!--begin::Container-->
             <div class="container-fluid">
               <!-- Info boxes -->
+
+              @can('super_admin')
+
+<!-- Tambahkan ini di dalam <head> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    :root {
+        --primary-green: #42b549; /* Hijau Tokopedia */
+        --dark-green: #2c9e32;
+        --light-green: #e8f5e9;
+        --accent-green: #c8e6c9;
+    }
+
+    .dashboard-card {
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: none;
+        height: 100%;
+        position: relative;
+    }
+
+    .dashboard-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background-color: var(--primary-green);
+    }
+
+    .dashboard-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-content {
+        padding: 25px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .number-container {
+        background-color: var(--primary-green);
+        border-radius: 14px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(66, 181, 73, 0.3);
+    }
+
+    .info-icon {
+        font-size: 36px;
+        color: white;
+    }
+
+    .info-content {
+        flex-grow: 1;
+    }
+
+    .info-text {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        color: #333;
+        letter-spacing: 0.3px;
+    }
+
+    .small-text {
+        font-size: 13px;
+        color: #777;
+    }
+
+    /* Warna khusus untuk setiap kartu */
+    .card-1 .number-container { background-color: #42b549; }
+    .card-2 .number-container { background-color: #3fa845; }
+    .card-3 .number-container { background-color: #3b9a40; }
+    .card-4 .number-container { background-color: #378d3c; }
+
+    .card-1::before { background-color: #42b549; }
+    .card-2::before { background-color: #3fa845; }
+    .card-3::before { background-color: #3b9a40; }
+    .card-4::before { background-color: #378d3c; }
+
+    @media (max-width: 576px) {
+        .number-container {
+            width: 60px;
+            height: 60px;
+        }
+
+        .info-icon {
+            font-size: 26px;
+        }
+
+        .info-text {
+            font-size: 14px;
+        }
+
+        .card-content {
+            padding: 20px 15px;
+        }
+    }
+
+    .info-text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .info-number {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--primary-green);
+        text-shadow: 0 1px 3px rgba(66, 181, 73, 0.3);
+        letter-spacing: -0.5px;
+        background: linear-gradient(to bottom right, #4caf50, #66bb6a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .info-text span {
+        font-weight: 600;
+        color: #333;
+    }
+</style>
+<div class="row">
+    <!-- 1. Berita Jakon -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-newspaper" style="margin-right: 5px;"></i>
+                            <span class="info-number">{{$data_berita}}</span> Berita Jakon
+                        </p>
+                        <p class="small-text">Informasi terkini seputar jasa konstruksi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 2. Artikel Jakon -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-2">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-journal-text" style="margin-right: 5px;"></i>
+                            <span class="info-number">{{$data_artikel}}</span> Artikel Jakon
+                        </p>
+                        <p class="small-text">Kumpulan tulisan dan opini</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. Dokumentasi Jakon -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-3">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-camera-reels" style="margin-right: 5px;"></i>
+                            <span class="info-number">{{$data_dokumentasijakon}}</span> Dokumentasi Kegiatan
+                        </p>
+                        <p class="small-text">Kegiatan dan arsip dokumentasi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. BUJK Konsultasi & Konstruksi -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-4">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-building" style="margin-right: 5px;"></i>
+                            <span class="info-number">{{$data_bujk}}</span> BUJK Konsultasi & Konstruksi
+                        </p>
+                        <p class="small-text">Data dan pengelolaan perusahaan</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+{{-- /====================================== --}}
+<div class="row" style="margin-top: 10px;">
+    <!-- 1. TKK DPUPR 2024 -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
+                            <span class="info-number">{{$data_2024}}</span> TKK DPUPR 2024
+                        </p>
+                        <p class="small-text">Data tenaga kerja kontrak tahun 2024</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 2. TKK DPUPR 2025 -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-2">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-person-workspace" style="margin-right: 6px;"></i>
+                            <span class="info-number">{{$data_2025}}</span> TKK DPUPR 2025
+                        </p>
+                        <p class="small-text">Data tenaga kerja kontrak tahun 2025</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. SEMUA TKK -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-3">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-people" style="margin-right: 6px;"></i>
+                            <span class="info-number">{{$data_semuatkk}}</span> Semua TKK
+                        </p>
+                        <p class="small-text">Gabungan seluruh tenaga kerja kontrak</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. PROFIL PAKET PEKERJAAN -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-4">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-folder2-open" style="margin-right: 6px;"></i>
+                            <span class="info-number">{{$data_paketpekerjaan}}</span> Profil Paket Pekerjaan
+                        </p>
+                        <p class="small-text">Informasi detail pekerjaan konstruksi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 10px;">
+    <!-- 1. Agenda Pelatihan -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-calendar-event" style="margin-right: 6px;"></i>
+                            <span class="info-number">{{$data_agendapelatihan}}</span> Agenda Pelatihan
+                        </p>
+                        <p class="small-text">Jadwal dan kegiatan pelatihan jasa konstruksi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 2. Peserta Pelatihan -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-2">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-person-badge" style="margin-right: 6px;"></i>
+                            <span class="info-number">{{$data_pesertapelatihan}}</span> Peserta Pelatihan
+                        </p>
+                        <p class="small-text">Data peserta yang mengikuti pelatihan</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. Agenda SKK -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-3">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-calendar-check" style="margin-right: 6px;"></i>
+                            <span class="info-number">{{$data_agendaskk}}</span> Agenda SKK
+                        </p>
+                        <p class="small-text">Agenda kegiatan sertifikasi kompetensi kerja</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. Peserta SKK -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-4">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-person-lines-fill" style="margin-right: 6px;"></i>
+                            <span class="info-number">{{$data_2025}}</span> Peserta SKK
+                        </p>
+                        <p class="small-text">Data peserta sertifikasi kompetensi kerja</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 10px;">
+    <!-- 1. Tertib Jakon Usaha -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-briefcase-fill" style="margin-right: 6px;"></i>
+                            <span class="info-number">23</span> Tertib Usaha
+                        </p>
+                        <p class="small-text">Pengawasan dan pembinaan badan usaha jasa konstruksi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 2. Tertib Jakon Pemanfaatan -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-2">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
+                            <span class="info-number">23</span> Tertib Pemanfaatan
+                        </p>
+                        <p class="small-text">Tata kelola pelaku dan pengguna jasa konstruksi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. Tertib Jakon Penyelenggaraan -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-3">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-gear-wide-connected" style="margin-right: 6px;"></i>
+                            <span class="info-number">23</span> Tertib Penyelenggaraan
+                        </p>
+                        <p class="small-text">Ketertiban dalam pelaksanaan konstruksi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. Pengawasan BUJK -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-4">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-building-check" style="margin-right: 6px;"></i>
+                            <span class="info-number">23</span> Pengawasan BUJK
+                        </p>
+                        <p class="small-text">Monitoring kepatuhan badan usaha jasa konstruksi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 10px;">
+    <!-- 1. Kecelakaan Kerja -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-exclamation-triangle-fill" style="margin-right: 6px;"></i>
+                            <span class="info-number">12</span> Kecelakaan Kerja
+                        </p>
+                        <p class="small-text">Data laporan dan analisis kecelakaan kerja konstruksi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 2. Satuan Harga Material -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-2">
+                <div class="card-content">
+                    <div class="number-container">
+      <img src="/assets/icon/pupr.png" alt="icon" width="40">
+
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-box-seam" style="margin-right: 6px;"></i>
+                            <span class="info-number">45</span> Satuan Harga Material
+                        </p>
+                        <p class="small-text">Daftar harga bahan dan material konstruksi terkini</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 3. Satuan Harga Upah Pekerjaan -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-3">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-person-workspace" style="margin-right: 6px;"></i>
+                            <span class="info-number">30</span> Satuan Harga Upah Pekerjaan
+                        </p>
+                        <p class="small-text">Standar biaya tenaga kerja dan jasa pelaksanaan proyek</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- 4. Satuan Harga Peralatan -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-4">
+                <div class="card-content">
+                    <div class="number-container">
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
+
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <i class="bi bi-tools" style="margin-right: 6px;"></i>
+                            <span class="info-number">18</span> Satuan Harga Peralatan
+                        </p>
+                        <p class="small-text">Referensi harga sewa dan kepemilikan alat konstruksi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Judul Bagian -->
+<div style="text-align: center; margin-bottom: 20px; margin-top: 20px">
+    <h4 style="font-weight: bold; color: #ffffff; border-bottom: 3px solid #ffcc00; display: inline-block; padding-bottom: 5px;">
+        <i class="bi bi-card-checklist" style="margin-right: 8px; color: #ffb703;"></i>
+        Daftar Harga Divisi Pekerjaan
+    </h4>
+</div>
+
+<div class="row" style="margin-top: 10px;">
+    <!-- Divisi Pekerjaan I -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 10px; margin-bottom: 10px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-1">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-building" style="font-size: 40px; color: #003049;"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">I</span> Divisi Pekerjaan
+                        </p>
+                        <p class="small-text">Pekerjaan Persiapan dan Umum</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Divisi Pekerjaan II -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 10px; margin-bottom: 10px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-2">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-bricks" style="font-size: 40px; color: #d62828;"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">II</span> Divisi Pekerjaan
+                        </p>
+                        <p class="small-text">Pekerjaan Tanah dan Pondasi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Divisi Pekerjaan III -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 10px; margin-bottom: 10px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-3">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-house-door" style="font-size: 40px; color: #f77f00;"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">III</span> Divisi Pekerjaan
+                        </p>
+                        <p class="small-text">Pekerjaan Struktur Beton</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Divisi Pekerjaan IV -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 10px; margin-bottom: 10px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-4">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-columns-gap" style="font-size: 40px; color: #2a9d8f;"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">IV</span> Divisi Pekerjaan
+                        </p>
+                        <p class="small-text">Pekerjaan Arsitektur dan Finishing</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Divisi Pekerjaan V -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-5">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-lightning-charge" style="font-size: 40px; color: #fcbf49;"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">V</span> Divisi Pekerjaan
+                        </p>
+                        <p class="small-text">Pekerjaan Listrik dan Mekanikal</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Divisi Pekerjaan VI -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-6">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-droplet-half" style="font-size: 40px; color: #0077b6;"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">VI</span> Divisi Pekerjaan
+                        </p>
+                        <p class="small-text">Pekerjaan Air dan Sanitasi</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Divisi Pekerjaan VII -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-7">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-road" style="font-size: 40px; color: #495057;"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">VII</span> Divisi Pekerjaan
+                        </p>
+                        <p class="small-text">Pekerjaan Jalan dan Drainase</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Divisi Pekerjaan VIII -->
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-8">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-tree" style="font-size: 40px; color: #2b9348;"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">VIII</span> Divisi Pekerjaan
+                        </p>
+                        <p class="small-text">Pekerjaan Lanskap dan Lingkungan</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Divisi Pekerjaan IX -->
+    <div class="col-md-3 col-sm-6 col-12" style="margin-top: 10px; margin-bottom: 10px;">
+        <a href="#" style="text-decoration: none;">
+            <div class="dashboard-card card-9">
+                <div class="card-content">
+                    <div class="number-container">
+                        <i class="bi bi-gear-fill" style="font-size: 40px; color: #7209b7;"></i>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-text">
+                            <span class="info-number">IX</span> Divisi Pekerjaan
+                        </p>
+                        <p class="small-text">Pekerjaan Pengadaan dan Peralatan</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+@endcan
 
 {{-- atas  --}}
 

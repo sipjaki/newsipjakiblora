@@ -2,9 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\agendapelatihan;
+use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
+use App\Models\artikeljakonmasjaki;
+use App\Models\beritajakon;
+use App\Models\bujkkonsultan;
+use App\Models\bujkkontraktor;
+use App\Models\dokumentasijakon;
 use App\Models\headerberanda;
 use App\Models\pagevisit;
+use App\Models\paketpekerjaanmasjaki;
+use App\Models\pesertapelatihan;
+use App\Models\skktenagakerjablora;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,6 +26,20 @@ class AdminDashboardController extends Controller
     //
     public function index()
     {
+
+        // ---------------------------
+        // JUMLAH DATA YANG ADA
+        $data_berita = beritajakon::count();
+        $data_artikel = artikeljakonmasjaki::count();
+        $data_dokumentasijakon = dokumentasijakon::count();
+        $data_bujk = bujkkontraktor::count() + bujkkonsultan::count();
+        $data_2024 = skktenagakerjablora::count();
+        $data_2025 = allskktenagakerjablora::count();
+        $data_semuatkk = skktenagakerjablora::count() + allskktenagakerjablora::count();
+        $data_paketpekerjaan = paketpekerjaanmasjaki::count();
+        $data_agendapelatihan = agendapelatihan::count();
+        $data_agendaskk = agendaskk::count();
+        $data_pesertapelatihan = pesertapelatihan::count();
 
         $user = Auth::user();
 
@@ -84,6 +108,17 @@ $jumlahDenganSertifikat = $jumlahDenganSertifikat ?: 0;
             // 'jumlahQa' => $jumlahQa,  // Menambahkan jumlah data ke view
             // 'jumlahBerita' => $jumlahBerita,  // Menambahkan jumlah data ke view
             // 'jumlahAgendasertifikasi' => $jumlahAgendasertifikasi,  // Menambahkan jumlah data ke view
+            'data_berita' => $data_berita,
+            'data_artikel' => $data_artikel,
+            'data_dokumentasijakon' => $data_dokumentasijakon,
+            'data_bujk' => $data_bujk,
+            'data_2024' => $data_2024,
+            'data_2025' => $data_2025,
+            'data_semuatkk' => $data_semuatkk,
+            'data_paketpekerjaan' => $data_paketpekerjaan,
+            'data_agendapelatihan' => $data_agendapelatihan,
+            'data_agendaskk' => $data_agendaskk,
+            'data_pesertapelatihan' => $data_pesertapelatihan,
         ]);
     }
 
