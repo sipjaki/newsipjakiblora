@@ -872,6 +872,10 @@ Route::get('/bepaketpekerjaancreate', [PaketpekerjaanmasjakiController::class, '
 // Route::get('/bepaketpekerjaancreate', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaancreate']);// SUDAH DI GATE
 Route::post('/bepaketpekerjaancreatenew', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaancreatenew'])->middleware(['auth', 'can:admin3'])->name('bepaketpekerjaancreatenew'); // SUDAH DI GATE
 // Route::post('/bepaketpekerjaancreatenew', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaancreatenew'])->name('bepaketpekerjaancreatenew'); // SUDAH DI GATE
+// Route::get('/bepaketpekerjaan/update/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanupdate'])->middleware(['auth', 'can:admin3']);
+Route::get('/bepaketpekerjaan/update/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanupdate'])->middleware(['auth', 'can:admin3']);
+Route::post('/bepaketpekerjaan/updatecreate/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanupdatenew'])->middleware(['auth', 'can:admin3'])->name('update.paketpekerjaan');
+
 
 // BELUM DI BUATKAN
 // Route::get('/bebujkkonstruksi/createsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasi'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasi');

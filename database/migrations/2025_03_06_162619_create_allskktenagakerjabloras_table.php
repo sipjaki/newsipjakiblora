@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             // $table->foreignId('jabatanskkanda_id')->nullable();
             $table->string('skkanda')->nullable();
-            $table->foreignId('agendaskk_id')->nullable();
-            $table->foreignId('user_id')->nullable(); // ada
+            $table->foreignId('agendaskk_id')->nullable(); // ID YANG DI AMBIL DARI AGENDA SKK
+            $table->foreignId('user_id')->nullable(); // ID YANG DI AMBIL DARI AKUN PENDAFTAR
             $table->foreignId('jenjangpendidikan_id')->nullable(); // ada
             $table->foreignId('jabatankerja_id')->nullable();
             $table->foreignId('namasekolah_id')->nullable();

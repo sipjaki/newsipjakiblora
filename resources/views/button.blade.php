@@ -1,5 +1,10 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* Sembunyikan button-berkas di layar ≤ 768px */
+    * {
+        font-family: 'Poppins', sans-serif !important;
+    }
+    /* Sembunyikan button-berkas di layar ≤ 768px */
 @media (max-width: 768px) {
     .button-berkas {
         display: none;
@@ -20,35 +25,38 @@
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 12px; /* ukuran teks fix 12px */
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px; /* Diperbesar jadi 15px */
   text-align: left;
-  border-radius: 8px;
-  overflow: hidden; /* biar pojok rapi */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 10px; /* Sedikit diperbesar */
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Header hijau modern */
+/* Header elegant dengan font weight lebih ringan */
 .zebra-table th {
-background-color: #0E3B2E;
+  background-color: #1a3c34;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
-  padding: 12px 12px;
-  border-bottom: 2px solid #1b5e20; /* garis bawah lebih gelap */
-  letter-spacing: 0.5px;
+  padding: 16px 14px; /* Padding diperbesar */
+  border-bottom: 1px solid #2a5247;
+  letter-spacing: 0.8px;
+  font-size: 14px; /* Header juga diperbesar */
+  opacity: 0.95;
 }
 
-/* Isi tabel */
+/* Isi tabel dengan font Poppins */
 .zebra-table td {
-  padding: 10px 12px;
-  border-bottom: 1px solid #e0f2f1; /* hijau pastel */
-  color: #333333;
+  padding: 14px 14px; /* Padding diperbesar */
+  border-bottom: 1px solid #f0f5f3;
+  color: #444444;
+  font-weight: 400;
 }
 
-/* Zebra effect baris */
+/* Zebra effect yang lebih subtle */
 .zebra-table tbody tr:nth-child(even) {
-  background-color: #f1f8f6; /* hijau muda */
+  background-color: #fafdfc;
 }
 
 /* Hilangkan garis vertikal */
@@ -58,12 +66,20 @@ background-color: #0E3B2E;
   border-right: none;
 }
 
-/* Efek hover modern */
+/* Efek hover yang smooth */
 .zebra-table tbody tr:hover {
-  background-color: #e8f5e9; /* hijau lebih lembut */
-  transition: background-color 0.2s ease-in-out;
+  background-color: #f1f8f5;
+  transition: all 0.3s ease;
 }
 
+/* Tambahan untuk membuat lebih minimalis dan elegant */
+.zebra-table th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.zebra-table th:last-child {
+  border-top-right-radius: 10px;
+}
 
 .button-abgblora {
     border: none;
@@ -908,3 +924,149 @@ document.querySelectorAll('input, textarea').forEach(input => {
   });
 });
 </script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+        :root {
+            --primary-green: #42b549; /* Hijau Tokopedia */
+            --dark-green: #2c9e32;
+            --light-green: #e8f5e9;
+            --accent-green: #c8e6c9;
+        }
+
+
+        .dashboard-card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            height: 100%;
+            position: relative;
+        }
+
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--primary-green);
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-content {
+            padding: 25px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .number-container {
+            background-color: var(--primary-green);
+            border-radius: 14px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(66, 181, 73, 0.3);
+        }
+
+        .animated-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            color: white;
+        }
+
+        .info-content {
+            flex-grow: 1;
+        }
+
+        .info-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--primary-green);
+        }
+
+        .info-text {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+
+        /* Warna khusus untuk setiap kartu */
+        .card-1 .number-container {
+            background-color: #42b549;
+        }
+
+        .card-2 .number-container {
+            background-color: #3fa845;
+        }
+
+        .card-3 .number-container {
+            background-color: #3b9a40;
+        }
+
+        .card-4 .number-container {
+            background-color: #378d3c;
+        }
+
+        .card-5 .number-container {
+            background-color: #338037;
+        }
+
+        .card-1 .info-icon {
+            color: #42b549;
+        }
+
+        .card-2 .info-icon {
+            color: #3fa845;
+        }
+
+        .card-3 .info-icon {
+            color: #3b9a40;
+        }
+
+        .card-4 .info-icon {
+            color: #378d3c;
+        }
+
+        .card-5 .info-icon {
+            color: #338037;
+        }
+
+        @media (max-width: 576px) {
+            .number-container {
+                width: 60px;
+                height: 60px;
+            }
+
+            .animated-number {
+                font-size: 1.5rem;
+            }
+
+            .info-icon {
+                font-size: 22px;
+            }
+
+            .info-text {
+                font-size: 14px;
+            }
+
+            .card-content {
+                padding: 20px 15px;
+            }
+        }
+    </style>

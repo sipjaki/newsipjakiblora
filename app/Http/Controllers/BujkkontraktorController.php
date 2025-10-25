@@ -754,7 +754,7 @@ public function bebujkkonstruksi(Request $request)
     $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
-    $query = bujkkontraktor::query();
+$query = bujkkontraktor::query();
 
     if ($search) {
         $query->where('namalengkap', 'LIKE', "%{$search}%")

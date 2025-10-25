@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('agendaskks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('materipelatihanskk_id')->nullable();
+            $table->foreignId('materipelatihanskk_id')->nullable(); // MATERI PELATIHAN
             $table->foreignId('allskktenagakerjablora_id')->nullable();
-            $table->foreignId('user_id')->nullable();
-            $table->foreignId('asosiasimasjaki_id')->nullable();
+            $table->foreignId('user_id')->nullable(); // LSP PENERBIT DI PUNYA AKUN SOALNYA
+            $table->foreignId('asosiasimasjaki_id')->nullable(); // PENYELENGGARA ATAU ASOSIASI YANG MENYELENGGARAKAN
 
             // $table->foreignId('jenjang_id')->nullable();
             $table->string('namakegiatan')->nullable();

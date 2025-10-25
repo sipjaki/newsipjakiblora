@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bujkkontraktors', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('bujkkontraktorsub_id')->nullable()->index();
+            $table->foreignId('bujkkontraktorsub_id')->nullable()->index(); // KOLOM MASIH BELUM TERPAKAI
             $table->foreignId('asosiasimasjaki_id')->nullable()->index();
             $table->foreignId('user_id')->nullable()->index();
             $table->string('namalengkap', 255)->nullable()->index();
