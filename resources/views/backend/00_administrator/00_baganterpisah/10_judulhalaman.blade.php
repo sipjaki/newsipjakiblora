@@ -42,7 +42,7 @@
 
 <div class="card mb-4">
     <div class="card-header">
-        <div class="button-hijau">
+        <div class="button-modern">
             📌 Halaman : {{ $title }}
         </div>
     </div>

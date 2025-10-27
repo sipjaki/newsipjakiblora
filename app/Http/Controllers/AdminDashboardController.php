@@ -11,10 +11,15 @@ use App\Models\bujkkonsultan;
 use App\Models\bujkkontraktor;
 use App\Models\dokumentasijakon;
 use App\Models\headerberanda;
+use App\Models\kecelakaankerjamasjaki;
 use App\Models\pagevisit;
 use App\Models\paketpekerjaanmasjaki;
+use App\Models\pengawasanbujk;
 use App\Models\pesertapelatihan;
 use App\Models\skktenagakerjablora;
+use App\Models\tertibjakonpemanfaatan;
+use App\Models\tertibjakonpenyelenggaraan;
+use App\Models\tertibjasakonstruksi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -40,6 +45,11 @@ class AdminDashboardController extends Controller
         $data_agendapelatihan = agendapelatihan::count();
         $data_agendaskk = agendaskk::count();
         $data_pesertapelatihan = pesertapelatihan::count();
+        $data_tertibjakonusaha = tertibjasakonstruksi::count();
+        $data_tertibjakonpemanfaatan = tertibjakonpemanfaatan::count();
+        $data_tertibjakonpenyelenggaraan = tertibjakonpenyelenggaraan::count();
+        $data_pengawasanbujk = pengawasanbujk::count();
+        $data_kecelakaankerja = kecelakaankerjamasjaki::count();
 
         $user = Auth::user();
 
@@ -119,6 +129,11 @@ $jumlahDenganSertifikat = $jumlahDenganSertifikat ?: 0;
             'data_agendapelatihan' => $data_agendapelatihan,
             'data_agendaskk' => $data_agendaskk,
             'data_pesertapelatihan' => $data_pesertapelatihan,
+            'data_jakontertibusaha' => $data_tertibjakonusaha,
+            'data_tertibjakonpemanfaatan' => $data_tertibjakonpemanfaatan,
+            'data_tertibjakonpenyelenggaraan' => $data_tertibjakonpenyelenggaraan,
+            'data_pengawasanbujk' => $data_pengawasanbujk,
+            'data_kecelakaankerja' => $data_kecelakaankerja,
         ]);
     }
 

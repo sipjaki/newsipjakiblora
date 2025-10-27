@@ -168,6 +168,275 @@ public function bepaketpekerjaan(Request $request)
     ]);
 }
 
+public function bepaketpekerjaanrekap(Request $request)
+{
+    // ✅ Ambil parameter pencarian dan jumlah per halaman dengan default
+    $perPage = $request->input('perPage', 10);
+    $search  = trim($request->input('search'));
+
+    // ✅ Query utama dengan eager loading untuk mencegah N+1 problem
+    $query = paketpekerjaanmasjaki::with([
+        'profiljenispekerjaan',
+        'paketstatuspekerjaan',
+        // 'sumberdana',
+        // 'tahunpilihan',
+        // 'bulanrekap',
+        // 'user'
+    ]);
+
+    // ✅ Jika ada pencarian
+    if (!empty($search)) {
+        $query->where(function ($q) use ($search) {
+
+            // Kolom langsung di tabel utama
+            $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+            //   ->orWhere('cvptpenyedia', 'LIKE', "%{$search}%")
+            //   ->orWhere('nib', 'LIKE', "%{$search}%")
+            //   ->orWhere('nilaikontrak', 'LIKE', "%{$search}%")
+            //   ->orWhere('jeniskontrak', 'LIKE', "%{$search}%")
+            //   ->orWhere('karakteristikkontrak', 'LIKE', "%{$search}%")
+            //   ->orWhere('bulanmulai', 'LIKE', "%{$search}%")
+            //   ->orWhere('bulanselesai', 'LIKE', "%{$search}%");
+                ;
+            // 🔍 Relasi: profil jenis pekerjaan
+            $q->orWhereHas('profiljenispekerjaan', function ($q2) use ($search) {
+                $q2->where('jenispekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            // 🔍 Relasi: status pekerjaan
+            $q->orWhereHas('paketstatuspekerjaan', function ($q2) use ($search) {
+                $q2->where('paketstatuspekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            // 🔍 Relasi: sumber dana
+            // $q->orWhereHas('sumberdana', function ($q2) use ($search) {
+            //     $q2->where('sumberdana', 'LIKE', "%{$search}%");
+            // });
+
+            // 🔍 Relasi: tahun pilihan
+            // $q->orWhereHas('tahunpilihan', function ($q2) use ($search) {
+            //     $q2->where('tahunpilihan', 'LIKE', "%{$search}%");
+            // });
+
+            // 🔍 Relasi: user (nama satker atau username)
+            // $q->orWhereHas('user', function ($q2) use ($search) {
+            //     $q2->where('name', 'LIKE', "%{$search}%")
+            //        ->orWhere('username', 'LIKE', "%{$search}%");
+            // });
+
+        });
+    }
+
+    // ✅ Urutkan terbaru dulu
+    $query->orderBy('created_at', 'desc');
+
+    // ✅ Pagination data
+    $data = $query->paginate($perPage);
+
+    // ✅ Jika request AJAX (misal dari live search / pagination JS)
+    if ($request->ajax()) {
+        return view('backend.04_datajakon.06_profilpaketpekerjaan.partials.table', compact('data'))->render();
+    }
+
+    // ✅ View utama
+    return view('backend.04_datajakon.06_profilpaketpekerjaan.rekap', [
+        'title'   => 'Profil Paket Pekerjaan Konstruksi dan Konsultasi Konstruksi',
+        'data'    => $data,
+        'perPage' => $perPage,
+        'search'  => $search
+    ]);
+}
+
+public function statistikprofilpekerjaan(Request $request)
+{
+    // ✅ Ambil parameter pencarian dan jumlah per halaman dengan default
+    $perPage = $request->input('perPage', 10);
+    $search  = trim($request->input('search'));
+
+    // ✅ Query utama dengan eager loading untuk mencegah N+1 problem
+    $query = paketpekerjaanmasjaki::with([
+        'profiljenispekerjaan',
+        'paketstatuspekerjaan',
+        'sumberdana',
+        'tahunpilihan',
+        'bulanrekap',
+        'user'
+    ]);
+
+    // ✅ Jika ada pencarian
+    if (!empty($search)) {
+        $query->where(function ($q) use ($search) {
+
+            // Kolom langsung di tabel utama
+            $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('cvptpenyedia', 'LIKE', "%{$search}%")
+              ->orWhere('nib', 'LIKE', "%{$search}%")
+              ->orWhere('nilaikontrak', 'LIKE', "%{$search}%")
+              ->orWhere('jeniskontrak', 'LIKE', "%{$search}%")
+              ->orWhere('karakteristikkontrak', 'LIKE', "%{$search}%")
+              ->orWhere('bulanmulai', 'LIKE', "%{$search}%")
+              ->orWhere('bulanselesai', 'LIKE', "%{$search}%");
+
+            // 🔍 Relasi: profil jenis pekerjaan
+            $q->orWhereHas('profiljenispekerjaan', function ($q2) use ($search) {
+                $q2->where('jenispekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            // 🔍 Relasi: status pekerjaan
+            $q->orWhereHas('paketstatuspekerjaan', function ($q2) use ($search) {
+                $q2->where('paketstatuspekerjaan', 'LIKE', "%{$search}%");
+            });
+
+            // 🔍 Relasi: sumber dana
+            $q->orWhereHas('sumberdana', function ($q2) use ($search) {
+                $q2->where('sumberdana', 'LIKE', "%{$search}%");
+            });
+
+            // 🔍 Relasi: tahun pilihan
+            $q->orWhereHas('tahunpilihan', function ($q2) use ($search) {
+                $q2->where('tahunpilihan', 'LIKE', "%{$search}%");
+            });
+
+            // 🔍 Relasi: user (nama satker atau username)
+            $q->orWhereHas('user', function ($q2) use ($search) {
+                $q2->where('name', 'LIKE', "%{$search}%")
+                   ->orWhere('username', 'LIKE', "%{$search}%");
+            });
+        });
+    }
+
+    // ✅ Urutkan terbaru dulu
+    $query->orderBy('created_at', 'desc');
+
+    // ✅ Pagination data
+    $data = $query->paginate($perPage);
+
+    $data_totalpekerjaan = paketpekerjaanmasjaki::count();
+    // ✅ Jika request AJAX (misal dari live search / pagination JS)
+    if ($request->ajax()) {
+        return view('backend.04_datajakon.06_profilpaketpekerjaan.partials.table', compact('data'))->render();
+    }
+
+     $data_global = paketpekerjaanmasjaki::with('profiljenispekerjaan')->get();
+
+        // Hitung total semua data
+        $total = $data_global->count();
+
+        // Kelompokkan berdasarkan jenis pekerjaan dari tabel profiljenispekerjaan
+        $data_statistik = $data_global->groupBy(function ($item) {
+            // Ambil nama jenis pekerjaan dari tabel profiljenispekerjaan
+            return $item->profiljenispekerjaan->jenispekerjaan ?? 'Tidak Diketahui';
+        })->map(function ($group, $jenis) use ($total) {
+            $jumlah = $group->count();
+            $persentase = $total > 0 ? ($jumlah / $total) * 100 : 0;
+
+            return [
+                'jenis' => $jenis,
+                'jumlah' => $jumlah,
+                'persentase' => $persentase,
+            ];
+        })->values(); // ubah jadi array numerik agar mudah di-loop di Blade
+
+        // STATUS PAKET PEKERJAAN
+         $data_statuspekerjaan = paketpekerjaanmasjaki::with('paketstatuspekerjaan')->get();
+
+        // Hitung total semua data
+        $total = $data_statuspekerjaan->count();
+
+        // Kelompokkan berdasarkan nama status dari tabel paketstatuspekerjaan
+        $data_totalstatuspekerjaan = $data_statuspekerjaan->groupBy(function ($item) {
+            // Pastikan nama kolom di tabel relasi sesuai dengan field statusnya
+            return $item->paketstatuspekerjaan->paketstatuspekerjaan ?? 'Tidak Diketahui';
+        })->map(function ($group, $status) use ($total) {
+            $jumlah = $group->count();
+            $persentase = $total > 0 ? ($jumlah / $total) * 100 : 0;
+
+            return [
+                'jenis' => $status,
+                'jumlah' => $jumlah,
+                'persentase' => $persentase,
+            ];
+        })->values();
+
+        // STATUS PAKET PEKERJAAN
+         $data_allsumberdana = paketpekerjaanmasjaki::with('sumberdana')->get();
+
+        // Hitung total semua data
+        $total = $data_allsumberdana->count();
+
+        // Kelompokkan berdasarkan nama status dari tabel paketstatuspekerjaan
+        $data_sumberdana = $data_allsumberdana->groupBy(function ($item) {
+            // Pastikan nama kolom di tabel relasi sesuai dengan field statusnya
+            return $item->sumberdana->sumberdana ?? 'Tidak Diketahui';
+        })->map(function ($group, $status) use ($total) {
+            $jumlah = $group->count();
+            $persentase = $total > 0 ? ($jumlah / $total) * 100 : 0;
+
+            return [
+                'jenis' => $status,
+                'jumlah' => $jumlah,
+                'persentase' => $persentase,
+            ];
+        })->values();
+
+        // PAKET PEKERJAAN PER TAHUN
+         $data_alltahun = paketpekerjaanmasjaki::with('tahunpilihan')->get();
+
+        // Hitung total semua data
+        $total = $data_alltahun->count();
+
+        // Kelompokkan berdasarkan nama status dari tabel paketstatuspekerjaan
+        $data_tahun = $data_alltahun->groupBy(function ($item) {
+            // Pastikan nama kolom di tabel relasi sesuai dengan field statusnya
+            return $item->tahunpilihan->tahunpilihan ?? 'Tidak Diketahui';
+        })->map(function ($group, $status) use ($total) {
+            $jumlah = $group->count();
+            $persentase = $total > 0 ? ($jumlah / $total) * 100 : 0;
+
+            return [
+                'jenis' => $status,
+                'jumlah' => $jumlah,
+                'persentase' => $persentase,
+            ];
+        })->values();
+
+        // PAKET PEKERJAAN PER SATUAN KERJA
+         $data_allsatuankerja = paketpekerjaanmasjaki::with('user')->get();
+
+        // Hitung total semua data
+        $total = $data_allsatuankerja->count();
+
+        // Kelompokkan berdasarkan nama status dari tabel paketstatuspekerjaan
+        $data_satuankerja = $data_allsatuankerja->groupBy(function ($item) {
+            // Pastikan nama kolom di tabel relasi sesuai dengan field statusnya
+            return $item->user->name ?? 'Tidak Diketahui';
+        })->map(function ($group, $status) use ($total) {
+            $jumlah = $group->count();
+            $persentase = $total > 0 ? ($jumlah / $total) * 100 : 0;
+
+            return [
+                'jenis' => $status,
+                'jumlah' => $jumlah,
+                'persentase' => $persentase,
+            ];
+        })->values();
+
+
+    // ✅ View utama
+    return view('backend.04_datajakon.06_profilpaketpekerjaan.statistik', [
+        'title'   => 'Statistik Profil Paket Pekerjaan Konstruksi dan Konsultasi Konstruksi',
+        'data'    => $data,
+        'perPage' => $perPage,
+        'search'  => $search,
+        'data_statistik'  => $data_statistik,
+        'data_totalpekerjaan'  => $data_totalpekerjaan,
+        'data_totalstatuspekerjaan'  => $data_totalstatuspekerjaan,
+        'data_sumberdana'  => $data_sumberdana,
+        'data_tahun'  => $data_tahun,
+        'data_satuankerja'  => $data_satuankerja,
+    ]);
+}
+
 
 
 // HAK AKSES DINAS
@@ -466,6 +735,34 @@ public function paketpekerjaanupdate($id)
     // Kirim ke view update
     return view('backend.04_datajakon.06_profilpaketpekerjaan.update', [
         'title' => 'Perbaikan Data Paket Pekerjaan',
+        'data' => $dataPaket,
+        'user' => $user,
+        'profiljenispekerjaanList' => $dataProfilJenis,
+        'paketstatuspekerjaanList' => $dataStatusPekerjaan,
+        'sumberdanaList' => $dataSumberDana,
+        'tahunpilihanList' => $dataTahunPilihan,
+        'bulanrekapList' => $dataBulanRekap,
+    ]);
+}
+
+public function paketpekerjaanview($id)
+{
+    // Ambil data paket pekerjaan berdasarkan ID
+    $dataPaket = paketpekerjaanmasjaki::findOrFail($id);
+
+    // Ambil data user login saat ini
+    $user = Auth::user();
+
+    // Ambil data dropdown relasional
+    $dataProfilJenis = profiljenispekerjaan::all();
+    $dataStatusPekerjaan = paketstatuspekerjaan::all();
+    $dataSumberDana = sumberdana::all();
+    $dataTahunPilihan = tahunpilihan::all();
+    $dataBulanRekap = bulanrekap::all();
+
+    // Kirim ke view update
+    return view('backend.04_datajakon.06_profilpaketpekerjaan.view', [
+        'title' => 'View Data Paket Pekerjaan',
         'data' => $dataPaket,
         'user' => $user,
         'profiljenispekerjaanList' => $dataProfilJenis,

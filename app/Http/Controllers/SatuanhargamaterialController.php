@@ -1617,7 +1617,7 @@ class SatuanhargamaterialController extends Controller
 
 public function besatuanhargamaterial(Request $request)
 {
-    $perPage = $request->input('perPage', 25);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     $query = satuanhargamaterial::query();

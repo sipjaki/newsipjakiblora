@@ -116,7 +116,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bepaketpekerjaan?search=${input}`)
+                            fetch(`/bepaketpekerjaanrekap?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -183,7 +183,7 @@
 
 
                                 <a href="/bepaketpekerjaancreate">
-                                    <button class="button-baru">
+                                    <button class="button-hijau">
                                         <i class="fa fa-plus" style="margin-right: 8px;"></i>
                                         Buat Baru
                                     </button>
@@ -208,7 +208,8 @@
                                             <th style="width: 400px; text-align:center;">
                                                 <i class="bi bi-list-check" style="margin-right: 5px;"></i>Status Paket Pekerjaan
                                             </th>
-                                            <th style="width: 200px; text-align:center;">
+
+                                            {{-- <th style="width: 200px; text-align:center;">
                                                 <i class="bi bi-cash-stack" style="margin-right: 5px;"></i>Sumber Dana
                                             </th>
                                             <th style="width: 200px; text-align:center;">
@@ -243,7 +244,7 @@
                                             </th>
                                             <th style="width: 400px; text-align:center;">
                                                 <i class="bi bi-diagram-3" style="margin-right: 5px;"></i>Satuan Kerja
-                                            </th>
+                                            </th> --}}
                                             {{-- <th style="width: 200px; text-align:center;">
                                                 <i class="bi bi-file-earmark-text-fill" style="margin-right: 5px;"></i>Buat Draft SPK
                                             </th> --}}
@@ -274,7 +275,7 @@
         ?? '<span class="button-berkas">Data Belum Di Update !</span>' !!}
 </td>
 
-<td style="text-align: center;">
+{{-- <td style="text-align: center;">
     {!! $item->sumberdana->sumberdana
         ?? '<span class="button-berkas">Data Belum Di Update !</span>' !!}
 </td>
@@ -375,7 +376,7 @@
                                             </td>
                                         <td style="text-align: left; max-width: 380px; word-wrap: break-word; white-space: normal;">
                                             {{ ucwords(strtolower($item->user->name ?? 'Data Belum Di Update'))  }}
-                                            </td>
+                                            </td> --}}
 
                                             {{-- <td style="text-align: center;">
                                                 <div style="display: flex; flex-direction: column; align-items: center;">
@@ -385,11 +386,16 @@
                                                 </div>
                                             </td> --}}
 <td style="text-align: center; vertical-align: middle; white-space: nowrap;">
-  <div style="display: inline-flex; gap: 10px; align-items: center; justify-content: center;">
+  <div style="display: inline-flex; gap: 0px; align-items: center; justify-content: center;">
+ <a href="{{ url('/bepaketpekerjaan/view/' . $item->id) }}"
+   class="button-modern"
+   title="View">
+  <i class="bi bi-eye"></i>
+</a>
  <a href="{{ url('/bepaketpekerjaan/update/' . $item->id) }}"
-   class="button-berkas"
+   class="button-modern"
    title="Update">
-  <i class="bi bi-pencil-square"></i> Update
+  <i class="bi bi-pencil-square"></i>
 </a>
 
     <a href="javascript:void(0)" class="button-merah" title="Delete"
@@ -398,7 +404,7 @@
        onclick="setDeleteUrl(this)"
        {{-- style="display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; background-color: #f44336; color: white; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 14px;" --}}
        >
-      <i class="bi bi-trash"></i> Hapus
+      <i class="bi bi-trash"></i>
     </a>
   </div>
 </td>

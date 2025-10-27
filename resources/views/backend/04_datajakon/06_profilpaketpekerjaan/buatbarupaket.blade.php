@@ -120,7 +120,7 @@ style="
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div class="button-hijau">
+                    <div class="button-modern">
                 <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
                 </div>
 
@@ -128,7 +128,7 @@ style="
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-<button class="button-newvalidasi" type="button"
+<button class="button-modern" type="button"
     onclick="window.location.href='{{ url()->previous() }}';"
     style="cursor: pointer; margin-left:10px; color:black;">
     <i class="bi bi-arrow-left" style="margin-right: 5px;"></i> Kembali
@@ -176,114 +176,126 @@ style="
                                     <!-- Left Column (6/12) -->
 <div class="row">
     <div class="text-center">
-    <hr class="my-4" style="border-top: 2px dashed green; width: 60%; margin: auto;">
-    <h5 style="color: green; font-weight: bold; margin-top: 5px; font-size:16px;">
+    {{-- <hr class="my-4" style="border-top: 2px dashed green; width: 60%; margin: auto;"> --}}
+    {{-- <h5 style="color: green; font-weight: bold; margin-top: 5px; font-size:16px;">
         <i class="bi bi-upload" style="margin-right: 6px;"></i>
         Tambahkan Data Baru Profil Paket Pekerjaan
-    </h5>
-    <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;">
+    </h5> --}}
+    {{-- <hr class="my-4" style="border-top: 2px dashed #0d6efd; width: 60%; margin: auto;"> --}}
 </div>
+<link href="{{ asset('css/formstyle.css') }}" rel="stylesheet">
 
+<div class="row" style="margin-top: 10px;">
+    {{-- Satuan Kerja --}}
     <div class="col-md-6">
-    <div class="mb-3">
-        <label for="user_id" class="form-label">
-            <i class="bi bi-person-circle" style="color: navy; margin-right: 8px;"></i> Satuan Kerja
-        </label>
-        <select name="user_id" id="user_id" class="form-select @error('user_id') is-invalid @enderror">
-            <option value="">-- Pilih Satuan Kerja --</option>
-            @foreach($user as $item)
-                <option value="{{ $item->id }}" {{ old('user_id', $data->user_id ?? '') == $item->id ? 'selected' : '' }}>
-                    {{ $item->name }}
-                </option>
-            @endforeach
-        </select>
-        @error('user_id')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+        <div class="form-modern mb-4">
+            <label for="user_id" class="form-label-modern">
+                <i class="bi bi-person-circle me-2"></i> Satuan Kerja
+            </label>
+
+<select name="user_id" id="user_id" class="form-select-modern @error('user_id') is-invalid @enderror">
+    <option value="">-- Pilih Satuan Kerja --</option>
+    @foreach($user as $item)
+        <option value="{{ $item->id }}" {{ old('user_id', $data->user_id ?? '') == $item->id ? 'selected' : '' }}>
+            {{ Str::title(strtolower($item->name)) }}
+        </option>
+    @endforeach
+</select>
+
+            @error('user_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
     </div>
-</div>
 
     {{-- Jenis Pekerjaan --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label for="profiljenispekerjaan_id" class="form-label">
-            <i class="bi bi-tools" style="color: navy; margin-right: 8px;"></i> Jenis Pekerjaan
-        </label>
-        <select name="profiljenispekerjaan_id" id="profiljenispekerjaan_id"
-            class="form-select @error('profiljenispekerjaan_id') is-invalid @enderror">
-            <option value="">-- Pilih --</option>
-            @foreach($jenispekerjaan as $item)
-                <option value="{{ $item->id }}" {{ old('profiljenispekerjaan_id', $data->profiljenispekerjaan_id ?? '') == $item->id ? 'selected' : '' }}>
-                    {{ $item->jenispekerjaan }}
-                </option>
-            @endforeach
-        </select>
-        @error('profiljenispekerjaan_id')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+    <div class="col-md-6">
+        <div class="form-modern mb-4">
+            <label for="profiljenispekerjaan_id" class="form-label-modern">
+                <i class="bi bi-tools me-2"></i> Jenis Pekerjaan
+            </label>
+            @php
+use Illuminate\Support\Str;
+@endphp
 
-{{-- Status Pekerjaan --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label for="paketstatuspekerjaan_id" class="form-label">
-            <i class="bi bi-list-task" style="color: navy; margin-right: 8px;"></i> Status Pekerjaan
-        </label>
-        <select name="paketstatuspekerjaan_id" id="paketstatuspekerjaan_id"
-            class="form-select @error('paketstatuspekerjaan_id') is-invalid @enderror">
-            <option value="">-- Pilih --</option>
-            @foreach($statuspekerjaan as $item)
-                <option value="{{ $item->id }}" {{ old('paketstatuspekerjaan_id', $data->paketstatuspekerjaan_id ?? '') == $item->id ? 'selected' : '' }}>
-                    {{ $item->paketstatuspekerjaan }}
-                </option>
-            @endforeach
-        </select>
-        @error('paketstatuspekerjaan_id')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-</div>
+<select name="profiljenispekerjaan_id" id="profiljenispekerjaan_id"
+        class="form-select-modern @error('profiljenispekerjaan_id') is-invalid @enderror">
+    <option value="">-- Pilih Jenis Pekerjaan --</option>
+    @foreach($jenispekerjaan as $item)
+        <option value="{{ $item->id }}"
+            {{ old('profiljenispekerjaan_id', $data->profiljenispekerjaan_id ?? '') == $item->id ? 'selected' : '' }}>
+            {{ Str::title(strtolower($item->jenispekerjaan)) }}
+        </option>
+    @endforeach
+</select>
 
-{{-- Sumber Dana --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label for="sumberdana_id" class="form-label">
-            <i class="bi bi-currency-exchange" style="color: navy; margin-right: 8px;"></i> Sumber Dana
-        </label>
-        <select name="sumberdana_id" id="sumberdana_id"
-            class="form-select @error('sumberdana_id') is-invalid @enderror">
-            <option value="">-- Pilih --</option>
-            @foreach($sumberdana as $item)
-                <option value="{{ $item->id }}" {{ old('sumberdana_id', $data->sumberdana_id ?? '') == $item->id ? 'selected' : '' }}>
-                    {{ $item->sumberdana }}
-                </option>
-            @endforeach
-        </select>
-        @error('sumberdana_id')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+            @error('profiljenispekerjaan_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
     </div>
-</div>
 
-{{-- Tahun --}}
-<div class="col-md-6">
-    <div class="mb-3">
-        <label for="tahunpilihan_id" class="form-label">
-            <i class="bi bi-calendar3" style="color: navy; margin-right: 8px;"></i> Tahun
-        </label>
-        <select name="tahunpilihan_id" id="tahunpilihan_id"
-            class="form-select @error('tahunpilihan_id') is-invalid @enderror">
-            <option value="">-- Pilih --</option>
-            @foreach($tahun as $item)
-                <option value="{{ $item->id }}" {{ old('tahunpilihan_id', $data->tahunpilihan_id ?? '') == $item->id ? 'selected' : '' }}>
-                    {{ $item->tahunpilihan }}
-                </option>
-            @endforeach
-        </select>
-        @error('tahunpilihan_id')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
+    {{-- Status Pekerjaan --}}
+    <div class="col-md-6">
+        <div class="form-modern mb-4">
+            <label for="paketstatuspekerjaan_id" class="form-label-modern">
+                <i class="bi bi-list-task me-2"></i> Status Pekerjaan
+            </label>
+            <select name="paketstatuspekerjaan_id" id="paketstatuspekerjaan_id"
+                class="form-select-modern @error('paketstatuspekerjaan_id') is-invalid @enderror">
+                <option value="">-- Pilih Status --</option>
+                @foreach($statuspekerjaan as $item)
+                    <option value="{{ $item->id }}" {{ old('paketstatuspekerjaan_id', $data->paketstatuspekerjaan_id ?? '') == $item->id ? 'selected' : '' }}>
+                        {{ $item->paketstatuspekerjaan }}
+                    </option>
+                @endforeach
+            </select>
+            @error('paketstatuspekerjaan_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    {{-- Sumber Dana --}}
+    <div class="col-md-6">
+        <div class="form-modern mb-4">
+            <label for="sumberdana_id" class="form-label-modern">
+                <i class="bi bi-currency-exchange me-2"></i> Sumber Dana
+            </label>
+            <select name="sumberdana_id" id="sumberdana_id"
+                class="form-select-modern @error('sumberdana_id') is-invalid @enderror">
+                <option value="">-- Pilih Sumber Dana --</option>
+                @foreach($sumberdana as $item)
+                    <option value="{{ $item->id }}" {{ old('sumberdana_id', $data->sumberdana_id ?? '') == $item->id ? 'selected' : '' }}>
+                        {{ $item->sumberdana }}
+                    </option>
+                @endforeach
+            </select>
+            @error('sumberdana_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+
+    {{-- Tahun --}}
+    <div class="col-md-6">
+        <div class="form-modern mb-4">
+            <label for="tahunpilihan_id" class="form-label-modern">
+                <i class="bi bi-calendar3 me-2"></i> Tahun Pelaksanaan
+            </label>
+            <select name="tahunpilihan_id" id="tahunpilihan_id"
+                class="form-select-modern @error('tahunpilihan_id') is-invalid @enderror">
+                <option value="">-- Pilih Tahun --</option>
+                @foreach($tahun as $item)
+                    <option value="{{ $item->id }}" {{ old('tahunpilihan_id', $data->tahunpilihan_id ?? '') == $item->id ? 'selected' : '' }}>
+                        {{ $item->tahunpilihan }}
+                    </option>
+                @endforeach
+            </select>
+            @error('tahunpilihan_id')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
     </div>
 </div>
 
@@ -312,9 +324,9 @@ style="
 
     {{-- Nama Pekerjaan --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="namapekerjaan">
-                <i class="bi bi-file-earmark-text" style="color: navy; margin-right: 8px;"></i> Nama Pekerjaan
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="namapekerjaan">
+                <i class="bi bi-file-earmark-text" style="color: navy; margin-right: 8px;"></i>Nama Pekerjaan
             </label>
             <input type="text" name="namapekerjaan" id="namapekerjaan"
                 value="{{ old('namapekerjaan', $data->namapekerjaan ?? '') }}"
@@ -328,8 +340,8 @@ style="
 
     {{-- CV/PT Penyedia --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="cvptpenyedia">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="cvptpenyedia">
                 <i class="bi bi-building" style="color: navy; margin-right: 8px;"></i> CV/PT Penyedia
             </label>
             <input type="text" name="cvptpenyedia" id="cvptpenyedia"
@@ -344,8 +356,8 @@ style="
 
     {{-- NIB --}}
     <div class="col-md-6">
-        <div class="mb-3">
-            <label class="form-label" for="nib">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="nib">
                 <i class="bi bi-credit-card" style="color: navy; margin-right: 8px;"></i> NIB
             </label>
             <input type="text" name="nib" id="nib"
@@ -360,8 +372,8 @@ style="
 
     {{-- Nilai Kontrak --}}
     <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="nilaikontrak">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="nilaikontrak">
             <i class="bi bi-cash-coin" style="color: navy; margin-right: 8px;"></i> Nilai Kontrak (Rp)
         </label>
         <input type="text" name="nilaikontrak" id="nilaikontrak"
@@ -395,8 +407,8 @@ function clearFormat(input) {
 </script>
     {{-- Jenis Kontrak --}}
     <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="jeniskontrak">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="jeniskontrak">
             <i class="bi bi-file-earmark-lock2" style="color: navy; margin-right: 8px;"></i> Jenis Kontrak
         </label>
         <select name="jeniskontrak" id="jeniskontrak"
@@ -415,8 +427,8 @@ function clearFormat(input) {
 
     {{-- Karakteristik Kontrak --}}
     <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="karakteristikkontrak">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="karakteristikkontrak">
             <i class="bi bi-bookmark-check" style="color: navy; margin-right: 8px;"></i> Karakteristik Kontrak
         </label>
         <select name="karakteristikkontrak" id="karakteristikkontrak"
@@ -431,8 +443,8 @@ function clearFormat(input) {
 
     {{-- Bulan Mulai --}}
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="bulanmulai">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="bulanmulai">
             <i class="bi bi-calendar2-week" style="color: navy; margin-right: 8px;"></i> Bulan Mulai
         </label>
         <select name="bulanmulai" id="bulanmulai"
@@ -459,8 +471,8 @@ function clearFormat(input) {
 
     {{-- Bulan Selesai --}}
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="bulanselesai">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="bulanselesai">
             <i class="bi bi-calendar2-week-fill" style="color: navy; margin-right: 8px;"></i> Bulan Selesai
         </label>
         <select name="bulanselesai" id="bulanselesai"
@@ -485,8 +497,8 @@ function clearFormat(input) {
 </div>
     {{-- Progress --}}
     <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label" for="progress">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="progress">
             <i class="bi bi-bar-chart-fill" style="color: navy; margin-right: 8px;"></i> Progress (%)
         </label>
         <input type="number" name="progress" id="progress"
@@ -504,8 +516,8 @@ function clearFormat(input) {
     {{-- Bulan Rekap --}}
 
     <div class="col-md-6">
-        <div class="mb-3">
-            <label for="bulanrekap_id" class="form-label">
+        <div class="form-modern mb-3">
+            <label for="bulanrekap_id" class="form-label-modern">
                 <i class="bi bi-calendar3-event" style="color: navy; margin-right: 8px;"></i> Bulan Rekap
             </label>
             <select name="bulanrekap_id" id="bulanrekap_id"
@@ -593,7 +605,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-hijau" type="button" onclick="openModal()">
+                               <button class="button-modern" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Tambah Data </span>
                                     </button>

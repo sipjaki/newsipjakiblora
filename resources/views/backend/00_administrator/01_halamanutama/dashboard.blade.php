@@ -402,7 +402,7 @@ button:hover {
     <!-- 2. Artikel Jakon -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-2">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -422,7 +422,7 @@ button:hover {
     <!-- 3. Dokumentasi Jakon -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-3">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -442,7 +442,7 @@ button:hover {
     <!-- 4. BUJK Konsultasi & Konstruksi -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-4">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -485,7 +485,7 @@ button:hover {
     <!-- 2. TKK DPUPR 2025 -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-2">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -505,7 +505,7 @@ button:hover {
     <!-- 3. SEMUA TKK -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-3">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -525,7 +525,7 @@ button:hover {
     <!-- 4. PROFIL PAKET PEKERJAAN -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-4">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -567,7 +567,7 @@ button:hover {
     <!-- 2. Peserta Pelatihan -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-2">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -587,7 +587,7 @@ button:hover {
     <!-- 3. Agenda SKK -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-3">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -607,7 +607,7 @@ button:hover {
     <!-- 4. Peserta SKK -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-4">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -637,7 +637,7 @@ button:hover {
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-briefcase-fill" style="margin-right: 6px;"></i>
-                            <span class="info-number">23</span> Tertib Usaha
+                            <span class="info-number">{{$data_jakontertibusaha}}</span> Tertib Usaha
                         </p>
                         <p class="small-text">Pengawasan dan pembinaan badan usaha jasa konstruksi</p>
                     </div>
@@ -649,7 +649,7 @@ button:hover {
     <!-- 2. Tertib Jakon Pemanfaatan -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-2">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -657,7 +657,7 @@ button:hover {
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
-                            <span class="info-number">23</span> Tertib Pemanfaatan
+                            <span class="info-number">{{$data_tertibjakonpemanfaatan}}</span> Tertib Pemanfaatan
                         </p>
                         <p class="small-text">Tata kelola pelaku dan pengguna jasa konstruksi</p>
                     </div>
@@ -669,7 +669,7 @@ button:hover {
     <!-- 3. Tertib Jakon Penyelenggaraan -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-3">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -677,7 +677,7 @@ button:hover {
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-gear-wide-connected" style="margin-right: 6px;"></i>
-                            <span class="info-number">23</span> Tertib Penyelenggaraan
+                            <span class="info-number">{{$data_tertibjakonpenyelenggaraan}}</span> Tertib Penyelenggaraan
                         </p>
                         <p class="small-text">Ketertiban dalam pelaksanaan konstruksi</p>
                     </div>
@@ -689,7 +689,7 @@ button:hover {
     <!-- 4. Pengawasan BUJK -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-4">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -698,7 +698,7 @@ button:hover {
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-building-check" style="margin-right: 6px;"></i>
-                            <span class="info-number">23</span> Pengawasan BUJK
+                            <span class="info-number">{{$data_pengawasanbujk}}</span> Pengawasan BUJK
                         </p>
                         <p class="small-text">Monitoring kepatuhan badan usaha jasa konstruksi</p>
                     </div>
@@ -721,7 +721,7 @@ button:hover {
                     <div class="info-content">
                         <p class="info-text">
                             <i class="bi bi-exclamation-triangle-fill" style="margin-right: 6px;"></i>
-                            <span class="info-number">12</span> Kecelakaan Kerja
+                            <span class="info-number">{{$data_kecelakaankerja}}</span> Kecelakaan Kerja
                         </p>
                         <p class="small-text">Data laporan dan analisis kecelakaan kerja konstruksi</p>
                     </div>
@@ -733,7 +733,7 @@ button:hover {
     <!-- 2. Satuan Harga Material -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-2">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
       <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -754,7 +754,7 @@ button:hover {
     <!-- 3. Satuan Harga Upah Pekerjaan -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-3">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -775,7 +775,7 @@ button:hover {
     <!-- 4. Satuan Harga Peralatan -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-4">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
                         <img src="/assets/icon/pupr.png" alt="icon" width="40">
@@ -809,13 +809,13 @@ button:hover {
             <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-building" style="font-size: 40px; color: #003049;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <span class="info-number">I</span> Divisi Pekerjaan
                         </p>
-                        <p class="small-text">Pekerjaan Persiapan dan Umum</p>
+                        <p class="small-text">Persiapan Pekerjaan</p>
                     </div>
                 </div>
             </div>
@@ -825,16 +825,16 @@ button:hover {
     <!-- Divisi Pekerjaan II -->
     <div class="col-md-3 col-sm-6 col-12" style="margin-top: 10px; margin-bottom: 10px;">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-2">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-bricks" style="font-size: 40px; color: #d62828;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <span class="info-number">II</span> Divisi Pekerjaan
                         </p>
-                        <p class="small-text">Pekerjaan Tanah dan Pondasi</p>
+                        <p class="small-text">Pekerjaan Struktur</p>
                     </div>
                 </div>
             </div>
@@ -844,16 +844,16 @@ button:hover {
     <!-- Divisi Pekerjaan III -->
     <div class="col-md-3 col-sm-6 col-12" style="margin-top: 10px; margin-bottom: 10px;">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-3">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-house-door" style="font-size: 40px; color: #f77f00;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <span class="info-number">III</span> Divisi Pekerjaan
                         </p>
-                        <p class="small-text">Pekerjaan Struktur Beton</p>
+                        <p class="small-text">Pekerjaan Arsitektur</p>
                     </div>
                 </div>
             </div>
@@ -863,16 +863,16 @@ button:hover {
     <!-- Divisi Pekerjaan IV -->
     <div class="col-md-3 col-sm-6 col-12" style="margin-top: 10px; margin-bottom: 10px;">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-4">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-columns-gap" style="font-size: 40px; color: #2a9d8f;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <span class="info-number">IV</span> Divisi Pekerjaan
                         </p>
-                        <p class="small-text">Pekerjaan Arsitektur dan Finishing</p>
+                        <p class="small-text">Pekerjaan Lansekap</p>
                     </div>
                 </div>
             </div>
@@ -882,16 +882,16 @@ button:hover {
     <!-- Divisi Pekerjaan V -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-5">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-lightning-charge" style="font-size: 40px; color: #fcbf49;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <span class="info-number">V</span> Divisi Pekerjaan
                         </p>
-                        <p class="small-text">Pekerjaan Listrik dan Mekanikal</p>
+                        <p class="small-text">Pekerjaan Mekanikal & Elektrikal</p>
                     </div>
                 </div>
             </div>
@@ -901,16 +901,16 @@ button:hover {
     <!-- Divisi Pekerjaan VI -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-6">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-droplet-half" style="font-size: 40px; color: #0077b6;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <span class="info-number">VI</span> Divisi Pekerjaan
                         </p>
-                        <p class="small-text">Pekerjaan Air dan Sanitasi</p>
+                        <p class="small-text">Pekerjaan Plumbing</p>
                     </div>
                 </div>
             </div>
@@ -920,16 +920,16 @@ button:hover {
     <!-- Divisi Pekerjaan VII -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-7">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-road" style="font-size: 40px; color: #495057;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <span class="info-number">VII</span> Divisi Pekerjaan
                         </p>
-                        <p class="small-text">Pekerjaan Jalan dan Drainase</p>
+                        <p class="small-text">Pekerjaan Jalan Pada Permukiman</p>
                     </div>
                 </div>
             </div>
@@ -939,16 +939,16 @@ button:hover {
     <!-- Divisi Pekerjaan VIII -->
     <div class="col-md-3 col-sm-6 col-12">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-8">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-tree" style="font-size: 40px; color: #2b9348;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <span class="info-number">VIII</span> Divisi Pekerjaan
                         </p>
-                        <p class="small-text">Pekerjaan Lanskap dan Lingkungan</p>
+                        <p class="small-text">Pekerjaan Drainase Jalan</p>
                     </div>
                 </div>
             </div>
@@ -958,16 +958,16 @@ button:hover {
     <!-- Divisi Pekerjaan IX -->
     <div class="col-md-3 col-sm-6 col-12" style="margin-top: 10px; margin-bottom: 10px;">
         <a href="#" style="text-decoration: none;">
-            <div class="dashboard-card card-9">
+            <div class="dashboard-card card-1">
                 <div class="card-content">
                     <div class="number-container">
-                        <i class="bi bi-gear-fill" style="font-size: 40px; color: #7209b7;"></i>
+                        <img src="/assets/icon/pupr.png" alt="icon" width="40">
                     </div>
                     <div class="info-content">
                         <p class="info-text">
                             <span class="info-number">IX</span> Divisi Pekerjaan
                         </p>
-                        <p class="small-text">Pekerjaan Pengadaan dan Peralatan</p>
+                        <p class="small-text">Pekerjaan Jaringan Pipa Di Luar Bangunan Gedung</p>
                     </div>
                 </div>
             </div>

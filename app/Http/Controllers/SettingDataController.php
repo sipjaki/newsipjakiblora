@@ -7,6 +7,7 @@ use App\Models\peralatankonstruksi;
 use App\Models\alatberat;
 use App\Models\jenjangpendidikan;
 use App\Models\namasekolah;
+use App\Models\profiljenispekerjaan;
 use App\Models\subklasifikasi;
 use App\Models\tandatangan;
 use Illuminate\Http\Request;
@@ -356,5 +357,91 @@ return redirect('/settingsjenjangpendidikan')->with('delete', 'Data Berhasil Di 
 
 }
 }
+
+public function jenispekerjaandelete($id)
+{
+// Cari item berdasarkan judul
+$entry = profiljenispekerjaan::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/settingsjenispekerjaan')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+}
+
+
+public function settingsjenispekerjaan(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search  = $request->input('search');
+
+    $query = profiljenispekerjaan::query();
+
+    if ($search) {
+        $query->where('jenispekerjaan', 'LIKE', "%{$search}%");
+    }
+
+    // Urutkan berdasarkan data terbaru
+    $query->orderBy('created_at', 'desc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view(
+                'backend.16_settingsdata.05_jenispekerjaan.partials.table',
+                compact('data')
+            )->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.05_jenispekerjaan.index', [
+        'title'   => 'Daftar Jenis Pekerjaan',
+        'data'    => $data,
+        'perPage' => $perPage,
+        'search'  => $search
+    ]);
+}
+
+   public function settingsjenispekerjaancreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.05_jenispekerjaan.create', [
+            'title' => 'Tambah Jenis Pekerjaan',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
+
+
+        public function settingsjenispekerjaannew(Request $request)
+{
+    $request->validate([
+        'jenispekerjaan' => 'required|string|max:100',
+    ], [
+        'jenjangpendidikan.required' => 'Jenjang pendidikan tidak boleh kosong.',
+        'jenjangpendidikan.string'   => 'Jenjang pendidikan harus berupa teks.',
+        'jenjangpendidikan.max'      => 'Jenjang pendidikan tidak boleh lebih dari 50 karakter.',
+        'jenjangpendidikan.unique'   => 'Jenjang pendidikan ini sudah terdaftar.',
+    ]);
+
+profiljenispekerjaan::create([
+        'jenispekerjaan' => $request->jenispekerjaan,
+    ]);
+
+    session()->flash('create', 'Data berhasil dibuat!');
+    return redirect('/settingsjenispekerjaan');
+}
+
 
 }

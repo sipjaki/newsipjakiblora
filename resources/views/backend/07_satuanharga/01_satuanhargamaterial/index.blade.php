@@ -33,7 +33,7 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+          <section style="background: linear-gradient(to bottom, #a8e6a1, #ffffff); width: 100%; min-height: 100vh;" loading="lazy">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -119,49 +119,15 @@
                                 </script>
 <!-- Tombol Download Excel -->
 <button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_satuanhargamaterial')"
-    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
-    onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white'; this.style.transform='scale(1)';"
-    style="
-      background: linear-gradient(45deg, #d4af37, #228B22);
-      color: white;
-      border: none;
-      margin-right: 10px;
-      padding: 10px 20px;
-      border-radius: 15px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    ">
+class="button-modern"
+>
     <i class="bi bi-download" style="font-size: 18px;"></i> Download Excel
 </button>
 
 <!-- Tombol Create -->
 <a href="/besatuanhargamaterial/create" style="text-decoration: none;">
-    <button
-        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
-        onmouseout="this.style.background='linear-gradient(45deg, #228B22, #d4af37)'; this.style.color='white'; this.style.transform='scale(1)';"
-        style="
-          background: linear-gradient(45deg, #228B22, #d4af37);
-          color: white;
-          border: none;
-          margin-right: 10px;
-          padding: 10px 20px;
-          border-radius: 15px;
-          font-size: 16px;
-          font-weight: 700;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          transition: all 0.3s ease;
-          text-decoration: none;
-        ">
-        <i class="bi bi-plus-lg" style="font-size: 18px;"></i> Create
+    <button class="button-baru">
+        <i class="bi bi-plus-lg" style="font-size: 18px;"></i> Tambah Data
     </button>
 </a>
 
@@ -208,10 +174,10 @@
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
                 <i class="bi bi-eye"></i>
             </a> --}}
-            <a href="/besatuanhargamaterial/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
+            <a href="/besatuanhargamaterial/update/{{$item->id}}" class="button-modern" title="Update">
                 <i class="bi bi-pencil-square"></i>
             </a>
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+            <a href="javascript:void(0)" class="button-merah" title="Delete"
                data-bs-toggle="modal" data-bs-target="#deleteModal"
                data-judul="{{ $item->id }}"
                onclick="setDeleteUrl(this)">
