@@ -183,7 +183,7 @@
 
 
                                 <a href="/bepaketpekerjaancreate">
-                                    <button class="button-hijau">
+                                    <button class="button-baru">
                                         <i class="fa fa-plus" style="margin-right: 8px;"></i>
                                         Buat Baru
                                     </button>

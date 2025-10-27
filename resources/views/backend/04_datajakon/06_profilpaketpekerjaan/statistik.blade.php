@@ -183,7 +183,7 @@
 
 
                                 <a href="/bepaketpekerjaancreate">
-                                    <button class="button-hijau">
+                                    <button class="button-baru">
                                         <i class="fa fa-plus" style="margin-right: 8px;"></i>
                                         Buat Baru
                                     </button>
@@ -195,6 +195,9 @@
 
     <!-- Tombol Navigasi Statistik -->
     <div class="d-flex flex-wrap gap-2 mb-4 justify-content-center">
+    <button class="button-modern">
+        <i class="bi bi-briefcase-fill me-2"></i> Jumlah Paket Pekerjaan {{$data_totalpekerjaan}}
+    </button>
     <button class="button-modern statistik-btn" data-target="statistik1">
         <i class="bi bi-briefcase-fill me-2"></i> Jenis Pekerjaan
     </button>

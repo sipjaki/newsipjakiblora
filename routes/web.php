@@ -865,6 +865,8 @@ Route::post('/beskkallblora/createnew', [SkktenagakerjabloraController::class, '
 // ________________________________________________________________________________________________________________
 // ---------------------- MENU 3 PROFIL PAKET PEKERJAAN -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
+Route::get('/statistikprofilpekerjaan', [PaketpekerjaanmasjakiController::class, 'statistikprofilpekerjaan'])->middleware(['auth', 'can:admin3'])->name('bepaketpekerjaanrekapindex'); // SUDAH DI GATE
+Route::get('/bepaketpekerjaanrekap', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaanrekap'])->middleware(['auth', 'can:admin3'])->name('bepaketpekerjaanrekapindex'); // SUDAH DI GATE
 Route::get('/bepaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaan'])->middleware(['auth', 'can:admin3'])->name('bepaketpekerjaanindex'); // SUDAH DI GATE
 // Route::get('/bepaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaan'])->name('bepaketpekerjaanindex'); // SUDAH DI GATE
 Route::get('/bepaketpekerjaan/showsurat/{id}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaanshowsurat'])->middleware(['auth', 'can:admin3']); // SUDAH DI GATE
@@ -876,6 +878,7 @@ Route::post('/bepaketpekerjaancreatenew', [PaketpekerjaanmasjakiController::clas
 Route::get('/bepaketpekerjaan/update/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanupdate'])->middleware(['auth', 'can:admin3']);
 Route::post('/bepaketpekerjaan/updatecreate/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanupdatenew'])->middleware(['auth', 'can:admin3'])->name('update.paketpekerjaan');
 
+Route::get('/bepaketpekerjaan/view/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanview'])->middleware(['auth', 'can:admin3']);
 
 // BELUM DI BUATKAN
 // Route::get('/bebujkkonstruksi/createsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasi'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasi');
@@ -1420,6 +1423,12 @@ Route::get('/settingstandatangan', [SettingDataController::class, 'settingstanda
 Route::get('/settingstandatangan/create', [SettingDataController::class, 'settingstandatangancreate'])->middleware(['auth', 'can:admin2']);
 Route::post('/settingstandatangan/createnew', [SettingDataController::class, 'settingstandatangancreatenew'])->middleware(['auth', 'can:admin2'])->name('create.settingstandatangan');
 Route::delete('/settingstandatangan/delete/{id}', [SettingDataController::class, 'settingstandatangandelete'])->middleware(['auth', 'can:admin2']);
+
+
+Route::get('/settingsjenispekerjaan', [SettingDataController::class, 'settingsjenispekerjaan'])->middleware(['auth', 'can:admin2']);
+Route::get('/settingsjenispekerjaan/create', [SettingDataController::class, 'settingsjenispekerjaancreate'])->middleware(['auth', 'can:admin2']);
+Route::post('/settingsjenispekerjaan/createnew', [SettingDataController::class, 'settingsjenispekerjaannew'])->middleware(['auth', 'can:admin2'])->name('create.jenispekerjaan');
+Route::delete('/jenispekerjaan/delete/{id}', [SettingDataController::class, 'jenispekerjaandelete'])->middleware(['auth', 'can:admin2']);
 
 
 
