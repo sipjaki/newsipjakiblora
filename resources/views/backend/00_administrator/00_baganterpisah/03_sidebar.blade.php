@@ -630,7 +630,7 @@
                   <li class="nav-item">
                     <a href="/bepaketpekerjaan" class="nav-link">
                       <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
-                      <p style="color: white">Profil Paket Pekerjaan</p>
+                      <p style="color: white">Profil <br> Paket Pekerjaan</p>
                     </a>
                   </li>
 
@@ -662,19 +662,19 @@
                   <li class="nav-item">
                     <a href="/betertibjakonusaha" class="nav-link">
                       <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
-                      <p style="color: white">Tertib Usaha</p>
+                      <p style="color: white">Tertib <br> Usaha</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="/betertibjakonpemanfaatan" class="nav-link">
                       <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
-                      <p style="color: white">Tertib Pemanfaatan</p>
+                      <p style="color: white">Tertib <br> Pemanfaatan</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="/betertibjakonpenyelenggaraan" class="nav-link">
                       <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
-                      <p style="color: white">Tertib Penyelenggaraan </p>
+                      <p style="color: white">Tertib <br> Penyelenggaraan </p>
                     </a>
                   </li>
 
@@ -945,7 +945,7 @@
                   <li class="nav-item">
                     <a href="/bepaketpekerjaan" class="nav-link">
                       <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
-                      <p style="color: white">Profil Paket Pekerjaan</p>
+                      <p style="color: white">Profil <br> Paket Pekerjaan</p>
                     </a>
                   </li>
 
@@ -1021,7 +1021,7 @@
 
                   <!-- Profil Paket Pekerjaan Konstruksi -->
 <li class="nav-item">
-  <a href="/404" class="nav-link">
+  <a href="/settingsjenispekerjaan" class="nav-link">
     <i class="nav-icon bi bi-briefcase text-warning"></i> <!-- Ikon untuk Jenis Pekerjaan -->
     <p style="color: white">Jenis Pekerjaan</p>
   </a>
@@ -1200,19 +1200,19 @@
                   <li class="nav-item">
                     <a href="/betertibjakonusaha" class="nav-link">
                       <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
-                      <p style="color: white">Tertib Usaha</p>
+                      <p style="color: white">Tertib <br> Usaha</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="/betertibjakonpemanfaatan" class="nav-link">
                       <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
-                      <p style="color: white">Tertib Pemanfaatan</p>
+                      <p style="color: white">Tertib <br> Pemanfaatan</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="/betertibjakonpenyelenggaraan" class="nav-link">
                       <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
-                      <p style="color: white">Tertib Penyelenggaraan </p>
+                      <p style="color: white">Tertib <br> Penyelenggaraan </p>
                     </a>
                   </li>
 
@@ -1276,7 +1276,7 @@
                   <!-- Ikon untuk AHSP Keciptakaryaan -->
                   <i class="nav-icon bi bi-clipboard-check" style="color: white"></i> <!-- Ikon untuk AHSP Keciptakaryaan -->
                   <p style="color: white">
-                    Satuan Harga Dasar
+                    Satuan <br> Harga Dasar
                     <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
@@ -1284,10 +1284,28 @@
 
                 <ul class="nav nav-treeview">
                   <!-- Satuan Harga Material -->
+
+                      <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
                   <li class="nav-item">
                     <a href="/besatuanhargamaterial" class="nav-link">
                       <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
-                      <p style="color: white">Satuan Harga Material</p>
+                      <p style="color: white">Satuan <br> Harga Material</p>
                     </a>
                   </li>
 
@@ -1295,7 +1313,7 @@
                   <li class="nav-item">
                     <a href="/besatuanhargaupahpekerjaan" class="nav-link">
                       <i class="nav-icon bi bi-droplet text-warning"></i> <!-- Ikon untuk Satuan Harga Bahan -->
-                      <p style="color: white">Satuan Harga Upah</p>
+                      <p style="color: white">Satuan <br> Harga Upah</p>
                     </a>
                   </li>
 
@@ -1303,7 +1321,7 @@
                   <li class="nav-item">
                     <a href="/besatuanhargaperalatan" class="nav-link">
                       <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Satuan Harga Peralatan -->
-                      <p style="color: white">Satuan Harga Peralatan</p>
+                      <p style="color: white">Satuan <br> Harga Peralatan</p>
                     </a>
                   </li>
                 </ul>
@@ -1325,10 +1343,27 @@
 
                 <ul class="nav nav-treeview">
                   <!-- Divisi I -->
+                      <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
                   <li class="nav-item">
                     <a href="/besatuandiv1" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi I -->
-                      <p style="color: white">Divisi I</p>
+                      <p style="color: white">Divisi I <br> Persiapan Pekerjaan</p>
                     </a>
                   </li>
 
@@ -1336,7 +1371,7 @@
                   <li class="nav-item">
                     <a href="/besatuandiv2" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi II -->
-                      <p style="color: white">Divisi II</p>
+                      <p style="color: white">Divisi II <br> Pekerjaan Struktur</p>
                     </a>
                   </li>
 
@@ -1344,7 +1379,7 @@
                   <li class="nav-item">
                     <a href="/besatuandiv3" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi III -->
-                      <p style="color: white">Divisi III</p>
+                      <p style="color: white">Divisi III <br> Pekerjaan Arsitektur</p>
                     </a>
                   </li>
 
@@ -1352,7 +1387,7 @@
                   <li class="nav-item">
                     <a href="/besatuandiv4" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi IV -->
-                      <p style="color: white">Divisi IV</p>
+                      <p style="color: white">Divisi IV <br> Pekerjaan Lansekap</p>
                     </a>
                   </li>
 
@@ -1360,7 +1395,7 @@
                   <li class="nav-item">
                     <a href="/besatuandiv5" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi V -->
-                      <p style="color: white">Divisi V</p>
+                      <p style="color: white">Divisi V <br> Mekanikal & Elektrikal </p>
                     </a>
                   </li>
 
@@ -1368,7 +1403,7 @@
                   <li class="nav-item">
                     <a href="/besatuandiv6" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi VI -->
-                      <p style="color: white">Divisi VI</p>
+                      <p style="color: white">Divisi VI <br> Pekerjaan Plumbing </p>
                     </a>
                   </li>
 
@@ -1376,7 +1411,7 @@
                   <li class="nav-item">
                     <a href="/besatuandiv7" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi VII -->
-                      <p style="color: white">Divisi VII</p>
+                      <p style="color: white">Divisi VII <br> Jalan Permukiman</p>
                     </a>
                   </li>
 
@@ -1384,7 +1419,7 @@
                   <li class="nav-item">
                     <a href="/404" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi VIII -->
-                      <p style="color: white">Divisi VIII</p>
+                      <p style="color: white">Divisi VIII <br> Drainase Jalan</p>
                     </a>
                   </li>
 
@@ -1392,7 +1427,7 @@
                   <li class="nav-item">
                     <a href="/404" class="nav-link">
                       <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi IX -->
-                      <p style="color: white">Divisi IX</p>
+                      <p style="color: white">Divisi IX <br> Jaringan Pipa</p>
                     </a>
                   </li>
                 </ul>
@@ -1431,15 +1466,12 @@
 
             {{-- ===================================== MENU DATA AHSP BINA MARGA    --}}
             <li class="nav-item">
-                <a href="/404" class="nav-link">
-                    <!-- Ikon untuk AHSP Bina Marga -->
+                {{-- <a href="/404" class="nav-link">
                     <i class="nav-icon bi bi-archive" style="color: white;"></i> <!-- Ikon alternatif untuk AHSP Bina Marga -->
                     <p style="color: white">
                       AHSP Bina Marga
-                      <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
-                      {{-- <i class="nav-arrow bi bi-chevron-right"></i> --}}
                     </p>
-                  </a>
+                  </a> --}}
 
 
                 {{-- <ul class="nav nav-treeview">
@@ -1459,15 +1491,13 @@
 
             {{-- ===================================== MENU DATA AHSP SUMBER DAYA AIR    --}}
             <li class="nav-item">
-                <a href="/404" class="nav-link">
+                {{-- <a href="/404" class="nav-link">
                     <!-- Ikon untuk AHSP Sumber Daya Air -->
                     <i class="nav-icon bi bi-droplet" style="color: white;"></i> <!-- Ikon untuk Sumber Daya Air -->
                     <p style="color: white">
                       AHSP SDA
-                      <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
-                      {{-- <i class="nav-arrow bi bi-chevron-right"></i> --}}
                     </p>
-                  </a>
+                  </a> --}}
 
                 {{-- <ul class="nav nav-treeview">
                   <!-- Satuan Harga Material -->
@@ -1485,49 +1515,51 @@
             {{-- ========================== --}}
 
             {{-- ===================================== MENU DATA RANTAI PASOK    --}}
-            <li class="nav-item">
+           <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <!-- Ikon untuk Rantai Pasok (Sumber Daya Air) -->
-                    <i class="nav-icon bi bi-droplet" style="color: white;"></i> <!-- Ikon untuk Sumber Daya Air -->
+                    <!-- Ikon untuk SHST Kab Blora -->
+                    <i class="nav-icon bi bi-file-earmark-text" style="color: white"></i> <!-- Ikon untuk SHST Kab Blora -->
                     <p style="color: white">
-                        Rantai Pasok
+                      Rantai Pasok
+                      <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                      <i class="nav-arrow bi bi-chevron-right"></i>
                     </p>
-                </a>
+                  </a>
+
 
                 <ul class="nav nav-treeview">
-                    <!-- Asuransi Konstruksi -->
-                    <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                            <i class="nav-icon bi bi-shield-lock text-warning"></i> <!-- Ikon untuk Asuransi Konstruksi -->
-                            <p style="color: white">Asuransi Konstruksi</p>
-                        </a>
-                    </li>
+                  <!-- Satuan Harga Material -->
 
-                    <!-- Suplier Material -->
-                    <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                            <i class="nav-icon bi bi-box text-warning"></i> <!-- Ikon untuk Suplier Material -->
-                            <p style="color: white">Suplier Material</p>
-                        </a>
-                    </li>
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Asuransi Konstruksi</p>
+                    </a>
+                  </li>
 
-                    <!-- Suplier Peralatan -->
-                    <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                            <i class="nav-icon bi bi-cogs text-warning"></i> <!-- Ikon untuk Suplier Peralatan -->
-                            <p style="color: white">Suplier Peralatan</p>
-                        </a>
-                    </li>
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Supplier Material</p>
+                    </a>
+                  </li>
 
-                    <!-- Toko Bangunan -->
-                    <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                            <i class="nav-icon bi bi-shop text-warning"></i> <!-- Ikon untuk Toko Bangunan -->
-                            <p style="color: white">Toko Bangunan</p>
-                        </a>
-                    </li>
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Supplier Peratalan</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Toko Bangunan</p>
+                    </a>
+                  </li>
+
                 </ul>
-            </li>
+              </li>
 
             {{-- ========================== --}}
 

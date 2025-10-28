@@ -56,16 +56,13 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/bepaketpekerjaan">
-                    <button class="button-newvalidasi">
-                    <!-- Ikon Kembali -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" style="margin-right: 8px;">
-                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-               </svg>
-                    Kembali
-                </button>
-            </a>
+             <a href="{{ url()->previous() }}" style="text-decoration: none;">
+                    <button class="button-modern">
+                        <i class="bi bi-arrow-left-circle" style="margin-right: 8px;"></i>
+                        Kembali
+                    </button>
+                </a>
+
         </div>
         <hr>
 
@@ -86,8 +83,8 @@
 <div class="row">
 
     {{-- PROFIL JENIS PEKERJAAN --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-briefcase-fill" style="color: navy; margin-right: 8px;"></i> Profil Jenis Pekerjaan
         </label>
         <select name="profiljenispekerjaan_id" class="form-control">
@@ -101,8 +98,8 @@
     </div>
 
     {{-- STATUS PEKERJAAN --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-clipboard-check-fill" style="color: navy; margin-right: 8px;"></i> Status Pekerjaan
         </label>
         <select name="paketstatuspekerjaan_id" class="form-control">
@@ -116,8 +113,8 @@
     </div>
 
     {{-- SUMBER DANA --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-cash-stack" style="color: navy; margin-right: 8px;"></i> Sumber Dana
         </label>
         <select name="sumberdana_id" class="form-control">
@@ -131,8 +128,8 @@
     </div>
 
     {{-- TAHUN ANGGARAN --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-calendar-event-fill" style="color: navy; margin-right: 8px;"></i> Tahun Anggaran
         </label>
         <select name="tahunpilihan_id" class="form-control">
@@ -146,8 +143,8 @@
     </div>
 
     {{-- USER --}}
-<div class="col-md-6 mb-3">
-    <label class="form-label">
+<div class="form-modern col-md-6 mb-3">
+    <label class="form-label-modern">
         <i class="bi bi-person-fill" style="color: navy; margin-right: 8px;"></i> Satuan Kerja
     </label>
 
@@ -159,8 +156,8 @@
 </div>
 
     {{-- BULAN REKAP --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-calendar-month-fill" style="color: navy; margin-right: 8px;"></i> Bulan Rekap
         </label>
         <select name="bulanrekap_id" class="form-control">
@@ -174,72 +171,72 @@
     </div>
 
     {{-- NAMA PEKERJAAN --}}
-    <div class="col-md-12 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-12 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-building-fill" style="color: navy; margin-right: 8px;"></i> Nama Pekerjaan
         </label>
         <input type="text" name="namapekerjaan" class="form-control" value="{{ old('namapekerjaan', $data->namapekerjaan) }}">
     </div>
 
     {{-- CV/PT PENYEDIA --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-building-gear" style="color: navy; margin-right: 8px;"></i> CV/PT Penyedia
         </label>
         <input type="text" name="cvptpenyedia" class="form-control" value="{{ old('cvptpenyedia', $data->cvptpenyedia) }}">
     </div>
 
     {{-- NIB --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-upc-scan" style="color: navy; margin-right: 8px;"></i> Nomor Induk Berusaha (NIB)
         </label>
         <input type="text" name="nib" class="form-control" value="{{ old('nib', $data->nib) }}">
     </div>
 
     {{-- NILAI KONTRAK --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-currency-dollar" style="color: navy; margin-right: 8px;"></i> Nilai Kontrak (Rp)
         </label>
         <input type="number" step="0.01" name="nilaikontrak" class="form-control" value="{{ old('nilaikontrak', $data->nilaikontrak) }}">
     </div>
 
     {{-- JENIS KONTRAK --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-file-earmark-text-fill" style="color: navy; margin-right: 8px;"></i> Jenis Kontrak
         </label>
         <input type="text" name="jeniskontrak" class="form-control" value="{{ old('jeniskontrak', $data->jeniskontrak) }}">
     </div>
 
     {{-- KARAKTERISTIK KONTRAK --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-file-earmark-diff-fill" style="color: navy; margin-right: 8px;"></i> Karakteristik Kontrak
         </label>
         <input type="text" name="karakteristikkontrak" class="form-control" value="{{ old('karakteristikkontrak', $data->karakteristikkontrak) }}">
     </div>
 
     {{-- BULAN MULAI --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-calendar2-plus-fill" style="color: navy; margin-right: 8px;"></i> Bulan Mulai
         </label>
         <input type="text" name="bulanmulai" class="form-control" value="{{ old('bulanmulai', $data->bulanmulai) }}">
     </div>
 
     {{-- BULAN SELESAI --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-calendar2-check-fill" style="color: navy; margin-right: 8px;"></i> Bulan Selesai
         </label>
         <input type="text" name="bulanselesai" class="form-control" value="{{ old('bulanselesai', $data->bulanselesai) }}">
     </div>
 
     {{-- PROGRESS --}}
-    <div class="col-md-6 mb-3">
-        <label class="form-label">
+    <div class="form-modern col-md-6 mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-bar-chart-fill" style="color: navy; margin-right: 8px;"></i> Progress (%)
         </label>
         <input type="number" name="progress" class="form-control" value="{{ old('progress', $data->progress) }}">

@@ -21,64 +21,140 @@
     }
 }
 
-.zebra-table {
+/* .zebra-table {
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px; /* Diperbesar jadi 15px */
+  font-size: 15px;
   text-align: left;
-  border-radius: 10px; /* Sedikit diperbesar */
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Header elegant dengan font weight lebih ringan */
 .zebra-table th {
   background-color: #1a3c34;
   color: #ffffff;
   font-weight: 500;
   text-transform: uppercase;
-  padding: 16px 14px; /* Padding diperbesar */
+  padding: 16px 14px;
   border-bottom: 1px solid #2a5247;
   letter-spacing: 0.8px;
-  font-size: 14px; /* Header juga diperbesar */
+  font-size: 14px;
   opacity: 0.95;
 }
 
-/* Isi tabel dengan font Poppins */
 .zebra-table td {
-  padding: 14px 14px; /* Padding diperbesar */
+  padding: 14px 14px;
   border-bottom: 1px solid #f0f5f3;
   color: #444444;
   font-weight: 400;
 }
 
-/* Zebra effect yang lebih subtle */
 .zebra-table tbody tr:nth-child(even) {
   background-color: #fafdfc;
 }
 
-/* Hilangkan garis vertikal */
 .zebra-table th,
 .zebra-table td {
   border-left: none;
   border-right: none;
 }
 
-/* Efek hover yang smooth */
 .zebra-table tbody tr:hover {
   background-color: #f1f8f5;
   transition: all 0.3s ease;
 }
 
-/* Tambahan untuk membuat lebih minimalis dan elegant */
 .zebra-table th:first-child {
   border-top-left-radius: 10px;
 }
 
 .zebra-table th:last-child {
   border-top-right-radius: 10px;
+} */
+
+/* 🌿 Modern Zebra Table Style */
+.zebra-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Header – modern green with soft shadow */
+.zebra-table thead {
+  background: linear-gradient(135deg, #1a3c34, #2f5d4f);
+}
+
+.zebra-table th {
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 16px 14px;
+  letter-spacing: 0.7px;
+  text-align: left;
+  border-bottom: 1px solid #2a5247;
+  font-size: 14px;
+}
+
+/* Isi tabel */
+.zebra-table td {
+  padding: 14px 14px;
+  border-bottom: 1px solid #f0f5f3;
+  color: #444;
+  font-weight: 400;
+  background-color: #fff;
+}
+
+/* Zebra effect lembut */
+.zebra-table tbody tr:nth-child(even) {
+  background-color: #f8fbfa;
+}
+
+/* Hover lembut dengan efek transisi */
+.zebra-table tbody tr:hover {
+  background-color: #eaf5f1;
+  transition: all 0.3s ease;
+}
+
+/* Tanpa garis vertikal */
+.zebra-table th,
+.zebra-table td {
+  border-left: none;
+  border-right: none;
+}
+
+/* Corner radius header */
+.zebra-table th:first-child {
+  border-top-left-radius: 12px;
+}
+.zebra-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* Responsive look */
+@media (max-width: 768px) {
+  .zebra-table th,
+  .zebra-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Tambahan animasi saat muncul */
+.zebra-table {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .button-abgblora {
@@ -545,6 +621,44 @@
             background-position: -200% center;
         }
     }
+
+.button-modern {
+    background: linear-gradient(145deg, #f9fafc, #eef3fb);
+    color: #1e293b;
+    border: 1px solid #d0d7e2;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: max-content;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.button-modern:hover {
+    background: #ffffff;
+    color: #0d47a1;
+    border: 1px solid #93c5fd;
+    box-shadow:
+        0 4px 10px rgba(13, 110, 253, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+.button-modern svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+}
+
 </style>
 
 
@@ -1070,3 +1184,187 @@ document.querySelectorAll('input, textarea').forEach(input => {
             }
         }
     </style>
+    <style>
+    :root {
+        --primary-green: #42b549;
+    }
+
+    .stats-card {
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: none;
+        height: 100%;
+        position: relative;
+    }
+
+    .stats-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background-color: var(--primary-green);
+    }
+
+    .stats-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .stats-content {
+        padding: 25px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .stats-icon-box {
+        background-color: var(--primary-green);
+        border-radius: 14px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(66, 181, 73, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stats-icon-box::after {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at center, rgba(255,255,255,0.25), transparent 70%);
+        animation: pulse 2.5s infinite ease-in-out;
+        opacity: 0;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(0.8); opacity: 0.5; }
+        50% { transform: scale(1.2); opacity: 0; }
+        100% { transform: scale(0.8); opacity: 0.5; }
+    }
+
+    .stats-number {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        color: white;
+    }
+
+    .stats-info {
+        flex-grow: 1;
+    }
+
+    .stats-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        color: #333;
+        letter-spacing: 0.5px;
+    }
+
+    .stats-progress-wrap {
+        margin-top: 8px;
+        height: 8px;
+        background-color: #f0f0f0;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .stats-progress-bar {
+        height: 8px;
+        background-color: var(--primary-green);
+        width: 0;
+        transition: width 1.5s ease-in-out;
+    }
+
+    .stats-percentage {
+        font-weight: 600;
+        color: var(--primary-green);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .stats-percentage i {
+        font-size: 18px;
+        color: var(--primary-green);
+        animation: bounce 1.8s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+    }
+</style>
+
+<style>
+    /* Font dan warna dasar */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Card-style form wrapper */
+.form-modern {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.form-modern:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Label modern */
+.form-label-modern {
+    font-weight: 600;
+    color: #1a3c34;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+/* Select modern style */
+.form-select-modern {
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    padding: 10px 14px;
+    font-size: 15px;
+    color: #1f2937;
+    transition: all 0.3s ease;
+}
+
+.form-select-modern:focus {
+    border-color: #1a3c34;
+    box-shadow: 0 0 0 3px rgba(26, 60, 52, 0.2);
+    outline: none;
+}
+
+/* Invalid feedback */
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* Icon spacing */
+.form-label-modern i {
+    color: navy;
+    font-size: 18px;
+}
+
+</style>

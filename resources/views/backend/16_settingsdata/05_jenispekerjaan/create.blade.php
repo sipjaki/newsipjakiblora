@@ -7,6 +7,7 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('button')
 {{-- ---------------------------------------------------------------------- --}}
 
       @include('backend.00_administrator.00_baganterpisah.03_sidebar')
@@ -14,7 +15,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-              <section style="background: linear-gradient(to bottom, #a8e6a1, #ffffff); width: 100%; min-height: 100vh;" loading="lazy">
+<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -46,18 +47,16 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-               <a href="/besatuanhargamaterial">
-  <button class="button-modern"  >
-    <!-- Ikon Kembali -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-            d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-    </svg>
-    Kembali
-  </button>
-</a>
-
+                <a href="/settingsjenispekerjaan">
+                    <button class="button-modern">
+                    <!-- Ikon Kembali -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16" style="margin-right: 8px;">
+                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+               </svg>
+                    Kembali
+                </button>
+            </a>
         </div>
         <hr>
 
@@ -65,129 +64,51 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('create.satuanhargamaterialcreatenew') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('create.jenispekerjaan') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
-                                   <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
-
-    <!-- Uraian Bahan Material -->
-    <div class="form-modern mb-3">
-        <label class="form-label-modern" for="uraian">
-            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Bahan Material
-        </label>
-        <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror" value="{{ old('uraian') }}" />
-        @error('uraian')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <!<!-- Satuan -->
 <div class="form-modern mb-3">
-    <label class="form-label-modern" for="satuan">
-        <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
+    <label class="form-label" for="jenispekerjaan">
+        <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Jenis Pekerjaan
     </label>
-    <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
-        <option value="">-- Pilih Satuan --</option>
-        <option value="buah" {{ old('satuan') == 'Buah' ? 'selected' : '' }}>Buah</option>
-        <option value="lembar" {{ old('satuan') == 'Lembar' ? 'selected' : '' }}>Lembar</option>
-        <option value="batang" {{ old('satuan') == 'Batang' ? 'selected' : '' }}>Batang</option>
-        <option value="kg" {{ old('satuan') == 'Kg' ? 'selected' : '' }}>Kilogram (kg)</option>
-        <option value="liter" {{ old('satuan') == 'Liter' ? 'selected' : '' }}>Liter</option>
-        <option value="m" {{ old('satuan') == 'M' ? 'selected' : '' }}>Meter (m)</option>
-        <option value="meter lari" {{ old('satuan') == 'Meter Lari' ? 'selected' : '' }}>Meter Lari</option>
-        <option value="m2" {{ old('satuan') == 'M2' ? 'selected' : '' }}>Meter Persegi (m²)</option>
-        <option value="m3" {{ old('satuan') == 'M3' ? 'selected' : '' }}>Meter Kubik (m³)</option>
-        <option value="set" {{ old('satuan') == 'Set' ? 'selected' : '' }}>Set</option>
-        <option value="paket" {{ old('satuan') == 'Paket' ? 'selected' : '' }}>Paket</option>
-        <option value="roll" {{ old('satuan') == 'Roll' ? 'selected' : '' }}>Roll</option>
-        <option value="kaleng" {{ old('satuan') == 'Kaleng' ? 'selected' : '' }}>Kaleng</option>
-        <option value="pasang" {{ old('satuan') == 'Pasang' ? 'selected' : '' }}>Pasang</option>
-        <option value="unit" {{ old('satuan') == 'Unit' ? 'selected' : '' }}>Unit</option>
-    </select>
-    @error('satuan')
+    <input type="text" id="jenispekerjaan" name="jenispekerjaan"
+           class="form-control @error('jenispekerjaan') is-invalid @enderror"
+           value="{{ old('jenispekerjaan') }}" />
+    @error('jenispekerjaan')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
 
-<!-- Besaran -->
-<!-- Besaran (view untuk user) -->
-<div class="form-modern mb-3">
-    <label class="form-label-modern" for="besaran_view">
-        <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
-    </label>
-    <input type="text" id="besaran_view" class="form-control @error('besaran') is-invalid @enderror" value="{{ old('besaran') }}" />
-    <input type="hidden" id="besaran" name="besaran" value="{{ old('besaran') }}">
-    @error('besaran')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
 
-<script>
-    const inputView = document.getElementById('besaran_view');
-    const inputHidden = document.getElementById('besaran');
 
-    // Format angka → ribuan
-    function formatRupiah(angka) {
-        let number_string = angka.replace(/[^,\d]/g, '').toString();
-        let split = number_string.split(',');
-        let sisa = split[0].length % 3;
-        let rupiah = split[0].substr(0, sisa);
-        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-
-        if (ribuan) {
-            let separator = sisa ? '.' : '';
-            rupiah += separator + ribuan.join('.');
-        }
-
-        return split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
-    }
-
-    // Saat diketik
-    inputView.addEventListener('input', function() {
-        let raw = this.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        this.value = formatRupiah(raw);
-        inputHidden.value = raw; // angka asli disimpan ke input hidden
-    });
-
-    // Set ulang nilai hidden jika user sudah pernah isi (dari old value)
-    window.addEventListener('DOMContentLoaded', () => {
-        let oldValue = inputView.value.replace(/\./g, '').replace(/[^0-9]/g, '');
-        inputHidden.value = oldValue;
-        inputView.value = formatRupiah(oldValue);
-    });
-</script>
-
-</div>
-
-                                    <!-- End Right Column -->
+                                    </div>
                                 </div>
                                 <!-- End row -->
                             </div>
                             <!-- end::Body -->
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                              <div class="flex justify-end">
-                                    <button type="button" onclick="openModal()"
-                                    class="button-baru">
-                                        <!-- Ikon SVG Plus -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                        fill="currentColor" viewBox="0 0 16 16">
-                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                        </svg>
-                                        <span>Tambah Data</span>
-                                    </button>
-                                    </div>
+                                <div class="flex justify-end">
+                                    <button class="button-baru" type="button" onclick="openModal()">
 
+                                    <!-- Ikon SVG Pensil -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                               </svg>
+                                    <span style="font-family: 'Poppins', sans-serif;">Buat Baru</span>
+                                </button>
+                                </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                                       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin menambahkan data?
+                                        Apakah Anda ingin menambahkan Jenis Pekerjaan baru?
                                     </p>
 
                                       <!-- Tombol -->

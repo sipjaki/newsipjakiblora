@@ -19,6 +19,7 @@
 </style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
+@include('button')
 
 <!--begin::Body-->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -70,50 +71,14 @@
 
 
 <!-- Tombol Download Excel -->
-<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_shstkabupatenblora')"
-    onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
-    onmouseout="this.style.background='linear-gradient(45deg, #d4af37, #228B22)'; this.style.color='white'; this.style.transform='scale(1)';"
-    style="
-      background: linear-gradient(45deg, #d4af37, #228B22);
-      color: white;
-      border: none;
-      margin-right: 10px;
-      padding: 10px 20px;
-      border-radius: 15px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    ">
+<button class="button-modern" onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_shstkabupatenblora')">
     <i class="bi bi-download" style="font-size: 18px;"></i> Download Excel
 </button>
 @foreach ($data as $item)
 
 <!-- Tombol Create -->
 <a href="/beshstkabblora/update/{{$item->id}}" style="text-decoration: none;">
-    <button class="hide-on-mobile"
-        onmouseover="this.style.background='white'; this.style.color='black'; this.style.transform='scale(1.05)';"
-        onmouseout="this.style.background='linear-gradient(45deg, #228B22, #d4af37)'; this.style.color='white'; this.style.transform='scale(1)';"
-        style="
-          background: linear-gradient(45deg, #228B22, #d4af37);
-          color: white;
-          border: none;
-          margin-right: 10px;
-          padding: 10px 20px;
-          border-radius: 15px;
-          font-size: 16px;
-          font-weight: 700;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          transition: all 0.3s ease;
-          text-decoration: none;
-        ">
+    <button class="button-baru hide-on-mobile">
         <i class="bi bi-plus-lg" style="font-size: 18px;"></i> Update
     </button>
 </a>
@@ -132,7 +97,7 @@
 <table id="tabelBujkkonstruksi" class="zebra-table table-striped" class="table table-bordered">
     <thead>
         <tr>
-          <th style="width: 400px; text-align:center;">
+          <th style="width: 1000px; text-align:center;">
                 <i class="bi bi-hammer" style="margin-right: 6px;"></i> Pekerjaan
             </th>
             <th style="width: 65px; text-align:center;">
@@ -148,57 +113,57 @@
         <tr>
             <td><i class="bi bi-building" style="margin-right: 6px; color: navy;"></i> Bangunan Kantor Tidak Sederhana</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->bangunankantortidaksederhana, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->bangunankantortidaksederhana, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-building-fill" style="margin-right: 6px; color: navy;"></i> Bangunan Kantor Sederhana</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->bangunankantorsederhana, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->bangunankantorsederhana, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-house-door" style="margin-right: 6px; color: navy;"></i> Rumah Negara Tipe A</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->rumahnegaratipea, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->rumahnegaratipea, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-house-heart" style="margin-right: 6px; color: navy;"></i> Rumah Negara Tipe B</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->rumahnegaratipeb, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->rumahnegaratipeb, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-house" style="margin-right: 6px; color: navy;"></i> Rumah Negara Tipe C/D/E</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->rumahnegaratipecde, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->rumahnegaratipecde, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-border" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Depan</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->pagarrumahdepan, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->pagarrumahdepan, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-border-style" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Belakang</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->pagarrumahbelakang, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->pagarrumahbelakang, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-border-width" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Samping</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->pagarrumahsamping, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->pagarrumahsamping, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-border-width" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Negara Depan</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->pagarrumahnegaradepan, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->pagarrumahnegaradepan, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-shield-lock" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Negara Belakang</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->pagarrumahnegarabelakang, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->pagarrumahnegarabelakang, 2, ',', '.') }}</button></td>
         </tr>
         <tr>
             <td><i class="bi bi-shield-check" style="margin-right: 6px; color: navy;"></i> Pagar Rumah Negara Samping</td>
             <td style="text-align: center;">Rp</td>
-            <td style="text-align: right">{{ number_format($item->pagarrumahnegarasamping, 2, ',', '.') }}</td>
+            <td style="text-align: right"><button class="button-modern">{{ number_format($item->pagarrumahnegarasamping, 2, ',', '.') }}</button></td>
         </tr>
     @endforeach
 </tbody>
@@ -206,19 +171,7 @@
 </table>
 <br><br>
 <div style="text-align: center; margin: 20px 0;">
-    <button
-        style="
-            background: linear-gradient(45deg, #d4af37, #228B22);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: default;
-            transition: all 0.3s ease;
-        "
-    >
+    <button class="button-modern">
         {{ $title }}
     </button>
 </div>

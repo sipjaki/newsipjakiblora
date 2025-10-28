@@ -13,8 +13,10 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;">
-        <!--begin::App Content Header-->
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;"> --}}
+         <section style="background: linear-gradient(to bottom, #a8e6a1, #ffffff); width: 100%; min-height: 100vh;" loading="lazy">
+
+            <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
           <div class="container-fluid">
@@ -51,11 +53,8 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
 
-                <a href="/bekepaladinas">
-                    <button
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                <a href="/besatuanhargamaterial">
+                    <button class="button-modern">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -85,8 +84,8 @@
                                        <div class="col-md-6">
 
         <!-- Uraian Bahan Material -->
-        <div class="mb-3">
-            <label class="form-label" for="uraian">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="uraian">
                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Uraian Bahan Material
             </label>
             <input type="text" id="uraian" name="uraian" class="form-control @error('uraian') is-invalid @enderror"
@@ -97,8 +96,8 @@
         </div>
 
         <!-- Satuan -->
-        <div class="mb-3">
-            <label class="form-label" for="satuan">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="satuan">
                 <i class="bi bi-rulers" style="margin-right: 8px; color: navy;"></i> Satuan
             </label>
             <select id="satuan" name="satuan" class="form-select @error('satuan') is-invalid @enderror">
@@ -118,8 +117,8 @@
         </div>
 
         <!-- Besaran -->
-        <div class="mb-3">
-            <label class="form-label" for="besaran_view">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="besaran_view">
                 <i class="bi bi-123" style="margin-right: 8px; color: navy;"></i> Besaran
             </label>
             <input type="text" id="besaran_view" class="form-control @error('besaran') is-invalid @enderror"
@@ -171,17 +170,9 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                     <button type="button" onclick="openModal()"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-                                    style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-
-                                    <!-- Ikon SVG Pensil -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                         fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                      <path d="M15.502 1.94a1.5 1.5 0 0 1 0 2.12L5.207 14.354a1 1 0 0 1-.39.243l-4 1.5a.5.5 0 0 1-.641-.641l1.5-4a1 1 0 0 1 .243-.39L13.44.44a1.5 1.5 0 0 1 2.12 0zm-2.121 1.415L4.854 11.882l-.708 2.122 2.121-.707L15.5 3.354l-2.12-2.121z"/>
-                                    </svg>
-
-                                    <span style="font-family: 'Poppins', sans-serif;">Update</span>
+                                    class="button-berkas"
+                                    >
+                                    <span style="font-family: 'Poppins', sans-serif;">Perbaikan Data ?</span>
                                 </button>
                                 </div>
                                 <!-- Modal Konfirmasi -->
