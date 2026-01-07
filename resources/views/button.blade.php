@@ -74,8 +74,6 @@
 .zebra-table th:last-child {
   border-top-right-radius: 10px;
 } */
-
-/* 🌿 Modern Zebra Table Style */
 .zebra-table {
   width: 100%;
   border-collapse: collapse;
@@ -86,12 +84,15 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Header – modern green with soft shadow */
+/* Header – modern green Blora */
+
 .zebra-table thead {
-  background: linear-gradient(135deg, #1a3c34, #2f5d4f);
+  background: linear-gradient(135deg, #1f7f5c, #1f7f5c);
 }
+
 
 .zebra-table th {
   color: #fff;
@@ -102,33 +103,7 @@
   text-align: left;
   border-bottom: 1px solid #2a5247;
   font-size: 14px;
-}
-
-/* Isi tabel */
-.zebra-table td {
-  padding: 14px 14px;
-  border-bottom: 1px solid #f0f5f3;
-  color: #444;
-  font-weight: 400;
-  background-color: #fff;
-}
-
-/* Zebra effect lembut */
-.zebra-table tbody tr:nth-child(even) {
-  background-color: #f8fbfa;
-}
-
-/* Hover lembut dengan efek transisi */
-.zebra-table tbody tr:hover {
-  background-color: #eaf5f1;
-  transition: all 0.3s ease;
-}
-
-/* Tanpa garis vertikal */
-.zebra-table th,
-.zebra-table td {
-  border-left: none;
-  border-right: none;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Corner radius header */
@@ -137,6 +112,35 @@
 }
 .zebra-table th:last-child {
   border-top-right-radius: 12px;
+}
+
+/* Isi tabel – td transparan supaya hover tr bisa kelihatan */
+.zebra-table td {
+  padding: 14px 14px;
+  border-bottom: 1px solid #f0f5f3;
+  color: #444;
+  font-weight: 400;
+  background-color: transparent; /* ganti dari #fff ke transparent */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Zebra effect lembut di tbody – pakai tr background bukan td */
+.zebra-table tbody tr:nth-child(even) {
+  background-color: #f8fbfa;
+}
+
+/* Hover lembut dengan warna orange muda */
+.zebra-table tbody tr:hover {
+  background-color: #ffd8a8; /* orange muda */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Tanpa garis vertikal */
+.zebra-table th,
+.zebra-table td {
+  border-left: none;
+  border-right: none;
 }
 
 /* Responsive look */
@@ -148,14 +152,12 @@
   }
 }
 
-/* Tambahan animasi saat muncul */
-.zebra-table {
-  animation: fadeIn 0.5s ease-in-out;
-}
+/* Animasi muncul */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 .button-abgblora {
     border: none;
@@ -1316,36 +1318,50 @@ body {
 
 /* Card-style form wrapper */
 .form-modern {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 16px 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    background: #ffffff; /* putih */
+    border-left: 6px solid #2a7f4f; /* hijau khas Blora */
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .form-modern:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* Label modern */
+/* Label modern di dalam form */
 .form-label-modern {
-    font-weight: 600;
-    color: #1a3c34;
-    margin-bottom: 8px;
+    font-weight: 500;
+    color: #000000; /* hijau Blora */
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     font-size: 15px;
 }
 
-/* Select modern style */
-.form-select-modern {
+/* Input, textarea, select dalam form */
+.form-modern input,
+.form-modern textarea,
+.form-modern select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #c4d9c8;
     border-radius: 8px;
-    border: 1px solid #d1d5db;
-    padding: 10px 14px;
-    font-size: 15px;
-    color: #1f2937;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
     transition: all 0.3s ease;
+}
+
+/* Hover / focus input */
+.form-modern input:focus,
+.form-modern textarea:focus,
+.form-modern select:focus {
+    outline: none;
+    border-color: #2a7f4f;
+    box-shadow: 0 0 6px rgba(42, 127, 79, 0.4);
 }
 
 .form-select-modern:focus {

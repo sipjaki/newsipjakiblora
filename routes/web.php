@@ -620,9 +620,9 @@ Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware
 // ======================================= BERANDA WEB -------------------------------------------------------------
 // ---------------------- MENU 2 BERANDA  -----------------------------------------------------
 // ---------------------- MENU 1 HEADER -----------------------------------------------------
-Route::get('/header', [AdminDashboardController::class, 'header'])->middleware('auth');
-Route::get('/header/update/{id}', [AdminDashboardController::class, 'headerupdate'])->middleware('auth');
-Route::post('/header/updatecreate/{id}', [AdminDashboardController::class, 'headerupdatecreate'])->middleware(['auth'])->name('update.header');
+Route::get('/header', [AdminDashboardController::class, 'header'])->middleware(['auth', 'can:admin2']);
+Route::get('/header/update/{id}', [AdminDashboardController::class, 'headerupdate'])->middleware(['auth', 'can:admin2']);
+Route::post('/header/updatecreate/{id}', [AdminDashboardController::class, 'headerupdatecreate'])->middleware(['auth', 'can:admin2'])->name('update.header');
 
 // Route::get('/header/delete/{judul}', [AdminDashboardController::class, 'headerdelete'])->middleware('auth');
 Route::delete('/header/delete/{judul}', [AdminDashboardController::class, 'headerdelete'])->middleware('auth');

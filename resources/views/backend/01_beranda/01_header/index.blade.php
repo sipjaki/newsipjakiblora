@@ -14,6 +14,10 @@
       <!--begin::App Main-->
       <main class="app-main">
 
+<section style="background: linear-gradient(to bottom, #ffffff); width: 100%; min-height: 100vh;">
+
+  {{-- <section style="background-image: url('/assets/00_android/iconmenu/gambarbaru.png'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">        <!--begin::App Content Header--> --}}
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -34,32 +38,40 @@
         {{-- ======================================================= --}}
         {{-- ALERT --}}
 
-        {{-- @include('backend.00_administrator.00_baganterpisah.06_alert') --}}
-  @include('backend.00_administrator.00_baganterpisah.11_alert')
+            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+            @include('backend.00_administrator.00_baganterpisah.11_alert')
 
-        {{-- ======================================================= --}}
+  {{-- ======================================================= --}}
 
-        <div class="container-fluid">
+<br>
+  <div class="container-fluid">
             <!--begin::Row-->
-            <div class="row" style="margin-right: 10px; margin-left:10px;">
+            <div class="row" style="margin-right: 10px; margin-left:10px; height:75vh;">
 
                 <!-- /.card -->
                 <div class="card mb-4">
-                    <div class="card-header">
-                        <h2 style="color: black;" class="card-title">Halaman Pengaturan : {{$title}} </h2>
+                    <br>
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
-                    </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="zebra-table table-striped">
                                 <thead>
-                                    <tr>
-                                        <th style="width: 100px; text-align:center;">No</th>
-                                        <th style="width: 400px; text-align:center;">Judul</th>
-                                        <th style="width: 500px; text-align:center;">Gambar/Foto</th>
-                                        <th style="width: 250px; text-align: center;">Aksi</th>
-                                    </tr>
+ <tr>
+        <th style="width: 100px; text-align:center;">
+            <i class="bi bi-hash"></i> No
+        </th>
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-card-text"></i> Judul
+        </th>
+        <th style="width: 500px; text-align:center;">
+            <i class="bi bi-image"></i> Gambar/Foto
+        </th>
+        <th style="width: 250px; text-align:center;">
+            <i class="bi bi-gear"></i> Aksi
+        </th>
+    </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $item )
@@ -98,17 +110,6 @@
 
                                         @include('backend.00_administrator.00_baganterpisah.05_modalcarddelete')
 
-                                            <style>
-                                                /* Hover effect */
-                                                .btn-info:hover, .btn-warning:hover, .btn-danger:hover {
-                                                    background-color: #fff !important; /* Keep the background white on hover */
-                                                    color: black !important; /* Change text color to black on hover */
-                                                }
-
-                                                .btn-info:hover i, .btn-warning:hover i, .btn-danger:hover i {
-                                                    color: black !important; /* Ensure the icon color changes to black */
-                                                }
-                                            </style>
                                         </td>
 
                                     </tr>
@@ -125,6 +126,7 @@
         </div>
         <!--end::Row-->
         </div>
+</section>
                   <!--end::Container-->
         <!--end::App Content Header-->
         <!--begin::App Content-->

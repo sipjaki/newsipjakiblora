@@ -699,7 +699,11 @@
 
         @can('super_admin')
 
-                <li class="nav-header" style="color: white;">BERANDA WEB</li>
+        <li class="nav-header" style="color: orange; padding-bottom: 6px;">
+            Beranda Web
+            <div style="height:1px; background:#ffa500; opacity:0.5; margin-top:6px;"></div>
+
+        </li>
 
                 <li class="nav-item">
 
@@ -741,7 +745,9 @@
           </ul>
         </li>
 
-                <li class="nav-header" style="color: white;">MAIN MENU</li>
+                <li class="nav-header" style="color: orange;">Menu Mas Jaki
+                                <div style="height:1px; background:#ffa500; opacity:0.5; margin-top:6px;"></div>
+                </li>
 
               <li class="nav-item">
 
@@ -1563,7 +1569,9 @@
 
             {{-- ========================== --}}
 
-            <li class="nav-header" style="color: white;">PERATURAN JASA KONSTRUKSI</li>
+            <li class="nav-header" style="color: orange;">Peraturan
+                            <div style="height:1px; background:#ffa500; opacity:0.5; margin-top:6px;"></div>
+            </li>
 
             <li class="nav-item">
                 <li class="nav-item">
@@ -1673,18 +1681,20 @@
 
         {{-- ========================== --}}
 
-            <li class="nav-header" style="color: white;">Administrator</li>
+            <li class="nav-header" style="color: orange;">Administrator
+                            <div style="height:1px; background:#ffa500; opacity:0.5; margin-top:6px;"></div>
+            </li>
 
 
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                {{-- <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-speedometer" style="color: white"></i>
                   <p style="color: white">
                     Pengaturan Data
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
-                </a>
+                </a> --}}
 
 
                 <ul class="nav nav-treeview">
@@ -1865,7 +1875,7 @@
 
             {{-- ---------------------------------------------  --}}
 
-            <li class="nav-header" style="color: white;">LOGOUT</li>
+            <li class="nav-header" style="color: red;">Logout</li>
 
             <li class="nav-item">
                 {{-- <li class="nav-item"> --}}

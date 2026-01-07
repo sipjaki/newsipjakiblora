@@ -14,7 +14,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;"> --}}
-        <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+        <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -53,16 +53,13 @@
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
 
                 <a href="/beinfoopd">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              viewBox="0 0 16 16" style="margin-right: 8px;">
                           <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
                         </svg>
-
-                        <span style="font-family: 'Poppins', sans-serif; font-size: 16px; line-height: 1.5;">
                             Kembali
-                        </span>
                     </button>
                 </a>
         </div>
@@ -82,8 +79,8 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Nama OPD -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namaopd">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="namaopd">
                                                 <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama OPD
                                             </label>
                                             <input type="text" id="namaopd" name="namaopd" class="form-control @error('namaopd') is-invalid @enderror" value="{{ old('namaopd', $data->namaopd) }}" />
@@ -93,8 +90,8 @@
                                         </div>
 
                                         <!-- Alamat OPD -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="alamatopd">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="alamatopd">
                                                 <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> Alamat OPD
                                             </label>
                                             <textarea id="alamatopd" name="alamatopd" class="form-control @error('alamatopd') is-invalid @enderror" rows="4">{{ old('alamatopd', $data->alamatopd) }}</textarea>
@@ -104,8 +101,8 @@
                                         </div>
 
                                         <!-- RT/RW -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="rtrw">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="rtrw">
                                                 <i class="bi bi-house-door-door" style="margin-right: 8px; color: navy;"></i> RT/RW
                                             </label>
                                             <input type="text" id="rtrw" name="rtrw" class="form-control @error('rtrw') is-invalid @enderror" value="{{ old('rtrw', $data->rtrw) }}" />
@@ -115,8 +112,8 @@
                                         </div>
 
                                         <!-- Kode Pos -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kodepos">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="kodepos">
                                                 <i class="bi bi-postage" style="margin-right: 8px; color: navy;"></i> Kode Pos
                                             </label>
                                             <input type="text" id="kodepos" name="kodepos" class="form-control @error('kodepos') is-invalid @enderror" value="{{ old('kodepos', $data->kodepos) }}" />
@@ -126,8 +123,8 @@
                                         </div>
 
                                         <!-- Kelurahan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kelurahan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="kelurahan">
                                                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Kelurahan
                                             </label>
                                             <input type="text" id="kelurahan" name="kelurahan" class="form-control @error('kelurahan') is-invalid @enderror" value="{{ old('kelurahan', $data->kelurahan) }}" />
@@ -137,8 +134,8 @@
                                         </div>
 
                                         <!-- Kecamatan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kecamatan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="kecamatan">
                                                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Kecamatan
                                             </label>
                                             <input type="text" id="kecamatan" name="kecamatan" class="form-control @error('kecamatan') is-invalid @enderror" value="{{ old('kecamatan', $data->kecamatan) }}" />
@@ -150,8 +147,8 @@
 
                                     <div class="col-md-6">
                                         <!-- Kota -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kota">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="kota">
                                                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Kota
                                             </label>
                                             <input type="text" id="kota" name="kota" class="form-control @error('kota') is-invalid @enderror" value="{{ old('kota', $data->kota) }}" />
@@ -161,8 +158,8 @@
                                         </div>
 
                                         <!-- Provinsi -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="provinsi">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="provinsi">
                                                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Provinsi
                                             </label>
                                             <input type="text" id="provinsi" name="provinsi" class="form-control @error('provinsi') is-invalid @enderror" value="{{ old('provinsi', $data->provinsi) }}" />
@@ -172,8 +169,8 @@
                                         </div>
 
                                         <!-- Negara -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="negara">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="negara">
                                                 <i class="bi bi-globe" style="margin-right: 8px; color: navy;"></i> Negara
                                             </label>
                                             <input type="text" id="negara" name="negara" class="form-control @error('negara') is-invalid @enderror" value="{{ old('negara', $data->negara) }}" />
@@ -183,8 +180,8 @@
                                         </div>
 
                                         <!-- Posisi Geografis -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="posisigeografis">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="posisigeografis">
                                                 <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Posisi Geografis
                                             </label>
                                             <textarea id="posisigeografis" name="posisigeografis" class="form-control @error('posisigeografis') is-invalid @enderror" rows="4">{{ old('posisigeografis', $data->posisigeografis) }}</textarea>
@@ -194,8 +191,8 @@
                                         </div>
 
                                         <!-- Tipe Dinas -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tipedinas">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="tipedinas">
                                                 <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Tipe Dinas
                                             </label>
                                             <select id="tipedinas" name="tipedinas" class="form-control @error('tipedinas') is-invalid @enderror">
@@ -221,7 +218,7 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                    <button class="button-berkas" type="button" onclick="openModal()">
-    <i class="bi bi-pencil-square" style="margin-right: 8px; font-size: 18px; color: white; vertical-align: middle;"></i>
+    <i class="bi bi-pencil-square"></i>
     Perbaikan Data ?
 </button>
 
