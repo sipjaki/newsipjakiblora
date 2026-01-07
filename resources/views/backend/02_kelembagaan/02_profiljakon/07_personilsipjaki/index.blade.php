@@ -15,7 +15,7 @@
       <main class="app-main">
 
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-      <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+      <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -43,7 +43,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
@@ -62,8 +62,8 @@
                                         <!-- Left Column (6/12) -->
 <!-- Left Column (6/12) -->
 <div class="col-md-12">
-    <div class="mb-3">
-        <label class="form-label">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nomor
         </label>
         <div style="max-width: 100%; padding: 10px; position: relative;">
@@ -78,15 +78,15 @@
 
 <!-- Right Column (6/12) -->
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 1
         </label>
         <input class="form-control" value="{{$item->operator1}}" readonly/>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 2
         </label>
         <input class="form-control" value="{{$item->operator2}}" readonly/>
@@ -95,15 +95,15 @@
 <!-- End Right Column -->
 
 <div class="col-md-6">
-    <div class="mb-3">
-        <label class="form-label">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 3
         </label>
         <input class="form-control" value="{{$item->operator3}}" readonly/>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern">
             <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 4
         </label>
         <input class="form-control" value="{{$item->operator4}}" readonly/>
@@ -126,12 +126,12 @@
                         <a href="/besipjaki/update/{{$item->id}}">
                             <button class="button-berkas" type="button" onclick="openModal()">
     <i class="bi bi-pencil-square"></i>
-    Update ?
+    Perbaikan Data ?
 </button>
 
                         </a>
                         <a href="/beprofiljakon">
-                            <button class="button-newvalidasi">
+                            <button class="button-modern">
                             <!-- Ikon Kembali -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16" style="margin-right: 8px;">

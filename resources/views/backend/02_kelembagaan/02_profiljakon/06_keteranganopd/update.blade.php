@@ -14,7 +14,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-       <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+       <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -52,7 +52,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/beinformasi">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -79,19 +79,25 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Informasi OPD -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="informasiopd">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="informasiopd">
                                                 <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Informasi OPD
                                             </label>
-                                            <textarea id="informasiopd" name="informasiopd" class="form-control @error('informasiopd') is-invalid @enderror">{{ old('informasiopd', $data->informasiopd) }}</textarea>
+                                          <textarea
+                                                id="informasiopd"
+                                                name="informasiopd"
+                                                rows="12"
+                                                class="form-control @error('informasiopd') is-invalid @enderror"
+                                            >{{ old('informasiopd', $data->informasiopd) }}</textarea>
+
                                             @error('informasiopd')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
                                         <!-- No Telepon -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="notelepon">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="notelepon">
                                                 <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> No Telepon
                                             </label>
                                             <input type="number" id="notelepon" name="notelepon" class="form-control @error('notelepon') is-invalid @enderror" value="{{ old('notelepon', $data->notelepon) }}" />
@@ -101,8 +107,8 @@
                                         </div>
 
                                         <!-- Instagram -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="instagram">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="instagram">
                                                 <i class="bi bi-instagram" style="margin-right: 8px; color: navy;"></i> Instagram
                                             </label>
                                             <input type="text" id="instagram" name="instagram" class="form-control @error('instagram') is-invalid @enderror" value="{{ old('instagram', $data->instagram) }}" />
@@ -114,8 +120,8 @@
 
                                     <div class="col-md-6">
                                         <!-- Tiktok -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tiktok">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="tiktok">
                                                 <i class="bi bi-tiktok" style="margin-right: 8px; color: navy;"></i> Tiktok
                                             </label>
                                             <input type="text" id="tiktok" name="tiktok" class="form-control @error('tiktok') is-invalid @enderror" value="{{ old('tiktok', $data->tiktok) }}" />
@@ -125,8 +131,8 @@
                                         </div>
 
                                         <!-- Email -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="email">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="email">
                                                 <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
                                             </label>
                                             <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $data->email) }}" />
@@ -143,7 +149,7 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                     <button class="button-berkas" type="button" onclick="openModal()">
-    <i class="bi bi-pencil-square" style="margin-right: 8px; font-size: 18px; color: white; vertical-align: middle;"></i>
+    <i class="bi bi-pencil-square"></i>
     Perbaikan Data ?
 </button>
 
