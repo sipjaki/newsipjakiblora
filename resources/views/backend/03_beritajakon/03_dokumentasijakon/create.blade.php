@@ -15,7 +15,7 @@
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
 
             <!--begin::App Content Header-->
@@ -52,7 +52,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                     </div>
 
@@ -66,7 +66,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/bedokumentasijakon">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -90,8 +90,8 @@
                                     <!-- Left Column (6/12) -->
                       <div class="col-md-12">
     <!-- Judul -->
-    <div class="mb-3">
-        <label class="form-label" for="judul">
+    <div class="form-modern mb-3">
+        <label class="form-label-modern" for="judul">
             <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul Kegiatan
         </label>
         <input type="text" id="judul" name="judul"
@@ -102,27 +102,18 @@
         @enderror
     </div>
 
-    <div class="text-center">
-    <hr class="my-4" style="border-top: 2px dashed #000000; width: 60%; margin: auto;">
-    <h5 style="color: #0d6efd; font-weight: bold; margin-top: 5px; font-size:16px;">
-        <i class="bi bi-upload" style="margin-right: 6px;"></i>
-        Upload Dokumentasi Kegiatan Jasa Konstruksi
-    </h5>
-    <hr class="my-4" style="border-top: 2px dashed #000000; width: 60%; margin: auto;">
-</div>
-
-    <!-- Foto Kegiatan 1 - 12 -->
+       <!-- Foto Kegiatan 1 - 12 -->
     <div class="row">
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan1" class="form-label">Foto Kegiatan 1</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan1" class="form-label-modern">Foto Kegiatan 1</label>
             <input type="file" name="fotokegiatan1" id="fotokegiatan1"
                    class="form-control" accept="image/*"
                    onchange="previewImage1(event)">
             <img id="preview1" src="#" alt="Preview Foto 1"
                  style="display:none; max-height:200px; margin-top:10px;">
         </div>
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan2" class="form-label">Foto Kegiatan 2</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan2" class="form-label-modern">Foto Kegiatan 2</label>
             <input type="file" name="fotokegiatan2" id="fotokegiatan2"
                    class="form-control" accept="image/*"
                    onchange="previewImage2(event)">
@@ -132,16 +123,16 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan3" class="form-label">Foto Kegiatan 3</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan3" class="form-label-modern">Foto Kegiatan 3</label>
             <input type="file" name="fotokegiatan3" id="fotokegiatan3"
                    class="form-control" accept="image/*"
                    onchange="previewImage3(event)">
             <img id="preview3" src="#" alt="Preview Foto 3"
                  style="display:none; max-height:200px; margin-top:10px;">
         </div>
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan4" class="form-label">Foto Kegiatan 4</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan4" class="form-label-modern">Foto Kegiatan 4</label>
             <input type="file" name="fotokegiatan4" id="fotokegiatan4"
                    class="form-control" accept="image/*"
                    onchange="previewImage4(event)">
@@ -151,16 +142,16 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan5" class="form-label">Foto Kegiatan 5</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan5" class="form-label-modern">Foto Kegiatan 5</label>
             <input type="file" name="fotokegiatan5" id="fotokegiatan5"
                    class="form-control" accept="image/*"
                    onchange="previewImage5(event)">
             <img id="preview5" src="#" alt="Preview Foto 5"
                  style="display:none; max-height:200px; margin-top:10px;">
         </div>
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan6" class="form-label">Foto Kegiatan 6</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan6" class="form-label-modern">Foto Kegiatan 6</label>
             <input type="file" name="fotokegiatan6" id="fotokegiatan6"
                    class="form-control" accept="image/*"
                    onchange="previewImage6(event)">
@@ -170,16 +161,16 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan7" class="form-label">Foto Kegiatan 7</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan7" class="form-label-modern">Foto Kegiatan 7</label>
             <input type="file" name="fotokegiatan7" id="fotokegiatan7"
                    class="form-control" accept="image/*"
                    onchange="previewImage7(event)">
             <img id="preview7" src="#" alt="Preview Foto 7"
                  style="display:none; max-height:200px; margin-top:10px;">
         </div>
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan8" class="form-label">Foto Kegiatan 8</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan8" class="form-label-modern">Foto Kegiatan 8</label>
             <input type="file" name="fotokegiatan8" id="fotokegiatan8"
                    class="form-control" accept="image/*"
                    onchange="previewImage8(event)">
@@ -189,16 +180,16 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan9" class="form-label">Foto Kegiatan 9</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan9" class="form-label-modern">Foto Kegiatan 9</label>
             <input type="file" name="fotokegiatan9" id="fotokegiatan9"
                    class="form-control" accept="image/*"
                    onchange="previewImage9(event)">
             <img id="preview9" src="#" alt="Preview Foto 9"
                  style="display:none; max-height:200px; margin-top:10px;">
         </div>
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan10" class="form-label">Foto Kegiatan 10</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan10" class="form-label-modern">Foto Kegiatan 10</label>
             <input type="file" name="fotokegiatan10" id="fotokegiatan10"
                    class="form-control" accept="image/*"
                    onchange="previewImage10(event)">
@@ -208,16 +199,16 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan11" class="form-label">Foto Kegiatan 11</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan11" class="form-label-modern">Foto Kegiatan 11</label>
             <input type="file" name="fotokegiatan11" id="fotokegiatan11"
                    class="form-control" accept="image/*"
                    onchange="previewImage11(event)">
             <img id="preview11" src="#" alt="Preview Foto 11"
                  style="display:none; max-height:200px; margin-top:10px;">
         </div>
-        <div class="col-md-6 mb-3">
-            <label for="fotokegiatan12" class="form-label">Foto Kegiatan 12</label>
+        <div class="col-md-6 form-modern mb-3">
+            <label for="fotokegiatan12" class="form-label-modern">Foto Kegiatan 12</label>
             <input type="file" name="fotokegiatan12" id="fotokegiatan12"
                    class="form-control" accept="image/*"
                    onchange="previewImage12(event)">
@@ -358,16 +349,13 @@ function previewImage12(event) {
                             <!-- end::Body -->
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                                    <button type="button" onclick="openModal()" class="button-hijau">
 
-                                    <!-- Ikon SVG Pensil -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                               </svg>
-                                    <span style="font-family: 'Poppins', sans-serif;">Buat Dokumentasi </span>
-                                </button>
+<button type="button" onclick="openModal()" class="button-baru">
+    <i class="bi bi-plus"></i>
+    <span style="font-family: 'Poppins', sans-serif;">Tambah Dokumentasi</span>
+</button>
+
+
                                 </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

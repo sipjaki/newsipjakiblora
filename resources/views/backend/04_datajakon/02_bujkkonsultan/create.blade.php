@@ -14,7 +14,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -39,7 +39,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                     </div>
 
                            {{-- ======================================================= --}}
@@ -47,7 +47,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/bebujkkonsultan">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -75,15 +75,15 @@
                                                 <input type="hidden" name="user_id" value="{{ $user->id }}">
 
                                                 <!-- Tampilkan Nama Admin -->
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="user_id_display">
+                                                <div class="form-modern mb-3">
+                                                    <label class="form-label-modern" for="user_id_display">
                                                         <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Administrator
                                                     </label>
                                                     <input type="text" id="user_id_display" class="form-control" value="{{ $user->name }}" disabled>
                                                 </div>
 
-                                        <div class="mb-3">
-                                            <label class="form-label" for="asosiasimasjaki_id">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="asosiasimasjaki_id">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Asosiasi Jasa Konstruksi
                                             </label>
                                             <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
@@ -100,8 +100,8 @@
                                         </div>
 
                                         <!-- Nama Lengkap -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="namalengkap">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Badan Usaha
                                             </label>
                                             <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}" />
@@ -111,8 +111,8 @@
                                         </div>
 
                                         <!-- Alamat -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="alamat">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="alamat">
                                                 <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> Alamat
                                             </label>
                                             <input type="text" id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old('alamat') }}" />
@@ -122,8 +122,8 @@
                                         </div>
 
                                         <!-- Nomor Telepon -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_telepon">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="no_telepon">
                                                 <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> Nomor Telepon
                                             </label>
                                             <input type="number" id="no_telepon" name="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon') }}" />
@@ -133,8 +133,8 @@
                                         </div>
 
                                         <!-- Email -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="email">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="email">
                                                 <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
                                             </label>
                                             <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" />
@@ -144,8 +144,8 @@
                                         </div>
 
                                         <!-- Nomor Induk Berusaha -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nomorindukberusaha">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="nomorindukberusaha">
                                                 <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> Nomor Induk Berusaha
                                             </label>
                                             <input type="number" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control @error('nomorindukberusaha') is-invalid @enderror" value="{{ old('nomorindukberusaha') }}" />
@@ -162,8 +162,8 @@
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
 
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pju">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="pju">
                                                 <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> PJU
                                             </label>
                                             <input type="text" id="pju" name="pju" class="form-control @error('pju') is-invalid @enderror" value="{{ old('pju') }}" />
@@ -172,8 +172,8 @@
                                             @enderror
                                         </div>
                                         <!-- No Akte -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_akte">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="no_akte">
                                                 <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> No Akte
                                             </label>
                                             <input type="text" id="no_akte" name="no_akte" class="form-control @error('no_akte') is-invalid @enderror" value="{{ old('no_akte') }}" />
@@ -183,8 +183,8 @@
                                         </div>
 
                                         <!-- Tanggal -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="tanggal">
                                                 <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal
                                             </label>
                                             <input type="date" id="tanggal" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" value="{{ old('tanggal') }}" />
@@ -194,8 +194,8 @@
                                         </div>
 
                                         <!-- Nama Notaris -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_notaris">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="nama_notaris">
                                                 <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Nama Notaris
                                             </label>
                                             <input type="text" id="nama_notaris" name="nama_notaris" class="form-control @error('nama_notaris') is-invalid @enderror" value="{{ old('nama_notaris') }}" />
@@ -205,8 +205,8 @@
                                         </div>
 
                                         <!-- No Pengesahan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_pengesahan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="no_pengesahan">
                                                 <i class="bi bi-file-earmark-check" style="margin-right: 8px; color: navy;"></i> No Pengesahan
                                             </label>
                                             <input type="text" id="no_pengesahan" name="no_pengesahan" class="form-control @error('no_pengesahan') is-invalid @enderror" value="{{ old('no_pengesahan') }}" />
@@ -215,8 +215,8 @@
                                             @enderror
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label class="form-label" for="uploadberkas">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="uploadberkas">
                                                 <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Upload Berkas
                                             </label>
                                             <input type="file" id="uploadberkas" name="uploadberkas"
@@ -309,16 +309,11 @@
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                                    <button type="button" onclick="openModal()" class="button-hijau">
+                                   <button type="button" onclick="openModal()" class="button-baru">
+                                        <i class="bi bi-plus-lg" style="margin-right:8px;"></i>
+                                        <span style="font-family: 'Poppins', sans-serif;">Tambah Data</span>
+                                    </button>
 
-                                    <!-- Ikon SVG Pensil -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                               </svg>
-                                    <span style="font-family: 'Poppins', sans-serif;">Tambah Data</span>
-                                </button>
                                 </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

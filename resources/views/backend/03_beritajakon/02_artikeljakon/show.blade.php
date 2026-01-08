@@ -16,7 +16,7 @@
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -45,7 +45,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                            {{-- ======================================================= --}}
         {{-- ALERT --}}
@@ -57,7 +57,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/beartikeljakon">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -83,8 +83,8 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- User ID -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="user_id">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="user_id">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> User ID
                                             </label>
                                             <select id="user_id" name="user_id" class="form-control" disabled>
@@ -96,24 +96,24 @@
                                         </div>
 
                                         <!-- Judul Berita -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="judulberita">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="judulberita">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul Artikel
                                             </label>
                                             <input type="text" id="judul" name="judul" class="form-control" value="{{ $data->judul }}" disabled />
                                         </div>
 
                                         <!-- Tanggal -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="tanggal">
                                                 <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal
                                             </label>
                                             <input type="date" id="tanggal" name="tanggal" class="form-control" value="{{ $data->tanggal }}" disabled />
                                         </div>
 
                                         <!-- Keterangan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="keterangan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="keterangan">
                                                 <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Keterangan
                                             </label>
                                             <textarea id="keterangan" name="keterangan" class="form-control" style="height: 400px;" disabled>{{ $data->keterangan }}</textarea>
@@ -128,8 +128,8 @@
                                         <!-- Foto -->
                                         <!-- Pastikan untuk load Bootstrap dan Popper.js yang benar -->
 
-                                        <div class="mb-3">
-                                            <label class="form-label" for="foto">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="foto">
                                                 <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
                                             </label>
                                             <div class="form-control" style="border: none;">
@@ -199,8 +199,8 @@
                                         </script>
 
 
-                                                                                <div class="mb-3">
-                                            <label class="form-label" for="foto">
+                                                                                <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 1
                                             </label>
                                             <div class="form-control" style="border: none;">
@@ -221,8 +221,8 @@
                                         </div>
 
                                         <!-- Foto 1 -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="foto1">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="foto1">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 2
                                             </label>
                                             <div style="margin-top: 10px;">
@@ -240,8 +240,8 @@
                                         </div>
 
                                         <!-- Foto 2 -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="foto2">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="foto2">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 3
                                             </label>
                                             <div class="form-control" style="border: none;">

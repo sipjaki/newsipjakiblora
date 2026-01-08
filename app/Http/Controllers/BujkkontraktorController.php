@@ -751,7 +751,7 @@ public function beasosiasiupdatecreate(Request $request, $id)
 
 public function bebujkkonstruksi(Request $request)
 {
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
 $query = bujkkontraktor::query();

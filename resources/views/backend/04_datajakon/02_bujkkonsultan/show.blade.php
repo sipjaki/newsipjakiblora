@@ -16,7 +16,7 @@
       <main class="app-main">
 
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -43,13 +43,13 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                            {{-- ======================================================= --}}
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/bebujkkonsultan">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -77,8 +77,8 @@
                                         <!-- Nama Asosiasi -->
 
                                         <!-- Nama Lengkap -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="asosiasimasjaki">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="asosiasimasjaki">
                                                 <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Asosiasi
                                             </label>
                                             <input type="text" id="asosiasimasjaki" name="asosiasimasjaki" class="form-control"
@@ -91,40 +91,40 @@
 
 
                                         <!-- Nama Lengkap -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="namalengkap">
                                                 <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
                                             </label>
                                             <input type="text" id="namalengkap" name="namalengkap" class="form-control" value="{{ $data->namalengkap }}" />
                                         </div>
 
                                         <!-- Alamat -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="alamat">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="alamat">
                                                 <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> Alamat
                                             </label>
                                             <input type="text" id="alamat" name="alamat" class="form-control" value="{{ $data->alamat }}" />
                                         </div>
 
                                         <!-- No Telepon -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_telepon">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="no_telepon">
                                                 <i class="bi bi-phone" style="margin-right: 8px; color: navy;"></i> No Telepon
                                             </label>
                                             <input type="text" id="no_telepon" name="no_telepon" class="form-control" value="{{ $data->no_telepon }}" />
                                         </div>
 
                                         <!-- Email -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="email">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="email">
                                                 <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
                                             </label>
                                             <input type="email" id="email" name="email" class="form-control" value="{{ $data->email }}" />
                                         </div>
 
                                         <!-- Nomor Induk Berusaha -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nomorindukberusaha">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="nomorindukberusaha">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nomor Induk Berusaha
                                             </label>
                                             <input type="text" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control" value="{{ $data->nomorindukberusaha }}" />
@@ -135,40 +135,40 @@
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- PJU -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pju">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="pju">
                                                 <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> PJU
                                             </label>
                                             <input type="text" id="pju" name="pju" class="form-control" value="{{ $data->pju }}" />
                                         </div>
 
                                         <!-- No Akte -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_akte">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="no_akte">
                                                 <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> No Akte
                                             </label>
                                             <input type="text" id="no_akte" name="no_akte" class="form-control" value="{{ $data->no_akte }}" />
                                         </div>
 
                                         <!-- Tanggal -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="tanggal">
                                                 <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal
                                             </label>
                                             <input type="date" id="tanggal" name="tanggal" class="form-control" value="{{ $data->tanggal }}" />
                                         </div>
 
                                         <!-- Nama Notaris -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_notaris">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="nama_notaris">
                                                 <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Nama Notaris
                                             </label>
                                             <input type="text" id="nama_notaris" name="nama_notaris" class="form-control" value="{{ $data->nama_notaris }}" />
                                         </div>
 
                                         <!-- No Pengesahan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_pengesahan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="no_pengesahan">
                                                 <i class="bi bi-file-earmark-check" style="margin-right: 8px; color: navy;"></i> No Pengesahan
                                             </label>
                                             <input type="text" id="no_pengesahan" name="no_pengesahan" class="form-control" value="{{ $data->no_pengesahan }}" />

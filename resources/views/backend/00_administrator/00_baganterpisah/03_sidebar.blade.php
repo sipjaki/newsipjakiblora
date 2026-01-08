@@ -1875,7 +1875,10 @@
 
             {{-- ---------------------------------------------  --}}
 
-            <li class="nav-header" style="color: red;">Logout</li>
+            <li class="nav-header" style="color: red;">Logout
+                                            <div style="height:1px; background:#ffa500; opacity:0.5; margin-top:6px;"></div>
+
+            </li>
 
             <li class="nav-item">
                 {{-- <li class="nav-item"> --}}
@@ -1883,11 +1886,13 @@
 
                         <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                         @csrf
-                            <button type="submit" class="nav-link" style="background: none; border: none; color: red;">
-                                <!-- Ikon untuk Logout -->
-                                <i class="nav-icon bi bi-box-arrow-right text-danger"></i> <!-- Ikon untuk Logout -->
-                                <p style="color: red">Logout</p>
-                            </button>
+                         <button type="submit" class="nav-link" style="background: none; border: none; color: red; display: flex; align-items: center; gap: 6px;">
+                            <!-- Ikon pintu keluar -->
+                            <i class="bi bi-door-open text-danger" style="font-size: 16px;"></i>
+
+                            <p style="color: red; margin: 0;">Logout</p>
+                        </button>
+
                         </form>
                     </li>
 

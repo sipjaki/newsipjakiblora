@@ -714,10 +714,10 @@ Route::delete('/bejabatan/delete/{namalengkap}', [StrukturController::class, 'be
 
 // ---------------------- MENU 3 TUPOKSI PROGRAM MAS JAKI -----------------------------------------------------
 // Route::get('/betupoksi', [StrukturController::class, 'betupoksi'])->middleware(['auth', 'can:admin2']); // DI RUBAH
-Route::get('/betupoksi', [StrukturController::class, 'betupoksi'])->middleware(['auth']);
+Route::get('/betupoksi', [StrukturController::class, 'betupoksi'])->middleware(['auth', 'can:admin2']);
 // Route::get('/betupoksi/update/{id}', [StrukturController::class, 'betupoksiupdate'])->middleware('auth');
 // Route::get('/betupoksi/update/{id}', [StrukturController::class, 'betupoksiupdate'])->middleware(['auth', 'can:admin2'])->name('update.betupoksiupdate'); // DI RUBAH
-Route::get('/betupoksi/update/{id}', [StrukturController::class, 'betupoksiupdate'])->middleware(['auth'])->name('update.betupoksiupdate');
+Route::get('/betupoksi/update/{id}', [StrukturController::class, 'betupoksiupdate'])->middleware(['auth', 'can:admin2'])->name('update.betupoksiupdate');
 Route::post('/betupoksi/updatecreate/{id}', [StrukturController::class, 'betupoksicreateupdate'])->middleware(['auth', 'can:admin2'])->name('update.betupoksicreateupdate');
 
 

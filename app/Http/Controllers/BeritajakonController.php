@@ -387,7 +387,7 @@ public function beberitajakoncreatenew(Request $request)
 
         public function beartikeljakon(Request $request)
                 {
-                    $perPage = $request->input('perPage', 15);
+                    $perPage = $request->input('perPage', 10);
                     $search = $request->input('search');
 
                     $query = artikeljakonmasjaki::query();
@@ -732,7 +732,7 @@ public function androidberita()
 
     public function bedokumentasijakon(Request $request)
 {
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     $query = dokumentasijakon::query();

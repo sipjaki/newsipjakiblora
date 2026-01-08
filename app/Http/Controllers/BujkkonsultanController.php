@@ -38,7 +38,7 @@ class BujkkonsultanController extends Controller
 
     public function bujkkonsultan(Request $request)
 {
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     $query = bujkkonsultan::query();
@@ -101,7 +101,7 @@ class BujkkonsultanController extends Controller
 
 public function bebujkkonsultan(Request $request)
 {
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     $query = bujkkonsultan::query();
