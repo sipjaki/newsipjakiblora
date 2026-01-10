@@ -1,22 +1,3 @@
-<style>
-    table {
-        table-layout: fixed;
-        width: 100%;
-    }
-
-    td {
-        padding: 10px;
-        vertical-align: top;
-        word-wrap: break-word;
-    }
-
-    .isi-berita {
-        max-width: 600px;
-        word-wrap: break-word;
-        white-space: normal;
-        overflow-wrap: break-word;
-    }
-</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -30,7 +11,7 @@
 
         <!--begin::App Main-->
         <main class="app-main">
-            <section style="background: linear-gradient(to bottom, #a8e6a1, #ffffff); width: 100%; min-height: 100vh;" loading="lazy">
+            <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;" loading="lazy">
                 <!--begin::App Content Header-->
                 <div class="app-content-header">
                     <!--begin::Container-->
@@ -82,7 +63,7 @@
                         </div> --}}
 
                         <div class="card-header">
-                            @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                            @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                              <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
@@ -157,7 +138,7 @@
                                     </button>
                                 </a>
 
-<button onclick="exportTableToExcel('tablePaket', 'data_profilpaketpekerjaan')" class="button-modern">
+<button onclick="exportTableToExcel('tablePaket', 'data_profilpaketpekerjaan')" class="button-berkas">
     <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
 </button>
 
@@ -185,7 +166,7 @@
                                 <a href="/bepaketpekerjaancreate">
                                     <button class="button-baru">
                                         <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                                        Buat Baru
+                                        Tambah Data
                                     </button>
                                 </a>
                             </div>
@@ -255,8 +236,12 @@
                                     <tbody id="tableBody">
                                         @forelse ($data as $item)
                                         <tr class="align-middle">
-                                            <td style="text-align: center;">{{$loop->iteration }}</td>
-<td style="text-align: left;">
+
+<td style="text-align: center;">
+    {{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}
+</td>
+
+                                            <td style="text-align: left;">
     @if(!empty($item->profiljenispekerjaan->jenispekerjaan))
         {{ $item->profiljenispekerjaan->jenispekerjaan }}
     @else
@@ -268,11 +253,19 @@
         ? ucfirst(strtolower($item->namapekerjaan))
         : '<span class="button-berkas">Data Belum Di Update !</span>' !!}
 </td>
-
-<td style="text-align: center;">
-    {!! $item->paketstatuspekerjaan->paketstatuspekerjaan
-        ?? '<span class="button-berkas">Data Belum Di Update !</span>' !!}
+<td style="text-align: center; white-space: pre-line;">
+    @if(!empty($item->paketstatuspekerjaan?->paketstatuspekerjaan))
+        {{
+            collect(preg_split('/\s+/', trim($item->paketstatuspekerjaan->paketstatuspekerjaan)))
+                ->chunk(3)
+                ->map(fn($chunk) => $chunk->implode(' '))
+                ->implode("\n")
+        }}
+    @else
+        <span class="button-berkas">Data Belum Di Update !</span>
+    @endif
 </td>
+
 
 <td style="text-align: center;">
     {!! $item->sumberdana->sumberdana

@@ -1,23 +1,3 @@
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -36,7 +16,7 @@
 
        <!--begin::App Content Header-->
        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <div class="app-content-header">
        <!--begin::Container-->
@@ -62,7 +42,7 @@
 
                  <!-- /.card-header -->
                  <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
 
 
@@ -82,9 +62,10 @@
                                 <option value="2000">2000</option>
                             </select>
                         </div>
-<!-- Tombol Download -->
-<button onclick="exportTableToExcel('tabelAsosiasi', 'data_tkkdpupr2024')" class="button-baru">
-    <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
+<button type="button"
+        onclick="exportTableToExcel('tabelAsosiasi','data_tkkdpupr2024')"
+        class="button-berkas">
+    <i class="bi bi-download"></i> Download Excel
 </button>
 
 
@@ -139,28 +120,82 @@
 <table id="tabelAsosiasi" class="zebra-table table-striped">
  <thead>
      <tr>
-         <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 400px; text-align:center;">Nama Lengkap</th>
-         <th style="width: 400px; text-align:center;">Alamat </th>
-         <th style="width: 250px; text-align:center;">Tahun Lulus Sekolah</th>
-         <th style="width: 250px; text-align:center;">Tahun Anggaran</th>
-         <th style="width: 300px; text-align:center;">Penyelenggara</th>
-         <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
-         <th style="width: 150px; text-align:center;">Pendidikan</th>
-         <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
-         <th style="width: 100px; text-align:center;">Jenjang</th>
-         <th style="width: 400px; text-align:center;">LSP Penerbit</th>
-         <th style="width: 200px; text-align:center;">Jurusan</th>
-         <th style="width: 200px; text-align:center;">Tanggal Terbit</th>
-         <th style="width: 200px; text-align:center;">Tanggal Habis</th>
-         <th style="width: 200px; text-align:center;">Masa Berlaku</th>
-         <th style="width: 200px; text-align:center;">Status Terbit</th>
-         <th style="width: 200px; text-align:center;">Sertifikat</th>
-         <th style="width: 400px; text-align:center;">Aksi</th>
-     </tr>
+    <th style="width:75px; text-align:center;">
+        <i class="bi bi-hash"></i> No
+    </th>
+
+    <th style="width:400px; text-align:center;">
+        <i class="bi bi-person-badge"></i> Nama Lengkap
+    </th>
+
+    <th style="width:400px; text-align:center;">
+        <i class="bi bi-geo-alt"></i> Alamat
+    </th>
+
+    <th style="width:250px; text-align:center;">
+        <i class="bi bi-calendar-check"></i> Tahun Lulus
+    </th>
+
+    <th style="width:250px; text-align:center;">
+        <i class="bi bi-calendar-range"></i> Tahun Anggaran
+    </th>
+
+    <th style="width:300px; text-align:center;">
+        <i class="bi bi-building"></i> Penyelenggara
+    </th>
+
+    <th style="width:400px; text-align:center;">
+        <i class="bi bi-bank"></i> Universitas / Sekolah
+    </th>
+
+    <th style="width:150px; text-align:center;">
+        <i class="bi bi-mortarboard"></i> Pendidikan
+    </th>
+
+    <th style="width:400px; text-align:center;">
+        <i class="bi bi-briefcase"></i> Jabatan Kerja
+    </th>
+
+    <th style="width:100px; text-align:center;">
+        <i class="bi bi-layers"></i> Jenjang
+    </th>
+
+    <th style="width:400px; text-align:center;">
+        <i class="bi bi-award"></i> LSP Penerbit
+    </th>
+
+    <th style="width:200px; text-align:center;">
+        <i class="bi bi-journal-text"></i> Jurusan
+    </th>
+
+    <th style="width:200px; text-align:center;">
+        <i class="bi bi-calendar-event"></i> Tgl Terbit
+    </th>
+
+    <th style="width:200px; text-align:center;">
+        <i class="bi bi-calendar-x"></i> Tgl Habis
+    </th>
+
+    <th style="width:200px; text-align:center;">
+        <i class="bi bi-hourglass-split"></i> Masa Berlaku
+    </th>
+
+    <th style="width:200px; text-align:center;">
+        <i class="bi bi-info-circle"></i> Status Terbit
+    </th>
+
+    <th style="width:200px; text-align:center;">
+        <i class="bi bi-file-earmark-pdf"></i> Sertifikat
+    </th>
+
+    <th style="width:400px; text-align:center;">
+        <i class="bi bi-gear"></i> Aksi
+    </th>
+</tr>
+
  </thead>
  <tbody id="tableBody">
-     @foreach ($data as $item )
+     @forelse ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">
@@ -299,7 +334,7 @@
 <td style="text-align: center; text-transform: uppercase;">{{$item->statusterbit}}</td>
 
 <td style="text-align: center;">
-    <button class="button-baru"
+    <button class="button-berkas"
         data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
         <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
     </button>
@@ -334,23 +369,54 @@
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/beskkdpupr/show/{{$item->nama}}" class="button-baru" title="Show">
-                 <i class="bi bi-eye"></i>View
+                 <i class="bi bi-eye"></i>
              </a>
              <a href="/beskkdpupr/update/{{$item->nama}}" class="button-berkas" title="Update">
-                 <i class="bi bi-pencil-square"></i>Update
+                 <i class="bi bi-pencil-square"></i>
              </a>
              <a href="javascript:void(0)" class="button-merah" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
                    data-judul="{{ $item->nama }}"
                    onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>Hapus
+                    <i class="bi bi-trash"></i>
             </a>
          </td>
 
         </tr>
 
-     @endforeach
- </tbody>
+         @empty
+    <tr>
+        <td colspan="100%">
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+    </tbody>
 </table>
                      </div>
                  </div>
@@ -421,3 +487,33 @@
 
    @include('backend.00_administrator.00_baganterpisah.02_footer')
 
+
+<script>
+function exportTableToExcel(tableID, filename = ''){
+    let table = document.getElementById(tableID);
+
+    if (!table) {
+        alert('Tabel tidak ditemukan!');
+        return;
+    }
+
+    let tableHTML = table.outerHTML;
+    let fileName = filename ? filename + '.xls' : 'export.xls';
+
+    let downloadLink = document.createElement('a');
+    document.body.appendChild(downloadLink);
+
+    let blob = new Blob(
+        ['\ufeff', tableHTML],
+        { type: 'application/vnd.ms-excel;charset=utf-8;' }
+    );
+
+    let url = URL.createObjectURL(blob);
+    downloadLink.href = url;
+    downloadLink.download = fileName;
+    downloadLink.click();
+
+    document.body.removeChild(downloadLink);
+    URL.revokeObjectURL(url);
+}
+</script>

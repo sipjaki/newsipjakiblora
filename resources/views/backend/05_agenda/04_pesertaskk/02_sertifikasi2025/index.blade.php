@@ -15,7 +15,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -41,10 +41,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
-
-
-
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
                             <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
@@ -62,7 +59,7 @@
                             </select>
                         </div>
 
-                        <button onclick="exportTableToExcel('tablepeserta', 'data_tkkdpupr2025')" class="button-baru">
+                        <button onclick="exportTableToExcel('tablepeserta', 'data_semuatkkdpupr')" class="button-berkas">
     <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
 </button>
 
@@ -105,7 +102,7 @@ function exportTableToExcel(tableID, filename = ''){
 
                     <div style="position: relative; display: inline-block;">
     <input type="search" id="searchInput"
-           placeholder="Cari Peserta SKK ...."
+           placeholder="Cari Tenaga Kerja ...."
            onkeyup="searchTable()"
            style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
 

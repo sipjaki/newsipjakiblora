@@ -1042,7 +1042,7 @@ Route::get('/perbaikandataskk/{id}', [PembinaanController::class, 'perbaikandata
 Route::post('/perbaikandataskk/createnew/{id}', [PembinaanController::class, 'perbaikandataskkupdate'])->middleware('auth')->name('berkasperbaikandatapeserta');
 
 // TKK DPUPR 2025
-Route::get('/beagendaskktkk', [PembinaanController::class, 'beagendaskktkk2025'])->middleware('auth');
+Route::get('/beagendaskktkk', [PembinaanController::class, 'beagendaskktkk2025'])->middleware(['auth', 'can:admin2']);
 
 
 // DASHBOARD PESERTA
@@ -1411,6 +1411,11 @@ Route::get('/settingsjenjangpendidikan/create', [SettingDataController::class, '
 Route::post('/settingsjenjangpendidikan/createnew', [SettingDataController::class, 'settingsjenjangpencreatenew'])->middleware(['auth', 'can:admin2'])->name('create.jenjangpendidikan');
 Route::delete('/jenjangpendidikan/delete/{id}', [SettingDataController::class, 'settingspendidikandelete'])->middleware(['auth', 'can:admin2']);
 
+Route::get('/settingsjabatankerja', [SettingDataController::class, 'settingsjabatankerja'])->middleware(['auth', 'can:admin2']);
+Route::get('/settingsjabatankerja/create', [SettingDataController::class, 'settingsjabatankerjacreate'])->middleware(['auth', 'can:admin2']);
+Route::post('/settingsjabatankerja/createnew', [SettingDataController::class, 'settingsjabatankerjacreatennew'])->middleware(['auth', 'can:admin2'])->name('create.jabatankerja');
+Route::delete('/settingsjabatankerja/delete/{id}', [SettingDataController::class, 'settingsjabatankerjadelete'])->middleware(['auth', 'can:admin2']);
+
 // DATA PENGATURAN SUB KLASIFIKASI TERTIB JASA KONSTRUKSI
 Route::get('/settingssubklasifikasi', [SettingDataController::class, 'settingssubklasifikasi'])->middleware(['auth']);
 Route::get('/settingssubklasifikasi/create', [SettingDataController::class, 'settingssubklasifikasicreate'])->middleware(['auth']);
@@ -1429,6 +1434,24 @@ Route::get('/settingsjenispekerjaan', [SettingDataController::class, 'settingsje
 Route::get('/settingsjenispekerjaan/create', [SettingDataController::class, 'settingsjenispekerjaancreate'])->middleware(['auth', 'can:admin2']);
 Route::post('/settingsjenispekerjaan/createnew', [SettingDataController::class, 'settingsjenispekerjaannew'])->middleware(['auth', 'can:admin2'])->name('create.jenispekerjaan');
 Route::delete('/jenispekerjaan/delete/{id}', [SettingDataController::class, 'jenispekerjaandelete'])->middleware(['auth', 'can:admin2']);
+
+
+Route::get('/settingsstatuspekerjaan', [SettingDataController::class, 'settingsstatuspekerjaan'])->middleware(['auth', 'can:admin2']);
+Route::get('/settingsstatuspekerjaan/create', [SettingDataController::class, 'settingsstatuspekerjaancreate'])->middleware(['auth', 'can:admin2']);
+Route::post('/settingsstatuspekerjaan/createnew', [SettingDataController::class, 'settingsstatuspekerjaancreatenew'])->middleware(['auth', 'can:admin2'])->name('create.paketstatuspekerjaan');
+Route::delete('/settingsstatuspekerjaan/delete/{id}', [SettingDataController::class, 'settingsstatuspekerjaandelete'])->middleware(['auth', 'can:admin2']);
+
+
+Route::get('/settingssumberdana', [SettingDataController::class, 'settingssumberdana'])->middleware(['auth', 'can:admin2']);
+Route::get('/settingssumberdana/create', [SettingDataController::class, 'settingssumberdanacreate'])->middleware(['auth', 'can:admin2']);
+Route::post('/settingssumberdana/createnew', [SettingDataController::class, 'settingssumberdanacreatenew'])->middleware(['auth', 'can:admin2'])->name('create.sumberdana');
+Route::delete('/settingssumberdana/delete/{id}', [SettingDataController::class, 'settingssumberdanadelete'])->middleware(['auth', 'can:admin2']);
+
+
+Route::get('/settingstahunpilihan', [SettingDataController::class, 'settingstahunpilihan'])->middleware(['auth', 'can:admin2']);
+Route::get('/settingstahunpilihan/create', [SettingDataController::class, 'settingstahunpilihancreate'])->middleware(['auth', 'can:admin2']);
+Route::post('/settingstahunpilihan/createnew', [SettingDataController::class, 'settingstahunpilihancreatenew'])->middleware(['auth', 'can:admin2'])->name('create.tahunpilihan');
+Route::delete('/settingstahunpilihan/delete/{id}', [SettingDataController::class, 'settingstahunpilihandelete'])->middleware(['auth', 'can:admin2']);
 
 
 

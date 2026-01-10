@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\rantaipasokblora;
 use App\Models\peralatankonstruksi;
 use App\Models\alatberat;
+use App\Models\jabatankerja;
 use App\Models\jenjangpendidikan;
 use App\Models\namasekolah;
+use App\Models\paketstatuspekerjaan;
 use App\Models\profiljenispekerjaan;
 use App\Models\subklasifikasi;
+use App\Models\sumberdana;
+use App\Models\tahunpilihan;
 use App\Models\tandatangan;
 use Illuminate\Http\Request;
 
@@ -19,7 +23,7 @@ class SettingDataController extends Controller
 
 public function settingssekolah(Request $request)
 {
-    $perPage = $request->input('perPage', 25);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     $query = namasekolah::query();
@@ -274,7 +278,7 @@ return redirect('/settingssubklasifikasi')->with('delete', 'Data Berhasil Di Hap
 
 public function settingspendidikan(Request $request)
 {
-    $perPage = $request->input('perPage', 25);
+    $perPage = $request->input('perPage', 10);
     $search  = $request->input('search');
 
     $query = jenjangpendidikan::query();
@@ -443,5 +447,360 @@ profiljenispekerjaan::create([
     return redirect('/settingsjenispekerjaan');
 }
 
+
+
+public function settingsjabatankerja(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search  = $request->input('search');
+
+    $query = jabatankerja::query();
+
+    if ($search) {
+        $query->where('jabatankerja', 'LIKE', "%{$search}%");
+    }
+
+    // Urutkan berdasarkan abjad A-Z
+    $query->orderBy('jabatankerja', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view(
+                'backend.16_settingsdata.06_jabatankerja.partials.table',
+                compact('data')
+            )->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.06_jabatankerja.index', [
+        'title'   => 'Daftar Jabatan Kerja',
+        'data'    => $data,
+        'perPage' => $perPage,
+        'search'  => $search
+    ]);
+}
+
+    public function settingsjabatankerjacreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.06_jabatankerja.create', [
+            'title' => 'Tambah Jabatan Kerja',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
+
+
+    public function settingsjabatankerjacreatennew(Request $request)
+{
+    $request->validate([
+        'jabatankerja' => 'required|string',
+    ], [
+        'jabatankerja.required' => 'Jabatan Kerja tidak boleh kosong.',
+        'jabatankerja.string'   => 'Jabatan Kerja harus berupa teks.',
+        'jabatankerja.max'      => 'Jabatan Kerja tidak boleh lebih dari 50 karakter.',
+        'jabatankerja.unique'   => 'Jabatan Kerja ini sudah terdaftar.',
+    ]);
+
+jabatankerja::create([
+        'jabatankerja' => $request->jabatankerja,
+    ]);
+
+    session()->flash('create', 'Data berhasil dibuat!');
+    return redirect('/settingsjabatankerja');
+}
+
+public function settingsjabatankerjadelete($id)
+{
+// Cari item berdasarkan judul
+$entry = jabatankerja::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/settingsjabatankerja')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+}
+
+public function settingsstatuspekerjaan(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search  = $request->input('search');
+
+    $query = paketstatuspekerjaan::query();
+
+    if ($search) {
+        $query->where('paketstatuspekerjaan', 'LIKE', "%{$search}%");
+    }
+
+    // Urutkan berdasarkan data terbaru
+    $query->orderBy('created_at', 'desc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view(
+                'backend.16_settingsdata.07_paketstatuspekerjaan.partials.table',
+                compact('data')
+            )->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.07_paketstatuspekerjaan.index', [
+        'title'   => 'Daftar Status Profil Paket Pekerjaan',
+        'data'    => $data,
+        'perPage' => $perPage,
+        'search'  => $search
+    ]);
+}
+
+
+
+   public function settingsstatuspekerjaancreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.07_paketstatuspekerjaan.create', [
+            'title' => 'Tambah Status Pekerjaan',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
+
+
+        public function settingsstatuspekerjaancreatenew(Request $request)
+{
+    $request->validate([
+        'paketstatuspekerjaan' => 'required|string|max:100',
+    ], [
+        'paketstatuspekerjaan.required' => 'Status Pekerjaan tidak boleh kosong.',
+        'paketstatuspekerjaan.string'   => 'Status Pekerjaan harus berupa teks.',
+        'paketstatuspekerjaan.max'      => 'Status Pekerjaan tidak boleh lebih dari 50 karakter.',
+        'paketstatuspekerjaan.unique'   => 'Status Pekerjaan ini sudah terdaftar.',
+    ]);
+
+paketstatuspekerjaan::create([
+        'paketstatuspekerjaan' => $request->paketstatuspekerjaan,
+    ]);
+
+    session()->flash('create', 'Data berhasil dibuat!');
+    return redirect('/settingsstatuspekerjaan');
+}
+
+
+public function settingsstatuspekerjaandelete($id)
+{
+// Cari item berdasarkan judul
+$entry = paketstatuspekerjaan::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/settingsstatuspekerjaan')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+}
+
+
+
+public function settingssumberdana(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search  = $request->input('search');
+
+    $query = sumberdana::query();
+
+    if ($search) {
+        $query->where('sumberdana', 'LIKE', "%{$search}%");
+    }
+
+    // Urutkan berdasarkan data terbaru
+    $query->orderBy('created_at', 'desc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view(
+                'backend.16_settingsdata.08_sumberdana.partials.table',
+                compact('data')
+            )->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.08_sumberdana.index', [
+        'title'   => 'Daftar Sumber Dana Paket Pekerjaan',
+        'data'    => $data,
+        'perPage' => $perPage,
+        'search'  => $search
+    ]);
+}
+
+
+   public function settingssumberdanacreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.08_sumberdana.create', [
+            'title' => 'Tambah Sumber Dana',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
+
+
+        public function settingssumberdanacreatenew(Request $request)
+{
+    $request->validate([
+        'sumberdana' => 'required|string|max:100',
+    ], [
+        'sumberdana.required' => 'Sumber Dana tidak boleh kosong.',
+        'sumberdana.string'   => 'Sumber Dana harus berupa teks.',
+        'sumberdana.max'      => 'Sumber Dana tidak boleh lebih dari 50 karakter.',
+        'sumberdana.unique'   => 'Sumber Dana ini sudah terdaftar.',
+    ]);
+
+sumberdana::create([
+        'sumberdana' => $request->sumberdana,
+    ]);
+
+    session()->flash('create', 'Data berhasil dibuat!');
+    return redirect('/settingssumberdana');
+}
+
+
+
+public function settingssumberdanadelete($id)
+{
+// Cari item berdasarkan judul
+$entry = sumberdana::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/settingssumberdana')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+}
+
+
+public function settingstahunpilihan(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search  = $request->input('search');
+
+    $query = tahunpilihan::query();
+
+    if ($search) {
+        $query->where('tahunpilihan', 'LIKE', "%{$search}%");
+    }
+
+    // Urutkan berdasarkan data terbaru
+    $query->orderBy('created_at', 'desc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view(
+                'backend.16_settingsdata.09_tahunpelaksanaan.partials.table',
+                compact('data')
+            )->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.09_tahunpelaksanaan.index', [
+        'title'   => 'Tahun Pelaksanaan',
+        'data'    => $data,
+        'perPage' => $perPage,
+        'search'  => $search
+    ]);
+}
+   public function settingstahunpilihancreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.09_tahunpelaksanaan.create', [
+            'title' => 'Tambah Tahun Pelaksanaan',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
+
+
+
+      public function settingstahunpilihancreatenew(Request $request)
+{
+    $request->validate([
+        'tahunpilihan' => [
+            'required',
+            'digits:4',      // HARUS 4 digit
+            'integer',       // HARUS angka
+            'min:2027',      // MINIMAL 2027
+            'unique:tahunpilihans,tahunpilihan', // sesuaikan nama tabel
+        ],
+    ], [
+        'tahunpilihan.required' => 'Tahun Pilihan tidak boleh kosong.',
+        'tahunpilihan.digits'   => 'Tahun Pilihan harus terdiri dari 4 digit.',
+        'tahunpilihan.integer'  => 'Tahun Pilihan harus berupa angka.',
+        'tahunpilihan.min'      => 'Tahun Pilihan minimal tahun 2027.',
+        'tahunpilihan.unique'   => 'Tahun Pilihan ini sudah terdaftar.',
+    ]);
+
+    tahunpilihan::create([
+        'tahunpilihan' => $request->tahunpilihan,
+    ]);
+
+    session()->flash('create', 'Data berhasil dibuat!');
+    return redirect('/settingstahunpilihan');
+}
+
+
+
+public function settingstahunpilihandelete($id)
+{
+// Cari item berdasarkan judul
+$entry = tahunpilihan::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/settingstahunpilihan')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+}
 
 }

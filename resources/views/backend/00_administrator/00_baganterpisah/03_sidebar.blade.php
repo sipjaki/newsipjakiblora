@@ -935,7 +935,7 @@
                   <li class="nav-item">
                     <a href="/beagendaskktkk" class="nav-link">
                       <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
-                      <p style="color: white">TKK DPUPR (2025) </p>
+                      <p style="color: white">TKK DPUPR ( > 2025) </p>
                     </a>
                   </li>
 
@@ -986,18 +986,18 @@
 </li>
 
 <li class="nav-item">
-    <a href="/404" class="nav-link">
+    <a href="/settingsjabatankerja" class="nav-link">
         <i class="nav-icon bi bi-person-badge-fill text-warning"></i> <!-- Ikon Jabatan Kerja -->
         <p style="color: white">Jabatan Kerja</p>
     </a>
 </li>
 
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="/404" class="nav-link">
         <i class="nav-icon bi bi-journal-bookmark-fill text-warning"></i> <!-- Ikon Jurusan -->
         <p style="color: white">Jurusan</p>
     </a>
-</li>
+</li> --}}
 
 
 
@@ -1034,21 +1034,21 @@
 </li>
 
 <li class="nav-item">
-  <a href="/404" class="nav-link">
+  <a href="/settingsstatuspekerjaan" class="nav-link">
     <i class="nav-icon bi bi-clipboard-check text-warning"></i> <!-- Ikon untuk Status Pekerjaan -->
     <p style="color: white">Status Pekerjaan</p>
   </a>
 </li>
 
 <li class="nav-item">
-  <a href="/404" class="nav-link">
+  <a href="/settingssumberdana" class="nav-link">
     <i class="nav-icon bi bi-cash-stack text-warning"></i> <!-- Ikon untuk Sumber Dana -->
     <p style="color: white">Sumber Dana</p>
   </a>
 </li>
 
 <li class="nav-item">
-  <a href="/404" class="nav-link">
+  <a href="/settingstahunpilihan" class="nav-link">
     <i class="nav-icon bi bi-calendar-event text-warning"></i> <!-- Ikon untuk Tahun Pelaksanaan -->
     <p style="color: white">Tahun Pelaksanaan</p>
   </a>

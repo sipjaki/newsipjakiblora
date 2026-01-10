@@ -1,50 +1,3 @@
-{{-- ------------------------------------ --}}
-<style>
- body {
-        font-family: 'Poppins', sans-serif;
-    }
-    .zebra-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    border: 1px solid #e5e7eb;
-}
-
-.zebra-table th {
-    background-color: #ADD8E6; /* biru muda */
-    color: black;
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table td {
-    text-align: center;
-    padding: 8px 12px;
-    border: 1px solid #e5e7eb;
-    white-space: nowrap;
-}
-
-.zebra-table tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.zebra-table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-.zebra-table tbody tr:hover {
-    background-color: #ffd100 !important;
-}
-
-th {
-    background-color: #ADD8E6;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -65,7 +18,7 @@ th {
    <!--begin::App Main-->
    <main class="app-main"
 style="
-  background: linear-gradient(to bottom, #a8e6cf, #ffffff); /* hijau muda ke putih */
+  background: linear-gradient(to bottom, #ffffff, #ffffff); /* hijau muda ke putih */
   margin: 0;
   padding: 0;
   position: relative;
@@ -120,9 +73,9 @@ style="
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div class="button-modern">
-                <span style="font-family: 'Poppins', sans-serif;">📌 Halaman : {{$title}}</span>
-                </div>
+                                          @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
+
+
 
 <hr>
 
@@ -605,7 +558,7 @@ function previewPDF(event, containerId, iframeId, messageId) {
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                               <button class="button-modern" type="button" onclick="openModal()">
+                               <button class="button-baru" type="button" onclick="openModal()">
                                     <i class="bi bi-save" style="margin-right: 5px;"></i>
                                     <span style="font-family: 'Poppins', sans-serif;">Tambah Data </span>
                                     </button>

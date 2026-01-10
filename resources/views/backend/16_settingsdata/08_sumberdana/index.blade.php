@@ -19,6 +19,7 @@
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
+
        <!--begin::Container-->
        <div class="container-fluid">
          <!--begin::Row-->
@@ -69,9 +70,8 @@
 
                             <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
             <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
-            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer; text-align:right; padding:10px;">
+            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
                 {{-- <option value="10">10</option> --}}
-                <option value="10">10</option>
                 <option value="25">25</option>
                 <option value="50">50</option>
                 <option value="75">75</option>
@@ -79,8 +79,8 @@
                 <option value="150">150</option>
                 <option value="200">200</option>
                 <option value="500">500</option>
-                <option value="1000">1.000</option>
-                <option value="2000">2.000</option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
             </select>
         </div>
 
@@ -96,7 +96,7 @@
 
                         <div style="position: relative; display: inline-block; margin-right:10px;">
     <input type="search" id="searchInput"
-           placeholder="Cari Jenis Pekerjaan ...."
+           placeholder="Cari Sumber Dana ...."
            onkeyup="searchTable()"
            style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
 
@@ -115,7 +115,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/settingsjenispekerjaan?search=${input}`)
+                            fetch(`/settingssumberdana?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -126,15 +126,15 @@
                                 .catch(error => console.error("Error fetching search results:", error));
                         }
 
-                                </script>
+</script>
 <!-- Tombol Download Excel -->
-<button class="button-berkas" onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_universitas_sekolah')">
+<button class="button-berkas" onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_sumberdana')">
 
     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
 </button>
 
 <!-- Tombol Create -->
-<a href="/settingsjenispekerjaan/create">
+<a href="/settingssumberdana/create">
     <button class="button-baru">
         <i class="fa fa-plus" style="margin-right: 8px;"></i> Tambah Data
     </button>
@@ -150,7 +150,7 @@
  <thead>
      <tr>
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Jenis Pekerjaan</th>
+        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Sumber Dana</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
@@ -158,7 +158,7 @@
      @forelse ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{ $item->jenispekerjaan }}</td>
+         <td style="text-align: left;">{{ $item->sumberdana }}</td>
 
         <td style="text-align: center; vertical-align: middle;">
             {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
@@ -260,7 +260,7 @@
                  function setDeleteUrl(button) {
                      var id = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/jenispekerjaan/delete/" + encodeURIComponent(id);
+                     var deleteUrl = "/settingssumberdana/delete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
