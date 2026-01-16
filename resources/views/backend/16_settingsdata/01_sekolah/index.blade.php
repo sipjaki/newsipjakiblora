@@ -1,23 +1,3 @@
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -35,7 +15,7 @@
    <!--begin::App Main-->
    <main class="app-main">
     {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -83,7 +63,7 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
@@ -147,7 +127,7 @@
 
                                 </script>
 <!-- Tombol Download Excel -->
-<button class="button-baru" onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_universitas_sekolah')">
+<button class="button-berkas" onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_universitas_sekolah')">
 
     <i class="bi bi-download" style="margin-right: 5px;"></i> Download Excel
 </button>
@@ -155,7 +135,7 @@
 <!-- Tombol Create -->
 <a href="/settingssekolah/create">
     <button class="button-baru">
-        <i class="fa fa-plus" style="margin-right: 8px;"></i> Buat Baru
+        <i class="fa fa-plus" style="margin-right: 8px;"></i> Tambah Data
     </button>
 </a>
 
@@ -167,11 +147,22 @@
 
 <table id="tabelBujkkonstruksi" class="zebra-table table-striped" >
  <thead>
-     <tr>
-        <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 800px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
-     </tr>
+
+<tr>
+    <th style="width: 75px; text-align:center;">
+        <i class="bi bi-list-ol"></i> No
+    </th>
+
+    <th style="width: 800px; text-align:center;">
+        <i class="bi bi-mortarboard-fill"></i> Universitas / Sekolah
+    </th>
+
+    <th style="width: 200px; text-align:center;">
+        <i class="bi bi-gear-fill"></i> Aksi
+    </th>
+</tr>
+
+
  </thead>
  <tbody id="tableBody">
      @foreach ($data as $item )

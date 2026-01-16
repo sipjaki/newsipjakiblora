@@ -14,7 +14,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-       <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+       <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -43,7 +43,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                     </div>
 
@@ -57,7 +57,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/bejabatan">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -81,8 +81,8 @@
                                     <!-- Kolom Kiri (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Nama Lengkap -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="namalengkap">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
                                             </label>
                                             <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}" />
@@ -96,8 +96,8 @@
                                     <!-- Kolom Kanan (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Jabatan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="jabatan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="jabatan">
                                                 <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Jabatan
                                             </label>
                                             <input type="text" id="jabatan" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" value="{{ old('jabatan') }}" />
@@ -115,15 +115,9 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                     <button type="button" onclick="openModal()" class="button-baru">
-
-                                    <!-- Ikon SVG Pensil -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                               </svg>
-                                    <span style="font-family: 'Poppins', sans-serif;">Buat Baru </span>
-                                </button>
+                                        <i class="bi bi-plus-lg me-2"></i>
+                                        <span style="font-family: 'Poppins', sans-serif;">Tambah Data</span>
+                                    </button>
                                 </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

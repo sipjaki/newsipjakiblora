@@ -946,7 +946,8 @@ public function beagendaskkcreatenew(Request $request)
         'foto.max'                      => 'Ukuran foto maksimal 5MB.',
     ]);
 
-    // Proses file foto
+    // Proses file foto (CEK DULU)
+if ($request->hasFile('foto')) {
     $file = $request->file('foto');
     $namaFile = time() . '_' . $file->getClientOriginalName();
     $tujuanPath = public_path('04_pembinaan/01_kegiatansertifikasi');
@@ -957,7 +958,7 @@ public function beagendaskkcreatenew(Request $request)
 
     $file->move($tujuanPath, $namaFile);
     $validatedData['foto'] = '04_pembinaan/01_kegiatansertifikasi/' . $namaFile;
-
+}
     // Simpan data baru ke dalam database
     agendaskk::create($validatedData);
 
@@ -1483,7 +1484,7 @@ return redirect()->back();
 public function beagendaskktkk2025(Request $request)
 {
     // Default jumlah data per halaman = 100
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
     $search  = $request->input('search');
 
     // Ambil user login
@@ -1530,7 +1531,7 @@ public function beagendaskktkk2025(Request $request)
 
     // Return ke view utama
     return view('backend.05_agenda.04_pesertaskk.02_sertifikasi2025.index', [
-        'title'   => 'Daftar SKK DPUPR Tahun 2025',
+        'title'   => 'Daftar Semua TKK DPUPR',
         'data'    => $datapesertaskk,
         'perPage' => $perPage,
         'search'  => $search,

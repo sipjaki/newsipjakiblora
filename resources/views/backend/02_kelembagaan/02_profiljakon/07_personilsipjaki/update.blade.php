@@ -14,7 +14,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-  <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+  <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -53,7 +53,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/besipjaki">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -79,8 +79,8 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Nomor -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nomor">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="nomor">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nomor
                                             </label>
                                             <input type="text" id="nomor" name="nomor" class="form-control @error('nomor') is-invalid @enderror" value="{{ old('nomor', $data->nomor) }}"  />
@@ -94,8 +94,8 @@
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Operator 1 -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="operator1">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="operator1">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 1
                                             </label>
                                             <input type="text" id="operator1" name="operator1" class="form-control @error('operator1') is-invalid @enderror" value="{{ old('operator1', $data->operator1) }}"  />
@@ -105,8 +105,8 @@
                                         </div>
 
                                         <!-- Operator 2 -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="operator2">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="operator2">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 2
                                             </label>
                                             <input type="text" id="operator2" name="operator2" class="form-control @error('operator2') is-invalid @enderror" value="{{ old('operator2', $data->operator2) }}"  />
@@ -116,8 +116,8 @@
                                         </div>
 
                                         <!-- Operator 3 -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="operator3">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="operator3">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 3
                                             </label>
                                             <input type="text" id="operator3" name="operator3" class="form-control @error('operator3') is-invalid @enderror" value="{{ old('operator3', $data->operator3) }}"  />
@@ -127,8 +127,8 @@
                                         </div>
 
                                         <!-- Operator 4 -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="operator4">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="operator4">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 4
                                             </label>
                                             <input type="text" id="operator4" name="operator4" class="form-control @error('operator4') is-invalid @enderror" value="{{ old('operator4', $data->operator4) }}"  />
@@ -146,7 +146,7 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                  <button class="button-berkas" type="button" onclick="openModal()">
-                                    <i class="bi bi-pencil-square" style="margin-right: 8px; font-size: 18px; color: white; vertical-align: middle;"></i>
+                                    <i class="bi bi-pencil-square"></i>
                                     Perbaikan Data ?
                                 </button>
 

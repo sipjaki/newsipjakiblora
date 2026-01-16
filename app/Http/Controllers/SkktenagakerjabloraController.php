@@ -168,7 +168,7 @@ class SkktenagakerjabloraController extends Controller
 
 public function beskkdpupr(Request $request)
 {
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search', '');
     $page = $request->input('page', 1);
 

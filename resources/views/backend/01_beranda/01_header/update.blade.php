@@ -15,7 +15,7 @@
       <main class="app-main">
 
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-     <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+     <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -53,7 +53,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/header">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -80,8 +80,8 @@
     <!-- Left Column (6/12) -->
     <div class="col-md-6">
         <!-- Judul -->
-        <div class="mb-3">
-            <label class="form-label" for="judul">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="judul">
                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul
             </label>
             <input type="text" id="judul" name="judul"
@@ -97,8 +97,8 @@
     <!-- Right Column (6/12) -->
     <div class="col-md-6">
         <!-- Header (Upload Gambar) -->
-        <div class="mb-3">
-            <label class="form-label" for="header">
+        <div class="form-modern mb-3">
+            <label class="form-label-modern" for="header">
                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar Header Sebelumnya
             </label>
             <input type="file" id="header" name="header"
@@ -136,7 +136,7 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                     <button class="button-berkas" type="button" onclick="openModal()">
-    <i class="bi bi-pencil-square" style="margin-right: 8px; font-size: 18px; color: white; vertical-align: middle;"></i>
+    <i class="bi bi-pencil-square"></i>
     Perbaikan Data ?
 </button>
 

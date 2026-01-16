@@ -209,7 +209,9 @@ button:hover {
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+            <section style="background: linear-gradient(to bottom, #ffffff); width: 100%; min-height: 100vh;">
+
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/halamanhijau3.png'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
 
         <!--begin::App Content Header-->

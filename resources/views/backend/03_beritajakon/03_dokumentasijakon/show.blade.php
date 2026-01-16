@@ -16,7 +16,7 @@
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -45,7 +45,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                            {{-- ======================================================= --}}
         {{-- ALERT --}}
@@ -57,7 +57,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/bedokumentasijakon">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -90,8 +90,8 @@
         </div>
 
         <!-- Foto Kegiatan 1 & 2 -->
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 1</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 1</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan1 && file_exists(public_path($data->fotokegiatan1)))
                     <img src="{{ asset($data->fotokegiatan1) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 1">
@@ -102,8 +102,8 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 2</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 2</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan2 && file_exists(public_path($data->fotokegiatan2)))
                     <img src="{{ asset($data->fotokegiatan2) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 2">
@@ -116,8 +116,8 @@
         </div>
 
         <!-- Foto Kegiatan 3 & 4 -->
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 3</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 3</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan3 && file_exists(public_path($data->fotokegiatan3)))
                     <img src="{{ asset($data->fotokegiatan3) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 3">
@@ -128,8 +128,8 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 4</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 4</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan4 && file_exists(public_path($data->fotokegiatan4)))
                     <img src="{{ asset($data->fotokegiatan4) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 4">
@@ -142,8 +142,8 @@
         </div>
 
         <!-- Foto Kegiatan 5 & 6 -->
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 5</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 5</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan5 && file_exists(public_path($data->fotokegiatan5)))
                     <img src="{{ asset($data->fotokegiatan5) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 5">
@@ -154,8 +154,8 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 6</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 6</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan6 && file_exists(public_path($data->fotokegiatan6)))
                     <img src="{{ asset($data->fotokegiatan6) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 6">
@@ -168,8 +168,8 @@
         </div>
 
         <!-- Foto Kegiatan 7 & 8 -->
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 7</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 7</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan7 && file_exists(public_path($data->fotokegiatan7)))
                     <img src="{{ asset($data->fotokegiatan7) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 7">
@@ -180,8 +180,8 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 8</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 8</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan8 && file_exists(public_path($data->fotokegiatan8)))
                     <img src="{{ asset($data->fotokegiatan8) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 8">
@@ -194,8 +194,8 @@
         </div>
 
         <!-- Foto Kegiatan 9 & 10 -->
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 9</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 9</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan9 && file_exists(public_path($data->fotokegiatan9)))
                     <img src="{{ asset($data->fotokegiatan9) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 9">
@@ -206,8 +206,8 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 10</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 10</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan10 && file_exists(public_path($data->fotokegiatan10)))
                     <img src="{{ asset($data->fotokegiatan10) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 10">
@@ -220,8 +220,8 @@
         </div>
 
         <!-- Foto Kegiatan 11 & 12 -->
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 11</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 11</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan11 && file_exists(public_path($data->fotokegiatan11)))
                     <img src="{{ asset($data->fotokegiatan11) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 11">
@@ -232,8 +232,8 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Foto Kegiatan 12</label>
+        <div class="form-modern col-md-6 mb-3">
+            <label class="form-label-modern">Foto Kegiatan 12</label>
             <div class="border p-2 text-center">
                 @if($data->fotokegiatan12 && file_exists(public_path($data->fotokegiatan12)))
                     <img src="{{ asset($data->fotokegiatan12) }}" class="img-fluid" style="max-height:300px; object-fit:contain;" alt="Foto Kegiatan 12">

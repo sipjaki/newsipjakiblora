@@ -15,7 +15,7 @@
       <main class="app-main">
 
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -57,7 +57,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <button
-                onclick="window.history.back();" class="button-newvalidasi">
+                onclick="window.history.back();" class="button-modern">
 
                 <!-- Ikon Kembali -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -84,8 +84,8 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         {{-- Nama Asosiasi --}}
-                                        <div class="mb-3 position-relative">
-                                            <label class="form-label" for="namaasosiasi" style="position: relative; padding-left: 30px;">
+                                        <div class="form-modern mb-3 position-relative">
+                                            <label class="form-label-modern" for="namaasosiasi" style="position: relative; padding-left: 30px;">
                                                 <i class="bi bi-people-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
                                                 Nama Asosiasi
                                             </label>
@@ -98,8 +98,8 @@
                                         </div>
 
                                         {{-- Alamat --}}
-                                        <div class="mb-3 position-relative">
-                                            <label class="form-label" for="alamat" style="position: relative; padding-left: 30px;">
+                                        <div class="form-modern mb-3 position-relative">
+                                            <label class="form-label-modern" for="alamat" style="position: relative; padding-left: 30px;">
                                                 <i class="bi bi-geo-alt-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
                                                 Alamat
                                             </label>
@@ -112,8 +112,8 @@
                                         </div>
 
                                         {{-- No Telepon --}}
-                                        <div class="mb-3 position-relative">
-                                            <label class="form-label" for="notelepon" style="position: relative; padding-left: 30px;">
+                                        <div class="form-modern mb-3 position-relative">
+                                            <label class="form-label-modern" for="notelepon" style="position: relative; padding-left: 30px;">
                                                 <i class="bi bi-telephone-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
                                                 No Telepon
                                             </label>
@@ -128,8 +128,8 @@
 
                                     <div class="col-md-6">
                                         {{-- PIC --}}
-                                        <div class="mb-3 position-relative">
-                                            <label class="form-label" for="pic" style="position: relative; padding-left: 30px;">
+                                        <div class="form-modern mb-3 position-relative">
+                                            <label class="form-label-modern" for="pic" style="position: relative; padding-left: 30px;">
                                                 <i class="bi bi-people-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
                                                 PIC
                                             </label>
@@ -142,8 +142,8 @@
                                         </div>
 
                                         {{-- Jumlah Anggota --}}
-                                        <div class="mb-3 position-relative">
-                                            <label class="form-label" for="jumlahanggota" style="position: relative; padding-left: 30px;">
+                                        <div class="form-modern mb-3 position-relative">
+                                            <label class="form-label-modern" for="jumlahanggota" style="position: relative; padding-left: 30px;">
                                                 <i class="bi bi-geo-alt-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
                                                 Jumlah Anggota
                                             </label>
@@ -163,8 +163,8 @@
                                 <div class="flex justify-end">
 <button type="button" onclick="openModal()" class="button-berkas">
     <!-- Ikon bi bi-pencil-square -->
-    <i class="bi bi-pencil-square" style="margin-right: 8px; font-size: 20px;"></i>
-    <span style="font-family: 'Poppins', sans-serif;">Perbaikan Data</span>
+    <i class="bi bi-pencil-square"></i>
+    Perbaikan Data ?
 </button>
 
                                 </div>

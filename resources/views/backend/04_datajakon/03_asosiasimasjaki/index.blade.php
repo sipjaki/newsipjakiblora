@@ -1,23 +1,3 @@
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -35,7 +15,7 @@
    <main class="app-main">
     {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
     <!--begin::App Content Header-->
-    <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+    <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
     <div class="app-content-header">
        <!--begin::Container-->
@@ -62,7 +42,7 @@
              <div class="card mb-4">
                  <!-- /.card-header -->
                  <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                           <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
@@ -122,7 +102,7 @@
                          </button>
                          </a> --}}
                          <a href="{{ route('asosiasi.export') }}" >
-                             <button onclick="exportTableToExcel('tabelAsosiasi', 'data_asosiasi')" class="button-baru">
+                             <button onclick="exportTableToExcel('tabelAsosiasi', 'data_asosiasikabupatenblora')" class="button-berkas">
                              <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
                             </button>
                         </a>
@@ -133,7 +113,7 @@
                             <button class="button-baru">
                             <!-- Ikon Kembali -->
                              <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                             Tambah Baru
+                             Tambah Data
                          </button>
                          </a>
                      </div>
@@ -141,7 +121,6 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-
 <table id="tabelAsosiasi" class="zebra-table table-striped">
  <thead>
      <tr>
@@ -158,7 +137,8 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">
+
+        <td style="text-align: left;">
             @if($item->namaasosiasi)
                 {{ $item->namaasosiasi }}
             @else
@@ -167,8 +147,6 @@
                 </button>
             @endif
         </td>
-
-
         <td style="text-align: center;">
             @if($item->alamat)
                 {{ $item->alamat }}
@@ -213,13 +191,13 @@
                  <i class="bi bi-eye"></i>
              </a> --}}
              <a href="/beasosiasi/update/{{$item->id}}" class="button-data" title="Update">
-                 <i class="bi bi-pencil-square"></i>Update
+                 <i class="bi bi-pencil-square"></i>
              </a>
              <a href="javascript:void(0)" class="button-merah" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
                    data-judul="{{ $item->namaasosiasi }}"
                    onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>Hapus
+                    <i class="bi bi-trash"></i>
             </a>
          </td>
 

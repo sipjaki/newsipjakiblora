@@ -1,23 +1,3 @@
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -34,7 +14,7 @@
    <!--begin::App Main-->
    <main class="app-main">
     {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -61,7 +41,7 @@
              <div class="card mb-4">
                  <!-- /.card-header -->
                  <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
@@ -125,7 +105,7 @@
 
 
                         <a href="/bebujkjakon">
-                             <button class="button-newvalidasi">
+                             <button class="button-modern">
                              <!-- Ikon Kembali -->
                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -137,7 +117,7 @@
                          </a>
 
 
-                         <button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_bujkkonstruksi')" class="button-baru">
+                         <button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_bujkkonstruksi')" class="button-berkas">
                             <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
                         </button>
 
@@ -160,7 +140,7 @@
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
         <th style="width: 250px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
         <th style="width: 250px; text-align:center;"><i class="bi bi-building"></i> Badan Usaha</th>
-        <th style="width: 400px; text-align:center;"><i class="bi bi-geo-alt-fill"></i> Alamat</th>
+        <th style="width: 2000px; text-align:center;"><i class="bi bi-geo-alt-fill"></i> Alamat</th>
         <th style="width: 350px; text-align:center;"><i class="bi bi-telephone-fill"></i> No Telepon</th>
         <th style="width: 350px; text-align:center;"><i class="bi bi-envelope-fill"></i> Email</th>
         <th style="width: 150px; text-align:center;"><i class="bi bi-credit-card-2-front"></i> NIB</th>
@@ -198,15 +178,21 @@
                 </button>
             @endif
         </td>
-            <td style="text-align: left;">
-                @if($item->alamat)
-                    {{ $item->alamat }}
-                @else
-                    <button class="button-berkas">
-                        Data Belum Di Update
-                    </button>
-                @endif
-            </td>
+
+<td style="
+    text-align: left;
+    word-wrap: break-word;
+">
+    @if($item->alamat)
+        {{ $item->alamat }}
+    @else
+        <button class="button-berkas">
+            Data Belum Di Update
+        </button>
+    @endif
+</td>
+
+
             <td style="text-align: center;">
                 @if($item->no_telepon)
                     {{ $item->no_telepon }}
@@ -276,7 +262,7 @@
 
                     <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
                         <a href="{{ url('/bebujkkonstruksi/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
-                            <button class="button-baru">
+                            <button class="button-berkas">
                                 <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
                             </button>
                         </a>
@@ -287,7 +273,7 @@
                 <td style="text-align: center;">
     @if($item->uploadberkas && file_exists(public_path('storage/' . $item->uploadberkas)))
         <!-- Button jika file ada di storage -->
-        <button class="button-baru"
+        <button class="button-berkas"
             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
             <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
         </button>
@@ -300,7 +286,7 @@
                         <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                         <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                         <span style="margin: 0 5px;">:</span>
-                        <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">Berkas Sertifikasi</h5>
+                        <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">Berkas</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body text-center">
@@ -312,7 +298,7 @@
 
     @elseif($item->uploadberkas)
         <!-- Button jika file path luar storage -->
-        <button class="button-baru"
+        <button class="button-berkas"
             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
             <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
         </button>
@@ -358,16 +344,16 @@
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="button-baru" title="Show">
-                <i class="bi bi-eye"></i>View
+                <i class="bi bi-eye"></i>
             </a>
             <a href="/bebujkkonstruksi/update/{{$item->id}}" class="button-berkas" title="Update">
-                <i class="bi bi-pencil-square"></i>Update
+                <i class="bi bi-pencil-square"></i>
             </a>
             <a href="javascript:void(0)" class="button-merah" title="Delete"
                data-bs-toggle="modal" data-bs-target="#deleteModal"
                data-judul="{{ $item->id }}"
                onclick="setDeleteUrl(this)">
-                <i class="bi bi-trash"></i>Hapus
+                <i class="bi bi-trash"></i>
             </a>
         </td>
 

@@ -15,7 +15,7 @@
       <main class="app-main">
 
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-     <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+     <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -53,7 +53,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/betupoksi">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -80,8 +80,8 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Judul -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="judul">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="judul">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul
                                             </label>
                                             <input type="text" id="judul" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{ old('judul', $data->judul) }}" />
@@ -95,11 +95,14 @@
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Keterangan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="keterangan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="keterangan">
                                                 <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Keterangan
                                             </label>
-                                            <textarea id="keterangan" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" style="height: 150px;">{{ old('keterangan', $data->keterangan) }}</textarea>
+                                        <textarea id="keterangan" name="keterangan"
+                                            class="form-control @error('keterangan') is-invalid @enderror"
+                                            rows="12" cols="100">{{ old('keterangan', $data->keterangan) }}</textarea>
+
                                             @error('keterangan')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -115,9 +118,9 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                     <button class="button-berkas" type="button" onclick="openModal()">
-    <i class="bi bi-pencil-square" style="margin-right: 8px; font-size: 18px; color: white; vertical-align: middle;"></i>
-    Perbaikan Data ?
-</button>
+                                        <i class="bi bi-pencil-square"></i>
+                                        Perbaikan Data ?
+                                    </button>
 
                                 </div>
                                 <!-- Modal Konfirmasi -->

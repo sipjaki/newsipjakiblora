@@ -16,7 +16,7 @@
            </div>
 
            <a href="#" style="display: block; text-align: center;">
-               <h6 class="text-center font-semibold text-sm text-stone-600" style="text-align: center; font-weight: 600; font-size: 0.875rem; color: #4B5563;"> dpuprblora @2025 </h6>
+               <h6 class="text-center font-semibold text-sm text-stone-600" style="text-align: center; font-weight: 600; font-size: 0.875rem; color: #4B5563;"> dpuprblora @2026 </h6>
                <br>
            </a>
 </div>

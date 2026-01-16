@@ -15,7 +15,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;"> --}}
-        <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+        <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
             <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -56,7 +56,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/besubbid">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -82,8 +82,8 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Nama Lengkap -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="namalengkap">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
                                             </label>
                                             <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap', $data->namalengkap) }}" />
@@ -93,8 +93,8 @@
                                         </div>
 
                                         <!-- NIP -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nip">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="nip">
                                                 <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> NIP
                                             </label>
                                             <input type="number" id="nip" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $data->nip) }}" />
@@ -104,8 +104,8 @@
                                         </div>
 
                                         <!-- Tempat Tanggal Lahir -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="ttl">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="ttl">
                                                 <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tempat Tanggal Lahir
                                             </label>
                                             <input type="date" id="ttl" name="ttl" class="form-control @error('ttl') is-invalid @enderror" value="{{ old('ttl', $data->ttl) }}" />
@@ -115,8 +115,8 @@
                                         </div>
 
                                         <!-- Pangkat Golongan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pangkatgolongan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="pangkatgolongan">
                                                 <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pangkat Golongan
                                             </label>
                                             <input type="text" id="pangkatgolongan" name="pangkatgolongan" class="form-control @error('pangkatgolongan') is-invalid @enderror" value="{{ old('pangkatgolongan', $data->pangkatgolongan) }}" />
@@ -128,8 +128,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <!-- Jabatan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="jabatan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="jabatan">
                                                 <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Jabatan
                                             </label>
                                             <input type="text" id="jabatan" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" value="{{ old('jabatan', $data->jabatan) }}" />
@@ -139,8 +139,8 @@
                                         </div>
 
                                         <!-- Perangkat Daerah -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="perangkatdaerah">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="perangkatdaerah">
                                                 <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perangkat Daerah
                                             </label>
                                             <input type="text" id="perangkatdaerah" name="perangkatdaerah" class="form-control @error('perangkatdaerah') is-invalid @enderror" value="{{ old('perangkatdaerah', $data->perangkatdaerah) }}" />
@@ -150,8 +150,8 @@
                                         </div>
 
                                         <!-- Pendidikan Terakhir -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pendidikanterakhir">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="pendidikanterakhir">
                                                 <i class="bi bi-graduation-cap" style="margin-right: 8px; color: navy;"></i> Pendidikan Terakhir
                                             </label>
                                             <select id="pendidikanterakhir" name="pendidikanterakhir" class="form-control @error('pendidikanterakhir') is-invalid @enderror">
@@ -177,7 +177,7 @@
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
                                     <button class="button-berkas" type="button" onclick="openModal()">
-                                        <i class="bi bi-pencil-square" style="margin-right: 8px; font-size: 18px; color: white; vertical-align: middle;"></i>
+                                        <i class="bi bi-pencil-square"></i>
                                         Perbaikan Data ?
                                     </button>
 

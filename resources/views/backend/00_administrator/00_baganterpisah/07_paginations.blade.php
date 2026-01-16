@@ -1,339 +1,368 @@
-<!-- PAGINATION COMPONENT -->
+<!-- PAGINATION COMPONENT MODERN BLORA -->
+<div class="blora-pagination-container"
+     style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; text-align: center; font-family: 'Segoe UI', system-ui, sans-serif;">
 
-<div class="custom-pagination-container"
-     style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 15px;">
+    <!-- Info Box Modern -->
+    <div class="blora-info-card"
+        style="padding: 16px 28px; border-radius: 12px; margin-bottom: 25px;
+               background: linear-gradient(135deg, #04b347 0%, #0a8f3a 100%);
+               border: none; box-shadow: 0 8px 32px rgba(4, 179, 71, 0.2);
+               display: flex; align-items: center; justify-content: center;
+               transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+               backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+        <div class="blora-info-content" style="color: white; font-weight: 600; text-align: center; display: flex; align-items: center; gap: 8px;">
+            <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutam/06_shspkonstruksi.png"
+                        alt="SHS P Konstruksi"
+                        style="width: 32px; height: 32px; object-fit: contain;">
+                </div>
 
-    <!-- Info Box -->
-    <div class="custom-pagination-info-box"
-        style="padding: 12px 20px; border-radius: 8px; margin-bottom: 15px;
-               background-color: #04b347; border: 1px solid #04b347; box-shadow: 0 4px 8px rgba(0,0,0,0.12);
-               display: flex; align-items: center; justify-content: center; transition: all 0.15s ease-in-out;">
-        <div class="custom-pagination-info" style="color: white; font-weight: 600; text-align: center;">
-            📊 Data Ke <span style="color: currentColor;">{{ $data->firstItem() }}</span>
-            Sampai <span style="color: currentColor;">{{ $data->lastItem() }}</span>
-            Dari <span style="color: currentColor;">{{ $data->total() }}</span> Jumlah
-            <span style="color: currentColor;">{{ $title }}</span>
+            <div style="text-align: left;">
+                <div style="font-size: 14px; opacity: 0.9; margin-bottom: 4px;">{{ $title }}</div>
+                <div style="font-size: 16px;">
+                    Data Ke <span style="color: #ffeb3b; font-weight: 700;">{{ $data->firstItem() }}</span> -
+                    <span style="color: #ffeb3b; font-weight: 700;">{{ $data->lastItem() }}</span> dari
+                    <span style="color: #ffeb3b; font-weight: 700;">{{ $data->total() }}</span> Jumlah Data
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Pagination Navigation -->
+    <!-- Pagination Navigation Modern -->
     @php
-        // window = jumlah halaman di kiri/kanan halaman aktif (misal 2 => tampil -2..+2)
-        $window = 2;
+        $window = 2; // Jumlah halaman di kiri/kanan halaman aktif
         $last = $data->lastPage();
         $current = $data->currentPage();
+
+        // Menghitung halaman yang akan ditampilkan
         $start = max($current - $window, 1);
         $end = min($current + $window, $last);
-        // helper untuk menghasilkan url dengan semua query except page tetap ter-append
+
+        // Pastikan selalu ada minimal 5 halaman jika memungkinkan
+        if ($end - $start < 4 && $last > 5) {
+            if ($current <= 3) {
+                $end = min(5, $last);
+            } elseif ($current >= $last - 2) {
+                $start = max($last - 4, 1);
+            }
+        }
+
+        // Helper untuk URL dengan semua query parameter
         $paginator = $data->appends(request()->except('page'));
     @endphp
 
-    <ul class="custom-pagination-paginate"
-        style="display: flex; padding-left: 0; list-style: none; gap: 10px; margin: 0; flex-wrap: wrap; justify-content: center;">
+    <div class="blora-pagination-wrapper"
+         style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center;">
 
-        {{-- Previous --}}
-        <li class="custom-page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="display:flex; align-items:center;">
-            <a class="custom-page-link" href="{{ $data->onFirstPage() ? '#' : $paginator->previousPageUrl() }}"
-               style="background-color: #04b347; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
-                      display:flex; align-items:center; transition: all 0.15s ease; border:1px solid #04b347;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                     stroke-linecap="round" stroke-linejoin="round" style="width:16px; height:16px; margin-right:8px;">
-                    <path d="M15 19l-7-7 7-7"/>
-                </svg>
-                Previous
-            </a>
-        </li>
-
-        {{-- First page + leading ellipsis --}}
-        @if($start > 1)
-            <li style="display:flex; align-items:center;">
-                <a class="custom-page-link" href="{{ $paginator->url(1) }}"
-                   style="background-color:#374151;color:white;padding:8px 12px;border-radius:5px;text-decoration:none;border:1px solid #374151;">
-                    1
-                </a>
-            </li>
-
-            @if($start > 2)
-                <li style="display:flex; align-items:center;"><span style="padding:8px 10px;">...</span></li>
-            @endif
+        {{-- First Page Button --}}
+        @if($current > 1)
+        <a href="{{ $paginator->url(1) }}"
+           class="blora-page-btn blora-first"
+           style="display: flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 10px;
+                  background: #f0f9f0; color: #04b347; text-decoration: none; font-weight: 600;
+                  border: 2px solid #d1f0d1; transition: all 0.3s ease;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L12 12L18 18M6 6V18"/>
+            </svg>
+            First
+        </a>
         @endif
 
-        {{-- Middle pages --}}
-        @for ($page = $start; $page <= $end; $page++)
-            <li class="custom-page-item {{ $page == $current ? 'active' : '' }}" style="display:flex; align-items:center;">
-                <a class="custom-page-link" href="{{ $paginator->url($page) }}"
-                   style="background-color: {{ $page == $current ? '#16A34A' : '#374151' }};
-                          color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none;
-                          border: 1px solid {{ $page == $current ? '#16A34A' : '#374151' }};">
-                    {{ $page }}
-                </a>
-            </li>
-        @endfor
+        {{-- Previous Button --}}
+        <a href="{{ $data->onFirstPage() ? '#' : $paginator->previousPageUrl() }}"
+           class="blora-page-btn blora-prev {{ $data->onFirstPage() ? 'disabled' : '' }}"
+           style="display: flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 10px;
+                  background: {{ $data->onFirstPage() ? '#e0e0e0' : '#04b347' }};
+                  color: {{ $data->onFirstPage() ? '#999' : 'white' }};
+                  text-decoration: none; font-weight: 600; border: none;
+                  transition: all 0.3s ease; cursor: {{ $data->onFirstPage() ? 'not-allowed' : 'pointer' }};
+                  box-shadow: 0 4px 12px rgba(4, 179, 71, 0.2);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 19l-7-7 7-7"/>
+            </svg>
+            Prev
+        </a>
 
-        {{-- Trailing ellipsis + last page --}}
-        @if($end < $last)
-            @if($end < $last - 1)
-                <li style="display:flex; align-items:center;"><span style="padding:8px 10px;">...</span></li>
+        {{-- Page Numbers --}}
+        <div class="blora-pages-container"
+             style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+
+            {{-- Ellipsis for beginning --}}
+            @if($start > 1)
+                <span style="padding: 8px 12px; color: #666; font-weight: 600;">...</span>
             @endif
-            <li style="display:flex; align-items:center;">
-                <a class="custom-page-link" href="{{ $paginator->url($last) }}"
-                   style="background-color:#374151;color:white;padding:8px 12px;border-radius:5px;text-decoration:none;border:1px solid #374151;">
-                    {{ $last }}
-                </a>
-            </li>
+
+            {{-- Page Numbers --}}
+            @for ($page = $start; $page <= $end; $page++)
+                @if($page == $current)
+                    <div class="blora-page-current"
+                         style="padding: 12px 18px; border-radius: 10px; background: linear-gradient(135deg, #04b347 0%, #0a8f3a 100%);
+                                color: white; font-weight: 700; box-shadow: 0 6px 20px rgba(4, 179, 71, 0.3);
+                                border: 2px solid white; position: relative;">
+                        {{ $page }}
+                        <div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+                                    width: 8px; height: 8px; background: #ffeb3b; border-radius: 50%;"></div>
+                    </div>
+                @else
+                    <a href="{{ $paginator->url($page) }}"
+                       class="blora-page-number"
+                       style="padding: 10px 16px; border-radius: 10px; background: white; color: #04b347;
+                              text-decoration: none; font-weight: 600; border: 2px solid #e0f2e0;
+                              transition: all 0.3s ease; min-width: 45px;">
+                        {{ $page }}
+                    </a>
+                @endif
+            @endfor
+
+            {{-- Ellipsis for end --}}
+            @if($end < $last)
+                <span style="padding: 8px 12px; color: #666; font-weight: 600;">...</span>
+            @endif
+        </div>
+
+        {{-- Next Button --}}
+        <a href="{{ $data->hasMorePages() ? $paginator->nextPageUrl() : '#' }}"
+           class="blora-page-btn blora-next {{ !$data->hasMorePages() ? 'disabled' : '' }}"
+           style="display: flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 10px;
+                  background: {{ !$data->hasMorePages() ? '#e0e0e0' : '#04b347' }};
+                  color: {{ !$data->hasMorePages() ? '#999' : 'white' }};
+                  text-decoration: none; font-weight: 600; border: none;
+                  transition: all 0.3s ease; cursor: {{ !$data->hasMorePages() ? 'not-allowed' : 'pointer' }};
+                  box-shadow: 0 4px 12px rgba(4, 179, 71, 0.2);">
+            Next
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 5l7 7-7 7"/>
+            </svg>
+        </a>
+
+        {{-- Last Page Button --}}
+        @if($current < $last)
+        <a href="{{ $paginator->url($last) }}"
+           class="blora-page-btn blora-last"
+           style="display: flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 10px;
+                  background: #f0f9f0; color: #04b347; text-decoration: none; font-weight: 600;
+                  border: 2px solid #d1f0d1; transition: all 0.3s ease;">
+            Last
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 6V18M18 6L12 12L18 18"/>
+            </svg>
+        </a>
         @endif
 
-        {{-- Next --}}
-        <li class="custom-page-item {{ !$data->hasMorePages() ? 'disabled' : '' }}" style="display:flex; align-items:center;">
-            <a class="custom-page-link" href="{{ $data->hasMorePages() ? $paginator->nextPageUrl() : '#' }}"
-               style="background-color: #04b347; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
-                      display:flex; align-items:center; transition: all 0.15s ease; border:1px solid #04b347;">
-                Next
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                     stroke-linecap="round" stroke-linejoin="round" style="width:16px; height:16px; margin-left:8px;">
-                    <path d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </li>
-    </ul>
+    </div>
+
+    <!-- Page Indicator -->
+    <div class="blora-page-indicator"
+         style="margin-top: 20px; padding: 8px 20px; border-radius: 20px; background: #f8fff8;
+                color: #0a8f3a; font-weight: 600; font-size: 14px; border: 1px solid #d1f0d1;">
+        Halaman Ke {{ $current }} Dari {{ $last }}
+    </div>
+
 </div>
 
-{{--
 <style>
-    /* Global Styles */
-    .custom-pagination-container * {
-        font-size: 15px !important;
-        box-sizing: border-box;
+/* MODERN BLORA PAGINATION STYLES */
+
+/* Global Reset */
+.blora-pagination-container * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Info Card Animation */
+.blora-info-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.blora-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.blora-info-card:hover::before {
+    left: 100%;
+}
+
+/* Page Numbers Hover Effects */
+.blora-page-number {
+    position: relative;
+    overflow: hidden;
+}
+
+.blora-page-number:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(4, 179, 71, 0.25);
+    border-color: #04b347 !important;
+    color: #0a8f3a !important;
+}
+
+.blora-page-number::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(4, 179, 71, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.blora-page-number:hover::before {
+    width: 150px;
+    height: 150px;
+}
+
+/* Current Page Animation */
+.blora-page-current {
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 6px 20px rgba(4, 179, 71, 0.3);
     }
-
-    /* Animation Effects */
-    .custom-page-link {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        -webkit-font-smoothing: subpixel-antialiased;
+    50% {
+        box-shadow: 0 6px 30px rgba(4, 179, 71, 0.5);
     }
-
-    .custom-page-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 200%;
-        height: 100%;
-        background: linear-gradient(
-            120deg,
-            rgba(255, 255, 255, 0) 20%,
-            rgba(255, 255, 255, 0.2) 50%,
-            rgba(255, 255, 255, 0) 80%
-        );
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1;
+    100% {
+        box-shadow: 0 6px 20px rgba(4, 179, 71, 0.3);
     }
+}
 
-    .custom-page-link:hover::before {
-        left: 100%;
-    }
+/* Button Hover Effects */
+.blora-page-btn:not(.disabled):hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(4, 179, 71, 0.4) !important;
+}
 
-    /* Active State Glow */
-    .custom-page-item.active .custom-page-link {
-        box-shadow: 0 0 15px rgba(7, 182, 71, 0.4);
-        animation: pulse-glow 2s infinite;
-    }
+/* Disabled State */
+.blora-page-btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+}
 
-    /* Hover Effects */
-    .custom-page-link:hover {
-        transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Disabled State */
-    .custom-page-item.disabled .custom-page-link {
-        background-color: #9CA3AF !important;
-        border-color: #9CA3AF !important;
-        color: white !important;
-        pointer-events: none;
-        filter: grayscale(0.8);
-    }
-
-    /* Animations */
-    @keyframes pulse-glow {
-        0% { box-shadow: 0 0 10px rgba(0, 255, 94, 0.3); }
-        50% { box-shadow: 0 0 20px rgba(0, 255, 94, 0.3); }
-        100% { box-shadow: 0 0 10px rgba(0, 255, 94, 0.3); }
-    }
-
-    /* Smooth Transitions */
-    .custom-pagination-info-box,
-    .custom-page-link {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-</style> --}}
-
-
-<style>
-    /* Global Styles */
-    .custom-pagination-container * {
-        font-size: 15px !important;
-        box-sizing: border-box;
-    }
-
-    /* Animation Effects */
-    .custom-page-link {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        -webkit-font-smoothing: subpixel-antialiased;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        border-radius: 5px;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        padding: 8px 12px;
-        color: white;
-        border: 1px solid transparent;
-    }
-
-    .custom-page-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 200%;
-        height: 100%;
-        background: linear-gradient(
-            120deg,
-            rgba(255, 255, 255, 0) 20%,
-            rgba(255, 255, 255, 0.2) 50%,
-            rgba(255, 255, 255, 0) 80%
-        );
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1;
-    }
-
-    .custom-page-link:hover::before {
-        left: 100%;
-    }
-
-    /* Active State Glow */
-    .custom-page-item.active .custom-page-link {
-        background-color: #16A34A;
-        border-color: #16A34A;
-        box-shadow: 0 0 15px rgba(7, 182, 71, 0.4);
-        animation: pulse-glow 2s infinite;
-    }
-
-    /* Hover Effects */
-    .custom-page-link:hover {
-        transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        color: black !important;
-    }
-
-    /* Disabled State */
-    .custom-page-item.disabled .custom-page-link {
-        background-color: #9CA3AF !important;
-        border-color: #9CA3AF !important;
-        color: white !important;
-        pointer-events: none;
-        filter: grayscale(0.8);
-    }
-
-    /* Animations */
-    @keyframes pulse-glow {
-        0% { box-shadow: 0 0 10px rgba(0, 255, 94, 0.3); }
-        50% { box-shadow: 0 0 20px rgba(0, 255, 94, 0.3); }
-        100% { box-shadow: 0 0 10px rgba(0, 255, 94, 0.3); }
-    }
-
-    /* Smooth Transitions */
-    .custom-pagination-info-box,
-    .custom-page-link {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Pagination container styles */
-    .custom-pagination-container {
-        margin-top: 50px;
-        display: flex;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blora-pagination-wrapper {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        font-size: 15px;
+        gap: 12px;
     }
 
-    /* Info box styles */
-    .custom-pagination-info-box {
-        padding: 12px 20px;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        background-color: #04b347;
-        border: 1px solid #04b347;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease-in-out;
-        color: white;
-        font-weight: 600;
-    }
-    .custom-pagination-info-box:hover {
-        background-color: white;
-        color: #166534;
-    }
-    .custom-pagination-info-box:hover .custom-pagination-info {
-        color: #04b347;
+    .blora-pages-container {
+        order: 3;
+        margin-top: 10px;
     }
 
-    /* Pagination nav */
-    .custom-pagination-paginate {
-        display: flex;
-        padding-left: 0;
-        list-style: none;
-        gap: 10px;
-        margin: 0;
+    .blora-page-btn.blora-first,
+    .blora-page-btn.blora-last {
+        display: none !important;
     }
 
-    .custom-page-item {
-        display: flex;
-        align-items: center;
+    .blora-info-content {
+        flex-direction: column;
+        text-align: center !important;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blora-page-number,
+    .blora-page-current {
+        padding: 8px 12px !important;
+        min-width: 40px !important;
+        font-size: 14px;
     }
 
-    /* Previous and Next Buttons styles */
-    .custom-page-item.previous .custom-page-link,
-    .custom-page-item.next .custom-page-link {
-        background-color: #04b347;
-        color: white;
-        padding: 8px 15px;
-        border-radius: 5px;
-        border: 1px solid #04b347;
-    }
-    .custom-page-item.previous .custom-page-link:hover,
-    .custom-page-item.next .custom-page-link:hover {
-        color: black !important;
-    }
-    .custom-page-item.previous.disabled .custom-page-link,
-    .custom-page-item.next.disabled .custom-page-link {
-        background-color: #9CA3AF !important;
-        border-color: #9CA3AF !important;
-        color: white !important;
-        pointer-events: none;
-        filter: grayscale(0.8);
+    .blora-page-btn {
+        padding: 8px 16px !important;
+        font-size: 14px;
     }
 
-    /* Responsive: hanya tampilkan Previous dan Next saja */
+    .blora-info-card {
+        padding: 12px 16px !important;
+    }
+}
 
-@media (max-width: 576px) {
-  .custom-pagination-paginate li.custom-page-item {
-    display: none !important;
-  }
-  .custom-pagination-paginate li.custom-page-item.previous,
-  .custom-pagination-paginate li.custom-page-item.next {
-    display: flex !important;
-    background-color: #04b347 !important;
-    color: white !important;
-    padding: 8px 15px;
-    border-radius: 5px;
-  }
-  }
+/* Loading Animation */
+.blora-page-btn.loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.blora-page-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Gradient Border Effect for Container */
+.blora-pagination-container {
+    position: relative;
+}
+
+.blora-pagination-container::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #04b347, transparent);
+}
 </style>
+
+<script>
+// Smooth scroll to top when changing page
+document.querySelectorAll('.blora-page-number, .blora-page-btn').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (!this.classList.contains('disabled')) {
+            // Add loading state
+            this.classList.add('loading');
+
+            // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // Optional: Add click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        }
+    });
+});
+
+// Hover effect for page numbers
+document.querySelectorAll('.blora-page-number').forEach(btn => {
+    btn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-3px)';
+    });
+
+    btn.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+    });
+});
+</script>

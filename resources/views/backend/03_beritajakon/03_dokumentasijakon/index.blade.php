@@ -1,23 +1,3 @@
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -35,7 +15,7 @@
    <main class="app-main">
     {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -63,12 +43,12 @@
              <div class="card mb-4">
                  <!-- /.card-header -->
                  <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Dokumentasi Kegiatan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <input type="search" id="searchInput" placeholder="Cari Kegiatan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
                             function updateEntries() {
@@ -99,7 +79,7 @@
                              <button class="button-baru">
                              <!-- Ikon Kembali -->
                              <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                             Buat Dokumentasi
+                             Tambah Dokumentasi
                          </button>
                          </a>
                      </div>
@@ -107,7 +87,6 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-
 <table class="zebra-table table-striped">
  <thead>
      <tr>

@@ -80,7 +80,7 @@
     }
 
 
-    .table-responsive {
+    .form-modern table-responsive {
     width: 100%;
     overflow-x: auto;
 }
@@ -96,12 +96,12 @@
 .zebra-table td {
     padding: 10px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid #fffdfd;
 }
 
 /* Tambahan untuk striping */
 .zebra-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #fcf6f6;
 }
 
 /* Responsif khusus untuk HP */
@@ -507,7 +507,7 @@ button:hover {
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-            <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+            <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -533,13 +533,13 @@ button:hover {
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
 
 @canany(['super_admin', 'admin'])
            <a href="{{ url()->previous() }}">
-    <button class="button-newvalidasi">
+    <button class="button-modern">
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       viewBox="0 0 16 16">
       <path fill-rule="evenodd"
@@ -576,7 +576,7 @@ button:hover {
 @can('pekerja')
 
            <a href="/hakaksespekerjaberkas">
-    <button class="button-newvalidasi">
+    <button class="button-modern">
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
     viewBox="0 0 16 16">
     <path fill-rule="evenodd"
@@ -591,7 +591,7 @@ button:hover {
 @endcan
 
 @can('lsppenerbit')
-   <button class="button-newvalidasi"
+   <button class="button-modern"
     onclick="history.back();">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -613,7 +613,7 @@ button:hover {
 }
 </style>
 
-<button class="button-berkas">
+<button class="button-baru">
     <!-- Ikon User -->
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         viewBox="0 0 16 16">
@@ -640,7 +640,7 @@ button:hover {
                     </div>
 
 
-                    <div class="container">
+                    <div class="container form-modern">
                         <h5>Status Verifikasi Berkas Anda !</h5>
                         <div id="checkpoint-container" class="timeline-container"></div>
 
@@ -1011,15 +1011,15 @@ button:hover {
         <!-- Logo -->
         <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora"
              style="width: 100px; height: auto; margin-right: 20px; margin-top: 10px;">
-        <img src="/assets/icon/pupr.png" alt="Logo Kabupaten Blora"
-             style="width: 100px; height: auto; margin-right: 20px; margin-top: 10px;">
+        {{-- <img src="/assets/icon/pupr.png" alt="Logo Kabupaten Blora"
+             style="width: 100px; height: auto; margin-right: 20px; margin-top: 10px;"> --}}
 
         <!-- Teks Kop -->
         <div style="text-align: center; margin-left:50px;">
             <h3 style="margin: 0;">PEMERINTAH KABUPATEN BLORA</h3>
-            <h3 style="margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+            <h4 style="margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h4>
             <p style="margin: 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-            <h3 style="margin: 0;">KABUPATEN BLORA 58214 PROVINSI JAWA TENGAH</h3>
+            <h4 style="margin: 0;">BLORA 58214 </h4>
         </div>
     </div>
 
@@ -1035,7 +1035,7 @@ button:hover {
 
     <h5 style="color: navy; font-weight:800; font-size:16px;">I. IDENTITAS PESERTA</h4>
 
-        <div class="table-responsive">
+        <div class="form-modern table-responsive">
             <table class="zebra-table table-striped">
 
                 <tr>
@@ -1063,7 +1063,7 @@ button:hover {
     </table>
 </div>
 
-<div class="table-responsive">
+<div class="form-modern table-responsive">
     <table class="zebra-table table-striped">
 
         <tr>
@@ -1150,7 +1150,7 @@ button:hover {
 
     <h5 style="color: navy; font-weight:800; font-size:16px;">II. KELENGKAPAN BERKAS PERSYARATAN PESERTA</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
-    <div class="table-responsive">
+    <div class="form-modern table-responsive">
     <table class="zebra-table table-striped">
         <tr>
             <td style="text-align: center; font-size:16px;">KTP/KITAS*</td>
@@ -1375,7 +1375,7 @@ button:hover {
     <h5 style="color: navy; font-weight:800; font-size:16px;">III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
 
-<div class="table-responsive">
+<div class="form-modern table-responsive">
 
     <table class="zebra-table table-striped">
         <tr>
@@ -1386,7 +1386,7 @@ button:hover {
 
 </div>
 
-<div class="table-responsive">
+<div class="form-modern table-responsive">
 <table class="zebra-table table-striped">
         <tr>
             <td style="text-align: center; font-size:16px;">MEMPUNYAI SKK ?</td>
@@ -1551,7 +1551,7 @@ button:hover {
     @method('PUT')
                     <!-- /.card-header -->
                     <div class="card-body p-0">
-                        <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+                        <div class="form-modern table-responsive" style="overflow-x: auto; white-space: nowrap;">
                             <table class="zebra-table table-striped">
 <thead style="font-size: 16px; background-color: green; color: white;">
                                     <tr>
@@ -2433,8 +2433,8 @@ button:hover {
 
 
                     <div class="mb-3" style="margin-top: -50px;">
-                    <label for="catatanvalidasi" class="form-label" style="color: navy">
-                                    <i class="bi bi-card-text me-1" style="color: navy;"></i> <span style="color: navy;">Catatan Keterangan Berkas</span>
+                    <label for="catatanvalidasi" class="form-label-modern" style="color: navy;">
+                                    <i class="bi bi-card-text me-1" style="color: navy;  margin-left:100px;"></i> <span style="color: navy;">Catatan Keterangan Berkas</span>
                                 </label>
                                 <div class="form-control" style="min-height: 120px; white-space: pre-wrap; background-color: #f8f9fa;">
                             {{ $datapeserta->catatanvalidasi ?? '-' }}
@@ -2447,7 +2447,7 @@ button:hover {
 
 
                     <div class="mb-3" style="margin-top: -50px;">
-                        <label for="catatanvalidasi" class="form-label">
+                        <label for="catatanvalidasi" class="form-label-modern">
                             <i class="bi bi-card-text me-1"></i> Catatan Keterangan Berkas
                         </label>
 
@@ -2464,15 +2464,10 @@ button:hover {
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                            <button class="button-hijau" type="button" onclick="openModal()">
-                                            <!-- Ikon SVG Save -->
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                                class="bi bi-save" viewBox="0 0 16 16">
-                                                <path d="M8.5 1.5v5h-1v-5H5v5H4V1.5A1.5 1.5 0 0 1 5.5 0h5A1.5 1.5 0 0 1 12 1.5v5h-1v-5h-2.5z"/>
-                                                <path d="M1 4.5V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4.5L13.5 3h-11L1 4.5zM3 4h10l.5.5V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4.5L3 4z"/>
-                                            </svg>
+                                    <button class="button-baru" type="button" onclick="openModal()">
+                                            <i class="bi bi-save" style="margin-right: 6px;"></i>
                                             Simpan Validasi
-                                            </button>
+                                        </button>
 
                                     </div>
                                     <!-- Modal Konfirmasi -->

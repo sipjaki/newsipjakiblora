@@ -5,7 +5,7 @@
         {{-- <div class="header flex flex-col bg-gradient-to-b from-[#28A745] to-[#FFDC00] rounded-b-[50px] overflow-hidden"> --}}
             <!-- Konten lainnya di sini -->
         {{-- </div> --}}
-        <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;">
+        <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/halamanutamabarumasjaki.png'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;">
 
         <nav class="pt-5 px-3 flex justify-between items-center">
             <div class="flex items-center gap-[10px]">
@@ -22,9 +22,9 @@
             </a> --}}
         </nav>
 
-        <div class="z-10" style="margin-top:25px; background-color: rgba(255, 255, 255, 0.6); border-radius: 10px; padding: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <div class="z-10" style="margin-top:95px; background-color: rgba(255, 255, 255, 0.6); border-radius: 10px; padding: 20px; max-wi  dth: 600px; margin-left: auto; margin-right: auto;">
             <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
-                Mas Jaki Blora <br> Sistem Informasi Pembina Jasa Konstruksi
+                Sistem Informasi Pembina  <br> Jasa Konstruksi
             </h1>
         </div>
 
@@ -122,7 +122,7 @@
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora <br>AHSP Konstruksi Umum</h2>
-                <img src="/assets/icon/pupr.png" alt="" width="8%" loading="lazy">
+                <img src="/assets/icon/masjakibaru.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="main-carousel mt-[14px]">
@@ -131,7 +131,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/ressatuanhargadasar">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/satuan1.jpg" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                <img src="/assets/00_android/iconmenu/satuanhargadasarbaru.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -146,7 +146,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/resahspkonstruksi">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/satuan2.jpg" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                <img src="/assets/00_android/iconmenu/ahspkonstruksiumumbaru.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -160,11 +160,11 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/resshstblora">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/satuan3.jpg" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                <img src="/assets/00_android/iconmenu/shstkabblorabaru.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <a class="font-bold line-clamp-2 hover:line-clamp-none text-sm" style="color: #28A745;">SHST Kab Blora 2025</a>
+                            <a class="font-bold line-clamp-2 hover:line-clamp-none text-sm" style="color: #28A745;">SHST Kab Blora 2026</a>
                             {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 12.000.000</span></p> --}}
                         </div>
                         {{-- <progress id="fund" value="10" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
@@ -177,7 +177,7 @@
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora <br>Agenda Pelatihan dan SKK</h2>
-                <img src="/assets/icon/pupr.png" alt="" width="8%" loading="lazy">
+                <img src="/assets/icon/masjakibaru.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="main-carousel mt-[14px]">
@@ -348,7 +348,7 @@
         <div id="latest-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora  <br>Berita Jasa Konstruksi </h2>
-                <img src="/assets/icon/pupr.png" alt="" width="8%" loading="lazy">
+                <img src="/assets/icon/masjakibaru.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="flex flex-col gap-4 mt-[14px] px-4">
@@ -440,7 +440,7 @@
         <div id="latest-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora  <br>Artikel Jasa Konstruksi </h2>
-                <img src="/assets/icon/pupr.png" alt="" width="8%" loading="lazy">
+                <img src="/assets/icon/masjakibaru.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
 
@@ -506,10 +506,7 @@
 </div>
         </div>
 
-
-
-
-        @include('frontend.00_android.00_fiturmenu.keterangan')
+       @include('frontend.00_android.00_fiturmenu.keterangan')
 
         @include('backend.00_style.01_cssdashboard.perintah')
         {{-- @include('backend.00_style.01_cssdashboard.katakunci') --}}

@@ -16,7 +16,7 @@
 
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;"> --}}
         <!--begin::App Content Header-->
-        <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+        <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <div class="app-content-header">
           <!--begin::Container-->
@@ -42,7 +42,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
@@ -60,8 +60,8 @@
                                     <div class="row">
                                         <!-- Left Column (6/12) -->
                                         <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">
+                                            <div class="form-modern mb-3">
+                                                <label class="form-label-modern">
                                                     <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Informasi OPD
                                                 </label>
                                                 <div style="max-width: 100%; padding: 10px;">
@@ -76,15 +76,15 @@
                                         <!-- Right Column (6/12) -->
 
                                         <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">
+                                            <div class="form-modern mb-3">
+                                                <label class="form-label-modern">
                                                     <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> No Telepon
                                                 </label>
                                                 <input class="form-control" value="{{$item->notelepon}}" readonly/>
                                             </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">
+                                            <div class="form-modern mb-3">
+                                                <label class="form-label-modern">
                                                     <i class="bi bi-instagram" style="margin-right: 8px; color: navy;"></i> Instagram
                                                 </label>
                                                 <input class="form-control" value="{{$item->instagram}}" readonly/>
@@ -94,15 +94,15 @@
                                         <!-- End Right Column -->
 
                                         <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">
+                                            <div class="form-modern mb-3">
+                                                <label class="form-label-modern">
                                                     <i class="bi bi-tiktok" style="margin-right: 8px; color: navy;"></i> Tiktok
                                                 </label>
                                                 <input class="form-control" value="{{$item->tiktok}}" readonly/>
                                             </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">
+                                            <div class="form-modern mb-3">
+                                                <label class="form-label-modern">
                                                     <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
                                                 </label>
                                                 <input class="form-control" value="{{$item->email}}" readonly/>
@@ -130,7 +130,7 @@
 
                         </a>
                         <a href="/beprofiljakon">
-                            <button class="button-newvalidasi">
+                            <button class="button-modern">
                             <!-- Ikon Kembali -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16" style="margin-right: 8px;">

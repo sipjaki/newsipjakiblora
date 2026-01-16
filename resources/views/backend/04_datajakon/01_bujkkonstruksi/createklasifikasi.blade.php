@@ -14,7 +14,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -39,7 +39,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                     </div>
 
 
@@ -48,14 +48,14 @@
                            <div class="card card-primary card-outline mb-6">
                             <div style="display: flex; justify-content: space-between; margin-top: 10px; margin-bottom:10px;">
                                 <!-- Tombol Kiri -->
-                                <button class="button-hijau">
+                                <button class="button-baru">
 
                                     Badan Usaha : {{ $bujkkontraktornamalengkap }}
                                 </button>
 
                                 <!-- Tombol Kanan -->
                                 <a href="/bebujkkonstruksi">
-                                    <button class="button-newvalidasi">
+                                    <button class="button-modern">
                                         <!-- Ikon Kembali -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                             viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -83,8 +83,8 @@
                                         <!-- ID BUJK Kontraktor (Hidden atau Select jika mau pilih) -->
                                         <input type="hidden"  name="bujkkontraktor_id" value="{{ $bujkkontraktor_id }}">
                                         <!-- Nama Pengurus -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_pengurus">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="nama_pengurus">
                                                 <i class="bi bi-person" style="margin-right:8px; color:navy;"></i> Nama Pengurus
                                             </label>
                                             <input type="text" id="nama_pengurus" name="nama_pengurus" class="form-control @error('nama_pengurus') is-invalid @enderror" value="{{ old('nama_pengurus') }}">
@@ -94,8 +94,8 @@
                                         </div>
 
                                         <!-- Sub Klasifikasi Layanan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_pengurus">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="nama_pengurus">
                                                 <i class="bi bi-person" style="margin-right:8px; color:navy;"></i> Nama PSJK
                                             </label>
                                             <input type="text" id="nama_psjk" name="nama_psjk" class="form-control @error('nama_psjk') is-invalid @enderror" value="{{ old('nama_psjk') }}">
@@ -105,8 +105,8 @@
                                         </div>
 
                                         <!-- Sub Klasifikasi Layanan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="sub_klasifikasi_layanan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="sub_klasifikasi_layanan">
                                                 <i class="bi bi-clipboard-data" style="margin-right:8px; color:navy;"></i> Sub Klasifikasi Layanan
                                             </label>
                                             <input type="text" id="sub_klasifikasi_layanan" name="sub_klasifikasi_layanan" class="form-control @error('sub_klasifikasi_layanan') is-invalid @enderror" value="{{ old('sub_klasifikasi_layanan') }}">
@@ -116,8 +116,8 @@
                                         </div>
 
                                         <!-- Kode Sub Klasifikasi -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kode">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="kode">
                                                 <i class="bi bi-code" style="margin-right:8px; color:navy;"></i> Kode Sub Klasifikasi
                                             </label>
                                             <input type="text" id="kode" name="kode" class="form-control @error('kode') is-invalid @enderror" value="{{ old('kode') }}">
@@ -127,8 +127,8 @@
                                         </div>
 
                                         <!-- Kualifikasi -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kualifikasi">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="kualifikasi">
                                                 <i class="bi bi-award" style="margin-right:8px; color:navy;"></i> Kualifikasi
                                             </label>
                                             <select id="kualifikasi" name="kualifikasi" class="form-control @error('kualifikasi') is-invalid @enderror">
@@ -150,8 +150,8 @@
                                     <div class="col-md-6">
 
                                         <!-- Sub Bidang -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="sub_kualifikasi_bu">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="sub_kualifikasi_bu">
                                                 <i class="bi bi-diagram-3" style="margin-right:8px; color:navy;"></i> Sub Kualifikasi Badan Usaha
                                             </label>
                                             <input type="text" id="sub_kualifikasi_bu" name="sub_kualifikasi_bu" class="form-control @error('sub_kualifikasi_bu') is-invalid @enderror" value="{{ old('sub_kualifikasi_bu') }}">
@@ -161,8 +161,8 @@
                                         </div>
 
                                         <!-- Penerbit -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="penerbit">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="penerbit">
                                                 <i class="bi bi-file-earmark-text" style="margin-right:8px; color:navy;"></i> Penerbit
                                             </label>
                                             <input type="text" id="penerbit" name="penerbit" class="form-control @error('penerbit') is-invalid @enderror" value="{{ old('penerbit') }}">
@@ -172,8 +172,8 @@
                                         </div>
 
                                         <!-- Tanggal Terbit -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal_terbit">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="tanggal_terbit">
                                                 <i class="bi bi-calendar-check" style="margin-right:8px; color:navy;"></i> Tanggal Terbit
                                             </label>
                                             <input type="date" id="tanggal_terbit" name="tanggal_terbit" class="form-control @error('tanggal_terbit') is-invalid @enderror" value="{{ old('tanggal_terbit') }}">
@@ -183,8 +183,8 @@
                                         </div>
 
                                         <!-- Tanggal Berlaku -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal_berlaku">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="tanggal_berlaku">
                                                 <i class="bi bi-calendar-event" style="margin-right:8px; color:navy;"></i> Tanggal Berlaku
                                             </label>
                                             <input type="date" id="tanggal_berlaku" name="tanggal_berlaku" class="form-control @error('tanggal_berlaku') is-invalid @enderror" value="{{ old('tanggal_berlaku') }}">
@@ -200,16 +200,11 @@
                                 <!-- Tombol Submit -->
                                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                        <button type="button" onclick="openModal()" class="button-hijau">
+                                        <button type="button" onclick="openModal()" class="button-baru">
+                                            <i class="bi bi-plus-lg" style="margin-right:8px;"></i>
+                                            <span style="font-family: 'Poppins', sans-serif;">Tambah Data</span>
+                                        </button>
 
-                                        <!-- Ikon SVG Pensil -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                        fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                   </svg>
-                                        <span style="font-family: 'Poppins', sans-serif;">Tambah Data </span>
-                                    </button>
                                     </div>
                                     <!-- Modal Konfirmasi -->
                                     <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

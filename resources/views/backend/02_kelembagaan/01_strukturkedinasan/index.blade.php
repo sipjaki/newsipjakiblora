@@ -15,7 +15,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
           <div class="app-content-header">
@@ -36,20 +36,21 @@
             <div class="row" style="margin-right: 10px; margin-left:10px;">
                 <!-- /.card -->
 
-                @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                 <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="zebra-table table-striped">
                                 <thead>
-                                    <tr>
-                                        <th style="width: 10px; text-align:center;">No</th>
-                                        <th style="width: 300px; text-align:center;">Judul</th>
-                                        <th style="width: 500px; text-align:center;">Berkas</th>
-                                        <th style="width: 600px; text-align: center;">Keterangan</th>
-                                        <th style="width: 100px; text-align: center;">Perbarui Data</th>
+                                  <tr>
+                                        <th style="width: 10px; text-align:center;">No <i class="bi bi-hash"></i></th>
+                                        <th style="width: 300px; text-align:center;">Judul <i class="bi bi-card-text"></i></th>
+                                        <th style="width: 500px; text-align:center;">Berkas <i class="bi bi-file-earmark"></i></th>
+                                        <th style="width: 600px; text-align:center;">Keterangan <i class="bi bi-info-circle"></i></th>
+                                        <th style="width: 100px; text-align:center;">Aksi<i class="bi bi-pencil-square"></i></th>
                                     </tr>
+
                                 </thead>
                                 <tbody>
 

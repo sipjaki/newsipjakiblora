@@ -15,7 +15,7 @@
       <main class="app-main">
 
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -57,7 +57,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/beskkdpupr">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -84,9 +84,9 @@
             <!-- Left Column (6/12) -->
             <div class="col-md-6">
                 <!-- Nama -->
-                <div class="mb-3">
-                    <label class="form-label" for="nama">
-                        <i class="bi bi-person" style="margin-right: 10px; color: navy;"></i> Nama
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="nama">
+                        <i class="bi bi-person" style="margin-right: 10px; color: navy;"></i> Nama Lengkap
                     </label>
                     <input type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ old('nama', $data->nama) }}" />
                     @error('nama')
@@ -95,8 +95,8 @@
                 </div>
 
                 <!-- Alamat -->
-                <div class="mb-3">
-                    <label class="form-label" for="alamat">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="alamat">
                         <i class="bi bi-house-door" style="margin-right: 10px; color: navy;"></i> Alamat
                     </label>
                     <textarea id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror">{{ old('alamat', $data->alamat) }}</textarea>
@@ -106,8 +106,8 @@
                 </div>
 
                 <!-- Tahun Lulus -->
-                <div class="mb-3">
-                    <label class="form-label" for="tahunlulus">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="tahunlulus">
                         <i class="bi bi-calendar-check" style="margin-right: 10px; color: navy;"></i> Tahun Lulus
                     </label>
                     <input type="number" id="tahunlulus" name="tahunlulus" class="form-control @error('tahunlulus') is-invalid @enderror" value="{{ old('tahunlulus', $data->tahunlulus) }}" />
@@ -117,8 +117,8 @@
                 </div>
 
                 <!-- Tahun Bimtek -->
-                <div class="mb-3">
-                    <label class="form-label" for="tahunbimtek">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="tahunbimtek">
                         <i class="bi bi-calendar-event" style="margin-right: 10px; color: navy;"></i> Tahun Bimtek
                     </label>
                     <select id="tahunbimtek" name="tahunbimtek" class="form-control @error('tahunbimtek') is-invalid @enderror">
@@ -137,8 +137,8 @@
                 </div>
 
                 <!-- Nama Sekolah -->
-                <div class="mb-3">
-                    <label class="form-label" for="namasekolah_id">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="namasekolah_id">
                         <i class="bi bi-building" style="margin-right: 10px; color: navy;"></i> Nama Sekolah
                     </label>
                     <select id="namasekolah_id" name="namasekolah_id" class="form-control @error('namasekolah_id') is-invalid @enderror">
@@ -155,8 +155,8 @@
                 </div>
 
                 <!-- Jenjang Pendidikan -->
-                <div class="mb-3">
-                    <label class="form-label" for="jenjangpendidikan_id">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="jenjangpendidikan_id">
                         <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Jenjang Pendidikan
                     </label>
                     <select id="jenjangpendidikan_id" name="jenjangpendidikan_id" class="form-control @error('jenjangpendidikan_id') is-invalid @enderror">
@@ -173,8 +173,8 @@
                 </div>
 
                 <!-- Jurusan -->
-                <div class="mb-3">
-                    <label class="form-label" for="jurusan_id">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="jurusan_id">
                         <i class="bi bi-bookmark" style="margin-right: 10px; color: navy;"></i> Jurusan
                     </label>
                     <select id="jurusan_id" name="jurusan_id" class="form-control @error('jurusan_id') is-invalid @enderror">
@@ -195,8 +195,8 @@
             <!-- Right Column (6/12) -->
             <div class="col-md-6">
                 <!-- Jabatan Kerja -->
-                <div class="mb-3">
-                    <label class="form-label" for="jabatankerja_id">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="jabatankerja_id">
                         <i class="bi bi-person-badge" style="margin-right: 10px; color: navy;"></i> Jabatan Kerja
                     </label>
                     <select id="jabatankerja_id" name="jabatankerja_id" class="form-control @error('jabatankerja_id') is-invalid @enderror">
@@ -213,8 +213,8 @@
                 </div>
 
                 <!-- Jenjang -->
-                <div class="mb-3">
-                    <label class="form-label" for="jenjang_id">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="jenjang_id">
                         <i class="bi bi-briefcase" style="margin-right: 10px; color: navy;"></i> Jenjang
                     </label>
                     <select id="jenjang_id" name="jenjang_id" class="form-control @error('jenjang_id') is-invalid @enderror">
@@ -231,8 +231,8 @@
                 </div>
 
                 <!-- Asosiasi -->
-                <div class="mb-3">
-                    <label class="form-label" for="asosiasimasjaki_id">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="asosiasimasjaki_id">
                         <i class="bi bi-people" style="margin-right: 10px; color: navy;"></i> Penyelengara
                     </label>
                     <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
@@ -249,8 +249,8 @@
                 </div>
 
                 <!-- Lembaga Penerbit -->
-                <div class="mb-3">
-                    <label class="form-label" for="lpspenerbit_id">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="lpspenerbit_id">
                         <i class="bi bi-card-text" style="margin-right: 10px; color: navy;"></i> Lembaga Penerbit
                     </label>
                     <select id="lpspenerbit_id" name="lpspenerbit_id" class="form-control @error('lpspenerbit_id') is-invalid @enderror">
@@ -267,8 +267,8 @@
                 </div>
 
                 <!-- Tanggal Terbit -->
-                <div class="mb-3">
-                    <label class="form-label" for="tanggalterbit">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="tanggalterbit">
                         <i class="bi bi-calendar-check" style="margin-right: 10px; color: navy;"></i> Tanggal Terbit
                     </label>
                     <input type="date" id="tanggalterbit" name="tanggalterbit" class="form-control @error('tanggalterbit') is-invalid @enderror" value="{{ old('tanggalterbit', $data->tanggalterbit) }}" />
@@ -278,8 +278,8 @@
                 </div>
 
                 <!-- Tanggal Habis -->
-                <div class="mb-3">
-                    <label class="form-label" for="tanggalhabis">
+                <div class="form-modern mb-3">
+                    <label class="form-label-modern" for="tanggalhabis">
                         <i class="bi bi-calendar-x" style="margin-right: 10px; color: navy;"></i> Tanggal Habis
                     </label>
                     <input type="date" id="tanggalhabis" name="tanggalhabis" class="form-control @error('tanggalhabis') is-invalid @enderror" value="{{ old('tanggalhabis', $data->tanggalhabis) }}" />
@@ -290,8 +290,8 @@
 
                 <!-- Status Terbit -->
              <!-- Status Terbit -->
-<div class="mb-3">
-    <label class="form-label" for="statusterbit">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="statusterbit">
         <i class="bi bi-check-circle" style="margin-right: 10px; color: navy;"></i> Status Terbit
     </label>
     <select id="statusterbit" name="statusterbit" class="form-control @error('statusterbit') is-invalid @enderror">
@@ -305,8 +305,8 @@
 </div>
 
 
-<div class="mb-3">
-    <label class="form-label" for="sertifikat">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="sertifikat">
         <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> File Berkas Sertifikat (PDF)
     </label>
 
