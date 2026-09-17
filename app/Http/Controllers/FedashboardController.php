@@ -43,7 +43,7 @@ class FedashboardController extends Controller
         // return view('404', [
         // return view('frontend.00_approve.00_utama.index', [
             return view('frontend.00_android.00_halamanutama.index', [
-                'title' => 'SIPJAKI Kabupaten Blora | Mas Jaki Blora ',
+                'title' => 'SIPJAKI Kabupaten Blora | Sistem Informasi Pembina Jasa Konstruksi   ',
                 'data' => $data, // Mengirimkan data paginasi ke view
                 'dataartikel' => $dataartikel, // Mengirimkan data paginasi ke view
                 'dataheaderberanda' => $dataheaderberanda, // Mengirimkan data paginasi ke view

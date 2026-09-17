@@ -105,7 +105,7 @@ $jumlahDenganSertifikat = $jumlahDenganSertifikat ?: 0;
         $dataallskktenagakerjablora = allskktenagakerjablora::all();
         // return view('backend.00_adminmasjaki.01_fiturterpisah.01_dashboard', [
         return view('backend.00_administrator.01_halamanutama.dashboard', [
-            'title' => 'Dashboard Mas Jaki DPUPR Blora',
+            'title' => 'Dashboard Mas Jaki',
             'user' => $user,
             'visitCount' => $visitCount,
             'conversionRate' => $conversionRate,

@@ -145,7 +145,7 @@ public function bepesertapelatihanindex(Request $request)
 // PesertapelatihanController.php
 public function bepesertapelatihansertifikat(Request $request, $id)
 {
-    $perPage = $request->input('perPage', 200);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     $agendapelatihan = agendapelatihan::findOrFail($id);
@@ -154,20 +154,20 @@ public function bepesertapelatihansertifikat(Request $request, $id)
     $query = pesertapelatihan::where('agendapelatihan_id', $id)
         ->where('verifikasi', 'lolos')
         ->select([
-            'id', 'namalengkap', 'jeniskelamin', 'instansi', 'jenjangpendidikan_id',
-            'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi',
-            'verifikasikehadiran', 'terbitkansertifikat'
+            'id','namalengkap','jeniskelamin','instansi',
+            'jenjangpendidikan_id','nik','tanggallahir','notelepon',
+            'sertifikat','verifikasi','verifikasikehadiran','terbitkansertifikat'
         ]);
 
     if ($search) {
         $query->where(function ($q) use ($search) {
-            $q->where('jeniskelamin', 'LIKE', "%{$search}%")
+            $q->where('namalengkap', 'LIKE', "%{$search}%")
               ->orWhere('instansi', 'LIKE', "%{$search}%")
-              ->orWhere('namalengkap', 'LIKE', "%{$search}%");
+              ->orWhere('jeniskelamin', 'LIKE', "%{$search}%");
         });
     }
 
-    $datapesertapelatihan = $query->orderBy('created_at', 'desc')->paginate($perPage);
+    $datapesertapelatihan = $query->orderBy('id', 'desc')->paginate($perPage);
 
     if ($request->ajax()) {
         return response()->json([
@@ -178,15 +178,15 @@ public function bepesertapelatihansertifikat(Request $request, $id)
     $jumlahPeserta = pesertapelatihan::where('agendapelatihan_id', $id)->count();
 
     return view('backend.05_agenda.02_pesertapelatihan.01_peserta.peserta', [
-        'title' => 'Daftar Peserta Agenda Pelatihan',
-        'data' => $agendapelatihan,
-        'agendaId' => $agendapelatihan->id,
-        'namakegiatan' => $agendapelatihan->namakegiatan,
-        'datapeserta' => $datapesertapelatihan,
-        'jumlahpeserta' => $jumlahPeserta,
-        'perPage' => $perPage,
-        'search' => $search,
-        'user' => $user
+        'title'          => 'Daftar Peserta Agenda Pelatihan',
+        'data'           => $agendapelatihan,
+        'agendaId'       => $agendapelatihan->id,
+        'namakegiatan'   => $agendapelatihan->namakegiatan,
+        'subdata'        => $datapesertapelatihan,
+        'jumlahpeserta'  => $jumlahPeserta,
+        'perPage'        => $perPage,
+        'search'         => $search,
+        'user'           => $user
     ]);
 }
 
@@ -271,8 +271,6 @@ public function bepesertauploadsertifikatupload(Request $request, $id)
     return redirect()->route('bepesertauploadsertifikat.show', ['id' => $datapesertapelatihan->agendapelatihan_id]);
 
 }
-
-
 
 
 // ====================

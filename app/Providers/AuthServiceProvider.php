@@ -71,6 +71,15 @@ class AuthServiceProvider extends ServiceProvider
                     return $user->statusadmin->statusadmin === 'dinas'; // Cek apakah statusnya pekerja
                 });
 
+                  Gate::define('admin4', function ($user) {
+                        return in_array($user->statusadmin->statusadmin, [
+                            'super_admin',
+                            'admin',
+                            // 'operator',
+                            'lsppenerbit',
+                        ]);
+                    });
+
                   Gate::define('admin3', function ($user) {
                         return in_array($user->statusadmin->statusadmin, [
                             'super_admin',

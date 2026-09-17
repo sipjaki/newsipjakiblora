@@ -565,7 +565,7 @@ public function allsupptokobangunan(Request $request)
 
 public function alllsppenerbit(Request $request)
 {
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     // Hanya ambil user yang statusadmin-nya memiliki id = 1
