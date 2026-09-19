@@ -1,23 +1,3 @@
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -35,7 +15,7 @@
    <!--begin::App Main-->
    <main class="app-main">
     {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -73,9 +53,31 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
+                            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                             <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+                            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+                            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer; text-align:right;">
+                                <option value="10">10 </option>
+                                <option value="25">25 </option>
+                                <option value="50">50 </option>
+                                <option value="75">75 </option>
+                                <option value="100">100 </option>
+                                <option value="150">150 </option>
+                                <option value="200">200 </option>
+                                <option value="250">250 </option>
+                                <option value="500">500 </option>
+                                <option value="1000">1.000 </option>
+                                <option value="1500">1.500 </option>
+                                <option value="2000">2.000 </option>
+                                <option value="2500">2.500 </option>
+                                <option value="5000">5.000 </option>
+                            </select>
+                        </div>
+
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Kegiatan Pelatihan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
@@ -91,7 +93,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bepesertapelatihanindex?search=${input}`)
+                            fetch(`/beagendaskkdatapeserta?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -130,18 +132,18 @@
         <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-journal-text"></i> Nama Kegiatan
         </th>
-
+{{--
         <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-buildings"></i> Penyelenggara
-        </th>
+        </th> --}}
 
         <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-award-fill"></i> LSP Penerbit
         </th>
 
-        <th style="width: 200px; text-align:center; vertical-align: middle;">
+        {{-- <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-calendar-check"></i> Pelaksanaan
-        </th>
+        </th> --}}
 
         <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-calendar-x"></i> Penutupan
@@ -158,14 +160,23 @@
      </tr>
  </thead>
  <tbody id="tableBody">
-     @foreach ($data as $item )
+     @forelse($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          {{-- <td style="text-align: left;">{{$item->agendapelatihan->namakegiatan}}</td> --}}
-         <td style="text-align: left;">{{$item->namakegiatan}}</td>
-         <td style="text-align: center;">{{$item->asosiasimasjaki->namaasosiasi ?? 'Data belum di update'}}</td>
-         <td style="text-align: center;">{{$item->user->name}}</td>
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') }}</td>
+        <td style="text-align: left;">
+    @php
+        $words = explode(' ', $item->namakegiatan);
+        $chunks = array_chunk($words, 5);
+    @endphp
+
+    @foreach ($chunks as $chunk)
+        {{ implode(' ', $chunk) }}<br>
+    @endforeach
+</td>
+ {{-- <td style="text-align: center;">{{$item->asosiasimasjaki->namaasosiasi ?? 'Data belum di update'}}</td> --}}
+         <td style="text-align: left;">{{$item->user->name}}</td>
+         {{-- <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') }}</td> --}}
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') }}</td>
            <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
 
@@ -179,8 +190,41 @@
 
         </tr>
 
-     @endforeach
- </tbody>
+
+
+        @empty
+    <tr>
+        <td colspan="100%">
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+    </tbody>
 </table>
                      </div>
                  </div>

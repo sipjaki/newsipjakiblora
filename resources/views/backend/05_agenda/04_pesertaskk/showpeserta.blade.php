@@ -17,7 +17,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -43,7 +43,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
 
 
@@ -77,9 +77,9 @@
         </script>
 
 
-                        <button class="hide-on-mobile button-baru"
+                        <button class="hide-on-mobile button-berkas"
                         onclick="exportTableToExcel('daftarpesertaskk', 'Data Peserta {{$data->namakegiatan}}')">
-                        <i class="bi bi-file-earmark-excel-fill icon-create" style="margin-right: 8px; font-size: 16px;"></i> Download Excel
+                        <i class="bi bi-file-earmark-excel-fill"></i> Download Excel
                     </button>
 
                     <script>
@@ -122,9 +122,9 @@
     }
 </script>
 
-<button class="hide-on-mobile button-baru"
+<button class="hide-on-mobile button-merah"
     onclick="generatePDF()">
-    <i class="bi bi-download" style="margin-right: 8px;"></i> Download PDF
+    <i class="bi bi-download"></i> Download PDF
 </button>
 
 
@@ -221,11 +221,23 @@
     }
 </script>
 
+{{-- <form method="GET" action="{{ url()->current() }}" style="margin-bottom:15px;">
+    <input type="search"
+           name="search"
+           value="{{ request('search') }}"
+           placeholder="Cari Nama / Tahun Bimtek"
+           style="
+               padding:10px 15px;
+               width:300px;
+               border-radius:10px;
+               border:1px solid #ccc;
+           ">
+</form> --}}
 
 
                     <a href="/beagendaskkdatapeserta">
-  <button class="button-newvalidasi">
-        <i class="bi bi-arrow-left icon-create"></i> Kembali
+  <button class="button-modern">
+        <i class="bi bi-arrow-left"></i> Kembali
 </button>
 
 </a>
@@ -245,7 +257,7 @@
                                         <th style="width: 250px; text-align:center;">
                                             <i class="bi bi-person-fill" style="margin-right: 5px;"></i>Nama Lengkap
                                         </th>
-                                        <th style="width: 200px; text-align:center;">
+                                        {{-- <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-journal-bookmark-fill" style="margin-right: 5px;"></i>Pendidikan
                                         </th>
                                         <th style="width: 200px; text-align:center;">
@@ -253,11 +265,11 @@
                                         </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-building" style="margin-right: 5px;"></i>Universitas/Sekolah/Instansi
-                                        </th>
+                                        </th> --}}
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-calendar3" style="margin-right: 5px;"></i>Tahun Bimtek
                                         </th>
-                                        <th style="width: 200px; text-align:center;">
+                                        {{-- <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-credit-card-2-front" style="margin-right: 5px;"></i>NIK
                                         </th>
                                         <th style="width: 200px; text-align:center;">
@@ -295,7 +307,7 @@
                                         </th>
                                         <th style="width: 150px; text-align:center;">
                                             <i class="bi bi-shield-lock-fill" style="margin-right: 5px;"></i>Siap Patuh
-                                        </th>
+                                        </th> --}}
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-folder-check" style="margin-right: 5px;"></i> Berkas Pekerja
                                         </th>
@@ -325,13 +337,16 @@
                                 <tbody>
                                 @forelse ($datapeserta as $item )
                                     <tr class="align-middle">
-                                        <td style="text-align: center;">{{ $loop->iteration }}</td>
+                                        <td style="text-align:center;">
+                                                {{ $datapeserta->firstItem() + $loop->index }}
+                                            </td>
+
                                         <td style="text-align: left;">{{ strtoupper($item->user->name ?? '-') }}</td>
-<td style="text-align: center;">{{ $item->jenjangpendidikan->jenjangpendidikan ?? '-' }}</td>
+{{-- <td style="text-align: center;">{{ $item->jenjangpendidikan->jenjangpendidikan ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->jabatankerja->jabatankerja ?? '-' }}</td>
-<td style="text-align: center;">{{ $item->namasekolah->namasekolah ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->namasekolah->namasekolah ?? '-' }}</td> --}}
 <td style="text-align: center;">{{ $item->tahunpilihan->tahunpilihan ?? '-' }}</td>
-<td style="text-align: center;">{{ $item->nik ?? '-' }}</td>
+{{-- <td style="text-align: center;">{{ $item->nik ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->tempatlahir ?? '-' }}</td>
 <td style="text-align: center;">
     {{ $item->ttl ? \Carbon\Carbon::parse($item->ttl)->translatedFormat('d F Y') : '-' }}
@@ -345,20 +360,20 @@
 <td style="text-align: center;">{{ $item->punyaskk ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->punyasiki ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->portalpupr ?? '-' }}</td>
-<td style="text-align: center;">{{ $item->siappatuh ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->siappatuh ?? '-' }}</td> --}}
 
 
 <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
     <a href="{{ url('/bepesertaskkshowberkas/show/' . $item->id) }}" style="text-decoration: none;">
-        <button class="button-baru">
-            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+        <button class="button-berkas">
+            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat Berkas
         </button>
     </a>
 </td>
 
 
                                         <td style="text-align: center;">
-                                            <button class="button-baru"
+                                            <button class="button-berkas"
                                             data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
                                             <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
                                         </button>
@@ -397,7 +412,7 @@
             @if($item->verifikasipu == false)
                 <button type="button" onclick="openModal({{ $item->id }})"
                     class="button-merah">
-                    <i class="bi bi-x-circle"></i> BELUM LOLOS
+                    <i class="bi bi-x-circle"></i> Belum Lolos
                 </button>
             @else
                 <button type="button" disabled
@@ -415,7 +430,7 @@
                         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
                         cursor: not-allowed;
                     ">
-                    <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+                    <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> Lolos
                 </button>
             @endif
         </td>
@@ -428,7 +443,7 @@
             @else
                 <button type="button" disabled class="button-hijau"
                     style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: not-allowed;">
-                    <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+                    <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> Lolos
                 </button>
             @endif
         </td>
@@ -484,7 +499,7 @@
     @else
         <button type="button" disabled class="button-hijau"
             style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: not-allowed;">
-            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> TERBIT
+            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> Terbit
         </button>
     @endif
 </td>

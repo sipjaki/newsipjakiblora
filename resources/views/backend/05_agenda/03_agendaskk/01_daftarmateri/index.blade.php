@@ -1,72 +1,3 @@
-
-<style>
-.marquee-text {
-    display: inline-block;
-    white-space: nowrap;
-    position: absolute;
-    will-change: transform;
-    animation: marquee-left 8s linear infinite;
-    left: 0;
-}
-
-@keyframes marquee-left {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-</style>
-
-
-<style>
-    .btn-suspend {
-        background-color: orange;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-suspend:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid orange;
-    }
-
-    .btn-expired {
-        background-color: red;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-expired:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid red;
-    }
-
-    .btn-active {
-        background-color: green;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-active:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid green;
-    }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -85,7 +16,7 @@
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-            <section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+            <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -111,13 +42,12 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                     @can('pekerja')
                     <a href="/hakaksespekerjaskk">
-                        <button class="button-newvalidasi"
-                        onclick="window.history.back();">
+                        <button class="button-modern">
 
                         <!-- Ikon Kembali -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -133,12 +63,7 @@
                     @can('super_admin', 'admin')
 
                     <a href="/beagendaskk">
-                        <button
-                        onclick="window.history.back();"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
-
+                        <button class="button-modern">
                         <!-- Ikon Kembali -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -151,13 +76,10 @@
 
 
                      <a href="/beagendaskkmateri/createmateri/{{$data->id}}">
-                        <button
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
-                         style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                        <button class="button-baru">
                          <!-- Ikon Kembali -->
                          <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                         Create
+                         Upload Materi
                         </button>
                     </a>
 

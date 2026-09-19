@@ -16,7 +16,7 @@
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -41,23 +41,25 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                     </div>
 
                            {{-- ======================================================= --}}
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/allakun">
-                    <button class="button-newvalidasi">
-                    <!-- Ikon Kembali -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" style="margin-right: 8px;">
-                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-               </svg>
-                    Kembali
-                </button>
-            </a>
+              <a href="{{ url()->previous() }}">
+    <button class="button-modern">
+        <!-- Ikon Kembali -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+             viewBox="0 0 16 16" style="margin-right: 8px;">
+            <path fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+        </svg>
+        Kembali
+    </button>
+</a>
+
         </div>
         <hr>
 
@@ -73,8 +75,8 @@
         <!-- Kolom Kiri -->
         <div class="col-md-6">
             <!-- Status Admin -->
-            <div class="mb-3">
-                <label class="form-label" for="status_admin_select">
+            <div class="form-modern mb-3">
+                <label class="form-label-modern" for="status_admin_select">
                     <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Status Admin
                 </label>
                 <select id="status_admin_select" name="statusadmin_id" class="form-control">
@@ -85,40 +87,46 @@
             </div>
 
             <!-- Nama Lengkap -->
-            <div class="mb-3">
-                <label class="form-label" for="name">
+            <div class="form-modern mb-3">
+                <label class="form-label-modern" for="name">
                     <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
                 </label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name') }}">
             </div>
 
             <!-- Username -->
-            <div class="mb-3">
-                <label class="form-label" for="username">
+            <div class="form-modern mb-3">
+                <label class="form-label-modern" for="username">
                     <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Username
                 </label>
                 <input type="text" id="username" name="username" class="form-control" value="{{ old('username') }}">
             </div>
 
             <!-- Nomor HP -->
-            <div class="mb-3">
-                <label class="form-label" for="phone_number">
+            <div class="form-modern mb-3">
+                <label class="form-label-modern" for="phone_number">
                     <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> Nomor HP
                 </label>
                 <input type="text" id="phone_number" name="phone_number" class="form-control" value="{{ old('phone_number') }}">
             </div>
 
             <!-- Email -->
-            <div class="mb-3">
-                <label class="form-label" for="email">
+            <div class="form-modern mb-3">
+                <label class="form-label-modern" for="email">
                     <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
                 </label>
                 <input type="email" id="email" name="email" class="form-control" value="{{ old('email') }}">
             </div>
 
+        </div>
+
+        <!-- Kolom Kanan -->
+        <div class="col-md-6">
+
+
             <!-- Password -->
-            <div class="mb-3 position-relative">
-                <label class="form-label" for="password">
+            <div class="form-modern mb-3 position-relative">
+                <label class="form-label-modern" for="password">
                     <i class="bi bi-key" style="margin-right: 8px; color: navy;"></i> Password
                 </label>
                 <div class="input-group">
@@ -130,8 +138,8 @@
             </div>
 
             <!-- Konfirmasi Password -->
-            <div class="mb-3 position-relative">
-                <label class="form-label" for="password_confirmation">
+            <div class="form-modern mb-3 position-relative">
+                <label class="form-label-modern" for="password_confirmation">
                     <i class="bi bi-shield-lock" style="margin-right: 8px; color: navy;"></i> Konfirmasi Password
                 </label>
                 <div class="input-group">
@@ -141,13 +149,10 @@
                     </button>
                 </div>
             </div>
-        </div>
 
-        <!-- Kolom Kanan -->
-        <div class="col-md-6">
             <!-- Upload Foto Profil -->
-            <div class="mb-3">
-                <label class="form-label" for="avatar">
+            <div class="form-modern mb-3">
+                <label class="form-label-modern" for="avatar">
                     <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Upload Foto Profil
                 </label>
                 <input type="file" id="avatar" name="avatar"
@@ -205,16 +210,11 @@
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                 <div class="flex justify-end">
-                                    <button class="button-hijau" type="button" onclick="openModal()">
+                                 <button class="button-baru" type="button" onclick="openModal()">
+    <i class="bi bi-plus-lg"></i>
+    <span style="font-family: 'Poppins', sans-serif;">Buat Akun</span>
+</button>
 
-                                    <!-- Ikon SVG Pensil -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                               </svg>
-                                    <span style="font-family: 'Poppins', sans-serif;">Buat Akun</span>
-                                </button>
                                 </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

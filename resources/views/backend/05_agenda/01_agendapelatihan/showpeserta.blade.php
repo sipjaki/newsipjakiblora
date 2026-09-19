@@ -15,7 +15,7 @@
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -41,13 +41,44 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
+
+                            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                             <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+                            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+                            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer; text-align:right;">
+                                <option value="10">10 </option>
+                                <option value="25">25 </option>
+                                <option value="50">50 </option>
+                                <option value="75">75 </option>
+                                <option value="100">100 </option>
+                                <option value="150">150 </option>
+                                <option value="200">200 </option>
+                                <option value="250">250 </option>
+                                <option value="500">500 </option>
+                                <option value="1000">1.000 </option>
+                                <option value="1500">1.500 </option>
+                                <option value="2000">2.000 </option>
+                                <option value="2500">2.500 </option>
+                                <option value="5000">5.000 </option>
+                            </select>
+                        </div>
+
+                                                <script>
+                                                    function updateEntries() {
+                                                        let selectedValue = document.getElementById("entries").value;
+                                                        let url = new URL(window.location.href);
+                                                        url.searchParams.set("perPage", selectedValue);
+                                                        window.location.href = url.toString();
+                                                    }
+
+                                                    </script>
 
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                     <a href="/beagendapelatihan">
-                        <button class="button-newvalidasi">
+                        <button class="button-modern">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         viewBox="0 0 16 16" style="margin-right: 8px;">
                         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
@@ -105,7 +136,7 @@
                                 </thead>
                                 <tbody>
 
-                                @forelse($datapeserta as $item )
+                                @forelse($subdata as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                                     <td>
@@ -160,7 +191,7 @@
     @elseif($item->verifikasi == 'lolos')
         <!-- Tombol LOLOS -->
         <button type="button" disabled class="button-hijau">
-            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+            <i class="bi bi-patch-check-fill"></i> LOLOS
         </button>
     @endif
 </td>
@@ -319,8 +350,12 @@
                                 </tbody>
                             </table>
 <br><br>
-                        </div>
-                    </div>
+
+
+
+</div>
+</div>
+@include('backend.00_administrator.00_baganterpisah.07_subpaginations')
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->

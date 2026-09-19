@@ -1,31 +1,3 @@
-
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-
- .btn-hover-white:hover {
-  background-color: white !important;
-  color: black !important;
-  border: 1px solid black;
-}
-
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -44,7 +16,7 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -73,7 +45,7 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
 
 
@@ -98,17 +70,17 @@
 
 
                     <button class="button-data">
-    <i class="bi bi-file-earmark icon-create" style="margin-right: 5px"></i> {{$totalpenyedia1}} (PU)
+    <i class="bi bi-file-earmark " style="margin-right: 5px"></i> {{$totalpenyedia1}} (PU)
 </button>
 
 
                     <button class="button-data">
-    <i class="bi bi-file-earmark icon-create" style="margin-right: 5px"></i> {{$totalpenyedia2}} (NON-PU)
+    <i class="bi bi-file-earmark " style="margin-right: 5px"></i> {{$totalpenyedia2}} (NON-PU)
 </button>
 
 
                     <button class="button-data">
-    <i class="bi bi-file-earmark icon-create" style="margin-right: 5px"></i> {{$totalpenyedia3}} (SWASTA)
+    <i class="bi bi-file-earmark " style="margin-right: 5px"></i> {{$totalpenyedia3}} (SWASTA)
 </button>
 
 <div style="position: relative; display: inline-block; margin-right:10px;">
@@ -153,14 +125,14 @@ function fetchData(url = null) {
 </script>
 
 
-                                <button class="button-baru" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
-                                    <i class="bi bi-download icon-create" style="margin-right: 5px" ></i> Download Excel
+                                <button class="button-berkas" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
+                                    <i class="bi bi-download " style="margin-right: 5px" ></i> Download Excel
                                 </button>
 
                                 <a href="/betertibjakonusaha/create">
-                                    <button class="button-hijau";>
+                                    <button class="button-baru";>
                                     <!-- Ikon Kembali -->
-                                    <i class="fa fa-plus icon-create" style="margin-right: 8px;"></i>
+                                    <i class="fa fa-plus " style="margin-right: 8px;"></i>
                                     Buat Baru
                                 </button>
                                 </a>
@@ -267,7 +239,7 @@ function fetchData(url = null) {
     <td style="text-align: center; vertical-align: middle;">
                                     <a href="/betertibjakonusahasuratpercobaan/create/{{$item->id}}" style="text-decoration: none;">
                                         <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                        <i class="bi bi-file-earmark-text "></i> Lihat Surat
                                         </button>
                                     </a>
                                         <a href="{{ url('/beuploadberkasusaha1/upload/' . $item->id) }}" style="text-decoration: none;">
@@ -277,7 +249,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                <i class="bi bi-file-earmark-text "></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -286,7 +258,7 @@ function fetchData(url = null) {
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonusahasegmentasipasar/index/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                        <i class="bi bi-file-earmark-text "></i> Lihat Surat
                                         </button>
                                     </a>
 
@@ -297,7 +269,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                <i class="bi bi-file-earmark-text "></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -307,7 +279,7 @@ function fetchData(url = null) {
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonusahapemenuhansyarat/index/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                        <i class="bi bi-file-earmark-text "></i> Lihat Surat
                                         </button>
                                     </a>
                                     <a href="{{ url('/beuploadberkasusaha3/upload/' . $item->id) }}" style="text-decoration: none;">
@@ -317,7 +289,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                <i class="bi bi-file-earmark-text "></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -326,7 +298,7 @@ function fetchData(url = null) {
                                 <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonusahapelaksana/index/' . $item->id) }}" style="text-decoration: none;">
                                         <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text icon-create"></i> Lihat Surat
+                                        <i class="bi bi-file-earmark-text "></i> Lihat Surat
                                         </button>
                                     </a>
                                     <a href="{{ url('/beuploadberkasusaha4/upload/' . $item->id) }}" style="text-decoration: none;">
@@ -336,7 +308,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                <i class="bi bi-file-earmark-text "></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -351,7 +323,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                <i class="bi bi-file-earmark-text "></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -365,7 +337,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                <i class="bi bi-file-earmark-text "></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -380,7 +352,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                <i class="bi bi-file-earmark-text "></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -395,7 +367,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text icon-create"></i> Upload Berkas
+                <i class="bi bi-file-earmark-text "></i> Upload Berkas
             </button>
         @endif
     </a>

@@ -1,50 +1,3 @@
-<style>
-    .btn-suspend {
-        background-color: orange;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-suspend:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid orange;
-    }
-
-    .btn-expired {
-        background-color: red;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-expired:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid red;
-    }
-
-    .btn-active {
-        background-color: green;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-active:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid green;
-    }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -60,7 +13,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
+            <section style="background: linear-gradient(to bottom, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -86,38 +40,23 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                     <div style="display: flex; flex-wrap: wrap; margin-bottom:10px;">
 
                         <a href="/bepelatihanjampelajaran/createjam/{{ $agendapelatihan_id }}" style="text-decoration: none;">
-                            <button
-                            onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
-                            onmouseout="this.style.background='linear-gradient(135deg, #166534, #FFD700)'; this.style.color='white'; this.style.border='none';"
-                            style="background: linear-gradient(135deg, #166534, #FFD700); color: white; border: none; margin-right: 10px; padding: 10px 20px;
-                                   border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                                   transition: background 0.3s, color 0.3s, border 0.3s;">
+                            <button class="button-baru">
                             <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                            Create
+                            Tambah Pemateri
                         </button>
                     </a>
 
-                    <button
-                    onclick="window.history.back();"
-                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
-                    onmouseout="this.style.background='linear-gradient(135deg, #4B5563, #E5E7EB)'; this.style.color='white'; this.style.border='none';"
-                    style="background: linear-gradient(135deg, #4B5563, #E5E7EB); color: white; border: none; margin-right: 10px; padding: 10px 20px;
-                           border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                           transition: background 0.3s, color 0.3s, border 0.3s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         viewBox="0 0 16 16" style="margin-right: 8px;">
-                        <path fill-rule="evenodd"
-                              d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
-                    </svg>
-                    Kembali
-                </button>
-                                 {{-- </div> --}}
+                    <a href="{{ url()->previous() }}" class="button-modern">
+    <i class="bi bi-arrow-left" style="margin-right: 8px;"></i>
+    Kembali
+</a>
+             {{-- </div> --}}
 
                     </div>
                     </div>
@@ -148,8 +87,12 @@
                                 @foreach ($subdata as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->materi }}</td>
-                                        <td style="text-align: left;">{{ $item->narasumber }}</td>
+<td style="text-align: left; white-space: pre-line;">
+    {!! nl2br(e($item->materi)) !!}
+</td>
+<td style="text-align: left; white-space: pre-line;">
+    {!! nl2br(e($item->narasumber)) !!}
+</td>
                                         <td style="text-align: center;">{{ $item->jampelajaran }} Jam</td>
 
                                                    <td style="text-align: center;">
@@ -163,9 +106,9 @@
                                             </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            <a href="javascript:void(0)" class="button-merah" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-id="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                             <i class="bi bi-trash"></i>
+                                             <i class="bi bi-trash"></i>Hapus
                                          </a>
 
                                          <!-- Modal -->

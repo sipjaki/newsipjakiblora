@@ -1,23 +1,3 @@
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 @include('backend.00_style.01_cssdashboard.style')
 
@@ -37,7 +17,7 @@
    <main class="app-main">
     {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -84,14 +64,37 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
+                            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                             <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+                            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+                            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer; text-align:right;">
+                                <option value="10">10 </option>
+                                <option value="25">25 </option>
+                                <option value="50">50 </option>
+                                <option value="75">75 </option>
+                                <option value="100">100 </option>
+                                <option value="150">150 </option>
+                                <option value="200">200 </option>
+                                <option value="250">250 </option>
+                                <option value="500">500 </option>
+                                <option value="1000">1.000 </option>
+                                <option value="1500">1.500 </option>
+                                <option value="2000">2.000 </option>
+                                <option value="2500">2.500 </option>
+                                <option value="5000">5.000 </option>
+                            </select>
+                        </div>
+
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Agenda Pelatihan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
+
                         <script>
                             function updateEntries() {
                                 let selectedValue = document.getElementById("entries").value;
@@ -100,19 +103,19 @@
                                 window.location.href = url.toString();
                             }
 
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
+function searchTable() {
+    let input = document.getElementById("searchInput").value;
 
-                            fetch(`/beagendapelatihan?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
+    fetch(`/beagendapelatihan?search=${encodeURIComponent(input)}`, {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("tableBody").innerHTML = data.html;
+        updateAllStatus(); // 🔥 WAJIB
+    })
+    .catch(err => console.error(err));
+}
 
                                 </script>
 
@@ -162,7 +165,7 @@
           <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-geo-alt"></i> Lokasi
           </th>
-          <th style="width: 250px; text-align:center; vertical-align: middle;">
+          <th style="width: 800px; text-align:center; vertical-align: middle;">
             <i class="bi bi-info-circle"></i> Keterangan
           </th>
           <th style="width: 600px; text-align:center; vertical-align: middle;">
@@ -183,13 +186,20 @@
 
      </tr>
  </thead>
+
  <tbody id="tableBody">
-     @foreach ($data as $item )
+     @forelse($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{$item->user->name ?? '-'}}</td>
          <td style="text-align: left;">{{$item->kategoripelatihan->kategoripelatihan ?? '-'}}</td>
-         <td style="text-align: left;">{{$item->namakegiatan ?? '-'}}</td>
+<td style="
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+">
+    {{ $item->namakegiatan ?? '-' }}
+</td>
          <td style="text-align: left;">{{$item->asosiasimasjaki->namaasosiasi ?? '-'}}</td>
          {{-- <td style="text-align: center;">
             @if($item->asosiasimasjaki)
@@ -204,34 +214,104 @@
         {{-- <td style="text-align: center;">{{$item->waktupelaksanaan}}</td> --}}
 
         <td style="text-align: center;">
-            <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
+       <button
+    class="btn btn-sm status-btn"
+    data-penutupan="{{ \Carbon\Carbon::parse($item->penutupan)->format('Y-m-d H:i:s') }}">
+</button>
+
         </td>
 <script>
-    function updateStatus() {
+function updateAllStatus() {
+    document.querySelectorAll('.status-btn').forEach(btn => {
         let now = new Date().getTime();
-        let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->penutupan)->format('Y-m-d H:i:s') }}").getTime();
-        let statusButton = document.getElementById("status-{{ $item->id }}");
+        let tanggalHabis = new Date(btn.dataset.penutupan).getTime();
 
         if (now > tanggalHabis) {
-            statusButton.innerHTML = '<i class="bi bi-lock-fill" style="margin-right:5px;"></i>DITUTUP';
-            statusButton.className = "button-merah";
+            btn.innerHTML = '<i class="bi bi-lock-fill me-1"></i>DITUTUP';
+            btn.className = 'button-merah btn btn-sm status-btn';
         } else {
-            statusButton.innerHTML = '<i class="bi bi-unlock-fill" style="margin-right:5px;"></i>DIBUKA';
-            statusButton.className = "button-hijau";
+            btn.innerHTML = '<i class="bi bi-unlock-fill me-1"></i>DIBUKA';
+            btn.className = 'button-hijau btn btn-sm status-btn';
         }
-    }
+    });
+}
 
-    // Jalankan pertama kali saat halaman dimuat
-    updateStatus();
+// pertama kali load
+updateAllStatus();
 
-    // Update setiap 1 detik untuk realtime
-    setInterval(updateStatus, 1000);
+// realtime
+setInterval(updateAllStatus, 1000);
 </script>
+
 
         <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
          <td style="text-align: left;">{{$item->lokasi}}</td>
-         <td style="text-align: left;">{{$item->keterangan}}</td>
-         <td style="text-align: left;">{{$item->isiagenda}}</td>
+<td style="
+    width: 1200px;
+    max-width: 1200px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    vertical-align: top;
+">
+    <span
+        class="toggle-text"
+        data-full="{{ $item->keterangan }}"
+        onclick="toggleText(this)">
+    </span>
+</td>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.toggle-text').forEach(el => {
+        let fullText = el.dataset.full || '-';
+        el.dataset.short = fullText.substring(0, 100) + (fullText.length > 100 ? '...' : '');
+        el.dataset.open = "false";
+        el.innerText = el.dataset.short;
+        el.style.color = 'navy';
+        el.style.cursor = 'pointer';
+    });
+});
+
+function toggleText(el) {
+    if (el.dataset.open === "false") {
+        el.innerText = el.dataset.full;
+        el.dataset.open = "true";
+    } else {
+        el.innerText = el.dataset.short;
+        el.dataset.open = "false";
+    }
+}
+
+/* 🔥 BUKA SEMUA */
+function openAllText() {
+    document.querySelectorAll('.toggle-text').forEach(el => {
+        el.innerText = el.dataset.full;
+        el.dataset.open = "true";
+    });
+}
+
+/* 🔥 TUTUP SEMUA */
+function closeAllText() {
+    document.querySelectorAll('.toggle-text').forEach(el => {
+        el.innerText = el.dataset.short;
+        el.dataset.open = "false";
+    });
+}
+</script>
+
+
+         <td style="
+    width: 420px;
+    max-width: 420px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    vertical-align: top;
+">
+    {{ $item->isiagenda }}
+</td>
+
          <td style="text-align: center; gap:10px;">
             <div style="margin-top: 10px;">
                 @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
@@ -250,7 +330,7 @@
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendapelatihanmateri/' . $item->id) }}" style="text-decoration: none;">
-                <button class="button-baru">
+                <button class="button-berkas">
              <i class="bi bi-eye"></i> Lihat
             </button>
             </a>
@@ -258,7 +338,7 @@
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->id) }}" style="text-decoration: none;">
-                <button class="button-newvalidasi">
+                <button class="button-baru">
                     <span style="display: inline-flex; align-items: center;">
                         <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
                         {{ $item->pesertapelatihan_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota
@@ -269,7 +349,7 @@
 
 
          <td style="text-align: center; vertical-align: middle;">
-             <a href="/beagendapelatihan/show/{{$item->namakegiatan}}" class="button-newvalidasi" title="Show">
+             <a href="/beagendapelatihan/show/{{$item->namakegiatan}}" class="button-baru" title="Show">
                  <i class="bi bi-eye"></i>View
              </a>
              <a href="/beagendapelatihan/update/{{$item->namakegiatan}}" class="button-berkas" title="Update">
@@ -285,8 +365,41 @@
 
         </tr>
 
-     @endforeach
- </tbody>
+
+        @empty
+    <tr>
+        <td colspan="100%">
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+
+    </tbody>
 </table>
                      </div>
                  </div>
