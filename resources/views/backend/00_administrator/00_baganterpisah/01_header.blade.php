@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <!--begin::Head-->
@@ -68,7 +67,9 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('00_style/01_cssdashboard/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('26_newversi/style.css') }}"> --}}
 
+    <link rel="stylesheet" href="{{ asset('assets/26_newversi/style.css') }}">
     <style>
         * {
           font-family: 'Poppins', sans-serif !important;

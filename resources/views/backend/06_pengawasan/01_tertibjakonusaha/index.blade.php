@@ -1,4 +1,5 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
+@include('button')
 
 <!--begin::Body-->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -7,16 +8,14 @@
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
-@include('backend.00_style.01_cssdashboard.style')
 
-{{-- ---------------------------------------------------------------------- --}}
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('button')
 
    <!--begin::App Main-->
    <main class="app-main">
-<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: var(--bg-soft); width: 100%; min-height: 100vh; padding-bottom: 30px;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -24,7 +23,6 @@
        <div class="container-fluid">
          <!--begin::Row-->
          <div class="row">
-
             @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
             @include('backend.00_administrator.00_baganterpisah.11_alert')
          </div>
@@ -34,108 +32,115 @@
      </div>
 
      <!-- Menampilkan pesan sukses -->
-<br>
+
 
      <div class="container-fluid">
          <!--begin::Row-->
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card mb-4">
-                 <div class="card-header">
-                 </div>
                  <!-- /.card-header -->
                  <div class="card-header">
+
                     @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
+                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px; flex-wrap: wrap; gap: 6px; align-items: center;">
 
+                    <form method="GET" action="/betertibjakonusaha" id="filterForm">
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+<div style="display: flex; justify-content: flex-end; margin-bottom: 5px; flex-wrap: wrap; gap: 6px; align-items: center;">
 
+    <div style="display: flex; align-items: center; gap: 6px; margin-right:10px;">
+        <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+        <select id="entries" name="perPage" onchange="document.getElementById('filterForm').submit()" style="padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
+            <option value="10"   {{ ($perPage ?? 10) == 10   ? 'selected' : '' }}>10</option>
+            <option value="25"   {{ ($perPage ?? 10) == 25   ? 'selected' : '' }}>25</option>
+            <option value="50"   {{ ($perPage ?? 10) == 50   ? 'selected' : '' }}>50</option>
+            <option value="75"   {{ ($perPage ?? 10) == 75   ? 'selected' : '' }}>75</option>
+            <option value="100"  {{ ($perPage ?? 10) == 100  ? 'selected' : '' }}>100</option>
+            <option value="150"  {{ ($perPage ?? 10) == 150  ? 'selected' : '' }}>150</option>
+            <option value="200"  {{ ($perPage ?? 10) == 200  ? 'selected' : '' }}>200</option>
+            <option value="500"  {{ ($perPage ?? 10) == 500  ? 'selected' : '' }}>500</option>
+            <option value="1000" {{ ($perPage ?? 10) == 1000 ? 'selected' : '' }}>1000</option>
+            <option value="2000" {{ ($perPage ?? 10) == 2000 ? 'selected' : '' }}>2000</option>
+        </select>
+    </div>
 
-                        <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
-                            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
-                            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="75">75</option>
-                                <option value="100">100</option>
-                                <option value="150">150</option>
-                                <option value="200">200</option>
-                                <option value="500">500</option>
-                                <option value="1000">1000</option>
-                                <option value="2000">2000</option>
-                            </select>
-                        </div>
+    <button type="button" class="button-modern button-md">
+        <i class="bi bi-file-earmark" style="margin-right: 5px"></i> {{$totalpenyedia1}} (PU)
+    </button>
 
+    <button type="button" class="button-modern button-md">
+        <i class="bi bi-file-earmark" style="margin-right: 5px"></i> {{$totalpenyedia2}} (NON-PU)
+    </button>
 
-                    <button class="button-data">
-    <i class="bi bi-file-earmark " style="margin-right: 5px"></i> {{$totalpenyedia1}} (PU)
-</button>
+    <button type="button" class="button-modern button-md">
+        <i class="bi bi-file-earmark" style="margin-right: 5px"></i> {{$totalpenyedia3}} (SWASTA)
+    </button>
 
+    <div style="position: relative; display: inline-block; margin-right:10px;">
+        <input type="search" id="searchInput" name="search" value="{{ $search ?? '' }}" placeholder="Cari Badan Usaha ...." style="border: 1px solid var(--border); padding: 8px 18px 8px 14px; font-size: 14px; border-radius: 10px; width: 280px;">
+        <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 15px; color: var(--text-muted);"></i>
+    </div>
 
-                    <button class="button-data">
-    <i class="bi bi-file-earmark " style="margin-right: 5px"></i> {{$totalpenyedia2}} (NON-PU)
-</button>
+    <button type="submit" class="button-modern button-md">
+        <i class="bi bi-search"></i> Cari
+    </button>
 
+    <button type="button" class="button-berkas button-md" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
+        <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
+    </button>
 
-                    <button class="button-data">
-    <i class="bi bi-file-earmark " style="margin-right: 5px"></i> {{$totalpenyedia3}} (SWASTA)
-</button>
+    <a href="/betertibjakonusaha/create">
+        <button type="button" class="button-modern button-md">
+            <i class="fa fa-plus" style="margin-right: 8px;"></i>
+            Buat Baru
+        </button>
+    </a>
 
-<div style="position: relative; display: inline-block; margin-right:10px;">
-    <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...." style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-    <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
 </div>
 
-<script>
-    let searchTimeout;
-
-// Event search
-document.getElementById('searchInput').addEventListener('keyup', function() {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(fetchData, 500);
-});
-
-// Intercept klik pagination
-document.addEventListener('click', function(e) {
-    const link = e.target.closest('.pagination a');
-    if(link) {
-        e.preventDefault();
-        const url = link.getAttribute('href');
-        fetchData(url);
-    }
-});
-
-function fetchData(url = null) {
-    const input = document.getElementById("searchInput").value;
-    const fetchUrl = url ? url : `/betertibjakonusaha?search=${encodeURIComponent(input)}`;
-
-    fetch(fetchUrl, {
-        headers: { 'X-Requested-With': 'XMLHttpRequest' }
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.querySelector("#tabeltertibjakonusahasearc").innerHTML = data.html;
-        window.history.pushState({}, '', fetchUrl); // update URL tanpa reload
-    })
-    .catch(error => console.error("Error fetching data:", error));
-}
-
-</script>
+</form>
 
 
-                                <button class="button-berkas" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
-                                    <i class="bi bi-download " style="margin-right: 5px" ></i> Download Excel
-                                </button>
+                   
 
-                                <a href="/betertibjakonusaha/create">
-                                    <button class="button-baru";>
-                                    <!-- Ikon Kembali -->
-                                    <i class="fa fa-plus " style="margin-right: 8px;"></i>
-                                    Buat Baru
-                                </button>
-                                </a>
+                    <script>
+                        let searchTimeout;
+
+                        // Event search
+                        document.getElementById('searchInput').addEventListener('keyup', function() {
+                            clearTimeout(searchTimeout);
+                            searchTimeout = setTimeout(fetchData, 500);
+                        });
+
+                        // Intercept klik pagination
+                        document.addEventListener('click', function(e) {
+                            const link = e.target.closest('.pagination a');
+                            if(link) {
+                                e.preventDefault();
+                                const url = link.getAttribute('href');
+                                fetchData(url);
+                            }
+                        });
+
+                        function fetchData(url = null) {
+                            const input = document.getElementById("searchInput").value;
+                            const fetchUrl = url ? url : `/betertibjakonusaha?search=${encodeURIComponent(input)}`;
+
+                            fetch(fetchUrl, {
+                                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                document.querySelector("#tabeltertibjakonusahasearc").innerHTML = data.html;
+                                window.history.pushState({}, '', fetchUrl); // update URL tanpa reload
+                            })
+                            .catch(error => console.error("Error fetching data:", error));
+                        }
+                    </script>
+
+             
 
                      </div>
                  </div>
@@ -185,33 +190,16 @@ function fetchData(url = null) {
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
-                                  {{-- <th rowspan="2" style="text-align: center; width:300px;">
-    <i class="bi bi-tools"></i> Berkas Dukung <br> Kesesuaian Kegiatan Konstruksi
-</th>
-
-                                  <th rowspan="2" style="text-align: center; width:300px;">
-    <i class="bi bi-tools"></i> Berkas Dukung <br> Segmentasi Pasar
-</th>
-
-<th rowspan="2" style="text-align: center; width:300px;">
-    <i class="bi bi-tools"></i> Berkas Dukung <br> Pemenuhan Syarat
-</th>
-
-<th rowspan="2" style="text-align: center; width:300px;">
-    <i class="bi bi-tools"></i> Berkas Dukung <br> Pelaksana Pengembangan Usaha
-</th> --}}
-
                                     <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
-
 
                                 </tr>
 
                             </thead>
 
                           <tbody id="tabeltertibjakonusahasearc">
-                            @foreach ($data as $item)
+                            @forelse  ($data as $item)
                             <tr>
 
                               <td style="text-align: center;">{{ $loop->iteration }}</td>
@@ -238,8 +226,8 @@ function fetchData(url = null) {
 
     <td style="text-align: center; vertical-align: middle;">
                                     <a href="/betertibjakonusahasuratpercobaan/create/{{$item->id}}" style="text-decoration: none;">
-                                        <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text "></i> Lihat Surat
+                                        <button class="button-modern">
+                                        <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                         </button>
                                     </a>
                                         <a href="{{ url('/beuploadberkasusaha1/upload/' . $item->id) }}" style="text-decoration: none;">
@@ -249,7 +237,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text "></i> Upload Berkas
+                <i class="bi bi-file-earmark-text"></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -257,8 +245,8 @@ function fetchData(url = null) {
 
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonusahasegmentasipasar/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text "></i> Lihat Surat
+                                        <button class="button-modern">
+                                        <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                         </button>
                                     </a>
 
@@ -269,7 +257,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text "></i> Upload Berkas
+                <i class="bi bi-file-earmark-text"></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -278,8 +266,8 @@ function fetchData(url = null) {
 
                                <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonusahapemenuhansyarat/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text "></i> Lihat Surat
+                                        <button class="button-modern">
+                                        <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                         </button>
                                     </a>
                                     <a href="{{ url('/beuploadberkasusaha3/upload/' . $item->id) }}" style="text-decoration: none;">
@@ -289,7 +277,7 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text "></i> Upload Berkas
+                <i class="bi bi-file-earmark-text"></i> Upload Berkas
             </button>
         @endif
     </a>
@@ -297,8 +285,8 @@ function fetchData(url = null) {
 
                                 <td style="text-align: center; vertical-align: middle;">
                                     <a href="{{ url('/betertibjakonusahapelaksana/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-baru">
-                                        <i class="bi bi-file-earmark-text "></i> Lihat Surat
+                                        <button class="button-modern">
+                                        <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                         </button>
                                     </a>
                                     <a href="{{ url('/beuploadberkasusaha4/upload/' . $item->id) }}" style="text-decoration: none;">
@@ -308,88 +296,33 @@ function fetchData(url = null) {
             </button>
         @else
             <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text "></i> Upload Berkas
+                <i class="bi bi-file-earmark-text"></i> Upload Berkas
             </button>
         @endif
     </a>
                                 </td>
 
-{{-- PERUBAHAN YANG DI PINDAHKAN  --}}
-{{-- <td style="text-align: center; vertical-align: middle;">
-    <a href="{{ url('/beuploadberkasusaha1/upload/' . $item->id) }}" style="text-decoration: none;">
-        @if(!empty($item->cadangan1))
-            <button class="button-berkas">
-                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
-            </button>
-        @else
-            <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text "></i> Upload Berkas
-            </button>
-        @endif
-    </a>
-</td>
-
-<td style="text-align: center; vertical-align: middle;">
-    <a href="{{ url('/beuploadberkasusaha2/upload/' . $item->id) }}" style="text-decoration: none;">
-        @if(!empty($item->cadangan2))
-            <button class="button-berkas">
-                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
-            </button>
-        @else
-            <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text "></i> Upload Berkas
-            </button>
-        @endif
-    </a>
-</td>
-
-
-<td style="text-align: center; vertical-align: middle;">
-    <a href="{{ url('/beuploadberkasusaha3/upload/' . $item->id) }}" style="text-decoration: none;">
-        @if(!empty($item->cadangan3))
-            <button class="button-berkas">
-                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
-            </button>
-        @else
-            <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text "></i> Upload Berkas
-            </button>
-        @endif
-    </a>
-</td>
-
-
-<td style="text-align: center; vertical-align: middle;">
-    <a href="{{ url('/beuploadberkasusaha4/upload/' . $item->id) }}" style="text-decoration: none;">
-        @if(!empty($item->cadangan4))
-            <button class="button-berkas">
-                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
-            </button>
-        @else
-            <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text "></i> Upload Berkas
-            </button>
-        @endif
-    </a>
-</td> --}}
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-
-
                               <td style="text-align: center;">
                                 <!-- Tombol Aksi -->
-                                {{-- <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a> --}}
-                                <a href="/betertibjakonusaha/update/{{$item->id}}" class="button-berkas"><i class="bi bi-pencil-square"></i>Edit</a>
+                                <a href="/betertibjakonusaha/update/{{$item->id}}" class="button-berkas"><i class="bi bi-pencil-square"></i> Edit</a>
                                 <a href="javascript:void(0)" class="button-merah" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                  <i class="bi bi-trash"></i>Hapus
+                                  <i class="bi bi-trash"></i> Hapus
                                 </a>
                               </td>
                             </tr>
-                            @endforeach
+                          @empty
+                                <tr class="empty-row">
+                                    <td colspan="12">
+                                        <div class="empty-state">
+                                            <div class="empty-icon">
+                                                <i class="bi bi-inbox"></i>
+                                            </div>
+                                            <h6 class="empty-title">Data Tidak Di Temukan !</h6>
+                                      
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforelse
                           </tbody>
                         </table>
                       </div>
@@ -740,6 +673,55 @@ function fetchData(url = null) {
             </html>
         `);
         printWindow.document.close();
+    }
+</script>
+
+
+<script>
+    let searchTimeout;
+
+    // ✅ Fungsi ini yang HILANG, sekarang ditambah
+    function updateEntries() {
+        fetchData();
+    }
+
+    // Event search
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(fetchData, 500);
+    });
+
+    // Intercept klik pagination
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('.pagination a');
+        if(link) {
+            e.preventDefault();
+            fetchData(link.getAttribute('href'));
+        }
+    });
+
+    function fetchData(url = null) {
+        const input   = document.getElementById("searchInput").value;
+        const perPage = document.getElementById("entries").value;
+
+        // ✅ Kirim perPage juga
+        const fetchUrl = url
+            ? url + (url.includes('?') ? '&' : '?') + `perPage=${perPage}&search=${encodeURIComponent(input)}`
+            : `/betertibjakonusaha?search=${encodeURIComponent(input)}&perPage=${perPage}`;
+
+        fetch(fetchUrl, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector("#tabeltertibjakonusahasearc").innerHTML = data.html;
+            window.history.pushState({}, '', fetchUrl);
+
+            // ✅ Update total badges (opsional, kalau ada)
+            const b1 = document.querySelectorAll('.button-modern.button-md');
+            // skip — biarkan tampilan total seperti semula
+        })
+        .catch(error => console.error("Error fetching data:", error));
     }
 </script>
 

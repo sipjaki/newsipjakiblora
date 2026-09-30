@@ -200,7 +200,7 @@
             <div class="row">
 
   <div class="col-md-3 col-sm-6 col-12">
-    <a href="/bebujkkonstruksi" style="text-decoration: none;">
+    <a href="/bebujkkonstruksiblora" style="text-decoration: none;">
       <div class="dashboard-card card-1">
         <div class="card-content">
           <div class="number-container">

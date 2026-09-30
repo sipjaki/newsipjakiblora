@@ -793,6 +793,7 @@ Route::get('/bebujkjakon', [BujkkontraktorController::class, 'bebujkjakon'])->mi
 // ---------------------- MENU 1 BUJK KONSTRUKSI   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bebujkkonstruksi', [BujkkontraktorController::class, 'bebujkkonstruksi'])->middleware(['auth', 'can:admin2']);
+Route::get('/bebujkkonstruksiblora', [BujkkontraktorController::class, 'bebujkkonstruksiblora'])->middleware(['auth', 'can:admin2']);
 // Route::get('/bebujkkonstruksi', [BujkkontraktorController::class, 'bebujkkonstruksi']);
 Route::get('/bebujkkonstruksi/show/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksishow'])->middleware(['auth', 'can:admin2']);
 Route::get('/bebujkkonstruksi/showsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasi'])->middleware(['auth', 'can:admin2'])->name('bebujkkonstruksi.showsubklasifikasi');
@@ -917,10 +918,10 @@ Route::delete('/bepengawasanbujk/delete/{id}', [PengawasanbujkController::class,
 // ---------------------- MENU 01 AGENDA PELATIHAN   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 // Route::get('/beagendapelatihan', [PembinaanController::class, 'beagendapelatihan'])->middleware(['auth', 'can:admin2']);
-Route::get('/beagendapelatihan', [PembinaanController::class, 'beagendapelatihan']);
+Route::get('/beagendapelatihan', [PembinaanController::class, 'beagendapelatihan'])->middleware(['auth', 'can:admin2']);
 
 // Route::get('/beagendapelatihanpeserta/show/{id}', [PembinaanController::class, 'beagendapelatihanshowpeserta'])->middleware(['auth', 'can:admin2']);
-Route::get('/beagendapelatihanpeserta/show/{id}', [PembinaanController::class, 'beagendapelatihanshowpeserta']);
+Route::get('/beagendapelatihanpeserta/show/{id}', [PembinaanController::class, 'beagendapelatihanshowpeserta'])->middleware(['auth', 'can:admin2']);
 
 
 Route::get('/beagendapelatihan/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshow'])->middleware(['auth', 'can:admin2']);
@@ -948,23 +949,23 @@ Route::post('/beagendapelatihanmateri/createmateri/new', [PembinaanController::c
 
 // ---------------------- MENU 02 PESERTA PELATIHAN   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
-Route::get('/bepesertapelatihanindex', [PesertapelatihanController::class, 'bepesertapelatihanindex'])->middleware('auth');
-Route::get('/bepesertapelatihan', [PesertapelatihanController::class, 'bepesertapelatihan'])->middleware('auth');
-Route::get('/bepesertapelatihan/show/{name}', [PesertapelatihanController::class, 'bepesertapelatihanshow'])->middleware('auth');
-Route::delete('/bepesertapelatihan/delete/{id}', [PesertapelatihanController::class, 'bepesertapelatihandelete'])->middleware('auth');
+Route::get('/bepesertapelatihanindex', [PesertapelatihanController::class, 'bepesertapelatihanindex'])->middleware(['auth', 'can:admin2']);
+Route::get('/bepesertapelatihan', [PesertapelatihanController::class, 'bepesertapelatihan'])->middleware(['auth', 'can:admin2']);
+Route::get('/bepesertapelatihan/show/{name}', [PesertapelatihanController::class, 'bepesertapelatihanshow'])->middleware(['auth', 'can:admin2']);
+Route::delete('/bepesertapelatihan/delete/{id}', [PesertapelatihanController::class, 'bepesertapelatihandelete'])->middleware(['auth', 'can:admin2']);
 
 // Route::get('/bepesertapelatihansertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertapelatihansertifikat'])->middleware('auth')->name('bepesertauploadsertifikat.show');
 
 Route::get('/bepesertapelatihansertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertapelatihansertifikat'])
-    ->middleware('auth')
+    ->middleware(['auth', 'can:admin2'])
     ->name('bepesertauploadsertifikat.show');
 
-Route::get('/bepesertapuploadsertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikat'])->middleware('auth')->name('bepesertauploadsertifikat.show1');
-Route::get('/bepesertapuploadsertifikatres/show/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatandroid'])->name('bepesertauploadsertifikat.show2');
+Route::get('/bepesertapuploadsertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikat'])->middleware(['auth', 'can:admin2'])->name('bepesertauploadsertifikat.show1');
+Route::get('/bepesertapuploadsertifikatres/show/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatandroid'])->middleware(['auth', 'can:admin2'])->name('bepesertauploadsertifikat.show2');
 
-Route::post('/bepesertapuploadsertifikat/create/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatupload'])->middleware('auth')->name('bepesertauploadsertifikatupload');
+Route::post('/bepesertapuploadsertifikat/create/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatupload'])->middleware(['auth', 'can:admin2'])->name('bepesertauploadsertifikatupload');
 
-Route::get('/bepelatihanjampelajaran/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajaran'])->middleware('auth')->name('bepelatihanjampelajaran');
+Route::get('/bepelatihanjampelajaran/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajaran'])->middleware(['auth', 'can:admin2'])->name('bepelatihanjampelajaran');
 
 Route::delete('/bepelatihanjampelajaran/delete/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajarandelete'])->middleware('auth')->name('bepelatihanjampelajarandelete');
 
@@ -995,7 +996,7 @@ Route::post('/daftarpesertapelatihan/createmateri/new', [PesertapelatihanControl
 // ___________________________________________________________________________________________________________________________________
 
 // BRO IGIT
-Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk'])->middleware('auth');
+Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk'])->middleware(['auth', 'can:admin2']);
 // Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk']);
 Route::get('/beagendaskkmateri/{id}', [PembinaanController::class, 'beagendaskkmateri'])->middleware('auth')->name('beagendaskkmateri');
 // Route::get('/beagendaskkmateri/{id}', [PembinaanController::class, 'beagendaskkmateri'])->name('beagendaskkmateri');
@@ -1093,7 +1094,7 @@ Route::put('/terbitkansertifikat/{id}', [VerifikasiController::class, 'terbitkan
 Route::put('/verifikasipupesertaskk/{id}', [VerifikasiController::class, 'verifikasipupesertaskk'])->middleware('auth')->name('verifikasipupesertaskk');
 
 
-// ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
+// ---------------------- 02 MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/betertibjakonusaha', [TertibjasakonstruksiController::class, 'betertibjakonusaha'])->middleware(['auth', 'can:admin3'])->name('bertertibjakonusaha');
 
@@ -1453,6 +1454,11 @@ Route::get('/settingstahunpilihan/create', [SettingDataController::class, 'setti
 Route::post('/settingstahunpilihan/createnew', [SettingDataController::class, 'settingstahunpilihancreatenew'])->middleware(['auth', 'can:admin2'])->name('create.tahunpilihan');
 Route::delete('/settingstahunpilihan/delete/{id}', [SettingDataController::class, 'settingstahunpilihandelete'])->middleware(['auth', 'can:admin2']);
 
+
+Route::get('/settingskatepelatihan', [SettingDataController::class, 'settingskatepelatihan'])->middleware(['auth', 'can:admin2']);
+Route::get('/settingskatepelatihan/create', [SettingDataController::class, 'settingskatepelatihancreate'])->middleware(['auth', 'can:admin2']);
+Route::post('/settingskatepelatihan/createnew', [SettingDataController::class, 'settingskatepelatihancreatenew'])->middleware(['auth', 'can:admin2'])->name('create.kategoripelatihan');
+Route::delete('/settingskatepelatihan/delete/{id}', [SettingDataController::class, 'settingskatepelatihandelete'])->middleware(['auth', 'can:admin2']);
 
 
 // ------------------- BACKEND BAGIAN HIMBAUAN DINAS ---------------------------

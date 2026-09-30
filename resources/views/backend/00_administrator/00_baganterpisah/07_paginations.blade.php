@@ -1,44 +1,34 @@
 <!-- PAGINATION COMPONENT MODERN BLORA -->
-<div class="blora-pagination-container"
-     style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; text-align: center; font-family: 'Segoe UI', system-ui, sans-serif;">
+<div class="blora-pagination-container">
 
     <!-- Info Box Modern -->
-    <div class="blora-info-card"
-        style="padding: 16px 28px; border-radius: 12px; margin-bottom: 25px;
-               background: linear-gradient(135deg, #04b347 0%, #0a8f3a 100%);
-               border: none; box-shadow: 0 8px 32px rgba(4, 179, 71, 0.2);
-               display: flex; align-items: center; justify-content: center;
-               transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-               backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
-        <div class="blora-info-content" style="color: white; font-weight: 600; text-align: center; display: flex; align-items: center; gap: 8px;">
-            <div style="background: rgba(255,255,255,0.15); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutam/06_shspkonstruksi.png"
-                        alt="SHS P Konstruksi"
-                        style="width: 32px; height: 32px; object-fit: contain;">
-                </div>
+    {{-- <div class="blora-info-card">
+        <div class="blora-info-content">
+            <div class="blora-info-icon">
+                <img src="/assets/00_android/00_iconmenuutama/01_menuutam/06_shspkonstruksi.png"
+                     alt="SHS P Konstruksi">
+            </div>
 
-            <div style="text-align: left;">
-                <div style="font-size: 14px; opacity: 0.9; margin-bottom: 4px;">{{ $title }}</div>
-                <div style="font-size: 16px;">
-                    Data Ke <span style="color: #ffeb3b; font-weight: 700;">{{ $data->firstItem() }}</span> -
-                    <span style="color: #ffeb3b; font-weight: 700;">{{ $data->lastItem() }}</span> dari
-                    <span style="color: #ffeb3b; font-weight: 700;">{{ $data->total() }}</span> Jumlah Data
+            <div class="blora-info-text">
+                <div class="blora-info-title">{{ $title }}</div>
+                <div class="blora-info-count">
+                    Data Ke <span class="blora-highlight">{{ $data->firstItem() }}</span> -
+                    <span class="blora-highlight">{{ $data->lastItem() }}</span> dari
+                    <span class="blora-highlight">{{ $data->total() }}</span> Jumlah Data
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Pagination Navigation Modern -->
     @php
-        $window = 2; // Jumlah halaman di kiri/kanan halaman aktif
+        $window = 2;
         $last = $data->lastPage();
         $current = $data->currentPage();
 
-        // Menghitung halaman yang akan ditampilkan
         $start = max($current - $window, 1);
         $end = min($current + $window, $last);
 
-        // Pastikan selalu ada minimal 5 halaman jika memungkinkan
         if ($end - $start < 4 && $last > 5) {
             if ($current <= 3) {
                 $end = min(5, $last);
@@ -47,21 +37,15 @@
             }
         }
 
-        // Helper untuk URL dengan semua query parameter
         $paginator = $data->appends(request()->except('page'));
     @endphp
 
-    <div class="blora-pagination-wrapper"
-         style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center;">
+    <div class="blora-pagination-wrapper">
 
         {{-- First Page Button --}}
         @if($current > 1)
-        <a href="{{ $paginator->url(1) }}"
-           class="blora-page-btn blora-first"
-           style="display: flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 10px;
-                  background: #f0f9f0; color: #04b347; text-decoration: none; font-weight: 600;
-                  border: 2px solid #d1f0d1; transition: all 0.3s ease;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="{{ $paginator->url(1) }}" class="blora-page-btn blora-first">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M18 6L12 12L18 18M6 6V18"/>
             </svg>
             First
@@ -70,45 +54,29 @@
 
         {{-- Previous Button --}}
         <a href="{{ $data->onFirstPage() ? '#' : $paginator->previousPageUrl() }}"
-           class="blora-page-btn blora-prev {{ $data->onFirstPage() ? 'disabled' : '' }}"
-           style="display: flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 10px;
-                  background: {{ $data->onFirstPage() ? '#e0e0e0' : '#04b347' }};
-                  color: {{ $data->onFirstPage() ? '#999' : 'white' }};
-                  text-decoration: none; font-weight: 600; border: none;
-                  transition: all 0.3s ease; cursor: {{ $data->onFirstPage() ? 'not-allowed' : 'pointer' }};
-                  box-shadow: 0 4px 12px rgba(4, 179, 71, 0.2);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+           class="blora-page-btn blora-prev {{ $data->onFirstPage() ? 'disabled' : '' }}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M15 19l-7-7 7-7"/>
             </svg>
             Prev
         </a>
 
         {{-- Page Numbers --}}
-        <div class="blora-pages-container"
-             style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+        <div class="blora-pages-container">
 
             {{-- Ellipsis for beginning --}}
             @if($start > 1)
-                <span style="padding: 8px 12px; color: #666; font-weight: 600;">...</span>
+                <span class="blora-ellipsis">...</span>
             @endif
 
             {{-- Page Numbers --}}
             @for ($page = $start; $page <= $end; $page++)
                 @if($page == $current)
-                    <div class="blora-page-current"
-                         style="padding: 12px 18px; border-radius: 10px; background: linear-gradient(135deg, #04b347 0%, #0a8f3a 100%);
-                                color: white; font-weight: 700; box-shadow: 0 6px 20px rgba(4, 179, 71, 0.3);
-                                border: 2px solid white; position: relative;">
+                    <div class="blora-page-current">
                         {{ $page }}
-                        <div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
-                                    width: 8px; height: 8px; background: #ffeb3b; border-radius: 50%;"></div>
                     </div>
                 @else
-                    <a href="{{ $paginator->url($page) }}"
-                       class="blora-page-number"
-                       style="padding: 10px 16px; border-radius: 10px; background: white; color: #04b347;
-                              text-decoration: none; font-weight: 600; border: 2px solid #e0f2e0;
-                              transition: all 0.3s ease; min-width: 45px;">
+                    <a href="{{ $paginator->url($page) }}" class="blora-page-number">
                         {{ $page }}
                     </a>
                 @endif
@@ -116,34 +84,24 @@
 
             {{-- Ellipsis for end --}}
             @if($end < $last)
-                <span style="padding: 8px 12px; color: #666; font-weight: 600;">...</span>
+                <span class="blora-ellipsis">...</span>
             @endif
         </div>
 
         {{-- Next Button --}}
         <a href="{{ $data->hasMorePages() ? $paginator->nextPageUrl() : '#' }}"
-           class="blora-page-btn blora-next {{ !$data->hasMorePages() ? 'disabled' : '' }}"
-           style="display: flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 10px;
-                  background: {{ !$data->hasMorePages() ? '#e0e0e0' : '#04b347' }};
-                  color: {{ !$data->hasMorePages() ? '#999' : 'white' }};
-                  text-decoration: none; font-weight: 600; border: none;
-                  transition: all 0.3s ease; cursor: {{ !$data->hasMorePages() ? 'not-allowed' : 'pointer' }};
-                  box-shadow: 0 4px 12px rgba(4, 179, 71, 0.2);">
+           class="blora-page-btn blora-next {{ !$data->hasMorePages() ? 'disabled' : '' }}">
             Next
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M9 5l7 7-7 7"/>
             </svg>
         </a>
 
         {{-- Last Page Button --}}
         @if($current < $last)
-        <a href="{{ $paginator->url($last) }}"
-           class="blora-page-btn blora-last"
-           style="display: flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 10px;
-                  background: #f0f9f0; color: #04b347; text-decoration: none; font-weight: 600;
-                  border: 2px solid #d1f0d1; transition: all 0.3s ease;">
+        <a href="{{ $paginator->url($last) }}" class="blora-page-btn blora-last">
             Last
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M6 6V18M18 6L12 12L18 18"/>
             </svg>
         </a>
@@ -152,148 +110,323 @@
     </div>
 
     <!-- Page Indicator -->
-    <div class="blora-page-indicator"
-         style="margin-top: 20px; padding: 8px 20px; border-radius: 20px; background: #f8fff8;
-                color: #0a8f3a; font-weight: 600; font-size: 14px; border: 1px solid #d1f0d1;">
-        Halaman Ke {{ $current }} Dari {{ $last }}
+    <div class="blora-page-indicator">
+        Halaman Ke <strong>{{ $current }}</strong> Dari <strong>{{ $last }}</strong>
     </div>
 
 </div>
 
 <style>
-/* MODERN BLORA PAGINATION STYLES */
+/* ============================================================
+   MODERN BLORA PAGINATION – PUTIH DOMINAN + HIJAU POLESAN
+   ============================================================ */
 
-/* Global Reset */
+.blora-pagination-container {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+    position: relative;
+    padding-bottom: 12px;
+}
+
 .blora-pagination-container * {
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* Info Card Animation */
+/* ============================================================
+   INFO BOX – PUTIH DOMINAN, HIJAU SEBAGAI AKSEN
+   ============================================================ */
 .blora-info-card {
+    padding: 12px 22px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    background: #FFFFFF;                                   /* Putih dominan */
+    border: 1px solid #E9EDF4;
+    border-left: 4px solid var(--blora-green, #16A34A);    /* Aksen hijau kiri */
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.blora-info-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: 0.5s;
+.blora-info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(22, 163, 74, 0.10);
+    border-left-color: var(--blora-green-dark, #15803D);
 }
 
-.blora-info-card:hover::before {
-    left: 100%;
-}
-
-/* Page Numbers Hover Effects */
-.blora-page-number {
+.blora-info-content {
+    color: #1A2B4A;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     position: relative;
-    overflow: hidden;
+    z-index: 1;
 }
 
-.blora-page-number:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(4, 179, 71, 0.25);
-    border-color: #04b347 !important;
-    color: #0a8f3a !important;
+.blora-info-icon {
+    background: #F0FDF4;                                   /* Hijau soft */
+    padding: 6px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(22, 163, 74, 0.15);
 }
 
-.blora-page-number::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(4, 179, 71, 0.1);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+.blora-info-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
 }
 
-.blora-page-number:hover::before {
-    width: 150px;
-    height: 150px;
+.blora-info-text {
+    text-align: left;
 }
 
-/* Current Page Animation */
-.blora-page-current {
-    animation: pulse-green 2s infinite;
+.blora-info-title {
+    font-size: 13px;
+    color: #6B7A93;
+    margin-bottom: 2px;
+    font-weight: 500;
 }
 
-@keyframes pulse-green {
-    0% {
-        box-shadow: 0 6px 20px rgba(4, 179, 71, 0.3);
-    }
-    50% {
-        box-shadow: 0 6px 30px rgba(4, 179, 71, 0.5);
-    }
-    100% {
-        box-shadow: 0 6px 20px rgba(4, 179, 71, 0.3);
-    }
+.blora-info-count {
+    font-size: 14px;
+    color: #1A2B4A;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
-/* Button Hover Effects */
+.blora-highlight {
+    color: var(--blora-green, #16A34A);                    /* Angka hijau */
+    font-weight: 700;
+}
+
+/* ============================================================
+   PAGINATION WRAPPER
+   ============================================================ */
+.blora-pagination-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ============================================================
+   BASE BUTTON – FIRST / PREV / NEXT / LAST – PUTIH DENGAN BORDER
+   ============================================================ */
+.blora-page-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: #FFFFFF;                                   /* Putih */
+    color: var(--blora-green-deep, #14532D);               /* Teks hijau deep */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    border: 1.5px solid #E9EDF4;                           /* Border netral */
+    transition: all 0.25s ease;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: inherit;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+}
+
+.blora-page-btn svg {
+    stroke: currentColor;
+    flex-shrink: 0;
+}
+
 .blora-page-btn:not(.disabled):hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(4, 179, 71, 0.4) !important;
+    background: #F0FDF4;                                   /* Hover hijau soft */
+    border-color: var(--blora-green, #16A34A);             /* Border hijau */
+    color: var(--blora-green, #16A34A);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+}
+
+/* First & Last – sama putih, tanpa perbedaan mencolok */
+.blora-page-btn.blora-first,
+.blora-page-btn.blora-last {
+    background: #FFFFFF;
+    color: #6B7A93;
+    border: 1.5px solid #E9EDF4;
+}
+
+.blora-page-btn.blora-first:hover,
+.blora-page-btn.blora-last:hover {
+    background: #F0FDF4;
+    border-color: var(--blora-green, #16A34A);
+    color: var(--blora-green, #16A34A);
 }
 
 /* Disabled State */
 .blora-page-btn.disabled {
-    opacity: 0.6;
+    background: #F8FAFC !important;
+    color: #CBD5E1 !important;
+    border: 1.5px solid #F1F5F9 !important;
     cursor: not-allowed !important;
     box-shadow: none !important;
+    transform: none !important;
+    pointer-events: none;
 }
 
-/* Responsive Design */
+/* ============================================================
+   PAGE NUMBERS – PUTIH DOMINAN
+   ============================================================ */
+.blora-pages-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.blora-page-number {
+    padding: 7px 12px;
+    min-width: 36px;
+    border-radius: 8px;
+    background: #FFFFFF;                                   /* Putih */
+    color: #4A5A72;                                        /* Teks abu gelap */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    border: 1.5px solid #E9EDF4;
+    transition: all 0.25s ease;
+    text-align: center;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+}
+
+.blora-page-number:hover {
+    background: #F0FDF4;                                   /* Hover hijau soft */
+    color: var(--blora-green, #16A34A);
+    border-color: var(--blora-green, #16A34A);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+}
+
+/* Current Page – Hijau sebagai aksen (satu-satunya yang hijau solid) */
+.blora-page-current {
+    padding: 7px 12px;
+    min-width: 36px;
+    border-radius: 8px;
+    background: var(--blora-green, #16A34A);               /* Hijau solid */
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 12px;
+    border: 2px solid var(--blora-green, #16A34A);
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulseBlora 2s infinite;
+    font-family: inherit;
+}
+
+@keyframes pulseBlora {
+    0%, 100% { box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25); }
+    50%      { box-shadow: 0 4px 18px rgba(22, 163, 74, 0.45); }
+}
+
+/* Ellipsis */
+.blora-ellipsis {
+    padding: 6px 6px;
+    color: #94A3B8;
+    font-weight: 700;
+    font-size: 14px;
+    user-select: none;
+}
+
+/* ============================================================
+   PAGE INDICATOR – PUTIH DOMINAN
+   ============================================================ */
+.blora-page-indicator {
+    margin-top: 14px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    background: #FFFFFF;                                   /* Putih */
+    color: #4A5A72;
+    font-weight: 500;
+    font-size: 12px;
+    border: 1px solid #E9EDF4;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+}
+
+.blora-page-indicator strong {
+    color: var(--blora-green, #16A34A);                    /* Angka hijau */
+    font-weight: 700;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width: 768px) {
     .blora-pagination-wrapper {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .blora-pages-container {
-        order: 3;
-        margin-top: 10px;
+        gap: 6px;
     }
 
     .blora-page-btn.blora-first,
     .blora-page-btn.blora-last {
-        display: none !important;
+        display: none;
     }
 
     .blora-info-content {
         flex-direction: column;
-        text-align: center !important;
-        gap: 12px;
+        text-align: center;
+        gap: 8px;
     }
+
+    .blora-info-text {
+        text-align: center;
+    }
+
+    .blora-info-title { font-size: 12px; }
+    .blora-info-count { font-size: 13px; }
 }
 
 @media (max-width: 480px) {
     .blora-page-number,
     .blora-page-current {
-        padding: 8px 12px !important;
-        min-width: 40px !important;
-        font-size: 14px;
+        padding: 6px 10px;
+        min-width: 32px;
+        font-size: 11px;
     }
 
     .blora-page-btn {
-        padding: 8px 16px !important;
-        font-size: 14px;
+        padding: 6px 10px;
+        font-size: 11px;
     }
 
     .blora-info-card {
-        padding: 12px 16px !important;
+        padding: 10px 16px;
+    }
+
+    .blora-info-icon img {
+        width: 24px;
+        height: 24px;
     }
 }
 
-/* Loading Animation */
+/* ============================================================
+   LOADING STATE
+   ============================================================ */
 .blora-page-btn.loading {
     position: relative;
     color: transparent !important;
@@ -302,67 +435,41 @@
 .blora-page-btn.loading::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid white;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--blora-green, #16A34A);
     border-radius: 50%;
     border-top-color: transparent;
-    animation: spin 1s linear infinite;
+    animation: spinBlora 1s linear infinite;
+    top: 50%;
+    left: 50%;
+    margin: -8px -8px 0 -8px;
+    margin-top: -8px;
+    margin-left: -8px;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Gradient Border Effect for Container */
-.blora-pagination-container {
-    position: relative;
-}
-
-.blora-pagination-container::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 10%;
-    width: 80%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #04b347, transparent);
+@keyframes spinBlora {
+    to { transform: rotate(360deg); }
 }
 </style>
 
 <script>
-// Smooth scroll to top when changing page
+// Smooth scroll + loading state saat pindah halaman
 document.querySelectorAll('.blora-page-number, .blora-page-btn').forEach(link => {
     link.addEventListener('click', function(e) {
         if (!this.classList.contains('disabled')) {
-            // Add loading state
             this.classList.add('loading');
 
-            // Smooth scroll to top
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
 
-            // Optional: Add click animation
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = '';
             }, 150);
         }
-    });
-});
-
-// Hover effect for page numbers
-document.querySelectorAll('.blora-page-number').forEach(btn => {
-    btn.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-3px)';
-    });
-
-    btn.addEventListener('mouseleave', function() {
-        this.style.transform = '';
     });
 });
 </script>

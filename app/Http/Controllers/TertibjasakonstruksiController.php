@@ -447,61 +447,64 @@ class TertibjasakonstruksiController extends Controller
 
 
     // MENU BACKEND TERTIB JAKON USAHA JASA KONSTRUKSI
+public function betertibjakonusaha(Request $request)
+    {
+        $perPage = (int) $request->input('perPage', 10);
+        if ($perPage < 1) $perPage = 10;
 
-    public function betertibjakonusaha(Request $request)
-{
+        $search = $request->input('search');
 
-    $perPage = $request->input('perPage', 10);
-    $search = $request->input('search');
+        $query = tertibjasakonstruksi::query();
 
-    $query = tertibjasakonstruksi::query();
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('nib', 'LIKE', "%{$search}%")
+                  ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+                  ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+                  ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                  ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+                      $r->where('penyedia', 'LIKE', "%{$search}%");
+                  });
+            });
+        }
 
-    if ($search) {
-        $query->where(function ($q) use ($search) {
-            $q->where('nib', 'LIKE', "%{$search}%")
-              ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
-              ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
-              ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
-              ->orWhere('pjbu', 'LIKE', "%{$search}%")
-              ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
-                  $r->where('penyedia', 'LIKE', "%{$search}%");
-              });
-        });
-    }
+        $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
+                      ->orderBy('updated_at', 'desc')
+                      ->paginate($perPage)
+                      ->appends($request->only('search', 'perPage'));
 
-    $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
-                  ->orderBy('updated_at', 'desc')
-                  ->paginate($perPage)
-                  ->appends($request->only('search', 'perPage'));
+        $totalpenyedia1 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+            $q->where('id', 1);
+        })->count();
 
-    if ($request->ajax()) {
-        return response()->json([
-            'html' => view('backend.06_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render()
+        $totalpenyedia2 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+            $q->where('id', 2);
+        })->count();
+
+        $totalpenyedia3 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+            $q->where('id', 3);
+        })->count();
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html'           => view('backend.06_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render(),
+                'totalpenyedia1' => $totalpenyedia1,
+                'totalpenyedia2' => $totalpenyedia2,
+                'totalpenyedia3' => $totalpenyedia3,
+            ]);
+        }
+
+        return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
+            'title'          => 'Data Tertib Jakon Usaha',
+            'data'           => $data,
+            'perPage'        => $perPage,
+            'search'         => $search,
+            'totalpenyedia1' => $totalpenyedia1,
+            'totalpenyedia2' => $totalpenyedia2,
+            'totalpenyedia3' => $totalpenyedia3,
         ]);
     }
-
-    $totalpenyedia1 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
-    $q->where('id', 1);
-        })->count();
-
-    $totalpenyedia2 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
-    $q->where('id', 2);
-        })->count();
-
-    $totalpenyedia3 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
-    $q->where('id', 3);
-        })->count();
-
-    return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
-        'title' => 'Data Tertib Jakon Usaha',
-        'data' => $data,
-        'perPage' => $perPage,
-        'search' => $search,
-        'totalpenyedia1' => $totalpenyedia1,
-        'totalpenyedia2' => $totalpenyedia2,
-        'totalpenyedia3' => $totalpenyedia3,
-    ]);
-}
 
 public function betertibjakonusahadelete($id)
 {
