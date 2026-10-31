@@ -447,14 +447,89 @@ class TertibjasakonstruksiController extends Controller
 
 
     // MENU BACKEND TERTIB JAKON USAHA JASA KONSTRUKSI
-public function betertibjakonusaha(Request $request)
+// public function betertibjakonusaha(Request $request)
+//     {
+//         $perPage = (int) $request->input('perPage', 10);
+//         if ($perPage < 1) $perPage = 10;
+
+//         $search = $request->input('search');
+
+//         $query = tertibjasakonstruksi::query();
+
+//         if ($search) {
+//             $query->where(function ($q) use ($search) {
+//                 $q->where('nib', 'LIKE', "%{$search}%")
+//                   ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+//                   ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+//                   ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+//                   ->orWhere('pjbu', 'LIKE', "%{$search}%")
+//                   ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+//                       $r->where('penyedia', 'LIKE', "%{$search}%");
+//                   });
+//             });
+//         }
+
+//         $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
+//                       ->orderBy('updated_at', 'desc')
+//                       ->paginate($perPage)
+//                       ->appends($request->only('search', 'perPage'));
+
+//         $totalpenyedia1 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+//             $q->where('id', 1);
+//         })->count();
+
+//         $totalpenyedia2 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+//             $q->where('id', 2);
+//         })->count();
+
+//         $totalpenyedia3 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+//             $q->where('id', 3);
+//         })->count();
+
+//         if ($request->ajax()) {
+//             return response()->json([
+//                 'html'           => view('backend.06_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render(),
+//                 'totalpenyedia1' => $totalpenyedia1,
+//                 'totalpenyedia2' => $totalpenyedia2,
+//                 'totalpenyedia3' => $totalpenyedia3,
+//             ]);
+//         }
+
+//         return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
+//             'title'          => 'Data Tertib Jakon Usaha',
+//             'data'           => $data,
+//             'perPage'        => $perPage,
+//             'search'         => $search,
+//             'totalpenyedia1' => $totalpenyedia1,
+//             'totalpenyedia2' => $totalpenyedia2,
+//             'totalpenyedia3' => $totalpenyedia3,
+//         ]);
+//     }
+
+    public function betertibjakonusaha(Request $request)
     {
-        $perPage = (int) $request->input('perPage', 10);
-        if ($perPage < 1) $perPage = 10;
+        // ============================================================
+        // 1. PARAMETER
+        // ============================================================
+        $perPage = (int) $request->input('perPage', 5);
+        if ($perPage < 1) $perPage = 5;
 
         $search = $request->input('search');
+        $tahun  = $request->input('tahun');
+        $sektor = $request->input('sektor');
 
+        // ============================================================
+        // 2. QUERY
+        // ============================================================
         $query = tertibjasakonstruksi::query();
+
+        if ($tahun) {
+            $query->where('tahunpelaksanaan', $tahun);
+        }
+
+        if ($sektor) {
+            $query->where('penyediastatustertibjakon_id', $sektor);
+        }
 
         if ($search) {
             $query->where(function ($q) use ($search) {
@@ -469,42 +544,70 @@ public function betertibjakonusaha(Request $request)
             });
         }
 
+        // ============================================================
+        // 3. PAGINATE
+        // ============================================================
         $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
                       ->orderBy('updated_at', 'desc')
                       ->paginate($perPage)
-                      ->appends($request->only('search', 'perPage'));
+                      ->appends($request->only('search', 'perPage', 'tahun', 'sektor'));
 
-        $totalpenyedia1 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
-            $q->where('id', 1);
-        })->count();
+        // ============================================================
+        // 4. DATAPENYEDIA + STATISTIK
+        // ============================================================
+        $datapenyedia = penyediastatustertibjakon::orderBy('id', 'asc')->get();
 
-        $totalpenyedia2 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
-            $q->where('id', 2);
-        })->count();
+        $statistik = [];
+        foreach ($datapenyedia as $p) {
+            $q = tertibjasakonstruksi::where('penyediastatustertibjakon_id', $p->id);
+            if ($tahun) $q->where('tahunpelaksanaan', $tahun);
 
-        $totalpenyedia3 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
-            $q->where('id', 3);
-        })->count();
+            $statistik[$p->id] = [
+                'id'       => $p->id,
+                'penyedia' => $p->penyedia,
+                'total'    => $q->count(),
+            ];
+        }
+        $grandTotal = array_sum(array_column($statistik, 'total'));
 
+        // ============================================================
+        // 5. LIST TAHUN
+        // ============================================================
+        $listTahun = tertibjasakonstruksi::select('tahunpelaksanaan')
+                        ->whereNotNull('tahunpelaksanaan')
+                        ->distinct()
+                        ->orderBy('tahunpelaksanaan', 'desc')
+                        ->pluck('tahunpelaksanaan');
+
+        // ============================================================
+        // 6. AJAX RESPONSE
+        // ============================================================
         if ($request->ajax()) {
             return response()->json([
-                'html'           => view('backend.06_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render(),
-                'totalpenyedia1' => $totalpenyedia1,
-                'totalpenyedia2' => $totalpenyedia2,
-                'totalpenyedia3' => $totalpenyedia3,
+                'rows'       => view('backend.06_pengawasan.01_tertibjakonusaha._table', compact('data'))->render(),
+                'pagination' => $data->links()->render(),
+                'statistik'  => $statistik,
+                'grandTotal' => $grandTotal,
             ]);
         }
 
+        // ============================================================
+        // 7. VIEW
+        // ============================================================
         return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
-            'title'          => 'Data Tertib Jakon Usaha',
-            'data'           => $data,
-            'perPage'        => $perPage,
-            'search'         => $search,
-            'totalpenyedia1' => $totalpenyedia1,
-            'totalpenyedia2' => $totalpenyedia2,
-            'totalpenyedia3' => $totalpenyedia3,
+            'title'        => 'Data Tertib Jakon Usaha',
+            'data'         => $data,
+            'perPage'      => $perPage,
+            'search'       => $search,
+            'tahun'        => $tahun,
+            'sektor'       => $sektor,
+            'listTahun'    => $listTahun,
+            'datapenyedia' => $datapenyedia,
+            'statistik'    => $statistik,
+            'grandTotal'   => $grandTotal,
         ]);
     }
+
 
 public function betertibjakonusahadelete($id)
 {

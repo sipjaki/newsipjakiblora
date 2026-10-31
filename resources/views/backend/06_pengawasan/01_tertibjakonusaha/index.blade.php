@@ -3,12 +3,10 @@
 
 <!--begin::Body-->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
- <!--begin::App Wrapper-->
  <div class="app-wrapper">
 {{-- ---------------------------------------------------------------------- --}}
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
-
 
    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
    @include('button')
@@ -19,31 +17,66 @@
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
-       <!--begin::Container-->
        <div class="container-fluid">
-         <!--begin::Row-->
          <div class="row">
             @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
             @include('backend.00_administrator.00_baganterpisah.11_alert')
          </div>
-         <!--end::Row-->
        </div>
-       <!--end::Container-->
      </div>
 
-     <!-- Menampilkan pesan sukses -->
-
-
      <div class="container-fluid">
-         <!--begin::Row-->
          <div class="row" style="margin-right: 10px; margin-left:10px;">
-             <!-- /.card -->
              <div class="card mb-4">
-                 <!-- /.card-header -->
                  <div class="card-header">
 
                     @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
+                    {{-- ============================================================ --}}
+                    {{-- RADAR CHART PANEL                                            --}}
+                    {{-- ============================================================ --}}
+                    <div class="radar-chart-panel">
+                        <div class="radar-chart-canvas-wrap">
+                            <canvas id="radarChartMini"></canvas>
+                        </div>
+                        <div class="radar-chart-info">
+                            <div class="radar-chart-title">
+                                <i class="bi bi-bar-chart-line-fill" style="margin-right: 6px;"></i>
+                                Distribusi Sektor Penyedia
+                            </div>
+                            <div class="radar-chart-legend">
+                                @if(isset($datapenyedia))
+                                    @foreach ($datapenyedia as $idx => $p)
+                                        <div class="radar-legend-item"
+                                             style="border-left: 4px solid
+                                                @if($idx == 0) #16A34A
+                                                @elseif($idx == 1) #4ADE80
+                                                @elseif($idx == 2) #15803D
+                                                @else #14532D
+                                                @endif;">
+                                            <span class="radar-legend-label">{{ $p->penyedia }}</span>
+                                            <span class="radar-legend-value" data-stat-id="{{ $p->id }}">
+                                                {{ $statistik[$p->id]['total'] ?? 0 }}
+                                            </span>
+                                        </div>
+                                    @endforeach
+                                @endif
+                                <div class="radar-legend-item radar-legend-total">
+                                    <span class="radar-legend-label">Total</span>
+                                    <span class="radar-legend-value" id="grandTotalValue">{{ $grandTotal ?? 0 }}</span>
+                                </div>
+                            </div>
+                            <div class="radar-chart-action">
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#radarChartModal" class="button-modern button-md">
+                                    <i class="bi bi-arrows-fullscreen"></i> Perbesar Chart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- ============================================================ --}}
+                    {{-- FILTER BAR                                                    --}}
+                    {{-- ============================================================ --}}
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px; flex-wrap: wrap; gap: 6px; align-items: center;">
 
                     <form method="GET" action="/betertibjakonusaha" id="filterForm">
@@ -66,24 +99,57 @@
         </select>
     </div>
 
-    <button type="button" class="button-modern button-md">
-        <i class="bi bi-file-earmark" style="margin-right: 5px"></i> {{$totalpenyedia1}} (PU)
-    </button>
-
-    <button type="button" class="button-modern button-md">
-        <i class="bi bi-file-earmark" style="margin-right: 5px"></i> {{$totalpenyedia2}} (NON-PU)
-    </button>
-
-    <button type="button" class="button-modern button-md">
-        <i class="bi bi-file-earmark" style="margin-right: 5px"></i> {{$totalpenyedia3}} (SWASTA)
-    </button>
-
-    <div style="position: relative; display: inline-block; margin-right:10px;">
-        <input type="search" id="searchInput" name="search" value="{{ $search ?? '' }}" placeholder="Cari Badan Usaha ...." style="border: 1px solid var(--border); padding: 8px 18px 8px 14px; font-size: 14px; border-radius: 10px; width: 280px;">
-        <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 15px; color: var(--text-muted);"></i>
+    <div style="position: relative; margin-right: 6px;">
+        <select id="sektorSelect" name="sektor"
+                style="border: 1px solid var(--border); padding: 8px 36px 8px 14px;
+                       font-size: 14px; border-radius: 10px; width: 200px;
+                       appearance: none; -webkit-appearance: none;
+                       background:#fff; cursor:pointer; color:var(--text-dark);">
+            <option value="">Semua Sektor</option>
+            @if(isset($datapenyedia))
+                @foreach ($datapenyedia as $p)
+                    <option value="{{ $p->id }}" {{ ($sektor ?? '') == $p->id ? 'selected' : '' }}>
+                        {{ $p->penyedia }}
+                        @if(isset($statistik[$p->id]))
+                            ({{ $statistik[$p->id]['total'] }})
+                        @endif
+                    </option>
+                @endforeach
+            @endif
+        </select>
+        <i class="bi bi-chevron-down"
+           style="position:absolute; right:12px; top:50%; transform:translateY(-50%);
+                  font-size:13px; color:var(--text-muted); pointer-events:none;"></i>
     </div>
 
-    <button type="submit" class="button-modern button-md">
+        <div style="position: relative;">
+        <select id="tahunSelect" name="tahun"
+                style="border: 1px solid var(--border); padding: 8px 36px 8px 14px;
+                       font-size: 14px; border-radius: 10px; width: 180px;
+                       appearance: none; -webkit-appearance: none;
+                       background:#fff; cursor:pointer; color:var(--text-dark);">
+            <option value="">Semua Tahun</option>
+            @foreach ($listTahun as $th)
+                <option value="{{ $th }}" {{ ($tahun ?? '') == $th ? 'selected' : '' }}>
+                    {{ $th }}
+                </option>
+            @endforeach
+        </select>
+        <i class="bi bi-chevron-down"
+           style="position:absolute; right:12px; top:50%; transform:translateY(-50%);
+                  font-size:13px; color:var(--text-muted); pointer-events:none;"></i>
+    </div>
+
+    <div style="position: relative; display: inline-block; margin-right:10px;">
+    <input type="search" id="searchInput" name="search" value="{{ $search ?? '' }}"
+           placeholder="Cari Badan Usaha ...."
+           style="border: 1px solid var(--border); padding: 8px 18px 8px 14px; font-size: 14px; border-radius: 10px; width: 280px;"
+           autocomplete="off">
+    <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 15px; color: var(--text-muted);"></i>
+    </div>
+
+
+    <button type="submit" class="button-baru button-md">
         <i class="bi bi-search"></i> Cari
     </button>
 
@@ -91,56 +157,20 @@
         <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
     </button>
 
-    <a href="/betertibjakonusaha/create">
-        <button type="button" class="button-modern button-md">
-            <i class="fa fa-plus" style="margin-right: 8px;"></i>
-            Buat Baru
-        </button>
-    </a>
+    {{-- Tombol Buat Baru — BUKA MODAL --}}
+    <button type="button" class="button-modern button-md"
+            data-bs-toggle="modal" data-bs-target="#createTertibJakonModal">
+        <i class="fa fa-plus" style="margin-right: 8px;"></i>
+        Buat Baru
+    </button>
+
+
 
 </div>
 
 </form>
 
 
-                   
-
-                    <script>
-                        let searchTimeout;
-
-                        // Event search
-                        document.getElementById('searchInput').addEventListener('keyup', function() {
-                            clearTimeout(searchTimeout);
-                            searchTimeout = setTimeout(fetchData, 500);
-                        });
-
-                        // Intercept klik pagination
-                        document.addEventListener('click', function(e) {
-                            const link = e.target.closest('.pagination a');
-                            if(link) {
-                                e.preventDefault();
-                                const url = link.getAttribute('href');
-                                fetchData(url);
-                            }
-                        });
-
-                        function fetchData(url = null) {
-                            const input = document.getElementById("searchInput").value;
-                            const fetchUrl = url ? url : `/betertibjakonusaha?search=${encodeURIComponent(input)}`;
-
-                            fetch(fetchUrl, {
-                                headers: { 'X-Requested-With': 'XMLHttpRequest' }
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                document.querySelector("#tabeltertibjakonusahasearc").innerHTML = data.html;
-                                window.history.pushState({}, '', fetchUrl); // update URL tanpa reload
-                            })
-                            .catch(error => console.error("Error fetching data:", error));
-                        }
-                    </script>
-
-             
 
                      </div>
                  </div>
@@ -174,19 +204,19 @@
                                         <i class="bi bi-building-fill"></i> PJBU
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                    <th rowspan="2" style="text-align: center; width:260px;">
                                         <i class="bi bi-building-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                    <th rowspan="2" style="text-align: center; width:260px;">
                                         <i class="bi bi-building-fill"></i> Segmentasi Pasar
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                    <th rowspan="2" style="text-align: center; width:260px;">
                                         <i class="bi bi-building-fill"></i> Pemenuhan Syarat
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                    <th rowspan="2" style="text-align: center; width:260px;">
                                         <i class="bi bi-building-fill"></i> Pelaksana Pengembangan Usaha
                                     </th>
 
@@ -202,7 +232,7 @@
                             @forelse  ($data as $item)
                             <tr>
 
-                              <td style="text-align: center;">{{ $loop->iteration }}</td>
+                              <td style="text-align: center;">{{ $data->firstItem() + $loop->index }}</td>
     <td style="text-align: center;">
         @if($item->penyediastatustertibjakon && $item->penyediastatustertibjakon->penyedia)
             {{ $item->penyediastatustertibjakon->penyedia }}
@@ -224,86 +254,63 @@
     <td>{{ $item->namabadanusaha ?? 'Data Belum Di Update' }}</td>
     <td style="text-transform: uppercase;">{{ $item->pjbu ?? 'Data Belum Di Update' }}</td>
 
-    <td style="text-align: center; vertical-align: middle;">
-                                    <a href="/betertibjakonusahasuratpercobaan/create/{{$item->id}}" style="text-decoration: none;">
-                                        <button class="button-modern">
-                                        <i class="bi bi-file-earmark-text"></i> Lihat Surat
-                                        </button>
-                                    </a>
-                                        <a href="{{ url('/beuploadberkasusaha1/upload/' . $item->id) }}" style="text-decoration: none;">
-        @if(!empty($item->cadangan1))
-            <button class="button-berkas">
-                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
-            </button>
-        @else
-            <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text"></i> Upload Berkas
-            </button>
-        @endif
-    </a>
-                                </td>
+    {{-- Kesesuaian Kegiatan Konstruksi — VERTIKAL --}}
+    <td class="td-action-vertical">
+        <a href="/betertibjakonusahasuratpercobaan/create/{{ $item->id }}" class="td-action-link td-action-top">
+            <button class="button-modern"><i class="bi bi-file-earmark-text"></i> Lihat Surat</button>
+        </a>
+        <a href="{{ url('/beuploadberkasusaha1/upload/' . $item->id) }}" class="td-action-link td-action-bottom">
+            @if(!empty($item->cadangan1))
+                <button class="button-berkas"><i class="bi bi-check-circle"></i> Berkas Ada</button>
+            @else
+                <button class="button-newvalidasi"><i class="bi bi-file-earmark-text"></i> Upload Berkas</button>
+            @endif
+        </a>
+    </td>
 
-                               <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonusahasegmentasipasar/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-modern">
-                                        <i class="bi bi-file-earmark-text"></i> Lihat Surat
-                                        </button>
-                                    </a>
+    {{-- Segmentasi Pasar — VERTIKAL --}}
+    <td class="td-action-vertical">
+        <a href="{{ url('/betertibjakonusahasegmentasipasar/index/' . $item->id) }}" class="td-action-link td-action-top">
+            <button class="button-modern"><i class="bi bi-file-earmark-text"></i> Lihat Surat</button>
+        </a>
+        <a href="{{ url('/beuploadberkasusaha2/upload/' . $item->id) }}" class="td-action-link td-action-bottom">
+            @if(!empty($item->cadangan2))
+                <button class="button-berkas"><i class="bi bi-check-circle"></i> Berkas Ada</button>
+            @else
+                <button class="button-newvalidasi"><i class="bi bi-file-earmark-text"></i> Upload Berkas</button>
+            @endif
+        </a>
+    </td>
 
-                                    <a href="{{ url('/beuploadberkasusaha2/upload/' . $item->id) }}" style="text-decoration: none;">
-        @if(!empty($item->cadangan2))
-            <button class="button-berkas">
-                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
-            </button>
-        @else
-            <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text"></i> Upload Berkas
-            </button>
-        @endif
-    </a>
-                                </td>
+    {{-- Pemenuhan Syarat — VERTIKAL --}}
+    <td class="td-action-vertical">
+        <a href="{{ url('/betertibjakonusahapemenuhansyarat/index/' . $item->id) }}" class="td-action-link td-action-top">
+            <button class="button-modern"><i class="bi bi-file-earmark-text"></i> Lihat Surat</button>
+        </a>
+        <a href="{{ url('/beuploadberkasusaha3/upload/' . $item->id) }}" class="td-action-link td-action-bottom">
+            @if(!empty($item->cadangan3))
+                <button class="button-berkas"><i class="bi bi-check-circle"></i> Berkas Ada</button>
+            @else
+                <button class="button-newvalidasi"><i class="bi bi-file-earmark-text"></i> Upload Berkas</button>
+            @endif
+        </a>
+    </td>
 
-
-                               <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonusahapemenuhansyarat/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-modern">
-                                        <i class="bi bi-file-earmark-text"></i> Lihat Surat
-                                        </button>
-                                    </a>
-                                    <a href="{{ url('/beuploadberkasusaha3/upload/' . $item->id) }}" style="text-decoration: none;">
-        @if(!empty($item->cadangan3))
-            <button class="button-berkas">
-                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
-            </button>
-        @else
-            <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text"></i> Upload Berkas
-            </button>
-        @endif
-    </a>
-                                </td>
-
-                                <td style="text-align: center; vertical-align: middle;">
-                                    <a href="{{ url('/betertibjakonusahapelaksana/index/' . $item->id) }}" style="text-decoration: none;">
-                                        <button class="button-modern">
-                                        <i class="bi bi-file-earmark-text"></i> Lihat Surat
-                                        </button>
-                                    </a>
-                                    <a href="{{ url('/beuploadberkasusaha4/upload/' . $item->id) }}" style="text-decoration: none;">
-        @if(!empty($item->cadangan4))
-            <button class="button-berkas">
-                <i class="bi bi-check-circle" style="margin-right: 5px;"></i> Berkas Ada
-            </button>
-        @else
-            <button class="button-newvalidasi">
-                <i class="bi bi-file-earmark-text"></i> Upload Berkas
-            </button>
-        @endif
-    </a>
-                                </td>
+    {{-- Pelaksana Pengembangan Usaha — VERTIKAL --}}
+    <td class="td-action-vertical">
+        <a href="{{ url('/betertibjakonusahapelaksana/index/' . $item->id) }}" class="td-action-link td-action-top">
+            <button class="button-modern"><i class="bi bi-file-earmark-text"></i> Lihat Surat</button>
+        </a>
+        <a href="{{ url('/beuploadberkasusaha4/upload/' . $item->id) }}" class="td-action-link td-action-bottom">
+            @if(!empty($item->cadangan4))
+                <button class="button-berkas"><i class="bi bi-check-circle"></i> Berkas Ada</button>
+            @else
+                <button class="button-newvalidasi"><i class="bi bi-file-earmark-text"></i> Upload Berkas</button>
+            @endif
+        </a>
+    </td>
 
                               <td style="text-align: center;">
-                                <!-- Tombol Aksi -->
                                 <a href="/betertibjakonusaha/update/{{$item->id}}" class="button-berkas"><i class="bi bi-pencil-square"></i> Edit</a>
                                 <a href="javascript:void(0)" class="button-merah" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
                                   <i class="bi bi-trash"></i> Hapus
@@ -318,7 +325,7 @@
                                                 <i class="bi bi-inbox"></i>
                                             </div>
                                             <h6 class="empty-title">Data Tidak Di Temukan !</h6>
-                                      
+
                                         </div>
                                     </td>
                                 </tr>
@@ -327,7 +334,9 @@
                         </table>
                       </div>
 
-                 @include('backend.00_administrator.00_baganterpisah.07_paginations')
+                 <div id="paginationWrapper">
+                    @include('backend.00_administrator.00_baganterpisah.07_paginations')
+                 </div>
 
                  <br><br>
 
@@ -363,9 +372,27 @@
                 }
                 </script>
                  <style>
-                     .table-responsive {
-                         max-width: 100%;
-                         overflow-x: auto;
+                     .table-responsive { max-width: 100%; overflow-x: auto; }
+
+                     /* Tombol vertikal: Lihat Surat di atas, Upload di bawah */
+                     .td-action-vertical {
+                         text-align: center;
+                         vertical-align: middle;
+                         padding: 8px 6px !important;
+                     }
+                     .td-action-vertical .td-action-link {
+                         display: block;
+                         text-decoration: none;
+                         width: 100%;
+                     }
+                     .td-action-vertical .td-action-top    { margin-bottom: 6px; }
+                     .td-action-vertical .td-action-bottom { margin-top: 6px; }
+                     .td-action-vertical .td-action-link button {
+                         width: 100%;
+                         display: inline-flex;
+                         align-items: center;
+                         justify-content: center;
+                         gap: 4px;
                      }
                  </style>
 
@@ -386,445 +413,320 @@
  </div>
  </div>
 
+{{-- ============================================================ --}}
+{{-- MODAL: Radar Chart                                            --}}
+{{-- ============================================================ --}}
+<div class="modal fade" id="radarChartModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-bar-chart-line-fill" style="color:var(--blora-green); margin-right:6px;"></i>
+                    Distribusi Sektor Penyedia
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" style="padding: 20px;">
+                <div style="width: 100%; height: 400px; position: relative;">
+                    <canvas id="radarChartFull"></canvas>
+                </div>
+                <div style="margin-top: 15px; text-align: center; font-size: 13px; color: var(--text-muted);">
+                    Total: <strong id="grandTotalModal">{{ $grandTotal ?? 0 }}</strong> penyedia
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+   @include('backend.06_pengawasan.01_tertibjakonusaha.modalcreate')
 
    @include('backend.00_administrator.00_baganterpisah.02_footer')
 
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+
+   {{-- ============================================================ --}}
+   {{-- SCRIPT: Export Excel                                          --}}
+   {{-- ============================================================ --}}
    <script>
     function exportSelectedColumnsToExcel(originalTableId, filename = 'data-terpilih') {
         const originalTable = document.getElementById(originalTableId);
-        const selectedColumns = [
-            0,  // No
-            1,  // Penyedia
-            2,  // NIB
-            3,  // Nama Pekerjaan
-            4,  // Tahun Pelaksanaan
-            5,  // Badan Usaha
-            6,  // PJBU
-            7,  // Sesuai Jenis
-            8,  // Sesuai Sifat
-            9,  // Sesuai Klasifikasi
-            10, // Sesuai Layanan
-            11, // Sesuai Bentuk
-            12, // Sesuai Kualifikasi
-            13, // Pemenuhan Syarat
-            14  // Pelaksanaan Pengembangan Usaha
-        ];
-
-        const nibColumnIndexInExport = selectedColumns.indexOf(2); // NIB akan berada di kolom ini dalam tabel hasil export
+        const selectedColumns = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+        const nibColumnIndexInExport = selectedColumns.indexOf(2);
 
         const tempTable = document.createElement('table');
         for (const row of originalTable.rows) {
             const newRow = tempTable.insertRow();
             selectedColumns.forEach(i => {
                 const cell = row.cells[i];
-                if (cell) {
-                    const newCell = cell.cloneNode(true);
-                    newRow.appendChild(newCell);
-                }
+                if (cell) newRow.appendChild(cell.cloneNode(true));
             });
         }
 
         const worksheet = XLSX.utils.table_to_sheet(tempTable);
-
         const range = XLSX.utils.decode_range(worksheet['!ref']);
         for (let R = range.s.r; R <= range.e.r; ++R) {
             for (let C = range.s.c; C <= range.e.c; ++C) {
-                const cell_address = { c: C, r: R };
-                const cell_ref = XLSX.utils.encode_cell(cell_address);
+                const cell_ref = XLSX.utils.encode_cell({ c: C, r: R });
                 const cell = worksheet[cell_ref];
                 if (!cell) continue;
                 if (!cell.s) cell.s = {};
-
-                // Set style border
                 cell.s.border = {
-                    top: { style: "thin", color: { auto: 1 } },
-                    right: { style: "thin", color: { auto: 1 } },
+                    top:    { style: "thin", color: { auto: 1 } },
+                    right:  { style: "thin", color: { auto: 1 } },
                     bottom: { style: "thin", color: { auto: 1 } },
-                    left: { style: "thin", color: { auto: 1 } }
+                    left:   { style: "thin", color: { auto: 1 } }
                 };
-
-                // Set alignment
-                cell.s.alignment = {
-                    vertical: "center",
-                    horizontal: "center",
-                    wrapText: true
-                };
-
-                // Pastikan kolom NIB disimpan sebagai teks (hindari notasi eksponensial)
+                cell.s.alignment = { vertical: "center", horizontal: "center", wrapText: true };
                 if (C === nibColumnIndexInExport && R > 0) {
-                    cell.z = '@'; // Format text
-                    cell.t = 's'; // Tipe string
-                    cell.v = "'" + cell.v; // Tambah apostrof untuk paksa teks
+                    cell.z = '@'; cell.t = 's'; cell.v = "'" + cell.v;
                 }
             }
         }
 
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, "Kolom Terpilih");
-
         XLSX.writeFile(workbook, filename + ".xlsx");
     }
-    </script>
+   </script>
 
+   {{-- ============================================================ --}}
+   {{-- SCRIPT: Live Search + Filter + Pagination                     --}}
+   {{-- ============================================================ --}}
+   <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput  = document.getElementById('searchInput');
+    const tahunSelect  = document.getElementById('tahunSelect');
+    const sektorSelect = document.getElementById('sektorSelect');
+    const perPageSel   = document.getElementById('entries');
+    const tbody        = document.getElementById('tabeltertibjakonusahasearc');
+    const paginationW  = document.getElementById('paginationWrapper');
 
-<script>
-    function printModalContent(id) {
-        const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
-        if (!modalContent) {
-            alert("Konten tidak ditemukan.");
-            return;
-        }
+    if (!searchInput || !tbody) return;
 
-        const printWindow = window.open('', '', 'width=1200,height=800');
-        printWindow.document.write(`
-            <html>
-            <head>
-                <title>Print Dokumen</title>
-                <style>
-                    @media print {
-                        @page {
-                            size: A4 landscape;
-                            margin: 0mm;
-                        }
-                        body {
-                            font-family: Arial, sans-serif;
-                            font-size: 12px;
-                            color: #000;
-                        }
-                        table {
-                            border-collapse: collapse;
-                            width: 100%;
-                            page-break-inside: auto;
-                        }
-                        th, td {
-                            border: 1px solid #000;
-                            padding: 4px;
-                            vertical-align: top;
-                        }
-                        .no-border td {
-                            border: none;
-                        }
-                    }
+    let debounceTimer  = null;
+    let currentRequest = null;
 
-                    body {
-                        margin: 10mm;
-                        font-family: Arial, sans-serif;
-                        font-size: 12px;
-                    }
-
-                    h5 {
-                        font-size: 1rem;
-                        margin-bottom: 10px;
-                    }
-
-                    .table-bordered {
-                        border: 1px solid #000;
-                        width: 100%;
-                        margin-top: 10px;
-                    }
-
-                    .table-bordered th, .table-bordered td {
-                        border: 1px solid #000;
-                        padding: 6px;
-                        text-align: left;
-                    }
-
-                    .table-secondary {
-                        background-color: #f8f9fa;
-                    }
-
-                    /* Penyesuaian khusus untuk bagian tim pemeriksa */
-                    .tim-pemeriksa-container {
-                        display: flex;
-                        justify-content: flex-end;
-                    }
-
-                    .tim-pemeriksa {
-                        width: 50%;
-                    }
-
-                    .tim-pemeriksa table {
-                        width: 100%;
-                        border: 1px solid #000;
-                    }
-
-                    .tim-pemeriksa td, .tim-pemeriksa th {
-                        text-align: center;
-                        padding: 3px;
-                        height: 15px;
-                        font-size: 11px;
-                    }
-                </style>
-            </head>
-            <body>
-                ${modalContent.innerHTML}
-                <script>
-                    window.onload = function() {
-                        window.print();
-                        window.onafterprint = window.close;
-                    }
-                <\/script>
-            </body>
-            </html>
-        `);
-        printWindow.document.close();
+    function buildUrl(overrides = {}) {
+        const url = new URL(window.location.origin + '/betertibjakonusaha');
+        const params = {
+            search:  searchInput  ? searchInput.value.trim()  : '',
+            tahun:   tahunSelect  ? tahunSelect.value         : '',
+            sektor:  sektorSelect ? sektorSelect.value        : '',
+            perPage: perPageSel   ? perPageSel.value          : 10,
+            page:    null,
+            ...overrides
+        };
+        if (params.search)  url.searchParams.set('search', params.search);
+        if (params.tahun)   url.searchParams.set('tahun', params.tahun);
+        if (params.sektor)  url.searchParams.set('sektor', params.sektor);
+        if (params.perPage) url.searchParams.set('perPage', params.perPage);
+        if (params.page)    url.searchParams.set('page', params.page);
+        return url.toString();
     }
-</script>
-
-<script>
-    function printModalContentSurat2(id) {
-        const modalContent = document.querySelector(`#modalSurat2${id} .modal-content`);
-        if (!modalContent) {
-            alert("Konten tidak ditemukan.");
-            return;
-        }
-
-        const printWindow = window.open('', '', 'width=1200,height=800');
-        printWindow.document.write(`
-            <html>
-            <head>
-                <title>Print Dokumen</title>
-                <style>
-                    @media print {
-                        @page {
-                            size: A4 landscape;
-                            margin: 0mm;
-                        }
-                        body {
-                            font-family: Arial, sans-serif;
-                            font-size: 12px;
-                            color: #000;
-                        }
-                        table {
-                            border-collapse: collapse;
-                            width: 100%;
-                            page-break-inside: auto;
-                        }
-                        th, td {
-                            border: 1px solid #000;
-                            padding: 4px;
-                            vertical-align: top;
-                        }
-                        .no-border td {
-                            border: none;
-                        }
-                    }
-
-                    body {
-                        margin: 10mm;
-                        font-family: Arial, sans-serif;
-                        font-size: 12px;
-                    }
-
-                    h5 {
-                        font-size: 1rem;
-                        margin-bottom: 10px;
-                    }
-
-                    .table-bordered {
-                        border: 1px solid #000;
-                        width: 100%;
-                        margin-top: 10px;
-                    }
-
-                    .table-bordered th, .table-bordered td {
-                        border: 1px solid #000;
-                        padding: 6px;
-                        text-align: left;
-                    }
-
-                    .table-secondary {
-                        background-color: #f8f9fa;
-                    }
-
-                    /* Penyesuaian khusus untuk bagian tim pemeriksa */
-                    .tim-pemeriksa-container {
-                        display: flex;
-                        justify-content: flex-end;
-                    }
-
-                    .tim-pemeriksa {
-                        width: 50%;
-                    }
-
-                    .tim-pemeriksa table {
-                        width: 100%;
-                        border: 1px solid #000;
-                    }
-
-                    .tim-pemeriksa td, .tim-pemeriksa th {
-                        text-align: center;
-                        padding: 3px;
-                        height: 15px;
-                        font-size: 11px;
-                    }
-                </style>
-            </head>
-            <body>
-                ${modalContent.innerHTML}
-                <script>
-                    window.onload = function() {
-                        window.print();
-                        window.onafterprint = window.close;
-                    }
-                <\/script>
-            </body>
-            </html>
-        `);
-        printWindow.document.close();
-    }
-</script>
-
-
-<script>
-    let searchTimeout;
-
-    // ✅ Fungsi ini yang HILANG, sekarang ditambah
-    function updateEntries() {
-        fetchData();
-    }
-
-    // Event search
-    document.getElementById('searchInput').addEventListener('keyup', function() {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(fetchData, 500);
-    });
-
-    // Intercept klik pagination
-    document.addEventListener('click', function(e) {
-        const link = e.target.closest('.pagination a');
-        if(link) {
-            e.preventDefault();
-            fetchData(link.getAttribute('href'));
-        }
-    });
 
     function fetchData(url = null) {
-        const input   = document.getElementById("searchInput").value;
-        const perPage = document.getElementById("entries").value;
+        if (currentRequest) currentRequest.abort();
 
-        // ✅ Kirim perPage juga
-        const fetchUrl = url
-            ? url + (url.includes('?') ? '&' : '?') + `perPage=${perPage}&search=${encodeURIComponent(input)}`
-            : `/betertibjakonusaha?search=${encodeURIComponent(input)}&perPage=${perPage}`;
+        const fetchUrl = url || buildUrl();
 
-        fetch(fetchUrl, {
-            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        tbody.style.opacity = '0.5';
+        tbody.style.transition = 'opacity 0.15s ease';
+
+        currentRequest = fetch(fetchUrl, {
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Accept': 'application/json',
+            }
         })
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
-            document.querySelector("#tabeltertibjakonusahasearc").innerHTML = data.html;
-            window.history.pushState({}, '', fetchUrl);
+            if (data.rows !== undefined) {
+                tbody.innerHTML = data.rows;
+            } else if (data.html !== undefined) {
+                tbody.innerHTML = data.html;
+            }
 
-            // ✅ Update total badges (opsional, kalau ada)
-            const b1 = document.querySelectorAll('.button-modern.button-md');
-            // skip — biarkan tampilan total seperti semula
+            if (data.pagination && paginationW) {
+                paginationW.innerHTML = data.pagination;
+            }
+
+            if (data.statistik) {
+                Object.keys(data.statistik).forEach(function (id) {
+                    const el = document.querySelector(`[data-stat-id="${id}"]`);
+                    if (el) el.textContent = data.statistik[id].total;
+                });
+
+                if (sektorSelect) {
+                    Array.from(sektorSelect.options).forEach(function (opt) {
+                        if (opt.value && data.statistik[opt.value]) {
+                            opt.textContent = data.statistik[opt.value].penyedia + ' (' + data.statistik[opt.value].total + ')';
+                        }
+                    });
+                }
+            }
+
+            if (data.grandTotal !== undefined) {
+                const gt  = document.getElementById('grandTotalValue');
+                const gtm = document.getElementById('grandTotalModal');
+                if (gt)  gt.textContent  = data.grandTotal;
+                if (gtm) gtm.textContent = data.grandTotal;
+            }
+
+            tbody.style.opacity = '1';
+            window.history.replaceState({}, '', fetchUrl);
         })
-        .catch(error => console.error("Error fetching data:", error));
+        .catch(err => {
+            if (err.name !== 'AbortError') {
+                console.error('Fetch error:', err);
+                tbody.style.opacity = '1';
+            }
+        });
     }
-</script>
 
-<script>
-    function printModalContentSurat3(id) {
-        const modalContent = document.querySelector(`#modalSurat3${id} .modal-content`);
-        if (!modalContent) {
-            alert("Konten tidak ditemukan.");
-            return;
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(fetchData, 400);
+        });
+        searchInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') { e.preventDefault(); clearTimeout(debounceTimer); fetchData(); }
+        });
+    }
+    if (tahunSelect)  tahunSelect.addEventListener('change',  function () { clearTimeout(debounceTimer); fetchData(); });
+    if (sektorSelect) sektorSelect.addEventListener('change', function () { clearTimeout(debounceTimer); fetchData(); });
+    if (perPageSel)   perPageSel.addEventListener('change',   function () { clearTimeout(debounceTimer); fetchData(); });
+
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest('#paginationWrapper .pagination a, .pagination a');
+        if (!link) return;
+        e.preventDefault();
+        fetchData(link.href);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('popstate', function () {
+        fetchData(window.location.href);
+    });
+});
+   </script>
+
+   {{-- ============================================================ --}}
+   {{-- SCRIPT: Radar Chart                                            --}}
+   {{-- ============================================================ --}}
+   <script>
+document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Chart === 'undefined') return;
+
+    @php
+        $statValues  = [];
+        $statLabels  = [];
+        if (isset($statistik)) {
+            foreach ($statistik as $s) {
+                $statValues[] = (int) $s['total'];
+                $statLabels[] = $s['penyedia'];
+            }
         }
+    @endphp
 
-        const printWindow = window.open('', '', 'width=1200,height=800');
-        printWindow.document.write(`
-            <html>
-            <head>
-                <title>Print Dokumen</title>
-                <style>
-                    @media print {
-                        @page {
-                            size: A4 landscape;
-                            margin: 0mm;
-                        }
-                        body {
-                            font-family: Arial, sans-serif;
-                            font-size: 12px;
-                            color: #000;
-                        }
-                        table {
-                            border-collapse: collapse;
-                            width: 100%;
-                            page-break-inside: auto;
-                        }
-                        th, td {
-                            border: 1px solid #000;
-                            padding: 4px;
-                            vertical-align: top;
-                        }
-                        .no-border td {
-                            border: none;
-                        }
-                    }
+    const dataValues = @json($statValues);
+    const labels     = @json($statLabels);
+    const maxValue   = Math.max(...dataValues, 1);
 
-                    body {
-                        margin: 10mm;
-                        font-family: Arial, sans-serif;
-                        font-size: 12px;
-                    }
+    const chartData = {
+        labels: labels,
+        datasets: [{
+            label: 'Jumlah Penyedia',
+            data: dataValues,
+            backgroundColor: 'rgba(22, 163, 74, 0.20)',
+            borderColor: 'rgba(22, 163, 74, 1)',
+            borderWidth: 2,
+            pointBackgroundColor: 'rgba(22, 163, 74, 1)',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+        }]
+    };
 
-                    h5 {
-                        font-size: 1rem;
-                        margin-bottom: 10px;
-                    }
-
-                    .table-bordered {
-                        border: 1px solid #000;
-                        width: 100%;
-                        margin-top: 10px;
-                    }
-
-                    .table-bordered th, .table-bordered td {
-                        border: 1px solid #000;
-                        padding: 6px;
-                        text-align: left;
-                    }
-
-                    .table-secondary {
-                        background-color: #f8f9fa;
-                    }
-
-                    /* Penyesuaian khusus untuk bagian tim pemeriksa */
-                    .tim-pemeriksa-container {
-                        display: flex;
-                        justify-content: flex-end;
-                    }
-
-                    .tim-pemeriksa {
-                        width: 50%;
-                    }
-
-                    .tim-pemeriksa table {
-                        width: 100%;
-                        border: 1px solid #000;
-                    }
-
-                    .tim-pemeriksa td, .tim-pemeriksa th {
-                        text-align: center;
-                        padding: 3px;
-                        height: 15px;
-                        font-size: 11px;
-                    }
-                </style>
-            </head>
-            <body>
-                ${modalContent.innerHTML}
-                <script>
-                    window.onload = function() {
-                        window.print();
-                        window.onafterprint = window.close;
-                    }
-                <\/script>
-            </body>
-            </html>
-        `);
-        printWindow.document.close();
+    const miniCtx = document.getElementById('radarChartMini');
+    if (miniCtx) {
+        new Chart(miniCtx, {
+            type: 'radar', data: chartData,
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { r: {
+                    beginAtZero: true,
+                    grid: { color: 'rgba(22, 163, 74, 0.15)' },
+                    angleLines: { color: 'rgba(22, 163, 74, 0.20)' },
+                    ticks: { display: false },
+                    pointLabels: { color: '#1A2B4A', font: { size: 11, weight: '700' } }
+                }}
+            }
+        });
     }
-</script>
+
+    const fullCtx = document.getElementById('radarChartFull');
+    if (fullCtx) {
+        new Chart(fullCtx, {
+            type: 'radar', data: chartData,
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { label: c => c.label + ': ' + c.parsed.r + ' penyedia' } }
+                },
+                scales: { r: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: Math.ceil(maxValue / 5) || 1,
+                        backdropColor: 'transparent',
+                        color: '#6B7A93', font: { size: 10 }
+                    },
+                    grid: { color: 'rgba(22, 163, 74, 0.15)' },
+                    angleLines: { color: 'rgba(22, 163, 74, 0.20)' },
+                    pointLabels: { color: '#1A2B4A', font: { size: 13, weight: '600' } }
+                }}
+            }
+        });
+    }
+});
+   </script>
+
+   {{-- ============================================================ --}}
+   {{-- SCRIPT: Modal Create + Konfirmasi Simpan                       --}}
+   {{-- ============================================================ --}}
+   <script>
+function openConfirmCreateModal() {
+    const modal = document.getElementById('confirmCreateModal');
+    if (modal) modal.style.display = 'flex';
+}
+
+function closeConfirmCreateModal() {
+    const modal = document.getElementById('confirmCreateModal');
+    if (modal) modal.style.display = 'none';
+}
+
+function submitCreateForm() {
+    const form = document.getElementById('formCreateTertibJakon');
+    if (form) form.submit();
+}
+
+// Auto-open modal kalau ada error validasi dari server
+document.addEventListener('DOMContentLoaded', function () {
+    const hasError = {{ $errors->any() ? 'true' : 'false' }};
+    if (hasError) {
+        const modalEl = document.getElementById('createTertibJakonModal');
+        if (modalEl && typeof bootstrap !== 'undefined') {
+            const modal = new bootstrap.Modal(modalEl);
+            modal.show();
+        }
+    }
+});
+   </script>
+
+</body>
+</html>

@@ -2600,3 +2600,368 @@ table.zebra-table td.status-col {
 .info-label i {
     display: none;
 }
+
+/* ============================================================
+   RADAR CHART PANEL — FULL WIDTH
+   ============================================================ */
+.radar-chart-panel {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%);
+    border: 1px solid var(--blora-green-mid);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(22, 163, 74, 0.06);
+    flex-wrap: wrap;
+}
+
+.radar-chart-canvas-wrap {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.radar-chart-info {
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radar-chart-title {
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--blora-green-deep);
+}
+
+.radar-chart-legend {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.radar-legend-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 14px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    min-width: 110px;
+}
+
+.radar-legend-pu      { border-left: 4px solid #16A34A; }
+.radar-legend-nonpu   { border-left: 4px solid #4ADE80; }
+.radar-legend-swasta  { border-left: 4px solid #15803D; }
+
+.radar-legend-total {
+    background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.25);
+}
+
+.radar-legend-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.radar-legend-total .radar-legend-label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.radar-legend-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--blora-green-deep);
+    line-height: 1;
+}
+
+.radar-legend-total .radar-legend-value {
+    color: #fff;
+}
+
+.radar-chart-action {
+    margin-top: 4px;
+}
+
+/* ============================================================
+   TOOLBAR SELECT WRAP
+   ============================================================ */
+.toolbar-select-wrap {
+    position: relative;
+}
+
+.toolbar-select {
+    border: 1px solid var(--border);
+    padding: 8px 36px 8px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+    width: 180px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: #fff;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.toolbar-select-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+/* ============================================================
+   TD ACTION — VERTIKAL (Lihat Surat / Upload Berkas)
+   ============================================================ */
+.td-action-vertical {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.td-action-link {
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 0;
+}
+
+.td-action-vertical .td-action-link:first-child { margin-bottom: 4px; }
+.td-action-vertical .td-action-link:last-child  { margin-top: 4px; }
+
+/* ============================================================
+   MODAL HEADER CREATE — GRADIENT HIJAU
+   ============================================================ */
+.modal-header-create {
+    background: linear-gradient(135deg, #a8e6cf, #ffffff);
+}
+
+.modal-header-create .modal-title {
+    font-weight: 800;
+    color: #004d40;
+}
+
+/* ============================================================
+   FORM DIVIDER — HIJAU & BIRU PUTUS-PUTUS
+   ============================================================ */
+.create-form-divider {
+    margin-bottom: 16px;
+}
+
+.create-form-divider hr {
+    border-top: 2px dashed green;
+    width: 60%;
+    margin: 8px auto;
+}
+
+.create-form-divider hr:last-child {
+    border-top-color: #0d6efd;
+}
+
+.create-form-divider h5 {
+    color: green;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+/* ============================================================
+   CONFIRM CREATE MODAL — OVERLAY MANUAL
+   ============================================================ */
+.confirm-create-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-create-box {
+    background: white;
+    padding: 24px 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-create-message {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.confirm-create-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.confirm-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.confirm-btn-yes { background-color: #10B981; }
+.confirm-btn-yes:hover { background-color: #059669; }
+
+.confirm-btn-no { background-color: #EF4444; }
+.confirm-btn-no:hover { background-color: #DC2626; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .radar-chart-panel {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .radar-chart-canvas-wrap {
+        width: 160px;
+        height: 160px;
+    }
+
+    .radar-chart-legend {
+        gap: 10px;
+    }
+
+    .radar-legend-item {
+        min-width: 90px;
+        padding: 6px 10px;
+    }
+
+    .radar-legend-value {
+        font-size: 18px;
+    }
+
+    .toolbar-select {
+        width: 100%;
+    }
+
+    .toolbar-select-wrap {
+        width: 100%;
+    }
+}
+
+
+/* ============================================================
+   MODAL CREATE — 65% WIDTH (RESPONSIVE)
+   ============================================================ */
+#createTertibJakonModal .modal-dialog {
+    max-width: 65%;
+    width: 65%;
+}
+
+/* Header create — gradient hijau */
+#createTertibJakonModal .modal-header-create {
+    background: linear-gradient(135deg, #a8e6cf, #ffffff);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 18px;
+}
+
+#createTertibJakonModal .modal-header-create .modal-title {
+    font-weight: 800;
+    color: #004d40;
+}
+
+/* Form input di modal create */
+#createTertibJakonModal .form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+#createTertibJakonModal .form-control,
+#createTertibJakonModal .form-select {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+#createTertibJakonModal .form-control:focus,
+#createTertibJakonModal .form-select:focus {
+    border-color: var(--blora-green);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+    outline: none;
+}
+
+/* Responsive — HP jadi 95% */
+@media (max-width: 768px) {
+    #createTertibJakonModal .modal-dialog {
+        max-width: 95%;
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    #createTertibJakonModal .modal-body {
+        padding: 16px 18px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #createTertibJakonModal .modal-dialog {
+        max-width: 98%;
+        width: 98%;
+    }
+}
+
+
+/* ============================================================
+   FORM LABEL — HITAM BIASA (TANPA WARNA ICON)
+   ============================================================ */
+.form-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #000000 !important;
+    margin-bottom: 6px;
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+}
+
+/* Icon di dalam label — hitam biasa */
+.form-label i {
+    color: #000000 !important;
+    font-size: 14px !important;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Override semua inline style color pada icon di form-label */
+.form-label i[style] {
+    color: #000000 !important;
+}
+
+/* Kalau pakai span berwarna di label */
+.form-label span[style*="color"] {
+    color: #000000 !important;
+}

@@ -34,6 +34,7 @@ use App\Http\Controllers\DownloadExcelController;
 use App\Http\Controllers\HakAksesController;
 use App\Http\Controllers\SettingDataController;
 use App\Http\Controllers\VerifikasiController;
+use App\Http\Controllers\Ver2Controller;
 
 use App\Models\tertibjasakonstruksi;
 // MAS JAKI
@@ -268,7 +269,8 @@ Route::get('/resrantaipasok', [AndroidVersionController::class, 'menuresrantaipa
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
-Route::get('/', [FedashboardController::class, 'index']);
+Route::get('/', [Ver2Controller::class, 'index']);
+// Route::get('/', [FedashboardController::class, 'index']);
 Route::get('/web', [FedashboardController::class, 'web']);
 
 Route::get('/404', function () {
@@ -1662,5 +1664,12 @@ Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('
 // CONTROLLER DOWNLOAD
 Route::get('/asosiasi/export', [DownloadExcelController::class, 'exportasosiasi'])->name('asosiasi.export');
 Route::get('/asosiasi/dataskk2024', [DownloadExcelController::class, 'dataskk2024'])->name('dataskk2024.export');
+
+
+// REVISI VERSI 2026
+
+// REVISI VERSI 2026
+// HALAMAN AWAL BARU
+// ---------------------------------------------------------------------------------
 
 require __DIR__.'/auth.php';
