@@ -120,7 +120,7 @@
         }
 
         /* ============================================================
-           REGISTER CARD – PUTIH + AKSEN HIJAU
+           REGISTER CARD
            ============================================================ */
         .register-card {
             background: #FFFFFF;
@@ -133,7 +133,6 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        /* garis aksen hijau kiri */
         .register-card::before {
             content: '';
             position: absolute;
@@ -198,6 +197,66 @@
             color: var(--text-muted);
             font-weight: 400;
             line-height: 1.5;
+        }
+
+        /* ============================================================
+           ALERT GLOBAL
+           ============================================================ */
+        .alert-register {
+            background: var(--danger-soft);
+            border: 1px solid var(--danger-mid);
+            border-left: 4px solid var(--danger);
+            color: #991B1B;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            animation: shakeAlert 0.4s ease;
+        }
+
+        .alert-register i {
+            color: var(--danger);
+            font-size: 1rem;
+            margin-top: 1px;
+        }
+
+        .alert-register ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .alert-register ul li {
+            margin-bottom: 2px;
+        }
+
+        @keyframes shakeAlert {
+            0%, 100% { transform: translateX(0); }
+            25%      { transform: translateX(-5px); }
+            75%      { transform: translateX(5px); }
+        }
+
+        .alert-success {
+            background: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-left: 4px solid var(--blora-green);
+            color: #166534;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .alert-success i {
+            color: var(--blora-green);
+            font-size: 1rem;
         }
 
         /* ============================================================
@@ -309,6 +368,11 @@
             font-weight: 500;
         }
 
+        .form-control.is-invalid {
+            border-color: var(--danger);
+            background: #FFF5F5;
+        }
+
         /* ============================================================
            BUTTON
            ============================================================ */
@@ -369,7 +433,7 @@
         }
 
         /* ============================================================
-           INSTITUTIONAL FOOTER – DISAMAKAN DENGAN LOGIN
+           INSTITUTIONAL FOOTER
            ============================================================ */
         .login-footer {
             margin-top: 24px;
@@ -422,26 +486,16 @@
            RESPONSIVE
            ============================================================ */
         @media (max-width: 576px) {
-            body {
-                padding: 12px;
-            }
+            body { padding: 12px; }
 
             .register-card {
                 padding: 22px 18px 20px 18px;
                 border-radius: 16px;
             }
 
-            .register-title {
-                font-size: 1.1rem;
-            }
-
-            .register-subtitle {
-                font-size: 0.7rem;
-            }
-
-            .logo-section img {
-                height: 40px;
-            }
+            .register-title { font-size: 1.1rem; }
+            .register-subtitle { font-size: 0.7rem; }
+            .logo-section img { height: 40px; }
 
             .form-control {
                 padding: 9px 12px 9px 36px;
@@ -463,9 +517,7 @@
                 font-size: 0.82rem;
             }
 
-            .hint-text {
-                font-size: 0.6rem;
-            }
+            .hint-text { font-size: 0.6rem; }
 
             .login-footer {
                 margin-top: 20px;
@@ -477,23 +529,13 @@
                 height: 80px;
             }
 
-            .login-footer p {
-                font-size: 0.65rem;
-            }
-
-            .login-footer .login-copyright {
-                font-size: 0.62rem;
-            }
+            .login-footer p { font-size: 0.65rem; }
+            .login-footer .login-copyright { font-size: 0.62rem; }
         }
 
         @media (max-width: 360px) {
-            .register-title {
-                font-size: 0.95rem;
-            }
-
-            .logo-section img {
-                height: 34px;
-            }
+            .register-title { font-size: 0.95rem; }
+            .logo-section img { height: 34px; }
 
             .form-control {
                 font-size: 0.75rem;
@@ -531,7 +573,6 @@
             <div class="register-header">
                 <div class="logo-section">
                     <img src="/assets/icon/logokabupatenblora.png" alt="Kabupaten Blora">
-                    {{-- <img src="/assets/icon/pupr.png" alt="PUPR"> --}}
                 </div>
                 <h1 class="register-title">Daftar Akun Mas Jaki Blora</h1>
                 <p class="register-subtitle">
@@ -539,8 +580,31 @@
                 </p>
             </div>
 
+            {{-- ================= ALERT SUCCESS ================= --}}
+            @if (session('success'))
+                <div class="alert-success">
+                    <i class="fas fa-check-circle"></i>
+                    <span>{{ session('success') }}</span>
+                </div>
+            @endif
+
+            {{-- ================= ALERT ERROR GLOBAL ================= --}}
+            @if ($errors->any())
+                <div class="alert-register">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div>
+                        <strong>Terjadi kesalahan:</strong>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endif
+
             <!-- Form -->
-            <form action="/daftarnew" method="POST">
+            <form action="{{ route('daftar.store') }}" method="POST" autocomplete="off">
                 @csrf
 
                 {{-- Nama Lengkap --}}
@@ -552,7 +616,7 @@
                             type="text"
                             id="name"
                             name="name"
-                            class="form-control"
+                            class="form-control @error('name') is-invalid @enderror"
                             style="text-transform: uppercase;"
                             placeholder="Sesuai KTP"
                             value="{{ old('name') }}"
@@ -572,7 +636,7 @@
                             type="text"
                             id="username"
                             name="username"
-                            class="form-control"
+                            class="form-control @error('username') is-invalid @enderror"
                             placeholder="TKK-NIK Anda"
                             value="{{ old('username') }}"
                             required
@@ -587,10 +651,15 @@
                     <label class="form-label" for="statusadmin_id">Pilih Jenis Akun</label>
                     <div class="input-wrapper">
                         <i class="fas fa-users input-icon"></i>
-                        <select name="statusadmin_id" id="statusadmin_id" class="form-control" required>
+                        <select
+                            name="statusadmin_id"
+                            id="statusadmin_id"
+                            class="form-control @error('statusadmin_id') is-invalid @enderror"
+                            required
+                        >
                             <option value="">-- Pilih Akun --</option>
                             @foreach($statusadmin as $status)
-                                <option value="{{ $status->id }}">
+                                <option value="{{ $status->id }}" {{ old('statusadmin_id') == $status->id ? 'selected' : '' }}>
                                     @switch($status->id)
                                         @case(3)
                                             Peserta SKK
@@ -623,7 +692,7 @@
                             type="text"
                             id="phone_number"
                             name="phone_number"
-                            class="form-control"
+                            class="form-control @error('phone_number') is-invalid @enderror"
                             placeholder="08XXXXXXXXXX"
                             value="{{ old('phone_number') }}"
                             required
@@ -641,7 +710,7 @@
                             type="email"
                             id="email"
                             name="email"
-                            class="form-control"
+                            class="form-control @error('email') is-invalid @enderror"
                             placeholder="nama@email.com"
                             value="{{ old('email') }}"
                             required
@@ -659,12 +728,13 @@
                             type="password"
                             id="password"
                             name="password"
-                            class="form-control"
+                            class="form-control @error('password') is-invalid @enderror"
                             placeholder="Masukkan password"
                             required
                         >
-                        <i class="fas fa-eye toggle-password" toggle="#password"></i>
+                        <i class="fas fa-eye toggle-password" data-target="#password"></i>
                     </div>
+                    <span class="hint-text">Minimal 8 karakter</span>
                     @error('password') <span class="error-text">{{ $message }}</span> @enderror
                 </div>
 
@@ -681,7 +751,7 @@
                             placeholder="Ulangi password"
                             required
                         >
-                        <i class="fas fa-eye toggle-password" toggle="#password_confirmation"></i>
+                        <i class="fas fa-eye toggle-password" data-target="#password_confirmation"></i>
                     </div>
                 </div>
 
@@ -694,12 +764,12 @@
                 {{-- Login Link --}}
                 <div class="footer-links">
                     Sudah punya akun?
-                    <a href="/login">Login di sini</a>
+                    <a href="{{ route('login') }}">Login di sini</a>
                 </div>
 
             </form>
 
-            <!-- Institutional Footer – SAMA DENGAN LOGIN -->
+            <!-- Institutional Footer -->
             <div class="login-footer">
                 <div class="logo-wrapper">
                     <img
@@ -724,8 +794,10 @@
     <script>
         document.querySelectorAll('.toggle-password').forEach(function (icon) {
             icon.addEventListener('click', function () {
-                const input = document.querySelector(this.getAttribute('toggle'));
+                const target = this.getAttribute('data-target');
+                const input  = document.querySelector(target);
                 if (!input) return;
+
                 if (input.type === 'password') {
                     input.type = 'text';
                     this.classList.remove('fa-eye');

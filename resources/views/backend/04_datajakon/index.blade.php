@@ -220,7 +220,7 @@
   </div>
 
   <div class="col-md-3 col-sm-6 col-12">
-    <a href="/bebujkkonsultan" style="text-decoration: none;">
+    <a href="/bebujkkonsultanblora" style="text-decoration: none;">
       <div class="dashboard-card card-2">
         <div class="card-content">
           <div class="number-container">

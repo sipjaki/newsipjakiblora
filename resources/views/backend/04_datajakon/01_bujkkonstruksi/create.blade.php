@@ -1,405 +1,308 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
-<!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
     <div class="app-wrapper">
-{{-- ---------------------------------------------------------------------- --}}
 
-@include('backend.00_administrator.00_baganterpisah.04_navbar')
-{{-- ---------------------------------------------------------------------- --}}
+        @include('backend.00_administrator.00_baganterpisah.04_navbar')
+        @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
-      @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+        <main class="app-main">
 
-      <!--begin::App Main-->
-      <main class="app-main">
-        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
+            <section class="bg-3d-pattern">
 
-        <!--begin::App Content Header-->
-        <div class="app-content-header">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row">
-
-                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
-                @include('backend.00_administrator.00_baganterpisah.11_alert')
-            </div>
-            <!--end::Row-->
-          </div>
-          <!--end::Container-->
-        </div>
-
-        <br>
-
-        <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row" style="margin-right: 10px; margin-left:10px;">
-                <!-- /.card -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
+                <div class="app-content-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                            @include('backend.00_administrator.00_baganterpisah.11_alert')
+                        </div>
                     </div>
+                </div>
 
-                           {{-- ======================================================= --}}
+                <div class="container-fluid">
+                    <div class="row" style="margin-right: 10px; margin-left: 10px;">
 
-        <div class="card card-primary card-outline mb-6">
-            <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/bebujkkonstruksi">
-                    <button class="button-modern">
-                    <!-- Ikon Kembali -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" style="margin-right: 8px;">
-                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-               </svg>
-                    Kembali
-                </button>
-            </a>
-        </div>
-        <hr>
+                        <div class="col-md-12">
+                            <div class="card-3d">
 
+                                <!-- HEADER: Judul Memanjang Full Kiri-Kanan -->
+                                <div class="header-full-width">
+                                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
+                                </div>
 
-        {{-- ======================================================= --}}
-                    <div class="col-md-12">
-                        <!--begin::Quick Example-->
-                        <form action="{{ route('create.bebujkkonstruksicreatenew') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <!-- begin::Body -->
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Left Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Asosiasi Masjaki -->
-                                     <!-- User ID (Hidden) -->
+                                <!-- FORM (Tambahkan id="formBujk" agar JS tidak salah target) -->
+                                <form id="formBujk" action="{{ route('create.bebujkkonstruksicreatenew') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+
+                                    <div class="card-body p-4">
+                                        <div class="row">
+
+                                            <!-- KOLOM KIRI -->
+                                            <div class="col-md-6 pe-md-4">
+
                                                 <input type="hidden" name="user_id" value="{{ $user->id }}">
 
-                                                <!-- Tampilkan Nama Admin -->
-                                                <div class="form-modern mb-3">
+                                                <div class="mb-3">
                                                     <label class="form-label-modern" for="user_id_display">
-                                                        <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Administrator
+                                                        <i class="bi bi-person" style="margin-right: 8px; color: #13A847;"></i> Administrator
                                                     </label>
                                                     <input type="text" id="user_id_display" class="form-control" value="{{ $user->name }}" disabled>
                                                 </div>
 
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="asosiasimasjaki_id">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Asosiasi Jasa Konstruksi
-                                            </label>
-                                            <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
-                                                <option value="" disabled selected>Pilih Asosiasi</option>
-                                                @foreach($asosiasimasjaki as $asosiasi)
-                                                    <option value="{{ $asosiasi->id }}" {{ old('asosiasimasjaki_id') == $asosiasi->id ? 'selected' : '' }}>
-                                                        {{ $asosiasi->namaasosiasi }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                            @error('asosiasimasjaki_id')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Nama Lengkap -->
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="namalengkap">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Badan Usaha
-                                            </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}" />
-                                            @error('namalengkap')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Alamat -->
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="alamat">
-                                                <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> Alamat
-                                            </label>
-                                            <input type="text" id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old('alamat') }}" />
-                                            @error('alamat')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Nomor Telepon -->
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="no_telepon">
-                                                <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> Nomor Telepon
-                                            </label>
-                                            <input type="number" id="no_telepon" name="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon') }}" />
-                                            @error('no_telepon')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Email -->
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="email">
-                                                <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
-                                            </label>
-                                            <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" />
-                                            @error('email')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Nomor Induk Berusaha -->
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="nomorindukberusaha">
-                                                <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> Nomor Induk Berusaha
-                                            </label>
-                                            <input type="number" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control @error('nomorindukberusaha') is-invalid @enderror" value="{{ old('nomorindukberusaha') }}" />
-                                            @error('nomorindukberusaha')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- PJU -->
-
-                                    </div>
-                                    <!-- End Left Column -->
-
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
-
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="pju">
-                                                <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> PJU
-                                            </label>
-                                            <input type="text" id="pju" name="pju" class="form-control @error('pju') is-invalid @enderror" value="{{ old('pju') }}" />
-                                            @error('pju')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                        <!-- No Akte -->
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="no_akte">
-                                                <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> No Akte
-                                            </label>
-                                            <input type="text" id="no_akte" name="no_akte" class="form-control @error('no_akte') is-invalid @enderror" value="{{ old('no_akte') }}" />
-                                            @error('no_akte')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Tanggal -->
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="tanggal">
-                                                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal
-                                            </label>
-                                            <input type="date" id="tanggal" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" value="{{ old('tanggal') }}" />
-                                            @error('tanggal')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Nama Notaris -->
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="nama_notaris">
-                                                <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Nama Notaris
-                                            </label>
-                                            <input type="text" id="nama_notaris" name="nama_notaris" class="form-control @error('nama_notaris') is-invalid @enderror" value="{{ old('nama_notaris') }}" />
-                                            @error('nama_notaris')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- No Pengesahan -->
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="no_pengesahan">
-                                                <i class="bi bi-file-earmark-check" style="margin-right: 8px; color: navy;"></i> No Pengesahan
-                                            </label>
-                                            <input type="text" id="no_pengesahan" name="no_pengesahan" class="form-control @error('no_pengesahan') is-invalid @enderror" value="{{ old('no_pengesahan') }}" />
-                                            @error('no_pengesahan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="uploadberkas">
-                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Upload Berkas
-                                            </label>
-                                            <input type="file" id="uploadberkas" name="uploadberkas"
-                                                class="form-control @error('uploadberkas') is-invalid @enderror"
-                                                onchange="previewFile('uploadberkas', 'previewFoto')" />
-
-                                            <div class="mt-2">
-                                                <!-- Preview Image or PDF -->
-                                                <div id="previewContainer">
-                                                    <img id="previewFoto"
-                                                        src="{{ old('uploadberkas') ? asset('03_datajakon/01_sertifikasi/' . old('uploadberkas')) : '' }}"
-                                                        style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
-
-                                                    <canvas id="pdfPreview" style="display: none; max-width: 100%; max-height: 200px; margin-top: 10px;"></canvas>
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="asosiasimasjaki_id">
+                                                        <i class="bi bi-people" style="margin-right: 8px; color: #13A847;"></i> Asosiasi Jasa Konstruksi
+                                                    </label>
+                                                    <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
+                                                        <option value="" disabled selected>-- Pilih Asosiasi --</option>
+                                                        @foreach($asosiasimasjaki as $asosiasi)
+                                                            <option value="{{ $asosiasi->id }}" {{ old('asosiasimasjaki_id') == $asosiasi->id ? 'selected' : '' }}>
+                                                                {{ $asosiasi->namaasosiasi }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                    @error('asosiasimasjaki_id')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="namalengkap">
+                                                        <i class="bi bi-building" style="margin-right: 8px; color: #13A847;"></i> Nama Badan Usaha
+                                                    </label>
+                                                    <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}" placeholder="Masukkan nama badan usaha" />
+                                                    @error('namalengkap')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="alamat">
+                                                        <i class="bi bi-house-door" style="margin-right: 8px; color: #13A847;"></i> Alamat
+                                                    </label>
+                                                    <input type="text" id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old('alamat') }}" placeholder="Masukkan alamat lengkap" />
+                                                    @error('alamat')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="no_telepon">
+                                                        <i class="bi bi-telephone" style="margin-right: 8px; color: #13A847;"></i> Nomor Telepon
+                                                    </label>
+                                                    <input type="number" id="no_telepon" name="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon') }}" placeholder="Contoh: 08123456789" />
+                                                    @error('no_telepon')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="email">
+                                                        <i class="bi bi-envelope" style="margin-right: 8px; color: #13A847;"></i> Email
+                                                    </label>
+                                                    <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Contoh: email@domain.com" />
+                                                    @error('email')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="nomorindukberusaha">
+                                                        <i class="bi bi-file-earmark" style="margin-right: 8px; color: #13A847;"></i> Nomor Induk Berusaha (NIB)
+                                                    </label>
+                                                    <input type="number" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control @error('nomorindukberusaha') is-invalid @enderror" value="{{ old('nomorindukberusaha') }}" placeholder="Masukkan NIB" />
+                                                    @error('nomorindukberusaha')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
                                             </div>
 
-                                            @error('uploadberkas')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
+                                            <!-- KOLOM KANAN -->
+                                            <div class="col-md-6 ps-md-4" style="border-left: 1px dashed #e2e8f0;">
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="pju">
+                                                        <i class="bi bi-lightbulb" style="margin-right: 8px; color: #13A847;"></i> Penanggung Jawab Umum
+                                                    </label>
+                                                    <input type="text" id="pju" name="pju" class="form-control @error('pju') is-invalid @enderror" value="{{ old('pju') }}" placeholder="Masukkan PJU" />
+                                                    @error('pju')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="no_akte">
+                                                        <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: #13A847;"></i> No Akte
+                                                    </label>
+                                                    <input type="text" id="no_akte" name="no_akte" class="form-control @error('no_akte') is-invalid @enderror" value="{{ old('no_akte') }}" placeholder="Masukkan nomor akte" />
+                                                    @error('no_akte')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="tanggal">
+                                                        <i class="bi bi-calendar" style="margin-right: 8px; color: #13A847;"></i> Tanggal
+                                                    </label>
+                                                    <input type="date" id="tanggal" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" value="{{ old('tanggal') }}" />
+                                                    @error('tanggal')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="nama_notaris">
+                                                        <i class="bi bi-person-check" style="margin-right: 8px; color: #13A847;"></i> Nama Notaris
+                                                    </label>
+                                                    <input type="text" id="nama_notaris" name="nama_notaris" class="form-control @error('nama_notaris') is-invalid @enderror" value="{{ old('nama_notaris') }}" placeholder="Masukkan nama notaris" />
+                                                    @error('nama_notaris')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="no_pengesahan">
+                                                        <i class="bi bi-file-earmark-check" style="margin-right: 8px; color: #13A847;"></i> No Pengesahan
+                                                    </label>
+                                                    <input type="text" id="no_pengesahan" name="no_pengesahan" class="form-control @error('no_pengesahan') is-invalid @enderror" value="{{ old('no_pengesahan') }}" placeholder="Masukkan nomor pengesahan" />
+                                                    @error('no_pengesahan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label-modern" for="uploadberkas">
+                                                        <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: #13A847;"></i> Upload Berkas
+                                                    </label>
+                                                    <input type="file" id="uploadberkas" name="uploadberkas"
+                                                        class="form-control @error('uploadberkas') is-invalid @enderror"
+                                                        onchange="previewFile('uploadberkas', 'previewFoto')" accept="image/*,application/pdf" />
+
+                                                    <div class="mt-3 preview-box">
+                                                        <div id="previewContainer">
+                                                            <img id="previewFoto" src="{{ old('uploadberkas') ? asset('03_datajakon/01_sertifikasi/' . old('uploadberkas')) : '' }}" style="display: none; max-width: 100%; max-height: 200px; border-radius: 8px; margin: 0 auto;" />
+                                                            <canvas id="pdfPreview" style="display: none; max-width: 100%; max-height: 200px; border-radius: 8px; margin: 0 auto;"></canvas>
+                                                            <div id="previewPlaceholder" style="color: #94a3b8; font-size: 0.85rem;">
+                                                                <i class="bi bi-image" style="font-size: 2rem; display: block; margin-bottom: 5px;"></i>
+                                                                Pratinjau file akan muncul di sini
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @error('uploadberkas')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+
+                                            </div>
+
                                         </div>
-
-                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-
-                                        <script>
-                                            function previewFile(inputId, previewId) {
-                                                var file = document.getElementById(inputId).files[0];
-                                                var previewContainer = document.getElementById('previewContainer');
-                                                var imgPreview = document.getElementById(previewId);
-                                                var pdfPreview = document.getElementById('pdfPreview');
-
-                                                // Reset previous previews
-                                                imgPreview.style.display = 'none';
-                                                pdfPreview.style.display = 'none';
-
-                                                if (file) {
-                                                    var reader = new FileReader();
-
-                                                    // Check if the file is a PDF
-                                                    if (file.type === 'application/pdf') {
-                                                        // Display PDF preview
-                                                        reader.onload = function(e) {
-                                                            var pdfData = e.target.result;
-                                                            pdfjsLib.getDocument({data: pdfData}).promise.then(function(pdf) {
-                                                                pdf.getPage(1).then(function(page) {
-                                                                    var canvas = document.getElementById('pdfPreview');
-                                                                    var context = canvas.getContext('2d');
-
-                                                                    // Ukuran A4 dalam mm
-                                                                    var a4Width = 210;  // A4 width in mm
-                                                                    var a4Height = 297; // A4 height in mm
-
-                                                                    // Convert A4 size to pixels (1mm = 3.7795275591 pixels)
-                                                                    var a4WidthPx = a4Width * 3.7795275591;
-                                                                    var a4HeightPx = a4Height * 3.7795275591;
-
-                                                                    // Calculate scale to fit PDF to A4 size in pixels
-                                                                    var scale = Math.min(a4WidthPx / page.getViewport({scale: 1}).width, a4HeightPx / page.getViewport({scale: 1}).height);
-
-                                                                    var viewport = page.getViewport({scale: scale});
-                                                                    canvas.height = viewport.height;
-                                                                    canvas.width = viewport.width;
-
-                                                                    // Render the page into the canvas context
-                                                                    page.render({canvasContext: context, viewport: viewport}).promise.then(function() {
-                                                                        pdfPreview.style.display = 'block';
-                                                                    });
-                                                                });
-                                                            });
-                                                        };
-                                                        reader.readAsArrayBuffer(file); // Read the PDF file
-                                                    } else {
-                                                        // Display image preview (if it's not a PDF)
-                                                        reader.onloadend = function() {
-                                                            imgPreview.src = reader.result;
-                                                            imgPreview.style.display = 'block';
-                                                        };
-                                                        reader.readAsDataURL(file); // Read the image file
-                                                    }
-                                                }
-                                            }
-                                        </script>
-
                                     </div>
-                                    <!-- End Right Column -->
-                                </div>
-                                <!-- End row -->
-                            </div>
-                            <!-- end::Body -->
 
-                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                <div class="flex justify-end">
-                                        <button type="button" onclick="openModal()" class="button-baru">
-                                                <i class="bi bi-plus" style="margin-right:8px;"></i>
-                                                Tambah Data ?
-                                            </button>
+                                    <!-- FOOTER: Tombol Aksi di Kanan Bawah -->
+                                    <div class="form-footer">
+                                        <a href="/bebujkkonstruksiblora" class="button-modern button-md" style="margin-right: 10px;">
+                                            <i class="bi bi-arrow-left" style="margin-right: 8px;"></i> Kembali
+                                        </a>
 
-                                </div>
-                                <!-- Modal Konfirmasi -->
-                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah Anda ingin menambahkan data?
-                                    </p>
-
-                                      <!-- Tombol -->
-                                      <div style="display: flex; justify-content: center; gap: 12px;">
-                                        <button id="confirmSubmitBtn"
-                                        onclick="submitForm()"
-                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                    <!-- Telegram SVG -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
-                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
-                                    </svg>
-                                    Ya
-                                </button>
-
-                                <!-- Tombol Batal dengan ikon X (SVG) -->
-                                <button type="button"
-                                        onclick="closeModal()"
-                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                                    </svg>
-                                    Batal
-                                </button>
-
-                                      </div>
+                                        <button type="button" onclick="openModal()" class="button-baru button-md" style="padding: 12px 24px; font-size: 14px;">
+                                            <i class="bi bi-save" style="margin-right:8px;"></i> Simpan Data
+                                        </button>
                                     </div>
-                                </div>
 
-                                <!-- Script -->
-                                <script>
-                                function openModal() {
-                                    const modal = document.getElementById("confirmModal");
-                                    if (modal) modal.style.display = "flex";
-                                }
-
-                                function closeModal() {
-                                    const modal = document.getElementById("confirmModal");
-                                    if (modal) modal.style.display = "none";
-                                }
-
-                                </script>
+                                </form>
 
                             </div>
-
-
-                        </form>
-
-                                                     </div>
-                        <!--end::Quick Example-->
-                    </div>
-
-
-                    <br><br>
-
-                    <!-- /.card -->
-                    <!-- Button Section -->
+                        </div>
 
                     </div>
-                    <!--end::Row-->
-                    </div>
+                </div>
 
-        </div>
-        <!--end::Row-->
-        </div>
-                  <!--end::Container-->
-        <!--end::App Content Header-->
-        <!--begin::App Content-->
-          <!--end::App Content-->
-
-        </section>
+            </section>
         </main>
-      <!--end::App Main-->
-    </div>
     </div>
 
+    <!-- MODAL KONFIRMASI -->
+    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(4px);">
+        <div style="background: white; padding: 30px; border-radius: 20px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+            <div style="font-size: 3rem; color: #13A847; margin-bottom: 15px;">
+                <i class="bi bi-shield-check"></i>
+            </div>
+            <h4 style="font-size: 1.2rem; font-weight: 700; color: #1a2b4a; margin-bottom: 10px;">Konfirmasi Simpan</h4>
+            <p style="font-size: 0.95rem; color: #4a5a72; margin-bottom: 25px;">
+                Apakah Anda yakin data yang dimasukkan sudah benar?
+            </p>
 
-      @include('backend.00_administrator.00_baganterpisah.02_footer')
+            <div style="display: flex; justify-content: center; gap: 12px;">
+                <button id="confirmSubmitBtn" onclick="submitForm()" class="button-baru button-md" style="width: 120px; justify-content: center; background: #13A847; color: white; border: none;">
+                    <i class="bi bi-check2-circle" style="margin-right: 5px;"></i> Ya, Simpan
+                </button>
 
+                <button type="button" onclick="closeModal()" class="button-merah button-md" style="width: 120px; justify-content: center; border: none;">
+                    <i class="bi bi-x-circle" style="margin-right: 5px;"></i> Batal
+                </button>
+            </div>
+        </div>
+    </div>
 
+    <!-- SCRIPT PDF PREVIEW & MODAL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        function previewFile(inputId, previewId) {
+            var file = document.getElementById(inputId).files[0];
+            var imgPreview = document.getElementById(previewId);
+            var pdfPreview = document.getElementById('pdfPreview');
+            var placeholder = document.getElementById('previewPlaceholder');
+
+            imgPreview.style.display = 'none';
+            pdfPreview.style.display = 'none';
+            placeholder.style.display = 'block';
+
+            if (file) {
+                placeholder.style.display = 'none';
+                var reader = new FileReader();
+
+                if (file.type === 'application/pdf') {
+                    reader.onload = function(e) {
+                        var pdfData = e.target.result;
+                        pdfjsLib.getDocument({data: pdfData}).promise.then(function(pdf) {
+                            pdf.getPage(1).then(function(page) {
+                                var canvas = document.getElementById('pdfPreview');
+                                var context = canvas.getContext('2d');
+                                var viewport = page.getViewport({scale: 1.5});
+                                canvas.height = viewport.height;
+                                canvas.width = viewport.width;
+                                page.render({canvasContext: context, viewport: viewport}).promise.then(function() {
+                                    pdfPreview.style.display = 'block';
+                                });
+                            });
+                        });
+                    };
+                    reader.readAsArrayBuffer(file);
+                } else {
+                    reader.onloadend = function() {
+                        imgPreview.src = reader.result;
+                        imgPreview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+        }
+
+        function openModal() {
+            const modal = document.getElementById("confirmModal");
+            if (modal) modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("confirmModal");
+            if (modal) modal.style.display = "none";
+        }
+
+        function submitForm() {
+            // HANYA SUBMIT FORM DENGAN ID "formBujk" (Form Utama)
+            document.getElementById('formBujk').submit();
+        }
+    </script>
+
+    @include('backend.00_administrator.00_baganterpisah.02_footer')

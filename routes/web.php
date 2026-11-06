@@ -810,11 +810,15 @@ Route::post('/bebujkkonstruksi/createnew', [BujkkontraktorController::class, 'be
 
 Route::delete('/bebujkkonstruksi/delete/{id}', [BujkkontraktorController::class, 'bebujkkonstruksidelete'])->middleware(['auth', 'can:admin2']);
 Route::delete('/bebujkkonstruksiklasifikasi/delete/{id}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasidelete'])->middleware(['auth', 'can:admin2'])->name('bebujkkonstruksiklasifikasi.delete');
+
+Route::put('/bebujkkonstruksi/klasifikasi/update/{id}', [BujkkontraktorController::class, 'updateKlasifikasi'])
+    ->name('bebujkkonstruksiklasifikasi.update');
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 2 BUJK KONSULTASI KONSTRUKSI   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bebujkkonsultan', [BujkkonsultanController::class, 'bebujkkonsultan'])->middleware(['auth', 'can:admin2']);
+Route::get('/bebujkkonsultanblora', [BujkkonsultanController::class, 'bebujkkonsultanblora'])->middleware(['auth', 'can:admin2']);
 Route::get('/bebujkkonsultan/show/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshow'])->middleware(['auth', 'can:admin2']);
 Route::get('/bebujkkonsultan/showsubklasifikasi/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshowklasifikasi'])->middleware(['auth', 'can:admin2']);
 
@@ -828,6 +832,9 @@ Route::post('/bebujkkonsultan/createnew', [BujkkonsultanController::class, 'bebu
 
 Route::delete('/bebujkkonsultan/delete/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshowdelete'])->middleware(['auth', 'can:admin2']);
 Route::delete('/bebujkkonsultanklasifikasi/delete/{id}', [BujkkonsultanController::class, 'bebujkkonsultanshowklasifikasidelete'])->middleware(['auth', 'can:admin2'])->name('bebujkkonsultanklasifikasi.delete');
+
+Route::put('/bebujkkonsultan/klasifikasi/update/{id}', [BujkkonsultanController::class, 'updateKlasifikasikonsultan'])
+    ->name('bebujkkonsultanklasifikasi.update');
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 3 DATA ASOSIASI JASA KONSTRUKSI   -----------------------------------------------------
