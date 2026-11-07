@@ -848,12 +848,18 @@ Route::get('/beasosiasi/update/{id}', [BujkkontraktorController::class, 'beasosi
 Route::post('/beasosiasi/updatecreate/{id}', [BujkkontraktorController::class, 'beasosiasiupdatecreate'])->middleware(['auth', 'can:admin2'])->name('beasosiasiupdatecreate');
 // ___________________________________________________________________________________________________________________________________
 
+// ---------------------- MENU 4 DATA BUJK JASA KONSTRUKSI   -----------------------------------------------------
 
+// Route::get('/bujkstatistikblora', [BujkkontraktorController::class, 'bujkstatistikblora'])->middleware(['auth', 'can:admin2']);
+Route::get('/bujkstatistikblora', [BujkkontraktorController::class, 'bujkstatistikblora'])
+    ->name('statistik.jakon')
+    ->middleware(['auth']);
 // ---------------------- MENU 02 DATA SKK TENAGA KERJA DISELENGGARAKAN DPUPR KABUPATEN BLORA -----------------------------------------------------
 // ________________________________________________________________________________________________________________
 // ---------------------- MENU 1 DATA SKK TENAGA KERJA DISELENGGARAKAN DPUPR KABUPATEN BLORA -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beskkdpupr', [SkktenagakerjabloraController::class, 'beskkdpupr'])->middleware(['auth', 'can:admin2']);
+Route::get('/beskkdpuprblora', [SkktenagakerjabloraController::class, 'beskkdpuprblora'])->middleware(['auth', 'can:admin2']);
 Route::get('/beskkdpupr/show/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprshow'])->middleware(['auth', 'can:admin2']);
 Route::delete('/beskkdpupr/delete/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprdelete'])->middleware(['auth', 'can:admin2']);
 Route::get('/beskkdpupr/update/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprupdate'])->middleware(['auth', 'can:admin2']);

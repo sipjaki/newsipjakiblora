@@ -1,5 +1,117 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
+<style>
+/* ==========================================
+   RESET BOOTSTRAP VAR (biar zebra nggak ketimpa)
+   ========================================== */
+#tabelBujkkonsultan,
+#tabelBujkkonsultan > tbody,
+#tabelBujkkonsultan > tbody > tr,
+#tabelBujkkonsultan > tbody > tr > td,
+#tabelBujkkonsultan > thead,
+#tabelBujkkonsultan > thead > tr > th {
+    --bs-table-bg: transparent !important;
+    --bs-table-striped-bg: transparent !important;
+    --bs-table-accent-bg: transparent !important;
+    background-image: none !important;
+}
+
+#tabelBujkkonsultan {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* ==========================================
+   RAPIHKAN JUDUL TH (seragam)
+   ========================================== */
+#tabelBujkkonsultan > thead > tr > th {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #1a2b4a !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    padding: 14px 12px !important;
+    vertical-align: middle !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+    background-color: #f8fafc !important;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+#tabelBujkkonsultan > thead > tr > th i {
+    font-size: 14px !important;
+    margin-right: 6px;
+    vertical-align: middle;
+    color: #13A847;
+}
+
+#tabelBujkkonsultan > thead > tr > th .th-label {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+}
+
+/* ==========================================
+   ZEBRA + HOVER HIJAU
+   ========================================== */
+#tabelBujkkonsultan > tbody > tr:nth-child(odd) > td {
+    background-color: #ffffff !important;
+}
+#tabelBujkkonsultan > tbody > tr:nth-child(even) > td {
+    background-color: #e2e8f0 !important;
+}
+
+#tabelBujkkonsultan > tbody > tr > td {
+    border-bottom: 1px solid #cbd5e1 !important;
+    transition: background-color 0.18s ease;
+}
+
+#tabelBujkkonsultan > tbody > tr:hover > td {
+    background-color: #bbf7d0 !important;
+    border-bottom-color: #86efac !important;
+    cursor: pointer;
+}
+
+#tabelBujkkonsultan > tbody > tr.empty-row > td,
+#tabelBujkkonsultan > tbody > tr.empty-row:hover > td {
+    background-color: #ffffff !important;
+    cursor: default;
+}
+
+/* ==========================================
+   INFO CELL
+   ========================================== */
+.info-cell {
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #cbd5e1;
+}
+.info-cell:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.info-label {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #050505;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    margin-bottom: 2px;
+}
+.info-value {
+    font-size: 12.5px;
+    color: #1a2b4a;
+    line-height: 1.4;
+    word-break: break-word;
+}
+.info-value-strong {
+    font-weight: 700;
+    font-size: 13.5px;
+}
+</style>
+
 <!--begin::Body-->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
 
@@ -77,7 +189,7 @@
 
                                     <a href="/bebujkkonsultan" class="button-modern button-md">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                            <path d="M2 2.5A1.5 1.5 0 0 1 3.5 1h9A1.5 1.5 0 0 1 14 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-11zM3.5 2a.5.5 0 0 0-.5.5V5h10V2.5a.5.5 0 0 0-.5-.5h-9zM3 6v2h3V6H3zm4 0v2h6V6H7zM3 9v2h3V9H3zm4 0v2h6V9H7zm-4 3v1.5a.5.5 0 0 0.5.5h9a.5.5 0 0 0 .5-.5V12H3z"/>
+                                            <path d="M2 2.5A1.5 1.5 0 0 1 3.5 1h9A1.5 1.5 0 0 1 14 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-11zM3.5 2a.5.5 0 0 0-.5.5V5h10V2.5a.5.5 0 0 0-.5-.5h-9zM3 6v2h3V6H3zm4 0v2h6V6H7zM3 9v2h3V9H3zm4 0v2h6V9H7zm-4 3v1.5a.5.5 0 0 0.5.5h9a.5.5 0 0 0.5-.5V12H3z"/>
                                         </svg>
                                         Data Lengkap
                                     </a>
@@ -98,26 +210,32 @@
 
                             <div class="card-body p-0">
                                 <div class="table-responsive table-wrapper">
-                                    <table id="tabelBujkkonsultan" class="zebra-table">
+                                    <table id="tabelBujkkonsultan" class="table-zebra-custom">
                                         <thead>
                                             <tr>
                                                 <th style="width: 60px; text-align:center;">
-                                                    <i class="bi bi-list-ol"></i> No
+                                                    <i class="bi bi-list-ol"></i>
+                                                    <span class="th-label">No</span>
                                                 </th>
                                                 <th style="width: 240px; text-align:center;">
-                                                    <i class="bi bi-building"></i> Identitas Badan Usaha
+                                                    <i class="bi bi-building"></i>
+                                                    <span class="th-label">Identitas Badan Usaha</span>
                                                 </th>
                                                 <th style="width: 280px; text-align:center;">
-                                                    <i class="bi bi-telephone-fill"></i> Kontak & Alamat
+                                                    <i class="bi bi-telephone-fill"></i>
+                                                    <span class="th-label">Kontak & Alamat</span>
                                                 </th>
                                                 <th style="width: 280px; text-align:center;">
-                                                    <i class="bi bi-file-earmark-text"></i> Legalitas
+                                                    <i class="bi bi-file-earmark-text"></i>
+                                                    <span class="th-label">Legalitas</span>
                                                 </th>
                                                 <th style="width: 220px; text-align:center;">
-                                                    <i class="bi bi-shield-check"></i> Status & Keterangan
+                                                    <i class="bi bi-shield-check"></i>
+                                                    <span class="th-label">Status & Keterangan</span>
                                                 </th>
                                                 <th style="width: 180px; text-align:center;">
-                                                    <i class="bi bi-tools"></i> Aksi
+                                                    <i class="bi bi-tools"></i>
+                                                    <span class="th-label">Aksi</span>
                                                 </th>
                                             </tr>
                                         </thead>
@@ -289,7 +407,6 @@
                                                             <a href="/bebujkkonsultan/update/{{ $item->id }}" class="button-berkas" title="Update">
                                                                 <i class="bi bi-pencil-square"></i>
                                                             </a>
-                                                            {{-- ✅ DELETE: kirim namalengkap sesuai route --}}
                                                             <a href="javascript:void(0)" class="button-merah delete-trigger" title="Delete" data-judul="{{ $item->namalengkap }}">
                                                                 <i class="bi bi-trash"></i>
                                                             </a>

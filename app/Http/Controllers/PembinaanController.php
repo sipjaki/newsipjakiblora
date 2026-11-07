@@ -1505,14 +1505,12 @@ return redirect()->back();
 
 public function beagendaskktkk2025(Request $request)
 {
-    // Default jumlah data per halaman = 100
     $perPage = $request->input('perPage', 10);
     $search  = $request->input('search');
+    $agendaId = $request->input('agendaskk_id');
 
-    // Ambil user login
     $user = Auth::user();
 
-    // Query semua data dari allskktenagakerjablora
     $query = allskktenagakerjablora::select([
         'id', 'user_id', 'agendaskk_id', 'jenjangpendidikan_id', 'jabatankerja_id',
         'namasekolah_id', 'tahunpilihan_id', 'nik', 'tempatlahir', 'ttl', 'jeniskelamin',
@@ -1521,27 +1519,44 @@ public function beagendaskktkk2025(Request $request)
         'punyasiki', 'siappatuh', 'verifikasipu', 'verifikasilps', 'sertifikat'
     ]);
 
-    // Filter pencarian jika ada input "search"
+    // ==========================================
+    // FILTER AGENDA SKK
+    // ==========================================
+    if ($request->filled('agendaskk_id')) {
+        $query->where('agendaskk_id', $request->agendaskk_id);
+    }
+
+    // ==========================================
+    // FILTER SEARCH
+    // ==========================================
     if ($search) {
         $query->where(function ($q) use ($search) {
-            // cari dari relasi user -> username
             $q->whereHas('user', function ($u) use ($search) {
                 $u->where('username', 'LIKE', "%{$search}%");
             })
             ->orWhere('nik', 'LIKE', "%{$search}%")
             ->orWhere('jeniskelamin', 'LIKE', "%{$search}%")
-            ->orWhereDate('ttl', $search) // cocokkan full tanggal (YYYY-MM-DD)
+            ->orWhereDate('ttl', $search)
             ->orWhere('tahunlulus', 'LIKE', "%{$search}%");
         });
     }
 
-    // Urutkan berdasarkan data terbaru
     $query->orderBy('created_at', 'desc');
 
-    // Pagination
-    $datapesertaskk = $query->paginate($perPage);
+    $datapesertaskk = $query->paginate($perPage)->appends($request->query());
 
-    // Kalau request dari Ajax → balikin partial view (untuk filter dinamis di frontend)
+    // ==========================================
+    // DAFTAR AGENDA UNTUK DROPDOWN
+    // ==========================================
+    // ⚠️ Sesuaikan nama model & kolom dengan project lu
+    // Misal: App\Models\Agendaskk, kolom 'nama' atau 'judul'
+    $daftarAgenda = \App\Models\Agendaskk::select('id', 'namakegiatan')
+        ->orderBy('namakegiatan', 'asc')
+        ->get();
+
+    // ==========================================
+    // AJAX RESPONSE (partial)
+    // ==========================================
     if ($request->ajax()) {
         return response()->json([
             'html' => view(
@@ -1551,15 +1566,74 @@ public function beagendaskktkk2025(Request $request)
         ]);
     }
 
-    // Return ke view utama
     return view('backend.05_agenda.04_pesertaskk.02_sertifikasi2025.index', [
-        'title'   => 'Daftar Semua TKK DPUPR',
-        'data'    => $datapesertaskk,
-        'perPage' => $perPage,
-        'search'  => $search,
-        'user'    => $user,
+        'title'        => 'Daftar Semua TKK DPUPR',
+        'data'         => $datapesertaskk,
+        'perPage'      => $perPage,
+        'search'       => $search,
+        'user'         => $user,
+        'daftarAgenda' => $daftarAgenda,
+        'agenda_id'    => $agendaId,
     ]);
 }
+
+// public function beagendaskktkk2025(Request $request)
+// {
+//     // Default jumlah data per halaman = 100
+//     $perPage = $request->input('perPage', 10);
+//     $search  = $request->input('search');
+
+//     // Ambil user login
+//     $user = Auth::user();
+
+//     // Query semua data dari allskktenagakerjablora
+//     $query = allskktenagakerjablora::select([
+//         'id', 'user_id', 'agendaskk_id', 'jenjangpendidikan_id', 'jabatankerja_id',
+//         'namasekolah_id', 'tahunpilihan_id', 'nik', 'tempatlahir', 'ttl', 'jeniskelamin',
+//         'alamat', 'notelepon', 'email', 'tahunlulus', 'uploadktp', 'uploadfoto', 'uploadijazah',
+//         'uploadpengalaman', 'uploadnpwp', 'uploaddaftarriwayathidup', 'namaasosiasi', 'punyaskk',
+//         'punyasiki', 'siappatuh', 'verifikasipu', 'verifikasilps', 'sertifikat'
+//     ]);
+
+//     // Filter pencarian jika ada input "search"
+//     if ($search) {
+//         $query->where(function ($q) use ($search) {
+//             // cari dari relasi user -> username
+//             $q->whereHas('user', function ($u) use ($search) {
+//                 $u->where('username', 'LIKE', "%{$search}%");
+//             })
+//             ->orWhere('nik', 'LIKE', "%{$search}%")
+//             ->orWhere('jeniskelamin', 'LIKE', "%{$search}%")
+//             ->orWhereDate('ttl', $search) // cocokkan full tanggal (YYYY-MM-DD)
+//             ->orWhere('tahunlulus', 'LIKE', "%{$search}%");
+//         });
+//     }
+
+//     // Urutkan berdasarkan data terbaru
+//     $query->orderBy('created_at', 'desc');
+
+//     // Pagination
+//     $datapesertaskk = $query->paginate($perPage);
+
+//     // Kalau request dari Ajax → balikin partial view (untuk filter dinamis di frontend)
+//     if ($request->ajax()) {
+//         return response()->json([
+//             'html' => view(
+//                 'backend.05_agenda.03_agendaskk.partials.table',
+//                 compact('datapesertaskk')
+//             )->render()
+//         ]);
+//     }
+
+//     // Return ke view utama
+//     return view('backend.05_agenda.04_pesertaskk.02_sertifikasi2025.index', [
+//         'title'   => 'Daftar Semua TKK DPUPR',
+//         'data'    => $datapesertaskk,
+//         'perPage' => $perPage,
+//         'search'  => $search,
+//         'user'    => $user,
+//     ]);
+// }
 
 
 }

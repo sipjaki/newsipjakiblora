@@ -1,0 +1,1701 @@
+
+
+      <!--begin::Sidebar-->
+      {{-- <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> --}}
+        <aside class="app-sidebar shadow" id="appSidebar">
+        <!--begin::Sidebar Brand-->
+        <div class="sidebar-brand">
+          <!--begin::Brand Link-->
+            <!--begin::Brand Image-->
+            <img
+              src="/assets/icon/logokabupatenblora.png"
+              alt="Logo Kabupaten Blora"
+              class="brand-image opacity-75 shadow"
+              style="margin-right:5px;"
+            />
+            {{-- <img
+              src="/assets/icon/pupr.png"
+              alt="Logo Kabupaten Blora"
+              class="brand-image opacity-75 shadow"
+            /> --}}
+            <!--end::Brand Image-->
+            <!--begin::Brand Text-->
+            <span class="brand-text fw-light">Mas Jaki Blora</span>
+            <!--end::Brand Text-->
+          <!--end::Brand Link-->
+        </div>
+        <!--end::Sidebar Brand-->
+        <!--begin::Sidebar Wrapper-->
+        <div class="sidebar-wrapper">
+          <nav class="mt-2">
+            <!--begin::Sidebar Menu-->
+            <ul
+              class="nav sidebar-menu flex-column"
+              data-lte-toggle="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+  <li class="nav-header" style="color: green; padding-bottom: 6px;">
+            Dashboard Mas Jaki
+        </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer" style="color: white"></i>
+                  <p style="color: white">
+                    Dashboard
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                    <li class="nav-item">
+                        <a href="/web" target="_blank" class="nav-link">
+                          <!-- Ikon untuk Halaman Web (Rumah) -->
+                          <i class="nav-icon bi bi-house-door text-warning"></i>
+                          <p style="color: white;">Halaman Web</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/dashboard" target="_blank" class="nav-link">
+                          <!-- Ikon untuk Halaman Web (Rumah) -->
+                          <i class="nav-icon bi bi-house-door text-warning"></i>
+                          <p style="color: white;">Halaman Dashboard</p>
+                        </a>
+                      </li>
+
+
+                </ul>
+              </li>
+
+
+              @can('pekerja')
+
+
+                 <li class="nav-item">
+                <a href="/" class="nav-link">
+                    <i class="nav-icon bi bi-android2" style="color: white"></i>
+                    <p style="color: white">
+                    Menu Android
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                    </p>
+                </a>
+                </li>
+
+              <li class="nav-item">
+                <a href="/hakaksespekerjaskkdaftar" class="nav-link">
+                    <i class="nav-icon bi bi-file-earmark-text" style="color: white"></i>
+                  {{-- <i class="nav-icon bi bi-folder2-open" style="color: white"></i> <!-- Berkas Anda --> --}}
+                  <p style="color: white">
+                    Daftar SKK
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/hakaksespekerjaskk" class="nav-link">
+                  <i class="nav-icon bi bi-folder2-open" style="color: white"></i> <!-- Berkas Anda -->
+                  <p style="color: white">
+                    Kegiatan Anda
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/hakaksespekerjaberkas" class="nav-link">
+                  <i class="nav-icon bi bi-graph-up" style="color: white"></i> <!-- Status -->
+                  <p style="color: white">
+                    Status <br> Pendaftaran
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+              </li>
+
+<li class="nav-item">
+  <a href="/downsertifikatskk" class="nav-link">
+    <i class="nav-icon bi bi-file-earmark-arrow-down" style="color: white"></i>
+    <p style="color: white">
+      Download <br> Sertifikat
+      <i class="nav-arrow bi bi-chevron-right"></i>
+    </p>
+  </a>
+</li>
+
+              {{-- <li class="nav-item">
+                <a href="/beprofile" class="nav-link">
+                  <i class="nav-icon bi bi-person-circle" style="color: white"></i> <!-- Profil Anda -->
+                  <p style="color: white">
+                    Profil Anda
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+              </li> --}}
+
+                @endcan
+
+
+
+
+              @can('lsppenerbit')
+
+              <li class="nav-header" style="color: white;">DAFTAR PESERTA </li>
+<!-- Menu Paket Pekerjaan -->
+{{-- <li class="nav-item">
+    <a href="/beakseslsppenerbit" class="nav-link">
+      <!-- Ikon untuk Paket Pekerjaan -->
+      <i class="nav-icon bi bi-briefcase" style="color: white;"></i>
+      <p style="color: white">
+        Peserta Pelatihan
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li> --}}
+
+  <li class="nav-item">
+    <a href="/beakseslsppenerbitskk" class="nav-link">
+      <!-- Ikon untuk Paket Pekerjaan -->
+      <i class="nav-icon bi bi-briefcase" style="color: white;"></i>
+      <p style="color: white">
+        Peserta SKK
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li>
+
+  <!-- Menu Profil Anda -->
+  {{-- <li class="nav-item">
+    <a href="/beprofile" class="nav-link">
+      <!-- Ikon untuk Profil Anda -->
+      <i class="nav-icon bi bi-person-circle" style="color: white;"></i>
+      <p style="color: white">
+        Profil Anda
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li> --}}
+
+        @endcan
+
+              @can('dinas')
+
+              <li class="nav-header" style="color: white;">PAKET PEKERJAAN </li>
+<!-- Menu Paket Pekerjaan -->
+<li class="nav-item">
+    <a href="/bepaketpekerjaandinas" class="nav-link">
+      <!-- Ikon untuk Paket Pekerjaan -->
+      <i class="nav-icon bi bi-briefcase" style="color: white;"></i>
+      <p style="color: white">
+        Paket Pekerjaan
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li>
+
+  <!-- Menu Profil Anda -->
+  {{-- <li class="nav-item">
+    <a href="/beprofile" class="nav-link">
+      <!-- Ikon untuk Profil Anda -->
+      <i class="nav-icon bi bi-person-circle" style="color: white;"></i>
+      <p style="color: white">
+        Profil Anda
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li> --}}
+
+        @endcan
+
+@can('admin')
+             {{-- ===================================== MENU DATA PEMBINAAN   --}}
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <!-- Ikon untuk Pembinaan -->
+                  <i class="nav-icon bi bi-person-check" style="color: white"></i>
+                  <p style="color: white">
+                    Pembinaan
+                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                  <!-- Agenda Pelatihan -->
+                  <li class="nav-item">
+                    <a href="/beagendapelatihan" class="nav-link">
+                      <i class="nav-icon bi bi-calendar-event text-warning"></i> <!-- Ikon untuk Agenda Pelatihan -->
+                      <p style="color: white">Agenda Pelatihan</p>
+                    </a>
+                  </li>
+
+                  <!-- Peserta Pelatihan -->
+                  <li class="nav-item">
+                    <a href="/bepesertapelatihanindex" class="nav-link">
+                      <i class="nav-icon bi bi-person-lines-fill text-warning"></i> <!-- Ikon untuk Peserta Pelatihan -->
+                      <p style="color: white">Peserta Pelatihan</p>
+                    </a>
+                  </li>
+
+                  <!-- Agenda SKK -->
+                  <li class="nav-item">
+                    <a href="/beagendaskk" class="nav-link">
+                      <i class="nav-icon bi bi-calendar-check text-warning"></i> <!-- Ikon untuk Agenda SKK -->
+                      <p style="color: white">Agenda SKK</p>
+                    </a>
+                  </li>
+
+                  <!-- Peserta SKK -->
+                  <li class="nav-item">
+                    <a href="/beagendaskkdatapeserta" class="nav-link">
+                      <i class="nav-icon bi bi-person-badge text-warning"></i> <!-- Ikon untuk Peserta SKK -->
+                      <p style="color: white">Peserta SKK</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+
+
+@endcan
+
+@can('operator')
+<li class="nav-header" style="color: white;">DASHBOARD KONSULTAN</li>
+
+
+<li class="nav-item">
+                <a href="#" class="nav-link">
+                    <!-- Ikon untuk Data Jakon -->
+                    <i class="nav-icon bi bi-bar-chart" style="color: white"></i>
+                    <p style="color: white">
+                      Data Jakon
+                      <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                      <i class="nav-arrow bi bi-chevron-right"></i>
+                    </p>
+                  </a>
+
+                <ul class="nav nav-treeview">
+
+
+                  <!-- Badan Usaha Jasa Konstruksi -->
+                  {{-- <li class="nav-item">
+                    <a href="/bebujkjakon" class="nav-link">
+                      <i class="nav-icon bi bi-building text-warning"></i> <!-- Ikon untuk Badan Usaha Jasa Konstruksi -->
+                      <p style="color: white">BUJK</p>
+                    </a>
+                  </li> --}}
+
+                  <!-- Tenaga Kerja Konstruksi -->
+                  {{-- <li class="nav-item">
+                    <a href="/beskkdpupr" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
+                      <p style="color: white">TKK DPUPR</p>
+                    </a>
+                  </li> --}}
+
+                  <!-- Tenaga Kerja Konstruksi (Duplicate) -->
+                  {{-- <li class="nav-item">
+                    <a href="/beskkallblora" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
+                      <p style="color: white">Semua TKK</p>
+                    </a>
+                  </li> --}}
+
+                  <!-- Profil Paket Pekerjaan Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/bepaketpekerjaan" class="nav-link">
+                      <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
+                      <p style="color: white">Profil <br> Paket Pekerjaan</p>
+                    </a>
+                  </li>
+
+                  <!-- Profil Paket Pekerjaan Konstruksi -->
+                  {{-- <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-bar-chart-line text-warning"></i> <!-- Ikon untuk Data Statistik -->
+                      <p style="color: white">Data Statistik</p>
+                    </a>
+                  </li> --}}
+
+
+                </ul>
+              </li>
+
+  <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <!-- Ikon untuk Pengawasan -->
+                  <i class="nav-icon bi bi-eye" style="color: white"></i> <!-- Ikon untuk pengawasan -->
+                  <p style="color: white">
+                    Pengawasan
+                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                  <!-- Tertib Jasa Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/betertibjakonusaha" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib <br> Usaha</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/betertibjakonpemanfaatan" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib <br> Pemanfaatan</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/betertibjakonpenyelenggaraan" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib <br> Penyelenggaraan </p>
+                    </a>
+                  </li>
+
+
+
+                </ul>
+              </li>
+
+                 {{-- <li class="nav-item">
+                <a href="/beprofile" class="nav-link">
+                  <i class="nav-icon bi bi-person-circle" style="color: white"></i> <!-- Profil Anda -->
+                  <p style="color: white">
+                    Profil Anda
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+              </li> --}}
+
+@endcan
+
+        {{-- DASHBOARD SUPER ADMIN --}}
+
+        @can('super_admin')
+
+        <li class="nav-header" style="color: green; padding-bottom: 6px;">
+            Informasi Umum
+        </li>
+
+                <li class="nav-item">
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <!-- Ikon untuk Beranda -->
+                <i class="nav-icon bi bi-house-door" style="color: white"></i>
+                <p style="color: white">
+                    Beranda
+                    <!-- Ikon panah kanan (Chevron) -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
+            </a>
+
+                <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                  <a href="/header" class="nav-link">
+                    <!-- Ikon untuk Header -->
+                    <i class="nav-icon bi bi-house-door text-warning"></i>
+                    <p style="color: white">Header</p>
+                  </a>
+                </li>
+
+          </ul>
+        </li>
+
+                      <li class="nav-item">
+
+                    <a href="#" class="nav-link">
+                    <!-- Ikon untuk Beranda -->
+                    <i class="nav-icon bi bi-building" style="color: white;"></i>
+                    <p style="color: white">
+                      Kelembagaan
+                      <!-- Ikon panah kanan (Chevron) -->
+                      <i class="nav-arrow bi bi-chevron-right"></i>
+                    </p>
+                  </a>
+
+                <ul class="nav nav-treeview">
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+       Main Menu
+    </p>
+</div>
+
+                    <li class="nav-item">
+                        <a href="/bestrukturdinas" class="nav-link">
+                          <!-- Ikon untuk Header -->
+                          <i class="nav-icon bi bi-house-door text-warning"></i>
+                          <p style="color:white">Struktur Organisasi</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="/beprofiljakon" class="nav-link">
+                          <!-- Ikon untuk Informasi Kantor -->
+                          <i class="nav-icon bi bi-building text-warning"></i>
+                          <p style="color: white">Profil Jakon</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="/betupoksi" class="nav-link">
+                          <!-- Ikon untuk Sosial Media -->
+                          <i class="nav-icon bi bi-facebook text-warning"></i> <!-- Bisa diganti dengan bi-twitter atau bi-instagram sesuai kebutuhan -->
+                          <p style="color: white">Tupoksi Jakon</p>
+                        </a>
+                      </li>
+
+                </ul>
+            </li>
+
+                                <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <!-- Ikon untuk Berita Jakon (Newspaper) -->
+                            <i class="nav-icon bi bi-newspaper" style="color: white"></i>
+                            <p style="color: white">
+                              Berita Jakon
+                              <!-- Ikon panah kanan (Chevron) -->
+                              <i class="nav-arrow bi bi-chevron-right"></i>
+                            </p>
+                          </a>
+
+                <ul class="nav nav-treeview">
+
+                        <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
+                    <li class="nav-item">
+                        <a href="/beberitajakon" class="nav-link">
+                          <!-- Ikon untuk Berita Jakon -->
+                          <i class="nav-icon bi bi-newspaper text-warning"></i>
+                          <p style="color: white">Berita Jakon</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="/beartikeljakon" class="nav-link">
+                          <!-- Ikon untuk Artikel Jakon -->
+                          <i class="nav-icon bi bi-journal-text text-warning"></i>
+                          <p style="color: white">Artikel Jakon</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+  <a href="/bedokumentasijakon" class="nav-link">
+    <!-- Ikon untuk Dokumentasi Jakon -->
+    <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+    <p style="color: white">Dokumentasi Jakon</p>
+  </a>
+</li>
+
+
+
+                </ul>
+            </li>
+
+
+                <li class="nav-header" style="color: green;">Master Data
+                </li>
+
+            {{-- ===================================== MENU DATA JAKON   --}}
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <!-- Ikon untuk Data Jakon -->
+                    <i class="nav-icon bi bi-bar-chart" style="color: white"></i>
+                    <p style="color: white">
+                      Data Jakon
+                      <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                      <i class="nav-arrow bi bi-chevron-right"></i>
+                    </p>
+                  </a>
+
+                <ul class="nav nav-treeview">
+
+                        <div style="margin-bottom: 10px; margin-top: 10px;">
+                    <p style="
+                        font-size: 13px;
+                        margin-left: 12px;
+                        margin-bottom: -5px;
+                        font-weight: bold;
+                        color: #000000;
+                        background-color: #ffd100;
+                        display: inline-block;
+                        padding: 4px 12px;
+                        border-radius: 8px;
+                        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+                    ">
+                        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Menu BUJK
+                    </p>
+                    </div>
+
+                    <li class="nav-item">
+                        <a href="/bebujkkonstruksi" class="nav-link">
+                            <i class="nav-icon bi bi-building text-warning"></i>
+                            <p style="color: white">Konstruksi</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/bebujkkonsultan" class="nav-link">
+                            <i class="nav-icon bi bi-person-workspace text-warning"></i>
+                            <p style="color: white">Konsultasi Konstruksi</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/beasosiasi" class="nav-link">
+                            <i class="nav-icon bi bi-people-fill text-warning"></i>
+                            <p style="color: white">Asosiasi</p>
+                        </a>
+                    </li>
+                    
+                        <div style="margin-bottom: 10px; margin-top: 10px;">
+                    <p style="
+                        font-size: 13px;
+                        margin-left: 12px;
+                        margin-bottom: -5px;
+                        font-weight: bold;
+                        color: #000000;
+                        background-color: #ffd100;
+                        display: inline-block;
+                        padding: 4px 12px;
+                        border-radius: 8px;
+                        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+                    ">
+                        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+                    </p>
+                    </div>
+                  <!-- Badan Usaha Jasa Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/bebujkjakon" class="nav-link">
+                      <i class="nav-icon bi bi-building text-warning"></i> <!-- Ikon untuk Badan Usaha Jasa Konstruksi -->
+                      <p style="color: white">BUJK</p>
+                    </a>
+                  </li>
+
+                  <!-- Tenaga Kerja Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/beskkdpupr" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
+                      <p style="color: white">TKK DPUPR (2024) </p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/beagendaskktkk" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
+                      <p style="color: white">TKK DPUPR ( > 2025) </p>
+                    </a>
+                  </li>
+
+                  <!-- Tenaga Kerja Konstruksi (Duplicate) -->
+                  <li class="nav-item">
+                    <a href="/beskkallblora" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
+                      <p style="color: white">Semua TKK</p>
+                    </a>
+                  </li>
+
+                  <!-- Profil Paket Pekerjaan Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/bepaketpekerjaan" class="nav-link">
+                      <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
+                      <p style="color: white">Profil <br> Paket Pekerjaan</p>
+                    </a>
+                  </li>
+
+                                          <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan <br> SKK Tenaga Kerja
+    </p>
+</div>
+<li class="nav-item">
+    <a href="/settingssekolah" class="nav-link">
+        <i class="nav-icon bi bi-building text-warning"></i> <!-- Ikon Universitas/Sekolah -->
+        <p style="color: white">Universitas/Sekolah</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/settingsjenjangpendidikan" class="nav-link">
+        <i class="nav-icon bi bi-mortarboard-fill text-warning"></i> <!-- Ikon Jenjang Pendidikan -->
+        <p style="color: white">Jenjang Pendidikan</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/settingsjabatankerja" class="nav-link">
+        <i class="nav-icon bi bi-person-badge-fill text-warning"></i> <!-- Ikon Jabatan Kerja -->
+        <p style="color: white">Jabatan Kerja</p>
+    </a>
+</li>
+
+{{-- <li class="nav-item">
+    <a href="/404" class="nav-link">
+        <i class="nav-icon bi bi-journal-bookmark-fill text-warning"></i> <!-- Ikon Jurusan -->
+        <p style="color: white">Jurusan</p>
+    </a>
+</li> --}}
+
+
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan <br> Profil Paket Pekerjaan
+    </p>
+</div>
+
+   <li class="nav-item">
+                    <a href="/beasosiasi" class="nav-link">
+                      <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
+                      <p style="color: white">Daftar Asosiasi</p>
+                    </a>
+                  </li>
+
+                  <!-- Profil Paket Pekerjaan Konstruksi -->
+<li class="nav-item">
+  <a href="/settingsjenispekerjaan" class="nav-link">
+    <i class="nav-icon bi bi-briefcase text-warning"></i> <!-- Ikon untuk Jenis Pekerjaan -->
+    <p style="color: white">Jenis Pekerjaan</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingsstatuspekerjaan" class="nav-link">
+    <i class="nav-icon bi bi-clipboard-check text-warning"></i> <!-- Ikon untuk Status Pekerjaan -->
+    <p style="color: white">Status Pekerjaan</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingssumberdana" class="nav-link">
+    <i class="nav-icon bi bi-cash-stack text-warning"></i> <!-- Ikon untuk Sumber Dana -->
+    <p style="color: white">Sumber Dana</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingstahunpilihan" class="nav-link">
+    <i class="nav-icon bi bi-calendar-event text-warning"></i> <!-- Ikon untuk Tahun Pelaksanaan -->
+    <p style="color: white">Tahun Pelaksanaan</p>
+  </a>
+</li>
+
+
+                </ul>
+              </li>
+
+            {{-- ========================== --}}
+
+            {{-- ===================================== MENU DATA PEMBINAAN   --}}
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <!-- Ikon untuk Pembinaan -->
+                  <i class="nav-icon bi bi-person-check" style="color: white"></i>
+                  <p style="color: white">
+                    Pembinaan
+                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+
+                <ul class="nav nav-treeview">
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
+                  <!-- Agenda Pelatihan -->
+                  <li class="nav-item">
+                    <a href="/beagendapelatihan" class="nav-link">
+                      <i class="nav-icon bi bi-calendar-event text-warning"></i> <!-- Ikon untuk Agenda Pelatihan -->
+                      <p style="color: white">Agenda Pelatihan</p>
+                    </a>
+                  </li>
+
+                  <!-- Peserta Pelatihan -->
+                  <li class="nav-item">
+                    <a href="/bepesertapelatihanindex" class="nav-link">
+                      <i class="nav-icon bi bi-person-lines-fill text-warning"></i> <!-- Ikon untuk Peserta Pelatihan -->
+                      <p style="color: white">Peserta Pelatihan</p>
+                    </a>
+                  </li>
+
+                  <!-- Agenda SKK -->
+                  <li class="nav-item">
+                    <a href="/beagendaskk" class="nav-link">
+                      <i class="nav-icon bi bi-calendar-check text-warning"></i> <!-- Ikon untuk Agenda SKK -->
+                      <p style="color: white">Agenda SKK</p>
+                    </a>
+                  </li>
+
+                  <!-- Peserta SKK -->
+                  <li class="nav-item">
+                    <a href="/beagendaskkdatapeserta" class="nav-link">
+                      <i class="nav-icon bi bi-person-badge text-warning"></i> <!-- Ikon untuk Peserta SKK -->
+                      <p style="color: white">Peserta SKK</p>
+                    </a>
+                  </li>
+
+                                    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
+    </p>
+</div>
+
+   <!-- Peserta SKK -->
+<li class="nav-item">
+  <a href="/settingssekolah" class="nav-link">
+    <i class="nav-icon bi bi-building text-warning"></i> <!-- Ikon Universitas/Sekolah -->
+    <p style="color: white">Universitas/Sekolah</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/alllsppenerbit" class="nav-link">
+    <i class="nav-icon bi bi-person-badge text-warning"></i> <!-- Ikon Akun LSP SKK -->
+    <p style="color: white">Akun LSP SKK</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingskatepelatihan" class="nav-link">
+    <i class="nav-icon bi bi-card-list text-warning"></i> <!-- Ikon Kategori Pelatihan -->
+    <p style="color: white">Kategori Pelatihan</p>
+  </a>
+</li>
+
+                </ul>
+              </li>
+
+
+
+            {{-- ========================== --}}
+
+            {{-- ===================================== MENU DATA PENGWASAN   --}}
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <!-- Ikon untuk Pengawasan -->
+                  <i class="nav-icon bi bi-eye" style="color: white"></i> <!-- Ikon untuk pengawasan -->
+                  <p style="color: white">
+                    Pengawasan
+                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+
+                <ul class="nav nav-treeview">
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
+                  <!-- Tertib Jasa Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/betertibjakonusaha" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib <br> Usaha</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/betertibjakonpemanfaatan" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib <br> Pemanfaatan</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/betertibjakonpenyelenggaraan" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib <br> Penyelenggaraan </p>
+                    </a>
+                  </li>
+
+                  <!-- Pengawasan BUJk -->
+                  <li class="nav-item">
+                    <a href="/bepengawasanbujk" class="nav-link">
+                      <i class="nav-icon bi bi-shield-lock text-warning"></i> <!-- Ikon untuk Pengawasan BUJk -->
+                      <p style="color: white">Pengawasan BUJK</p>
+                    </a>
+                  </li>
+
+                  <!-- Kecelakaan Kerja -->
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-emoji-dizzy text-warning"></i> <!-- Ikon untuk Kecelakaan Kerja -->
+                      <p style="color: white">Kecelakaan Kerja</p>
+                    </a>
+                  </li>
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan
+    </p>
+</div>
+
+<li class="nav-item">
+  <a href="/settingssubklasifikasi" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-diagram-3 text-warning"></i>
+    <p style="color: white;">Sub Klasifikasi</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingstandatangan" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-pen text-warning"></i>
+    <p style="color: white;">Tanda Tangan</p>
+  </a>
+</li>
+
+
+
+                </ul>
+              </li>
+
+            {{-- ========================== --}}
+
+            {{-- ===================================== MENU DATA AHSP   --}}
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <!-- Ikon untuk AHSP Keciptakaryaan -->
+                  <i class="nav-icon bi bi-clipboard-check" style="color: white"></i> <!-- Ikon untuk AHSP Keciptakaryaan -->
+                  <p style="color: white">
+                    Satuan <br> Harga Dasar
+                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                  <!-- Satuan Harga Material -->
+
+                      <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
+                  <li class="nav-item">
+                    <a href="/besatuanhargamaterial" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Satuan <br> Harga Material</p>
+                    </a>
+                  </li>
+
+                  <!-- Satuan Harga Bahan -->
+                  <li class="nav-item">
+                    <a href="/besatuanhargaupahpekerjaan" class="nav-link">
+                      <i class="nav-icon bi bi-droplet text-warning"></i> <!-- Ikon untuk Satuan Harga Bahan -->
+                      <p style="color: white">Satuan <br> Harga Upah</p>
+                    </a>
+                  </li>
+
+                  <!-- Satuan Harga Peralatan -->
+                  <li class="nav-item">
+                    <a href="/besatuanhargaperalatan" class="nav-link">
+                      <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Satuan Harga Peralatan -->
+                      <p style="color: white">Satuan <br> Harga Peralatan</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+            {{-- ========================== --}}
+
+            {{-- ===================================== MENU DATA HSP Konstruksi UMum   --}}
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <!-- Ikon untuk HSP Konstruksi Umum -->
+                  <i class="nav-icon bi bi-building" style="color: white"></i> <!-- Ikon untuk Konstruksi Umum -->
+                  <p style="color: white">
+                    HSP Konstruksi
+                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                  <!-- Divisi I -->
+                      <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
+                  <li class="nav-item">
+                    <a href="/besatuandiv1" class="nav-link">
+                      <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi I -->
+                      <p style="color: white">Divisi I <br> Persiapan Pekerjaan</p>
+                    </a>
+                  </li>
+
+                  <!-- Divisi II -->
+                  <li class="nav-item">
+                    <a href="/besatuandiv2" class="nav-link">
+                      <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi II -->
+                      <p style="color: white">Divisi II <br> Pekerjaan Struktur</p>
+                    </a>
+                  </li>
+
+                  <!-- Divisi III -->
+                  <li class="nav-item">
+                    <a href="/besatuandiv3" class="nav-link">
+                      <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi III -->
+                      <p style="color: white">Divisi III <br> Pekerjaan Arsitektur</p>
+                    </a>
+                  </li>
+
+                  <!-- Divisi IV -->
+                  <li class="nav-item">
+                    <a href="/besatuandiv4" class="nav-link">
+                      <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi IV -->
+                      <p style="color: white">Divisi IV <br> Pekerjaan Lansekap</p>
+                    </a>
+                  </li>
+
+                  <!-- Divisi V -->
+                  <li class="nav-item">
+                    <a href="/besatuandiv5" class="nav-link">
+                      <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi V -->
+                      <p style="color: white">Divisi V <br> Mekanikal & Elektrikal </p>
+                    </a>
+                  </li>
+
+                  <!-- Divisi VI -->
+                  <li class="nav-item">
+                    <a href="/besatuandiv6" class="nav-link">
+                      <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi VI -->
+                      <p style="color: white">Divisi VI <br> Pekerjaan Plumbing </p>
+                    </a>
+                  </li>
+
+                  <!-- Divisi VII -->
+                  <li class="nav-item">
+                    <a href="/besatuandiv7" class="nav-link">
+                      <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi VII -->
+                      <p style="color: white">Divisi VII <br> Jalan Permukiman</p>
+                    </a>
+                  </li>
+
+                  <!-- Divisi VIII -->
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi VIII -->
+                      <p style="color: white">Divisi VIII <br> Drainase Jalan</p>
+                    </a>
+                  </li>
+
+                  <!-- Divisi IX -->
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-gear text-warning"></i> <!-- Ikon untuk Divisi IX -->
+                      <p style="color: white">Divisi IX <br> Jaringan Pipa</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+            {{-- ========================== --}}
+
+
+            {{-- ===================================== MENU DATA SHST BLORA   --}}
+            <li class="nav-item">
+                <a href="/beshstkabblora" class="nav-link">
+                    <!-- Ikon untuk SHST Kab Blora -->
+                    <i class="nav-icon bi bi-file-earmark-text" style="color: white"></i> <!-- Ikon untuk SHST Kab Blora -->
+                    <p style="color: white">
+                      SHST Kab Blora
+                      <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                      <i class="nav-arrow bi bi-chevron-right"></i>
+                    </p>
+                  </a>
+
+
+                {{-- <ul class="nav nav-treeview">
+                  <!-- Satuan Harga Material -->
+
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Satuan Harga Material</p>
+                    </a>
+                  </li>
+
+                </ul> --}}
+              </li>
+
+            {{-- ========================== --}}
+
+            {{-- ===================================== MENU DATA AHSP BINA MARGA    --}}
+            <li class="nav-item">
+                {{-- <a href="/404" class="nav-link">
+                    <i class="nav-icon bi bi-archive" style="color: white;"></i> <!-- Ikon alternatif untuk AHSP Bina Marga -->
+                    <p style="color: white">
+                      AHSP Bina Marga
+                    </p>
+                  </a> --}}
+
+
+                {{-- <ul class="nav nav-treeview">
+                  <!-- Satuan Harga Material -->
+
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Satuan Harga Material</p>
+                    </a>
+                  </li>
+
+                </ul> --}}
+              </li>
+
+            {{-- ========================== --}}
+
+            {{-- ===================================== MENU DATA AHSP SUMBER DAYA AIR    --}}
+            <li class="nav-item">
+                {{-- <a href="/404" class="nav-link">
+                    <!-- Ikon untuk AHSP Sumber Daya Air -->
+                    <i class="nav-icon bi bi-droplet" style="color: white;"></i> <!-- Ikon untuk Sumber Daya Air -->
+                    <p style="color: white">
+                      AHSP SDA
+                    </p>
+                  </a> --}}
+
+                {{-- <ul class="nav nav-treeview">
+                  <!-- Satuan Harga Material -->
+
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Satuan Harga Material</p>
+                    </a>
+                  </li>
+
+                </ul> --}}
+              </li>
+
+            {{-- ========================== --}}
+
+            {{-- ===================================== MENU DATA RANTAI PASOK    --}}
+           <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <!-- Ikon untuk SHST Kab Blora -->
+                    <i class="nav-icon bi bi-file-earmark-text" style="color: white"></i> <!-- Ikon untuk SHST Kab Blora -->
+                    <p style="color: white">
+                      Rantai Pasok
+                      <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                      <i class="nav-arrow bi bi-chevron-right"></i>
+                    </p>
+                  </a>
+
+
+                <ul class="nav nav-treeview">
+                  <!-- Satuan Harga Material -->
+
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Asuransi Konstruksi</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Supplier Material</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Supplier Peratalan</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/404" class="nav-link">
+                      <i class="nav-icon bi bi-archive text-warning"></i> <!-- Ikon untuk Satuan Harga Material -->
+                      <p style="color: white">Toko Bangunan</p>
+                    </a>
+                  </li>
+
+                </ul>
+              </li>
+
+            {{-- ========================== --}}
+
+            <li class="nav-header" style="color: orange;">Peraturan Jakon
+            </li>
+
+            <li class="nav-item">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <!-- Ikon untuk Peraturan -->
+                      <i class="nav-icon bi bi-file-earmark-text" style="color: white;"></i> <!-- Ikon untuk Peraturan -->
+                      <p style="color: white">
+                        Peraturan
+                        <!-- Ikon panah kanan (Chevron) -->
+                        <i class="nav-arrow bi bi-chevron-right"></i>
+                      </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Undang-undang -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Undang-undang</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Peraturan Pemerintah -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Peraturan Pemerintah</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Peraturan Presiden -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Peraturan Presiden</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Peraturan Menteri -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Peraturan Menteri</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Keputusan Menteri -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Keputusan Menteri</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Surat Edaran Menteri -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Surat Edaran Menteri</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Referensi -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Referensi</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Peraturan Daerah -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Peraturan Daerah</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Peraturan Gubernur -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Peraturan Gubernur</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Peraturan Walikota/Bupati -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Peraturan Walikota/Bupati</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/404" class="nav-link">
+                          <!-- Ikon untuk Surat Keputusan -->
+                          <i class="nav-icon bi bi-file-earmark-text text-warning"></i>
+                          <p style="color: white">Surat Keputusan</p>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </li>
+
+
+        {{-- ========================== --}}
+
+            <li class="nav-header" style="color: orange;">Pengaturan
+            </li>
+
+
+
+            <li class="nav-item">
+                {{-- <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer" style="color: white"></i>
+                  <p style="color: white">
+                    Pengaturan Data
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a> --}}
+
+
+                <ul class="nav nav-treeview">
+
+
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer" style="color: white"></i>
+                  <p style="color: white">
+                    Daftar Akun
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                  <li class="nav-item">
+                    <a href="/allakun" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-person-gear text-warning"></i>
+                      <p style="color: white;">Semua Akun</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/allsuperadmin" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-person-gear text-warning"></i>
+                      <p style="color: white;">Super Admin</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/alladmin" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-person-fill text-warning"></i>
+                      <p style="color: white;">Admin</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/allpekerja" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i>
+                      <p style="color: white;">Pekerja</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/allsupppabrik" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-truck-front-fill text-warning"></i>
+                      <p style="color: white;">Supplier Pabrik</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/allsuppperalatan" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-tools text-warning"></i>
+                      <p style="color: white;">Supplier Peralatan</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/allsupptokobangunan" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-shop text-warning"></i>
+                      <p style="color: white;">Supplier Toko Bangunan</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/alllsppenerbit" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-journal-text text-warning"></i>
+                      <p style="color: white;">LSP Penerbit</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/alldinas" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-building text-warning"></i>
+                      <p style="color: white;">Dinas</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              @endcan
+              {{-- GEMBOK --}}
+
+{{-- super admin endcan --}}
+{{--
+              <li class="nav-header" style="color: white;" >ADMINISTRATOR DATABASE</li>
+
+            <li class="nav-item">
+
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-house-door" style="color: white;"></i>
+                  <p style="color: white">
+                    Admin
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+              <ul class="nav nav-treeview">
+
+                  <li class="nav-item">
+                      <a href="/404" class="nav-link">
+                        <i class="nav-icon bi bi-house-door text-warning"></i>
+                        <p style="color: white">Admin</p>
+                      </a>
+                    </li>
+
+
+              </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon bi bi-newspaper text-success"></i> <!-- Ikon untuk Berita -->
+                    <p style="color: white">
+                        Berita
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon bi bi-newspaper" style="color: white"></i>
+
+                    <p style="color: white">
+                        Kelembagaan
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon bi bi-table text-success"></i> <!-- Ikon untuk Data Jakon -->
+                    <p style="color: white">
+                        Data Jakon
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon bi bi-people text-success"></i> <!-- Ikon untuk Pembinaan -->
+                    <p style="color: white">
+                        Pembinaan
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon bi bi-eye text-success"></i> <!-- Ikon untuk Pengawasan -->
+                    <p style="color: white">
+                        Pengawasan
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon bi bi-clipboard-check text-success"></i> <!-- Ikon untuk AHSP -->
+                    <p style="color: white">
+                        AHSP
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon bi bi-arrow-repeat text-success"></i> <!-- Ikon untuk Rantai Pasok -->
+                    <p style="color: white">
+                        Rantai Pasok
+                    </p>
+                </a>
+            </li> --}}
+
+
+            {{-- ---------------------------------------------  --}}
+
+            <li class="nav-header" style="color: red;">Logout
+                                            <div style="height:1px; background:#ffa500; opacity:0.5; margin-top:6px;"></div>
+
+            </li>
+                <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+                    @csrf
+
+                    <button type="submit" class="button-merah logout-trigger">
+                        <i class="bi bi-door-open"></i>
+                        <span>Logout</span>
+                    </button>
+                </form>
+            </ul>
+            <!--end::Sidebar Menu-->
+          </nav>
+        </div>
+        <!--end::Sidebar Wrapper-->
+      </aside>
+      <!--end::Sidebar-->
+
+      {{-- ============================================================
+     MODAL LOGOUT – PUTIH + HIJAU KHAS BLORA
+     ============================================================ --}}
+<div class="logout-modal-overlay" id="logoutModal">
+    <div class="logout-modal">
+
+        <div class="logout-modal-header">
+
+            <img
+                src="/assets/icon/jakonnew.png"
+                alt="Logo"
+                class="logout-modal-logo"
+                width="100px;"
+            >
+
+            <h3 class="logout-modal-title">
+                Logout ?
+            </h3>
+        </div>
+
+        <div class="logout-modal-body">
+
+            <p class="logout-modal-message">
+                Yakin ingin keluar dari sistem?
+            </p>
+
+        </div>
+
+        <div class="logout-modal-footer">
+
+            <button
+                type="button"
+                class="button-modern"
+                id="cancelLogout"
+            >
+                <i class="bi bi-x-lg"></i>
+                <span>
+                    Batal
+                </span>
+            </button>
+
+            <button
+                type="button"
+                class="button-merah"
+                id="confirmLogout"
+            >
+                <i class="bi bi-box-arrow-right"></i>
+                <span>
+                    Logout
+                </span>
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Toggle sub-menu saat item Dashboard diklik
+    $(".nav-item > a").click(function (e) {
+      // Pastikan kita hanya menampilkan sub-menu yang terkait dengan item yang diklik
+      var $this = $(this).next(".nav-treeview");
+
+      // Cek apakah sub-menu sudah terbuka
+      if ($this.is(":visible")) {
+        $this.slideUp(); // Tutup jika terbuka
+      } else {
+        $(".nav-treeview").slideUp(); // Tutup semua sub-menu lainnya
+        $this.slideDown(); // Buka sub-menu yang diklik
+      }
+    });
+</script>
+
+<script>
+(function() {
+    'use strict';
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        var logoutModal = document.getElementById('logoutModal');
+        var cancelBtn   = document.getElementById('cancelLogout');
+        var confirmBtn  = document.getElementById('confirmLogout');
+        var logoutForm  = document.getElementById('logoutForm');
+
+        // Intercept klik tombol Logout → tampilkan modal
+        var trigger = document.querySelector('.logout-trigger');
+        if (trigger && logoutForm) {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (logoutModal) {
+                    logoutModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        }
+
+        // Tombol Batal → tutup modal
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', function() {
+                logoutModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Tombol Konfirmasi → submit form logout
+        if (confirmBtn && logoutForm) {
+            confirmBtn.addEventListener('click', function() {
+                logoutForm.submit();
+            });
+        }
+
+        // Klik overlay → tutup
+        if (logoutModal) {
+            logoutModal.addEventListener('click', function(e) {
+                if (e.target === logoutModal) {
+                    logoutModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // ESC → tutup
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && logoutModal && logoutModal.classList.contains('active')) {
+                logoutModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+    });
+})();
+</script>

@@ -348,74 +348,183 @@ return redirect()->back()->with('error', 'Item not found');
     // MENU BACKEND DATA ALL SKK TENAGA KERJA SELURUH KABUPATEN BLORA JAWA TENGAH
 // --------------------------------------------------------------------------------------------------------------------
 
-    public function beskkall(Request $request)
+ public function beskkall(Request $request)
     {
-            $perPage = $request->input('perPage', 10);
-            $search = $request->input('search');
+        $perPage = $request->input('perPage', 5);
+        $search  = $request->input('search');
 
-            $query = skktenagakerjablora::query();
+        // ── Filter baru ──
+        $tahunInput  = $request->input('tahun_input');
+        $tahunBimtek = $request->input('tahun_bimtek');
 
-            if ($search) {
-                $query->where('nama', 'LIKE', "%{$search}%")
-                    ->orWhere('alamat', 'LIKE', "%{$search}%")
-                    ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
-                    ->orWhere('tanggalterbit', 'LIKE', "%{$search}%")
-                    ->orWhere('tanggalhabis', 'LIKE', "%{$search}%")
-                    ->orWhere('statusterbit', 'LIKE', "%{$search}%")
-        // -------------------------------------------------------------------------------
-                    ->orWhereHas('namasekolah', function ($q) use ($search) {
-                        $q->where('namasekolah', 'LIKE', "%{$search}%");
-                    })
+        $query = skktenagakerjablora::query();
 
-                    ->orWhereHas('jenjangpendidikan', function ($q) use ($search) {
-                        $q->where('jenjangpendidikan', 'LIKE', "%{$search}%");
-                    })
+        // ── Search (SAMA seperti aslinya) ──
+        if ($search) {
+            $query->where('nama', 'LIKE', "%{$search}%")
+                ->orWhere('alamat', 'LIKE', "%{$search}%")
+                ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
+                ->orWhere('tanggalterbit', 'LIKE', "%{$search}%")
+                ->orWhere('tanggalhabis', 'LIKE', "%{$search}%")
+                ->orWhere('statusterbit', 'LIKE', "%{$search}%")
+                ->orWhereHas('namasekolah', function ($q) use ($search) {
+                    $q->where('namasekolah', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('jenjangpendidikan', function ($q) use ($search) {
+                    $q->where('jenjangpendidikan', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('jabatankerja', function ($q) use ($search) {
+                    $q->where('jabatankerja', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('jenjang', function ($q) use ($search) {
+                    $q->where('jenjang', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('lpspenerbit', function ($q) use ($search) {
+                    $q->where('lpspenerbit', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('jurusan', function ($q) use ($search) {
+                    $q->where('jurusan', 'LIKE', "%{$search}%");
+                });
+        }
 
-                    ->orWhereHas('jabatankerja', function ($q) use ($search) {
-                        $q->where('jabatankerja', 'LIKE', "%{$search}%");
-                    })
+        // ── Filter Tahun Input (dari created_at) ──
+        if ($tahunInput) {
+            $query->whereYear('created_at', $tahunInput);
+        }
 
-                    ->orWhereHas('jenjang', function ($q) use ($search) {
-                        $q->where('jenjang', 'LIKE', "%{$search}%");
-                    })
+        // ── Filter Tahun Bimtek ──
+        if ($tahunBimtek) {
+            $query->where('tahunbimtek', $tahunBimtek);
+        }
 
-                    ->orWhereHas('lpspenerbit', function ($q) use ($search) {
-                        $q->where('lpspenerbit', 'LIKE', "%{$search}%");
-                    })
+        $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
-                    // ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-                    //     $q->where('namaasosiasi', 'LIKE', "%{$search}%");
-                    // })
-
-                    ->orWhereHas('jurusan', function ($q) use ($search) {
-                        $q->where('jurusan', 'LIKE', "%{$search}%");
-                    });
-            }
-
-$data = $query->orderBy('created_at', 'desc')->paginate($perPage);
-
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('backend.04_datajakon.05_alltkkblora.partials.table', compact('data'))->render()
-                ]);
-            }
-
-
-                $datajumlahorang = skktenagakerjablora::select(DB::raw('LOWER(TRIM(nama)) as nama'))
-                ->distinct()
-                ->count('nama');
-            $datajumlahsertifikat = skktenagakerjablora::count();
-
-
-            return view('backend.04_datajakon.05_alltkkblora.index', [
-                'title' => 'Semua TKK Kabupaten Blora',
-                'data' => $data,
-                'datajumlah' => $datajumlahorang,
-                'datajumlahsertifikat' => $datajumlahsertifikat,
-                'perPage' => $perPage,
-                'search' => $search
+        // ── AJAX (partial untuk search/filter) ──
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('backend.04_datajakon.05_alltkkblora.partials.table', compact('data'))->render()
             ]);
+        }
+
+        // ── Counter ──
+        $datajumlahorang = skktenagakerjablora::select(DB::raw('LOWER(TRIM(nama)) as nama'))
+            ->distinct()
+            ->count('nama');
+        $datajumlahsertifikat = skktenagakerjablora::count();
+
+        // ── List tahun untuk dropdown filter ──
+        $listTahunInput = skktenagakerjablora::selectRaw('YEAR(created_at) as tahun')
+            ->whereNotNull('created_at')
+            ->distinct()
+            ->orderByDesc('tahun')
+            ->pluck('tahun');
+
+        $listTahunBimtek = skktenagakerjablora::select('tahunbimtek')
+            ->whereNotNull('tahunbimtek')
+            ->distinct()
+            ->orderByDesc('tahunbimtek')
+            ->pluck('tahunbimtek');
+
+        // ── Data dropdown untuk modal Tambah Data ──
+        $namasekolahList       = namasekolah::all();
+        $jenjangpendidikanList = jenjangpendidikan::all();
+        $jurusanList           = jurusan::all();
+        $jabatankerjaList      = jabatankerja::all();
+        $jenjangList           = jenjang::all();
+        $lpspenerbitList       = lpspenerbit::all();
+        $asosiasimasjakiList   = asosiasimasjaki::all();
+
+        return view('backend.04_datajakon.05_alltkkblora.index', [
+            'title'                 => 'Semua TKK Kabupaten Blora',
+            'data'                  => $data,
+            'datajumlah'            => $datajumlahorang,
+            'datajumlahsertifikat'  => $datajumlahsertifikat,
+            'perPage'               => $perPage,
+            'search'                => $search,
+            'tahunInput'            => $tahunInput,
+            'tahunBimtek'           => $tahunBimtek,
+            'listTahunInput'        => $listTahunInput,
+            'listTahunBimtek'       => $listTahunBimtek,
+            'namasekolahList'       => $namasekolahList,
+            'jenjangpendidikanList' => $jenjangpendidikanList,
+            'jurusanList'           => $jurusanList,
+            'jabatankerjaList'      => $jabatankerjaList,
+            'jenjangList'           => $jenjangList,
+            'lpspenerbitList'       => $lpspenerbitList,
+            'asosiasimasjakiList'   => $asosiasimasjakiList,
+        ]);
     }
+
+
+
+//     public function beskkall(Request $request)
+//     {
+//             $perPage = $request->input('perPage', 10);
+//             $search = $request->input('search');
+
+//             $query = skktenagakerjablora::query();
+
+//             if ($search) {
+//                 $query->where('nama', 'LIKE', "%{$search}%")
+//                     ->orWhere('alamat', 'LIKE', "%{$search}%")
+//                     ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
+//                     ->orWhere('tanggalterbit', 'LIKE', "%{$search}%")
+//                     ->orWhere('tanggalhabis', 'LIKE', "%{$search}%")
+//                     ->orWhere('statusterbit', 'LIKE', "%{$search}%")
+//         // -------------------------------------------------------------------------------
+//                     ->orWhereHas('namasekolah', function ($q) use ($search) {
+//                         $q->where('namasekolah', 'LIKE', "%{$search}%");
+//                     })
+
+//                     ->orWhereHas('jenjangpendidikan', function ($q) use ($search) {
+//                         $q->where('jenjangpendidikan', 'LIKE', "%{$search}%");
+//                     })
+
+//                     ->orWhereHas('jabatankerja', function ($q) use ($search) {
+//                         $q->where('jabatankerja', 'LIKE', "%{$search}%");
+//                     })
+
+//                     ->orWhereHas('jenjang', function ($q) use ($search) {
+//                         $q->where('jenjang', 'LIKE', "%{$search}%");
+//                     })
+
+//                     ->orWhereHas('lpspenerbit', function ($q) use ($search) {
+//                         $q->where('lpspenerbit', 'LIKE', "%{$search}%");
+//                     })
+
+//                     // ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+//                     //     $q->where('namaasosiasi', 'LIKE', "%{$search}%");
+//                     // })
+
+//                     ->orWhereHas('jurusan', function ($q) use ($search) {
+//                         $q->where('jurusan', 'LIKE', "%{$search}%");
+//                     });
+//             }
+
+// $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+//             if ($request->ajax()) {
+//                 return response()->json([
+//                     'html' => view('backend.04_datajakon.05_alltkkblora.partials.table', compact('data'))->render()
+//                 ]);
+//             }
+
+
+//                 $datajumlahorang = skktenagakerjablora::select(DB::raw('LOWER(TRIM(nama)) as nama'))
+//                 ->distinct()
+//                 ->count('nama');
+//             $datajumlahsertifikat = skktenagakerjablora::count();
+
+
+//             return view('backend.04_datajakon.05_alltkkblora.index', [
+//                 'title' => 'Semua TKK Kabupaten Blora',
+//                 'data' => $data,
+//                 'datajumlah' => $datajumlahorang,
+//                 'datajumlahsertifikat' => $datajumlahsertifikat,
+//                 'perPage' => $perPage,
+//                 'search' => $search
+//             ]);
+//     }
 
     // TKK DPUPR BLORA SHOW
 
@@ -878,6 +987,85 @@ public function beskkallbloracreatenew(Request $request)
 
     // Redirect ke halaman daftar (sesuaikan dengan route yang benar)
     return redirect('/beskkallblora');
+}
+
+public function beskkdpuprblora(Request $request)
+{
+    $perPage = $request->input('perPage', 5);
+    $search = $request->input('search', '');
+    $page = $request->input('page', 1);
+
+    // Cache key yang konsisten
+    $cacheKey = "blora_dpupr_tkk_" . md5("page_{$page}_search_{$search}");
+
+    if ($page == 1) {
+        Cache::forget($cacheKey);
+    }
+
+    $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+        $query = skktenagakerjablora::query()
+            ->where('asosiasimasjaki_id', 99)
+            ->orderBy('created_at', 'desc'); // <
+
+        if (!empty($search)) {
+            $query->where(function ($q) use ($search) {
+                $q->where('nama', 'LIKE', "%{$search}%")
+                  ->orWhere('alamat', 'LIKE', "%{$search}%")
+                  ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
+                  ->orWhere('tanggalterbit', 'LIKE', "%{$search}%")
+                  ->orWhere('tanggalhabis', 'LIKE', "%{$search}%")
+                  ->orWhere('statusterbit', 'LIKE', "%{$search}%")
+                  ->orWhereHas('namasekolah', function ($q) use ($search) {
+                      $q->where('namasekolah', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('jenjangpendidikan', function ($q) use ($search) {
+                      $q->where('jenjangpendidikan', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('jabatankerja', function ($q) use ($search) {
+                      $q->where('jabatankerja', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('jenjang', function ($q) use ($search) {
+                      $q->where('jenjang', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('lpspenerbit', function ($q) use ($search) {
+                      $q->where('lpspenerbit', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('jurusan', function ($q) use ($search) {
+                      $q->where('jurusan', 'LIKE', "%{$search}%");
+                  });
+            });
+        }
+
+        return $query->get();
+    });
+
+    $total = count($allData);
+    $items = collect($allData)->forPage($page, $perPage)->values();
+    $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
+        'path' => request()->url(),
+        'query' => request()->query()
+    ]);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.04_datajakon.04_tkkdpupr.partials.table', compact('data'))->render()
+        ]);
+    }
+
+
+        $datajumlahorang = skktenagakerjablora::select(DB::raw('LOWER(TRIM(nama)) as nama'))
+        ->distinct()
+        ->count('nama');
+    $datajumlahsertifikat = skktenagakerjablora::count();
+
+    return view('backend.04_datajakon.04_tkkdpupr.tkkblora', [
+        'title' => 'TKK Diselenggarakan DPUPR Kabupaten Blora',
+        'data' => $data,
+        'datajumlah' => $datajumlahorang,
+        'datajumlahsertifikat' => $datajumlahsertifikat,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
 }
 
 }

@@ -1144,6 +1144,57 @@ public function updateKlasifikasi(Request $request, $id)
     return redirect()->back()->with('update', 'Data Berhasil Di Update!');
 }
 
+public function bujkstatistikblora(Request $request)
+{
+    // ==========================================
+    // 1. TOTAL BUJK KONTRAKTOR & KONSULTAN
+    // ==========================================
+    $totalKontraktor = bujkkontraktor::count();
+    $totalKonsultan  = bujkkonsultan::count();
+    $totalAsosiasi   = asosiasimasjaki::count();
+
+    // ==========================================
+    // 2. STATISTIK PER ASOSIASI
+    // (berapa BUJK kontraktor + konsultan di tiap asosiasi)
+    // ==========================================
+    $asosiasiList = asosiasimasjaki::select('id', 'namaasosiasi')->get();
+
+    $statistikAsosiasi = $asosiasiList->map(function ($a) {
+        $kontraktor = bujkkontraktor::where('asosiasimasjaki_id', $a->id)->count();
+        $konsultan  = bujkkonsultan::where('asosiasimasjaki_id', $a->id)->count();
+        return [
+            'id'          => $a->id,
+            'namaasosiasi'=> $a->namaasosiasi ?? '-',
+            'kontraktor'  => $kontraktor,
+            'konsultan'   => $konsultan,
+            'total'       => $kontraktor + $konsultan,
+        ];
+    });
+
+    // ==========================================
+    // 3. DETAIL BUJK PER ASOSIASI (untuk dropdown)
+    // ==========================================
+    $asosiasiTerpilihId = $request->input('asosiasi_id');
+
+    $detailKontraktor = collect();
+    $detailKonsultan  = collect();
+
+    if ($asosiasiTerpilihId) {
+        $detailKontraktor = bujkkontraktor::where('asosiasimasjaki_id', $asosiasiTerpilihId)->get();
+        $detailKonsultan  = bujkkonsultan::where('asosiasimasjaki_id', $asosiasiTerpilihId)->get();
+    }
+
+    return view('backend.04_datajakon.00_statistik.01_bujk', [
+        'title'             => 'Statistik BUJK & Asosiasi Jasa Konstruksi',
+        'totalKontraktor'   => $totalKontraktor,
+        'totalKonsultan'    => $totalKonsultan,
+        'totalAsosiasi'     => $totalAsosiasi,
+        'statistikAsosiasi' => $statistikAsosiasi,
+        'asosiasiTerpilihId'=> $asosiasiTerpilihId,
+        'detailKontraktor'  => $detailKontraktor,
+        'detailKonsultan'   => $detailKonsultan,
+    ]);
+}
 
 }
 

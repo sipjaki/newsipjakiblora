@@ -521,11 +521,6 @@
                 <li class="nav-header" style="color: green;">Master Data
                 </li>
 
-            {{-- ===================================== MENU BERITA  --}}
-
-
-            {{-- ========================== --}}
-
             {{-- ===================================== MENU DATA JAKON   --}}
 
             <li class="nav-item">
@@ -542,51 +537,96 @@
                 <ul class="nav nav-treeview">
 
                         <div style="margin-bottom: 10px; margin-top: 10px;">
-    <p style="
-        font-size: 13px;
-        margin-left: 12px;
-        margin-bottom: -5px;
-        font-weight: bold;
-        color: #000000;
-        background-color: #ffd100;
-        display: inline-block;
-        padding: 4px 12px;
-        border-radius: 8px;
-        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    ">
-        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
-    </p>
-</div>
+                    <p style="
+                        font-size: 13px;
+                        margin-left: 12px;
+                        margin-bottom: -5px;
+                        font-weight: bold;
+                        color: #000000;
+                        background-color: #ffd100;
+                        display: inline-block;
+                        padding: 4px 12px;
+                        border-radius: 8px;
+                        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+                    ">
+                        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Menu BUJK
+                    </p>
+                    </div>
+
+                    <li class="nav-item">
+                        <a href="/bebujkkonstruksiblora" class="nav-link">
+                            <i class="nav-icon bi bi-building text-warning"></i>
+                            <p style="color: white">Konstruksi</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/bebujkkonsultanblora" class="nav-link">
+                            <i class="nav-icon bi bi-person-workspace text-warning"></i>
+                            <p style="color: white">Konsultasi Konstruksi</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/beasosiasi" class="nav-link">
+                            <i class="nav-icon bi bi-people-fill text-warning"></i>
+                            <p style="color: white">Asosiasi</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/bujkstatistikblora" class="nav-link">
+                            <i class="nav-icon bi bi-database text-warning"></i>
+                            <p style="color: white">Statistik</p>
+                        </a>
+                    </li>
+                    
+                        <div style="margin-bottom: 10px; margin-top: 10px;">
+                    <p style="
+                        font-size: 13px;
+                        margin-left: 12px;
+                        margin-bottom: -5px;
+                        font-weight: bold;
+                        color: #000000;
+                        background-color: #ffd100;
+                        display: inline-block;
+                        padding: 4px 12px;
+                        border-radius: 8px;
+                        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+                    ">
+                        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Menu Tenaga Kerja
+                    </p>
+                    </div>
                   <!-- Badan Usaha Jasa Konstruksi -->
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                     <a href="/bebujkjakon" class="nav-link">
                       <i class="nav-icon bi bi-building text-warning"></i> <!-- Ikon untuk Badan Usaha Jasa Konstruksi -->
                       <p style="color: white">BUJK</p>
                     </a>
-                  </li>
+                  </li> --}}
 
                   <!-- Tenaga Kerja Konstruksi -->
                   <li class="nav-item">
-                    <a href="/beskkdpupr" class="nav-link">
+                    <a href="/beskkdpuprblora" class="nav-link">
                       <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
-                      <p style="color: white">TKK DPUPR (2024) </p>
+                      <p style="color: white">TKK (2024) </p>
                     </a>
                   </li>
 
-                  <li class="nav-item">
+                <li class="nav-item">
                     <a href="/beagendaskktkk" class="nav-link">
-                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
-                      <p style="color: white">TKK DPUPR ( > 2025) </p>
+                        <i class="nav-icon bi bi-person-workspace text-warning"></i>
+                        <p style="color: white">TKK DPUPR <br> (2025 – Sekarang)</p>
                     </a>
-                  </li>
+                </li>
 
                   <!-- Tenaga Kerja Konstruksi (Duplicate) -->
                   <li class="nav-item">
-                    <a href="/beskkallblora" class="nav-link">
-                      <i class="nav-icon bi bi-person-workspace text-warning"></i> <!-- Ikon untuk Tenaga Kerja Konstruksi -->
-                      <p style="color: white">Semua TKK</p>
-                    </a>
-                  </li>
+                        <a href="/beskkallblora" class="nav-link">
+                            <i class="nav-icon bi bi-database-fill text-warning"></i>
+                            <p style="color: white">Data Induk <br> Semua TKK</p>
+                        </a>
+                    </li>
 
                   <!-- Profil Paket Pekerjaan Konstruksi -->
                   <li class="nav-item">
@@ -597,20 +637,23 @@
                   </li>
 
                                           <div style="margin-bottom: 10px; margin-top: 10px;">
-    <p style="
-        font-size: 13px;
-        margin-left: 12px;
-        margin-bottom: -5px;
-        font-weight: bold;
-        color: #000000;
-        background-color: #ffd100;
-        display: inline-block;
-        padding: 4px 12px;
-        border-radius: 8px;
-        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    ">
-        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan <br> SKK Tenaga Kerja
-    </p>
+   <span style="
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f97316, #c2410c);
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
+    margin-left: 12px;
+    margin-bottom: 8px;
+">
+    <i class="bi bi-grid-1x2-fill"></i>
+    Pengaturan
+</span>
 </div>
 <li class="nav-item">
     <a href="/settingssekolah" class="nav-link">
