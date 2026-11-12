@@ -1,298 +1,220 @@
-@include('backend.00_administrator.00_baganterpisah.01_header')
+{{-- ============================================================ --}}
+{{-- MODAL: Buat Data Baru Tertib Pemanfaatan                      --}}
+{{-- ============================================================ --}}
+<div class="modal fade" id="createTertibPemanfaatanModal" tabindex="-1"
+     aria-labelledby="createTertibPemanfaatanModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"
+         style="max-width: 75%; width: 75%;">
+        <div class="modal-content">
 
-<!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
-    <div class="app-wrapper">
-{{-- ---------------------------------------------------------------------- --}}
-
-@include('backend.00_administrator.00_baganterpisah.04_navbar')
-@include('backend.00_style.01_cssdashboard.style')
-@include('button')
-{{-- ---------------------------------------------------------------------- --}}
-
-      @include('backend.00_administrator.00_baganterpisah.03_sidebar')
-
-      <!--begin::App Main-->
-      <main class="app-main">
-        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
-
-        <!--begin::App Content Header-->
-        <div class="app-content-header">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row">
-
-                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
-                @include('backend.00_administrator.00_baganterpisah.11_alert')
+            {{-- HEADER --}}
+            <div class="modal-header">
+                <h5 class="modal-title" id="createTertibPemanfaatanModalLabel">
+                    <i class="bi bi-plus-circle"></i>
+                    Tambah Data Baru Pemanfaatan Jasa Konstruksi
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <!--end::Row-->
-          </div>
-          <!--end::Container-->
-        </div>
 
-        <br>
+            {{-- FORM --}}
+            <form action="{{ route('betertibjakonpemanfaatanupdatecreatenew') }}" method="POST"
+                  enctype="multipart/form-data" id="formCreateTertibPemanfaatan">
+                @csrf
 
-        <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row" style="margin-right: 10px; margin-left:10px;">
-                <!-- /.card -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
+                <div class="modal-body">
+
+                    @if ($errors->any())
+                        <div class="modal-alert-error">
+                            <strong>
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                                Terdapat {{ $errors->count() }} kesalahan:
+                            </strong>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <div class="row">
+
+                        {{-- KOLOM KIRI --}}
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="penyediastatustertibjakon_id" class="form-label-modern">
+                                    <i class="bi bi-diagram-3-fill"></i>
+                                    Sektor <span style="color:#dc2626;">*</span>
+                                </label>
+                                <select id="penyediastatustertibjakon_id"
+                                        name="penyediastatustertibjakon_id"
+                                        class="form-select @error('penyediastatustertibjakon_id') is-invalid @enderror">
+                                    <option value="">-- Pilih Sektor --</option>
+                                    @if(isset($datapenyedia))
+                                        @foreach ($datapenyedia as $penyedia)
+                                            <option value="{{ $penyedia->id }}"
+                                                {{ old('penyediastatustertibjakon_id') == $penyedia->id ? 'selected' : '' }}>
+                                                {{ $penyedia->penyedia }}
+                                            </option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                                @error('penyediastatustertibjakon_id')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="namapekerjaan" class="form-label-modern">
+                                    <i class="bi bi-briefcase-fill"></i>
+                                    Nama Pekerjaan <span style="color:#dc2626;">*</span>
+                                </label>
+                                <input type="text" id="namapekerjaan" name="namapekerjaan"
+                                       class="form-control @error('namapekerjaan') is-invalid @enderror"
+                                       value="{{ old('namapekerjaan') }}"
+                                       placeholder="Masukkan nama pekerjaan">
+                                @error('namapekerjaan')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="namabangunan" class="form-label-modern">
+                                    <i class="bi bi-house-fill"></i>
+                                    Nama Bangunan <span style="color:#dc2626;">*</span>
+                                </label>
+                                <input type="text" id="namabangunan" name="namabangunan"
+                                       class="form-control @error('namabangunan') is-invalid @enderror"
+                                       value="{{ old('namabangunan') }}"
+                                       placeholder="Masukkan nama bangunan">
+                                @error('namabangunan')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nomorkontrak" class="form-label-modern">
+                                    <i class="bi bi-file-earmark-text-fill"></i>
+                                    Nomor Kontrak <span style="color:#dc2626;">*</span>
+                                </label>
+                                <input type="text" id="nomorkontrak" name="nomorkontrak"
+                                       class="form-control @error('nomorkontrak') is-invalid @enderror"
+                                       value="{{ old('nomorkontrak') }}"
+                                       placeholder="Masukkan nomor kontrak">
+                                @error('nomorkontrak')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        {{-- KOLOM KANAN --}}
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="lokasi" class="form-label-modern">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    Lokasi <span style="color:#dc2626;">*</span>
+                                </label>
+                                <input type="text" id="lokasi" name="lokasi"
+                                       class="form-control @error('lokasi') is-invalid @enderror"
+                                       value="{{ old('lokasi') }}"
+                                       placeholder="Masukkan lokasi">
+                                @error('lokasi')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tanggalpembangunan" class="form-label-modern">
+                                    <i class="bi bi-calendar-check-fill"></i>
+                                    Tanggal Pembangunan <span style="color:#dc2626;">*</span>
+                                </label>
+                                <input type="date" id="tanggalpembangunan" name="tanggalpembangunan"
+                                       class="form-control @error('tanggalpembangunan') is-invalid @enderror"
+                                       value="{{ old('tanggalpembangunan') }}">
+                                @error('tanggalpembangunan')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tanggalpemanfaatan" class="form-label-modern">
+                                    <i class="bi bi-calendar-event-fill"></i>
+                                    Tanggal Pemanfaatan <span style="color:#dc2626;">*</span>
+                                </label>
+                                <input type="date" id="tanggalpemanfaatan" name="tanggalpemanfaatan"
+                                       class="form-control @error('tanggalpemanfaatan') is-invalid @enderror"
+                                       value="{{ old('tanggalpemanfaatan') }}">
+                                @error('tanggalpemanfaatan')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="umurbangunan" class="form-label-modern">
+                                    <i class="bi bi-hourglass-split"></i>
+                                    Umur Bangunan <span style="color:#dc2626;">*</span>
+                                </label>
+                                <select id="umurbangunan" name="umurbangunan"
+                                        class="form-select @error('umurbangunan') is-invalid @enderror">
+                                    <option value="">-- Pilih Umur Bangunan --</option>
+                                    @for ($i = 1; $i <= 10; $i++)
+                                        <option value="{{ $i }} Tahun"
+                                            {{ old('umurbangunan') == "$i Tahun" ? 'selected' : '' }}>
+                                            {{ $i }} Tahun
+                                        </option>
+                                    @endfor
+                                    <option value="Lebih dari 10 Tahun"
+                                        {{ old('umurbangunan') == 'Lebih dari 10 Tahun' ? 'selected' : '' }}>
+                                        Lebih dari 10 Tahun
+                                    </option>
+                                </select>
+                                @error('umurbangunan')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
                     </div>
-
-                           {{-- ======================================================= --}}
-
-        <div class="card card-primary card-outline mb-6">
-            <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/betertibjakonpemanfaatan">
-                    <button class="button-newvalidasi">
-                    <!-- Ikon Kembali -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" style="margin-right: 8px;">
-                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-               </svg>
-                    Kembali
-                </button>
-            </a>
-        </div>
-        <hr>
-
-
-        {{-- ======================================================= --}}
-                    <div class="col-md-12">
-                        <!--begin::Quick Example-->
-
-                        <form action="{{ route('betertibjakonpemanfaatanupdatecreatenew') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Kolom Kiri -->
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-
-    <label for="penyediastatustertibjakon_id" class="form-label">
-        <i class="bi bi-card-text text-primary"></i> Sektor
-    </label>
-    <select id="penyediastatustertibjakon_id" name="penyediastatustertibjakon_id" class="form-control @error('penyediastatustertibjakon_id') is-invalid @enderror">
-        <option value="">-- Pilih Sektor --</option>
-        @foreach ($datapenyedia as $penyedia)
-        <option value="{{ $penyedia->id }}" {{ (old('penyediastatustertibjakon_id', $data->penyediastatustertibjakon_id ?? '') == $penyedia->id) ? 'selected' : '' }}>
-            {{ $penyedia->penyedia }}
-        </option>
-        @endforeach
-    </select>
-    @error('penyediastatustertibjakon_id')
-    <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="mb-3">
-    <label for="namapekerjaan" class="form-label">
-        <i class="bi bi-clipboard-check-fill text-primary"></i> Nama Pekerjaan
-    </label>
-    <input type="text" id="namapekerjaan" name="namapekerjaan"
-    class="form-control @error('namapekerjaan') is-invalid @enderror"
-    value="{{ old('namapekerjaan', $data->namapekerjaan ?? '') }}">
-    @error('namapekerjaan')
-    <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="mb-3">
-    <label for="namabangunan" class="form-label">
-        <i class="bi bi-house-fill text-primary"></i> Nama Bangunan
-    </label>
-    <input type="text" id="namabangunan" name="namabangunan"
-    class="form-control @error('namabangunan') is-invalid @enderror"
-    value="{{ old('namabangunan', $data->namabangunan ?? '') }}">
-    @error('namabangunan')
-    <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="mb-3">
-    <label for="nomorkontrak" class="form-label">
-        <i class="bi bi-file-earmark-text-fill text-primary"></i> Nomor Kontrak
-    </label>
-    <input type="text" id="nomorkontrak" name="nomorkontrak"
-    class="form-control @error('nomorkontrak') is-invalid @enderror"
-    value="{{ old('nomorkontrak', $data->nomorkontrak ?? '') }}">
-    @error('nomorkontrak')
-    <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-</div>
-
-<div class="col-md-6">
-
-<div class="mb-3">
-    <label for="lokasi" class="form-label">
-        <i class="bi bi-geo-alt-fill text-primary"></i> Lokasi
-    </label>
-    <input type="text" id="lokasi" name="lokasi"
-        class="form-control @error('lokasi') is-invalid @enderror"
-        value="{{ old('lokasi', $data->lokasi ?? '') }}">
-    @error('lokasi')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="mb-3">
-    <label for="tanggalpembangunan" class="form-label">
-        <i class="bi bi-calendar-check-fill text-primary"></i> Tanggal Pembangunan
-    </label>
-    <input type="date" id="tanggalpembangunan" name="tanggalpembangunan"
-        class="form-control @error('tanggalpembangunan') is-invalid @enderror"
-        value="{{ old('tanggalpembangunan', $data->tanggalpembangunan ?? '') }}">
-    @error('tanggalpembangunan')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-<div class="mb-3">
-    <label for="tanggalpemanfaatan" class="form-label">
-        <i class="bi bi-calendar-event-fill text-primary"></i> Tanggal Pemanfaatan
-    </label>
-    <input type="date" id="tanggalpemanfaatan" name="tanggalpemanfaatan"
-        class="form-control @error('tanggalpemanfaatan') is-invalid @enderror"
-        value="{{ old('tanggalpemanfaatan', $data->tanggalpemanfaatan ?? '') }}">
-    @error('tanggalpemanfaatan')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-<div class="mb-3">
-    <label for="umurbangunan" class="form-label">
-        <i class="bi bi-hourglass-split text-primary"></i> Umur Bangunan
-    </label>
-    <select id="umurbangunan" name="umurbangunan"
-        class="form-select @error('umurbangunan') is-invalid @enderror">
-        <option value="">-- Pilih Umur Bangunan --</option>
-        @for ($i = 1; $i <= 10; $i++)
-            <option value="{{ $i }} Tahun"
-                {{ old('umurbangunan', $data->umurbangunan ?? '') == "$i Tahun" ? 'selected' : '' }}>
-                {{ $i }} Tahun
-            </option>
-        @endfor
-        <option value="Lebih dari 10 Tahun"
-            {{ old('umurbangunan', $data->umurbangunan ?? '') == 'Lebih dari 10 Tahun' ? 'selected' : '' }}>
-            Lebih dari 10 Tahun
-        </option>
-    </select>
-    @error('umurbangunan')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
-
-</div>
-
-                    <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                    <div class="flex justify-end">
-                                        <button class="button-hijau" type="button" onclick="openModal()">
-                                            <i class="bi bi-plus-circle-fill"></i>Buat Baru
-                                        </button>
-                                    </div>
-                                    <!-- Modal Konfirmasi -->
-                                    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-                                        <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                                          <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                            Apakah Anda ingin menambahkan data?
-                                        </p>
-
-                                          <!-- Tombol -->
-                                          <div style="display: flex; justify-content: center; gap: 12px;">
-                                            <button id="confirmSubmitBtn"
-                                            onclick="submitForm()"
-                                            style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                            onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                        <!-- Telegram SVG -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
-                                            <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
-                                        </svg>
-                                        Ya
-                                    </button>
-
-                                    <!-- Tombol Batal dengan ikon X (SVG) -->
-                                    <button type="button"
-                                            onclick="closeModal()"
-                                            style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                            onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                                            <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                                        </svg>
-                                        Batal
-                                    </button>
-
-                                          </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Script -->
-                                    <script>
-                                    function openModal() {
-                                        const modal = document.getElementById("confirmModal");
-                                        if (modal) modal.style.display = "flex";
-                                    }
-
-                                    function closeModal() {
-                                        const modal = document.getElementById("confirmModal");
-                                        if (modal) modal.style.display = "none";
-                                    }
-
-                                    </script>
-
-                        </form>
-
-                        <script>
-                            function openModal() {
-                                document.getElementById("confirmModal").style.display = "flex";
-                            }
-
-                            function closeModal() {
-                                document.getElementById("confirmModal").style.display = "none";
-                            }
-
-                            function submitForm() {
-                                document.querySelector('form').submit();
-                            }
-                        </script>
-
-
                 </div>
-                        <!--end::Quick Example-->
-                    </div>
 
-
-                    <br><br>
-
-                    <!-- /.card -->
-                    <!-- Button Section -->
-
-                    </div>
-                    <!--end::Row-->
-                    </div>
+                {{-- FOOTER --}}
+                <div class="modal-footer">
+                    <button type="button"
+                            class="button-modern button-md"
+                            onclick="closeCreatePemanfaatanModal()">
+                        <i class="bi bi-x-lg" style="margin-right: 4px;"></i> Batal
+                    </button>
+                    <button type="button"
+                            class="button-baru button-md"
+                            onclick="openConfirmCreatePemanfaatanModal()">
+                        <i class="bi bi-save" style="margin-right: 5px;"></i>
+                        Simpan
+                    </button>
+                </div>
+            </form>
 
         </div>
-        <!--end::Row-->
+    </div>
+</div>
+
+{{-- ============================================================ --}}
+{{-- MODAL: Konfirmasi Simpan                                     --}}
+{{-- ============================================================ --}}
+<div id="confirmCreatePemanfaatanModal" class="confirm-create-overlay">
+    <div class="confirm-create-box">
+        <div class="confirm-create-icon">
+            <i class="bi bi-question-circle-fill"></i>
         </div>
-                  <!--end::Container-->
-        <!--end::App Content Header-->
-        <!--begin::App Content-->
-          <!--end::App Content-->
+        <h5 class="confirm-create-title">Konfirmasi Simpan</h5>
+        <p class="confirm-create-message">Apakah Anda ingin membuat data baru ini?</p>
 
-        </section>
-        </main>
-      <!--end::App Main-->
+        <div class="confirm-create-actions">
+            <button type="button" class="confirm-btn confirm-btn-no" onclick="closeConfirmCreatePemanfaatanModal()">
+                <i class="bi bi-x-circle-fill"></i> Batal
+            </button>
+            <button type="button" class="confirm-btn confirm-btn-yes" onclick="submitCreatePemanfaatanForm()">
+                <i class="bi bi-check-circle-fill"></i> Ya, Simpan
+            </button>
+        </div>
     </div>
-    </div>
-
-
-      @include('backend.00_administrator.00_baganterpisah.02_footer')
+</div>

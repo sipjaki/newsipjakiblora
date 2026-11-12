@@ -912,16 +912,14 @@
 
             {{-- ===================================== MENU DATA PENGWASAN VERSI 2    --}}
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <!-- Ikon untuk Pengawasan -->
-                  <i class="nav-icon bi bi-eye" style="color: white"></i> <!-- Ikon untuk pengawasan -->
-                  <p style="color: white">
-                    Pengawasan <br> Tertib Usaha
-                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
 
+              <a href="#" class="nav-link">
+  <i class="nav-icon bi bi-shield-check" style="color: white"></i>
+  <p style="color: white">
+    Pengawasan <br> Tertib Usaha
+    <i class="nav-arrow bi bi-chevron-right"></i>
+  </p>
+</a>
 
                 <ul class="nav nav-treeview">
 
@@ -969,24 +967,23 @@
     Pengaturan
 </span>
 </div>
-
 <li class="nav-item">
   <a href="/settingssubklasifikasi" target="_blank" class="nav-link">
-    <i class="nav-icon bi bi-diagram-3 text-warning"></i>
+    <i class="nav-icon bi bi-diagram-2-fill text-warning"></i>
     <p style="color: white;">Sub Klasifikasi</p>
   </a>
 </li>
 
 <li class="nav-item">
   <a href="/settingstandatangan" target="_blank" class="nav-link">
-    <i class="nav-icon bi bi-pen text-warning"></i>
+    <i class="nav-icon bi bi-person-vcard-fill text-warning"></i>
     <p style="color: white;">Tim Teknis <br> Pengawasan </p>
   </a>
 </li>
 
 <li class="nav-item">
-  <a href="/settingstandatangan" target="_blank" class="nav-link">
-    <i class="nav-icon bi bi-pen text-warning"></i>
+  <a href="/settingspenyedia" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-buildings-fill text-warning"></i>
     <p style="color: white;">Penyedia/Sektor</p>
   </a>
 </li>
@@ -997,8 +994,177 @@
               </li>
 
             {{-- ========================== --}}
-            {{-- ===================================== MENU DATA PENGWASAN   --}}
+            {{-- ===================================== MENU DATA PENGWASAN VERSI 2    --}}
             <li class="nav-item">
+              <a href="#" class="nav-link">
+  <i class="nav-icon bi bi-gear-wide-connected" style="color: white"></i>
+  <p style="color: white">
+    Pengawasan <br> Tertib <br> Pemanfaatan
+    <i class="nav-arrow bi bi-chevron-right"></i>
+  </p>
+</a>
+
+
+                <ul class="nav nav-treeview">
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
+                  <!-- Tertib Jasa Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/betertibjakonpemanfaatan" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib Pemanfaatan</p>
+                    </a>
+                  </li>
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+   <span style="
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f97316, #c2410c);
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
+    margin-left: 12px;
+    margin-bottom: 8px;
+">
+    <i class="bi bi-grid-1x2-fill"></i>
+    Pengaturan
+</span>
+</div>
+<li class="nav-item">
+  <a href="/settingssubklasifikasi" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-diagram-2-fill text-warning"></i>
+    <p style="color: white;">Sub Klasifikasi</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingstandatangan" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-person-vcard-fill text-warning"></i>
+    <p style="color: white;">Tim Teknis <br> Pengawasan </p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingspenyedia" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-buildings-fill text-warning"></i>
+    <p style="color: white;">Penyedia/Sektor</p>
+  </a>
+</li>
+
+
+
+                </ul>
+              </li>
+
+            {{-- ========================== --}}
+            {{-- ===================================== MENU DATA PENGWASAN VERSI 2    --}}
+            <li class="nav-item">
+             <a href="#" class="nav-link">
+  <i class="nav-icon bi bi-tools" style="color: white"></i>
+  <p style="color: white">
+    Pengawasan <br> Tertib <br> Penyelenggaraan
+    <i class="nav-arrow bi bi-chevron-right"></i>
+  </p>
+</a>
+
+
+                <ul class="nav nav-treeview">
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
+                  <!-- Tertib Jasa Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/betertibjakonpenyelenggaraan" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib Penyelenggaraan</p>
+                    </a>
+                  </li>
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+   <span style="
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f97316, #c2410c);
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
+    margin-left: 12px;
+    margin-bottom: 8px;
+">
+    <i class="bi bi-grid-1x2-fill"></i>
+    Pengaturan
+</span>
+</div>
+<li class="nav-item">
+  <a href="/settingssubklasifikasi" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-diagram-2-fill text-warning"></i>
+    <p style="color: white;">Sub Klasifikasi</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingstandatangan" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-person-vcard-fill text-warning"></i>
+    <p style="color: white;">Tim Teknis <br> Pengawasan </p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingspenyedia" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-buildings-fill text-warning"></i>
+    <p style="color: white;">Penyedia/Sektor</p>
+  </a>
+</li>
+
+
+
+                </ul>
+              </li>
+
+            {{-- ========================== --}}
+
+            {{-- ===================================== MENU DATA PENGWASAN   --}}
+            {{-- <li class="nav-item">
                 <a href="#" class="nav-link">
                   <!-- Ikon untuk Pengawasan -->
                   <i class="nav-icon bi bi-eye" style="color: white"></i> <!-- Ikon untuk pengawasan -->
@@ -1099,7 +1265,7 @@
 
 
                 </ul>
-              </li>
+              </li> --}}
 
             {{-- ========================== --}}
 
