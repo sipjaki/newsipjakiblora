@@ -157,26 +157,18 @@
 .kegiatan-group-title {
     display: inline-block;
     font-size: 10px;
-    font-weight: 600; /* Soft bold */
-    color: #334155;   /* Lebih gelap, kontras */
+    font-weight: 600;
+    color: #334155;
     letter-spacing: 0.2px;
     margin-bottom: 4px;
     padding: 2px 6px;
     background: #f1f5f9;
-    border-left: 3px solid #13A847; /* Aksen hijau */
+    border-left: 3px solid #13A847;
     border-radius: 0 4px 4px 0;
     line-height: 1.35;
-    text-transform: none; /* Biar teks "Simak – 1b.1" tidak jadi KAPITAL semua */
+    text-transform: none;
 }
 
-/* .kegiatan-group-title {
-    font-size: 9px;
-    font-weight: 800;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    margin-bottom: 1px;
-} */
 .kegiatan-buttons {
     display: flex;
     gap: 4px;
@@ -229,7 +221,7 @@
 }
 
 /* ==========================================
-   SEARCH BAR TENGAH (DI BAWAH CHART)
+   SEARCH BAR TENGAH
    ========================================== */
 .search-bar-top {
     background: #ffffff;
@@ -872,6 +864,43 @@
 .confirm-btn-no:hover {
     background: #e2e8f0;
 }
+
+/* ==========================================
+   MODAL REKAP DATA (STYLE DOKUMEN)
+   ========================================== */
+#modalRekapData .modal-dialog {
+    max-width: 95%;
+    width: 95%;
+}
+#modalRekapData .modal-content {
+    border-radius: 20px !important;
+    border: none !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    overflow: hidden;
+}
+#modalRekapData .modal-header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #eaeaea !important;
+    padding: 20px 28px !important;
+}
+#modalRekapData .modal-header .modal-title {
+    font-weight: 800 !important;
+    color: #1a2b4a !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+#modalRekapData .modal-body {
+    padding: 24px 28px !important;
+    max-height: 75vh;
+    overflow-y: auto;
+    background: #f8fafc !important;
+}
+#modalRekapData .modal-footer {
+    background: #ffffff !important;
+    border-top: 1px solid #eaeaea !important;
+    padding: 16px 28px !important;
+}
 </style>
 
 <!--begin::Body-->
@@ -987,6 +1016,12 @@
                                     <button type="submit" class="button-baru button-md">
                                         <i class="bi bi-search"></i> Cari
                                     </button>
+
+                                    {{-- TOMBOL REKAP --}}
+                                    <button type="button" class="button-berkas button-md" data-bs-toggle="modal" data-bs-target="#modalRekapData">
+                                        <i class="bi bi-file-earmark-bar-graph"></i> Rekap Simak Format K.01.B
+                                    </button>
+
                                     <button type="button" class="button-berkas button-md" onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')">
                                         <i class="bi bi-download"></i> Download Excel
                                     </button>
@@ -1254,6 +1289,127 @@
     </div>
 </div>
 
+{{-- ═══════════════════════════════════════════════════════════════ --}}
+{{-- MODAL REKAP DATA (FORMAT K.01.B) --}}
+{{-- ═══════════════════════════════════════════════════════════════ --}}
+<div class="modal fade" id="modalRekapData" tabindex="-1" aria-labelledby="modalRekapDataLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 95%; width: 95%;">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalRekapDataLabel">
+                    <i class="bi bi-file-earmark-bar-graph" style="color: #3b82f6; font-size: 20px;"></i>
+                    Rekapitulasi Pengawasan Tertib Usaha Jasa Konstruksi
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+
+                {{-- FILTER TAMPILAN DATA & TAHUN --}}
+                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+
+                    {{-- Filter Tampilkan --}}
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <label for="filterEntriesRekap" style="font-weight: 700; color: #334155; margin: 0; font-size: 13px;">
+                            <i class="bi bi-list-ol"></i> Tampilkan:
+                        </label>
+                        <select id="filterEntriesRekap" class="form-select" style="width: auto; padding: 8px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1;">
+                            <option value="all">Semua Data</option>
+                            <option value="10" selected>10 Data</option>
+                            <option value="25">25 Data</option>
+                            <option value="50">50 Data</option>
+                            <option value="100">100 Data</option>
+                        </select>
+                    </div>
+
+                    {{-- Filter Tahun --}}
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <label for="filterTahunRekap" style="font-weight: 700; color: #334155; margin: 0; font-size: 13px;">
+                            <i class="bi bi-calendar-event"></i> Tahun Pelaksanaan:
+                        </label>
+                        <select id="filterTahunRekap" class="form-select" style="width: auto; padding: 8px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1;">
+                            <option value="">Semua Tahun</option>
+                            @if(isset($listTahun))
+                                @foreach ($listTahun as $th)
+                                    <option value="{{ $th }}">{{ $th }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
+
+                </div>
+
+                {{-- KERTAS DOKUMEN REKAP FORMAT K.01.B --}}
+                <div id="printAreaRekap" style="background: #ffffff; padding: 30px; border: 1px solid #cbd5e1; border-radius: 8px; overflow-x: auto;">
+
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <h4 style="font-weight: 900; margin: 0; color: #b45309;">FORMAT K.01.B</h4>
+                        <h5 style="font-weight: 800; margin: 5px 0 0 0; color: #0f172a;">REKAPITULASI PENGAWASAN TERTIB USAHA JASA KONSTRUKSI TAHUNAN (BUJK)</h5>
+                    </div>
+
+                    <table style="width: 100%; border-collapse: collapse; font-size: 11px; border: 1px solid #000;" id="tabelRekapData">
+                        <thead>
+                            <tr>
+                                <th rowspan="3" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">No</th>
+                                <th rowspan="3" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">NIB</th>
+                                <th rowspan="3" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Nama Badan Usaha</th>
+                                <th rowspan="3" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">PJBU</th>
+
+                                <th colspan="4" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center;">Kesesuaian Kegiatan Konstruksi</th>
+                                <th colspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center;">Kesesuaian kegiatan usaha Jasa Konstruksi dan segmentasi pasar Jasa Konstruksi</th>
+                                <th colspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center;">Pemenuhan persyaratan usaha</th>
+                                <th rowspan="3" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Pelaksanaan pengembangan usaha berkelanjutan</th>
+                            </tr>
+                            <tr>
+                                <th rowspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Jenis</th>
+                                <th rowspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Sifat</th>
+                                <th rowspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Klasifikasi</th>
+                                <th rowspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Layanan</th>
+                                <th rowspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Bentuk</th>
+                                <th rowspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Kualifikasi</th>
+                                <th rowspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">SBU</th>
+                                <th rowspan="2" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">NIB</th>
+                            </tr>
+                            <tr></tr>
+                        </thead>
+                        <tbody id="tbodyRekapData">
+                            {{-- Data diisi via JavaScript --}}
+                            <tr>
+                                <td colspan="13" style="text-align: center; padding: 30px; color: #94a3b8; border: 1px solid #000;">
+                                    Sedang memuat data...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="margin-top: 40px; display: flex; justify-content: flex-end;">
+                        <div style="width: 250px; text-align: center;">
+                            <p style="margin-bottom: 80px; color: #334155;">Blora, .............................. <?= date('Y') ?><br>Kepala Bidang Bangunan Gedung</p>
+                            <p style="font-weight: 800; text-decoration: underline; color: #0f172a;">Anex Fachrian, S.T., M.T.</p>
+                            <p style="color: #334155; font-size: 12px;">NIP. 19810728 201001 1 014</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="button-modern button-md" data-bs-dismiss="modal">
+                    <i class="bi bi-x"></i> Tutup
+                </button>
+                <button type="button" class="button-berkas button-md" onclick="downloadRekapExcel()">
+                    <i class="bi bi-file-earmark-excel"></i> Download Excel
+                </button>
+                <button type="button" class="button-baru button-md" onclick="cetakRekapData()">
+                    <i class="bi bi-printer"></i> Cetak / Print
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 {{-- INCLUDE MODAL CREATE --}}
 @include('backend.06_pengawasan.01_tertibjakonusaha.modalcreate')
 
@@ -1362,7 +1518,161 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
 
-{{-- EXPORT EXCEL --}}
+{{-- ═══════════════════════════════════════════════════════════ --}}
+{{-- SCRIPT REKAP DATA (100% AMAN DARI ERROR) --}}
+{{-- ═══════════════════════════════════════════════════════════ --}}
+{{-- Masukkan data JSON ke dalam script tag agar aman dari error parsing --}}
+<script id="data-rekap-json" type="application/json">
+    {!! json_encode($allDataRekap ?? $data->items()) !!}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const modalRekap = document.getElementById('modalRekapData');
+    const filterTahun = document.getElementById('filterTahunRekap');
+    const filterEntries = document.getElementById('filterEntriesRekap');
+    const tbodyRekap = document.getElementById('tbodyRekapData');
+
+    // Ambil data dari tag script di atas dengan aman
+    let allDataRekap = [];
+    try {
+        const jsonText = document.getElementById('data-rekap-json').textContent;
+        allDataRekap = JSON.parse(jsonText);
+    } catch (e) {
+        console.error("Gagal parse data rekap:", e);
+    }
+
+    function renderRekap() {
+        if (!allDataRekap || allDataRekap.length === 0) {
+            tbodyRekap.innerHTML = `<tr><td colspan="13" style="text-align: center; padding: 30px; color: #94a3b8; border: 1px solid #000;">Tidak ada data.</td></tr>`;
+            return;
+        }
+
+        const tahun = filterTahun.value;
+        const limit = filterEntries.value;
+
+        let filtered = allDataRekap;
+
+        // 1. Filter berdasarkan tahun jika dipilih
+        if (tahun) {
+            filtered = filtered.filter(item => item.tahunpelaksanaan == tahun);
+        }
+
+        if (filtered.length === 0) {
+            tbodyRekap.innerHTML = `<tr><td colspan="13" style="text-align: center; padding: 30px; color: #94a3b8; border: 1px solid #000;">Tidak ada data untuk filter ini.</td></tr>`;
+            return;
+        }
+
+        // 2. Potong data berdasarkan limit "Tampilkan"
+        if (limit !== 'all') {
+            filtered = filtered.slice(0, parseInt(limit));
+        }
+
+        let html = '';
+        filtered.forEach((item, index) => {
+            // Ambil data relasi (pastikan di Model tertibjasakonstruksi sudah ada relasinya)
+            const surat1 = item.surattertibjakonusaha1 || {};
+            const surat2 = item.surattertibjakonusaha2 || {};
+            const surat3 = item.surattertibjakonusaha3 || {};
+            const surat4 = item.surattertibjakonusaha4 || {};
+
+            // Fungsi Helper Pewarnaan
+            const formatStatus = (val) => {
+                if (!val) return '-';
+                const isOk = ['Sesuai', 'Sudah', 'Tertib', 'Meningkat'].includes(val);
+                return isOk ? '<span style="color: #15803d; font-weight: bold;">(Tertib)</span>' : '<span style="color: #b91c1c; font-weight: bold;">(Belum Tertib)</span>';
+            };
+
+            // Surat 1
+            const jenis = formatStatus(surat1.kesesuaian);
+            const sifat = formatStatus(surat1.kesesuaiansbu);
+            const klasifikasi = formatStatus(surat1.kesesuaianklasifikasi);
+            const layanan = formatStatus(surat1.kesesuaianlayananusaha);
+
+            // Surat 2
+            const bentuk = formatStatus(surat2.kesesuaiansbu);
+            const kualifikasi = formatStatus(surat2.sbu);
+
+            // Surat 3
+            const sbu = formatStatus(surat3.kesimpulan);
+            const nib_surat3 = formatStatus(surat3.kesimpulan);
+
+            // Surat 4
+            const pelaksana = formatStatus(surat4.status);
+
+            html += `
+                <tr>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${index + 1}</td>
+                    <td style="border: 1px solid #000; padding: 8px;">${item.nib || '-'}</td>
+                    <td style="border: 1px solid #000; padding: 8px;">${item.namabadanusaha || '-'}</td>
+                    <td style="border: 1px solid #000; padding: 8px;">${item.pjbu || '-'}</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${jenis}</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${sifat}</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${klasifikasi}</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${layanan}</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${bentuk}</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${kualifikasi}</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${sbu}</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${nib_surat3}</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: center;">${pelaksana}</td>
+                </tr>
+            `;
+        });
+        tbodyRekap.innerHTML = html;
+    }
+
+    // Render saat modal dibuka
+    if (modalRekap) {
+        modalRekap.addEventListener('show.bs.modal', renderRekap);
+    }
+
+    // Render saat filter berubah
+    if (filterTahun) filterTahun.addEventListener('change', renderRekap);
+    if (filterEntries) filterEntries.addEventListener('change', renderRekap);
+});
+
+// ═══════════════════════════════════════════════════════════
+// FUNGSI CETAK REKAP (A4 LANDSCAPE)
+// ═══════════════════════════════════════════════════════════
+function cetakRekapData() {
+    const printContent = document.getElementById('printAreaRekap').innerHTML;
+
+    const printWindow = window.open('', '', 'height=800,width=1200');
+    printWindow.document.write('<html><head><title>Cetak Rekap K.01.B</title>');
+
+    printWindow.document.write('<style>');
+    printWindow.document.write('@page { size: A4 landscape; margin: 10mm; }');
+    printWindow.document.write('body { font-family: Arial, sans-serif; }');
+    printWindow.document.write('table { width: 100%; border-collapse: collapse; font-size: 11px; }');
+    printWindow.document.write('th, td { border: 1px solid #000; padding: 6px; }');
+    printWindow.document.write('th { background-color: #f8fafc; text-align: center; vertical-align: middle; }');
+    printWindow.document.write('h5, h4 { text-align: center; font-weight: bold; margin-bottom: 10px; }');
+    printWindow.document.write('</style>');
+
+    printWindow.document.write('</head><body>');
+    printWindow.document.write(printContent);
+    printWindow.document.write('</body></html>');
+
+    printWindow.document.close();
+    printWindow.focus();
+
+    setTimeout(() => {
+        printWindow.print();
+        printWindow.close();
+    }, 500);
+}
+
+// ═══════════════════════════════════════════════════════════
+// FUNGSI DOWNLOAD EXCEL REKAP
+// ═══════════════════════════════════════════════════════════
+function downloadRekapExcel() {
+    const table = document.getElementById('tabelRekapData');
+    const wb = XLSX.utils.table_to_book(table, {sheet: "Rekap K.01.B"});
+    XLSX.writeFile(wb, 'Rekap_Pengawasan_Tertib_Usaha_Jasa_Konstruksi.xlsx');
+}
+</script>
+
+{{-- EXPORT EXCEL UTAMA --}}
 <script>
 function exportSelectedColumnsToExcel(originalTableId, filename = 'data-terpilih') {
     const originalTable = document.getElementById(originalTableId);
@@ -1755,7 +2065,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 2. Ambil data JSON dari tombol
         const itemData = btn.getAttribute('data-item');
         if (!itemData) return;
-        
+
         const item = JSON.parse(itemData);
 
         // 3. Isi form modal dengan data

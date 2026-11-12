@@ -269,8 +269,8 @@ Route::get('/resrantaipasok', [AndroidVersionController::class, 'menuresrantaipa
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
-Route::get('/', [Ver2Controller::class, 'index']);
-// Route::get('/', [FedashboardController::class, 'index']);
+// Route::get('/', [Ver2Controller::class, 'index']);
+Route::get('/', [FedashboardController::class, 'index']);
 Route::get('/web', [FedashboardController::class, 'web']);
 
 Route::get('/404', function () {
@@ -895,7 +895,9 @@ Route::get('/bepaketpekerjaan/update/{id}', [PaketpekerjaanmasjakiController::cl
 Route::post('/bepaketpekerjaan/updatecreate/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanupdatenew'])->middleware(['auth', 'can:admin3'])->name('update.paketpekerjaan');
 
 Route::get('/bepaketpekerjaan/view/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanview'])->middleware(['auth', 'can:admin3']);
-
+// TAMBAH INI — POST untuk submit form edit
+Route::post('/bepaketpekerjaan/update/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanupdatenew'])
+    ->name('update.paketpekerjaan');
 // BELUM DI BUATKAN
 // Route::get('/bebujkkonstruksi/createsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasi'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasi');
 // Route::post('/bebujkkonstruksi/createsubklasifikasi/create', [BujkkontraktorController::class, 'bebujkkonstruksicreateklasifikasicreate'])->middleware('auth')->name('bebujkkonstruksi.createklasifikasicreate');
@@ -1426,6 +1428,12 @@ Route::get('/settingsjenjangpendidikan', [SettingDataController::class, 'setting
 Route::get('/settingsjenjangpendidikan/create', [SettingDataController::class, 'settingspendidikancreate'])->middleware(['auth', 'can:admin2']);
 Route::post('/settingsjenjangpendidikan/createnew', [SettingDataController::class, 'settingsjenjangpencreatenew'])->middleware(['auth', 'can:admin2'])->name('create.jenjangpendidikan');
 Route::delete('/jenjangpendidikan/delete/{id}', [SettingDataController::class, 'settingspendidikandelete'])->middleware(['auth', 'can:admin2']);
+
+Route::get('/settingsjurusan', [SettingDataController::class, 'settingsjurusan'])->middleware(['auth', 'can:admin2']);
+Route::post('/jurusan/create', [SettingDataController::class, 'jurusanstore'])
+    ->name('create.jurusan');
+Route::delete('/jurusan/delete/{id}', [SettingDataController::class, 'jurusandelete'])
+    ->name('jurusan.delete');
 
 Route::get('/settingsjabatankerja', [SettingDataController::class, 'settingsjabatankerja'])->middleware(['auth', 'can:admin2']);
 Route::get('/settingsjabatankerja/create', [SettingDataController::class, 'settingsjabatankerjacreate'])->middleware(['auth', 'can:admin2']);
