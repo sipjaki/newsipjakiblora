@@ -266,7 +266,9 @@
                             <div class="card card-3d mb-4">
                                 <div class="card-header card-header-custom">
                                     <div class="header-title">
+
                                         @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
+                                    
                                     </div>
 
                                     <!-- SEARCH BOX -->

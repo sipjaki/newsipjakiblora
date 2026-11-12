@@ -53,6 +53,7 @@ use App\Models\surattertibjakonpenyelenggaraan3;
 use App\Models\surattertibjakonpenyelenggaraan4;
 use App\Models\surattertibjakonpenyelenggaraan5;
 use App\Models\surattertibjakonpenyelenggaraan6;
+use App\Models\allskktenagakerjablora;
 
 // use App\Models\sertifikasiagenda;
 use App\Models\standarbiayaumum;
@@ -95,7 +96,6 @@ use App\Models\hsppaket;
 use App\Models\hspkodepekerjaan;
 use App\Models\hspkonstruksiumum;
 use App\Models\beritajakon;
-use App\Models\allskktenagakerjablora;
 use App\Models\profiljakonidentitasopd;
 use App\Models\profiljakonkepaladinas;
 use App\Models\profiljakonkabid;
@@ -84426,6 +84426,80 @@ suratkeputusan::create([
 ]);
 
 
+for ($i = 1; $i <= 17; $i++) {
+    allskktenagakerjablora::create([
+        'skkanda'              => 'SKK-' . str_pad($i, 4, '0', STR_PAD_LEFT),
+        'agendaskk_id'         => 1,
+        'user_id'              => 50,
+        'jenjangpendidikan_id' => 1,
+        'jabatankerja_id'      => 1,
+        'namasekolah_id'       => 1,
+        'tahunpilihan_id'      => 1,
+        'nik'                  => '33160123456' . str_pad($i, 5, '0', STR_PAD_LEFT),
+        'tempatlahir'          => 'Blora',
+        'ttl'                  => '1990-01-' . str_pad($i, 2, '0', STR_PAD_LEFT),
+        'jeniskelamin'         => $i % 2 == 0 ? 'Laki-laki' : 'Perempuan',
+        'alamat'               => 'Jl. Pemuda No. ' . $i . ', Blora',
+        'notelepon'            => '0812345678' . str_pad($i, 2, '0', STR_PAD_LEFT),
+        'email'                => 'zaqi' . $i . '@example.com',
+        'tahunlulus'           => 2020 + $i,
+        'namaasosiasi'         => 'GAPENSI',
+        'punyaskk'             => 'Ya',
+        'punyasiki'            => 'Ya',
+        'portalpupr'           => 'Ya',
+        'siappatuh'            => 'Ya',
+    ]);
+}
+
+for ($i = 1; $i <= 3; $i++) {
+    allskktenagakerjablora::create([
+        'skkanda'              => 'SKK-' . str_pad($i, 4, '0', STR_PAD_LEFT),
+        'agendaskk_id'         => 2,
+        'user_id'              => 50,
+        'jenjangpendidikan_id' => 1,
+        'jabatankerja_id'      => 1,
+        'namasekolah_id'       => 1,
+        'tahunpilihan_id'      => 1,
+        'nik'                  => '33160123456' . str_pad($i, 5, '0', STR_PAD_LEFT),
+        'tempatlahir'          => 'Blora',
+        'ttl'                  => '1990-01-' . str_pad($i, 2, '0', STR_PAD_LEFT),
+        'jeniskelamin'         => $i % 2 == 0 ? 'Laki-laki' : 'Perempuan',
+        'alamat'               => 'Jl. Pemuda No. ' . $i . ', Blora',
+        'notelepon'            => '0812345678' . str_pad($i, 2, '0', STR_PAD_LEFT),
+        'email'                => 'zaqi' . $i . '@example.com',
+        'tahunlulus'           => 2020 + $i,
+        'namaasosiasi'         => 'GAPENSI',
+        'punyaskk'             => 'Ya',
+        'punyasiki'            => 'Ya',
+        'portalpupr'           => 'Ya',
+        'siappatuh'            => 'Ya',
+    ]);
+}
+
+for ($i = 1; $i <= 6; $i++) {
+    allskktenagakerjablora::create([
+        'skkanda'              => 'SKK-' . str_pad($i, 4, '0', STR_PAD_LEFT),
+        'agendaskk_id'         => 3,
+        'user_id'              => 50,
+        'jenjangpendidikan_id' => 1,
+        'jabatankerja_id'      => 1,
+        'namasekolah_id'       => 1,
+        'tahunpilihan_id'      => 1,
+        'nik'                  => '33160123456' . str_pad($i, 5, '0', STR_PAD_LEFT),
+        'tempatlahir'          => 'Blora',
+        'ttl'                  => '1990-01-' . str_pad($i, 2, '0', STR_PAD_LEFT),
+        'jeniskelamin'         => $i % 2 == 0 ? 'Laki-laki' : 'Perempuan',
+        'alamat'               => 'Jl. Pemuda No. ' . $i . ', Blora',
+        'notelepon'            => '0812345678' . str_pad($i, 2, '0', STR_PAD_LEFT),
+        'email'                => 'zaqi' . $i . '@example.com',
+        'tahunlulus'           => 2020 + $i,
+        'namaasosiasi'         => 'GAPENSI',
+        'punyaskk'             => 'Ya',
+        'punyasiki'            => 'Ya',
+        'portalpupr'           => 'Ya',
+        'siappatuh'            => 'Ya',
+    ]);
+}
 
 // uijk::create([
 //     'nama_perusahaan' => '',

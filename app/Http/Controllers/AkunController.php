@@ -563,47 +563,94 @@ public function allsupptokobangunan(Request $request)
     ]);
 }
 
-public function alllsppenerbit(Request $request)
-{
-    $perPage = $request->input('perPage', 10);
-    $search = $request->input('search');
+  public function alllsppenerbit(Request $request)
+    {
+        $perPage = $request->input('perPage', 10);
+        $search  = $request->input('search');
 
-    // Hanya ambil user yang statusadmin-nya memiliki id = 1
-    $query = User::whereHas('statusadmin', function ($q) {
-        $q->where('id', 7);
-    });
-
-    if ($search) {
-        $query->where(function($q) use ($search) {
-            $q->where('name', 'LIKE', "%{$search}%")
-              ->orWhere('username', 'LIKE', "%{$search}%")
-              ->orWhere('phone_number', 'LIKE', "%{$search}%")
-              ->orWhere('email', 'LIKE', "%{$search}%")
-              ->orWhere('avatar', 'LIKE', "%{$search}%");
+        // Hanya ambil user dengan statusadmin id = 7 (LSP Penerbit)
+        $query = User::whereHas('statusadmin', function ($q) {
+            $q->where('id', 7);
         });
-    }
 
-    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'LIKE', "%{$search}%")
+                  ->orWhere('username', 'LIKE', "%{$search}%")
+                  ->orWhere('phone_number', 'LIKE', "%{$search}%")
+                  ->orWhere('email', 'LIKE', "%{$search}%")
+                  ->orWhere('avatar', 'LIKE', "%{$search}%");
+            });
+        }
 
-    // Hitung jumlah user dengan statusadmin id = 1
-    $jumlahStatus2 = User::whereHas('statusadmin', function ($q) {
-        $q->where('id', 7);
-    })->count();
+        $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
-    if ($request->ajax()) {
-        return response()->json([
-            'html' => view('backend.13_daftarakun.08_lsppenerbit.partials.table', compact('data'))->render()
+        // Hitung jumlah user dengan statusadmin id = 7
+        $jumlahStatus2 = User::whereHas('statusadmin', function ($q) {
+            $q->where('id', 7);
+        })->count();
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('backend.13_daftarakun.08_lsppenerbit.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        // ═══ TAMBAHAN: list statusadmin untuk dropdown modal ═══
+        // Filter statusadmin yang relevan saja (misal id 7 = LSP Penerbit)
+        // Kalau mau semua statusadmin, ganti jadi: statusadmin::all()
+        $statusadminList = statusadmin::where('id', 7)->get();
+
+        return view('backend.13_daftarakun.08_lsppenerbit.index', [
+            'title'           => 'Daftar Semua Akun LSP Penerbit',
+            'data'            => $data,
+            'perPage'         => $perPage,
+            'search'          => $search,
+            'jumlahStatus2'   => $jumlahStatus2,
+            'statusadminList' => $statusadminList,  // ← TAMBAHAN
         ]);
     }
+// public function alllsppenerbit(Request $request)
+// {
+//     $perPage = $request->input('perPage', 10);
+//     $search = $request->input('search');
 
-    return view('backend.13_daftarakun.08_lsppenerbit.index', [
-        'title' => 'Daftar Semua Akun LSP Penerbit',
-        'data' => $data,
-        'perPage' => $perPage,
-        'search' => $search,
-        'jumlahStatus2' => $jumlahStatus2, // Super Admin
-    ]);
-}
+//     // Hanya ambil user yang statusadmin-nya memiliki id = 1
+//     $query = User::whereHas('statusadmin', function ($q) {
+//         $q->where('id', 7);
+//     });
+
+//     if ($search) {
+//         $query->where(function($q) use ($search) {
+//             $q->where('name', 'LIKE', "%{$search}%")
+//               ->orWhere('username', 'LIKE', "%{$search}%")
+//               ->orWhere('phone_number', 'LIKE', "%{$search}%")
+//               ->orWhere('email', 'LIKE', "%{$search}%")
+//               ->orWhere('avatar', 'LIKE', "%{$search}%");
+//         });
+//     }
+
+//     $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+//     // Hitung jumlah user dengan statusadmin id = 1
+//     $jumlahStatus2 = User::whereHas('statusadmin', function ($q) {
+//         $q->where('id', 7);
+//     })->count();
+
+//     if ($request->ajax()) {
+//         return response()->json([
+//             'html' => view('backend.13_daftarakun.08_lsppenerbit.partials.table', compact('data'))->render()
+//         ]);
+//     }
+
+//     return view('backend.13_daftarakun.08_lsppenerbit.index', [
+//         'title' => 'Daftar Semua Akun LSP Penerbit',
+//         'data' => $data,
+//         'perPage' => $perPage,
+//         'search' => $search,
+//         'jumlahStatus2' => $jumlahStatus2, // Super Admin
+//     ]);
+// }
 
 public function alldinas(Request $request)
 {

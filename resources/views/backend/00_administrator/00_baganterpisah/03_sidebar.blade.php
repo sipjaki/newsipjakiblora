@@ -580,7 +580,7 @@
                             <p style="color: white">Statistik</p>
                         </a>
                     </li>
-                    
+
                         <div style="margin-bottom: 10px; margin-top: 10px;">
                     <p style="
                         font-size: 13px;
@@ -628,13 +628,6 @@
                         </a>
                     </li>
 
-                  <!-- Profil Paket Pekerjaan Konstruksi -->
-                  <li class="nav-item">
-                    <a href="/bepaketpekerjaan" class="nav-link">
-                      <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
-                      <p style="color: white">Profil <br> Paket Pekerjaan</p>
-                    </a>
-                  </li>
 
                                           <div style="margin-bottom: 10px; margin-top: 10px;">
    <span style="
@@ -655,6 +648,7 @@
     Pengaturan
 </span>
 </div>
+
 <li class="nav-item">
     <a href="/settingssekolah" class="nav-link">
         <i class="nav-icon bi bi-building text-warning"></i> <!-- Ikon Universitas/Sekolah -->
@@ -670,10 +664,33 @@
 </li>
 
 <li class="nav-item">
+    <a href="/settingsjurusan" class="nav-link">
+        <i class="nav-icon bi bi-journal-bookmark-fill text-warning"></i>
+        <p style="color: white">Jurusan</p>
+    </a>
+</li>
+
+<li class="nav-item">
     <a href="/settingsjabatankerja" class="nav-link">
         <i class="nav-icon bi bi-person-badge-fill text-warning"></i> <!-- Ikon Jabatan Kerja -->
         <p style="color: white">Jabatan Kerja</p>
     </a>
+</li>
+
+
+                    <li class="nav-item">
+                        <a href="/beasosiasi" class="nav-link">
+                            <i class="nav-icon bi bi-people-fill text-warning"></i>
+                            <p style="color: white">Asosiasi</p>
+                        </a>
+                    </li>
+
+
+<li class="nav-item">
+  <a href="/alllsppenerbit" class="nav-link">
+    <i class="nav-icon bi bi-person-badge text-warning"></i> <!-- Ikon Akun LSP SKK -->
+    <p style="color: white">LSP Penerbit</p>
+  </a>
 </li>
 
 {{-- <li class="nav-item">
@@ -685,7 +702,22 @@
 
 
 
-<div style="margin-bottom: 10px; margin-top: 10px;">
+                </ul>
+              </li>
+
+            {{-- ========================== --}}
+            {{-- PROFIL PAKET PEKERJAAN  --}}
+                            <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon bi bi-box" style="color: white"></i>
+                        <p style="color: white">
+                            Profil <br> Paket Pekerjaan
+                            <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                <ul class="nav nav-treeview">
+
+                        <div style="margin-bottom: 10px; margin-top: 10px;">
     <p style="
         font-size: 13px;
         margin-left: 12px;
@@ -698,18 +730,41 @@
         border-radius: 8px;
         box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     ">
-        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Pengaturan <br> Profil Paket Pekerjaan
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
     </p>
 </div>
 
-   <li class="nav-item">
-                    <a href="/beasosiasi" class="nav-link">
+
+                  <!-- Profil Paket Pekerjaan Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/bepaketpekerjaan" class="nav-link">
                       <i class="nav-icon bi bi-tools text-warning"></i> <!-- Ikon untuk Profil Paket Pekerjaan Konstruksi -->
-                      <p style="color: white">Daftar Asosiasi</p>
+                      <p style="color: white">Profil <br> Paket Pekerjaan</p>
                     </a>
                   </li>
 
-                  <!-- Profil Paket Pekerjaan Konstruksi -->
+
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+   <span style="
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f97316, #c2410c);
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
+    margin-left: 12px;
+    margin-bottom: 8px;
+">
+    <i class="bi bi-grid-1x2-fill"></i>
+    Pengaturan
+</span>
+</div>
+        <!-- Profil Paket Pekerjaan Konstruksi -->
 <li class="nav-item">
   <a href="/settingsjenispekerjaan" class="nav-link">
     <i class="nav-icon bi bi-briefcase text-warning"></i> <!-- Ikon untuk Jenis Pekerjaan -->
@@ -739,8 +794,9 @@
 </li>
 
 
+
                 </ul>
-              </li>
+            </li>
 
             {{-- ========================== --}}
 
@@ -854,6 +910,93 @@
 
             {{-- ========================== --}}
 
+            {{-- ===================================== MENU DATA PENGWASAN VERSI 2    --}}
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <!-- Ikon untuk Pengawasan -->
+                  <i class="nav-icon bi bi-eye" style="color: white"></i> <!-- Ikon untuk pengawasan -->
+                  <p style="color: white">
+                    Pengawasan <br> Tertib Usaha
+                    <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+
+
+                <ul class="nav nav-treeview">
+
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+    <p style="
+        font-size: 13px;
+        margin-left: 12px;
+        margin-bottom: -5px;
+        font-weight: bold;
+        color: #000000;
+        background-color: #ffd100;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    ">
+        <i class="bi bi-grid-1x2-fill" style="margin-right: 6px;"></i> Main Menu
+    </p>
+</div>
+
+                  <!-- Tertib Jasa Konstruksi -->
+                  <li class="nav-item">
+                    <a href="/betertibjakonusaha" class="nav-link">
+                      <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
+                      <p style="color: white">Tertib Usaha</p>
+                    </a>
+                  </li>
+
+<div style="margin-bottom: 10px; margin-top: 10px;">
+   <span style="
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f97316, #c2410c);
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
+    margin-left: 12px;
+    margin-bottom: 8px;
+">
+    <i class="bi bi-grid-1x2-fill"></i>
+    Pengaturan
+</span>
+</div>
+
+<li class="nav-item">
+  <a href="/settingssubklasifikasi" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-diagram-3 text-warning"></i>
+    <p style="color: white;">Sub Klasifikasi</p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingstandatangan" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-pen text-warning"></i>
+    <p style="color: white;">Tim Teknis <br> Pengawasan </p>
+  </a>
+</li>
+
+<li class="nav-item">
+  <a href="/settingstandatangan" target="_blank" class="nav-link">
+    <i class="nav-icon bi bi-pen text-warning"></i>
+    <p style="color: white;">Penyedia/Sektor</p>
+  </a>
+</li>
+
+
+
+                </ul>
+              </li>
+
+            {{-- ========================== --}}
             {{-- ===================================== MENU DATA PENGWASAN   --}}
             <li class="nav-item">
                 <a href="#" class="nav-link">

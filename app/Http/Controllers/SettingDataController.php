@@ -7,6 +7,8 @@ use App\Models\peralatankonstruksi;
 use App\Models\alatberat;
 use App\Models\jabatankerja;
 use App\Models\jenjangpendidikan;
+use App\Models\jurusan;
+use App\Models\kategoripelatihan;
 use App\Models\namasekolah;
 use App\Models\paketstatuspekerjaan;
 use App\Models\profiljenispekerjaan;
@@ -802,5 +804,192 @@ return redirect('/settingstahunpilihan')->with('delete', 'Data Berhasil Di Hapus
 
 }
 }
+
+
+
+public function settingskatepelatihan(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
+
+    $query = kategoripelatihan::query();
+
+    if ($search) {
+        $query->where('kategoripelatihan', 'LIKE', "%{$search}%");
+    }
+
+    // Urutkan berdasarkan abjad A-Z
+    $query->orderBy('kategoripelatihan', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.16_settingsdata.10_kategoripelatihan.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.10_kategoripelatihan.index', [
+        'title' => 'Daftar Kategori Pelatihan',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+
+    public function settingskatepelatihancreate()
+    {
+            $user = Auth::user();
+
+        return view('backend.16_settingsdata.10_kategoripelatihan.create', [
+            'title' => 'Tambah Kategori Pelatihan',
+            // 'data' => $dataagendapelatihan,
+            'user' => $user,
+        ]);
+    }
+
+
+  public function settingskatepelatihancreatenew(Request $request)
+{
+    $request->validate([
+        'kategoripelatihan' => 'required|string|max:255',
+    ], [
+        'kategoripelatihan.required' => 'Kategori Pelatihan tidak boleh kosong.',
+        'kategoripelatihan.string'   => 'Kategori Pelatihan harus berupa teks.',
+        'kategoripelatihan.max'      => 'Kategori Pelatihan tidak boleh lebih dari 255 karakter.',
+        'kategoripelatihan.unique'   => 'Kategori Pelatihan ini sudah terdaftar.',
+    ]);
+
+    kategoripelatihan::create([
+        'kategoripelatihan' => $request->kategoripelatihan,
+    ]);
+
+    session()->flash('create', 'Data berhasil dibuat!');
+    return redirect('/settingskatepelatihan');
+}
+
+
+
+public function settingskatepelatihandelete($id)
+{
+// Cari item berdasarkan judul
+$entry = kategoripelatihan::where('id', $id)->first();
+
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
+
+// Hapus entri dari database
+$entry->delete();
+
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/settingskatepelatihan')->with('delete', 'Data Berhasil Di Hapus !');
+
+}
+
+}
+
+public function settingssekolahdelete($namasekolah)
+{
+    // Cari berdasarkan nama (karena view kirim nama, bukan ID)
+    $item = namasekolah::where('namasekolah', urldecode($namasekolah))->first();
+
+    // Kalau tidak ditemukan
+    if (!$item) {
+        return redirect('/settingssekolah')
+            ->with('error', 'Data universitas/sekolah tidak ditemukan.');
+    }
+
+    // Simpan nama untuk pesan (sebelum dihapus)
+    $namaDihapus = $item->namasekolah;
+
+    // Hapus
+    $item->delete();
+
+    // Redirect dengan session
+    return redirect('/settingssekolah')
+        ->with('delete', 'Data berhasil dihapus!');
+}
+
+
+public function settingsjurusan(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search  = $request->input('search');
+
+    $query = jurusan::query();
+
+    if ($search) {
+        $query->where('jurusan', 'LIKE', "%{$search}%");
+    }
+
+    // Urutkan berdasarkan abjad A-Z
+    $query->orderBy('jurusan', 'asc');
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view(
+                'backend.16_settingsdata.11_jurusan.partials.table',
+                compact('data')
+            )->render()
+        ]);
+    }
+
+    return view('backend.16_settingsdata.11_jurusan.01_jurusan', [
+        'title'   => 'Daftar Jenjang Pendidikan',
+        'data'    => $data,
+        'perPage' => $perPage,
+        'search'  => $search
+    ]);
+}
+
+
+
+  public function jurusanstore(Request $request)
+    {
+        $request->validate([
+            'jurusan' => 'required|string|min:2|max:50|unique:jurusans,jurusan',
+        ], [
+            'jurusan.required' => 'Nama jurusan wajib diisi.',
+            'jurusan.min'      => 'Nama jurusan minimal 2 karakter.',
+            'jurusan.max'      => 'Nama jurusan maksimal 50 karakter.',
+            'jurusan.unique'   => 'Nama jurusan sudah terdaftar.',
+        ]);
+
+        jurusan::create([
+            'jurusan' => trim($request->jurusan),
+        ]);
+
+        return redirect('/settingsjurusan')
+            ->with('create', 'Jurusan berhasil ditambahkan!');
+    }
+
+    /**
+     * ============================================================
+     * DELETE — Hapus data
+     * ============================================================
+     */
+    public function jurusandelete($id)
+    {
+        $item = jurusan::find($id);
+
+        if (!$item) {
+            return redirect('/settingsjurusan')
+                ->with('error', 'Data jurusan tidak ditemukan.');
+        }
+
+        $namaDihapus = $item->jurusan;
+        $item->delete();
+
+        return redirect('/settingsjurusan')
+            ->with('delete', 'Data berhasil dihapus!');
+    }
+
+
 
 }

@@ -1,597 +1,688 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
-<!--begin::Body-->
-<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
-    <div class="app-wrapper">
-        @include('backend.00_administrator.00_baganterpisah.04_navbar')
-        @include('backend.00_administrator.00_baganterpisah.03_sidebar')
-        @include('button')
-
-        <!--begin::App Main-->
-        <main class="app-main">
-            <section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;" loading="lazy">
-                <!--begin::App Content Header-->
-                <div class="app-content-header">
-                    <!--begin::Container-->
-                    <div class="container-fluid">
-                        <!--begin::Row-->
-                        <div class="row">
-                            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
-                            @include('backend.00_administrator.00_baganterpisah.11_alert')
-                        </div>
-                        <!--end::Row-->
-                    </div>
-                    <!--end::Container-->
-                </div>
-
-                <div class="container-fluid">
-                    <!--begin::Row-->
-                    <div class="putih row" style="margin-right: 10px; margin-left:10px;">
-                        <!-- /.card -->
-                        {{-- <div class="card mb-4">
-                            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                                <a href="/404">
-                                    <button class="button-baru">
-                                        <i class="bi bi-briefcase" style="margin-right: 8px;"></i>
-                                        Jenis Pekerjaan
-                                    </button>
-                                </a>
-
-                                <a href="/404">
-                                    <button class="button-baru">
-                                        <i class="bi bi-kanban" style="margin-right: 8px;"></i>
-                                        Status Pekerjaan
-                                    </button>
-                                </a>
-
-                                <a href="/404">
-                                    <button class="button-baru">
-                                        <i class="bi bi-cash-stack" style="margin-right: 8px;"></i>
-                                        Sumber Dana
-                                    </button>
-                                </a>
-
-                                <a href="/404">
-                                    <button class="button-baru">
-                                        <i class="bi bi-calendar-event" style="margin-right: 8px;"></i>
-                                        Tahun Pelaksanaan
-                                    </button>
-                                </a>
-                            </div>
-                        </div> --}}
-
-                        <div class="card-header">
-                            @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
-
-                            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                             {{-- <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
-                            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
-                            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer; text-align:right;">
-                                <option value="10">10 </option>
-                                <option value="25">25 </option>
-                                <option value="50">50 </option>
-                                <option value="75">75 </option>
-                                <option value="100">100 </option>
-                                <option value="150">150 </option>
-                                <option value="200">200 </option>
-                                <option value="250">250 </option>
-                                <option value="500">500 </option>
-                                <option value="1000">1.000 </option>
-                                <option value="1500">1.500 </option>
-                                <option value="2000">2.000 </option>
-                                <option value="2500">2.500 </option>
-                                <option value="5000">5.000 </option>
-                            </select>
-                        </div>
- --}}
-                                                <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
-                            }
-
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
-
-                            fetch(`/bepaketpekerjaan?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
-
-                                </script>
-
-
-      {{-- <div style="position: relative; display: inline-block; margin-right:10px;">
-    <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...."
-           onkeyup="searchTable()"
-           style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-    <i class="bi bi-search"
-       style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-</div> --}}
-                                <a href="/bepaketpekerjaanrekap">
-                                  <button class="button-modern">
-                                    <i class="bi bi-clipboard-data" style="margin-right: 8px;"></i>
-                                    Rekap
-                                    </button>
-                                </a>
-                                <a href="/statistikprofilpekerjaan">
-                                    <button class="button-modern">
-                                    <i class="bi bi-bar-chart-line" style="margin-right: 8px;"></i>
-                                    Statistik
-                                    </button>
-                                </a>
-
-                                <a href="/bepaketpekerjaan">
-                                    <button class="button-modern">
-                                    <i class="bi bi-database" style="margin-right: 8px;"></i>
-                                    Data Lengkap
-                                    </button>
-                                </a>
-
-{{-- <button onclick="exportTableToExcel('tablePaket', 'data_profilpaketpekerjaan')" class="button-modern">
-    <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
-</button> --}}
-
-<script>
-
-    function exportTableToExcel(tableID, filename = '') {
-    let table = document.getElementById(tableID);
-    let tableHTML = "<table>" + table.innerHTML + "</table>"; // hanya ambil isi thead+tbody
-
-    filename = filename ? filename + '.xls' : 'excel_data.xls';
-
-    let downloadLink = document.createElement("a");
-    document.body.appendChild(downloadLink);
-
-    downloadLink.href = 'data:application/vnd.ms-excel,' + encodeURIComponent(tableHTML);
-    downloadLink.download = filename;
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+<style>
+/* ═══ TOKENS — 3 warna: Hijau, Silver, Abu ═══ */
+:root {
+    --green: #13A847;
+    --green-dark: #0e7a33;
+    --green-soft: #f0fdf4;
+    --green-line: #d1fae5;
+    --silver: #94a3b8;
+    --silver-soft: #e2e8f0;
+    --gray: #64748b;
+    --gray-dark: #475569;
+    --ink: #1e293b;
+    --ink-soft: #64748b;
+    --line: #e5e7eb;
+    --bg-soft: #f8fafc;
 }
 
-</script>
+/* ═══ BACKGROUND ═══ */
+.bg-3d-pattern {
+    background-color: #f4f6f8;
+    min-height: 100vh;
+    padding-top: 16px;
+    padding-bottom: 24px;
+}
 
+body, .app-wrapper {
+    font-family: 'Poppins','Segoe UI',Tahoma,sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink);
+}
 
+/* ═══ CARD ═══ */
+.card-3d {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    margin-bottom: 16px;
+}
+.card-header-custom {
+    background: #fff !important;
+    border-bottom: 1px solid var(--line) !important;
+    padding: 14px 18px !important;
+    border-radius: 6px 6px 0 0 !important;
+}
 
-                                <a href="/bepaketpekerjaancreate">
-                                    <button class="button-baru">
-                                        <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                                        Tambah Data 
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
+/* ═══ TOOLBAR ═══ */
+.toolbar-actions {
+    display: flex; flex-wrap: wrap;
+    justify-content: space-between; align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.badge-total {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 10px;
+    background: #fff;
+    border: 1px solid var(--green-line);
+    border-radius: 4px;
+    font-size: 12px; font-weight: 700;
+    color: var(--green-dark);
+}
+.badge-total i { color: var(--green); font-size: 13px; }
+.badge-total .badge-total-number {
+    background: var(--green);
+    color: #fff;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 800;
+}
+.action-buttons-group {
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
 
-<div class="container mt-4" style="font-family: 'Poppins', sans-serif;">
+/* ═══ TOGGLE TAB ═══ */
+.statistik-toolbar {
+    display: flex; flex-wrap: wrap; gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background: #fff;
+}
+.statistik-btn {
+    flex: 1 1 auto;
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 9px 14px;
+    font-size: 12px !important; font-weight: 600;
+    border: none;
+    border-right: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+    white-space: nowrap;
+}
+.statistik-btn:last-child { border-right: none; }
+.statistik-btn:hover { background: var(--green-soft); color: var(--green-dark); }
+.statistik-btn.active {
+    background: var(--green);
+    color: #fff;
+}
+.statistik-btn i { font-size: 13px; }
 
-    <!-- Tombol Navigasi Statistik -->
-    <div class="d-flex flex-wrap gap-2 mb-4 justify-content-center">
-    <button class="button-modern">
-        <i class="bi bi-briefcase-fill me-2"></i> Jumlah Paket Pekerjaan {{$data_totalpekerjaan}}
-    </button>
-    <button class="button-modern statistik-btn" data-target="statistik1">
-        <i class="bi bi-briefcase-fill me-2"></i> Jenis Pekerjaan
-    </button>
-    <button class="button-modern statistik-btn" data-target="statistik2">
-        <i class="bi bi-card-checklist me-2"></i> Status Pekerjaan
-    </button>
-    <button class="button-modern statistik-btn" data-target="statistik3">
-        <i class="bi bi-cash-stack me-2"></i> Sumber Dana
-    </button>
+/* ═══ STATISTIK CONTENT ═══ */
+.statistik-content {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px;
+}
 
-    <button class="button-modern statistik-btn" data-target="statistik4">
-    <i class="bi bi-calendar2-week-fill me-2"></i> Tahun Pelaksanaan
-    </button>
+/* ═══ STACK: atas tren, bawah data ═══ */
+.chart-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-    <button class="button-modern statistik-btn" data-target="statistik5">
-        <i class="bi bi-geo-alt-fill me-2"></i> Satuan Kerja
-    </button>
-    {{-- <button class="button-modern statistik-btn" data-target="statistik6">
-        <i class="bi bi-bar-chart-fill me-2"></i> Progres
-    </button> --}}
-</div>
+/* ═══ KOTAK CHART ═══ */
+.chart-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px;
+}
+.chart-box-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 6px;
+}
+.chart-box-title i { color: var(--green); font-size: 13px; }
 
+/* ═══ LINE CHART ═══ */
+.line-chart-container {
+    position: relative;
+    width: 100%;
+    height: 230px;
+}
+.empty-chart {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    height: 230px;
+    color: var(--ink-soft);
+    font-size: 12px; font-weight: 600; gap: 6px;
+}
+.empty-chart i { font-size: 28px; color: #cbd5e1; }
 
-    <!-- Konten Statistik 1 -->
-    <div id="statistik1" class="statistik-content">
-        <div class="text-center mt-3">
-    <button type="button" class="btn btn-outline-success"
-            data-bs-toggle="modal" data-bs-target="#modalStatistikTahunPelaksanaan"
-            style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14px;">
-        <i class="bi bi-calendar3 me-2"></i> Lihat Statistik Data Jenis Pekerjaan
-    </button>
-</div>
+/* ═══ BAR CHART — 2 KOLOM LABEL WRAP (FIX TERPOTONG) ═══ */
+.bar-chart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.bar-chart-item {
+    display: grid;
+    grid-template-columns: minmax(160px, 220px) 1fr 64px;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+.bar-chart-label {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 12px;
+    line-height: 1.35;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
+}
+.bar-chart-bar {
+    background: var(--silver-soft);
+    border-radius: 3px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.bar-chart-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--green);
+    transition: width .6s ease;
+    min-width: 2px;
+}
+.bar-chart-count {
+    text-align: right;
+    display: flex; flex-direction: column; align-items: flex-end;
+    gap: 1px;
+    line-height: 1.1;
+}
+.bar-chart-count .number {
+    font-size: 12px; font-weight: 800;
+    color: var(--green-dark);
+}
+.bar-chart-count .percent {
+    font-size: 10px;
+    color: var(--gray);
+    font-weight: 600;
+}
 
-<!-- Modal Statistik Tahun Pelaksanaan -->
-<div class="modal fade" id="modalStatistikTahunPelaksanaan" tabindex="-1" aria-labelledby="modalStatistikTahunPelaksanaanLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content" style="border-radius:16px; font-family:'Poppins', sans-serif; font-size:16px;">
+/* ═══ BUTTON BASE ═══ */
+.button-modern, .button-baru, .button-berkas,
+.button-merah, .button-hijau, .button-data {
+    font-size: 12px !important;
+    line-height: 1.3;
+    font-weight: 600;
+    border-radius: 4px;
+}
 
-      <!-- Header -->
-      <div class="modal-header" style="background:#1a3c34; color:white; border-top-left-radius:16px; border-top-right-radius:16px;">
-        <h5 class="modal-title" id="modalStatistikTahunPelaksanaanLabel" style="font-size:16px;">
-          <i class="bi bi-calendar3 me-2"></i> Statistik Jenis Paket Pekerjaan
-        </h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+/* ═══ MODAL DELETE ═══ */
+.modal-confirm-delete .modal-content {
+    border-radius: 6px;
+    border: 1px solid var(--line);
+}
+.modal-confirm-delete .modal-header {
+    background: #fef2f2;
+    border-bottom: 1px solid #fecaca;
+    padding: 12px 16px;
+}
+.modal-confirm-delete .modal-body {
+    padding: 24px 16px;
+    text-align: center;
+}
+.modal-confirm-delete .modal-footer {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    padding: 12px 16px;
+    justify-content: center; gap: 8px;
+}
+.confirm-icon {
+    width: 64px; height: 64px;
+    background: #fee2e2;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px;
+}
+.confirm-icon i { font-size: 1.8rem; color: #ef4444; }
+.confirm-title {
+    font-size: 15px; font-weight: 700;
+    color: var(--ink); margin-bottom: 6px;
+}
+.confirm-text { font-size: 12px; color: var(--ink-soft); margin: 0; }
+.confirm-text strong { color: #dc2626; }
 
-      <!-- Body -->
-      <div class="modal-body" style="font-size:16px;">
-        <div class="table-responsive">
-          <table class="table table-bordered align-middle text-center" style="font-size:16px;">
-            <thead style="background:#f3f4f6; color:#1a3c34; font-weight:600;">
-              <tr>
-                <th style="width: 5%;">No</th>
-                <th style="text-align:left;">Jenis Pekerjaan</th>
-                <th>Jumlah Paket</th>
-                <th>Persentase</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach($data_statistik->sortByDesc('jumlah')->values() as $index => $item)
-              <tr>
-                <td>{{ $index + 1 }}</td>
-                <td style="text-align: left;">{{ $item['jenis'] }}</td>
-                <td style="font-weight:600; color:#1a3c34;">{{ $item['jumlah'] }} Paket</td>
-                <td>{{ number_format($item['persentase'], 1) }}%</td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 768px) {
+    .toolbar-actions { flex-direction: column; align-items: stretch; }
+    .action-buttons-group { width: 100%; }
+    .action-buttons-group > * { flex: 1 1 auto; justify-content: center; }
+    .statistik-btn { flex: 1 1 50%; border-bottom: 1px solid var(--line); }
 
-      <!-- Footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-size:16px;">
-          <i class="bi bi-x-circle me-1"></i> Tutup
-        </button>
-      </div>
+    /* di mobile, label turun jadi 2 baris */
+    .bar-chart-item {
+        grid-template-columns: minmax(110px, 140px) 1fr 56px;
+        gap: 8px;
+    }
+    .bar-chart-label { font-size: 11px; }
+}
+</style>
 
-    </div>
-  </div>
-</div>
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<div class="app-wrapper">
 
-        <h6><i class="bi bi-bar-chart-line"></i> Statistik Jenis Pekerjaan</h6>
-       <div class="row text-center">
-    @foreach($data_statistik as $item)
-    <div class="col-md-2 col-sm-4 col-6 mb-4">
-        <div class="stats-card h-100">
-            <div class="stats-content d-flex flex-column align-items-center justify-content-center p-3">
-                <div class="stats-icon-box mb-2" style="width:60px; height:60px; border-radius:12px; background:#1a3c34; display:flex; align-items:center; justify-content:center;">
-                    <i class="bi bi-briefcase-fill" style="color:white; font-size:24px;"></i>
-                </div>
-                <div class="stats-info text-center">
-                    <p class="stats-title" style="font-size:14px; font-weight:600; margin-bottom:4px; color:#333;">
-                        {{ $item['jenis'] }}
-                    </p>
-                    <p style="font-weight:700; font-size:16px; margin:0; color:#1a3c34;">
-                        <span class="stats-count" data-target="{{ $item['jumlah'] }}">0</span> Paket Pekerjaan
-                    </p>
-                    <div class="stats-percentage mt-1" style="font-size:12px; color:#1a3c34;">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <span>{{ number_format($item['persentase'], 1) }}%</span>
-                    </div>
-                    <div class="stats-progress-wrap mt-2" style="width:100%; height:6px; background:#eee; border-radius:4px;">
-                        <div class="stats-progress-bar"
-                             style="width: {{ $item['persentase'] }}%; height:100%; background:#1a3c34; border-radius:4px;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endforeach
-</div>
+    @include('backend.00_administrator.00_baganterpisah.04_navbar')
+    @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+    @include('button')
 
-    </div>
+    <main class="app-main">
+        <section class="bg-3d-pattern">
 
-    <!-- Konten Statistik 2 -->
-    <div id="statistik2" class="statistik-content" style="display:none;">
-        <h6><i class="bi bi-clipboard-data"></i> Statistik Status Pekerjaan</h6>
-        <div class="row justify-content-center">
-    @foreach($data_totalstatuspekerjaan as $item)
-    <div class="col-md-6 col-sm-12 mb-4">
-        <div class="stats-card h-100">
-            <div class="stats-content d-flex align-items-center p-3">
-                <div class="stats-icon-box me-3"
-                     style="width:70px; height:70px; border-radius:14px; background:#1a3c34; display:flex; align-items:center; justify-content:center;">
-                    <i class="bi bi-briefcase-fill" style="color:white; font-size:28px;"></i>
-                </div>
-                <div class="stats-info w-100">
-                    <p class="stats-title mb-1" style="font-size:16px; font-weight:600; color:#333;">
-                        {{ $item['jenis'] }}
-                    </p>
-                    <p style="font-weight:700; font-size:18px; margin:0; color:#1a3c34;">
-                        <span class="stats-count" data-target="{{ $item['jumlah'] }}">0</span> Paket Pekerjaan
-                    </p>
-                    <div class="stats-percentage mt-1" style="font-size:13px; color:#1a3c34;">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <span>{{ number_format($item['persentase'], 1) }}%</span>
-                    </div>
-                    <div class="stats-progress-wrap mt-2" style="height:6px; background:#eee; border-radius:4px;">
-                        <div class="stats-progress-bar"
-                             style="width: {{ $item['persentase'] }}%; height:100%; background:#1a3c34; border-radius:4px;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endforeach
-</div>
-
-
-    </div>
-
-    <!-- Konten Statistik 3 -->
-    <div id="statistik3" class="statistik-content" style="display:none;">
-        <h6><i class="bi bi-cash-stack"></i> Statistik Sumber Dana</h6>
-   <div class="row justify-content-center">
-    @foreach($data_sumberdana as $item)
-    <div class="col-md-6 col-sm-12 mb-4">
-        <div class="stats-card h-100">
-            <div class="stats-content d-flex align-items-center p-3">
-                <div class="stats-icon-box me-3"
-                     style="width:70px; height:70px; border-radius:14px; background:#1a3c34; display:flex; align-items:center; justify-content:center;">
-                    <i class="bi bi-briefcase-fill" style="color:white; font-size:28px;"></i>
-                </div>
-                <div class="stats-info w-100">
-                    <p class="stats-title mb-1" style="font-size:16px; font-weight:600; color:#333;">
-                        {{ $item['jenis'] }}
-                    </p>
-                    <p style="font-weight:700; font-size:18px; margin:0; color:#1a3c34;">
-                        <span class="stats-count" data-target="{{ $item['jumlah'] }}">0</span> Paket Pekerjaan
-                    </p>
-                    <div class="stats-percentage mt-1" style="font-size:13px; color:#1a3c34;">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <span>{{ number_format($item['persentase'], 1) }}%</span>
-                    </div>
-                    <div class="stats-progress-wrap mt-2" style="height:6px; background:#eee; border-radius:4px;">
-                        <div class="stats-progress-bar"
-                             style="width: {{ $item['persentase'] }}%; height:100%; background:#1a3c34; border-radius:4px;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endforeach
-</div>
-
-    </div>
-
-    <!-- Konten Statistik 4 -->
-    <div id="statistik4" class="statistik-content" style="display:none;">
-        <h6><i class="bi bi-people-fill"></i> Statistik Tahun Pelaksanaan</h6>
-    <div class="row justify-content-center">
-    @foreach($data_tahun as $item)
-    <div class="col-md-6 col-sm-12 mb-4">
-        <div class="stats-card h-100">
-            <div class="stats-content d-flex align-items-center p-3">
-                <div class="stats-icon-box me-3"
-                     style="width:70px; height:70px; border-radius:14px; background:#1a3c34; display:flex; align-items:center; justify-content:center;">
-                    <i class="bi bi-briefcase-fill" style="color:white; font-size:28px;"></i>
-                </div>
-                <div class="stats-info w-100">
-                    <p class="stats-title mb-1" style="font-size:16px; font-weight:600; color:#333;">
-                        {{ $item['jenis'] }}
-                    </p>
-                    <p style="font-weight:700; font-size:18px; margin:0; color:#1a3c34;">
-                        <span class="stats-count" data-target="{{ $item['jumlah'] }}">0</span> Paket Pekerjaan
-                    </p>
-                    <div class="stats-percentage mt-1" style="font-size:13px; color:#1a3c34;">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <span>{{ number_format($item['persentase'], 1) }}%</span>
-                    </div>
-                    <div class="stats-progress-wrap mt-2" style="height:6px; background:#eee; border-radius:4px;">
-                        <div class="stats-progress-bar"
-                             style="width: {{ $item['persentase'] }}%; height:100%; background:#1a3c34; border-radius:4px;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endforeach
-</div>
-    </div>
-
-    <!-- Konten Statistik 5 -->
-    <div id="statistik5" class="statistik-content" style="display:none;">
-        <!-- Tombol Pemicu Modal -->
-<div class="text-center mt-3">
-    <button type="button" class="btn btn-outline-success"
-            data-bs-toggle="modal" data-bs-target="#modalStatistikTahun"
-            style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14px;">
-        <i class="bi bi-bank2 me-2"></i> Lihat Statistik Data Satuan Kerja
-    </button>
-</div>
-
-<!-- Modal Statistik Tahun -->
-<div class="modal fade" id="modalStatistikTahun" tabindex="-1" aria-labelledby="modalStatistikTahunLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content" style="border-radius:16px; font-family:'Poppins', sans-serif; font-size:16px;">
-
-      <!-- Header -->
-      <div class="modal-header" style="background:#1a3c34; color:white; border-top-left-radius:16px; border-top-right-radius:16px;">
-        <h5 class="modal-title" id="modalStatistikTahunLabel" style="font-size:16px;">
-          <i class="bi bi-bank2 me-2"></i> Statistik Paket Pekerjaan Per Satuan Kerja
-        </h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <!-- Body -->
-      <div class="modal-body" style="font-size:16px;">
-        <div class="table-responsive">
-          <table class="table table-bordered align-middle text-center" style="font-size:16px;">
-            <thead style="background:#f3f4f6; color:#1a3c34; font-weight:600;">
-              <tr>
-                <th style="width: 5%;">No</th>
-                <th style="text-align:left;">Dinas/Instansi</th>
-                <th>Jumlah Paket</th>
-                <th>Persentase</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach($data_satuankerja->sortByDesc('jumlah')->values() as $index => $item)
-              <tr>
-                <td>{{ $index + 1 }}</td>
-                <td style="text-align: left;">{{ $item['jenis'] }}</td>
-                <td style="font-weight:600; color:#1a3c34;">{{ $item['jumlah'] }} Paket</td>
-                <td>{{ number_format($item['persentase'], 1) }}%</td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-size:16px;">
-          <i class="bi bi-x-circle me-1"></i> Tutup
-        </button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-        <h6><i class="bi bi-geo-alt-fill"></i> Statistik Satuan Kerja Dinas/Instansi</h6>
-        <div class="row text-center justify-content-center">
-    @foreach($data_satuankerja as $item)
-    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
-        <div class="stats-card h-100 shadow-sm"
-             style="border-radius:14px; transition:all 0.3s; background:#fff;">
-            <div class="stats-content d-flex flex-column align-items-center justify-content-center p-3">
-
-                <!-- Ikon Instansi Pemerintah -->
-                <div class="stats-icon-box mb-2"
-                     style="width:70px; height:70px; border-radius:14px; background:#1a3c34; display:flex; align-items:center; justify-content:center;">
-                    <i class="bi bi-bank2" style="color:white; font-size:32px;"></i>
-                </div>
-
-                <!-- Info Statistik -->
-                <div class="stats-info text-center">
-                    <p class="stats-title mb-1" style="font-size:14px; font-weight:600; color:#333;">
-                        {{ $item['jenis'] }}
-                    </p>
-                    <p style="font-weight:700; font-size:16px; margin:0; color:#1a3c34;">
-                        <span class="stats-count" data-target="{{ $item['jumlah'] }}">0</span> Paket
-                    </p>
-                    <div class="stats-percentage mt-1" style="font-size:12px; color:#1a3c34;">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <span>{{ number_format($item['persentase'], 1) }}%</span>
-                    </div>
-                    <div class="stats-progress-wrap mt-2"
-                         style="width:100%; height:6px; background:#eee; border-radius:4px;">
-                        <div class="stats-progress-bar"
-                             style="width: {{ $item['persentase'] }}%; height:100%; background:#1a3c34; border-radius:4px;">
-                        </div>
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                        @include('backend.00_administrator.00_baganterpisah.11_alert')
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    @endforeach
-</div>
 
-    </div>
+            <div class="container-fluid">
+                <div class="row" style="margin-right:8px; margin-left:8px;">
+                    <div class="card card-3d">
+                        <div class="card-header card-header-custom">
+                            @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
-    <!-- Konten Statistik 6 -->
-    <div id="statistik6" class="statistik-content" style="display:none;">
-        <h6><i class="bi bi-activity"></i> Statistik Progres</h6>
-        <p>Data Progres akan tampil di sini...</p>
-    </div>
-
-</div>
-
-<!-- Script Toggle -->
-<script>
-
-    document.querySelectorAll('.stats-count').forEach(counter => {
-    const target = +counter.getAttribute('data-target');
-    const speed = 50;
-    const updateCount = () => {
-        const count = +counter.innerText || 0;
-        const increment = target / 40;
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, speed);
-        } else {
-            counter.innerText = target;
-        }
-    };
-    updateCount();
-});
-
-
-document.querySelectorAll('.statistik-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        // Sembunyikan semua konten
-        document.querySelectorAll('.statistik-content').forEach(content => {
-            content.style.display = 'none';
-        });
-        // Tampilkan konten yang dipilih
-        const target = this.getAttribute('data-target');
-        document.getElementById(target).style.display = 'block';
-
-        // Ganti gaya tombol aktif
-        document.querySelectorAll('.statistik-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-    });
-});
-</script>
-                        <br><br>
-
-                        <!-- Modal Konfirmasi Hapus -->
-                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
-                                        <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                        <form id="deleteForm" method="POST" action="">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                        </form>
-                                    </div>
+                            <div class="toolbar-actions">
+                                <div class="badge-total">
+                                    <i class="bi bi-box-seam"></i>
+                                    Total
+                                    <span class="badge-total-number">{{ $data_totalpekerjaan ?? 0 }}</span>
+                                    Paket
+                                </div>
+                                <div class="action-buttons-group">
+                                    {{-- <a href="/bepaketpekerjaanrekap" class="button-modern button-md">
+                                        <i class="bi bi-clipboard-data" style="margin-right:4px;"></i> Rekap
+                                    </a> --}}
+                                    <a href="/statistikprofilpekerjaan" class="button-modern button-md">
+                                        <i class="bi bi-bar-chart-line" style="margin-right:4px;"></i> Statistik
+                                    </a>
+                                    <a href="/bepaketpekerjaan" class="button-modern button-md">
+                                        <i class="bi bi-database" style="margin-right:4px;"></i> Data Lengkap
+                                    </a>
+                                    {{-- <a href="/bepaketpekerjaancreate" class="button-baru button-md">
+                                        <i class="fa fa-plus" style="margin-right:4px;"></i> Tambah
+                                    </a> --}}
                                 </div>
                             </div>
                         </div>
+
+                        <div class="card-body" style="padding:14px;">
+
+                            {{-- Toggle Tab --}}
+                            <div class="statistik-toolbar">
+                                <button class="statistik-btn active" data-target="statistik1">
+                                    <i class="bi bi-briefcase"></i> Jenis Pekerjaan
+                                </button>
+                                <button class="statistik-btn" data-target="statistik2">
+                                    <i class="bi bi-card-checklist"></i> Status
+                                </button>
+                                <button class="statistik-btn" data-target="statistik3">
+                                    <i class="bi bi-cash-stack"></i> Sumber Dana
+                                </button>
+                                <button class="statistik-btn" data-target="statistik4">
+                                    <i class="bi bi-calendar2-week"></i> Tahun
+                                </button>
+                                <button class="statistik-btn" data-target="statistik5">
+                                    <i class="bi bi-geo-alt"></i> Satuan Kerja
+                                </button>
+                            </div>
+
+                            {{-- STATISTIK 1 --}}
+                            <div id="statistik1" class="statistik-content" style="display:block;">
+                                <div class="chart-stack">
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-graph-up-arrow"></i> Tren per Tahun
+                                        </div>
+                                        <div class="line-chart-container">
+                                            <canvas id="chartJenisPerTahun"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-bar-chart-line"></i> Distribusi Jenis Pekerjaan
+                                        </div>
+                                        @if($data_statistik->count())
+                                        <div class="bar-chart-list">
+                                            @foreach($data_statistik->sortByDesc('jumlah')->values() as $item)
+                                            <div class="bar-chart-item">
+                                                <div class="bar-chart-label">{{ $item['jenis'] }}</div>
+                                                <div class="bar-chart-bar">
+                                                    <div class="bar-chart-bar-fill" style="width: {{ $item['persentase'] }}%;"></div>
+                                                </div>
+                                                <div class="bar-chart-count">
+                                                    <span class="number">{{ $item['jumlah'] }}</span>
+                                                    <span class="percent">{{ number_format($item['persentase'],1) }}%</span>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                        @else
+                                        <div class="empty-chart"><i class="bi bi-bar-chart"></i> Belum ada data</div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- STATISTIK 2 --}}
+                            <div id="statistik2" class="statistik-content" style="display:none;">
+                                <div class="chart-stack">
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-graph-up-arrow"></i> Tren per Tahun
+                                        </div>
+                                        <div class="line-chart-container">
+                                            <canvas id="chartStatusPerTahun"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-bar-chart-line"></i> Distribusi Status
+                                        </div>
+                                        @if($data_totalstatuspekerjaan->count())
+                                        <div class="bar-chart-list">
+                                            @foreach($data_totalstatuspekerjaan->sortByDesc('jumlah')->values() as $item)
+                                            <div class="bar-chart-item">
+                                                <div class="bar-chart-label">{{ $item['jenis'] }}</div>
+                                                <div class="bar-chart-bar">
+                                                    <div class="bar-chart-bar-fill" style="width: {{ $item['persentase'] }}%;"></div>
+                                                </div>
+                                                <div class="bar-chart-count">
+                                                    <span class="number">{{ $item['jumlah'] }}</span>
+                                                    <span class="percent">{{ number_format($item['persentase'],1) }}%</span>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                        @else
+                                        <div class="empty-chart"><i class="bi bi-bar-chart"></i> Belum ada data</div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- STATISTIK 3 --}}
+                            <div id="statistik3" class="statistik-content" style="display:none;">
+                                <div class="chart-stack">
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-graph-up-arrow"></i> Tren per Tahun
+                                        </div>
+                                        <div class="line-chart-container">
+                                            <canvas id="chartSumberdanaPerTahun"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-bar-chart-line"></i> Distribusi Sumber Dana
+                                        </div>
+                                        @if($data_sumberdana->count())
+                                        <div class="bar-chart-list">
+                                            @foreach($data_sumberdana->sortByDesc('jumlah')->values() as $item)
+                                            <div class="bar-chart-item">
+                                                <div class="bar-chart-label">{{ $item['jenis'] }}</div>
+                                                <div class="bar-chart-bar">
+                                                    <div class="bar-chart-bar-fill" style="width: {{ $item['persentase'] }}%;"></div>
+                                                </div>
+                                                <div class="bar-chart-count">
+                                                    <span class="number">{{ $item['jumlah'] }}</span>
+                                                    <span class="percent">{{ number_format($item['persentase'],1) }}%</span>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                        @else
+                                        <div class="empty-chart"><i class="bi bi-bar-chart"></i> Belum ada data</div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- STATISTIK 4 --}}
+                            <div id="statistik4" class="statistik-content" style="display:none;">
+                                <div class="chart-stack">
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-graph-up-arrow"></i> Tren per Tahun
+                                        </div>
+                                        <div class="line-chart-container">
+                                            <canvas id="chartTahunPerTahun"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-bar-chart-line"></i> Distribusi Tahun Pelaksanaan
+                                        </div>
+                                        @if($data_tahun->count())
+                                        <div class="bar-chart-list">
+                                            @foreach($data_tahun->sortByDesc('jumlah')->values() as $item)
+                                            <div class="bar-chart-item">
+                                                <div class="bar-chart-label">{{ $item['jenis'] }}</div>
+                                                <div class="bar-chart-bar">
+                                                    <div class="bar-chart-bar-fill" style="width: {{ $item['persentase'] }}%;"></div>
+                                                </div>
+                                                <div class="bar-chart-count">
+                                                    <span class="number">{{ $item['jumlah'] }}</span>
+                                                    <span class="percent">{{ number_format($item['persentase'],1) }}%</span>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                        @else
+                                        <div class="empty-chart"><i class="bi bi-bar-chart"></i> Belum ada data</div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- STATISTIK 5 --}}
+                            <div id="statistik5" class="statistik-content" style="display:none;">
+                                <div class="chart-stack">
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-graph-up-arrow"></i> Tren per Tahun
+                                        </div>
+                                        <div class="line-chart-container">
+                                            <canvas id="chartSatuankerjaPerTahun"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="chart-box">
+                                        <div class="chart-box-title">
+                                            <i class="bi bi-bar-chart-line"></i> Distribusi Satuan Kerja
+                                        </div>
+                                        @if($data_satuankerja->count())
+                                        <div class="bar-chart-list">
+                                            @foreach($data_satuankerja->sortByDesc('jumlah')->values() as $item)
+                                            <div class="bar-chart-item">
+                                                <div class="bar-chart-label">{{ $item['jenis'] }}</div>
+                                                <div class="bar-chart-bar">
+                                                    <div class="bar-chart-bar-fill" style="width: {{ $item['persentase'] }}%;"></div>
+                                                </div>
+                                                <div class="bar-chart-count">
+                                                    <span class="number">{{ $item['jumlah'] }}</span>
+                                                    <span class="percent">{{ number_format($item['persentase'],1) }}%</span>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                        @else
+                                        <div class="empty-chart"><i class="bi bi-bar-chart"></i> Belum ada data</div>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <!--end::App Main-->
+            </div>
+        </section>
+    </main>
+</div>
+
+{{-- MODAL HAPUS --}}
+<div class="modal fade modal-confirm-delete" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width:400px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-exclamation-triangle" style="color:#ef4444;margin-right:6px;"></i> Konfirmasi Hapus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="confirm-icon"><i class="bi bi-trash"></i></div>
+                <h5 class="confirm-title">Yakin Ingin Menghapus?</h5>
+                <p class="confirm-text">Data <strong id="itemName"></strong> akan dihapus permanen.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button-modern" data-bs-dismiss="modal">Batal</button>
+                <form id="deleteForm" method="POST" action="" style="margin:0;">
+                    @csrf @method('DELETE')
+                    <button type="submit" class="button-merah">Hapus</button>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
 
-    @include('backend.00_administrator.00_baganterpisah.02_footer')
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
-    <script>
-        function setDeleteUrl(button) {
-            var id = button.getAttribute('data-judul');
-            document.getElementById('itemName').innerText = id;
-            var deleteUrl = "/bepaketpekerjaan/delete/" + encodeURIComponent(id);
-            document.getElementById('deleteForm').action = deleteUrl;
+<script>
+// ═══ TOGGLE TAB ═══
+document.addEventListener('DOMContentLoaded', function () {
+    const btns = document.querySelectorAll('.statistik-btn');
+    const contents = document.querySelectorAll('.statistik-content');
+
+    btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            contents.forEach(c => c.style.display = 'none');
+            const target = this.getAttribute('data-target');
+            const targetEl = document.getElementById(target);
+            if (targetEl) targetEl.style.display = 'block';
+            btns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            setTimeout(function () {
+                if (target === 'statistik1' && !window._chart1Rendered) renderChart1();
+                if (target === 'statistik2' && !window._chart2Rendered) renderChart2();
+                if (target === 'statistik3' && !window._chart3Rendered) renderChart3();
+                if (target === 'statistik4' && !window._chart4Rendered) renderChart4();
+                if (target === 'statistik5' && !window._chart5Rendered) renderChart5();
+            }, 100);
+        });
+    });
+});
+
+// ═══ WARNA: HIJAU + SILVER + ABU ═══
+const GREEN = '#13A847';
+const SILVER = '#94a3b8';
+const GRAY = '#64748b';
+const GREEN_BG = 'rgba(19,168,71,0.12)';
+
+// palet dataset line: hijau → silver → abu (rotasi 3 warna)
+const datasetColors = [
+    { border: GREEN,  bg: GREEN_BG },
+    { border: SILVER, bg: 'rgba(148,163,184,0.15)' },
+    { border: GRAY,   bg: 'rgba(100,116,139,0.15)' },
+];
+
+function buildLineChart(canvasId, labels, datasets) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+
+    const chartDatasets = datasets.map(function (ds, idx) {
+        const c = datasetColors[idx % datasetColors.length];
+        return {
+            label: ds.label,
+            data: ds.data,
+            borderColor: c.border,
+            backgroundColor: c.bg,
+            borderWidth: 2,
+            fill: idx === 0,        // hanya dataset pertama yang fill
+            tension: 0.35,
+            pointBackgroundColor: c.border,
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            pointHoverBorderWidth: 2,
+        };
+    });
+
+    new Chart(canvas, {
+        type: 'line',
+        data: { labels: labels, datasets: chartDatasets },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { intersect: false, mode: 'index' },
+            plugins: {
+                legend: {
+                    display: chartDatasets.length > 1,
+                    position: 'bottom',
+                    labels: {
+                        font: { size: 11, family: 'Poppins', weight: '600' },
+                        usePointStyle: true, pointStyle: 'circle',
+                        padding: 8, boxWidth: 8, boxHeight: 8,
+                        color: '#475569'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(15,23,42,0.9)',
+                    titleFont: { size: 12, family: 'Poppins', weight: '700' },
+                    bodyFont: { size: 11, family: 'Poppins' },
+                    padding: 8, cornerRadius: 4,
+                    callbacks: {
+                        title: ctx => 'Tahun ' + ctx[0].label,
+                        label: ctx => '  ' + ctx.dataset.label + ': ' + ctx.raw + ' paket'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: { display: false },
+                    ticks: { font: { size: 11, family: 'Poppins', weight: '600' }, color: '#334155' }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 1, font: { size: 10, family: 'Poppins' }, color: '#64748b', padding: 6 },
+                    grid: { color: 'rgba(203,213,225,0.4)' },
+                    border: { display: false }
+                }
+            }
         }
-    </script>
-</body>
+    });
+}
+
+function renderChart1() { window._chart1Rendered = true; buildLineChart('chartJenisPerTahun', {!! json_encode($chartJenisPerTahun['labels'] ?? []) !!}, {!! json_encode($chartJenisPerTahun['datasets'] ?? []) !!}); }
+function renderChart2() { window._chart2Rendered = true; buildLineChart('chartStatusPerTahun', {!! json_encode($chartStatusPerTahun['labels'] ?? []) !!}, {!! json_encode($chartStatusPerTahun['datasets'] ?? []) !!}); }
+function renderChart3() { window._chart3Rendered = true; buildLineChart('chartSumberdanaPerTahun', {!! json_encode($chartSumberdanaPerTahun['labels'] ?? []) !!}, {!! json_encode($chartSumberdanaPerTahun['datasets'] ?? []) !!}); }
+function renderChart4() { window._chart4Rendered = true; buildLineChart('chartTahunPerTahun', {!! json_encode($chartTahunPerTahun['labels'] ?? []) !!}, {!! json_encode($chartTahunPerTahun['datasets'] ?? []) !!}); }
+function renderChart5() { window._chart5Rendered = true; buildLineChart('chartSatuankerjaPerTahun', {!! json_encode($chartSatuankerjaPerTahun['labels'] ?? []) !!}, {!! json_encode($chartSatuankerjaPerTahun['datasets'] ?? []) !!}); }
+
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(renderChart1, 150);
+});
+
+function setDeleteUrl(button) {
+    const id = button.getAttribute('data-judul');
+    document.getElementById('itemName').innerText = id;
+    document.getElementById('deleteForm').action = "/bepaketpekerjaan/delete/" + encodeURIComponent(id);
+}
+</script>
+
+@include('backend.00_administrator.00_baganterpisah.02_footer')
