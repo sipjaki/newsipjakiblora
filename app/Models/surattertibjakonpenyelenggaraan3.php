@@ -15,7 +15,7 @@ class surattertibjakonpenyelenggaraan3 extends Model
 
     public function tertibjakonpenyelenggaraan()
     {
-        return $this->hasMany(tertibjakonpenyelenggaraan::class, 'tertibjakonpenyelenggaraan_id');
+        return $this->hasOne(tertibjakonpenyelenggaraan::class, 'tertibjakonpenyelenggaraan_id');
     }
 
 
