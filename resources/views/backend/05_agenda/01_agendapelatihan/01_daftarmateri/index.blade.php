@@ -1,49 +1,3 @@
-<style>
-    .btn-suspend {
-        background-color: orange;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-suspend:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid orange;
-    }
-
-    .btn-expired {
-        background-color: red;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-expired:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid red;
-    }
-
-    .btn-active {
-        background-color: green;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 14px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-active:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid green;
-    }
-</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -63,7 +17,7 @@
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -89,11 +43,11 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                     <a href="/beagendapelatihan">
-                        <button class="button-newvalidasi"
+                        <button class="button-modern"
                         onclick="window.history.back();">
 
                         <!-- Ikon Kembali -->
@@ -108,7 +62,7 @@
 
 
                      <a href="/beagendapelatihanmateri/createmateri/{{$data->id}}">
-                        <button class="button-hijau">
+                        <button class="button-baru">
                          <!-- Ikon Kembali -->
                          <i class="fa fa-plus" style="margin-right: 8px;"></i>
                          Upload Materi
@@ -253,7 +207,7 @@
                 animation: fadeIn 0.5s ease-in-out;
             ">
                 <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
-                Materi Tidak Ditemukan !!
+                Materi Belum Di Upload !!
             </div>
         </td>
     </tr>

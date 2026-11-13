@@ -15,8 +15,23 @@ class surattertibjakonpemanfaatan2 extends Model
 
    public function tertibjakonpemanfaatan()
 {
-    return $this->hasMany(tertibjakonpemanfaatan::class, 'tertibjakonpemanfaatan_id')->oldest();
+    return $this->hasOne(tertibjakonpemanfaatan::class, 'tertibjakonpemanfaatan_id')->oldest();
 }
+
+    public function tandatangan1()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan1_id');
+    }
+
+    public function tandatangan2()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan2_id');
+    }
+
+    public function tandatangan3()
+    {
+        return $this->belongsTo(tandatangan::class, 'tandatangan3_id');
+    }
 
 
 }

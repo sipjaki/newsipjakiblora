@@ -13,7 +13,7 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+            <section style="background: linear-gradient(to bottom, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -38,41 +38,27 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                     </div>
 
 
 
                            {{-- ======================================================= --}}
                            <div class="card card-primary card-outline mb-6">
-                            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="display: flex; justify-content: space-between; margin-top: 10px; margin-bottom: 10px;">
                                 <!-- Tombol Kiri -->
-                                <button
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#7105ec'; this.style.color='white';"
-                                    style="background-color: #7105ec; color: white; border: none; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none; margin-left: 15px; margin-right: 15px; margin-bottom: 15px;">
-                                    <!-- Ikon File -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        viewBox="0 0 16 16" style="margin-right: 8px;">
-                                        <path d="M4 0h5.5L14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM9.5 1v3a1 1 0 0 0 1 1h3l-4-4z"/>
-                                    </svg>
+                                <button class="button-baru">
                                     Nama Kegiatan : {{ $agendapelatihan }}
                                 </button>
 
                                 <!-- Tombol Kanan -->
-                                <a href="javascript:history.back()">
-                                    <button
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                        style="background-color: #374151; color: white; border: none; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none; margin-left: 15px; margin-right: 15px; margin-bottom: 15px;">
-                                        <!-- Ikon Kembali -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            viewBox="0 0 16 16" style="margin-right: 8px;">
-                                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-                                        </svg>
+                               <a href="{{ url()->previous() }}">
+                                    <button class="button-modern">
+                                        <i class="bi bi-arrow-left" style="margin-right: 8px;"></i>
                                         Kembali
                                     </button>
                                 </a>
+
                             </div>
                         </div>
 
@@ -95,8 +81,8 @@
 
 
                                         <!-- Materi -->
-<div class="mb-3">
-    <label class="form-label" for="materi">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="materi">
         <i class="bi bi-journal-text" style="margin-right:8px; color:navy;"></i> Materi
     </label>
     <input type="text" id="materi" name="materi" class="form-control @error('materi') is-invalid @enderror" value="{{ old('materi') }}">
@@ -106,8 +92,8 @@
 </div>
 
 <!-- Narasumber -->
-<div class="mb-3">
-    <label class="form-label" for="narasumber">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="narasumber">
         <i class="bi bi-person-lines-fill" style="margin-right:8px; color:navy;"></i> Narasumber
     </label>
     <input type="text" id="narasumber" name="narasumber" class="form-control @error('narasumber') is-invalid @enderror" value="{{ old('narasumber') }}">
@@ -116,8 +102,8 @@
     @enderror
 </div>
 <!-- Jam Pelajaran -->
-<div class="mb-3">
-    <label class="form-label" for="jampelajaran">
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="jampelajaran">
         <i class="bi bi-clock-history" style="margin-right:8px; color:navy;"></i> Jam Pelajaran
     </label>
     <select id="jampelajaran" name="jampelajaran" class="form-control @error('jampelajaran') is-invalid @enderror">
@@ -141,19 +127,11 @@
                                 <!-- Tombol Submit -->
                                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                        <button type="button" onclick="openModal()"
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-                                        style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                    <button type="button" class="button-baru" onclick="openModal()">
+                                                        <i class="bi bi-plus" style="margin-right: 8px;"></i>
+                                                        <span style="font-family: 'Poppins', sans-serif;">Tambah Pemateri</span>
+                                                    </button>
 
-                                        <!-- Ikon SVG Pensil -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                        fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                   </svg>
-                                        <span style="font-family: 'Poppins', sans-serif;">Create</span>
-                                    </button>
                                     </div>
                                     <!-- Modal Konfirmasi -->
                                     <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">

@@ -1,798 +1,913 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
+<style>
+/* ═══════════════════════════════════════════════════
+   BACKGROUND HIJAU TITIK-TITIK
+   ═══════════════════════════════════════════════════ */
+.bg-soft-page {
+    background:
+        radial-gradient(circle at 15% 15%, rgba(19, 168, 71, 0.10) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(19, 168, 71, 0.08) 0%, transparent 45%),
+        linear-gradient(180deg, #d9f0e2 0%, #eaf7ee 200px, #f8fafc 400px, #f8fafc 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 24px 0 48px;
+    position: relative;
+}
+.bg-soft-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(19, 168, 71, 0.18) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: linear-gradient(180deg, black 0%, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, black 0%, black 60%, transparent 100%);
+}
+.bg-soft-page > * { position: relative; z-index: 1; }
+
+/* ═══ PANEL ═══ */
+.panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+.panel-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    background: #ffffff;
+}
+.panel-body { padding: 20px 24px; }
+
+/* ═══ ACTION BAR ═══ */
+.action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 16px 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.action-bar .left, .action-bar .right {
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+}
+.action-bar .title-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 14px; background: #f0fdf4; border: 1px solid #bbf7d0;
+    border-radius: 10px; font-size: 12.5px; font-weight: 700; color: #15803d;
+}
+.action-bar .title-chip i { color: #13A847; font-size: 14px; }
+
+/* ═══ FORM CONTROLS ═══ */
+.form-input, .form-textarea {
+    width: 100%; font-size: 13px; padding: 8px 12px;
+    border: 1px solid #111827; border-radius: 8px;
+    background: #ffffff; color: #1e293b; transition: all 0.15s ease;
+}
+.form-input:focus, .form-textarea:focus {
+    border-color: #13A847; box-shadow: 0 0 0 3px rgba(19, 168, 71, 0.1); outline: none;
+}
+.form-input[readonly] { background: #f8fafc; cursor: default; }
+.form-textarea { resize: vertical; }
+
+/* ═══ DOC CARD ═══ */
+.doc-card {
+    background: #ffffff; border: 1px solid #111827;
+    border-radius: 12px; padding: 28px 32px; margin-bottom: 20px;
+}
+.doc-header {
+    display: flex; align-items: center; gap: 10px;
+    padding-bottom: 14px; border-bottom: 2px solid #111827; margin-bottom: 18px;
+}
+.doc-header img { width: 28px; height: auto; }
+.doc-header .header-sep { color: #111827; font-weight: 800; font-size: 14px; }
+.doc-header .header-title {
+    font-size: 13.5px; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.4;
+}
+.doc-title {
+    font-size: 13.5px; font-weight: 700; color: #0f172a; line-height: 1.6;
+    margin-bottom: 20px; padding: 14px 18px; background: #f8fafc;
+    border: 1px solid #111827; border-left: 4px solid #13A847; border-radius: 6px;
+}
+
+/* ═══ INFO TABLE ═══ */
+.info-table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    margin-bottom: 20px; border: 1px solid #111827;
+}
+.info-table td { padding: 10px 12px; border: 1px solid #111827; vertical-align: middle; }
+.info-table td.label-cell {
+    background: #f8fafc; font-weight: 700; color: #111827;
+    width: 200px; font-size: 12.5px;
+}
+
+/* ═══ DATA TABLE ═══ */
+.data-table {
+    width: 100%; border-collapse: collapse; font-size: 12.5px;
+    margin-bottom: 16px; border: 1px solid #111827;
+}
+.data-table th, .data-table td {
+    border: 1px solid #111827; padding: 9px 12px; vertical-align: middle;
+}
+.data-table th {
+    background: #f8fafc; color: #111827; font-weight: 700;
+    text-align: center; font-size: 12px; line-height: 1.35;
+}
+.data-table th .th-sub {
+    display: block; font-size: 10.5px; font-weight: 500;
+    color: #4b5563; margin-top: 2px;
+}
+.data-table td { text-align: left; color: #111827; }
+.data-table td.center { text-align: center; }
+
+/* ═══ DATE RANGE ═══ */
+.date-range-input { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.date-range-input .sep { color: #111827; font-weight: 700; font-size: 12px; }
+
+/* ═══ TIM PEMERIKSA (KOLOM 6 KANAN) ═══ */
+.tim-panel-6 {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+.tim-panel-6 .tim-inner {
+    width: 50%;
+    min-width: 320px;
+    background: #ffffff;
+    border: 1px solid #111827;
+    border-radius: 10px;
+    padding: 12px 14px;
+}
+.tim-panel-6 .tim-title {
+    font-size: 12px; font-weight: 800; color: #111827;
+    text-transform: uppercase; letter-spacing: 0.4px;
+    margin-bottom: 8px; padding-bottom: 6px;
+    border-bottom: 1px solid #111827; text-align: center;
+}
+.tim-panel-6 table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.tim-panel-6 table th, .tim-panel-6 table td {
+    border: 1px solid #111827; padding: 5px 8px; vertical-align: middle;
+}
+.tim-panel-6 table th {
+    background: #f8fafc; text-align: center; font-weight: 700; font-size: 11.5px;
+}
+.tim-panel-6 table td.center { text-align: center; }
+.tim-panel-6 .ttd-box {
+    display: inline-block; width: 80px; height: 36px;
+    border: 1px solid #111827; background: #ffffff; border-radius: 2px;
+}
+
+/* ═══ SUBMIT ═══ */
+.submit-bar { display: flex; justify-content: flex-end; margin: 20px 0; }
+
+/* ═══ MODAL LIHAT BERKAS — CLASS KHUSUS ═══ */
+.berkas-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(15, 23, 42, 0.6); z-index: 10000;
+    justify-content: center; align-items: flex-start;
+    padding: 30px 15px; overflow-y: auto;
+}
+.berkas-overlay.show { display: flex; }
+.berkas-dialog {
+    background: #ffffff; border-radius: 16px; border: 1px solid #111827;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    width: 100%; max-width: 1100px; margin: auto; overflow: hidden;
+    display: flex; flex-direction: column; max-height: calc(100vh - 60px);
+}
+.berkas-header {
+    display: flex; align-items: center; gap: 4px;
+    padding: 14px 20px; border-bottom: 1px solid #111827;
+    background: #ffffff; flex-shrink: 0;
+}
+.berkas-header .berkas-title {
+    margin: 0 0 0 8px; font-size: 13px; font-weight: 600;
+    color: #0f172a; line-height: 1.3;
+}
+.berkas-close-btn {
+    margin-left: auto; background: #f1f5f9; border: 1px solid #cbd5e1;
+    color: #334155; width: 32px; height: 32px; border-radius: 8px;
+    display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.15s ease; font-size: 16px;
+    line-height: 1; flex-shrink: 0;
+}
+.berkas-close-btn:hover { background: #fee2e2; border-color: #fca5a5; color: #b91c1c; }
+.berkas-body { padding: 20px; font-size: 13px; overflow-y: auto; flex: 1; }
+
+/* ═══ STATUS KESESUAIAN ═══ */
+.status-kesesuaian-card {
+    background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    padding: 20px 24px; margin-bottom: 20px;
+}
+.status-kesesuaian-title {
+    font-size: 12px; font-weight: 800; color: #111827;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 1px solid #111827;
+    display: flex; align-items: center; gap: 8px;
+}
+.status-kesesuaian-title i { color: #13A847; font-size: 14px; }
+.status-kesesuaian-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+}
+.status-kesesuaian-item {
+    background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 10px;
+    padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;
+}
+.status-kesesuaian-label {
+    font-size: 11px; font-weight: 800; color: #64748b;
+    text-transform: uppercase; letter-spacing: 0.3px;
+    display: flex; align-items: center; gap: 5px;
+}
+.status-kesesuaian-label i { color: #94a3b8; font-size: 12px; }
+.status-kesesuaian-value {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 5px; font-size: 12px; font-weight: 700;
+    padding: 8px 12px; border-radius: 8px; border: 1.5px solid;
+}
+.status-kesesuaian-value.ok { background: #dcfce7; border-color: #86efac; color: #15803d; }
+.status-kesesuaian-value.no { background: #fee2e2; border-color: #fca5a5; color: #b91c1c; }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 768px) {
+    .action-bar { flex-direction: column; align-items: stretch; }
+    .action-bar .left, .action-bar .right { justify-content: stretch; width: 100%; }
+    .doc-card { padding: 20px 16px; }
+    .info-table td.label-cell { width: auto; }
+    .tim-panel-6 .tim-inner { width: 100%; min-width: 0; }
+    .status-kesesuaian-grid { grid-template-columns: 1fr; }
+    .berkas-dialog { max-height: calc(100vh - 30px); }
+    .berkas-body { padding: 14px; }
+}
+</style>
+
 <!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
-    <div class="app-wrapper">
-{{-- ---------------------------------------------------------------------- --}}
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<div class="app-wrapper">
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
 @include('button')
+@include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
-{{-- ---------------------------------------------------------------------- --}}
+   <main class="app-main">
+<section class="bg-soft-page">
 
-      @include('backend.00_administrator.00_baganterpisah.03_sidebar')
-
-      <!--begin::App Main-->
-      <main class="app-main">
-        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
-
-        <!--begin::App Content Header-->
+        {{-- ═══ APP CONTENT HEADER ═══ --}}
         <div class="app-content-header">
-          <!--begin::Container-->
           <div class="container-fluid">
-            <!--begin::Row-->
             <div class="row">
-
                 @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
                 @include('backend.00_administrator.00_baganterpisah.11_alert')
             </div>
-            <!--end::Row-->
           </div>
-          <!--end::Container-->
         </div>
 
-        <br>
-
+        {{-- ═══ MAIN CONTENT ═══ --}}
         <div class="container-fluid">
-            <!--begin::Row-->
             <div class="row" style="margin-right: 10px; margin-left:10px;">
-                <!-- /.card -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
-                    </div>
 
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel-header">
+                                                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
+                       </div>
 
+                        <div class="panel-body">
 
-                           {{-- ======================================================= --}}
-                           <div class="card card-primary card-outline mb-6">
-                               <div style="display: flex; justify-content: space-between; margin-top: 10px; flex-wrap: wrap; margin-bottom:20px;">
-                                <!-- Kontainer Kiri -->
-                                <div style="display: flex; gap: 10px; margin-right:25px; margin-left:25px;">
-                                    <!-- Tombol Nama Pekerjaan -->
-                                    <button class="button-baru">
-                                        <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
+                            {{-- ═══ ACTION BAR ═══ --}}
+                            <div class="action-bar">
+                                <div class="left">
+                                    <span class="title-chip">
+                                        <i class="bi bi-file-earmark-text"></i>
                                         Nama Pekerjaan: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
-                                    </button>
-
-
-                                    <!-- Tombol Badan Usaha -->
-
-
-                                     @if($datasurat2->id)
-                                          {{-- <a href="/betertibjakonusahasurat1/update/{{$datasurat2->id}}">
-                                                <button class="btn-create">
-                                                    <i class="bi bi-tools icon-create"></i>
-                                                    Perbaikan Data
-                                                </button>
-                                            </a> --}}
-                                        <button onclick="printModalContent({{ $datasurat2->id }})" class="button-berkas">
-                                            <i class="bi bi-file-earmark-arrow-down icon-create"></i>
-                                            Print
+                                    </span>
+                                </div>
+                                <div class="right">
+                                    @if($datasurat2->id)
+                                        <button type="button" onclick="printModalContent({{ $datasurat2->id }})" class="button-berkas button-md">
+                                            <i class="bi bi-printer"></i> Print
                                         </button>
-
-                                        <button class="button-berkas" onclick="downloadModalPDF({{ $datasurat2->id }})">
-                                            <i class="bi bi-file-earmark-arrow-down icon-create"></i>
-                                            Download
-                                        </button>
-
-                                        <button class="button-berkas"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $datasurat2->id }}">
-                                            <i class="bi bi-file-earmark-text icon-create"></i>
-                                            Lihat Berkas
+                                        {{-- <button type="button" class="button-berkas button-md" onclick="downloadModalPDF({{ $datasurat2->id }})">
+                                            <i class="bi bi-download"></i> Download
+                                        </button> --}}
+                                        <button type="button" class="button-berkas button-md"
+                                                onclick="openBerkasModal({{ $datasurat2->id }})">
+                                            <i class="bi bi-eye"></i> Lihat Berkas
                                         </button>
                                     @endif
-
-                                <div class="modal fade" id="modalKtp{{ $datasurat2->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $datasurat2->id }}" aria-hidden="true">
-                                            <div class="modal-dialog modal-xl modal-dialog-centered">
-                                        <div class="modal-content" style="font-size: 0.875rem;">
-                                            <div class="modal-header d-flex align-items-center">
-                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                                    <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
-                                                </a>
-                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                                    <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
-                                                </a>
-                                                <span class="mx-2">:</span>
-                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Kesesuaian Bentuk dan Kualifikasi Usaha dengan Kegiatan Usaha Jasa Konstruksi dan Segmentasi Pasar Jasa Konstruksi Secara Rutin</h5>
-                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $datasurat2->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
-                                                        <td>{{ $datasurat2->statusperizinan ?? 'Data Belum Di Buat ' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>No NIB</strong></td>
-                                                        <td>{{ $datasurat2->nib ?? 'Data Belum Di Buat ' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>
-                                                            @if ($datasurat2 && $datasurat2->waktupengawasan && $datasurat2->waktupengawasanselesai)
-                                                                {{ \Carbon\Carbon::parse($datasurat2->waktupengawasan)->isoFormat('D MMMM YYYY') }}
-                                                                –
-                                                                {{ \Carbon\Carbon::parse($datasurat2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
-                                                            @else
-                                                                <span class="text-muted">Belum Di Buat</span>
-                                                            @endif
-                                                        </td>
-                                                    </tr>
-                                                </table>
-
-                                                <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
-                                                    <thead>
-                                                        <tr>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Bentuk</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kualifikasi</th>
-                                                            {{-- <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th> --}}
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Bentuk</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Kualifikasi</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
->
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat2->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->bentuk ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->sbu ?? 'Data Belum Di Buat '}}</td>
-                                                            {{-- <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha}}</td> --}}
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-
-                                                <div class="container" style="margin-top: -30px;">
-                                                    <!-- Modal Card -->
-
-                                                            <div class="container" style="margin-top: 10px;">
-                                                                <div class="row">
-                                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
-                                                                        <!-- Modal Card -->
-                                                                        <div class="card" style="border: 1px solid white;">
-                                                                            <div class="card-body">
-                                                                                <!-- Tim Pemeriksa -->
-                                                                                <div class="tim-pemeriksa-container">
-                                                                                    <div class="tim-pemeriksa">
-                                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
-                                                                                        <table class="table table-sm" style="margin-top: -20px;">
-                                                                                            <thead class="table-secondary">
-                                                                                                <tr>
-                                                                                                    <th style="width: 60px; font-size: 12px;" >No</th>
-                                                                                                    <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
-                                                                                                    <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
-                                                                                                </tr>
-                                                                                            </thead>
-                                                                                            <tbody>
-                                                                                             <tr>
-        <td style="font-size: 12px; text-align: center;">1</td>
-        <td style="font-size: 12px;">
-            {{ $datasurat2->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
-        </td>
-        <td style="font-size: 12px;">
-            <div style="margin-top: 10px;">
-                @if(!empty($datasurat2->tandatangan1->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan1->tandatangan)))
-                    <img src="{{ asset('storage/' . $datasurat2->tandatangan1->tandatangan) }}"
-                        alt="Tanda Tangan 1"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @elseif(!empty($datasurat2->tandatangan1->tandatangan))
-                    <img src="{{ asset($datasurat2->tandatangan1->tandatangan) }}"
-                        alt="Tanda Tangan 1"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @else
-                    <p>Data belum diupdate</p>
-                @endif
-            </div>
-        </td>
-    </tr>
-
-    <tr>
-        <td style="font-size: 12px; text-align: center;">2</td>
-        <td style="font-size: 12px;">
-            {{ $datasurat2->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
-        </td>
-        <td style="font-size: 12px;">
-            <div style="margin-top: 10px;">
-                @if(!empty($datasurat2->tandatangan2->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan2->tandatangan)))
-                    <img src="{{ asset('storage/' . $datasurat2->tandatangan2->tandatangan) }}"
-                        alt="Tanda Tangan 2"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @elseif(!empty($datasurat2->tandatangan2->tandatangan))
-                    <img src="{{ asset($datasurat2->tandatangan2->tandatangan) }}"
-                        alt="Tanda Tangan 2"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @else
-                    <p>Data belum diupdate</p>
-                @endif
-            </div>
-        </td>
-    </tr>
-
-    <tr>
-        <td style="font-size: 12px; text-align: center;">3</td>
-        <td style="font-size: 12px;">
-            {{ $datasurat2->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}
-        </td>
-
-        <td style="font-size: 12px;">
-            <div style="margin-top: 10px;">
-                @if(!empty($datasurat2->tandatangan3->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan3->tandatangan)))
-                    <img src="{{ asset('storage/' . $datasurat2->tandatangan3->tandatangan) }}"
-                        alt="Tanda Tangan 3"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @elseif(!empty($datasurat2->tandatangan3->tandatangan))
-                    <img src="{{ asset($datasurat2->tandatangan3->tandatangan) }}"
-                        alt="Tanda Tangan 3"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @else
-                    <p>Data belum diupdate</p>
-                @endif
-            </div>
-        </td>
-    </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-
-
-                                </div>
-
-
-                                <!-- Kontainer Kanan -->
-                                <div>
-                                    <a href="javascript:history.back()" class="button-newvalidasi" style="text-decoration: none;">
-                                            <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
-                                            Kembali
-                                        </a>
+                                    <a href="javascript:history.back()" class="button-baru button-md">
+                                        <i class="bi bi-arrow-left"></i> Kembali
+                                    </a>
                                 </div>
                             </div>
 
-                        </div>
+                            {{-- ═══ STATUS KESESUAIAN ═══ --}}
+                            <div class="status-kesesuaian-card">
+                                <div class="status-kesesuaian-title">
+                                    <i class="bi bi-shield-check"></i> Kesesuaian Jasa Konstruksi & Segmentasi Pasar
+                                </div>
+                                <div class="status-kesesuaian-grid">
+                                    @php
+                                        $statusItems = [
+                                            ['label' => 'Kesesuaian Bentuk SBU',  'icon' => 'bi-check2-square', 'value' => $datasurat2->kesesuaiansbu ?? null],
+                                            ['label' => 'Kesesuaian Layanan SBU', 'icon' => 'bi-diagram-3',     'value' => $datasurat2->sbu ?? null],
+                                        ];
+                                    @endphp
+                                    @foreach ($statusItems as $s)
+                                        @php
+                                            $isOk = $s['value'] === 'Sesuai';
+                                            $cls = $isOk ? 'ok' : 'no';
+                                            $label = $isOk ? 'TERTIB' : 'BELUM TERTIB';
+                                            $icon = $isOk ? 'bi-check-circle-fill' : 'bi-x-circle-fill';
+                                        @endphp
+                                        <div class="status-kesesuaian-item">
+                                            <div class="status-kesesuaian-label">
+                                                <i class="bi {{ $s['icon'] }}"></i> {{ $s['label'] }}
+                                            </div>
+                                            <div class="status-kesesuaian-value {{ $cls }}">
+                                                <i class="bi {{ $icon }}"></i> {{ $label }}
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
 
-        <hr>
-     <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 50%; margin: auto; font-family: Arial, sans-serif;">
-  <thead>
-    <tr>
-      <th colspan="8" style="text-align: center; border-bottom: 4px solid black; font-weight: bold;">
-        Kesesuaian Jasa Konstruksi & Segmentasi Pasar
-      </th>
-    </tr>
-  </thead>
-<tbody>
-    <tr>
-        <td colspan="2" style="text-align: center; color: navy;">
-            <i class="bi bi-check2-square"></i> Kesesuaian Bentuk SBU
-        </td>
-        <td colspan="2" style="text-align: center; color: navy;">
-            <i class="bi bi-diagram-3"></i> Kesesuaian Layanan SBU
-        </td>
-</tr>
+                            {{-- ═══ DOC CARD — TAMPILAN DATA ═══ --}}
+                            <div class="doc-card">
 
-<tr>
-@php
-    $kesesuaian = $datasurat2->kesesuaiansbu ?? 'Surat Belum Di Buat';
-    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-    $buttonClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
-    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-@endphp
+                                <div class="doc-header">
+                                    <img src="/assets/icon/logokabupatenblora.png" alt="Logo">
+                                    <img src="/assets/icon/pupr.png" alt="Logo">
+                                    <span class="header-sep">:</span>
+                                    <p class="header-title">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                </div>
 
-<td colspan="2" style="text-align: center;">
-    <button class="{{ $buttonClass }}">
-        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-        {{ $tertibStatus }}
-    </button>
-</td>
+                                <div class="doc-title">
+                                    Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Kesesuaian Bentuk dan Kualifikasi Usaha dengan Kegiatan Usaha Jasa Konstruksi dan Segmentasi Pasar Jasa Konstruksi Secara Rutin
+                                </div>
 
-@php
-    $kesesuaian = $datasurat2->sbu ?? 'Surat Belum Di Buat';
-    $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
-    $buttonClass = $kesesuaian === 'Sesuai' ? 'button-hijau' : 'button-merah';
-    $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-@endphp
-
-<td colspan="2" style="text-align: center;">
-    <button class="{{ $buttonClass }}">
-        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-        {{ $tertibStatus }}
-    </button>
-</td>
-
-
-</tr>
-
-</tbody>
-</table>
-<br>
-<hr>
-
-        {{-- ======================================================= --}}
-                    <div class="col-md-12">
-                        <!--begin::Quick Example-->
-
-                        {{-- <form action="{{ route('betertibjakonusahasurat1create') }}" method="POST" enctype="multipart/form-data">
-                            @csrf --}}
-
-                            <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
-
-                                <div class="modal-content" style="font-size: 0.875rem;">
-                                    <div class="modal-header d-flex align-items-center">
-                                        <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
-                                        </a>
-                                        <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                            <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
-                                        </a>
-                                        <span class="mx-2">:</span>
-                                        <p style="margin-left: 10px; margin-bottom: 0; font-size:15px;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
-                                    </div>
-                                    <br>
-                                    <div class="modal-body">
-                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Kesesuaian Bentuk dan Kualifikasi Usaha dengan Kegiatan Usaha Jasa Konstruksi dan Segmentasi Pasar Jasa Konstruksi Secara Rutin </h5>
-                                            <br>
-                                        <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                            <tr>
-                                                <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">Nama Badan Usaha</strong>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        class="form-control @error('namabadanusaha') is-invalid @enderror"
-                                                        name="namabadanusaha"
-                                                        placeholder="Masukan Nama Badan Usaha ..."
-                                                        value="{{ old('namabadanusaha', $datasurat2->namabadanusaha ?? '') }}" readonly>
-
-                                                    @error('namabadanusaha')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 300px;">
-                                                    <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
-                                                </td>
-                                         <td>
-                                                @php
-                                                    $status = $datasurat2->statusperizinan ?? null;
-                                                @endphp
-
-                                                @if ($status === 'Terverifikasi')
-                                                    <span class="badge bg-success" style="font-size:16px;">Terverifikasi</span>
-                                                @elseif ($status === 'Tidak Terdaftar')
-                                                    <span class="badge bg-danger" style="font-size:16px;">Tidak Terdaftar</span>
-                                                @elseif ($status === 'Belum Terdaftar')
-                                                    <span class="badge bg-warning text-dark" style="font-size:16px;">Belum Terdaftar</span>
-                                                @else
-                                                    <span class="badge bg-secondary" style="font-size:16px;">-</span>
-                                                @endif
-                                            </td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">No NIB</strong>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        class="form-control @error('nib') is-invalid @enderror"
-                                                        name="nib"
-                                                        placeholder="Masukkan NIB ..."
-                                                        value="{{ old('nib', $datasurat2->nib ?? '') }}" readonly>
-                                                    @error('nib')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
-                                                </td>
-                                              <td class="d-flex align-items-center gap-2" style="font-size: 16px; white-space: nowrap;">
+                                <table class="info-table">
+                                    <tr>
+                                        <td class="label-cell">Nama Badan Usaha</td>
+                                        <td>
+                                            <input type="text" class="form-input" name="namabadanusaha"
+                                                   value="{{ $datasurat2->namabadanusaha ?? '' }}" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label-cell">Status Perizinan Berusaha</td>
+                                        <td>
+                                            @php $status = $datasurat2->statusperizinan ?? null; @endphp
+                                            @if ($status === 'Terverifikasi')
+                                                <span class="badge bg-success" style="font-size:13px;">Terverifikasi</span>
+                                            @elseif ($status === 'Tidak Terdaftar')
+                                                <span class="badge bg-danger" style="font-size:13px;">Tidak Terdaftar</span>
+                                            @elseif ($status === 'Belum Terdaftar')
+                                                <span class="badge bg-warning text-dark" style="font-size:13px;">Belum Terdaftar</span>
+                                            @else
+                                                <span class="badge bg-secondary" style="font-size:13px;">-</span>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label-cell">No NIB</td>
+                                        <td>
+                                            <input type="text" class="form-input" name="nib"
+                                                   value="{{ $datasurat2->nib ?? '' }}" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label-cell">Waktu Pengawasan</td>
+                                        <td>
+                                            <div class="date-range-input">
                                                 @php
                                                     $mulai = ($datasurat2 && $datasurat2->waktupengawasan)
-                                                        ? \Carbon\Carbon::parse($datasurat2->waktupengawasan)->translatedFormat('d F Y')
-                                                        : '-';
-
+                                                        ? \Carbon\Carbon::parse($datasurat2->waktupengawasan)->translatedFormat('d F Y') : '-';
                                                     $selesai = ($datasurat2 && $datasurat2->waktupengawasanselesai)
-                                                        ? \Carbon\Carbon::parse($datasurat2->waktupengawasanselesai)->translatedFormat('d F Y')
-                                                        : '-';
+                                                        ? \Carbon\Carbon::parse($datasurat2->waktupengawasanselesai)->translatedFormat('d F Y') : '-';
                                                 @endphp
+                                                <span style="padding:6px 12px; background:#eff6ff; color:#1e40af; border:1px solid #111827; border-radius:6px; font-weight:600; font-size:12.5px;">{{ $mulai }}</span>
+                                                <span class="sep">→</span>
+                                                <span style="padding:6px 12px; background:#f1f5f9; color:#475569; border:1px solid #111827; border-radius:6px; font-weight:600; font-size:12.5px;">{{ $selesai }}</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
 
-                                                    <span class="badge bg-primary py-1 px-2" title="Tanggal Mulai Pengawasan" style="font-weight: 500; font-size: 16px;">
-                                                        {{ $mulai }}
-                                                    </span>
+                                {{-- ═══ TABEL BENTUK & KUALIFIKASI ═══ --}}
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th rowspan="2" style="width:40px;">No</th>
+                                            <th rowspan="2" style="width:300px;">Nama Paket Pekerjaan</th>
+                                            <th colspan="2">Bentuk</th>
+                                            <th colspan="2">Kualifikasi</th>
+                                        </tr>
+                                        <tr>
+                                            <th><span>Bentuk</span><span class="th-sub">Yang Dipersyaratkan</span></th>
+                                            <th>Kesesuaian Dengan SBU</th>
+                                            <th><span>Kualifikasi</span><span class="th-sub">Yang Dipersyaratkan</span></th>
+                                            <th>Kesesuaian Dengan SBU</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="center">1</td>
+                                            <td style="width:300px; min-height:75px; padding:10px 12px;">{{ $datasurat2->namapaketpekerjaan ?? '-' }}</td>
+                                            <td class="center">{{ $datasurat2->bentuk ?? '-' }}</td>
+                                            <td class="center">{{ $datasurat2->kesesuaiansbu ?? '-' }}</td>
+                                            <td class="center">{{ $datasurat2->syaratkualifikasi ?? '-' }}</td>
+                                            <td class="center">{{ $datasurat2->sbu ?? '-' }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-                                                    <span style="font-weight: 600; color: #555; font-size: 16px;">&rarr;</span>
+                                {{-- ═══ TIM PEMERIKSA — TTD KOTAK KOSONG ═══ --}}
+                                <div class="tim-panel-6">
+                                    <div class="tim-inner">
+                                        <div class="tim-title">Tim Pemeriksa</div>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:30px;">No</th>
+                                                    <th>Nama Pemeriksa</th>
+                                                    <th style="width:100px;">Tanda Tangan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="center">1</td>
+                                                    <td>{{ optional($datasurat2->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}</td>
+                                                    <td class="center"><span class="ttd-box"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="center">2</td>
+                                                    <td>{{ optional($datasurat2->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}</td>
+                                                    <td class="center"><span class="ttd-box"></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="center">3</td>
+                                                    <td>{{ optional($datasurat2->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}</td>
+                                                    <td class="center"><span class="ttd-box"></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
 
-                                                    <span class="badge bg-secondary py-1 px-2" title="Tanggal Selesai Pengawasan" style="font-weight: 500; font-size: 16px;">
-                                                        {{ $selesai }}
-                                                    </span>
+                            </div>
+
+                            {{-- ═══ MODAL LIHAT BERKAS ═══ --}}
+                            @if($datasurat2->id)
+                            <div class="berkas-overlay" id="berkasOverlay{{ $datasurat2->id }}"
+                                 onclick="if(event.target === this) closeBerkasModal({{ $datasurat2->id }})">
+                                <div class="berkas-dialog" id="berkasDialog{{ $datasurat2->id }}">
+                                    <div class="berkas-header">
+                                        <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="24" style="margin-right:4px;">
+                                        <img src="/assets/icon/pupr.png" alt="Logo" width="24" style="margin-right:4px;">
+                                        <span style="color:#111827; font-weight:800;">:</span>
+                                        <p class="berkas-title">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                        <button type="button" class="berkas-close-btn"
+                                                onclick="closeBerkasModal({{ $datasurat2->id }})"
+                                                aria-label="Close">&times;</button>
+                                    </div>
+                                    <div class="berkas-body">
+                                        <h6 style="font-size:13px; font-weight:700; color:#0f172a; margin-bottom:14px;">
+                                            Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Kesesuaian Bentuk dan Kualifikasi Usaha dengan Kegiatan Usaha Jasa Konstruksi dan Segmentasi Pasar Jasa Konstruksi Secara Rutin
+                                        </h6>
+
+                                        <table class="info-table" style="margin-bottom:14px;">
+                                            <tr>
+                                                <td class="label-cell">Nama Badan Usaha</td>
+                                                <td>{{ $datasurat2->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label-cell">Status Perizinan Berusaha</td>
+                                                <td>{{ $datasurat2->statusperizinan ?? 'Data Belum Di Buat' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label-cell">No NIB</td>
+                                                <td>{{ $datasurat2->nib ?? 'Data Belum Di Buat' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label-cell">Waktu Pengawasan</td>
+                                                <td>
+                                                    @if ($datasurat2 && $datasurat2->waktupengawasan && $datasurat2->waktupengawasanselesai)
+                                                        {{ \Carbon\Carbon::parse($datasurat2->waktupengawasan)->isoFormat('D MMMM YYYY') }}
+                                                        –
+                                                        {{ \Carbon\Carbon::parse($datasurat2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
+                                                    @else
+                                                        <span class="text-muted">Belum Di Buat</span>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         </table>
 
-                                        <table style="width: 100%; border-collapse: collapse; font-size: 16px; color: #000;">
+                                        <table class="data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2" style="width:40px;">No</th>
+                                                    <th rowspan="2">Nama Paket Pekerjaan</th>
+                                                    <th colspan="2">Bentuk</th>
+                                                    <th colspan="2">Kualifikasi</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Bentuk<br><span class="th-sub">Yang Dipersyaratkan</span></th>
+                                                    <th>Kesesuaian Dengan SBU</th>
+                                                    <th>Kualifikasi<br><span class="th-sub">Yang Dipersyaratkan</span></th>
+                                                    <th>Kesesuaian Dengan SBU</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="center">1</td>
+                                                    <td>{{ $datasurat2->namapaketpekerjaan ?? 'Data Belum Di Buat' }}</td>
+                                                    <td class="center">{{ $datasurat2->bentuk ?? 'Data Belum Di Buat' }}</td>
+                                                    <td class="center">{{ $datasurat2->kesesuaiansbu ?? 'Data Belum Di Buat' }}</td>
+                                                    <td class="center">{{ $datasurat2->syaratkualifikasi ?? 'Data Belum Di Buat' }}</td>
+                                                    <td class="center">{{ $datasurat2->sbu ?? 'Data Belum Di Buat' }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        {{-- TIM PEMERIKSA — TTD KOTAK KOSONG (TIDAK TAMPILKAN GAMBAR TTD) --}}
+                                        <div class="tim-panel-6">
+                                            <div class="tim-inner">
+                                                <div class="tim-title">Tim Pemeriksa</div>
+                                                <table>
                                                     <thead>
                                                         <tr>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Bentuk</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kualifikasi</th>
-                                                            {{-- <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th> --}}
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Bentuk</div>
-                                                                <div style="font-size: 16px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Kualifikasi</div>
-                                                                <div style="font-size: 16px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
->
+                                                            <th style="width:30px;">No</th>
+                                                            <th>Nama Lengkap</th>
+                                                            <th style="width:100px;">Tanda Tangan</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td style="border: 1px solid #000; text-align: center; height:100px;">1</td>
-                                                            <td style="border: 1px solid #000; padding: 0 8px;">{{$datasurat2->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->bentuk ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$datasurat2->sbu ?? 'Data Belum Di Buat '}}</td>
-                                                            {{-- <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha}}</td> --}}
+                                                            <td class="center">1</td>
+                                                            <td>{{ $datasurat2->tandatangan1->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}</td>
+                                                            <td class="center"><span class="ttd-box"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="center">2</td>
+                                                            <td>{{ $datasurat2->tandatangan2->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}</td>
+                                                            <td class="center"><span class="ttd-box"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="center">3</td>
+                                                            <td>{{ $datasurat2->tandatangan3->namalengkap ?? 'Tidak Ada Tim Pemeriksa' }}</td>
+                                                            <td class="center"><span class="ttd-box"></span></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
-
-
-                                </div>
-
-                                <div class="container" style="margin-top: 10px;">
-                                    <!-- Modal Card -->
-
-                                            <div class="container" style="margin-top: 10px;">
-                                                <div class="row">
-                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
-                                                        <!-- Modal Card -->
-                                                        <div class="card" style="border: 1px solid white;">
-                                                            <div class="card-body">
-                                                                <!-- Tim Pemeriksa -->
-                                                                <div class="tim-pemeriksa-container">
-                                                                    <div class="tim-pemeriksa">
-                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa:</h6>
-                                                                        <table class="table table-sm">
-                                                                            <thead class="table-secondary">
-                                                                                <tr>
-                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
-                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
-                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Tanda Tangan</th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                              <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
-                                                                                    <td style="font-size: 16px;">
-                                                                                        {{ optional($datasurat2->tandatangan1)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-
-                                                                                     <td style="font-size: 12px;">
-            <div style="margin-top: 10px; text-align:center;">
-                @if(!empty($datasurat2->tandatangan1->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan1->tandatangan)))
-                    <img src="{{ asset('storage/' . $datasurat2->tandatangan1->tandatangan) }}"
-                        alt="Tanda Tangan 1"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @elseif(!empty($datasurat2->tandatangan1->tandatangan))
-                    <img src="{{ asset($datasurat2->tandatangan1->tandatangan) }}"
-                        alt="Tanda Tangan 1"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @else
-                    <p>Data belum diupdate</p>
-                @endif
-            </div>
-        </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                      <td style="font-size: 16px;">
-                                                                                        {{ optional($datasurat2->tandatangan2)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-                                                                                     <td style="font-size: 12px;">
-            <div style="margin-top: 10px; text-align:center;">
-                @if(!empty($datasurat2->tandatangan2->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan2->tandatangan)))
-                    <img src="{{ asset('storage/' . $datasurat2->tandatangan2->tandatangan) }}"
-                        alt="Tanda Tangan 2"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @elseif(!empty($datasurat2->tandatangan2->tandatangan))
-                    <img src="{{ asset($datasurat2->tandatangan2->tandatangan) }}"
-                        alt="Tanda Tangan 2"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @else
-                    <p>Data belum diupdate</p>
-                @endif
-            </div>
-        </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
-                                                                                    <td style="font-size: 16px;">
-                                                                                        {{ optional($datasurat2->tandatangan3)->namalengkap ?? 'Belum Di Tanda Tangan' }}
-                                                                                    </td>
-
-                                                                                    <td style="font-size: 12px;">
-            <div style="margin-top: 10px; text-align:center;">
-                @if(!empty($datasurat2->tandatangan3->tandatangan) && file_exists(public_path('storage/' . $datasurat2->tandatangan3->tandatangan)))
-                    <img src="{{ asset('storage/' . $datasurat2->tandatangan3->tandatangan) }}"
-                        alt="Tanda Tangan 3"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @elseif(!empty($datasurat2->tandatangan3->tandatangan))
-                    <img src="{{ asset($datasurat2->tandatangan3->tandatangan) }}"
-                        alt="Tanda Tangan 3"
-                        style="width: 120px; height: 60px; object-fit: contain; border: 1px solid #ddd; border-radius: 4px;"
-                        loading="lazy">
-                @else
-                    <p>Data belum diupdate</p>
-                @endif
-            </div>
-        </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-
-                                <br><br>
-
+                                    </div>
+                                </div>
                             </div>
-                        </form>
+                            @endif
 
-
-
-                                                     </div>
-                        <!--end::Quick Example-->
+                        </div>
                     </div>
+                </div>
 
-
-                    <br><br>
-
-                    <!-- /.card -->
-                    <!-- Button Section -->
-
-                    </div>
-                    <!--end::Row-->
-                    </div>
-
+            </div>
         </div>
-        <!--end::Row-->
-        </div>
-                  <!--end::Container-->
-        <!--end::App Content Header-->
-        <!--begin::App Content-->
-          <!--end::App Content-->
 
-        </section>
-        </main>
-      <!--end::App Main-->
-    </div>
-    </div>
+</section>
+   </main>
+</div>
+</div>
 
+@include('backend.00_administrator.00_baganterpisah.02_footer')
 
-      @include('backend.00_administrator.00_baganterpisah.02_footer')
-
-
-<!-- CDN html2pdf -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-function downloadModalPDF(id) {
-    const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
-
-    if (!modalContent) {
-        alert('Konten modal tidak ditemukan.');
-        return;
+/* ═══════════════════════════════════════════════════════════
+   MODAL LIHAT BERKAS — BUKA/TUTUP
+   ═══════════════════════════════════════════════════════════ */
+function openBerkasModal(id) {
+    const el = document.getElementById('berkasOverlay' + id);
+    if (!el) return;
+    el.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+function closeBerkasModal(id) {
+    const el = document.getElementById('berkasOverlay' + id);
+    if (!el) return;
+    el.classList.remove('show');
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.berkas-overlay.show').forEach(function(el) {
+            el.classList.remove('show');
+        });
+        document.body.style.overflow = '';
     }
+});
 
-    // Kloning isi modal
-    const clone = modalContent.cloneNode(true);
+/* ═══════════════════════════════════════════════════════════
+   DOWNLOAD PDF — A4 LANDSCAPE • 1 HALAMAN • FONT 12px
+   ═══════════════════════════════════════════════════════════ */
+function downloadModalPDF(id) {
+    const overlay = document.getElementById('berkasOverlay' + id);
+    if (!overlay) { alert('Konten modal tidak ditemukan.'); return; }
 
-    // Bungkus dalam div agar lebih fleksibel stylingnya
-    const wrapper = document.createElement('div');
-    wrapper.style.display = 'flex';
-    wrapper.style.flexDirection = 'column';
-    wrapper.style.alignItems = 'flex-start'; // konten mulai dari atas
-    wrapper.style.justifyContent = 'flex-start'; // pastikan tidak tengah vertikal
-    wrapper.style.height = '100%';
-    wrapper.style.width = '100%';
-    wrapper.style.boxSizing = 'border-box';
-    wrapper.style.padding = '30px 20px 20px 20px'; // padding top 30px, kiri/kanan 20px, bawah 20px
-    wrapper.style.fontSize = '14px';
-    wrapper.style.textAlign = 'left';
-    wrapper.appendChild(clone);
+    const infoRows = overlay.querySelectorAll('.info-table tr');
+    let namaBU = '-', statusIzin = '-', nib = '-', waktu = '-';
+    infoRows.forEach(tr => {
+        const label = tr.querySelector('.label-cell')?.innerText.trim();
+        const value = tr.querySelector('td:last-child')?.innerText.trim();
+        if (label === 'Nama Badan Usaha') namaBU = value;
+        if (label === 'Status Perizinan Berusaha') statusIzin = value;
+        if (label === 'No NIB') nib = value;
+        if (label === 'Waktu Pengawasan') waktu = value;
+    });
 
-    const fileName = `Tertibjakonusaha_segmentasipasar_${id}.pdf`;
+    const paketTable = overlay.querySelector('.data-table');
+    const paketCells = paketTable ? paketTable.querySelectorAll('tbody tr:first-child td') : [];
+    const getCell = (i) => paketCells[i] ? paketCells[i].innerText.trim() : '-';
+    const namaPaket   = getCell(1);
+    const bentuk      = getCell(2);
+    const kesBentuk   = getCell(3);
+    const kualifikasi = getCell(4);
+    const kesKual     = getCell(5);
 
-    html2pdf()
-        .from(wrapper)
-        .set({
-            margin: 0, // PDF mulai dari atas
-            filename: fileName,
+    const timRows = overlay.querySelectorAll('.tim-panel-6 .tim-inner table tbody tr');
+    let timData = [];
+    timRows.forEach((tr, i) => {
+        const tds = tr.querySelectorAll('td');
+        const nama = tds[1]?.innerText.trim() || '-';
+        timData.push({ no: i + 1, nama: nama });
+    });
+
+    const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+
+    const pdfHTML = `
+        <div class="pdf-page">
+            <div class="pdf-header">
+                <div style="display:flex; align-items:center; gap:6px;">
+                    <img src="/assets/icon/logokabupatenblora.png" alt="Logo" crossorigin="anonymous">
+                    <img src="/assets/icon/pupr.png" alt="Logo" crossorigin="anonymous">
+                    <span style="font-weight:800; margin:0 4px;">:</span>
+                    <span style="font-weight:700; font-size:12px;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</span>
+                </div>
+            </div>
+
+            <div class="pdf-doc-title">
+                Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Kesesuaian Bentuk dan Kualifikasi Usaha dengan Kegiatan Usaha Jasa Konstruksi dan Segmentasi Pasar Jasa Konstruksi Secara Rutin
+            </div>
+
+            <table class="pdf-info">
+                <tr><td class="pdf-label">Nama Badan Usaha</td><td>${esc(namaBU)}</td></tr>
+                <tr><td class="pdf-label">Status Perizinan Berusaha</td><td>${esc(statusIzin)}</td></tr>
+                <tr><td class="pdf-label">No NIB</td><td>${esc(nib)}</td></tr>
+                <tr><td class="pdf-label">Waktu Pengawasan</td><td>${esc(waktu)}</td></tr>
+            </table>
+
+            <table class="pdf-data">
+                <thead>
+                    <tr>
+                        <th rowspan="2" style="width:28px;">No</th>
+                        <th rowspan="2">Nama Paket Pekerjaan</th>
+                        <th colspan="2">Bentuk</th>
+                        <th colspan="2">Kualifikasi</th>
+                    </tr>
+                    <tr>
+                        <th>Bentuk<br><span class="pdf-sub">Yang Dipersyaratkan</span></th>
+                        <th>Kesesuaian Dengan SBU</th>
+                        <th>Kualifikasi<br><span class="pdf-sub">Yang Dipersyaratkan</span></th>
+                        <th>Kesesuaian Dengan SBU</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="pdf-center">1</td>
+                        <td>${esc(namaPaket)}</td>
+                        <td class="pdf-center">${esc(bentuk)}</td>
+                        <td class="pdf-center">${esc(kesBentuk)}</td>
+                        <td class="pdf-center">${esc(kualifikasi)}</td>
+                        <td class="pdf-center">${esc(kesKual)}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pdf-tim-wrap">
+                <div class="pdf-tim-inner">
+                    <div class="pdf-tim-title">Tim Pemeriksa</div>
+                    <table class="pdf-data">
+                        <thead>
+                            <tr>
+                                <th style="width:28px;">No</th>
+                                <th>Nama Lengkap</th>
+                                <th style="width:100px;">Tanda Tangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${timData.map(t => `
+                                <tr>
+                                    <td class="pdf-center">${t.no}</td>
+                                    <td>${esc(t.nama)}</td>
+                                    <td class="pdf-center"><span class="pdf-ttd-box"></span></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const pdfCSS = `
+        #__pdf_holder__ {
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            z-index: 999999 !important;
+            background: #ffffff !important;
+            padding: 10mm !important;
+            width: 297mm !important;
+            min-height: 210mm !important;
+            box-sizing: border-box !important;
+            font-family: Arial, Helvetica, sans-serif !important;
+            font-size: 12px !important;
+            color: #000000 !important;
+            line-height: 1.3 !important;
+            opacity: 0;
+            pointer-events: none;
+        }
+        #__pdf_holder__ .pdf-page { width: 100%; }
+        #__pdf_holder__ * { box-sizing: border-box !important; }
+        #__pdf_holder__ .pdf-header {
+            display: flex; align-items: center; gap: 6px;
+            padding-bottom: 6px; border-bottom: 2px solid #000; margin-bottom: 8px;
+        }
+        #__pdf_holder__ .pdf-header img { width: 24px; height: 24px; object-fit: contain; }
+        #__pdf_holder__ .pdf-doc-title {
+            font-weight: 700; font-size: 12px; line-height: 1.35;
+            padding: 6px 8px; background: #f2f2f2; border: 1px solid #000;
+            border-left: 3px solid #13A847; margin-bottom: 8px;
+        }
+        #__pdf_holder__ .pdf-info,
+        #__pdf_holder__ .pdf-data {
+            width: 100%; border-collapse: collapse; margin-bottom: 8px;
+        }
+        #__pdf_holder__ .pdf-info td,
+        #__pdf_holder__ .pdf-data th,
+        #__pdf_holder__ .pdf-data td {
+            border: 1px solid #000; padding: 3px 6px; font-size: 12px;
+            vertical-align: middle; word-break: break-word;
+        }
+        #__pdf_holder__ .pdf-info .pdf-label {
+            background: #f2f2f2; font-weight: 700; width: 160px;
+        }
+        #__pdf_holder__ .pdf-data th {
+            background: #f2f2f2; text-align: center; font-weight: 700; line-height: 1.25;
+        }
+        #__pdf_holder__ .pdf-data td { text-align: left; }
+        #__pdf_holder__ .pdf-center { text-align: center !important; }
+        #__pdf_holder__ .pdf-sub { display: block; font-weight: 400; font-size: 11px; margin-top: 1px; }
+        #__pdf_holder__ .pdf-tim-wrap { display: flex; justify-content: flex-end; margin-top: 8px; }
+        #__pdf_holder__ .pdf-tim-inner { width: 50%; min-width: 300px; }
+        #__pdf_holder__ .pdf-tim-title {
+            font-weight: 700; font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.4px; margin: 0 0 4px 0; padding-bottom: 3px;
+            border-bottom: 1px solid #000; text-align: center;
+        }
+        #__pdf_holder__ .pdf-ttd-box {
+            display: inline-block; width: 80px; height: 34px;
+            border: 1px solid #000; background: #ffffff;
+        }
+    `;
+
+    const styleEl = document.createElement('style');
+    styleEl.id = '__pdf_style__';
+    styleEl.textContent = pdfCSS;
+    document.head.appendChild(styleEl);
+
+    const holder = document.createElement('div');
+    holder.id = '__pdf_holder__';
+    holder.innerHTML = pdfHTML;
+    document.body.appendChild(holder);
+
+    const allImgs = holder.querySelectorAll('img');
+    const promises = Array.from(allImgs).map(img => {
+        return new Promise((resolve) => {
+            const src = img.getAttribute('src');
+            if (!src) { resolve(); return; }
+            const image = new Image();
+            image.crossOrigin = 'anonymous';
+            image.onload = () => {
+                try {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = image.naturalWidth || 1;
+                    canvas.height = image.naturalHeight || 1;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(image, 0, 0);
+                    img.src = canvas.toDataURL('image/png');
+                } catch (e) {}
+                resolve();
+            };
+            image.onerror = () => resolve();
+            image.src = src;
+        });
+    });
+
+    Promise.all(promises).then(() => {
+        html2pdf().set({
+            margin: 0,
+            filename: `Tertibjakonusaha_segmentasipasar_${id}.pdf`,
             image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
-        })
-        .save();
+            html2canvas: {
+                scale: 2, useCORS: true, allowTaint: true,
+                backgroundColor: '#ffffff', logging: false,
+                scrollX: 0, scrollY: 0,
+                windowWidth: holder.scrollWidth,
+                windowHeight: holder.scrollHeight,
+                onclone: function(clonedDoc) {
+                    const el = clonedDoc.getElementById('__pdf_holder__');
+                    if (el) { el.style.opacity = '1'; el.style.pointerEvents = 'auto'; }
+                }
+            },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape', compress: true },
+            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        }).from(holder).save().then(() => {
+            holder.remove();
+            styleEl.remove();
+        }).catch((err) => {
+            console.error('PDF error:', err);
+            alert('Gagal membuat PDF. Cek console browser.');
+            holder.remove();
+            styleEl.remove();
+        });
+    });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRINT — A4 LANDSCAPE, FONT 12px
+   ═══════════════════════════════════════════════════════════ */
+function printModalContent(id) {
+    const overlay = document.getElementById('berkasOverlay' + id);
+    if (!overlay) { alert("Konten tidak ditemukan."); return; }
+    const dialog = overlay.querySelector('.berkas-dialog');
+    if (!dialog) { alert("Konten tidak ditemukan."); return; }
+
+    const clone = dialog.cloneNode(true);
+    clone.querySelectorAll('.berkas-close-btn').forEach(el => el.remove());
+
+    const printWindow = window.open('', '', 'width=1200,height=800');
+    printWindow.document.write(`
+        <html>
+        <head>
+            <title>Print Dokumen</title>
+            <style>
+                @page { size: A4 landscape; margin: 8mm; }
+                * { box-sizing: border-box; }
+                body { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000; margin: 0; }
+                body * { font-size: 12px !important; }
+                table { border-collapse: collapse; width: 100%; page-break-inside: auto; }
+                th, td { border: 1px solid #000; padding: 3px 5px; vertical-align: middle; word-break: break-word; }
+                th { background: #f2f2f2; text-align: center; font-weight: 700; }
+                .center { text-align: center; }
+                .th-sub { font-size: 12px !important; font-weight: 400; display: block; }
+                h5, h6 { font-size: 12px !important; margin: 0 0 8px 0; }
+                .berkas-header { border: none; padding: 0 0 6px 0; display: flex; align-items: center; gap: 4px; }
+                .berkas-body { padding: 0; overflow: visible; }
+                img { max-width: 100%; height: auto; }
+                .tim-panel-6 { display: flex; justify-content: flex-end; margin-top: 8px; }
+                .tim-panel-6 .tim-inner { width: 50%; min-width: 300px; border: 1px solid #000; padding: 8px; }
+                .tim-panel-6 .tim-title { font-weight: 700; text-align: center; border-bottom: 1px solid #000; padding-bottom: 3px; margin-bottom: 4px; }
+                .tim-panel-6 table { width: 100%; }
+                .tim-panel-6 .ttd-box { display: inline-block; width: 80px; height: 34px; border: 1px solid #000; }
+                tr { page-break-inside: avoid; }
+            </style>
+        </head>
+        <body>
+            ${clone.innerHTML}
+            <script>
+                window.onload = function() {
+                    window.print();
+                    window.onafterprint = function() { window.close(); };
+                };
+            <\/script>
+        </body>
+        </html>
+    `);
+    printWindow.document.close();
 }
 </script>
 
-
-                                        <script>
-                                            function printModalContent(id) {
-                                                const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
-                                                if (!modalContent) {
-                                                    alert("Konten tidak ditemukan.");
-                                                    return;
-                                                }
-
-                                                const printWindow = window.open('', '', 'width=1200,height=800');
-                                                printWindow.document.write(`
-                                                    <html>
-                                                    <head>
-                                                        <title>Print Dokumen</title>
-                                                        <style>
-                                                            @media print {
-                                                                @page {
-                                                                    size: A4 landscape;
-                                                                    margin: 0mm;
-                                                                }
-                                                                body {
-                                                                    font-family: Arial, sans-serif;
-                                                                    font-size: 12px;
-                                                                    color: #000;
-                                                                }
-                                                                table {
-                                                                    border-collapse: collapse;
-                                                                    width: 100%;
-                                                                    page-break-inside: auto;
-                                                                }
-                                                                th, td {
-                                                                    border: 1px solid #000;
-                                                                    padding: 4px;
-                                                                    vertical-align: top;
-                                                                }
-                                                                .no-border td {
-                                                                    border: none;
-                                                                }
-                                                            }
-
-                                                            body {
-                                                                margin: 10mm;
-                                                                font-family: Arial, sans-serif;
-                                                                font-size: 12px;
-                                                            }
-
-                                                            h5 {
-                                                                font-size: 1rem;
-                                                                margin-bottom: 10px;
-                                                            }
-
-                                                            .table-bordered {
-                                                                border: 1px solid #000;
-                                                                width: 100%;
-                                                                margin-top: 10px;
-                                                            }
-
-                                                            .table-bordered th, .table-bordered td {
-                                                                border: 1px solid #000;
-                                                                padding: 6px;
-                                                                text-align: left;
-                                                            }
-
-                                                            .table-secondary {
-                                                                background-color: #f8f9fa;
-                                                            }
-
-                                                            /* Penyesuaian khusus untuk bagian tim pemeriksa */
-                                                            .tim-pemeriksa-container {
-                                                                display: flex;
-                                                                justify-content: flex-end;
-                                                            }
-
-                                                            .tim-pemeriksa {
-                                                                width: 50%;
-                                                            }
-
-                                                            .tim-pemeriksa table {
-                                                                width: 100%;
-                                                                border: 1px solid #000;
-                                                            }
-
-                                                            .tim-pemeriksa td, .tim-pemeriksa th {
-                                                                text-align: center;
-                                                                padding: 3px;
-                                                                height: 15px;
-                                                                font-size: 11px;
-                                                            }
-                                                        </style>
-                                                    </head>
-                                                    <body>
-                                                        ${modalContent.innerHTML}
-                                                        <script>
-                                                            window.onload = function() {
-                                                                window.print();
-                                                                window.onafterprint = window.close;
-                                                            }
-                                                        <\/script>
-                                                    </body>
-                                                    </html>
-                                                `);
-                                                printWindow.document.close();
-                                            }
-                                        </script>
+</body>
+</html>

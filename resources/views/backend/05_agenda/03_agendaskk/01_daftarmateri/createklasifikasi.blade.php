@@ -15,7 +15,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -40,14 +40,14 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
                     </div>
 
 
 
                            {{-- ======================================================= --}}
                            <div class="card card-primary card-outline mb-6">
-                            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                            <div style="display: flex; justify-content: space-between; margin-top: 10px; margin-bottom: 10px;">
                                 <!-- Tombol Kiri -->
                                 <button class="button-baru">
                                     <!-- Ikon File -->
@@ -60,7 +60,7 @@
 
                                 <!-- Tombol Kanan -->
                                 <a href="javascript:history.back()">
-                                    <button class="button-newvalidasi">
+                                    <button class="button-modern">
                                         <!-- Ikon Kembali -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                             viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -89,8 +89,8 @@
                                         <!-- ID BUJK Kontraktor (Hidden atau Select jika mau pilih) -->
                                         <input type="hidden"  name="agendaskk_id" value="{{ $agendaskk_id }}">
                                         <!-- Nama Pengurus -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="judulskk">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="judulskk">
                                                 <i class="bi bi-person" style="margin-right:8px; color:navy;"></i> Judul Materi Sertifikasi
                                             </label>
                                             <input type="text" id="judulskk" name="judulskk" class="form-control @error('judulskk') is-invalid @enderror" value="{{ old('judulskk') }}">
@@ -101,8 +101,8 @@
 
 
     <!-- Foto Kegiatan -->
-    <div class="mb-3">
-    <label for="materipelatihanskk" class="form-label">
+    <div class="form-modern mb-3">
+    <label for="materipelatihanskk" class="form-label-modern">
         <i class="bi bi-file-earmark-pdf text-danger"></i> Upload Materi (PDF)
     </label>
     <input type="file" id="materipelatihanskk" name="materipelatihanskk"
@@ -154,7 +154,7 @@
                                 <!-- Tombol Submit -->
                                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
-                                        <button class="button-hijau" type="button" onclick="openModal()">
+                                        <button class="button-baru" type="button" onclick="openModal()">
 
                                         <!-- Ikon SVG Pensil -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"

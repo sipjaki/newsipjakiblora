@@ -12,6 +12,7 @@ use App\Models\bujkkontraktorsub;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\DB;
 
 use Carbon\Carbon;
@@ -432,7 +433,7 @@ public function bebujkkonstruksicreatenew(Request $request)
     ]);
 
     session()->flash('create', 'Data Berhasil Dibuat!');
-    return redirect('/bebujkkonstruksi');
+    return redirect('/bebujkkonstruksiblora');
 }
 
 // BUJKKONTRAKTOR SHOW
@@ -444,7 +445,7 @@ public function bebujkkonstruksishow($namalengkap)
     $user = Auth::user();
 
 return view('backend.04_datajakon.01_bujkkonstruksi.show', [
-    'title' => 'Data BUJK Konstruksi',
+    'title' => 'Informasi Badan Usaha Jasa Konstruksi',
     'data' => $databujkkontraktor,
 ]);
 }
@@ -470,26 +471,26 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
 {
     // Validasi input
     $validated = $request->validate([
-        'nama_pengurus' => 'required|string|max:255',
-        'sub_klasifikasi_layanan' => 'required|string|max:255',
-        'kode' => 'required|string|max:50',
-        'kualifikasi' => 'required|string|max:255',
-        'penerbit' => 'required|string|max:255',
-        'nama_psjk' => 'required|string|max:255',
-        'sub_kualifikasi_bu' => 'required|string|max:255',
-        'tanggal_terbit' => 'required|date',
-        'tanggal_berlaku' => 'required|date',
+        'nama_pengurus' => 'nullable|string|max:255',
+        'sub_klasifikasi_layanan' => 'nullable|string|max:255',
+        'kode' => 'nullable|string|max:50',
+        'kualifikasi' => 'nullable|string|max:255',
+        'penerbit' => 'nullable|string|max:255',
+        'nama_psjk' => 'nullable|string|max:255',
+        'sub_kualifikasi_bu' => 'nullable|string|max:255',
+        'tanggal_terbit' => 'nullable|date',
+        'masa_berlaku' => 'nullable|date',
     ], [
-        // Pesan kesalahan custom
-        'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
-        'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
-        'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
-        'kualifikasi.required' => 'Kualifikasi harus diisi.',
-        'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
-        'penerbit.required' => 'Penerbit harus diisi.',
-        'nama_psjk.required' => 'Nama PSJK harus diisi.',
-        'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
-        'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
+        // // Pesan kesalahan custom
+        // 'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
+        // 'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
+        // 'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
+        // 'kualifikasi.required' => 'Kualifikasi harus diisi.',
+        // 'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
+        // 'penerbit.required' => 'Penerbit harus diisi.',
+        // 'nama_psjk.required' => 'Nama PSJK harus diisi.',
+        // 'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
+        // 'masa_berlaku.required' => 'Tanggal Berlaku harus diisi.',
     ]);
 
     // Menyimpan data ke tabel BujkKontraktorSub
@@ -503,7 +504,7 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
         'penerbit' => $validated['penerbit'],
         'nama_psjk' => $validated['nama_psjk'],
         'tanggal_terbit' => $validated['tanggal_terbit'],
-        'tanggal_berlaku' => $validated['tanggal_berlaku'],
+        'masa_berlaku' => $validated['masa_berlaku'],
     ]);
 
 // Ambil bujkkontraktor_id yang baru saja disimpan
@@ -523,9 +524,6 @@ return redirect()->route('bebujkkonstruksi.showsubklasifikasi', [
 }
 
 
-
-
-// DATA SHOW SUB KLASIFIKASI LAYANAN
 public function bebujkkonstruksiklasifikasi($namalengkap)
 {
     $databujk = bujkkontraktor::where('namalengkap', $namalengkap)->first();
@@ -534,16 +532,41 @@ public function bebujkkonstruksiklasifikasi($namalengkap)
         return abort(404, 'Data sub-klasifikasi tidak ditemukan');
     }
 
-        // Menggunakan paginate() untuk pagination
-        $datasublayanan = bujkkontraktorsub::where('bujkkontraktor_id', $databujk->id)->paginate(50);
+    // Menggunakan paginate() untuk pagination
+    $datasublayanan = bujkkontraktorsub::where('bujkkontraktor_id', $databujk->id)->paginate(50);
 
     return view('backend.04_datajakon.01_bujkkonstruksi.showklasifikasi', [
         'title' => 'Data Klasifikasi Layanan',
         'subdata' => $datasublayanan,
         'data' => $databujk,
-        'user' => Auth::user()
+        'user' => Auth::user(),
+
+        // --- TAMBAHKAN 2 BARIS INI ---
+        'bujkkontraktor_id' => $databujk->id,
+        'bujkkontraktornamalengkap' => $databujk->namalengkap,
+        // -----------------------------
     ]);
 }
+
+// DATA SHOW SUB KLASIFIKASI LAYANAN
+// public function bebujkkonstruksiklasifikasi($namalengkap)
+// {
+//     $databujk = bujkkontraktor::where('namalengkap', $namalengkap)->first();
+
+//     if (!$databujk) {
+//         return abort(404, 'Data sub-klasifikasi tidak ditemukan');
+//     }
+
+//         // Menggunakan paginate() untuk pagination
+//         $datasublayanan = bujkkontraktorsub::where('bujkkontraktor_id', $databujk->id)->paginate(50);
+
+//     return view('backend.04_datajakon.01_bujkkonstruksi.showklasifikasi', [
+//         'title' => 'Data Klasifikasi Layanan',
+//         'subdata' => $datasublayanan,
+//         'data' => $databujk,
+//         'user' => Auth::user()
+//     ]);
+// }
 
 // BUJK KONTRAKTOR UPDATE DAN CREATE UPDATE ------------------------------------------------------------------------------------
 
@@ -644,11 +667,8 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
     session()->flash('update', 'Data Berhasil Diupdate!');
 
     // Redirect ke halaman yang sesuai
-    return redirect('/bebujkkonstruksi');
+    return redirect('/bebujkkonstruksiblora');
 }
-
-
-
 
 public function bebujkkonstruksidelete($id)
 {
@@ -665,7 +685,7 @@ if ($entry) {
 $entry->delete();
 
 // Redirect atau memberi respons sesuai kebutuhan
-return redirect('/bebujkkonstruksi')->with('delete', 'Data Berhasil Di Hapus !');
+return redirect('/bebujkkonstruksiblora')->with('delete', 'Data Berhasil Di Hapus !');
 
 }
 
@@ -749,15 +769,62 @@ public function beasosiasiupdatecreate(Request $request, $id)
 
 
 
+// public function bebujkkonstruksi(Request $request)
+// {
+//     $perPage = $request->input('perPage', 10);
+//     $search = $request->input('search');
+
+// $query = bujkkontraktor::query();
+
+//     if ($search) {
+//         $query->where('namalengkap', 'LIKE', "%{$search}%")
+//               ->orWhere('alamat', 'LIKE', "%{$search}%")
+//               ->orWhere('no_telepon', 'LIKE', "%{$search}%")
+//               ->orWhere('email', 'LIKE', "%{$search}%")
+//               ->orWhere('nomorindukberusaha', 'LIKE', "%{$search}%")
+//               ->orWhere('pju', 'LIKE', "%{$search}%")
+//               ->orWhere('no_akte', 'LIKE', "%{$search}%")
+//               ->orWhere('tanggal', 'LIKE', "%{$search}%")
+//               ->orWhere('nama_notaris', 'LIKE', "%{$search}%")
+//               ->orWhere('no_pengesahan', 'LIKE', "%{$search}%")
+//               ->orWhereHas('bujkkontraktorsub', function ($q) use ($search) {
+//                 $q->where('nama_pengurus', 'LIKE', "%{$search}%");
+//             })
+//             ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+//                 $q->where('namaasosiasi', 'LIKE', "%{$search}%");
+//             });
+//     }
+
+//     $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+//     if ($request->ajax()) {
+//         return response()->json([
+//             'html' => view('backend.04_datajakon.01_bujkkonstruksi.partials.table', compact('data'))->render()
+//         ]);
+//     }
+
+//     return view('backend.04_datajakon.01_bujkkonstruksi.index', [
+//         'title' => 'BUJK Konstruksi',
+//         'data' => $data,
+//         'perPage' => $perPage,
+//         'search' => $search
+//     ]);
+// }
+
 public function bebujkkonstruksi(Request $request)
 {
     $perPage = $request->input('perPage', 10);
-    $search = $request->input('search');
+    $search  = $request->input('search');
+    $tahun   = $request->input('tahun');
 
-$query = bujkkontraktor::query();
+    $query = bujkkontraktor::query();
 
+    // =========================================================
+    // SEARCH
+    // =========================================================
     if ($search) {
-        $query->where('namalengkap', 'LIKE', "%{$search}%")
+        $query->where(function ($q) use ($search) {
+            $q->where('namalengkap', 'LIKE', "%{$search}%")
               ->orWhere('alamat', 'LIKE', "%{$search}%")
               ->orWhere('no_telepon', 'LIKE', "%{$search}%")
               ->orWhere('email', 'LIKE', "%{$search}%")
@@ -767,27 +834,365 @@ $query = bujkkontraktor::query();
               ->orWhere('tanggal', 'LIKE', "%{$search}%")
               ->orWhere('nama_notaris', 'LIKE', "%{$search}%")
               ->orWhere('no_pengesahan', 'LIKE', "%{$search}%")
-              ->orWhereHas('bujkkontraktorsub', function ($q) use ($search) {
-                $q->where('nama_pengurus', 'LIKE', "%{$search}%");
-            })
-            ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-                $q->where('namaasosiasi', 'LIKE', "%{$search}%");
-            });
+              ->orWhereHas('bujkkontraktorsub', function ($q2) use ($search) {
+                  $q2->where('nama_pengurus', 'LIKE', "%{$search}%");
+              })
+              ->orWhereHas('asosiasimasjaki', function ($q2) use ($search) {
+                  $q2->where('namaasosiasi', 'LIKE', "%{$search}%");
+              });
+        });
     }
 
+    // =========================================================
+    // FILTER TAHUN
+    // =========================================================
+    if ($tahun) {
+        $query->whereYear('created_at', $tahun);
+    }
+
+    // =========================================================
+    // DATA UTAMA
+    // =========================================================
     $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
+    // =========================================================
+    // HITUNG STATUS SUB PER ITEM (berdasarkan masa_berlaku)
+    // ---------------------------------------------------------
+    //  Berlaku        : masa_berlaku >= hari ini
+    //  Tidak Berlaku  : masa_berlaku <  hari ini (termasuk null)
+    //  Suspend        : kualifikasi mengandung "suspend"
+    // =========================================================
+    $today = \Carbon\Carbon::today();
+
+    // Ambil semua id yang sedang tampil (halaman ini)
+    $ids = $data->pluck('id')->toArray();
+
+    // Ambil semua sub sekaligus → hindari N+1 query
+    $subsByParent = collect();
+    if (!empty($ids)) {
+        $subsByParent = DB::table('bujkkontraktorsubs')
+            ->whereIn('bujkkontraktor_id', $ids)
+            ->get()
+            ->groupBy('bujkkontraktor_id');
+    }
+
+    // Tempel hasil hitung ke masing-masing item
+    $data->getCollection()->transform(function ($item) use ($subsByParent, $today) {
+
+        $subs = $subsByParent->get($item->id, collect());
+
+        $total   = $subs->count();
+        $berlaku = 0;
+        $tidak   = 0;
+        $suspend = 0;
+
+        foreach ($subs as $sub) {
+            $kualifikasi = strtolower($sub->kualifikasi ?? '');
+
+            if (str_contains($kualifikasi, 'suspend')) {
+                $suspend++;
+            } elseif (!empty($sub->masa_berlaku)
+                && \Carbon\Carbon::parse($sub->masa_berlaku)->gte($today)) {
+                $berlaku++;
+            } else {
+                $tidak++;
+            }
+        }
+
+        // Status dominan
+        if ($total === 0) {
+            $status = 'Belum Ada';
+        } elseif ($suspend > 0) {
+            $status = 'Suspend';
+        } elseif ($berlaku > 0) {
+            $status = 'Berlaku';
+        } else {
+            $status = 'Tidak Berlaku';
+        }
+
+        // Tempel properti
+        $item->status_sub     = $status;
+        $item->status_total   = $total;
+        $item->status_berlaku = $berlaku;
+        $item->status_tidak   = $tidak;
+        $item->status_suspend = $suspend;
+
+        return $item;
+    });
+
+    // =========================================================
+    // DAFTAR TAHUN UNTUK DROPDOWN
+    // =========================================================
+    $daftarTahun = bujkkontraktor::selectRaw('YEAR(created_at) as tahun')
+        ->whereNotNull('created_at')
+        ->groupBy('tahun')
+        ->orderBy('tahun', 'desc')
+        ->pluck('tahun');
+
+    // =========================================================
+    // STATISTIK GLOBAL (untuk badge toolbar)
+    // =========================================================
+    $globalBerlaku = 0;
+    $globalTidak   = 0;
+    $globalSuspend = 0;
+
+    if (!empty($ids)) {
+        $allSubs = DB::table('bujkkontraktorsubs')
+            ->whereIn('bujkkontraktor_id', $ids)
+            ->get();
+
+        foreach ($allSubs as $sub) {
+            $kualifikasi = strtolower($sub->kualifikasi ?? '');
+
+            if (str_contains($kualifikasi, 'suspend')) {
+                $globalSuspend++;
+            } elseif (!empty($sub->masa_berlaku)
+                && \Carbon\Carbon::parse($sub->masa_berlaku)->gte($today)) {
+                $globalBerlaku++;
+            } else {
+                $globalTidak++;
+            }
+        }
+    }
+
+    $statistik = [
+        'berlaku'       => $globalBerlaku,
+        'tidak_berlaku' => $globalTidak,
+        'suspend'       => $globalSuspend,
+    ];
+
+    // =========================================================
+    // RESPONSE AJAX
+    // =========================================================
     if ($request->ajax()) {
         return response()->json([
-            'html' => view('backend.04_datajakon.01_bujkkonstruksi.partials.table', compact('data'))->render()
+            'html'      => view('backend.04_datajakon.01_bujkkonstruksi.partials.table', compact('data'))->render(),
+            'statistik' => $statistik,
         ]);
     }
 
     return view('backend.04_datajakon.01_bujkkonstruksi.index', [
+        'title'       => 'BUJK Konstruksi',
+        'data'        => $data,
+        'perPage'     => $perPage,
+        'search'      => $search,
+        'tahun'       => $tahun,
+        'daftarTahun' => $daftarTahun,
+        'statistik'   => $statistik,
+    ]);
+}
+
+public function bebujkkonstruksiblora(Request $request)
+{
+    $perPage = $request->input('perPage', 5);
+    $search  = $request->input('search');
+    $tahun   = $request->input('tahun');
+
+    $query = bujkkontraktor::query();
+
+    // SEARCH
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namalengkap', 'LIKE', "%{$search}%")
+              ->orWhere('alamat', 'LIKE', "%{$search}%")
+              ->orWhere('no_telepon', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhere('nomorindukberusaha', 'LIKE', "%{$search}%")
+              ->orWhere('pju', 'LIKE', "%{$search}%")
+              ->orWhere('no_akte', 'LIKE', "%{$search}%")
+              ->orWhere('tanggal', 'LIKE', "%{$search}%")
+              ->orWhere('nama_notaris', 'LIKE', "%{$search}%")
+              ->orWhere('no_pengesahan', 'LIKE', "%{$search}%")
+              ->orWhereHas('bujkkontraktorsub', function ($q2) use ($search) {
+                  $q2->where('nama_pengurus', 'LIKE', "%{$search}%");
+              })
+              ->orWhereHas('asosiasimasjaki', function ($q2) use ($search) {
+                  $q2->where('namaasosiasi', 'LIKE', "%{$search}%");
+              });
+        });
+    }
+
+    // FILTER TAHUN
+    if ($tahun) {
+        $query->whereYear('created_at', $tahun);
+    }
+
+    // DATA UTAMA
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    // HITUNG STATUS SUB
+    $today = \Carbon\Carbon::today();
+    $ids = $data->pluck('id')->toArray();
+
+    $subsByParent = collect();
+    if (!empty($ids)) {
+        $subsByParent = DB::table('bujkkontraktorsubs')
+            ->whereIn('bujkkontraktor_id', $ids)
+            ->get()
+            ->groupBy('bujkkontraktor_id');
+    }
+
+    $data->getCollection()->transform(function ($item) use ($subsByParent, $today) {
+        $subs = $subsByParent->get($item->id, collect());
+        $total = $subs->count();
+        $berlaku = 0; $tidak = 0; $suspend = 0;
+
+        foreach ($subs as $sub) {
+            $kualifikasi = strtolower($sub->kualifikasi ?? '');
+            if (str_contains($kualifikasi, 'suspend')) {
+                $suspend++;
+            } elseif (!empty($sub->masa_berlaku) && \Carbon\Carbon::parse($sub->masa_berlaku)->gte($today)) {
+                $berlaku++;
+            } else {
+                $tidak++;
+            }
+        }
+
+        $status = 'Belum Ada';
+        if ($total > 0) {
+            if ($suspend > 0) $status = 'Suspend';
+            elseif ($berlaku > 0) $status = 'Berlaku';
+            else $status = 'Tidak Berlaku';
+        }
+
+        $item->status_sub     = $status;
+        $item->status_total   = $total;
+        $item->status_berlaku = $berlaku;
+        $item->status_tidak   = $tidak;
+        $item->status_suspend = $suspend;
+        return $item;
+    });
+
+    // DAFTAR TAHUN
+    $daftarTahun = bujkkontraktor::selectRaw('YEAR(created_at) as tahun')
+        ->whereNotNull('created_at')
+        ->groupBy('tahun')
+        ->orderBy('tahun', 'desc')
+        ->pluck('tahun');
+
+    // STATISTIK
+    $globalBerlaku = 0; $globalTidak = 0; $globalSuspend = 0;
+    if (!empty($ids)) {
+        $allSubs = DB::table('bujkkontraktorsubs')->whereIn('bujkkontraktor_id', $ids)->get();
+        foreach ($allSubs as $sub) {
+            $kualifikasi = strtolower($sub->kualifikasi ?? '');
+            if (str_contains($kualifikasi, 'suspend')) {
+                $globalSuspend++;
+            } elseif (!empty($sub->masa_berlaku) && \Carbon\Carbon::parse($sub->masa_berlaku)->gte($today)) {
+                $globalBerlaku++;
+            } else {
+                $globalTidak++;
+            }
+        }
+    }
+    $statistik = [
+        'berlaku' => $globalBerlaku, 'tidak_berlaku' => $globalTidak, 'suspend' => $globalSuspend,
+    ];
+
+    // RESPONSE AJAX (DIPERBAIKI)
+    if ($request->ajax()) {
+        return response()->json([
+            // Pastikan nama view partial kamu benar
+            'html' => view('backend.04_datajakon.01_bujkkonstruksi.partials.table', compact('data'))->render(),
+            'statistik' => $statistik,
+        ]);
+    }
+
+    return view('backend.04_datajakon.01_bujkkonstruksi.bujkkonstruktiblora', [
         'title' => 'BUJK Konstruksi',
         'data' => $data,
         'perPage' => $perPage,
-        'search' => $search
+        'search' => $search,
+        'tahun' => $tahun,
+        'daftarTahun' => $daftarTahun,
+        'statistik' => $statistik,
+    ]);
+}
+
+public function updateKlasifikasi(Request $request, $id)
+{
+    // 1. Validasi Input
+    $request->validate([
+        'nama_pengurus'           => 'nullable|string|max:255',
+        'sub_klasifikasi_layanan' => 'nullable|string|max:255',
+        'kode'                    => 'nullable|string|max:255',
+        'kualifikasi'             => 'nullable|string|max:255',
+        'penerbit'                => 'nullable|string|max:255',
+        'tanggal_terbit'          => 'nullable|date',
+        'masa_berlaku'            => 'nullable|date',
+        'nama_psjk'               => 'nullable|string|max:255',
+        'sub_kualifikasi_bu'      => 'nullable|string|max:255',
+    ]);
+
+    // 2. Cari data berdasarkan ID
+    $sub = bujkkontraktorsub::findOrFail($id);
+
+    // 3. Proses Update
+    $sub->update([
+        'nama_pengurus'           => $request->nama_pengurus,
+        'sub_klasifikasi_layanan' => $request->sub_klasifikasi_layanan,
+        'kode'                    => $request->kode,
+        'kualifikasi'             => $request->kualifikasi,
+        'penerbit'                => $request->penerbit,
+        'tanggal_terbit'          => $request->tanggal_terbit,
+        'masa_berlaku'            => $request->masa_berlaku,
+        'nama_psjk'               => $request->nama_psjk,
+        'sub_kualifikasi_bu'      => $request->sub_kualifikasi_bu,
+    ]);
+
+    // 4. Redirect dengan flash session 'update'
+    return redirect()->back()->with('update', 'Data Berhasil Di Update!');
+}
+
+public function bujkstatistikblora(Request $request)
+{
+    // ==========================================
+    // 1. TOTAL BUJK KONTRAKTOR & KONSULTAN
+    // ==========================================
+    $totalKontraktor = bujkkontraktor::count();
+    $totalKonsultan  = bujkkonsultan::count();
+    $totalAsosiasi   = asosiasimasjaki::count();
+
+    // ==========================================
+    // 2. STATISTIK PER ASOSIASI
+    // (berapa BUJK kontraktor + konsultan di tiap asosiasi)
+    // ==========================================
+    $asosiasiList = asosiasimasjaki::select('id', 'namaasosiasi')->get();
+
+    $statistikAsosiasi = $asosiasiList->map(function ($a) {
+        $kontraktor = bujkkontraktor::where('asosiasimasjaki_id', $a->id)->count();
+        $konsultan  = bujkkonsultan::where('asosiasimasjaki_id', $a->id)->count();
+        return [
+            'id'          => $a->id,
+            'namaasosiasi'=> $a->namaasosiasi ?? '-',
+            'kontraktor'  => $kontraktor,
+            'konsultan'   => $konsultan,
+            'total'       => $kontraktor + $konsultan,
+        ];
+    });
+
+    // ==========================================
+    // 3. DETAIL BUJK PER ASOSIASI (untuk dropdown)
+    // ==========================================
+    $asosiasiTerpilihId = $request->input('asosiasi_id');
+
+    $detailKontraktor = collect();
+    $detailKonsultan  = collect();
+
+    if ($asosiasiTerpilihId) {
+        $detailKontraktor = bujkkontraktor::where('asosiasimasjaki_id', $asosiasiTerpilihId)->get();
+        $detailKonsultan  = bujkkonsultan::where('asosiasimasjaki_id', $asosiasiTerpilihId)->get();
+    }
+
+    return view('backend.04_datajakon.00_statistik.01_bujk', [
+        'title'             => 'Statistik BUJK & Asosiasi Jasa Konstruksi',
+        'totalKontraktor'   => $totalKontraktor,
+        'totalKonsultan'    => $totalKonsultan,
+        'totalAsosiasi'     => $totalAsosiasi,
+        'statistikAsosiasi' => $statistikAsosiasi,
+        'asosiasiTerpilihId'=> $asosiasiTerpilihId,
+        'detailKontraktor'  => $detailKontraktor,
+        'detailKonsultan'   => $detailKonsultan,
     ]);
 }
 

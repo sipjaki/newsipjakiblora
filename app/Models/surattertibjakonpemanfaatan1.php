@@ -15,7 +15,7 @@ class surattertibjakonpemanfaatan1 extends Model
 
     public function tertibjakonpemanfaatan()
 {
-    return $this->hasMany(tertibjakonpemanfaatan::class, 'tertibjakonpemanfaatan_id')->oldest();
+    return $this->hasOne(tertibjakonpemanfaatan::class, 'tertibjakonpemanfaatan_id')->oldest();
 }
 
     public function tandatangan1()

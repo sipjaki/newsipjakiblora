@@ -15,7 +15,7 @@
       <!--begin::App Main-->
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
         <!--begin::App Content Header-->
         <div class="app-content-header">
@@ -41,13 +41,73 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
 
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+
+
+                            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                             <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+                            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
+                            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer; text-align:right;">
+                                <option value="10">10 </option>
+                                <option value="25">25 </option>
+                                <option value="50">50 </option>
+                                <option value="75">75 </option>
+                                <option value="100">100 </option>
+                                <option value="150">150 </option>
+                                <option value="200">200 </option>
+                                <option value="250">250 </option>
+                                <option value="500">500 </option>
+                                <option value="1000">1.000 </option>
+                                <option value="1500">1.500 </option>
+                                <option value="2000">2.000 </option>
+                                <option value="2500">2.500 </option>
+                                <option value="5000">5.000 </option>
+                            </select>
+                        </div>
+
+                  <!-- SIMPAN ID AGENDA SKK -->
+<input type="hidden" id="agendaskkId" value="{{ $id_agendaskk }}">
+
+{{-- <div style="position: relative; display: inline-block; margin-right:10px;">
+    <input type="search" id="searchInput"
+           placeholder="Cari Peserta SKK ...."
+           onkeyup="searchTable()"
+           style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+    <i class="bi bi-search"
+       style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+</div> --}}
+
+
+                        <script>
+                            function updateEntries() {
+                                let selectedValue = document.getElementById("entries").value;
+                                let url = new URL(window.location.href);
+                                url.searchParams.set("perPage", selectedValue);
+                                window.location.href = url.toString();
+                            }
+function searchTable() {
+    let input = document.getElementById("searchInput").value;
+    let id = document.getElementById("agendaskkId").value;
+
+    fetch(`/beagendaskkpeserta/show/${id}?search=${encodeURIComponent(input)}`, {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("tableBody").innerHTML = data.html;
+        updateAllStatus(); // kalau ada
+    })
+    .catch(err => console.error(err));
+}
+
+                                </script>
+
                  <a href="/beagendaskk">
-<button class="button-newvalidasi">
+<button class="button-modern">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
          viewBox="0 0 16 16" style="margin-right: 8px;">
         <path fill-rule="evenodd"
@@ -56,6 +116,7 @@
     Kembali
 </button>
 </a>
+
 
 
 
@@ -78,9 +139,9 @@
                                         {{-- <th style="width: 300px; text-align:center;">
                                             <i class="bi bi-bookmark-fill" style="margin-right: 5px;"></i>Jenjang Pendidikan
                                         </th> --}}
-                                        <th style="width: 100px; text-align:center;">
+                                        {{-- <th style="width: 100px; text-align:center;">
                                             <i class="bi bi-person" style="margin-right: 5px;"></i>NIk
-                                        </th>
+                                        </th> --}}
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Gender
                                         </th>
@@ -93,7 +154,7 @@
                                           <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Jarak Kelulusan
                                         </th>
-                                        <th style="width: 200px; text-align:center;">
+                                        {{-- <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>No Telepon
                                         </th>
                                         <th style="width: 200px; text-align:center;">
@@ -104,7 +165,7 @@
                                         </th>
                                         <th style="width: 300px; text-align:center;">
                                             <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Sertifikat
-                                        </th>
+                                        </th> --}}
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Lihat Peserta
                                         </th>
@@ -116,12 +177,16 @@
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tableBody">
 
-                                    @forelse($datapeserta as $item )
+                                    @forelse($subdata as $item )
                                     <tr class="align-middle">
-                                        <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                      <td style="text-align: left; text-transform: uppercase;">
+
+                                      <td style="text-align: center;">
+                                            {{ ($subdata->currentPage() - 1) * $subdata->perPage() + $loop->iteration }}
+                                        </td>
+
+                                        <td style="text-align: left; text-transform: uppercase;">
                                             @if(!empty($item->user->name))
                                                 {{ $item->user->name }}
                                             @else
@@ -130,7 +195,7 @@
                                         </td>
 
                                         {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td> --}}
-                                        <td style="text-align: center;">{{ $item->nik }}</td>
+                                        {{-- <td style="text-align: center;">{{ $item->nik }}</td> --}}
                                         <td style="text-align: center;">{{ $item->jeniskelamin }}</td>
                                         <td style="text-align: center;">
                                             {{ \Carbon\Carbon::parse($item->ttl)->translatedFormat('d F Y') }}
@@ -150,17 +215,17 @@
                                                 <small>{{ $diff->y }} tahun, {{ $diff->m }} bulan, {{ $diff->d }} hari</small>
                                             </td>
 
-                                        <td style="text-align: left;">{{ $item->notelepon }}</td>
+                                        {{-- <td style="text-align: left;">{{ $item->notelepon }}</td>
                                         <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan }}</td>
-                                        <td style="text-align: left;">{{ $item->namasekolah->namasekolah }}</td>
+                                        <td style="text-align: left;">{{ $item->namasekolah->namasekolah }}</td> --}}
 
-                                        <td style="text-align: center; gap:10px;" id="status-sertifikat-{{ $item->id }}">
+                                        {{-- <td style="text-align: center; gap:10px;" id="status-sertifikat-{{ $item->id }}">
                                             @if($item->sertifikat)
                                                 <p>Terbit</p>
                                             @else
                                                 <p>Belum Terbit</p>
                                             @endif
-                                        </td>
+                                        </td> --}}
 
                                         <!-- Script untuk update status sertifikat -->
                                         <script>
@@ -192,15 +257,15 @@
 <td style="text-align: center;">
     @if($item->verifikasipu == 'lolos')
         <button type="button" onclick="openModal({{ $item->id }})" class="button-hijau">
-            <i class="bi bi-patch-check-fill"></i> LOLOS
+            <i class="bi bi-patch-check-fill"></i> Lolos
         </button>
     @elseif($item->verifikasipu == 'dikembalikan')
         <button type="button" onclick="openModal({{ $item->id }})" class="button-merah">
-            <i class="bi bi-x-circle"></i> DIKEMBALIKAN
+            <i class="bi bi-x-circle"></i> Dikembalikan
         </button>
     @else
-        <button type="button" onclick="openModal({{ $item->id }})" class="button-newvalidasi">
-            <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
+        <button type="button" onclick="openModal({{ $item->id }})" class="button-modern">
+            <i class="bi bi-patch-check-fill"></i> Di Verifikasi
         </button>
     @endif
 </td>
@@ -359,6 +424,9 @@
 <br><br>
                         </div>
                     </div>
+
+                 {{-- @include('backend.00_administrator.00_baganterpisah.07_subpaginations') --}}
+
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->

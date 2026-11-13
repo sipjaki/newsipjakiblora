@@ -1,454 +1,373 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
-<!--begin::Body-->
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
- <!--begin::App Wrapper-->
- <div class="app-wrapper">
-{{-- ---------------------------------------------------------------------- --}}
+    <div class="app-wrapper">
+        @include('backend.00_administrator.00_baganterpisah.04_navbar')
+        @include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
-@include('backend.00_administrator.00_baganterpisah.04_navbar')
-{{-- ---------------------------------------------------------------------- --}}
-
-   @include('backend.00_administrator.00_baganterpisah.03_sidebar')
-
-   <!--begin::App Main-->
-   <main class="app-main">
-    {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
-
-    <!--begin::App Content Header-->
-     <div class="app-content-header">
-       <!--begin::Container-->
-       <div class="container-fluid">
-         <!--begin::Row-->
-         <div class="row">
-
-            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
-            @include('backend.00_administrator.00_baganterpisah.11_alert')
-         </div>
-         <!--end::Row-->
-       </div>
-       <!--end::Container-->
-     </div>
-
-     <!-- Menampilkan pesan sukses -->
-<br>
-
-     <div class="container-fluid">
-         <!--begin::Row-->
-         <div class="row" style="margin-right: 10px; margin-left:10px;">
-             <!-- /.card -->
-             <div class="card mb-4">
-                 <!-- /.card-header -->
-                 <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
-
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
-                                                    <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
-                            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
-                            <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="75">75</option>
-                                <option value="100">100</option>
-                                <option value="150">150</option>
-                                <option value="200">200</option>
-                                <option value="500">500</option>
-                                <option value="1000">1000</option>
-                                <option value="2000">2000</option>
-                            </select>
+        <main class="app-main">
+            <section class="bg-3d-pattern">
+                <div class="app-content-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                            @include('backend.00_administrator.00_baganterpisah.11_alert')
                         </div>
+                    </div>
+                </div>
 
-                        <div style="position: relative; display: inline-block; margin-right:10px; width:300px;">
-    <input type="search" id="searchInput"
-           placeholder="Cari Badan Usaha ...."
-           onkeyup="searchTable()"
-           style="border: 1px solid #ccc;
-                  padding: 10px 40px 10px 15px;
-                  font-size: 14px;
-                  border-radius: 10px;
-                  width: 100%;">
-    <i class="bi bi-search"
-       style="position: absolute;
-              right: 15px;
-              top: 50%;
-              transform: translateY(-50%);
-              font-size: 16px;
-              color: #888;"></i>
-</div>
+                <div class="container-fluid">
+                    <div class="row" style="margin-right: 10px; margin-left: 10px;">
+                        <div class="col-md-12">
+                            <div class="card card-3d mb-4">
+                                <div class="card-header" style="background: #ffffff; border-bottom: 1px solid #eaeaea; padding: 20px 30px;">
+                                    <div class="header-title mb-3">
+                                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
+                                    </div>
 
-                        <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
+                                    <!-- SEARCH BOX -->
+                                    <div class="search-full-wrapper">
+                                        <i class="bi bi-search search-icon"></i>
+                                        <input type="search" id="searchInput" placeholder="Cari Badan Usaha berdasarkan nama, NIB, alamat, atau asosiasi..." value="{{ $search ?? '' }}" autocomplete="off">
+                                        <span class="search-count" id="searchCount"></span>
+                                        <button type="button" class="search-clear" id="searchClear" aria-label="Clear">
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- TOOLBAR -->
+                                    <div class="toolbar-buttons-row">
+                                        <div class="toolbar-entries">
+                                            <label for="entries">Tampilkan :</label>
+                                            <select id="entries" onchange="updateEntries()">
+                                                <option value="10" {{ ($perPage ?? 10) == 10 ? 'selected' : '' }}>10</option>
+                                                <option value="25" {{ ($perPage ?? 10) == 25 ? 'selected' : '' }}>25</option>
+                                                <option value="50" {{ ($perPage ?? 10) == 50 ? 'selected' : '' }}>50</option>
+                                                <option value="75" {{ ($perPage ?? 10) == 75 ? 'selected' : '' }}>75</option>
+                                                <option value="100" {{ ($perPage ?? 10) == 100 ? 'selected' : '' }}>100</option>
+                                                <option value="150" {{ ($perPage ?? 10) == 150 ? 'selected' : '' }}>150</option>
+                                                <option value="200" {{ ($perPage ?? 10) == 200 ? 'selected' : '' }}>200</option>
+                                                <option value="500" {{ ($perPage ?? 10) == 500 ? 'selected' : '' }}>500</option>
+                                                <option value="1000" {{ ($perPage ?? 10) == 1000 ? 'selected' : '' }}>1000</option>
+                                                <option value="2000" {{ ($perPage ?? 10) == 2000 ? 'selected' : '' }}>2000</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="toolbar-entries">
+                                            <label for="filterTahun">Tahun :</label>
+                                            <select id="filterTahun" onchange="filterTahun()">
+                                                <option value="">Semua Tahun</option>
+                                                @foreach(($daftarTahun ?? []) as $th)
+                                                    <option value="{{ $th }}" {{ ($tahun ?? '') == $th ? 'selected' : '' }}>
+                                                        {{ $th }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <span style="flex: 1;"></span>
+
+                                        <a href="/bebujkkonstruksiblora" class="button-modern button-md">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                                            </svg>
+                                            Kembali
+                                        </a>
+
+                                        <a href="/bebujkkonstruksi" class="button-modern button-md">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                                <path d="M2 2.5A1.5 1.5 0 0 1 3.5 1h9A1.5 1.5 0 0 1 14 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-11zM3.5 2a.5.5 0 0 0-.5.5V5h10V2.5a.5.5 0 0 0-.5-.5h-9zM3 6v2h3V6H3zm4 0v2h6V6H7zM3 9v2h3V9H3zm4 0v2h6V9H7zm-4 3v1.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V12H3z"/>
+                                            </svg>
+                                            Data Lengkap
+                                        </a>
+
+                                        <a class="button-modern button-md">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                                <path d="M8 0C4.134 0 1 1.12 1 2.5v11C1 14.88 4.134 16 8 16s7-1.12 7-2.5v-11C15 1.12 11.866 0 8 0zm0 1c3.314 0 6 .672 6 1.5S11.314 4 8 4 2 3.328 2 2.5 4.686 1 8 1zM2 4.13C3.25 5.01 5.45 5.5 8 5.5s4.75-.49 6-1.37v2.37C14 7.328 11.314 8 8 8S2 7.328 2 6.5V4.13zm0 4C3.25 9.01 5.45 9.5 8 9.5s4.75-.49 6-1.37v2.37c0 .828-2.686 1.5-6 1.5s-6-.672-6-1.5V8.13zm0 4C3.25 13.01 5.45 13.5 8 13.5s4.75-.49 6-1.37v1.37c0 .828-2.686 1.5-6 1.5s-6-.672-6-1.5v-1.37z"/>
+                                            </svg>
+                                            <span class="badge-count">Total {{ $data->total() }} BUJK</span>
+                                        </a>
+
+                                        <!-- TOMBOL DOWNLOAD EXCEL -->
+                                        <button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_bujkkonstruksi')" class="button-berkas button-md">
+                                            <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
+                                        </button>
+
+                                        <a href="/bebujkkonstruksi/create" class="button-baru button-md">
+                                            <i class="fa fa-plus" style="margin-right: 8px;"></i>
+                                            Tambah Data
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- BODY: TABEL DENGAN SCROLL HORIZONTAL -->
+                                <div class="card-body p-0">
+                                    <div class="table-responsive-custom">
+                                        <table id="tabelBujkkonstruksi" class="table-custom-modern">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align:center;">No</th>
+                                                    <th style="text-align:center;">Asosiasi</th>
+                                                    <th style="text-align:center;">Badan Usaha</th>
+                                                    <th style="text-align:center;">Alamat</th>
+                                                    <th style="text-align:center;">No Telepon</th>
+                                                    <th style="text-align:center;">Email</th>
+                                                    <th style="text-align:center;">NIB</th>
+                                                    <th style="text-align:center;">PJU</th>
+                                                    <th style="text-align:center;">No Akte</th>
+                                                    <th style="text-align:center;">Tanggal</th>
+                                                    <th style="text-align:center;">Notaris</th>
+                                                    <th style="text-align:center;">Pengesahan</th>
+                                                    <th style="text-align:center;">Sub Klasifikasi</th>
+                                                    <th style="text-align:center;">Berkas</th>
+                                                    {{-- <th style="text-align:center;">Dibuat Oleh</th> --}}
+                                                    <th style="text-align:center;">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tableBody">
+                                                @forelse ($data as $item)
+                                                    <tr>
+                                                        <td style="text-align: center; font-weight: 700;">{{ $loop->iteration }}</td>
+                                                        <td style="text-align: center;">{{ $item->asosiasimasjaki->namaasosiasi ?? 'Data Belum Diupdate' }}</td>
+                                                        <td>{{ $item->namalengkap ?? 'Data Belum Di Update' }}</td>
+                                                        <td>{{ $item->alamat ?? 'Data Belum Di Update' }}</td>
+                                                        <td style="text-align: center;">{{ $item->no_telepon ?? 'Data Belum Di Update' }}</td>
+                                                        <td>{{ $item->email ?? 'Data Belum Di Update' }}</td>
+                                                        <td style="text-align: center;">{{ $item->nomorindukberusaha ?? 'Data Belum Di Update' }}</td>
+                                                        <td>{{ $item->pju ?? 'Data Belum Di Update' }}</td>
+                                                        <td style="text-align: center;">{{ $item->no_akte ?? 'Data Belum Di Update' }}</td>
+                                                        <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') }}</td>
+                                                        <td>{{ $item->nama_notaris ?? 'Data Belum Di Update' }}</td>
+                                                        <td>{{ $item->no_pengesahan ?? 'Data Belum Di Update' }}</td>
+
+                                                        <td style="text-align: center;">
+                                                            <a href="{{ url('/bebujkkonstruksi/showsubklasifikasi/' . $item->namalengkap) }}" class="button-berkas">
+                                                                <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+                                                            </a>
+                                                        </td>
+
+                                                        <!-- BERKAS -->
+                                                        <td style="text-align: center;">
+                                                            @php
+                                                                $filePath = $item->uploadberkas;
+                                                                $isStorage = $filePath && file_exists(storage_path('app/public/' . $filePath));
+                                                                $isPublic = $filePath && file_exists(public_path($filePath));
+                                                            @endphp
+
+                                                            @if($filePath && ($isStorage || $isPublic))
+                                                                @php
+                                                                    $urlFile = $isStorage ? asset('storage/' . $filePath) : asset($filePath);
+                                                                @endphp
+                                                                <button class="button-berkas" data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
+                                                                    <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+                                                                </button>
+                                                                <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title">Berkas</h5>
+                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                            </div>
+                                                                            <div class="modal-body text-center">
+                                                                                <iframe src="{{ $urlFile }}" frameborder="0" width="100%" height="600px"></iframe>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <button class="button-merah" disabled>Tidak Ada Berkas</button>
+                                                            @endif
+                                                        </td>
+
+                                                        {{-- <td style="text-align: center;">{{ $item->user?->name ?? 'Admin Tidak Ada' }}</td> --}}
+
+                                                        <!-- Aksi -->
+                                                        <td style="text-align: center;">
+                                                            <div style="display: flex; gap: 5px; justify-content: center;">
+                                                                <a href="/bebujkkonstruksi/show/{{ $item->namalengkap }}" class="button-baru" title="Show">
+                                                                    <i class="bi bi-eye"></i>
+                                                                </a>
+                                                                <a href="/bebujkkonstruksi/update/{{ $item->id }}" class="button-berkas" title="Update">
+                                                                    <i class="bi bi-pencil-square"></i>
+                                                                </a>
+                                                                <a href="javascript:void(0)" class="button-merah delete-trigger" title="Delete" data-judul="{{ $item->id }}">
+                                                                    <i class="bi bi-trash"></i>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @empty
+                                                <tr class="empty-row">
+                                                    <td colspan="16">
+                                                        <div class="empty-state">
+                                                            <div class="empty-icon">
+                                                                <i class="bi bi-inbox"></i>
+                                                            </div>
+                                                            <h5 class="empty-title">Data Tidak Ditemukan !</h5>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforelse
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- PAGINATION -->
+                                @include('backend.00_administrator.00_baganterpisah.07_paginations')
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL HAPUS -->
+    <div class="modal fade modal-custom" id="deleteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="/assets/icon/jakonnew.png" alt="Logo" width="30" style="margin-right: 10px;">
+                    <h5 class="modal-title" style="font-weight: 700;">Konfirmasi Hapus</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="width: 80px; height: 80px; background: #fee2e2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="bi bi-exclamation-triangle" style="font-size: 2.5rem; color: #ef4444;"></i>
+                    </div>
+                    <h5 style="font-weight: 700; color: #1a2b4a; margin-bottom: 10px;">Apakah Anda Yakin?</h5>
+                    <p style="font-size: 0.95rem; color: #4a5a72; margin: 0;">Data yang dihapus tidak dapat dikembalikan.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button-modern button-md" data-bs-dismiss="modal"><i class="bi bi-x"></i> Batal</button>
+                    <form id="deleteForm" method="POST" action="" class="m-0">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="button-merah button-md"><i class="bi bi-trash"></i> Hapus Data</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LIBRARY XLSX UNTUK EXPORT EXCEL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <script>
+        // Export Excel
+        function exportTableToExcel(tableID, filename = '') {
+            var table = document.getElementById(tableID);
+            var wb = XLSX.utils.table_to_book(table, { sheet: "Sheet 1" });
+            return XLSX.writeFile(wb, filename + '.xlsx');
+        }
+
+        // Entries & Tahun
+        function updateEntries() {
+            let selectedValue = document.getElementById("entries").value;
+            let url = new URL(window.location.href);
+            url.searchParams.set("perPage", selectedValue);
+            window.location.href = url.toString();
+        }
+
+        function filterTahun() {
+            let tahun = document.getElementById("filterTahun").value;
+            let url = new URL(window.location.href);
+            if (tahun) {
+                url.searchParams.set("tahun", tahun);
+            } else {
+                url.searchParams.delete("tahun");
+            }
+            window.location.href = url.toString();
+        }
+
+        // Search AJAX
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const searchClear = document.getElementById('searchClear');
+            const searchCount = document.getElementById('searchCount');
+            let debounceTimer = null;
+
+            function toggleClearBtn() {
+                if (searchInput.value.length > 0) {
+                    searchClear.classList.add('show');
+                } else {
+                    searchClear.classList.remove('show');
+                }
+            }
+
+            function doSearchFetch() {
+                const input = searchInput.value || '';
+                const tahun = document.getElementById('filterTahun')?.value || '';
+
+                fetch(`/bebujkkonstruksi?search=${encodeURIComponent(input)}&tahun=${encodeURIComponent(tahun)}`)
+                    .then(response => response.text())
+                    .then(html => {
+                        let parser = new DOMParser();
+                        let doc = parser.parseFromString(html, "text/html");
+                        let newTableBody = doc.querySelector("#tableBody");
+                        let currentTableBody = document.querySelector("#tableBody");
+                        if (newTableBody && currentTableBody) {
+                            currentTableBody.innerHTML = newTableBody.innerHTML;
+                            const rows = currentTableBody.querySelectorAll('tr:not(.empty-row)');
+                            if (searchCount) {
+                                if (input.trim().length > 0) {
+                                    searchCount.textContent = `${rows.length} hasil`;
+                                    searchCount.classList.add('show');
+                                } else {
+                                    searchCount.classList.remove('show');
+                                }
                             }
-
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
-
-                            fetch(`/bebujkkonstruksi?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
                         }
-
-                                </script>
-
-
-                        <a href="/bebujkjakon">
-                             <button class="button-modern">
-                             <!-- Ikon Kembali -->
-                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" style="margin-right: 8px;">
-                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-               </svg>
-                             Kembali
-
-                         </button>
-                         </a>
-
-
-                         <button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_bujkkonstruksi')" class="button-berkas">
-                            <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
-                        </button>
-
-                         <a href="/bebujkkonstruksi/create">
-                             <button class="button-baru">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                             Tambah Data
-                         </button>
-                         </a>
-                     </div>
-                 </div>
-                 <!-- /.card-header -->
-                 <div class="card-body p-0">
-                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-
-<table id="tabelBujkkonstruksi" class="zebra-table table-striped" >
- <thead>
-     <tr>
-        <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 250px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
-        <th style="width: 250px; text-align:center;"><i class="bi bi-building"></i> Badan Usaha</th>
-        <th style="width: 2000px; text-align:center;"><i class="bi bi-geo-alt-fill"></i> Alamat</th>
-        <th style="width: 350px; text-align:center;"><i class="bi bi-telephone-fill"></i> No Telepon</th>
-        <th style="width: 350px; text-align:center;"><i class="bi bi-envelope-fill"></i> Email</th>
-        <th style="width: 150px; text-align:center;"><i class="bi bi-credit-card-2-front"></i> NIB</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-person-badge-fill"></i> PJU</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-file-earmark-text"></i> No Akte</th>
-        <th style="width: 250px; text-align:center;"><i class="bi bi-calendar-date"></i> Tanggal</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-person-lines-fill"></i> Notaris</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-patch-check-fill"></i> Pengesahan</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Sub Klasifikasi</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Berkas</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-tags-fill"></i> Di Buat Oleh</th>
-        <th style="width: 400px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
-     </tr>
- </thead>
- <tbody id="tableBody">
-     @foreach ($data as $item )
-     <tr class="align-middle">
-         <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: center;">
-            @if($item->asosiasimasjaki && $item->asosiasimasjaki->namaasosiasi)
-                {{ $item->asosiasimasjaki->namaasosiasi }}
-            @else
-                <button class="button-berkas">
-                    Data Belum Diupdate
-                </button>
-            @endif
-        </td>
-
-        <td style="text-align: left;">
-            @if($item->namalengkap)
-                {{ $item->namalengkap }}
-            @else
-                <button class="button-berkas">
-                    Data Belum Di Update
-                </button>
-            @endif
-        </td>
-
-<td style="
-    text-align: left;
-    word-wrap: break-word;
-">
-    @if($item->alamat)
-        {{ $item->alamat }}
-    @else
-        <button class="button-berkas">
-            Data Belum Di Update
-        </button>
-    @endif
-</td>
-
-
-            <td style="text-align: center;">
-                @if($item->no_telepon)
-                    {{ $item->no_telepon }}
-                @else
-                    <button class="button-berkas">
-                        Data Belum Di Update
-                    </button>
-                @endif
-            </td>
-            <td style="text-align: left;">
-                @if($item->email)
-                    {{ $item->email }}
-                @else
-                    <button class="button-berkas">
-                        Data Belum Di Update
-                    </button>
-                @endif
-            </td>
-            <td style="text-align: center;">
-                @if($item->nomorindukberusaha)
-                    {{ $item->nomorindukberusaha }}
-                @else
-                    <button class="button-berkas">
-                        Data Belum Di Update
-                    </button>
-                @endif
-            </td>
-            <td style="text-align: left;">
-                @if($item->pju)
-                    {{ $item->pju }}
-                @else
-                    <button class="button-berkas">
-                        Data Belum Di Update
-                    </button>
-                @endif
-            </td>
-            <td style="text-align: center;">
-                @if($item->no_akte)
-                    {{ $item->no_akte }}
-                @else
-                    <button class="button-berkas">
-                        Data Belum Di Update
-                    </button>
-                @endif
-            </td>
-                 <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</td>
-                    <td style="text-align: left;">
-                        @if($item->nama_notaris)
-                            {{ $item->nama_notaris }}
-                        @else
-                            <button class="button-berkas">
-                                Data Belum Di Update
-                            </button>
-                        @endif
-                    </td>
-
-                    <td style="text-align: left;">
-                        @if($item->no_pengesahan)
-                            {{ $item->no_pengesahan }}
-                        @else
-                            <button class="button-berkas">
-                                Data Belum Di Update
-                            </button>
-                        @endif
-                    </td>
-
-
-                    <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
-                        <a href="{{ url('/bebujkkonstruksi/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
-                            <button class="button-berkas">
-                                <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
-                            </button>
-                        </a>
-                    </td>
-
-
-                                    <!-- Tombol KTP -->
-                <td style="text-align: center;">
-    @if($item->uploadberkas && file_exists(public_path('storage/' . $item->uploadberkas)))
-        <!-- Button jika file ada di storage -->
-        <button class="button-berkas"
-            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
-            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
-        </button>
-
-        <!-- Modal Preview -->
-        <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                        <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                        <span style="margin: 0 5px;">:</span>
-                        <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">Berkas</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <iframe src="{{ asset('storage/' . $item->uploadberkas) }}" frameborder="0" width="100%" height="600px"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    @elseif($item->uploadberkas)
-        <!-- Button jika file path luar storage -->
-        <button class="button-berkas"
-            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
-            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
-        </button>
-
-        <!-- Modal Preview -->
-        <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                        <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                        <span style="margin: 0 5px;">:</span>
-                        <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">Berkas Sertifikasi</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <iframe src="{{ asset($item->uploadberkas) }}" frameborder="0" width="100%" height="600px"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    @else
-        <!-- Button-maroon jika kosong -->
-        <button class="button-merah" disabled>
-            Tidak Ada Berkas
-        </button>
-    @endif
-</td>
-
-                    <td style="text-align: center;">
-                        @if($item->user?->name)
-                            {{ $item->user?->name }}
-                        @else
-                            <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                                Admin Tidak Ada
-                            </button>
-                        @endif
-                    </td>
-
-
-        <td style="text-align: center; vertical-align: middle;">
-            <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="button-baru" title="Show">
-                <i class="bi bi-eye"></i>
-            </a>
-            <a href="/bebujkkonstruksi/update/{{$item->id}}" class="button-berkas" title="Update">
-                <i class="bi bi-pencil-square"></i>
-            </a>
-            <a href="javascript:void(0)" class="button-merah" title="Delete"
-               data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-judul="{{ $item->id }}"
-               onclick="setDeleteUrl(this)">
-                <i class="bi bi-trash"></i>
-            </a>
-        </td>
-
-        <!-- CSS untuk Hover -->
-        <style>
-            .btn-info:hover, .btn-warning:hover, .btn-danger:hover {
-                background-color: white !important; /* Ganti background menjadi putih */
-                color: white !important; /* Ganti warna teks menjadi putih */
-                border-color: transparent !important; /* Menyembunyikan border saat hover */
+                    })
+                    .catch(error => console.error("Error fetching search results:", error));
             }
 
-            /* Ganti warna ikon untuk tombol hover agar tetap terlihat */
-            .btn-info:hover i, .btn-warning:hover i, .btn-danger:hover i {
-                color: navy !important; /* Ganti ikon menjadi navy atau warna lain yang diinginkan */
+            function searchDebounced() {
+                toggleClearBtn();
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(doSearchFetch, 350);
             }
-        </style>
 
-        </tr>
+            if (searchInput) {
+                searchInput.addEventListener('input', searchDebounced);
+                searchInput.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        clearTimeout(debounceTimer);
+                        doSearchFetch();
+                    }
+                });
+            }
 
-     @endforeach
- </tbody>
-</table>
-                     </div>
-                 </div>
+            if (searchClear) {
+                searchClear.addEventListener('click', function () {
+                    searchInput.value = '';
+                    toggleClearBtn();
+                    if (searchCount) searchCount.classList.remove('show');
+                    doSearchFetch();
+                    searchInput.focus();
+                });
+            }
+            toggleClearBtn();
+        });
 
-                 @include('backend.00_administrator.00_baganterpisah.07_paginations')
+        // Modal Hapus
+        document.addEventListener('DOMContentLoaded', function () {
+            const deleteModalElement = document.getElementById('deleteModal');
+            const deleteModal = new bootstrap.Modal(deleteModalElement);
+            const deleteForm = document.getElementById('deleteForm');
 
-                 <br><br>
-
-
-                 <!-- Modal Konfirmasi Hapus -->
-                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
-                         <div class="modal-content">
-                             <div class="modal-header">
-                                 <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
-                                 <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
-                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                             </div>
-                             <div class="modal-body">
-                                 <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
-                             </div>
-                             <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                 <form id="deleteForm" method="POST" action="">
-                                     @csrf
-                                     @method('DELETE')
-                                     <button type="submit" class="btn btn-danger">Hapus</button>
-                                 </form>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-
-                 <script>
-                 function setDeleteUrl(button) {
-                     var id = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = id;
-                     var deleteUrl = "/bebujkkonstruksi/delete/" + encodeURIComponent(id);
-                     document.getElementById('deleteForm').action = deleteUrl;
-                 }
-                 </script>
-
-                 <style>
-                     .table-responsive {
-                         max-width: 100%;
-                         overflow-x: auto;
-                     }
-                 </style>
-
-             </div>
-             <!-- /.card -->
-         </div>
-         <!-- /.col -->
-     </div>
-     <!--end::Row-->
-     </div>
-               <!--end::Container-->
-     <!--end::App Content Header-->
-     <!--begin::App Content-->
-       <!--end::App Content-->
-        </section>
-    </main>
-   <!--end::App Main-->
- </div>
- </div>
-
-
-   @include('backend.00_administrator.00_baganterpisah.02_footer')
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-   <script>
-    function exportTableToExcel(tableID, filename = '') {
-        var table = document.getElementById(tableID);
-        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
-        return XLSX.writeFile(wb, filename + '.xlsx');
-    }
+            document.querySelectorAll('.delete-trigger').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const id = this.getAttribute('data-judul');
+                    deleteForm.action = "/bebujkkonstruksi/delete/" + encodeURIComponent(id);
+                    deleteModal.show();
+                });
+            });
+        });
     </script>
+
+    @include('backend.00_administrator.00_baganterpisah.02_footer')

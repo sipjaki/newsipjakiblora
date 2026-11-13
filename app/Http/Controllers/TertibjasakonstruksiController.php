@@ -24,6 +24,7 @@ use App\Models\tertibjakon;
 use App\Models\tertibjakonpemanfaatan;
 use App\Models\tertibjakonpenyelenggaraan;
 use App\Models\tertibjasakonstruksi;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -447,61 +448,781 @@ class TertibjasakonstruksiController extends Controller
 
 
     // MENU BACKEND TERTIB JAKON USAHA JASA KONSTRUKSI
+// public function betertibjakonusaha(Request $request)
+//     {
+//         $perPage = (int) $request->input('perPage', 10);
+//         if ($perPage < 1) $perPage = 10;
 
-    public function betertibjakonusaha(Request $request)
-{
+//         $search = $request->input('search');
 
-    $perPage = $request->input('perPage', 10);
-    $search = $request->input('search');
+//         $query = tertibjasakonstruksi::query();
 
-    $query = tertibjasakonstruksi::query();
+//         if ($search) {
+//             $query->where(function ($q) use ($search) {
+//                 $q->where('nib', 'LIKE', "%{$search}%")
+//                   ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+//                   ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+//                   ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+//                   ->orWhere('pjbu', 'LIKE', "%{$search}%")
+//                   ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+//                       $r->where('penyedia', 'LIKE', "%{$search}%");
+//                   });
+//             });
+//         }
 
-    if ($search) {
-        $query->where(function ($q) use ($search) {
-            $q->where('nib', 'LIKE', "%{$search}%")
-              ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
-              ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
-              ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
-              ->orWhere('pjbu', 'LIKE', "%{$search}%")
-              ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
-                  $r->where('penyedia', 'LIKE', "%{$search}%");
-              });
-        });
+//         $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
+//                       ->orderBy('updated_at', 'desc')
+//                       ->paginate($perPage)
+//                       ->appends($request->only('search', 'perPage'));
+
+//         $totalpenyedia1 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+//             $q->where('id', 1);
+//         })->count();
+
+//         $totalpenyedia2 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+//             $q->where('id', 2);
+//         })->count();
+
+//         $totalpenyedia3 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
+//             $q->where('id', 3);
+//         })->count();
+
+//         if ($request->ajax()) {
+//             return response()->json([
+//                 'html'           => view('backend.06_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render(),
+//                 'totalpenyedia1' => $totalpenyedia1,
+//                 'totalpenyedia2' => $totalpenyedia2,
+//                 'totalpenyedia3' => $totalpenyedia3,
+//             ]);
+//         }
+
+//         return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
+//             'title'          => 'Data Tertib Jakon Usaha',
+//             'data'           => $data,
+//             'perPage'        => $perPage,
+//             'search'         => $search,
+//             'totalpenyedia1' => $totalpenyedia1,
+//             'totalpenyedia2' => $totalpenyedia2,
+//             'totalpenyedia3' => $totalpenyedia3,
+//         ]);
+//     }
+  public function betertibjakonusaha(Request $request)
+    {
+        // ============================================================
+        // 1. PARAMETER
+        // ============================================================
+        $perPage = (int) $request->input('perPage', 5);
+        if ($perPage < 1) $perPage = 10;
+
+        $search = $request->input('search');
+        $tahun  = $request->input('tahun');
+        $sektor = $request->input('sektor');
+
+        // ============================================================
+        // 2. QUERY UTAMA (untuk tabel)
+        // ============================================================
+        $query = tertibjasakonstruksi::query();
+
+        if ($tahun) {
+            $query->where('tahunpelaksanaan', $tahun);
+        }
+        if ($sektor) {
+            $query->where('penyediastatustertibjakon_id', $sektor);
+        }
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('nib', 'LIKE', "%{$search}%")
+                  ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+                  ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+                  ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                  ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+                      $r->where('penyedia', 'LIKE', "%{$search}%");
+                  });
+            });
+        }
+
+        // ============================================================
+        // 3. PAGINATE (LENGKAPI RELASI 1, 2, 3, 4 UNTUK DATA TABEL)
+        // ============================================================
+        $data = $query->with([
+                    'penyediastatustertibjakon',
+                    'surattertibjakonusaha1',
+                    'surattertibjakonusaha2',
+                    'surattertibjakonusaha3',
+                    'surattertibjakonusaha4'
+                ])
+                ->orderBy('updated_at', 'desc')
+                ->paginate($perPage)
+                ->appends($request->only('search', 'perPage', 'tahun', 'sektor'));
+
+        // ============================================================
+        // 3.1. DATA UNTUK MODAL REKAP (SEMUA DATA TANPA PAGINATION)
+        // ============================================================
+        // Query ini mengambil semua data (berdasarkan filter yang aktif) tanpa dipotong oleh pagination
+        $queryAll = tertibjasakonstruksi::query();
+
+        if ($tahun) {
+            $queryAll->where('tahunpelaksanaan', $tahun);
+        }
+        if ($sektor) {
+            $queryAll->where('penyediastatustertibjakon_id', $sektor);
+        }
+        if ($search) {
+            $queryAll->where(function ($q) use ($search) {
+                $q->where('nib', 'LIKE', "%{$search}%")
+                  ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+                  ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+                  ->orWhere('pjbu', 'LIKE', "%{$search}%");
+            });
+        }
+
+        $allDataRekap = $queryAll->with([
+                            'surattertibjakonusaha1',
+                            'surattertibjakonusaha2',
+                            'surattertibjakonusaha3',
+                            'surattertibjakonusaha4'
+                        ])
+                        ->orderBy('updated_at', 'desc')
+                        ->get();
+
+        // ============================================================
+        // 4. DATAPENYEDIA
+        // ============================================================
+        $datapenyedia = penyediastatustertibjakon::orderBy('id', 'asc')->get();
+
+        // ============================================================
+        // 5. RADAR CHART — IKUT FILTER TAHUN + SEKTOR
+        // ============================================================
+        $sektorUntukChart = $sektor
+            ? $datapenyedia->where('id', $sektor)
+            : $datapenyedia;
+
+        $chartLabels = [];
+        $chartValues = [];
+
+        foreach ($sektorUntukChart as $p) {
+            $q = tertibjasakonstruksi::where('penyediastatustertibjakon_id', $p->id);
+            if ($tahun) $q->where('tahunpelaksanaan', $tahun);
+
+            $chartLabels[] = $p->penyedia;
+            $chartValues[] = $q->count();
+        }
+
+        $grandTotal = array_sum($chartValues);
+
+        // ============================================================
+        // 6. STATISTIK DROPDOWN SEKTOR
+        // ============================================================
+        $statistikDropdown = [];
+
+        foreach ($datapenyedia as $p) {
+            $q = tertibjasakonstruksi::where('penyediastatustertibjakon_id', $p->id);
+            if ($tahun) $q->where('tahunpelaksanaan', $tahun);
+            if ($search) {
+                $q->where(function ($sub) use ($search) {
+                    $sub->where('nib', 'LIKE', "%{$search}%")
+                        ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+                        ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+                        ->orWhere('pjbu', 'LIKE', "%{$search}%");
+                });
+            }
+
+            $statistikDropdown[$p->id] = [
+                'id'       => $p->id,
+                'penyedia' => $p->penyedia,
+                'total'    => $q->count(),
+            ];
+        }
+
+        // ============================================================
+        // 7. LIST TAHUN
+        // ============================================================
+        $listTahun = tertibjasakonstruksi::select('tahunpelaksanaan')
+                        ->whereNotNull('tahunpelaksanaan')
+                        ->where('tahunpelaksanaan', '!=', '')
+                        ->distinct()
+                        ->orderBy('tahunpelaksanaan', 'desc')
+                        ->pluck('tahunpelaksanaan');
+
+        // ============================================================
+        // 8. BAR CHART TAHUNAN
+        // ============================================================
+        $chartTahunanQuery = tertibjasakonstruksi::select(
+                'tahunpelaksanaan',
+                DB::raw('COUNT(*) as total')
+            )
+            ->whereNotNull('tahunpelaksanaan')
+            ->where('tahunpelaksanaan', '!=', '');
+
+        // Filter sektor juga ikut
+        if ($sektor) {
+            $chartTahunanQuery->where('penyediastatustertibjakon_id', $sektor);
+        }
+        // Filter search juga ikut
+        if ($search) {
+            $chartTahunanQuery->where(function ($q) use ($search) {
+                $q->where('nib', 'LIKE', "%{$search}%")
+                  ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+                  ->orWhere('pjbu', 'LIKE', "%{$search}%");
+            });
+        }
+        // Filter tahun (kalau user pilih tahun tertentu, chart fokus ke tahun itu)
+        if ($tahun) {
+            $chartTahunanQuery->where('tahunpelaksanaan', $tahun);
+        }
+
+        $chartTahunan = $chartTahunanQuery
+            ->groupBy('tahunpelaksanaan')
+            ->orderBy('tahunpelaksanaan', 'asc')
+            ->get();
+
+        // Hitung persentase naik/turun
+        $tahunanLabels   = [];
+        $tahunanValues   = [];
+        $tahunanPercents = [];
+        $prevTotal       = null;
+
+        foreach ($chartTahunan as $row) {
+            $total = (int) $row->total;
+            $percent = 0;
+
+            if ($prevTotal !== null) {
+                if ($prevTotal > 0) {
+                    $percent = (($total - $prevTotal) / $prevTotal) * 100;
+                } elseif ($prevTotal == 0 && $total > 0) {
+                    $percent = 100;
+                }
+            }
+
+            $tahunanLabels[]   = (string) $row->tahunpelaksanaan;
+            $tahunanValues[]   = $total;
+            $tahunanPercents[] = round($percent, 1);
+
+            $prevTotal = $total;
+        }
+
+        // ============================================================
+        // 9. DATA UNTUK VIEW
+        // ============================================================
+        $viewData = [
+            'title'           => 'Data Pengawasan Tertib Jakon Usaha',
+            'data'            => $data,
+            'allDataRekap'    => $allDataRekap, // <-- VARIABEL BARU UNTUK MODAL REKAP
+            'perPage'         => $perPage,
+            'search'          => $search,
+            'tahun'           => $tahun,
+            'sektor'          => $sektor,
+            'listTahun'       => $listTahun,
+            'datapenyedia'    => $datapenyedia,
+            'statistik'       => $statistikDropdown,
+            'chartLabels'     => $chartLabels,
+            'chartValues'     => $chartValues,
+            'grandTotal'      => $grandTotal,
+            'tahunanLabels'   => $tahunanLabels,
+            'tahunanValues'   => $tahunanValues,
+            'tahunanPercents' => $tahunanPercents,
+        ];
+
+        // ============================================================
+        // 10. AJAX RESPONSE
+        // ============================================================
+        if ($request->ajax()) {
+            $fullHtml = view('backend.06_pengawasan.01_tertibjakonusaha.index', $viewData)->render();
+
+            $rowsHtml = '';
+            if (preg_match('/<tbody\s+id="tabeltertibjakonusahasearc"[^>]*>(.*?)<\/tbody>/s', $fullHtml, $m)) {
+                $rowsHtml = trim($m[1]);
+            }
+
+            return response()->json([
+                'rows'            => $rowsHtml,
+                'pagination'      => $data->links()->render(),
+                'statistik'       => $statistikDropdown,
+                'chartLabels'     => $chartLabels,
+                'chartValues'     => $chartValues,
+                'grandTotal'      => $grandTotal,
+                'tahunanLabels'   => $tahunanLabels,
+                'tahunanValues'   => $tahunanValues,
+                'tahunanPercents' => $tahunanPercents,
+            ]);
+        }
+
+        // ============================================================
+        // 11. VIEW
+        // ============================================================
+        return view('backend.06_pengawasan.01_tertibjakonusaha.index', $viewData);
     }
 
-    $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
-                  ->orderBy('updated_at', 'desc')
-                  ->paginate($perPage)
-                  ->appends($request->only('search', 'perPage'));
 
-    if ($request->ajax()) {
-        return response()->json([
-            'html' => view('backend.06_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render()
-        ]);
-    }
 
-    $totalpenyedia1 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
-    $q->where('id', 1);
-        })->count();
+    // public function betertibjakonusaha(Request $request)
+    // {
+    //     // ============================================================
+    //     // 1. PARAMETER
+    //     // ============================================================
+    //     $perPage = (int) $request->input('perPage', 5);
+    //     if ($perPage < 1) $perPage = 10;
 
-    $totalpenyedia2 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
-    $q->where('id', 2);
-        })->count();
+    //     $search = $request->input('search');
+    //     $tahun  = $request->input('tahun');
+    //     $sektor = $request->input('sektor');
 
-    $totalpenyedia3 = tertibjasakonstruksi::whereHas('penyediastatustertibjakon', function ($q) {
-    $q->where('id', 3);
-        })->count();
+    //     // ============================================================
+    //     // 2. QUERY UTAMA (untuk tabel)
+    //     // ============================================================
+    //     $query = tertibjasakonstruksi::query();
 
-    return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
-        'title' => 'Data Tertib Jakon Usaha',
-        'data' => $data,
-        'perPage' => $perPage,
-        'search' => $search,
-        'totalpenyedia1' => $totalpenyedia1,
-        'totalpenyedia2' => $totalpenyedia2,
-        'totalpenyedia3' => $totalpenyedia3,
-    ]);
-}
+    //     if ($tahun) {
+    //         $query->where('tahunpelaksanaan', $tahun);
+    //     }
+    //     if ($sektor) {
+    //         $query->where('penyediastatustertibjakon_id', $sektor);
+    //     }
+    //     if ($search) {
+    //         $query->where(function ($q) use ($search) {
+    //             $q->where('nib', 'LIKE', "%{$search}%")
+    //               ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+    //               ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+    //               ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+    //               ->orWhere('pjbu', 'LIKE', "%{$search}%")
+    //               ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+    //                   $r->where('penyedia', 'LIKE', "%{$search}%");
+    //               });
+    //         });
+    //     }
+
+    //     // ============================================================
+    //     // 3. PAGINATE
+    //     // ============================================================
+    //     $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
+    //                   ->orderBy('updated_at', 'desc')
+    //                   ->paginate($perPage)
+    //                   ->appends($request->only('search', 'perPage', 'tahun', 'sektor'));
+
+    //     // ============================================================
+    //     // 4. DATAPENYEDIA
+    //     // ============================================================
+    //     $datapenyedia = penyediastatustertibjakon::orderBy('id', 'asc')->get();
+
+    //     // ============================================================
+    //     // 5. RADAR CHART — IKUT FILTER TAHUN + SEKTOR
+    //     // ============================================================
+    //     $sektorUntukChart = $sektor
+    //         ? $datapenyedia->where('id', $sektor)
+    //         : $datapenyedia;
+
+    //     $chartLabels = [];
+    //     $chartValues = [];
+
+    //     foreach ($sektorUntukChart as $p) {
+    //         $q = tertibjasakonstruksi::where('penyediastatustertibjakon_id', $p->id);
+    //         if ($tahun) $q->where('tahunpelaksanaan', $tahun);
+
+    //         $chartLabels[] = $p->penyedia;
+    //         $chartValues[] = $q->count();
+    //     }
+
+    //     $grandTotal = array_sum($chartValues);
+
+    //     // ============================================================
+    //     // 6. STATISTIK DROPDOWN SEKTOR
+    //     // ============================================================
+    //     $statistikDropdown = [];
+
+    //     foreach ($datapenyedia as $p) {
+    //         $q = tertibjasakonstruksi::where('penyediastatustertibjakon_id', $p->id);
+    //         if ($tahun) $q->where('tahunpelaksanaan', $tahun);
+    //         if ($search) {
+    //             $q->where(function ($sub) use ($search) {
+    //                 $sub->where('nib', 'LIKE', "%{$search}%")
+    //                     ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+    //                     ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+    //                     ->orWhere('pjbu', 'LIKE', "%{$search}%");
+    //             });
+    //         }
+
+    //         $statistikDropdown[$p->id] = [
+    //             'id'       => $p->id,
+    //             'penyedia' => $p->penyedia,
+    //             'total'    => $q->count(),
+    //         ];
+    //     }
+
+    //     // ============================================================
+    //     // 7. LIST TAHUN
+    //     // ============================================================
+    //     $listTahun = tertibjasakonstruksi::select('tahunpelaksanaan')
+    //                     ->whereNotNull('tahunpelaksanaan')
+    //                     ->where('tahunpelaksanaan', '!=', '')
+    //                     ->distinct()
+    //                     ->orderBy('tahunpelaksanaan', 'desc')
+    //                     ->pluck('tahunpelaksanaan');
+
+    //     // ============================================================
+    //     // 8. BAR CHART TAHUNAN (FIXED — cuma 1x, konsisten)
+    //     // ============================================================
+    //     $chartTahunanQuery = tertibjasakonstruksi::select(
+    //             'tahunpelaksanaan',
+    //             DB::raw('COUNT(*) as total')
+    //         )
+    //         ->whereNotNull('tahunpelaksanaan')
+    //         ->where('tahunpelaksanaan', '!=', '');
+
+    //     // Filter sektor juga ikut
+    //     if ($sektor) {
+    //         $chartTahunanQuery->where('penyediastatustertibjakon_id', $sektor);
+    //     }
+    //     // Filter search juga ikut
+    //     if ($search) {
+    //         $chartTahunanQuery->where(function ($q) use ($search) {
+    //             $q->where('nib', 'LIKE', "%{$search}%")
+    //               ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+    //               ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+    //               ->orWhere('pjbu', 'LIKE', "%{$search}%");
+    //         });
+    //     }
+    //     // Filter tahun (kalau user pilih tahun tertentu, chart fokus ke tahun itu)
+    //     if ($tahun) {
+    //         $chartTahunanQuery->where('tahunpelaksanaan', $tahun);
+    //     }
+
+    //     $chartTahunan = $chartTahunanQuery
+    //         ->groupBy('tahunpelaksanaan')
+    //         ->orderBy('tahunpelaksanaan', 'asc')
+    //         ->get();
+
+    //     // Hitung persentase naik/turun
+    //     $tahunanLabels   = [];
+    //     $tahunanValues   = [];
+    //     $tahunanPercents = [];
+    //     $prevTotal       = null;
+
+    //     foreach ($chartTahunan as $row) {
+    //         $total = (int) $row->total;
+    //         $percent = 0;
+
+    //         if ($prevTotal !== null) {
+    //             if ($prevTotal > 0) {
+    //                 $percent = (($total - $prevTotal) / $prevTotal) * 100;
+    //             } elseif ($prevTotal == 0 && $total > 0) {
+    //                 $percent = 100;
+    //             }
+    //         }
+
+    //         $tahunanLabels[]   = (string) $row->tahunpelaksanaan;
+    //         $tahunanValues[]   = $total;
+    //         $tahunanPercents[] = round($percent, 1);
+
+    //         $prevTotal = $total;
+    //     }
+
+    //     // ============================================================
+    //     // 9. DATA UNTUK VIEW
+    //     // ============================================================
+    //     $viewData = [
+    //         'title'           => 'Data Pengawasan Tertib Jakon Usaha',
+    //         'data'            => $data,
+    //         'perPage'         => $perPage,
+    //         'search'          => $search,
+    //         'tahun'           => $tahun,
+    //         'sektor'          => $sektor,
+    //         'listTahun'       => $listTahun,
+    //         'datapenyedia'    => $datapenyedia,
+    //         'statistik'       => $statistikDropdown,
+    //         'chartLabels'     => $chartLabels,
+    //         'chartValues'     => $chartValues,
+    //         'grandTotal'      => $grandTotal,
+    //         'tahunanLabels'   => $tahunanLabels,
+    //         'tahunanValues'   => $tahunanValues,
+    //         'tahunanPercents' => $tahunanPercents,
+    //     ];
+
+    //     // ============================================================
+    //     // 10. AJAX RESPONSE
+    //     // ============================================================
+    //     if ($request->ajax()) {
+    //         $fullHtml = view('backend.06_pengawasan.01_tertibjakonusaha.index', $viewData)->render();
+
+    //         $rowsHtml = '';
+    //         if (preg_match('/<tbody\s+id="tabeltertibjakonusahasearc"[^>]*>(.*?)<\/tbody>/s', $fullHtml, $m)) {
+    //             $rowsHtml = trim($m[1]);
+    //         }
+
+    //         return response()->json([
+    //             'rows'            => $rowsHtml,
+    //             'pagination'      => $data->links()->render(),
+    //             'statistik'       => $statistikDropdown,
+    //             'chartLabels'     => $chartLabels,
+    //             'chartValues'     => $chartValues,
+    //             'grandTotal'      => $grandTotal,
+    //             'tahunanLabels'   => $tahunanLabels,
+    //             'tahunanValues'   => $tahunanValues,
+    //             'tahunanPercents' => $tahunanPercents,
+    //         ]);
+    //     }
+
+    //     // ============================================================
+    //     // 11. VIEW
+    //     // ============================================================
+    //     return view('backend.06_pengawasan.01_tertibjakonusaha.index', $viewData);
+    // }
+
+
+
+//   public function betertibjakonusaha(Request $request)
+//     {
+//         // ============================================================
+//         // 1. PARAMETER
+//         // ============================================================
+//         $perPage = (int) $request->input('perPage', 10);
+//         if ($perPage < 1) $perPage = 10;
+
+//         $search = $request->input('search');
+//         $tahun  = $request->input('tahun');
+//         $sektor = $request->input('sektor');
+
+//         // ============================================================
+//         // 2. QUERY UTAMA (untuk tabel)
+//         // ============================================================
+//         $query = tertibjasakonstruksi::query();
+
+//         if ($tahun) {
+//             $query->where('tahunpelaksanaan', $tahun);
+//         }
+
+//         if ($sektor) {
+//             $query->where('penyediastatustertibjakon_id', $sektor);
+//         }
+
+//         if ($search) {
+//             $query->where(function ($q) use ($search) {
+//                 $q->where('nib', 'LIKE', "%{$search}%")
+//                   ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+//                   ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+//                   ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+//                   ->orWhere('pjbu', 'LIKE', "%{$search}%")
+//                   ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+//                       $r->where('penyedia', 'LIKE', "%{$search}%");
+//                   });
+//             });
+//         }
+
+//         // ============================================================
+//         // 3. PAGINATE
+//         // ============================================================
+//         $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
+//                       ->orderBy('updated_at', 'desc')
+//                       ->paginate($perPage)
+//                       ->appends($request->only('search', 'perPage', 'tahun', 'sektor'));
+
+//         // ============================================================
+//         // 4. DATAPENYEDIA
+//         // ============================================================
+//         $datapenyedia = penyediastatustertibjakon::orderBy('id', 'asc')->get();
+
+//         // ============================================================
+//         // 5. STATISTIK UNTUK CHART (IKUT FILTER TAHUN + SEKTOR)
+//         //    - Jika user pilih sektor → chart hanya tampil sektor itu
+//         //    - Jika tidak → chart tampil semua sektor
+//         // ============================================================
+//         $sektorUntukChart = $sektor
+//             ? $datapenyedia->where('id', $sektor)
+//             : $datapenyedia;
+
+//         $chartLabels = [];
+//         $chartValues = [];
+
+//         foreach ($sektorUntukChart as $p) {
+//             $q = tertibjasakonstruksi::where('penyediastatustertibjakon_id', $p->id);
+//             if ($tahun) $q->where('tahunpelaksanaan', $tahun);
+
+//             $chartLabels[] = $p->penyedia;
+//             $chartValues[] = $q->count();
+//         }
+
+//         $grandTotal = array_sum($chartValues);
+
+//         // ============================================================
+//         // 6. STATISTIK UNTUK LABEL DROPDOWN SEKTOR
+//         //    - Filter: tahun + search (TIDAK filter sektor)
+//         //    - Supaya user tetap lihat angka sektor lain
+//         // ============================================================
+//         $statistikDropdown = [];
+
+//         foreach ($datapenyedia as $p) {
+//             $q = tertibjasakonstruksi::where('penyediastatustertibjakon_id', $p->id);
+//             if ($tahun) $q->where('tahunpelaksanaan', $tahun);
+//             if ($search) {
+//                 $q->where(function ($sub) use ($search) {
+//                     $sub->where('nib', 'LIKE', "%{$search}%")
+//                         ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+//                         ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+//                         ->orWhere('pjbu', 'LIKE', "%{$search}%");
+//                 });
+//             }
+
+//             $statistikDropdown[$p->id] = [
+//                 'id'       => $p->id,
+//                 'penyedia' => $p->penyedia,
+//                 'total'    => $q->count(),
+//             ];
+//         }
+
+//         // ============================================================
+//         // 7. LIST TAHUN
+//         // ============================================================
+//         $listTahun = tertibjasakonstruksi::select('tahunpelaksanaan')
+//                         ->whereNotNull('tahunpelaksanaan')
+//                         ->distinct()
+//                         ->orderBy('tahunpelaksanaan', 'desc')
+//                         ->pluck('tahunpelaksanaan');
+
+//         // ============================================================
+//         // 8. AJAX RESPONSE
+//         //    Karena TIDAK pakai partial _table, kita render ulang
+//         //    view index lalu ambil potongan <tbody> dengan regex.
+//         //    Alternatif: kirim data JSON lalu frontend render sendiri.
+//         //    Di sini: pakai view terpisah khusus rows agar bersih.
+//         // ============================================================
+//         if ($request->ajax()) {
+//             $rowsHtml = view('backend.06_pengawasan.01_tertibjakonusaha._rows', [
+//                 'data' => $data,
+//             ])->render();
+
+//             return response()->json([
+//                 'rows'        => $rowsHtml,
+//                 'pagination'  => $data->links()->render(),
+//                 'statistik'   => $statistikDropdown,
+//                 'chartLabels' => $chartLabels,
+//                 'chartValues' => $chartValues,
+//                 'grandTotal'  => $grandTotal,
+//             ]);
+//         }
+
+//         // ============================================================
+//         // 9. VIEW
+//         // ============================================================
+//         return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
+//             'title'        => 'Data Tertib Jakon Usaha',
+//             'data'         => $data,
+//             'perPage'      => $perPage,
+//             'search'       => $search,
+//             'tahun'        => $tahun,
+//             'sektor'       => $sektor,
+//             'listTahun'    => $listTahun,
+//             'datapenyedia' => $datapenyedia,
+//             'statistik'    => $statistikDropdown,
+//             'chartLabels'  => $chartLabels,
+//             'chartValues'  => $chartValues,
+//             'grandTotal'   => $grandTotal,
+//         ]);
+//     }
+
+    // public function betertibjakonusaha(Request $request)
+    // {
+    //     // ============================================================
+    //     // 1. PARAMETER
+    //     // ============================================================
+    //     $perPage = (int) $request->input('perPage', 5);
+    //     if ($perPage < 1) $perPage = 5;
+
+    //     $search = $request->input('search');
+    //     $tahun  = $request->input('tahun');
+    //     $sektor = $request->input('sektor');
+
+    //     // ============================================================
+    //     // 2. QUERY
+    //     // ============================================================
+    //     $query = tertibjasakonstruksi::query();
+
+    //     if ($tahun) {
+    //         $query->where('tahunpelaksanaan', $tahun);
+    //     }
+
+    //     if ($sektor) {
+    //         $query->where('penyediastatustertibjakon_id', $sektor);
+    //     }
+
+    //     if ($search) {
+    //         $query->where(function ($q) use ($search) {
+    //             $q->where('nib', 'LIKE', "%{$search}%")
+    //               ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+    //               ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+    //               ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+    //               ->orWhere('pjbu', 'LIKE', "%{$search}%")
+    //               ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+    //                   $r->where('penyedia', 'LIKE', "%{$search}%");
+    //               });
+    //         });
+    //     }
+
+    //     // ============================================================
+    //     // 3. PAGINATE
+    //     // ============================================================
+    //     $data = $query->with('penyediastatustertibjakon', 'surattertibjakonusaha1')
+    //                   ->orderBy('updated_at', 'desc')
+    //                   ->paginate($perPage)
+    //                   ->appends($request->only('search', 'perPage', 'tahun', 'sektor'));
+
+    //     // ============================================================
+    //     // 4. DATAPENYEDIA + STATISTIK
+    //     // ============================================================
+    //     $datapenyedia = penyediastatustertibjakon::orderBy('id', 'asc')->get();
+
+    //     $statistik = [];
+    //     foreach ($datapenyedia as $p) {
+    //         $q = tertibjasakonstruksi::where('penyediastatustertibjakon_id', $p->id);
+    //         if ($tahun) $q->where('tahunpelaksanaan', $tahun);
+
+    //         $statistik[$p->id] = [
+    //             'id'       => $p->id,
+    //             'penyedia' => $p->penyedia,
+    //             'total'    => $q->count(),
+    //         ];
+    //     }
+    //     $grandTotal = array_sum(array_column($statistik, 'total'));
+
+    //     // ============================================================
+    //     // 5. LIST TAHUN
+    //     // ============================================================
+    //     $listTahun = tertibjasakonstruksi::select('tahunpelaksanaan')
+    //                     ->whereNotNull('tahunpelaksanaan')
+    //                     ->distinct()
+    //                     ->orderBy('tahunpelaksanaan', 'desc')
+    //                     ->pluck('tahunpelaksanaan');
+
+    //     // ============================================================
+    //     // 6. AJAX RESPONSE
+    //     // ============================================================
+    //     if ($request->ajax()) {
+    //         return response()->json([
+    //             'rows'       => view('backend.06_pengawasan.01_tertibjakonusaha._table', compact('data'))->render(),
+    //             'pagination' => $data->links()->render(),
+    //             'statistik'  => $statistik,
+    //             'grandTotal' => $grandTotal,
+    //         ]);
+    //     }
+
+    //     // ============================================================
+    //     // 7. VIEW
+    //     // ============================================================
+    //     return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
+    //         'title'        => 'Data Tertib Jakon Usaha',
+    //         'data'         => $data,
+    //         'perPage'      => $perPage,
+    //         'search'       => $search,
+    //         'tahun'        => $tahun,
+    //         'sektor'       => $sektor,
+    //         'listTahun'    => $listTahun,
+    //         'datapenyedia' => $datapenyedia,
+    //         'statistik'    => $statistik,
+    //         'grandTotal'   => $grandTotal,
+    //     ]);
+    // }
+
 
 public function betertibjakonusahadelete($id)
 {
@@ -551,20 +1272,20 @@ public function betertibjakonusahaupdatecreate(Request $request, $id)
     $validated = $request->validate([
         'nib' => 'required|string',
         'namapekerjaan' => 'required|string|max:255',
-        'tahunpelaksanaan' => 'required|in:2024,2025,2026',
+        'tahunpelaksanaan' => 'required',
         'namabadanusaha' => 'required|string|max:255',
-        'pjbu' => 'required|string|max:100',
+        'pjbu' => 'nullable|string|max:100',
         'penyediastatustertibjakon_id' => 'required|string',
     ], [
         'nib.required' => 'Nomor Induk Berusaha harus terdiri antara 1 hingga 50 digit.',
         'namapekerjaan.required' => 'Nama Pekerjaan wajib diisi.',
         'namapekerjaan.max' => 'Nama Pekerjaan maksimal 255 karakter.',
         'tahunpelaksanaan.required' => 'Tahun Pelaksanaan wajib dipilih.',
-        'tahunpelaksanaan.in' => 'Tahun Pelaksanaan harus antara 2024 hingga 2026.',
+        // 'tahunpelaksanaan.in' => 'Tahun Pelaksanaan harus antara 2024 hingga 2026.',
         'namabadanusaha.required' => 'Nama Badan Usaha wajib diisi.',
         'namabadanusaha.max' => 'Nama Badan Usaha maksimal 255 karakter.',
-        'pjbu.required' => 'Penanggung Jawab Badan Usaha wajib diisi.',
-        'pjbu.max' => 'Penanggung Jawab Badan Usaha maksimal 100 karakter.',
+        // 'pjbu.required' => 'Penanggung Jawab Badan Usaha wajib diisi.',
+        // 'pjbu.max' => 'Penanggung Jawab Badan Usaha maksimal 100 karakter.',
         'penyediastatustertibjakon_id.required' => 'Status Penyedia wajib dipilih.',
         'penyediastatustertibjakon_id.integer' => 'Status Penyedia harus berupa angka.',
         'penyediastatustertibjakon_id.exists' => 'Status Penyedia tidak ditemukan dalam data asosiasi.',
@@ -612,9 +1333,9 @@ public function betertibjakonusahacreatenew(Request $request)
             'penyediastatustertibjakon_id' => 'required|string',
             'nib' => 'required|numeric|digits_between:1,50',
             'namapekerjaan' => 'required|string|max:255',
-            'tahunpelaksanaan' => 'required|in:2024,2025,2026',
+            'tahunpelaksanaan' => 'required',
             'namabadanusaha' => 'required|string|max:255',
-            'pjbu' => 'required|string|max:100',
+            'pjbu' => 'nullable|string|max:100',
         ], [
             'penyediastatustertibjakon_id.required' => 'Status penyedia wajib dipilih.',
             'penyediastatustertibjakon_id.exists' => 'Status penyedia tidak valid.',
@@ -627,8 +1348,8 @@ public function betertibjakonusahacreatenew(Request $request)
             'tahunpelaksanaan.in' => 'Tahun pelaksanaan harus 2024, 2025, atau 2026.',
             'namabadanusaha.required' => 'Nama badan usaha wajib diisi.',
             'namabadanusaha.max' => 'Nama badan usaha maksimal 255 karakter.',
-            'pjbu.required' => 'Nama penanggung jawab (PJBU) wajib diisi.',
-            'pjbu.max' => 'Nama PJBU maksimal 100 karakter.',
+            // 'pjbu.required' => 'Nama penanggung jawab (PJBU) wajib diisi.',
+            // 'pjbu.max' => 'Nama PJBU maksimal 100 karakter.',
         ]);
 
         // Simpan ke database
@@ -696,7 +1417,7 @@ public function betertibjakonusahasuratpercobaan($id)
 
     // Kirim semua data ke view
     return view('backend.06_pengawasan.01_tertibjakonusaha.01_surat1.indexsurat', [
-        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi | Tertib Jakon Usaha ',
+        'title' => 'Daftar Simak 1 b.1 Berkas Surat Kesesuaian Kegiatan Konstruksi | Tertib Jakon Usaha ',
         'data' => $datatertibjasakonstruksi,
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
@@ -805,7 +1526,7 @@ public function betertibjakonusahasurat1create(Request $request)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurattertibjakonusaha1' => $datasurattertibjakonusaha1,
-        'title' => 'Berkas Surat Kesesuaian Kegiatan Konstruksi '
+        'title' => 'Daftar Simak 1 b.1 Berkas Surat Kesesuaian Kegiatan Konstruksi '
     ]);
 }
 
@@ -1016,7 +1737,7 @@ public function betertibjakonusahasegmentasipasar($id)
 
     // Kirim semua data ke view
     return view('backend.06_pengawasan.01_tertibjakonusaha.02_surat2.index', [
-        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar | Tertib Jakon Usaha ',
+        'title' => 'Daftar Simak 1b.2 Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar | Tertib Jakon Usaha ',
         'data' => $datatertibjasakonstruksi,
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
@@ -1055,7 +1776,7 @@ public function betertibjakonusahasegmentasipasar($id)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurattertibjakonusaha2' => $datasurattertibjakonusaha2,
-        'title' => 'Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar'
+        'title' => 'Daftar Simak 1 b.2 Berkas Surat Kesesuaian Jasa Konstruksi & Segmentasi Pasar'
     ]);
 }
 
@@ -1246,7 +1967,7 @@ public function betertibjakonusahapemenuhansyarat($id)
 
     // Kirim semua data ke view
     return view('backend.06_pengawasan.01_tertibjakonusaha.03_surat3.index', [
-        'title' => 'Berkas Surat Pemenuhan Syarat | Tertib Jakon Usaha ',
+        'title' => 'Daftar Simak 1 c Berkas Surat Pemenuhan Syarat | Tertib Jakon Usaha ',
         'data' => $datatertibjasakonstruksi,
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
@@ -1322,7 +2043,7 @@ public function betertibjakonusahapemenuhansyarat($id)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurattertibjakonusaha2' => $datasurattertibjakonusaha3,
-        'title' => 'Berkas Surat Pemenuhan Syarat'
+        'title' => 'Daftar Simak 1 c Berkas Surat Pemenuhan Syarat'
     ]);
 }
 
@@ -1487,7 +2208,7 @@ public function betertibjakonusahapelaksana($id)
 
     // Kirim semua data ke view
     return view('backend.06_pengawasan.01_tertibjakonusaha.04_surat4.index', [
-        'title' => 'Berkas Surat Pelaksana Pengembangan Usaha | Tertib Jakon Usaha ',
+        'title' => 'Daftar Simak 1 f Berkas Surat Pelaksana Pengembangan Usaha | Tertib Jakon Usaha ',
         'data' => $datatertibjasakonstruksi,
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha,
@@ -1567,53 +2288,151 @@ public function betertibjakonusahapelaksanashow($id)
         'datasubklasifikasi' => $datasubklasifikasi,
         'datatandatangan' => $datatandatangan,
         'datasurattertibjakonusaha4' => $datasurattertibjakonusaha4,
-        'title' => 'Berkas Surat Pelaksana Pengembangan Usaha '
+        'title' => 'Daftar Simak 1 f Berkas Surat Pelaksana Pengembangan Usaha '
     ]);
 }
 
+// public function betertibjakonusahapelaksananewberkascreate(Request $request)
+// {
+//     // Validasi data input dengan pesan custom
+//     $validatedData = $request->validate([
+//         'tertibjasakonstruksi_id' => 'required|string',
+//         'status' => 'required|in:Tertib,Tidak Tertib',
+//         'tandatangan1_id' => 'nullable|string',
+//         'tandatangan2_id' => 'nullable|string',
+//         'tandatangan3_id' => 'nullable|string',
+//     ], [
+//         'tertibjasakonstruksi_id.required' => 'ID Tertib Jasa Konstruksi wajib diisi.',
+//         'tertibjasakonstruksi_id.string' => 'ID Tertib Jasa Konstruksi harus berupa teks.',
+//         'status.required' => 'Status Pengembangan wajib dipilih.',
+//         'status.in' => 'Status Pengembangan yang dipilih tidak valid.',
+//     ]);
+
+//     try {
+//         // Buat record baru
+//         $surat = new surattertibjakonusaha4();
+
+//         $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'] ?? null;
+//         $surat->status = $validatedData['status'] ?? null;
+
+//         // Tambahkan kolom tanda tangan
+//         $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
+//         $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
+//         $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
+
+//         $surat->save();
+
+//         // Ambil parentId dari object yang sudah disimpan
+//         $parentId = $surat->tertibjasakonstruksi_id;
+
+//         session()->flash('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
+//         return redirect()->route('betertibjakonusahapelaksanaindex', ['id' => $parentId]);
+
+//     } catch (\Exception $e) {
+//         return back()->withInput()
+//                      ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
+//     }
+// }
+
 public function betertibjakonusahapelaksananewberkascreate(Request $request)
 {
-    // Validasi data input dengan pesan custom
+    // 1. VALIDASI (Semua nullable)
     $validatedData = $request->validate([
-        'tertibjasakonstruksi_id' => 'required|string',
-        'status' => 'required|in:Tertib,Tidak Tertib',
+        'tertibjasakonstruksi_id' => 'nullable|string',
+
+        // TANGGAL (Akan masuk ke cadangan_5 dan cadangan_6)
+        'waktupengawasan' => 'nullable|date',
+        'waktupengawasanselesai' => 'nullable|date',
+
+        // Inputan Hasil Pemeriksaan
+        'status' => 'nullable|string',
+        'hasil_peralatan' => 'nullable|string',
+        'hasil_teknologi_software' => 'nullable|string',
+        'hasil_teknologi_hardware' => 'nullable|string',
+        'hasil_keuangan_opini' => 'nullable|string',
+        'hasil_keuangan_standar' => 'nullable|string',
+        'hasil_gcg' => 'nullable|string',
+        'hasil_penghargaan' => 'nullable|string',
+        'hasil_rantai_pasok' => 'nullable|string',
+        'hasil_mutu_bahan' => 'nullable|string',
+        'hasil_mutu_peralatan' => 'nullable|string',
+        'hasil_smkk' => 'nullable|string',
+
+        // Inputan Catatan Pemeriksaan
+        'catatan_sdm' => 'nullable|string',
+        'catatan_peralatan' => 'nullable|string',
+        'catatan_teknologi_software' => 'nullable|string',
+        'catatan_teknologi_hardware' => 'nullable|string',
+        'catatan_keuangan_opini' => 'nullable|string',
+        'catatan_keuangan_standar' => 'nullable|string',
+        'catatan_gcg' => 'nullable|string',
+        'catatan_penghargaan' => 'nullable|string',
+        'catatan_rantai_pasok' => 'nullable|string',
+        'catatan_mutu_bahan' => 'nullable|string',
+        'catatan_mutu_peralatan' => 'nullable|string',
+        'catatan_smkk' => 'nullable|string',
+
+        // Tanda Tangan
         'tandatangan1_id' => 'nullable|string',
         'tandatangan2_id' => 'nullable|string',
         'tandatangan3_id' => 'nullable|string',
-    ], [
-        'tertibjasakonstruksi_id.required' => 'ID Tertib Jasa Konstruksi wajib diisi.',
-        'tertibjasakonstruksi_id.string' => 'ID Tertib Jasa Konstruksi harus berupa teks.',
-        'status.required' => 'Status Pengembangan wajib dipilih.',
-        'status.in' => 'Status Pengembangan yang dipilih tidak valid.',
     ]);
 
     try {
-        // Buat record baru
+        // 2. SIMPAN KE TABEL SURAT 4
         $surat = new surattertibjakonusaha4();
+        $surat->tertibjasakonstruksi_id = $request->tertibjasakonstruksi_id;
 
-        $surat->tertibjasakonstruksi_id = $validatedData['tertibjasakonstruksi_id'] ?? null;
-        $surat->status = $validatedData['status'] ?? null;
+        // -- Hasil Pemeriksaan --
+        $surat->status = $request->status;
+        $surat->hasil_peralatan = $request->hasil_peralatan;
+        $surat->hasil_teknologi_software = $request->hasil_teknologi_software;
+        $surat->hasil_teknologi_hardware = $request->hasil_teknologi_hardware;
+        $surat->hasil_keuangan_opini = $request->hasil_keuangan_opini;
+        $surat->hasil_keuangan_standar = $request->hasil_keuangan_standar;
+        $surat->hasil_gcg = $request->hasil_gcg;
+        $surat->hasil_penghargaan = $request->hasil_penghargaan;
+        $surat->hasil_rantai_pasok = $request->hasil_rantai_pasok;
+        $surat->hasil_mutu_bahan = $request->hasil_mutu_bahan;
+        $surat->hasil_mutu_peralatan = $request->hasil_mutu_peralatan;
+        $surat->hasil_smkk = $request->hasil_smkk;
 
-        // Tambahkan kolom tanda tangan
-        $surat->tandatangan1_id = $validatedData['tandatangan1_id'] ?? null;
-        $surat->tandatangan2_id = $validatedData['tandatangan2_id'] ?? null;
-        $surat->tandatangan3_id = $validatedData['tandatangan3_id'] ?? null;
+        // -- Catatan Pemeriksaan --
+        $surat->catatan_sdm = $request->catatan_sdm;
+        $surat->catatan_peralatan = $request->catatan_peralatan;
+        $surat->catatan_teknologi_software = $request->catatan_teknologi_software;
+        $surat->catatan_teknologi_hardware = $request->catatan_teknologi_hardware;
+        $surat->catatan_keuangan_opini = $request->catatan_keuangan_opini;
+        $surat->catatan_keuangan_standar = $request->catatan_keuangan_standar;
+        $surat->catatan_gcg = $request->catatan_gcg;
+        $surat->catatan_penghargaan = $request->catatan_penghargaan;
+        $surat->catatan_rantai_pasok = $request->catatan_rantai_pasok;
+        $surat->catatan_mutu_bahan = $request->catatan_mutu_bahan;
+        $surat->catatan_mutu_peralatan = $request->catatan_mutu_peralatan;
+        $surat->catatan_smkk = $request->catatan_smkk;
+
+        // -- Tanda Tangan --
+        $surat->tandatangan1_id = $request->tandatangan1_id;
+        $surat->tandatangan2_id = $request->tandatangan2_id;
+        $surat->tandatangan3_id = $request->tandatangan3_id;
+
+        // ==========================================================
+        // 🔥 INI DIA BAGIAN PENTINGNYA BRO 🔥
+        // Memanfaatkan 2 kolom cadangan untuk menyimpan tanggal
+        // ==========================================================
+        $surat->cadangan_5 = $request->waktupengawasan;
+        $surat->cadangan_6 = $request->waktupengawasanselesai;
 
         $surat->save();
 
-        // Ambil parentId dari object yang sudah disimpan
-        $parentId = $surat->tertibjasakonstruksi_id;
-
         session()->flash('create', 'Surat Dukung Tertib Jakon Usaha berhasil Di Buat !');
-        return redirect()->route('betertibjakonusahapelaksanaindex', ['id' => $parentId]);
+        return redirect()->route('betertibjakonusahapelaksanaindex', ['id' => $request->tertibjasakonstruksi_id]);
 
     } catch (\Exception $e) {
         return back()->withInput()
                      ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
     }
 }
-
-
 
 public function betertibjakonusahapelaksanadelete($id)
 {
@@ -1642,44 +2461,312 @@ public function betertibjakonusahapelaksanadelete($id)
 
 // surat tertib jakon pemanfaatan
 
-public function betertibjakonpemanfaatan(Request $request)
-{
-    $perPage = $request->input('perPage', 15);
-    $search = $request->input('search');
+    public function betertibjakonpemanfaatan(Request $request)
+    {
+        // ============================================================
+        // 1. PARAMETER
+        // ============================================================
+        $perPage = (int) $request->input('perPage', 5);
+        if ($perPage < 1) $perPage = 10;
 
-    $query = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan4');
+        $search = $request->input('search');
+        $tahun  = $request->input('tahun');
+        $sektor = $request->input('sektor');
 
-    if ($search) {
-        $query->where(function ($q) use ($search) {
-            $q->where('namapekerjaan', 'LIKE', "%{$search}%")
-              ->orWhere('namabangunan', 'LIKE', "%{$search}%")
-              ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
-              ->orWhere('lokasi', 'LIKE', "%{$search}%")
-              ->orWhereDate('tanggalpembangunan', $search)
-              ->orWhereDate('tanggalpemanfaatan', $search)
-              ->orWhere('umurbangunan', 'LIKE', "%{$search}%")
-              ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
-                  $r->where('penyedia', 'LIKE', "%{$search}%");
-              });
-        });
+        // ============================================================
+        // 2. QUERY UTAMA (untuk tabel)
+        // ============================================================
+        $query = tertibjakonpemanfaatan::query();
+
+        if ($tahun)  $query->whereYear('tanggalpemanfaatan', $tahun);
+        if ($sektor) $query->where('penyediastatustertibjakon_id', $sektor);
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('namabangunan', 'LIKE', "%{$search}%")
+                  ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+                  ->orWhere('lokasi', 'LIKE', "%{$search}%")
+                  ->orWhereDate('tanggalpembangunan', $search)
+                  ->orWhereDate('tanggalpemanfaatan', $search)
+                  ->orWhere('umurbangunan', 'LIKE', "%{$search}%")
+                  ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+                      $r->where('penyedia', 'LIKE', "%{$search}%");
+                  });
+            });
+        }
+
+        // ============================================================
+        // 3. PAGINATE (Data Tabel)
+        // ============================================================
+        $data = $query->with([
+                    'penyediastatustertibjakon',
+                    'surattertibjakonpemanfaatan1',
+                    'surattertibjakonpemanfaatan2',
+                    'surattertibjakonpemanfaatan3',
+                    'surattertibjakonpemanfaatan4',
+                    'surattertibjakonpemanfaatan5'
+                ])
+                ->orderBy('updated_at', 'desc')
+                ->paginate($perPage)
+                ->appends($request->only('search', 'perPage', 'tahun', 'sektor'));
+
+        // ============================================================
+        // 3.1. DATA UNTUK MODAL REKAP (SEMUA DATA)
+        // ============================================================
+        $queryAll = tertibjakonpemanfaatan::query();
+
+        if ($tahun)  $queryAll->whereYear('tanggalpemanfaatan', $tahun);
+        if ($sektor) $queryAll->where('penyediastatustertibjakon_id', $sektor);
+
+        if ($search) {
+            $queryAll->where(function ($q) use ($search) {
+                $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('namabangunan', 'LIKE', "%{$search}%")
+                  ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+                  ->orWhere('lokasi', 'LIKE', "%{$search}%")
+                  ->orWhereDate('tanggalpembangunan', $search)
+                  ->orWhereDate('tanggalpemanfaatan', $search)
+                  ->orWhere('umurbangunan', 'LIKE', "%{$search}%");
+            });
+        }
+
+        $allDataRekap = $queryAll->with([
+                            'penyediastatustertibjakon',
+                            'surattertibjakonpemanfaatan1',
+                            'surattertibjakonpemanfaatan2',
+                            'surattertibjakonpemanfaatan3',
+                            'surattertibjakonpemanfaatan4',
+                            'surattertibjakonpemanfaatan5'
+                        ])
+                        ->orderBy('updated_at', 'desc')
+                        ->get();
+
+        // ============================================================
+        // ✅ FIX: LOGIKA COALESCE (Induk dulu, kalau kosong ambil Relasi)
+        // ============================================================
+        $allDataRekapArray = $allDataRekap->map(function ($item) {
+            $s1 = optional($item->surattertibjakonpemanfaatan1);
+            $s2 = optional($item->surattertibjakonpemanfaatan2);
+            $s3 = optional($item->surattertibjakonpemanfaatan3);
+
+            return [
+                'id'                 => $item->id,
+                'namabangunan'       => $item->namabangunan,
+                'namapekerjaan'      => $item->namapekerjaan,
+                'nomorkontrak'       => $item->nomorkontrak,
+                'lokasi'             => $item->lokasi,
+                'tanggalpembangunan' => $item->tanggalpembangunan,
+                'tanggalpemanfaatan' => $item->tanggalpemanfaatan,
+                'umurbangunan'       => $item->umurbangunan,
+                'penyedia'           => optional($item->penyediastatustertibjakon)->penyedia,
+
+                // ✅ GABUNGKAN DATA
+                'peruntukan_fungsi'       => $item->peruntukan_fungsi ?: $s1->kesimpulanpemeriksaan,
+                'peruntukan_lokasi'       => $item->peruntukan_lokasi ?: ($s1->catatan ?: $s1->catatan1),
+                'rencanaumur'             => $item->rencanaumur ?: $s2->kesimpulanpemeriksaan,
+                'kapasitasdanbeban'       => $item->kapasitasdanbeban ?: ($s2->catatan ?: $s2->catatan1),
+                'pemeliharaan_konstruksi' => $item->pemeliharaan_konstruksi ?: $s3->kesimpulanpemeriksaan,
+                'pemeliharaan_struktur'   => $item->pemeliharaan_struktur ?: ($s3->catatan ?: $s3->catatan1),
+            ];
+        })->values()->all();
+
+        // ============================================================
+        // 4. DATA PENYEDIA
+        // ============================================================
+        $datapenyedia = penyediastatustertibjakon::orderBy('id', 'asc')->get();
+
+        // ============================================================
+        // 5. RADAR CHART
+        // ============================================================
+        $sektorUntukChart = $sektor
+            ? $datapenyedia->where('id', $sektor)
+            : $datapenyedia;
+
+        $chartLabels = [];
+        $chartValues = [];
+
+        foreach ($sektorUntukChart as $p) {
+            $q = tertibjakonpemanfaatan::where('penyediastatustertibjakon_id', $p->id);
+            if ($tahun) $q->whereYear('tanggalpemanfaatan', $tahun);
+
+            $chartLabels[] = $p->penyedia;
+            $chartValues[] = $q->count();
+        }
+
+        $grandTotal = array_sum($chartValues);
+
+        // ============================================================
+        // 6. STATISTIK DROPDOWN
+        // ============================================================
+        $statistikDropdown = [];
+
+        foreach ($datapenyedia as $p) {
+            $q = tertibjakonpemanfaatan::where('penyediastatustertibjakon_id', $p->id);
+            if ($tahun) $q->whereYear('tanggalpemanfaatan', $tahun);
+            if ($search) {
+                $q->where(function ($sub) use ($search) {
+                    $sub->where('namapekerjaan', 'LIKE', "%{$search}%")
+                        ->orWhere('namabangunan', 'LIKE', "%{$search}%")
+                        ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+                        ->orWhere('lokasi', 'LIKE', "%{$search}%");
+                });
+            }
+
+            $statistikDropdown[$p->id] = [
+                'id'       => $p->id,
+                'penyedia' => $p->penyedia,
+                'total'    => $q->count(),
+            ];
+        }
+
+        // ============================================================
+        // 7. LIST TAHUN
+        // ============================================================
+        $listTahun = tertibjakonpemanfaatan::select(DB::raw('YEAR(tanggalpemanfaatan) as tahun'))
+                        ->whereNotNull('tanggalpemanfaatan')
+                        ->distinct()
+                        ->orderBy('tahun', 'desc')
+                        ->pluck('tahun');
+
+        // ============================================================
+        // 8. BAR CHART TAHUNAN
+        // ============================================================
+        $chartTahunanQuery = tertibjakonpemanfaatan::select(
+                DB::raw('YEAR(tanggalpemanfaatan) as tahun'),
+                DB::raw('COUNT(*) as total')
+            )
+            ->whereNotNull('tanggalpemanfaatan');
+
+        if ($sektor) $chartTahunanQuery->where('penyediastatustertibjakon_id', $sektor);
+        if ($search) {
+            $chartTahunanQuery->where(function ($q) use ($search) {
+                $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('namabangunan', 'LIKE', "%{$search}%");
+            });
+        }
+        if ($tahun) $chartTahunanQuery->whereYear('tanggalpemanfaatan', $tahun);
+
+        $chartTahunan = $chartTahunanQuery
+            ->groupBy(DB::raw('YEAR(tanggalpemanfaatan)'))
+            ->orderBy('tahun', 'asc')
+            ->get();
+
+        $tahunanLabels   = [];
+        $tahunanValues   = [];
+        $tahunanPercents = [];
+        $prevTotal       = null;
+
+        foreach ($chartTahunan as $row) {
+            $total   = (int) $row->total;
+            $percent = 0;
+
+            if ($prevTotal !== null) {
+                if ($prevTotal > 0) {
+                    $percent = (($total - $prevTotal) / $prevTotal) * 100;
+                } elseif ($prevTotal == 0 && $total > 0) {
+                    $percent = 100;
+                }
+            }
+
+            $tahunanLabels[]   = (string) $row->tahun;
+            $tahunanValues[]   = $total;
+            $tahunanPercents[] = round($percent, 1);
+
+            $prevTotal = $total;
+        }
+
+        // ============================================================
+        // 9. DATA UNTUK VIEW
+        // ============================================================
+        $viewData = [
+            'title'           => 'Data Tertib Jakon Pemanfaatan',
+            'data'            => $data,
+            'allDataRekap'    => $allDataRekapArray,
+            'perPage'         => $perPage,
+            'search'          => $search,
+            'tahun'           => $tahun,
+            'sektor'          => $sektor,
+            'listTahun'       => $listTahun,
+            'datapenyedia'    => $datapenyedia,
+            'statistik'       => $statistikDropdown,
+            'chartLabels'     => $chartLabels,
+            'chartValues'     => $chartValues,
+            'grandTotal'      => $grandTotal,
+            'tahunanLabels'   => $tahunanLabels,
+            'tahunanValues'   => $tahunanValues,
+            'tahunanPercents' => $tahunanPercents,
+        ];
+
+        // ============================================================
+        // 10. AJAX RESPONSE
+        // ============================================================
+        if ($request->ajax()) {
+            $fullHtml = view('backend.06_pengawasan.02_tertibjakonpemanfaatan.index', $viewData)->render();
+
+            $rowsHtml = '';
+            if (preg_match('/<tbody\s+id="tabeltertibjakonpemanfaatansearc"[^>]*>(.*?)<\/tbody>/s', $fullHtml, $m)) {
+                $rowsHtml = trim($m[1]);
+            }
+
+            return response()->json([
+                'rows'            => $rowsHtml,
+                'pagination'      => $data->links()->render(),
+                'statistik'       => $statistikDropdown,
+                'chartLabels'     => $chartLabels,
+                'chartValues'     => $chartValues,
+                'grandTotal'      => $grandTotal,
+                'tahunanLabels'   => $tahunanLabels,
+                'tahunanValues'   => $tahunanValues,
+                'tahunanPercents' => $tahunanPercents,
+            ]);
+        }
+
+        // ============================================================
+        // 11. VIEW
+        // ============================================================
+        return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.index', $viewData);
     }
 
-    $data = $query->orderBy('updated_at', 'desc')
-                  ->paginate($perPage);
 
-    if ($request->ajax()) {
-        return response()->json([
-            'html' => view('backend.06_pengawasan.02_tertibjakonpemanfaatan.partials.table', compact('data'))->render()
-        ]);
-    }
+    // public function betertibjakonpemanfaatan(Request $request)
+// {
+//     $perPage = $request->input('perPage', 10);
+//     $search = $request->input('search');
 
-    return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.index', [
-        'title' => 'Data Tertib Jakon Pemanfaatan',
-        'data' => $data,
-        'perPage' => $perPage,
-        'search' => $search
-    ]);
-}
+//     $query = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan4');
+
+//     if ($search) {
+//         $query->where(function ($q) use ($search) {
+//             $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+//               ->orWhere('namabangunan', 'LIKE', "%{$search}%")
+//               ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+//               ->orWhere('lokasi', 'LIKE', "%{$search}%")
+//               ->orWhereDate('tanggalpembangunan', $search)
+//               ->orWhereDate('tanggalpemanfaatan', $search)
+//               ->orWhere('umurbangunan', 'LIKE', "%{$search}%")
+//               ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+//                   $r->where('penyedia', 'LIKE', "%{$search}%");
+//               });
+//         });
+//     }
+
+//     $data = $query->orderBy('updated_at', 'desc')
+//                   ->paginate($perPage);
+
+//     if ($request->ajax()) {
+//         return response()->json([
+//             'html' => view('backend.06_pengawasan.02_tertibjakonpemanfaatan.partials.table', compact('data'))->render()
+//         ]);
+//     }
+
+//     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.index', [
+//         'title' => 'Data Tertib Jakon Pemanfaatan',
+//         'data' => $data,
+//         'perPage' => $perPage,
+//         'search' => $search
+//     ]);
+// }
 
 
 public function betertibjakonpemanfaatancreate()
@@ -1807,7 +2894,7 @@ public function betertibjakonpemanfataanjakonindex($id)
 
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.index', [
-        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan',
+        'title' => 'Daftar Simak 3 No 1 Pengawasan Tertib Pemanfaatan Jasa Konstruksi | Tertib Jakon Pemanfaatan',
         'user' => $user,
         'data' => $datasurat,
         'datasurat' => $datasurat,
@@ -1824,15 +2911,40 @@ public function betertibjakonpemanfataanjakonindex($id)
     ]);
 }
 
-  public function betertibjakonpemanfataanjakoncreateberkas($id)
-{
-    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
-    $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan1')->findOrFail($id);
+//   public function betertibjakonpemanfataanjakoncreateberkas($id)
+// {
+//     // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
+//     $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan1')->findOrFail($id);
 
+//     $user = Auth::user();
+//     $datatandatangan = tandatangan::all();
+
+//     // Ambil data relasi surattertibjakonusaha1 jika ada
+//     $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonusaha3;
+
+//     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.buatberkasbaru', [
+//         'datanamabangunan' => $datatertibjasapemanfaatan->namabangunan,
+//         'datalokasi' => $datatertibjasapemanfaatan->lokasi,
+//         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
+//         'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
+//         // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
+//         'user' => $user,
+//         'data' => $datatertibjasapemanfaatan,
+//         'datatandatangan' => $datatandatangan,
+
+//         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
+//         'title' => 'Buat Daftar Simak 3 No 1 Pengawasan Pemanfaatan Jasa Konstruksi'
+//     ]);
+// }
+
+public function betertibjakonpemanfataanjakoncreateberkas($id)
+{
+    $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan1')->findOrFail($id);
     $user = Auth::user();
     $datatandatangan = tandatangan::all();
 
-    // Ambil data relasi surattertibjakonusaha1 jika ada
+    // dd($datatandatangan); // <-- AKTIFKAN INI UNTUK CEK APAKAH DATA KOSONG / TIDAK
+
     $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonusaha3;
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.01_surat1.buatberkasbaru', [
@@ -1840,16 +2952,13 @@ public function betertibjakonpemanfataanjakonindex($id)
         'datalokasi' => $datatertibjasapemanfaatan->lokasi,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
         'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
-        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
         'user' => $user,
         'data' => $datatertibjasapemanfaatan,
         'datatandatangan' => $datatandatangan,
-
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
-        'title' => 'Buat Berkas Dukung Surat Tertib Jakon Pemanfaatan Bagian 2'
+        'title' => 'Buat Daftar Simak 3 No 1 Pengawasan Pemanfaatan Jasa Konstruksi'
     ]);
 }
-
 public function betertibjakonmanfaatcreateberkasnew(Request $request)
 {
     // Validasi input
@@ -1949,7 +3058,6 @@ public function betertibjakonmanfaat1deleteberkas($id)
 
 // SURAT TERTIB JAKON PEMANFAATAN 2
 
-
 public function betertibjakonpemanfataansurat2index($id)
 {
     // Ambil data utama berdasarkan ID
@@ -1961,8 +3069,6 @@ public function betertibjakonpemanfataansurat2index($id)
 
     $user = Auth::user();
 
-
-
     // Ambil semua surat terkait dengan paginate
     $datasurat = surattertibjakonpemanfaatan2::where('tertibjakonpemanfaatan_id', $id)
                     ->orderBy('created_at', 'desc')
@@ -1970,83 +3076,77 @@ public function betertibjakonpemanfataansurat2index($id)
 
     $suratPertama = $datasurat->first();
 
-    $datatandatangan1 = tandatangan::find(8);
-    $datatandatangan2 = tandatangan::find(20);
-    $datatandatangan3 = tandatangan::find(9);
+    // ✅ Ambil data pemeriksa dari kolom baru (tandatangan1_id, 2, 3) di tabel surattertibjakonpemanfaatan2s
+    $datatandatangan1 = $suratPertama
+        ? tandatangan::find($suratPertama->tandatangan1_id)
+        : null;
+    $datatandatangan2 = $suratPertama
+        ? tandatangan::find($suratPertama->tandatangan2_id)
+        : null;
+    $datatandatangan3 = $suratPertama
+        ? tandatangan::find($suratPertama->tandatangan3_id)
+        : null;
 
+    // ✅ List semua nama pemeriksa untuk dropdown "Buat Berkas" / "Lihat Berkas"
+    $datatandatangan = tandatangan::all();
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.02_surat2.index', [
-        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan Pengawasan Rencana Umur Konstruksi & Kapasitas Beban',
+        'title' => 'Daftar Simak 3 No 2 & 3 | Tertib Jakon Pemanfaatan Pengawasan Rencana Umur Konstruksi & Kapasitas Beban',
         'user' => $user,
         'data' => $datasurat,
         'datasurat' => $datasurat,
-        // 'datapengelola1' => $datasurat->lingkuppengawasan,
-        // 'datapengelola2' => $datasurat->indikator,
         'datainduk' => $datatertibjakonpemanfaatan,
         'firstsurat' => $suratPertama,
-        // 'datalokasi' => $datatertibjakonpemanfaatan->lokasi,
         'datasurat_id' => $datasurat->first()?->id,
-        'id' => $id, // penting untuk route tombol "Buat Berkas"
+        'id' => $id,
 
-        'tandatangan1' => $datatandatangan1, // penting untuk route tombol "Buat Berkas"
-        'tandatangan2' => $datatandatangan2, // penting untuk route tombol "Buat Berkas"
-        'tandatangan3' => $datatandatangan3, // penting untuk route tombol "Buat Berkas"
+        // ✅ Data pemeriksa yang sudah tersimpan di surat ini
+        'tandatangan1' => $datatandatangan1,
+        'tandatangan2' => $datatandatangan2,
+        'tandatangan3' => $datatandatangan3,
 
+        // ✅ Semua pilihan pemeriksa untuk dropdown di halaman ini
+        'datatandatangan' => $datatandatangan,
     ]);
 }
 
-
-
-  public function betertibjakonpemanfataansurat2createberkas($id)
+public function betertibjakonpemanfataansurat2createberkas($id)
 {
-    // Ambil data tertibjasakonstruksi dengan relasi surattertibjakonusaha1
     $datatertibjasapemanfaatan = tertibjakonpemanfaatan::with('surattertibjakonpemanfaatan2')->findOrFail($id);
 
     $user = Auth::user();
-
-    // Ambil data relasi surattertibjakonusaha1 jika ada
-    // $datasurattertibjakopemanfaatan1 = $datatertibjasapemanfaatan->surattertibjakonusaha3;
+    $datatandatangan = tandatangan::all(); // ✅ TAMBAH INI
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.02_surat2.buatberkasbaru', [
         'datanamabangunan' => $datatertibjasapemanfaatan->namabangunan,
         'datalokasi' => $datatertibjasapemanfaatan->lokasi,
         'datatertibjasakonstruksinamabadanusaha' => $datatertibjasapemanfaatan->namabadanusaha,
         'datatertibjasakonstruksi_id' => $datatertibjasapemanfaatan->id,
-        // 'datatertibjasakonstruksinib' => $datatertibjasapemanfaatan->nib,
         'user' => $user,
         'data' => $datatertibjasapemanfaatan,
-
-        // 'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
-        'title' => 'Create Surat Tertib Jakon Pemanfaatan Bagian 2'
+        'datatandatangan' => $datatandatangan, // ✅ KIRIM KE VIEW
+        'title' => 'Daftar Simak 3 No 2 & 3 Pengawasan Rencana Umur Konstruksi & Kapasitas Beban'
     ]);
 }
 
 
 
-
 public function betertibjakonmanfaat2createberkasnew(Request $request)
 {
-    // Pastikan user masih login
-    // if (!auth()->check()) {
-    //     return redirect()->route('login')->with('error', 'Sesi habis, silakan login kembali.');
-    // }
-
-    // Validasi input
     $validatedData = $request->validate([
         'tertibjakonpemanfaatan_id' => 'required|string',
-        // 'lingkuppengawasan' => 'required|string',
-        // 'indikator' => 'required|string',
-        'dokumendiperiksa' => 'required|string',
-        'carapemeriksaan' => 'required|string',
-        'kesimpulanpemeriksaan' => 'required|in:Tersedia,Tidak Tersedia',
-        'catatan' => 'required|in:Sesuai,Tidak Sesuai',
+        'dokumendiperiksa'          => 'required|string',
+        'carapemeriksaan'           => 'required|string',
+        'kesimpulanpemeriksaan'     => 'required|in:Tersedia,Tidak Tersedia',
+        'catatan'                   => 'required|in:Sesuai,Tidak Sesuai',
+        'tandatangan1_id'           => 'nullable|string',
+        'tandatangan2_id'           => 'nullable|string',
+        'tandatangan3_id'           => 'nullable|string',
     ], [
-        // 'lingkuppengawasan.required' => 'Nama Pemilik Bangunan Wajib Diisi !.',
-        // 'indikator.required' => 'Nama Pengelola Bangunan Wajib Diisi !.',
-        'dokumendiperiksa.required' => 'Catatan Pemeriksaan Wajib Diisi !.',
-        'carapemeriksaan.required' => 'Catatan Pemeriksaan Wajib Diisi !.',
-        'kesimpulanpemeriksaan.required' => 'Kesimpulan Wajib Di Pilih !.',
-        'catatan.required' => 'Kesimpulan Wajib Di Pilih !.',
+        'dokumendiperiksa.required'      => 'Catatan Pemeriksaan Wajib Diisi!',
+        'carapemeriksaan.required'       => 'Catatan Pemeriksaan Wajib Diisi!',
+        'kesimpulanpemeriksaan.required' => 'Kesimpulan Wajib Di Pilih!',
+        'catatan.required'               => 'Kesimpulan Wajib Di Pilih!',
     ]);
 
     try {
@@ -2055,7 +3155,7 @@ public function betertibjakonmanfaat2createberkasnew(Request $request)
 
         return redirect()
             ->route('betertibjakonpemanfataansurat2index', [
-                'id' => $surat->tertibjakonpemanfaatan_id ?? 'default_id'
+                'id' => $surat->tertibjakonpemanfaatan_id
             ])
             ->with('create', 'Berkas berhasil dibuat!');
 
@@ -2065,8 +3165,6 @@ public function betertibjakonmanfaat2createberkasnew(Request $request)
             ->with('error', 'Gagal menyimpan data: ' . $e->getMessage());
     }
 }
-
-
 
 public function betertibjakonmanfaat2deleteberkas($id)
 {
@@ -2116,7 +3214,7 @@ public function betertibjakonpemanfataansurat3index($id)
     $datatandatangan3 = tandatangan::find(9);
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.03_surat3.index', [
-        'title' => 'Berkas Surat | Tertib Jakon Pemanfaatan Pengawasan Terhadap Pemeliharaan Konstruksi dan Struktur',
+        'title' => 'Daftar Simak 3 No 4 | Tertib Jakon Pemanfaatan Pengawasan Terhadap Pemeliharaan Konstruksi dan Struktur',
         'user' => $user,
         'data' => $datasurat,
         'datasurat' => $datasurat,
@@ -2161,7 +3259,7 @@ public function betertibjakonpemanfataansurat3index($id)
         'datatandatangan' => $datatandatangan,
 
         'datasurattertibjakonusaha4' => $datasurattertibjakopemanfaatan1,
-        'title' => 'Create Surat Tertib Jakon Pemanfaatan Bagian 3'
+        'title' => 'Daftar Simak 3 No 4 Pengawasan Pemanfaatan Pemeliharaan Konstruksi & Struktur '
     ]);
 }
 
@@ -2237,52 +3335,281 @@ public function betertibjakonmanfaat3deleteberkas($id)
 
 // SURAT TERTIB JAKON PENYELENGGARAAN
 
-public function betertibjakonpenyelenggaraanindex(Request $request)
-{
-    $perPage = $request->input('perPage', 10);
-    $search = $request->input('search');
+// public function betertibjakonpenyelenggaraanindex(Request $request)
+// {
+//     $perPage = $request->input('perPage', 10);
+//     $search = $request->input('search');
 
-    $query = tertibjakonpenyelenggaraan::query();
+//     $query = tertibjakonpenyelenggaraan::query();
 
-    // Filtering by search
-    if ($search) {
-        $query->where(function ($q) use ($search) {
-            $q->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
-              ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
-              ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
-              ->orWhere('bujk', 'LIKE', "%{$search}%")
-              ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
-                  $r->where('penyedia', 'LIKE', "%{$search}%");
-              });
-        });
+//     // Filtering by search
+//     if ($search) {
+//         $query->where(function ($q) use ($search) {
+//             $q->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
+//               ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+//               ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+//               ->orWhere('bujk', 'LIKE', "%{$search}%")
+//               ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+//                   $r->where('penyedia', 'LIKE', "%{$search}%");
+//               });
+//         });
+//     }
+
+//     // Statistik tambahan (opsional kalau mau ditampilkan di view utama)
+//     $totalpenyedia1 = tertibjakonpenyelenggaraan::whereHas('penyediastatustertibjakon', fn($q) => $q->where('id', 1))->count();
+//     $totalpenyedia2 = tertibjakonpenyelenggaraan::whereHas('penyediastatustertibjakon', fn($q) => $q->where('id', 2))->count();
+//     $totalpenyedia3 = tertibjakonpenyelenggaraan::whereHas('penyediastatustertibjakon', fn($q) => $q->where('id', 3))->count();
+
+//     // Data utama
+//     $data = $query->orderBy('updated_at', 'desc')->paginate($perPage);
+
+//     // Kalau request dari AJAX → return JSON berisi partial table
+//     if ($request->ajax()) {
+//         return response()->json([
+//             'html' => view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.partials.table', compact('data'))->render()
+//         ]);
+//     }
+
+//     // Kalau bukan AJAX → render full view
+//     return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.index', [
+//         'title'          => 'Data Tertib Jakon Penyelenggaraan',
+//         'data'           => $data,
+//         'perPage'        => $perPage,
+//         'search'         => $search,
+//         'totalpenyedia1' => $totalpenyedia1,
+//         'totalpenyedia2' => $totalpenyedia2,
+//         'totalpenyedia3' => $totalpenyedia3
+//     ]);
+// }
+
+    public function betertibjakonpenyelenggaraanindex(Request $request)
+    {
+        // ============================================================
+        // 1. PARAMETER
+        // ============================================================
+        $perPage = (int) $request->input('perPage', 10);
+        if ($perPage < 1) $perPage = 10;
+
+        $search = $request->input('search');
+        $tahun  = $request->input('tahun');
+        $sektor = $request->input('sektor');
+
+        // ============================================================
+        // 2. QUERY UTAMA
+        // ============================================================
+        $query = tertibjakonpenyelenggaraan::query();
+
+        if ($tahun)  $query->whereYear('created_at', $tahun);
+        if ($sektor) $query->where('penyediastatustertibjakon_id', $sektor);
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
+                  ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+                  ->orWhere('bujk', 'LIKE', "%{$search}%")
+                  ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+                      $r->where('penyedia', 'LIKE', "%{$search}%");
+                  });
+            });
+        }
+
+        // ============================================================
+        // 3. PAGINATE
+        // ============================================================
+        $data = $query->with(['penyediastatustertibjakon'])
+                      ->orderBy('updated_at', 'desc')
+                      ->paginate($perPage)
+                      ->appends($request->only('search', 'perPage', 'tahun', 'sektor'));
+
+        // ============================================================
+        // 4. DATA UNTUK MODAL REKAP
+        // ============================================================
+        $queryAll = tertibjakonpenyelenggaraan::query();
+
+        if ($tahun)  $queryAll->whereYear('created_at', $tahun);
+        if ($sektor) $queryAll->where('penyediastatustertibjakon_id', $sektor);
+
+        if ($search) {
+            $queryAll->where(function ($q) use ($search) {
+                $q->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
+                  ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+                  ->orWhere('bujk', 'LIKE', "%{$search}%");
+            });
+        }
+
+        $allDataRekap = $queryAll->with(['penyediastatustertibjakon'])
+                                 ->orderBy('updated_at', 'desc')
+                                 ->get();
+
+        // ============================================================
+        // 5. DATA PENYEDIA
+        // ============================================================
+        $datapenyedia = penyediastatustertibjakon::orderBy('id', 'asc')->get();
+
+        // ============================================================
+        // 6. STATISTIK TOTAL
+        // ============================================================
+        $totalpenyedia1 = tertibjakonpenyelenggaraan::where('penyediastatustertibjakon_id', 1)->count();
+        $totalpenyedia2 = tertibjakonpenyelenggaraan::where('penyediastatustertibjakon_id', 2)->count();
+        $totalpenyedia3 = tertibjakonpenyelenggaraan::where('penyediastatustertibjakon_id', 3)->count();
+
+        // ============================================================
+        // 7. RADAR CHART
+        // ============================================================
+        $sektorUntukChart = $sektor
+            ? $datapenyedia->where('id', $sektor)
+            : $datapenyedia;
+
+        $chartLabels = [];
+        $chartValues = [];
+
+        foreach ($sektorUntukChart as $p) {
+            $q = tertibjakonpenyelenggaraan::where('penyediastatustertibjakon_id', $p->id);
+            if ($tahun) $q->whereYear('created_at', $tahun);
+
+            $chartLabels[] = $p->penyedia;
+            $chartValues[] = $q->count();
+        }
+
+        $grandTotal = array_sum($chartValues);
+
+        // ============================================================
+        // 8. STATISTIK DROPDOWN
+        // ============================================================
+        $statistikDropdown = [];
+
+        foreach ($datapenyedia as $p) {
+            $q = tertibjakonpenyelenggaraan::where('penyediastatustertibjakon_id', $p->id);
+            if ($tahun) $q->whereYear('created_at', $tahun);
+            if ($search) {
+                $q->where(function ($sub) use ($search) {
+                    $sub->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
+                        ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+                        ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+                        ->orWhere('bujk', 'LIKE', "%{$search}%");
+                });
+            }
+
+            $statistikDropdown[$p->id] = [
+                'id'       => $p->id,
+                'penyedia' => $p->penyedia,
+                'total'    => $q->count(),
+            ];
+        }
+
+        // ============================================================
+        // 9. LIST TAHUN
+        // ============================================================
+        $listTahun = tertibjakonpenyelenggaraan::select(DB::raw('YEAR(created_at) as tahun'))
+                        ->whereNotNull('created_at')
+                        ->distinct()
+                        ->orderBy('tahun', 'desc')
+                        ->pluck('tahun');
+
+        // ============================================================
+        // 10. BAR CHART TAHUNAN
+        // ============================================================
+        $chartTahunanQuery = tertibjakonpenyelenggaraan::select(
+                DB::raw('YEAR(created_at) as tahun'),
+                DB::raw('COUNT(*) as total')
+            )
+            ->whereNotNull('created_at');
+
+        if ($sektor) $chartTahunanQuery->where('penyediastatustertibjakon_id', $sektor);
+        if ($search) {
+            $chartTahunanQuery->where(function ($q) use ($search) {
+                $q->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
+                  ->orWhere('namapekerjaan', 'LIKE', "%{$search}%");
+            });
+        }
+        if ($tahun) $chartTahunanQuery->whereYear('created_at', $tahun);
+
+        $chartTahunan = $chartTahunanQuery
+            ->groupBy(DB::raw('YEAR(created_at)'))
+            ->orderBy('tahun', 'asc')
+            ->get();
+
+        $tahunanLabels   = [];
+        $tahunanValues   = [];
+        $tahunanPercents = [];
+        $prevTotal       = null;
+
+        foreach ($chartTahunan as $row) {
+            $total   = (int) $row->total;
+            $percent = 0;
+
+            if ($prevTotal !== null) {
+                if ($prevTotal > 0) {
+                    $percent = (($total - $prevTotal) / $prevTotal) * 100;
+                } elseif ($prevTotal == 0 && $total > 0) {
+                    $percent = 100;
+                }
+            }
+
+            $tahunanLabels[]   = (string) $row->tahun;
+            $tahunanValues[]   = $total;
+            $tahunanPercents[] = round($percent, 1);
+
+            $prevTotal = $total;
+        }
+
+        // ============================================================
+        // 11. DATA UNTUK VIEW
+        // ============================================================
+        $viewData = [
+            'title'          => 'Data Pengawasan Tertib Jakon Penyelenggaraan',
+            'data'           => $data,
+            'allDataRekap'   => $allDataRekap,
+            'perPage'        => $perPage,
+            'search'         => $search,
+            'tahun'          => $tahun,
+            'sektor'         => $sektor,
+            'listTahun'      => $listTahun,
+            'datapenyedia'   => $datapenyedia,
+            'statistik'      => $statistikDropdown,
+            'chartLabels'    => $chartLabels,
+            'chartValues'    => $chartValues,
+            'grandTotal'     => $grandTotal,
+            'tahunanLabels'  => $tahunanLabels,
+            'tahunanValues'  => $tahunanValues,
+            'tahunanPercents'=> $tahunanPercents,
+            'totalpenyedia1' => $totalpenyedia1,
+            'totalpenyedia2' => $totalpenyedia2,
+            'totalpenyedia3' => $totalpenyedia3,
+        ];
+
+        // ============================================================
+        // 12. AJAX RESPONSE
+        // ============================================================
+        if ($request->ajax()) {
+            $fullHtml = view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.index', $viewData)->render();
+
+            $rowsHtml = '';
+            if (preg_match('/<tbody\s+id="tabeltertibjakonpenyelenggaraansearc"[^>]*>(.*?)<\/tbody>/s', $fullHtml, $m)) {
+                $rowsHtml = trim($m[1]);
+            }
+
+            return response()->json([
+                'rows'            => $rowsHtml,
+                'pagination'      => $data->links()->render(),
+                'statistik'       => $statistikDropdown,
+                'chartLabels'     => $chartLabels,
+                'chartValues'     => $chartValues,
+                'grandTotal'      => $grandTotal,
+                'tahunanLabels'   => $tahunanLabels,
+                'tahunanValues'   => $tahunanValues,
+                'tahunanPercents' => $tahunanPercents,
+            ]);
+        }
+
+        // ============================================================
+        // 13. VIEW
+        // ============================================================
+        return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.index', $viewData);
     }
 
-    // Statistik tambahan (opsional kalau mau ditampilkan di view utama)
-    $totalpenyedia1 = tertibjakonpenyelenggaraan::whereHas('penyediastatustertibjakon', fn($q) => $q->where('id', 1))->count();
-    $totalpenyedia2 = tertibjakonpenyelenggaraan::whereHas('penyediastatustertibjakon', fn($q) => $q->where('id', 2))->count();
-    $totalpenyedia3 = tertibjakonpenyelenggaraan::whereHas('penyediastatustertibjakon', fn($q) => $q->where('id', 3))->count();
-
-    // Data utama
-    $data = $query->orderBy('updated_at', 'desc')->paginate($perPage);
-
-    // Kalau request dari AJAX → return JSON berisi partial table
-    if ($request->ajax()) {
-        return response()->json([
-            'html' => view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.partials.table', compact('data'))->render()
-        ]);
-    }
-
-    // Kalau bukan AJAX → render full view
-    return view('backend.06_pengawasan.03_tertibjakonpenyelenggaraan.index', [
-        'title'          => 'Data Tertib Jakon Penyelenggaraan',
-        'data'           => $data,
-        'perPage'        => $perPage,
-        'search'         => $search,
-        'totalpenyedia1' => $totalpenyedia1,
-        'totalpenyedia2' => $totalpenyedia2,
-        'totalpenyedia3' => $totalpenyedia3
-    ]);
-}
 
 
 public function betertibjakonpenyelenggaraancreate()
@@ -2511,7 +3838,7 @@ public function buktidukungcreate($id)
     $datapenyedia = penyediastatustertibjakon::all();
 
     return view('backend.06_pengawasan.02_tertibjakonpemanfaatan.uploadbuktidukung', [
-        'title' => 'Create Tertib Jakon Pemanfaatan',
+        'title' => 'Bukti Dukung Tertib Jakon Pemanfaatan',
         'user' => $user,
         'datapenyedia' => $datapenyedia,
         'tertibjakonpemanfaatan_id' => $id,
@@ -2664,7 +3991,7 @@ $user = Auth::user();
 // $datapenyedia = penyediastatustertibjakon::all();
 
 return view('backend.06_pengawasan.01_tertibjakonusaha.05_uploadberkasdukung.01_berkasdukung1.01_berkasdukung', [
-    'title' => 'Update Berkas Dukung Tertib Jakon Usaha Kegiatan Konstruksi ',
+    'title' => 'Update Berkas Dukung Daftar Simak 1 b.1 Pengawasan Tertib Jakon Usaha Kegiatan Konstruksi ',
     'data' => $datatertibjakonusaha,
     // 'datapenyedia' => $datapenyedia,
 
@@ -2726,7 +4053,7 @@ $user = Auth::user();
 // $datapenyedia = penyediastatustertibjakon::all();
 
 return view('backend.06_pengawasan.01_tertibjakonusaha.05_uploadberkasdukung.01_berkasdukung1.02_berkasdukung', [
-    'title' => 'Update Berkas Dukung Tertib Jakon Usaha Segmentasi Pasar ',
+    'title' => 'Update Berkas Dukung Daftar Simak 1 b.2 Tertib Jakon Usaha Segmentasi Pasar ',
     'data' => $datatertibjakonusaha,
     // 'datapenyedia' => $datapenyedia,
 
@@ -2783,7 +4110,7 @@ $user = Auth::user();
 // $datapenyedia = penyediastatustertibjakon::all();
 
 return view('backend.06_pengawasan.01_tertibjakonusaha.05_uploadberkasdukung.01_berkasdukung1.03_berkasdukung', [
-    'title' => 'Update Berkas Dukung Tertib Jakon Usaha Pemenuhan Syarat ',
+    'title' => 'Update Berkas Dukung Tertib Daftar Simak 1 c Jakon Usaha Pemenuhan Syarat ',
     'data' => $datatertibjakonusaha,
     // 'datapenyedia' => $datapenyedia,
 
@@ -2839,7 +4166,7 @@ $user = Auth::user();
 // $datapenyedia = penyediastatustertibjakon::all();
 
 return view('backend.06_pengawasan.01_tertibjakonusaha.05_uploadberkasdukung.01_berkasdukung1.04_berkasdukung', [
-    'title' => 'Update Berkas Dukung Tertib Jakon Usaha Pelaksana Pengembangan Usaha ',
+    'title' => 'Update Berkas Dukung Daftar Simak 1 f Tertib Jakon Usaha Pelaksana Pengembangan Usaha ',
     'data' => $datatertibjakonusaha,
     // 'datapenyedia' => $datapenyedia,
 

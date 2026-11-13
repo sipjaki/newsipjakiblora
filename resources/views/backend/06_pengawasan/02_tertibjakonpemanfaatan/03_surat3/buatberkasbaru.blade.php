@@ -1,635 +1,539 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
+<style>
+/* ═══════════════════════════════════════════════════
+   BACKGROUND HIJAU TITIK-TITIK
+   ═══════════════════════════════════════════════════ */
+.bg-soft-page {
+    background:
+        radial-gradient(circle at 15% 15%, rgba(19, 168, 71, 0.10) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(19, 168, 71, 0.08) 0%, transparent 45%),
+        linear-gradient(180deg, #d9f0e2 0%, #eaf7ee 200px, #f8fafc 400px, #f8fafc 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 24px 0 48px;
+    position: relative;
+}
+.bg-soft-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(rgba(19, 168, 71, 0.18) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: linear-gradient(180deg, black 0%, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, black 0%, black 60%, transparent 100%);
+}
+.bg-soft-page > * { position: relative; z-index: 1; }
+
+/* ==========================================
+   PANEL UTAMA
+   ========================================== */
+.panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+.panel-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    background: #ffffff;
+}
+.panel-body { padding: 20px 24px; }
+
+/* ==========================================
+   ACTION BAR
+   ========================================== */
+.action-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px; flex-wrap: wrap; padding: 16px 20px;
+    background: #ffffff; border: 1px solid #e5e7eb;
+    border-radius: 12px; margin-bottom: 20px;
+}
+.action-bar .left, .action-bar .right {
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+}
+.action-bar .title-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 14px; background: #f0fdf4;
+    border: 1px solid #bbf7d0; border-radius: 10px;
+    font-size: 12.5px; font-weight: 700; color: #15803d;
+}
+.action-bar .title-chip i { color: #13A847; font-size: 14px; }
+
+/* ==========================================
+   FORM CONTROLS
+   ========================================== */
+.form-input, .form-textarea, .form-select {
+    width: 100%; font-size: 13px; padding: 8px 12px;
+    border: 1px solid #111827; border-radius: 8px;
+    background: #ffffff; color: #1e293b;
+    transition: all 0.15s ease;
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    border-color: #13A847; box-shadow: 0 0 0 3px rgba(19, 168, 71, 0.1); outline: none;
+}
+.form-input[readonly], .form-textarea[readonly] { background: #f8fafc; cursor: default; }
+.form-textarea { resize: vertical; }
+
+/* ==========================================
+   FORM DOC CARD
+   ========================================== */
+.doc-card {
+    background: #ffffff; border: 1px solid #111827;
+    border-radius: 12px; padding: 28px 32px;
+    margin-bottom: 20px; overflow-x: auto;
+}
+.doc-header {
+    display: flex; align-items: center; gap: 10px;
+    padding-bottom: 14px; border-bottom: 2px solid #111827; margin-bottom: 18px;
+}
+.doc-header img { width: 28px; height: auto; }
+.doc-header .header-sep { color: #111827; font-weight: 800; font-size: 14px; }
+.doc-header .header-title {
+    font-size: 13.5px; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.4;
+}
+.doc-title {
+    font-size: 14px; font-weight: 700; color: #0f172a; line-height: 1.6;
+    margin-bottom: 20px; padding: 14px 18px;
+    background: #f8fafc; border: 1px solid #111827;
+    border-left: 4px solid #13A847; border-radius: 6px; text-align: center;
+}
+
+/* ==========================================
+   TABEL AUDIT
+   ========================================== */
+.table-audit {
+    width: 100%; border-collapse: collapse; font-size: 12.5px;
+    border: 1px solid #111827; background: #fff; margin-bottom: 20px; min-width: 900px;
+}
+.table-audit th, .table-audit td {
+    border: 1px solid #111827; padding: 10px; vertical-align: top; line-height: 1.5;
+}
+.table-audit th {
+    background: #f8fafc; color: #111827; font-weight: 800;
+    text-align: center; font-size: 12px;
+}
+.table-audit td.center { text-align: center; }
+
+/* ==========================================
+   DATA TABLE
+   ========================================== */
+.data-table {
+    width: 100%; border-collapse: collapse; font-size: 12.5px;
+    border: 1px solid #111827; margin-bottom: 16px;
+}
+.data-table th, .data-table td {
+    border: 1px solid #111827; padding: 9px 12px; vertical-align: middle;
+}
+.data-table th {
+    background: #f8fafc; color: #111827; font-weight: 700;
+    text-align: center; font-size: 12px;
+}
+
+/* ==========================================
+   SUBMIT & MODAL
+   ========================================== */
+.submit-bar { display: flex; justify-content: flex-end; margin: 20px 0; }
+.confirm-overlay {
+    display: none; position: fixed; inset: 0;
+    background-color: rgba(15, 23, 42, 0.6); z-index: 9999;
+    justify-content: center; align-items: center; padding: 20px;
+}
+.confirm-box {
+    background: #ffffff; padding: 28px 30px; border-radius: 16px;
+    max-width: 440px; width: 100%; text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3); border: 1px solid #111827;
+}
+.confirm-title { font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 12px; }
+.confirm-message { font-size: 13px; color: #475569; line-height: 1.6; margin-bottom: 16px; }
+.confirm-check {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 12.5px;
+    color: #475569; text-align: left; padding: 12px;
+    background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px;
+    margin-bottom: 20px; line-height: 1.5;
+}
+.confirm-check input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; }
+.confirm-actions { display: flex; justify-content: center; gap: 10px; }
+
+/* ==========================================
+   CARD GAMBAR INFO
+   ========================================== */
+.info-image-card {
+    background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    padding: 24px; margin-bottom: 24px; overflow: hidden;
+}
+.info-image-header {
+    display: flex; align-items: center; gap: 12px;
+    padding-bottom: 14px; margin-bottom: 18px; border-bottom: 2px solid #13A847;
+}
+.info-image-header i {
+    color: #13A847; font-size: 20px; background: #f0fdf4;
+    width: 42px; height: 42px; border-radius: 10px;
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.info-image-header .info-image-title { font-size: 15px; font-weight: 800; color: #0f172a; margin: 0; }
+.info-image-header .info-image-subtitle { font-size: 12px; color: #64748b; margin: 2px 0 0 0; }
+.info-image-body {
+    display: flex; justify-content: center; align-items: center;
+    background: #f8fafc; border: 1.5px dashed #cbd5e1;
+    border-radius: 12px; padding: 16px; overflow: hidden;
+}
+.info-image-body img {
+    max-width: 100%; height: auto; max-height: 520px;
+    object-fit: contain; border-radius: 8px; display: block;
+    cursor: zoom-in; transition: transform 0.2s ease;
+}
+.info-image-body img:hover { transform: scale(1.02); }
+
+@media (max-width: 768px) {
+    .action-bar { flex-direction: column; align-items: stretch; }
+    .action-bar .left, .action-bar .right { justify-content: stretch; width: 100%; }
+    .doc-card { padding: 20px 16px; }
+    .submit-bar { justify-content: stretch; }
+    .info-image-card { padding: 16px; border-radius: 14px; }
+    .info-image-header i { width: 36px; height: 36px; font-size: 17px; }
+    .info-image-body { padding: 10px; }
+    .info-image-body img { max-height: 340px; }
+}
+</style>
+
 <!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
-    <div class="app-wrapper">
-{{-- ---------------------------------------------------------------------- --}}
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<div class="app-wrapper">
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
 @include('button')
+@include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
-{{-- ---------------------------------------------------------------------- --}}
+   <main class="app-main">
+<section class="bg-soft-page">
 
-      @include('backend.00_administrator.00_baganterpisah.03_sidebar')
-
-      <!--begin::App Main-->
-      <main class="app-main">
-        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
-
-        <!--begin::App Content Header-->
+        {{-- HEADER --}}
         <div class="app-content-header">
-          <!--begin::Container-->
           <div class="container-fluid">
-            <!--begin::Row-->
             <div class="row">
-
                 @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
                 @include('backend.00_administrator.00_baganterpisah.11_alert')
             </div>
-            <!--end::Row-->
           </div>
-          <!--end::Container-->
         </div>
 
-        <br>
-
+        {{-- CARD GAMBAR INFO --}}
         <div class="container-fluid">
-            <!--begin::Row-->
             <div class="row" style="margin-right: 10px; margin-left:10px;">
-                <!-- /.card -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
+                <div class="col-md-12">
+                    <div class="info-image-card">
+                        <div class="info-image-header">
+                            <i class="bi bi-diagram-3-fill"></i>
+                            <div>
+                                <h6 class="info-image-title">Alur Pengawasan Pemeliharaan Konstruksi & Struktur</h6>
+                                <p class="info-image-subtitle">Panduan visual tahapan pemeriksaan pemeliharaan jasa konstruksi</p>
+                            </div>
+                        </div>
+                        <div class="info-image-body">
+                            <img src="/assets/01_tertibpengawasan/01_tertibusaha/pemanfaatan3.webp"
+                                 alt="Alur Pemeliharaan Konstruksi"
+                                 loading="lazy"
+                                 onclick="window.open(this.src, '_blank')"
+                                 onerror="this.parentElement.innerHTML='<div style=\'padding:30px;text-align:center;color:#94a3b8;font-size:13px;\'><i class=\'bi bi-image\' style=\'font-size:2rem;display:block;margin-bottom:8px;\'></i>Gambar tidak ditemukan. Periksa path.</div>'">
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
+        {{-- MAIN CONTENT --}}
+        <div class="container-fluid">
+            <div class="row" style="margin-right: 10px; margin-left:10px;">
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel-header">
+                            @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
+                        </div>
 
+                        <div class="panel-body">
 
-                           {{-- ======================================================= --}}
-                           <div class="card card-primary card-outline mb-6">
-                            <div style="display: flex; justify-content: space-between; margin-top: 10px; flex-wrap: wrap; margin-bottom:20px;">
-                                <!-- Kontainer Kiri -->
-                                <div style="display: flex; gap: 10px; margin-right:25px; margin-left:25px;">
-                                    <!-- Tombol Nama Pekerjaan -->
-                                    <button class="button-berkas">
-                                        <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
+                            {{-- ACTION BAR --}}
+                            <div class="action-bar">
+                                <div class="left">
+                                    <span class="title-chip">
+                                        <i class="bi bi-building"></i>
                                         Nama Bangunan: {{ $datanamabangunan ?? 'Masih Kosong' }}
-                                    </button>
-
-                                    <!-- Tombol Badan Usaha -->
-                                    {{-- <a href="/404">
-                                        <button class="btn-create">
-                                            <i class="bi bi-tools icon-create"></i>
-                                            Perbaikan Data
-                                        </button>
-                                    </a>
-
-                                    <a href="/404">
-                                        <button class="btn-create">
-                                            <i class="bi bi-file-earmark-arrow-down icon-create"></i>
-                                            Download Berkas
-                                        </button>
-                                    </a>
-
-                                        <button class="btn-create"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $data->id }}">
-                                            <i class="bi bi-file-earmark-text icon-create"></i>
-                                            Lihat Berkas
-                                        </button> --}}
-
-
-
-
-                                <div class="modal fade" id="modalKtp{{ $data->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $data->id }}" aria-hidden="true">
-                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                        <div class="modal-content" style="font-size: 0.875rem;">
-                                            <div class="modal-header d-flex align-items-center">
-                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                                    <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
-                                                </a>
-                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                                    <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
-                                                </a>
-                                                <span class="mx-2">:</span>
-                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Pemenuhan Persyaratan Usaha Jasa Konstruksi Secara Rutin </h5>
-                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $data->surattertibjakonusaha1->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
-                                                        <td>{{ $data->surattertibjakonusaha1->statusperizinan ?? 'Data Belum Di Buat' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>No NIB</strong></td>
-                                                        <td>{{ $data->surattertibjakonusaha1->nib ?? 'Data Belum Di Buat' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>
-                                                            @if ($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan && $data->surattertibjakonusaha1->waktupengawasanselesai)
-                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
-                                                                –
-                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
-                                                            @else
-                                                                <span class="text-muted">Belum Di Buat</span>
-                                                            @endif
-                                                        </td>
-
-
-                                                    </tr>
-                                                </table>
-
-                                                {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
-                                                <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
-                                                    <thead>
-                                                        <tr>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Sifat</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Jenis Usaha</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Sifat Usaha</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Sub Klasifikasi</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Layanan Usaha</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->namapaketpekerjaan ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->jenisusaha ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaian ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->sifatusaha ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaiansbu ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$data->surattertibjakonusaha1->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaianklasifikasi ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->layananusaha ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaianlayananusaha ?? 'Data Belum Di Buat'}}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-
-                                                <div class="container" style="margin-top: 10px;">
-                                                    <!-- Modal Card -->
-
-
-                                                        </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </span>
                                 </div>
-                            </td>
-
-
-                                </div>
-
-                                <!-- Kontainer Kanan -->
-                                <div>
-                             <a href="{{ url()->previous() }}">
-                                    <button class="button-newvalidasi">
-                                        <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
-                                        Kembali
-                                    </button>
-                                </a>
-
+                                <div class="right">
+                                    <a href="{{ url()->previous() }}" class="button-baru button-md">
+                                        <i class="bi bi-arrow-left"></i> Kembali
+                                    </a>
                                 </div>
                             </div>
 
-                        </div>
+                            {{-- FORM INPUT --}}
+                            <form action="{{ route('betertibjakonmanfaat3createsurat') }}" method="POST" enctype="multipart/form-data" id="formBuatBerkas">
+                                @csrf
+                                <input type="hidden" name="tertibjakonpemanfaatan_id" value="{{ $datatertibjasakonstruksi_id }}">
 
-        <hr>
+                                <div class="doc-card">
 
-
-        {{-- ======================================================= --}}
-                    <div class="col-md-12">
-                        <!--begin::Quick Example-->
-                        <form action="{{ route('betertibjakonmanfaat3createsurat') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-
-                            <input type="hidden"  name="tertibjakonpemanfaatan_id" value="{{ $datatertibjasakonstruksi_id }}">
-
-                                <div class="modal-content" style="font-size: 0.875rem;">
-                                    <div class="modal-header d-flex align-items-center">
-                                        <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
-                                        </a>
-                                        <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                            <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
-                                        </a>
-                                        <span class="mx-2">:</span>
-                                        <p style="margin-left: 10px; margin-bottom: 0; font-size:15px;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                    <div class="doc-header">
+                                        <img src="/assets/icon/logokabupatenblora.png" alt="Logo">
+                                        <img src="/assets/icon/pupr.png" alt="Logo">
+                                        <span class="header-sep">:</span>
+                                        <p class="header-title">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                                     </div>
-                                    <br>
-                                    <div class="modal-body">
-                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin</h5>
-                                            <br>
 
-                                                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
+                                    <div class="doc-title">
+                                        <strong>Surat Dukung Tertib Jakon Pemanfaatan</strong><br>
+                                        Pengawasan Terhadap Pemeliharaan Konstruksi & Struktur
+                                    </div>
+
+                                    {{-- AUDIT TABLE --}}
+                                    <table class="table-audit">
+                                        <thead>
                                             <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Kesimpulan Pemeriksaan</strong>
+                                                <th style="width: 40px;">No</th>
+                                                <th style="width: 250px;">LINGKUP PENGAWASAN</th>
+                                                <th>Indikator</th>
+                                                <th>DOKUMEN YANG DIPERIKSA</th>
+                                                <th>CARA PEMERIKSAAN</th>
+                                                <th style="width: 150px;">KESIMPULAN PEMERIKSAAN</th>
+                                                <th style="width: 200px;">CATATAN PEMERIKSAAN</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{-- Baris A --}}
+                                            <tr>
+                                                <td class="center" rowspan="2" style="vertical-align: middle;">4</td>
+                                                <td rowspan="2" style="vertical-align: middle;">
+                                                    Pengawasan terhadap pemeliharaan produk jasa konstruksi
                                                 </td>
+                                                <td>
+                                                    Terlaksananya pemeliharaan bangunan konstruksi yang dibuktikan dengan ketersediaan surat pernyataan pemilik/pengelola bangunan dengan lampiran:<br>
+                                                    a. Dokumen program pemeliharaan dan perawatan bangunan sesuai dengan ketentuan peraturan perundang-undangan tentang standar pemeliharaan dan perawatan; dan
+                                                </td>
+                                                <td>Dokumen program pemeliharaan/perawatan bangunan; dan</td>
+                                                <td>Memeriksa ketersediaan Dokumen program pemeliharaan/perawatan bangunan dan</td>
+                                                <td class="center">
+                                                    <span id="textKesimpulan" style="font-size: 13px; font-weight: 700; color: #0f172a;">-</span>
+                                                </td>
+                                                <td>
+                                                    <div id="carapemeriksaanPreview" style="white-space:pre-line; font-size:12px;">-</div>
+                                                </td>
+                                            </tr>
 
-                                                       <td>
-                                                    <select name="kesimpulanpemeriksaan"
-                                                        class="form-control @error('kesimpulanpemeriksaan') is-invalid @enderror"
-                                                        id="kesimpulanSelect"
-                                                        style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-                                                        <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
+                                            {{-- Baris B --}}
+                                            <tr>
+                                                <td>
+                                                    b. Laporan pelaksanaan program pemeliharaan/perawatan bangunan
+                                                </td>
+                                                <td>Laporan pelaksanaan program pemeliharaan/perawatan bangunan</td>
+                                                <td>Memeriksa ketersediaan Laporan pelaksanaan program pemeliharaan/perawatan bangunan dibandingkan dengan pelaksanaannya</td>
+                                                <td class="center">
+                                                    <span id="textCatatan" style="font-size: 13px; font-weight: 700; color: #0f172a;">-</span>
+                                                </td>
+                                                <td>
+                                                    <div id="dokumendiperiksaPreview" style="white-space:pre-line; font-size:12px;">-</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    {{-- INPUT DATA PEMERIKSAAN --}}
+                                    <table class="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:250px;">Input Data Pemeriksaan</th>
+                                                <th>Isian</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="font-weight:700;">Kesimpulan Pemeriksaan</td>
+                                                <td>
+                                                    <select name="kesimpulanpemeriksaan" id="kesimpulanSelect" class="form-select @error('kesimpulanpemeriksaan') is-invalid @enderror">
+                                                        <option value="" disabled {{ old('kesimpulanpemeriksaan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
                                                         <option value="Sesuai" {{ old('kesimpulanpemeriksaan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
                                                         <option value="Tidak Sesuai" {{ old('kesimpulanpemeriksaan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
                                                     </select>
-                                                    @error('kesimpulanpemeriksaan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
+                                                    @error('kesimpulanpemeriksaan')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Catatan Pemeriksaan 1</strong>
-                                                </td>
-
-                                                     <td>
-        <textarea name="carapemeriksaan"
-            class="form-control @error('carapemeriksaan') is-invalid @enderror"
-            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
-            rows="4"
-            placeholder="Masukkan catatan pemeriksaan 1 ..."
-            id="carapemeriksaanInput">{{ old('carapemeriksaan') }}</textarea>
-
-        @error('carapemeriksaan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </td>
-
-    <!-- Tempat menampilkan isi secara otomatis -->
-                                            </tr>
-
-                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Catatan</strong>
-                                                </td>
+                                                <td style="font-weight:700;">Catatan Pemeriksaan 1</td>
                                                 <td>
-                                                        <select name="catatan"
-                                                            class="form-control @error('catatan') is-invalid @enderror"
-                                                            id="catatanSelect"
-                                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;">
-                                                            <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Kesimpulan ---</option>
-                                                            <option value="Sesuai" {{ old('catatan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
-                                                            <option value="Tidak Sesuai" {{ old('catatan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
-                                                        </select>
-                                                        @error('catatan')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
+                                                    <textarea name="carapemeriksaan" id="carapemeriksaanInput" rows="3" class="form-textarea @error('carapemeriksaan') is-invalid @enderror" placeholder="Masukkan catatan pemeriksaan 1 ...">{{ old('carapemeriksaan') }}</textarea>
+                                                    @error('carapemeriksaan')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
                                                 </td>
-                                                </tr>
-                                                                                            <tr>
-                                                <td style="width: 200px; padding:4px 8px;">
-                                                    <strong style="font-size: 15px;">Catatan Pemeriksaan 2</strong>
-                                                </td>
-
-                                                      <td>
-        <textarea name="dokumendiperiksa"
-            class="form-control @error('dokumendiperiksa') is-invalid @enderror"
-            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem;"
-            rows="4"
-            placeholder="Masukkan catatan pemeriksaan 2..."
-            id="dokumendiperiksaInput">{{ old('dokumendiperiksa') }}</textarea>
-
-        @error('dokumendiperiksa')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </td>
-
-
                                             </tr>
-
-
-                                            {{-- <tr>
-    <td style="font-size: 12px; text-align:center;">Pemeriksa</td>
-    <td style="font-size: 12px;">
-
-
-        <select id="selectTandaTangan" name="lingkuppengawasan">
-            <option value="">-- Pilih Pemeriksa --</option>
-            @foreach($datatandatangan as $item)
-
-         <option value="{{ $item->namalengkap }}" data-tandatangan="{{ asset($item->tandatangan) }}">
-    {{ $item->namalengkap }}
-</option>
-
-
-                @endforeach
-        </select>
-
-        <div id="previewTandaTangan" style="margin-top: 10px; text-align:left;">
-            <!-- Gambar tanda tangan otomatis muncul di sini -->
-        </div>
-
-        <!-- Input indikator untuk simpan path tanda tangan -->
-        <input type="hidden" id="inputIndikator" name="indikator" value="">
-
-
-        <script>
-    document.getElementById('selectTandaTangan').addEventListener('change', function() {
-        const selectedOption = this.options[this.selectedIndex];
-        const tandatanganUrl = selectedOption.getAttribute('data-tandatangan');
-        const previewDiv = document.getElementById('previewTandaTangan');
-        const indikatorInput = document.getElementById('inputIndikator');
-
-        if (tandatanganUrl) {
-            previewDiv.innerHTML = `<img src="${tandatanganUrl}" alt="Tanda Tangan" style="width: 100%; max-height: 100px; object-fit: contain;">`;
-            indikatorInput.value = tandatanganUrl; // Simpan URL ke input indikator supaya bisa submit
-        } else {
-            previewDiv.innerHTML = '<p style="font-size: 11px;">Tidak Ada Tanda Tangan !</p>';
-            indikatorInput.value = '';
-        }
-    });
-</script>
-
-    </td>
-</tr> --}}
-
-
-                                        </table>
-
-
-
-                    <br>
-                    <table class="audit">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>LINGKUP PENGAWASAN</th>
-                                <th>INDIKATOR</th>
-                                <th>DOKUMEN YANG DIPERIKSA</th>
-                                <th>CARA PEMERIKSAAN</th>
-                                <th>KESIMPULAN PEMERIKSAAN</th>
-                                <th>CATATAN PEMERIKSAAN</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="2">4</td>
-                                <td rowspan="2">
-                                    Pengawasan terhadap pemeliharaan produk jasa konstruksi
-                                </td>
-                                <td>
-                                    Terlaksananya pemeliharaan bangunan konstruksi yang di buktikan dengen ketersediaan surat pernyataan pemilik/pengelola bangunan dengan lampiran :<br>
-                                    &bull; a. Dokumen program pemeliharaan dan perawatan bangunan sesuai dengan ketentuan peraturan perundang undangan tentang standar pemeliharaan dan perawatan<br>
-                                </td>
-                                <td>Dokumen program pemeliharaan/perawatan pemeliharaan bangunan dan </td>
-                                <td>Memeriksa ketersediaan Dokumen program pemeliharaan/perawatan bangunan dan </td>
-                                <td style="text-align: center;">
-                                    <span id="textKesimpulan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
-                                </td>
-                                <td>
-                                        <div id="carapemeriksaanPreview" style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #f8f9fa; min-height: 100px;">
-                                        <!-- Teks dari textarea akan muncul di sini -->
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    b. Laporan pelaksanaan program pemeliharaan dan perawatan bangunan
-                                </td>
-                                <td>Laporan Pelaksanaan program pemeliharaan/ perawatan bangunan </td>
-                                <td>Memeriksa ketersediaan laporan pelaksanaan program pemeliharaan/perawatan bangunan di bandingkan dengan pelaksananya</td>
-                             <td style="text-align: center;">
-                                 <span id="textCatatan" style="font-size: 15px; font-weight: 600; color: #333;"></span>
-                            </td>
-
-                                <td>
-                                       <div id="dokumendiperiksaPreview"
-                                            style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #f8f9fa; min-height: 100px;">
-                                            <!-- Hasil teks tampil di sini -->
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                            <tr>
+                                                <td style="font-weight:700;">Catatan</td>
+                                                <td>
+                                                    <select name="catatan" id="catatanSelect" class="form-select @error('catatan') is-invalid @enderror">
+                                                        <option value="" disabled {{ old('catatan') ? '' : 'selected' }}>--- Pilih Catatan ---</option>
+                                                        <option value="Sesuai" {{ old('catatan') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+                                                        <option value="Tidak Sesuai" {{ old('catatan') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+                                                    </select>
+                                                    @error('catatan')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-weight:700;">Catatan Pemeriksaan 2</td>
+                                                <td>
+                                                    <textarea name="dokumendiperiksa" id="dokumendiperiksaInput" rows="3" class="form-textarea @error('dokumendiperiksa') is-invalid @enderror" placeholder="Masukkan catatan pemeriksaan 2...">{{ old('dokumendiperiksa') }}</textarea>
+                                                    @error('dokumendiperiksa')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 
                                 </div>
 
+                                {{-- SUBMIT --}}
+                                <div class="submit-bar">
+                                    <button class="button-hijau button-md" type="button" onclick="openModal()">
+                                        <i class="bi bi-plus-circle"></i>
+                                        <span>Buat Berkas</span>
+                                    </button>
+                                </div>
 
-                                <br><br>
-<!-- Tombol Submit -->
-<div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-    <div class="flex justify-end">
-        <button class="button-hijau" type="button" onclick="openModal()">
-        <!-- Ikon SVG Pensil -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-        fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-       </svg>
-        <span style="font-family: 'Poppins', sans-serif;">Buat Berkas</span>
-    </button>
-    </div>
+                                {{-- MODAL KONFIRMASI --}}
+                                <div id="confirmModal" class="confirm-overlay">
+                                    <div class="confirm-box">
+                                        <div class="confirm-title">Konfirmasi Buat Berkas</div>
+                                        <p class="confirm-message">Apakah Anda ingin membuat berkas ini?</p>
 
-    <!-- Modal Konfirmasi -->
-    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-            <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                Apakah Anda ingin membuat berkas ini?
-            </p>
+                                        <label class="confirm-check">
+                                            <input type="checkbox" id="agreeCheckbox" onchange="toggleSubmitButton()">
+                                            <span>Data yang dibuat tidak bisa dirubah kembali, harap periksa kembali data Anda!</span>
+                                        </label>
 
-            <!-- Checkbox Konfirmasi -->
-            <p style="font-size: 14px; margin-top: 10px; text-align: left; display: flex; align-items: center;">
-                <input type="checkbox" id="agreeCheckbox" onchange="toggleSubmitButton()" style="margin-right: 10px;" />
-                <label for="agreeCheckbox" style="margin: 0;">
-                    Data yang dibuat tidak bisa dirubah kembali, harap periksa kembali data anda!!
-                </label>
-            </p>
+                                        <div class="confirm-actions">
+                                            <button id="confirmSubmitBtn"
+                                                    onclick="submitForm()"
+                                                    disabled
+                                                    class="button-baru button-md">
+                                                <i class="bi bi-slash-circle"></i> Ya, Buat
+                                            </button>
 
-            <!-- Tombol -->
-            <div style="display: flex; justify-content: center; gap: 12px;">
-                <button id="confirmSubmitBtn"
-                    onclick="submitForm()"
-                    disabled
-                    style="background-color: #DC2626; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px; cursor: not-allowed;"
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                    onmouseout="this.style.backgroundColor=this.disabled ? '#DC2626' : '#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                            <button type="button" onclick="closeModal()" class="button-merah button-md">
+                                                <i class="bi bi-x-circle"></i> Batal
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <!-- Icon Forbidden Default -->
-                    <svg id="submitIcon" xmlns="http://www.w3.org/2000/svg" height="16" fill="white" viewBox="0 0 512 512">
-                        <path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zM256 432c-97.2 0-176-78.8-176-176 0-38.6 12.5-74.2 33.5-103L359 398.5C330.2 419.5 294.6 432 256 432zM398.5 359L153 113.5C181.8 92.5 217.4 80 256 80c97.2 0 176 78.8 176 176 0 38.6-12.5 74.2-33.5 103z"/>
-                    </svg>
-                    Ya
-                </button>
+                            </form>
 
-                <!-- Tombol Batal dengan ikon X (SVG) -->
-                <button type="button"
-                        onclick="closeModal()"
-                        style="background-color: #666363; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                        onmouseout="this.style.backgroundColor='#666363'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                    </svg>
-                    Batal
-                </button>
-
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
+</section>
+   </main>
+</div>
 </div>
 
-<!-- Script -->
+@include('backend.00_administrator.00_baganterpisah.02_footer')
+
+{{-- SCRIPT --}}
 <script>
 function openModal() {
     const modal = document.getElementById("confirmModal");
     if (modal) modal.style.display = "flex";
 }
-
 function closeModal() {
     const modal = document.getElementById("confirmModal");
     if (modal) modal.style.display = "none";
 }
-
 function toggleSubmitButton() {
     const checkbox = document.getElementById("agreeCheckbox");
     const btn = document.getElementById("confirmSubmitBtn");
-    const icon = document.getElementById("submitIcon");
-
     if (checkbox.checked) {
         btn.disabled = false;
         btn.style.cursor = 'pointer';
-        btn.style.backgroundColor = '#10B981'; // Hijau
-        // Ganti ikon ke Telegram
-        icon.setAttribute("viewBox", "0 0 448 512");
-        icon.innerHTML = '<path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>';
+        btn.style.backgroundColor = '#13A847';
+        btn.style.borderColor = '#13A847';
+        btn.style.opacity = '1';
+        btn.innerHTML = '<i class="bi bi-check-circle"></i> Ya, Buat';
     } else {
         btn.disabled = true;
         btn.style.cursor = 'not-allowed';
-        btn.style.backgroundColor = '#DC2626'; // Merah
-        // Kembalikan ikon ke Forbidden
-        icon.setAttribute("viewBox", "0 0 512 512");
-        icon.innerHTML = '<path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zM256 432c-97.2 0-176-78.8-176-176 0-38.6 12.5-74.2 33.5-103L359 398.5C330.2 419.5 294.6 432 256 432zM398.5 359L153 113.5C181.8 92.5 217.4 80 256 80c97.2 0 176 78.8 176 176 0 38.6-12.5 74.2-33.5 103z"/>';
+        btn.style.backgroundColor = '#dc2626';
+        btn.style.borderColor = '#dc2626';
+        btn.style.opacity = '0.7';
+        btn.innerHTML = '<i class="bi bi-slash-circle"></i> Ya, Buat';
     }
 }
-
-
 function submitForm() {
-    // Ambil form element
-    const form = document.querySelector('form');
-    // Submit form jika ditemukan
-    if (form) {
-        form.submit();
-    }
-    // Tutup modal
+    const form = document.getElementById('formBuatBerkas');
+    if (!form) { alert('Form tidak ditemukan.'); return; }
+    const btn = document.getElementById('confirmSubmitBtn');
+    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Memproses...'; }
     closeModal();
+    form.submit();
 }
-</script>
 
-                            </div>
-                        </form>
+document.addEventListener('DOMContentLoaded', function () {
+    const kesimpulanSelect = document.getElementById('kesimpulanSelect');
+    const textKesimpulan = document.getElementById('textKesimpulan');
+    const catatanSelect = document.getElementById('catatanSelect');
+    const textCatatan = document.getElementById('textCatatan');
 
-
-                                                     </div>
-                        <!--end::Quick Example-->
-                    </div>
-
-
-                    <br><br>
-
-                    <!-- /.card -->
-                    <!-- Button Section -->
-
-                    </div>
-                    <!--end::Row-->
-                    </div>
-
-        </div>
-        <!--end::Row-->
-        </div>
-                  <!--end::Container-->
-        <!--end::App Content Header-->
-        <!--begin::App Content-->
-          <!--end::App Content-->
-
-        </section>
-        </main>
-      <!--end::App Main-->
-    </div>
-    </div>
-
-
-      @include('backend.00_administrator.00_baganterpisah.02_footer')
-
-
-
-      <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const kesimpulanSelect = document.getElementById('kesimpulanSelect');
-        const outputKesimpulan = document.getElementById('outputKesimpulan');
-        const textKesimpulan = document.getElementById('textKesimpulan');
-
-        const catatanSelect = document.getElementById('catatanSelect');
-        const outputCatatan = document.getElementById('outputCatatan');
-        const textCatatan = document.getElementById('textCatatan');
-
+    if(kesimpulanSelect) {
         kesimpulanSelect.addEventListener('change', function () {
-            const value = this.value;
-            if (value) {
-                textKesimpulan.textContent = value;
-                outputKesimpulan.style.display = 'table-row';
-            } else {
-                outputKesimpulan.style.display = 'none';
-            }
+            textKesimpulan.textContent = this.value || '-';
         });
+    }
 
+    if(catatanSelect) {
         catatanSelect.addEventListener('change', function () {
-            const value = this.value;
-            if (value) {
-                textCatatan.textContent = value;
-                outputCatatan.style.display = 'table-row';
-            } else {
-                outputCatatan.style.display = 'none';
+            textCatatan.textContent = this.value || '-';
+        });
+    }
+
+    const carapemeriksaanInput = document.getElementById('carapemeriksaanInput');
+    const carapemeriksaanPreview = document.getElementById('carapemeriksaanPreview');
+    if(carapemeriksaanInput) {
+        carapemeriksaanInput.addEventListener('input', function() {
+            let text = this.value.trim();
+            if (!text) { carapemeriksaanPreview.innerText = '-'; return; }
+            let words = text.split(/\s+/);
+            let result = '';
+            for (let i = 0; i < words.length; i++) {
+                result += words[i] + ' ';
+                if ((i + 1) % 5 === 0) result = result.trim() + '\n';
             }
+            carapemeriksaanPreview.innerText = result.trim();
         });
-    });
+    }
+
+    const dokumendiperiksaInput = document.getElementById('dokumendiperiksaInput');
+    const dokumendiperiksaPreview = document.getElementById('dokumendiperiksaPreview');
+    if(dokumendiperiksaInput) {
+        dokumendiperiksaInput.addEventListener('input', function() {
+            let text = this.value.trim();
+            if (!text) { dokumendiperiksaPreview.innerText = '-'; return; }
+            let words = text.split(/\s+/);
+            let result = '';
+            for (let i = 0; i < words.length; i++) {
+                result += words[i] + ' ';
+                if ((i + 1) % 5 === 0) result = result.trim() + '\n';
+            }
+            dokumendiperiksaPreview.innerText = result.trim();
+        });
+    }
+});
 </script>
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const input = document.getElementById('carapemeriksaanInput');
-        const preview = document.getElementById('carapemeriksaanPreview');
-
-        // Tampilkan nilai awal jika ada
-        preview.textContent = input.value;
-
-        // Update secara real-time saat user mengetik
-        input.addEventListener('input', function () {
-            preview.textContent = this.value;
-        });
-    });
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const input = document.getElementById('dokumendiperiksaInput');
-        const preview = document.getElementById('dokumendiperiksaPreview');
-
-        // Tampilkan isi awal jika ada
-        preview.textContent = input.value;
-
-        // Update preview setiap kali user mengetik
-        input.addEventListener('input', function () {
-            preview.textContent = this.value;
-        });
-    });
-</script>
-
+</body>
+</html>

@@ -1,42 +1,3 @@
-<style>
-
-    @media (max-width: 767px) {
-    .responsive-hide-button {
-        display: none !important;
-    }
-}
-    @media (max-width: 768px) {
-        .responsive-button-text {
-            display: none;
-        }
-
-        .responsive-button {
-            padding: 10px;
-            justify-content: center;
-        }
-    }
-</style>
-
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-</style>
-
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -53,7 +14,7 @@
    <!--begin::App Main-->
    <main class="app-main">
     {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
     <!--begin::App Content Header-->
      <div class="app-content-header">
@@ -143,7 +104,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
@@ -205,6 +166,9 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
             <i class="bi bi-journal-bookmark"></i> Nama Kegiatan
           </th>
           <th style="width: 250px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-journal-bookmark"></i> Jabatan Kerja
+          </th>
+          <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-calendar-event"></i> Waktu Pelaksanaan
           </th>
           <th style="width: 250px; text-align:center; vertical-align: middle;">
@@ -242,12 +206,25 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
      </tr>
  </thead>
  <tbody id="tableBody">
-     @foreach ($data as $item )
+     @forelse ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{$item->user->name}}</td>
          <td style="text-align: left;">{{$item->asosiasimasjaki->namaasosiasi ?? 'Data Tidak Di Temukan !'}}</td>
-         <td style="text-align: left;">{{$item->namakegiatan}}</td>
+         <td style="text-align:left;">
+    {!! implode('<br>', array_map(
+        fn($chunk) => implode(' ', $chunk),
+        array_chunk(explode(' ', $item->namakegiatan), 3)
+    )) !!}
+</td>
+         <td style="text-align:left;">
+    {!! implode('<br>', array_map(
+        fn($chunk) => implode(' ', $chunk),
+        array_chunk(explode(' ', $item->jabatankerja->jabatankerja), 3)
+    )) !!}
+</td>
+
+
             <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('l, d F Y') }}</td>
             <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('l, d F Y') }}</td>
             {{-- <td style="text-align: center;">{{$item->waktupelaksanaan}}</td> --}}
@@ -279,9 +256,27 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
         </script>
 
         <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
-         <td style="text-align: left;">{{$item->lokasi}}</td>
-         <td style="text-align: left;">{{$item->keterangan}}</td>
-         <td style="text-align: left;">{{$item->isiagenda}}</td>
+     <td style="text-align:left;">
+    {!! implode('<br>', array_map(
+        fn($chunk) => implode(' ', $chunk),
+        array_chunk(explode(' ', $item->lokasi), 5)
+    )) !!}
+</td>
+
+<td style="text-align:left;">
+    {!! implode('<br>', array_map(
+        fn($chunk) => implode(' ', $chunk),
+        array_chunk(explode(' ', $item->keterangan), 5)
+    )) !!}
+</td>
+
+<td style="text-align:left;">
+    {!! implode('<br>', array_map(
+        fn($chunk) => implode(' ', $chunk),
+        array_chunk(explode(' ', $item->isiagenda), 5)
+    )) !!}
+</td>
+
          <td style="text-align: center; gap:10px;">
             <div style="margin-top: 10px;">
                 @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
@@ -300,7 +295,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendaskkmateri/' . $item->id) }}" style="text-decoration: none;">
-                <button class="button-baru">
+                <button class="button-berkas">
              <i class="bi bi-eye"></i> Lihat Materi
             </button>
             </a>
@@ -308,7 +303,7 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/beagendaskkpeserta/show/' . $item->id) }}" style="text-decoration: none;">
-                <button class="button-newvalidasi">
+                <button class="button-baru">
                  <span style="display: inline-flex; align-items: center;">
                     <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
                     {{ $item->allskktenagakerjablora_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota
@@ -319,24 +314,55 @@ onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; t
 
 
          <td style="text-align: center; vertical-align: middle;">
-             <a href="/beagendaskk/show/{{$item->namakegiatan}}" class="button-newvalidasi" title="Show">
-                 <i class="bi bi-eye"></i>View
+             <a href="/beagendaskk/show/{{$item->namakegiatan}}" class="button-baru" title="Show">
+                 <i class="bi bi-eye"></i>
              </a>
              <a href="/beagendaskk/update/{{$item->namakegiatan}}" class="button-berkas" title="Update">
-                 <i class="bi bi-pencil-square"></i>Update
+                 <i class="bi bi-pencil-square"></i>
              </a>
              <a href="javascript:void(0)" class="button-merah" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
                    data-judul="{{ $item->namakegiatan }}"
                    onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>Hapus
+                    <i class="bi bi-trash"></i>
             </a>
          </td>
 
         </tr>
 
-     @endforeach
- </tbody>
+         @empty
+    <tr>
+        <td colspan="100%">
+            <div style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: #6c757d;
+                background-color: #f8f9fa;
+                border: 2px dashed #ced4da;
+                border-radius: 12px;
+                font-size: 16px;
+                animation: fadeIn 0.5s ease-in-out;
+            ">
+                <i class="bi bi-folder-x" style="margin-right: 8px; font-size: 20px; color: #dc3545;"></i>
+                Data Tidak Ditemukan !!
+            </div>
+        </td>
+    </tr>
+@endforelse
+
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+    </tbody>
 </table>
                      </div>
                  </div>

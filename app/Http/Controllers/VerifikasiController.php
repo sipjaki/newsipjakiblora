@@ -199,6 +199,7 @@ public function validasidokumenpesertaskk(Request $request, $id)
 
     // Redirect ke halaman detail agenda peserta
     return redirect("/beagendaskkpeserta/show/{$agendaId}");
-}
+
+    }
 
 }

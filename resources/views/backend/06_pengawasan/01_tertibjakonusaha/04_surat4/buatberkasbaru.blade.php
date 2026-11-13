@@ -1,454 +1,747 @@
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
+<style>
+/* ═══════════════════════════════════════════════════
+   BACKGROUND HIJAU TITIK-TITIK
+   ═══════════════════════════════════════════════════ */
+.bg-soft-page {
+    background:
+        radial-gradient(circle at 15% 15%, rgba(19, 168, 71, 0.10) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(19, 168, 71, 0.08) 0%, transparent 45%),
+        linear-gradient(180deg, #d9f0e2 0%, #eaf7ee 200px, #f8fafc 400px, #f8fafc 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 24px 0 48px;
+    position: relative;
+}
+.bg-soft-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(rgba(19, 168, 71, 0.18) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: linear-gradient(180deg, black 0%, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, black 0%, black 60%, transparent 100%);
+}
+.bg-soft-page > * { position: relative; z-index: 1; }
+
+/* ==========================================
+   PANEL UTAMA
+   ========================================== */
+.panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+.panel-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f1f5f9;
+    background: #ffffff;
+}
+.panel-body {
+    padding: 20px 24px;
+}
+
+/* ==========================================
+   ACTION BAR
+   ========================================== */
+.action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 16px 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.action-bar .left,
+.action-bar .right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.action-bar .title-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #15803d;
+}
+.action-bar .title-chip i {
+    color: #13A847;
+    font-size: 14px;
+}
+
+/* ==========================================
+   FORM CONTROLS
+   ========================================== */
+.form-input,
+.form-select {
+    width: 100%;
+    font-size: 13px;
+    padding: 6px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #1e293b;
+    transition: all 0.15s ease;
+}
+.form-input:focus,
+.form-select:focus {
+    border-color: #13A847;
+    box-shadow: 0 0 0 3px rgba(19, 168, 71, 0.1);
+    outline: none;
+}
+
+/* ==========================================
+   FORM DOC CARD
+   ========================================== */
+.doc-card {
+    background: #ffffff;
+    border: 1px solid #111827;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+}
+.doc-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #111827;
+    margin-bottom: 18px;
+}
+.doc-header img { width: 28px; height: auto; }
+.doc-header .header-sep {
+    color: #111827;
+    font-weight: 800;
+    font-size: 14px;
+}
+.doc-header .header-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.4;
+}
+.doc-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 14px 18px;
+    background: #f8fafc;
+    border: 1px solid #111827;
+    border-left: 4px solid #13A847;
+    border-radius: 6px;
+}
+
+/* ==========================================
+   INFO TABLE (Data Atas)
+   ========================================== */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 24px;
+    border: 1px solid #111827;
+}
+.info-table td {
+    padding: 10px 12px;
+    border: 1px solid #111827;
+    vertical-align: middle;
+}
+.info-table td.label-cell {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #111827;
+    width: 250px;
+    font-size: 12.5px;
+}
+
+/* ==========================================
+   MATRIKS TABLE (Tabel Utama Pengembangan)
+   ========================================== */
+.matriks-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    border: 1px solid #111827;
+}
+.matriks-table th,
+.matriks-table td {
+    border: 1px solid #111827;
+    padding: 8px 10px;
+    vertical-align: top;
+}
+.matriks-table th {
+    background: #f8fafc;
+    color: #111827;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.4;
+}
+.matriks-table td {
+    color: #1e293b;
+    line-height: 1.5;
+}
+.matriks-table td.center { text-align: center; }
+
+/* ==========================================
+   TIM PEMERIKSA
+   ========================================== */
+.tim-panel {
+    background: #ffffff;
+    border: 1px solid #111827;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 24px;
+}
+.tim-panel-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #111827;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #111827;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.tim-panel-title i {
+    color: #13A847;
+    font-size: 14px;
+}
+
+/* ==========================================
+   SUBMIT BUTTON & MODAL KONFIRMASI
+   ========================================== */
+.submit-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.confirm-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.confirm-box {
+    background: #ffffff;
+    padding: 28px 30px;
+    border-radius: 16px;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    border: 1px solid #111827;
+}
+.confirm-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+.confirm-message {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+.confirm-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12.5px;
+    color: #475569;
+    text-align: left;
+    padding: 12px;
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.confirm-check input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+.confirm-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .action-bar { flex-direction: column; align-items: stretch; }
+    .action-bar .left,
+    .action-bar .right { justify-content: stretch; width: 100%; }
+    .action-bar .left > *,
+    .action-bar .right > * { flex: 1 1 auto; justify-content: center; }
+    .doc-card { padding: 20px 16px; }
+    .info-table td.label-cell { width: auto; }
+    .tim-panel { padding: 12px 14px; }
+    .submit-bar { justify-content: stretch; }
+}
+</style>
+
 <!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
-    <div class="app-wrapper">
-{{-- ---------------------------------------------------------------------- --}}
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<div class="app-wrapper">
 
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 @include('backend.00_style.01_cssdashboard.style')
 @include('button')
+@include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
-{{-- ---------------------------------------------------------------------- --}}
+   <main class="app-main">
+<section class="bg-soft-page">
 
-      @include('backend.00_administrator.00_baganterpisah.03_sidebar')
-
-      <!--begin::App Main-->
-      <main class="app-main">
-        {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
-
-        <!--begin::App Content Header-->
+        {{-- ═══ APP CONTENT HEADER ═══ --}}
         <div class="app-content-header">
-          <!--begin::Container-->
           <div class="container-fluid">
-            <!--begin::Row-->
             <div class="row">
-
                 @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
                 @include('backend.00_administrator.00_baganterpisah.11_alert')
             </div>
-            <!--end::Row-->
           </div>
-          <!--end::Container-->
         </div>
 
-        <br>
-
+        {{-- ═══ MAIN CONTENT (PANEL FORM) ═══ --}}
         <div class="container-fluid">
-            <!--begin::Row-->
             <div class="row" style="margin-right: 10px; margin-left:10px;">
-                <!-- /.card -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
-                    </div>
 
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel-header">
+                                                                     @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
+         </div>
 
+                        <div class="panel-body">
 
-                           {{-- ======================================================= --}}
-                           <div class="card card-primary card-outline mb-6">
-                            <div style="display: flex; justify-content: space-between; margin-top: 10px; flex-wrap: wrap; margin-bottom:20px;">
-                                <!-- Kontainer Kiri -->
-                                <div style="display: flex; gap: 10px; margin-right:25px; margin-left:25px;">
-                                    <!-- Tombol Nama Pekerjaan -->
-                                    <button class="button-baru">
-                                        <i class="bi bi-file-earmark" style="margin-right: 8px;"></i>
+                            {{-- ═══ ACTION BAR ═══ --}}
+                            <div class="action-bar">
+                                <div class="left">
+                                    <span class="title-chip">
+                                        <i class="bi bi-file-earmark-text"></i>
                                         Nama Pekerjaan: {{ $datatertibjasakonstruksi ?? 'Masih Kosong' }}
-                                    </button>
-
-                                    <!-- Tombol Badan Usaha -->
-                                    {{-- <a href="/404">
-                                        <button class="btn-create">
-                                            <i class="bi bi-tools icon-create"></i>
-                                            Perbaikan Data
-                                        </button>
-                                    </a>
-
-                                    <a href="/404">
-                                        <button class="btn-create">
-                                            <i class="bi bi-file-earmark-arrow-down icon-create"></i>
-                                            Download Berkas
-                                        </button>
-                                    </a>
-
-                                        <button class="btn-create"
-                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $data->id }}">
-                                            <i class="bi bi-file-earmark-text icon-create"></i>
-                                            Lihat Berkas
-                                        </button> --}}
-
-
-
-
-                                <div class="modal fade" id="modalKtp{{ $data->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $data->id }}" aria-hidden="true">
-                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                        <div class="modal-content" style="font-size: 0.875rem;">
-                                            <div class="modal-header d-flex align-items-center">
-                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                                    <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
-                                                </a>
-                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                                    <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
-                                                </a>
-                                                <span class="mx-2">:</span>
-                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pengawasan Terhadap Pemenuhan Persyaratan Usaha Jasa Konstruksi Secara Rutin </h5>
-                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $data->surattertibjakonusaha1->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
-                                                        <td>{{ $data->surattertibjakonusaha1->statusperizinan ?? 'Data Belum Di Buat' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>No NIB</strong></td>
-                                                        <td>{{ $data->surattertibjakonusaha1->nib ?? 'Data Belum Di Buat' }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>
-                                                            @if ($data->surattertibjakonusaha1 && $data->surattertibjakonusaha1->waktupengawasan && $data->surattertibjakonusaha1->waktupengawasanselesai)
-                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }}
-                                                                –
-                                                                {{ \Carbon\Carbon::parse($data->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}
-                                                            @else
-                                                                <span class="text-muted">Belum Di Buat</span>
-                                                            @endif
-                                                        </td>
-
-
-                                                    </tr>
-                                                </table>
-
-                                                {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
-                                                <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
-                                                    <thead>
-                                                        <tr>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
-                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Sifat</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
-                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Jenis Usaha</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Sifat Usaha</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Sub Klasifikasi</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
-
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
-                                                                <div>Layanan Usaha</div>
-                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
-                                                            </th>
-                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->namapaketpekerjaan ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->jenisusaha ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaian ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->sifatusaha ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaiansbu ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$data->surattertibjakonusaha1->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaianklasifikasi ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$data->surattertibjakonusaha1->layananusaha ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$data->surattertibjakonusaha1->kesesuaianlayananusaha ?? 'Data Belum Di Buat'}}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-
-                                                <div class="container" style="margin-top: 10px;">
-                                                    <!-- Modal Card -->
-
-
-                                                        </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </span>
                                 </div>
-                            </td>
-
-
-                                </div>
-
-                                <!-- Kontainer Kanan -->
-                                <div>
-                             <a href="{{ url()->previous() }}">
-                                    <button class="button-newvalidasi">
-                                        <i class="bi bi-arrow-left icon-create" style="margin-right: 8px;"></i>
-                                        Kembali
-                                    </button>
-                                </a>
-
+                                <div class="right">
+                                    <a href="{{ url()->previous() }}" class="button-baru button-md">
+                                        <i class="bi bi-arrow-left"></i> Kembali
+                                    </a>
                                 </div>
                             </div>
 
-                        </div>
+                            {{-- ═══ FORM INPUT SURAT ═══ --}}
+                            <form action="{{ route('betertibjakonusahapelaksananewberkas') }}" method="POST" enctype="multipart/form-data" id="formBuatBerkas">
+                                @csrf
+                                <input type="hidden" name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
 
-        <hr>
+                                <div class="doc-card">
 
-
-        {{-- ======================================================= --}}
-                    <div class="col-md-12">
-                        <!--begin::Quick Example-->
-                        <form action="{{ route('betertibjakonusahapelaksananewberkas') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-
-                            <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
-
-                                <div class="modal-content" style="font-size: 0.875rem;">
-                                    <div class="modal-header d-flex align-items-center">
-                                        <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
-                                        </a>
-                                        <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
-                                            <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
-                                        </a>
-                                        <span class="mx-2">:</span>
-                                        <p style="margin-left: 10px; margin-bottom: 0; font-size:15px;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                    <div class="doc-header">
+                                        <img src="/assets/icon/logokabupatenblora.png" alt="Logo">
+                                        <img src="/assets/icon/pupr.png" alt="Logo">
+                                        <span class="header-sep">:</span>
+                                        <p class="header-title">
+                                            Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+                                        </p>
                                     </div>
-                                    <br>
-                                    <div class="modal-body">
-                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pelaksana Pengembangan Usaha Jasa Konstruksi Secara Rutin</h5>
-                                            <br>
-                                        <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                         <tr>
-                                                <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;">Nama Badan Usaha</strong>
-                                                </td>
-                                                <td>
-                                                    <div style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 0.25rem; background-color: #e9ecef;">
-                                                        {{ $datatertibjasakonstruksinamabadanusaha ?? '-' }}
-                                                    </div>
-                                                </td>
-                                            </tr>
 
-                                        </table>
+                                    <div class="doc-title">
+                                        Surat Dukung Tertib Jakon Usaha : Pengembangan Usaha Berkelanjutan Jasa Konstruksi Secara Rutin
+                                    </div>
 
-                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px;">
+                                    {{-- ═══ INFO TABLE — NAMA BU & WAKTU ═══ --}}
+                                    <table class="info-table">
+                                        <tr>
+                                            <td class="label-cell">Nama Badan Usaha</td>
+                                            <td>
+                                                <input type="text"
+                                                       class="form-input"
+                                                       name="namabadanusaha"
+                                                       value="{{ $datatertibjasakonstruksinamabadanusaha ?? 'Data Masih Kosong' }}"
+                                                       readonly>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="label-cell">Waktu Pengawasan</td>
+                                            <td>
+                                                <div style="display: flex; gap: 8px; align-items: center;">
+                                                    <input type="date" class="form-input" name="waktupengawasan" style="flex:1;">
+                                                    <span style="font-weight:700;">s/d</span>
+                                                    <input type="date" class="form-input" name="waktupengawasanselesai" style="flex:1;">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    {{-- ═══ MATRIKS PENGEMBANGAN USAHA BERKELANJUTAN ═══ --}}
+                                    <div style="overflow-x: auto;">
+                                        <table class="matriks-table">
                                             <thead>
                                                 <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px; width:50px;">No</th>
-                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 400px; font-size:15px;">Nama Badan Usaha</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Pelaksana Pengembangan Usaha</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:16px;">Status Pelaksana Pengembangan Usaha</th>
+                                                    <th style="width: 40px;">No</th>
+                                                    <th style="width: 180px;">Pengembangan Usaha Berkelanjutan</th>
+                                                    <th style="width: 250px;">Indikator / Sub Indikator</th>
+                                                    <th style="width: 180px;">Dokumen Yang Diperiksa</th>
+                                                    <th style="width: 250px;">Cara Pemeriksaan</th>
+                                                    <th style="width: 150px;">Hasil Pemeriksaan</th>
+                                                    <th style="width: 200px;">Catatan Pemeriksaan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{-- ROW 1 --}}
+                                                <tr>
+                                                    <td class="center">1</td>
+                                                    <td>Peningkatan kapasitas sumber daya manusia badan usaha</td>
+                                                    <td>Badan usaha melakukan kegiatan peningkatan kapasitas SDM melalui kegiatan pendidikan pelatihan / bimtek / seminar / loka karya (tahun terakhir)</td>
+                                                    <td>Laporan tahunan kegiatan BUJK yang berisi pelaksanaan pengembangan usaha berkelanjutan dan/atau laporan pengembangan usaha berkelanjutan yang dilakukan Asosiasi</td>
+                                                    <td>Memeriksa apakah dalam laporan telah memuat kegiatan peningkatan kapasitas SDM melalui kegiatan pendidikan pelatihan/ bimtek/ seminar/ loka karya (tahun terakhir)</td>
+                                                    <td class="center">
+                                                        {{-- PERUBAHAN: name diganti jadi 'status' --}}
+                                                        <select name="status" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_sdm" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+
+                                                {{-- ROW 2 --}}
+                                                <tr>
+                                                    <td class="center">2</td>
+                                                    <td>Peningkatan Peralatan</td>
+                                                    <td>Penambahan/pembaruan peralatan</td>
+                                                    <td>Laporan tahunan kegiatan BUJK yang berisi pelaksanaan pengembangan usaha berkelanjutan</td>
+                                                    <td>Memeriksa apakah dalam laporan telah memuat kegiatan peningkatan peralatan melalui penambahan/pembaruan peralatan</td>
+                                                    <td class="center">
+                                                        <select name="hasil_peralatan" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_peralatan" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+
+                                                {{-- ROW 3 (Sub Row A) --}}
+                                                <tr>
+                                                    <td class="center" rowspan="2">3</td>
+                                                    <td rowspan="2">Peningkatan teknologi</td>
+                                                    <td>a. Penambahan / Pembaruan / Peningkatan kecepatan / peningkatan konten software</td>
+                                                    <td rowspan="2">Laporan tahunan kegiatan BUJK yang berisi pelaksanaan pengembangan usaha berkelanjutan</td>
+                                                    <td>Memeriksa apakah dalam laporan telah memuat kegiatan Penambahan/Pembaruan/Peningkatan kecepatan /peningkatan konten software</td>
+                                                    <td class="center">
+                                                        <select name="hasil_teknologi_software" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_teknologi_software" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+                                                {{-- ROW 3 (Sub Row B) --}}
+                                                <tr>
+                                                    <td>b. Penambahan/ pembaruan/ peningkatan kapasitas hardware</td>
+                                                    <td>Memeriksa apakah dalam laporan telah memuat kegiatan Penambahan/pembaruan/peningkatan kapasitas hardware</td>
+                                                    <td class="center">
+                                                        <select name="hasil_teknologi_hardware" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_teknologi_hardware" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+
+                                                {{-- ROW 4 (Sub Row A) --}}
+                                                <tr>
+                                                    <td class="center" rowspan="2">4</td>
+                                                    <td rowspan="2">Peningkatan kualitas pengelolaan keuangan</td>
+                                                    <td>a. Opini akuntan publik untuk kualifikasi usaha besar dan menengah</td>
+                                                    <td rowspan="2">Laporan keuangan BUJK</td>
+                                                    <td>Memeriksa apakah ada peningkatan opini akuntan publik dari laporan opini akuntan publik tahun sebelumnya</td>
+                                                    <td class="center">
+                                                        <select name="hasil_keuangan_opini" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Meningkat">Meningkat</option>
+                                                            <option value="Tetap">Tetap</option>
+                                                            <option value="Menurun">Menurun</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_keuangan_opini" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+                                                {{-- ROW 4 (Sub Row B) --}}
+                                                <tr>
+                                                    <td>b. Penggunaan Standar Akuntansi untuk kualifikasi usaha kecil</td>
+                                                    <td>Memeriksa apakah laporan keuangan telah memenuhi standar akuntansi (minimal memuat pencatatan penerimaan dan pengeluaran, hutang dan piutang)</td>
+                                                    <td class="center">
+                                                        <select name="hasil_keuangan_standar" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_keuangan_standar" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+
+                                                {{-- ROW 5 (Sub Row A1) --}}
+                                                <tr>
+                                                    <td class="center" rowspan="6">5</td>
+                                                    <td rowspan="2">a. Pengembangan Organisasi:</td>
+                                                    <td>Penerapan Good Corporate Governance (GCG)</td>
+                                                    <td rowspan="6">Laporan tahunan kegiatan BUJK yang berisi pelaksanaan pengembangan usaha berkelanjutan</td>
+                                                    <td>Mengecek apakah BUJK telah menerapkan GCG (minimal memiliki dan melaksanakan SOP, memiliki struktur organisasi)</td>
+                                                    <td class="center">
+                                                        <select name="hasil_gcg" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_gcg" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+                                                {{-- ROW 5 (Sub Row A2) --}}
+                                                <tr>
+                                                    <td>Penghargaan</td>
+                                                    <td>Mengecek apakah BUJK telah memperoleh penghargaan (antara lain memenuhi ISO, PU Award, dll)</td>
+                                                    <td class="center">
+                                                        <select name="hasil_penghargaan" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_penghargaan" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+                                                {{-- ROW 5 (Sub Row B1) --}}
+                                                <tr>
+                                                    <td rowspan="4">b. Manajemen Operasi:</td>
+                                                    <td>Penerapan sistem manajemen rantai pasok</td>
+                                                    <td>Mengecek apakah BUJK telah menerapkan sistem manajemen rantai pasok (minimal memiliki daftar pemasok bahan dan peralatan, catatan kebutuhan dan penggunaan material dan peralatan)</td>
+                                                    <td class="center">
+                                                        <select name="hasil_rantai_pasok" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_rantai_pasok" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+                                                {{-- ROW 5 (Sub Row B2) --}}
+                                                <tr>
+                                                    <td>Penerapan standar mutu bahan</td>
+                                                    <td>Mengecek apakah BUJK telah menerapkan standar mutu bahan (antara lain memiliki SOP untuk pemilihan dan penggunaan bahan, memiliki laboratorium pengujian bahan)</td>
+                                                    <td class="center">
+                                                        <select name="hasil_mutu_bahan" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_mutu_bahan" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+                                                {{-- ROW 5 (Sub Row B3) --}}
+                                                <tr>
+                                                    <td>Penerapan standar mutu peralatan</td>
+                                                    <td>Mengecek apakah BUJK telah menerapkan standar mutu peralatan (minimal mencatat peralatannya ke dalam SIMPK)</td>
+                                                    <td class="center">
+                                                        <select name="hasil_mutu_peralatan" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_mutu_peralatan" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+                                                {{-- ROW 5 (Sub Row B4) --}}
+                                                <tr>
+                                                    <td>Penerapan SMKK</td>
+                                                    <td>Mengecek apakah BUJK telah menerapkan standar keselamatan dan kesehatan kerja (minimal memiliki SOP SMKK, penyediaan dan penggunaan APD dan APK, terdapat tenaga ahli/petugas K3 konstruksi/keselamatan konstruksi)</td>
+                                                    <td class="center">
+                                                        <select name="hasil_smkk" class="form-select" style="text-align: center;">
+                                                            <option value="">-- Pilih --</option>
+                                                            <option value="Sudah">Sudah</option>
+                                                            <option value="Belum">Belum</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="catatan_smkk" class="form-input" placeholder="Catatan...">
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    {{-- ═══ TIM PEMERIKSA ═══ --}}
+                                    <div class="tim-panel">
+                                        <div class="tim-panel-title">
+                                            <i class="bi bi-people-fill"></i> Tim Pemeriksa
+                                        </div>
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 12.5px; margin-bottom: 0; border: 1px solid #111827;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="border: 1px solid #111827; padding: 9px 12px; background: #f8fafc; text-align: center; width: 50px;">No</th>
+                                                    <th style="border: 1px solid #111827; padding: 9px 12px; background: #f8fafc; text-align: center;">Nama Pemeriksa</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td style="border: 1px solid #000; text-align: center;">1</td>
-
-                                              <td style="border: 1px solid #000; width: 400px; vertical-align: top; padding: 8px;">
-                                                    <div style="white-space: pre-wrap; min-height: 120px;">
-                                                        {{ $datatertibjasakonstruksinamabadanusaha ?? 'Data Masih Kosong' }}
-                                                    </div>
-                                                </td>
-
-                                                <td style="border: 1px solid #000; width: 400px; vertical-align: top; padding: 8px;">
-    <div style="white-space: pre-wrap; min-height: 120px;">
-        {{ "
-1. Melakukan pengembangan sumber daya manusia agar tenaga kerja memiliki kompetensi teknis dan manajerial sesuai standar usaha jasa konstruksi.\n
-2. Meningkatkan peralatan untuk mendukung produktivitas, akurasi, dan keselamatan kerja.\n
-3. Menerapkan teknologi modern serta sistem pengawasan terintegrasi guna menjamin efisiensi dan kualitas proyek.\n
-4. Menyusun laporan keuangan BUJK yang transparan dan akuntabel sesuai ketentuan yang berlaku." }}
-    </div>
-</td>
-
-
-                                                    <td style="border: 1px solid #000; width: 400px; text-align: center;">
-                                                        <select class="form-control @error('status') is-invalid @enderror" name="status" style="text-align: center;">
-                                                            <option value="">-- Pilih Status --</option>
-                                                            <option value="Tertib" {{ old('status') == 'Tertib' ? 'selected' : '' }}>Tertib</option>
-                                                            <option value="Tidak Tertib" {{ old('status') == 'Tidak Tertib' ? 'selected' : '' }}>Tidak Tertib</option>
+                                                    <td style="border: 1px solid #111827; padding: 9px 12px; text-align: center;">1</td>
+                                                    <td style="border: 1px solid #111827; padding: 9px 12px;">
+                                                        <select name="tandatangan1_id" class="form-select">
+                                                            <option value="">-- Pilih Pemeriksa --</option>
+                                                            @if(isset($datatandatangan))
+                                                                @foreach ($datatandatangan as $tandatangan)
+                                                                    <option value="{{ $tandatangan->id }}">{{ $tandatangan->namalengkap }}</option>
+                                                                @endforeach
+                                                            @endif
                                                         </select>
-                                                        @error('status')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                        @enderror
                                                     </td>
-
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1px solid #111827; padding: 9px 12px; text-align: center;">2</td>
+                                                    <td style="border: 1px solid #111827; padding: 9px 12px;">
+                                                        <select name="tandatangan2_id" class="form-select">
+                                                            <option value="">-- Pilih Pemeriksa --</option>
+                                                            @if(isset($datatandatangan))
+                                                                @foreach ($datatandatangan as $tandatangan)
+                                                                    <option value="{{ $tandatangan->id }}">{{ $tandatangan->namalengkap }}</option>
+                                                                @endforeach
+                                                            @endif
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1px solid #111827; padding: 9px 12px; text-align: center;">3</td>
+                                                    <td style="border: 1px solid #111827; padding: 9px 12px;">
+                                                        <select name="tandatangan3_id" class="form-select">
+                                                            <option value="">-- Pilih Pemeriksa --</option>
+                                                            @if(isset($datatandatangan))
+                                                                @foreach ($datatandatangan as $tandatangan)
+                                                                    <option value="{{ $tandatangan->id }}">{{ $tandatangan->namalengkap }}</option>
+                                                                @endforeach
+                                                            @endif
+                                                        </select>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>
+                                    </div>
+
+                                    {{-- 2 Kolom Cadangan (tidak digunakan di form, disesuaikan dengan database) --}}
+                                    <input type="hidden" name="cadangan_5" value="">
+                                    <input type="hidden" name="cadangan_6" value="">
 
                                 </div>
 
+                                {{-- ═══ SUBMIT BUTTON ═══ --}}
+                                <div class="submit-bar">
+                                    <button class="button-hijau button-md" type="button" onclick="openModal()">
+                                        <i class="bi bi-plus-circle"></i>
+                                        <span>Buat Berkas</span>
+                                    </button>
+                                </div>
 
+                                {{-- ═══ MODAL KONFIRMASI ═══ --}}
+                                <div id="confirmModal" class="confirm-overlay">
+                                    <div class="confirm-box">
+                                        <div class="confirm-title">Konfirmasi Buat Berkas</div>
+                                        <p class="confirm-message">
+                                            Apakah Anda ingin membuat berkas ini?
+                                        </p>
 
-                                <div class="container" style="margin-top: 10px;">
-                                    <!-- Modal Card -->
+                                        <label class="confirm-check">
+                                            <input type="checkbox" id="agreeCheckbox" onchange="toggleSubmitButton()">
+                                            <span>Data yang dibuat tidak bisa dirubah kembali, harap periksa kembali data Anda!</span>
+                                        </label>
 
-                                            <div class="container" style="margin-top: 10px;">
-                                                <div class="row">
-                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
-                                                        <!-- Modal Card -->
-                                                        <div class="card" style="border: 1px solid white;">
-                                                            <div class="card-body">
-                                                                <!-- Tim Pemeriksa -->
-                                                                <div class="tim-pemeriksa-container">
-                                                                    <div class="tim-pemeriksa">
-                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa:</h6>
-                                                                        <table class="table table-sm">
-                                                                            <thead class="table-secondary">
-                                                                                <tr>
-                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
-                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
-                                                                                  <td style="font-size: 12px;">
-                                                                                    <select name="tandatangan1_id" class="form-control @error('tandatangan1_id') is-invalid @enderror">
-                                                                                        <option value="">-- Pilih Pemeriksa --</option>
-                                                                                        @foreach ($datatandatangan as $tandatangan)
-                                                                                            <option value="{{ $tandatangan->id }}"
-                                                                                                {{ old('tandatangan1_id', optional($data->surattertibjakonusaha4)->tandatangan1_id) == $tandatangan->id ? 'selected' : '' }}>
-                                                                                                {{ $tandatangan->namalengkap }}
-                                                                                            </option>
-                                                                                        @endforeach
-                                                                                    </select>
-                                                                                    @error('tandatangan1_id')
-                                                                                        <div class="invalid-feedback">{{ $message }}</div>
-                                                                                    @enderror
-                                                                                </td>
+                                        <div class="confirm-actions">
+                                            <button id="confirmSubmitBtn"
+                                                    onclick="submitForm()"
+                                                    disabled
+                                                    class="button-baru button-md">
+                                                <i class="bi bi-slash-circle"></i> Ya, Buat
+                                            </button>
 
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
-                                                                                    <td style="font-size: 12px;">
-    <select name="tandatangan2_id" class="form-control @error('tandatangan2_id') is-invalid @enderror">
-        <option value="">-- Pilih Pemeriksa --</option>
-        @foreach ($datatandatangan as $tandatangan)
-            <option value="{{ $tandatangan->id }}"
-                {{ old('tandatangan2_id', optional($data->surattertibjakonusaha4)->tandatangan2_id) == $tandatangan->id ? 'selected' : '' }}>
-                {{ $tandatangan->namalengkap }}
-            </option>
-        @endforeach
-    </select>
-    @error('tandatangan2_id')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</td>
-
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
-                                                                                    <td style="font-size: 12px;">
-    <select name="tandatangan3_id" class="form-control @error('tandatangan3_id') is-invalid @enderror">
-        <option value="">-- Pilih Pemeriksa --</option>
-        @foreach ($datatandatangan as $tandatangan)
-            <option value="{{ $tandatangan->id }}"
-                {{ old('tandatangan3_id', optional($data->surattertibjakonusaha4)->tandatangan3_id) == $tandatangan->id ? 'selected' : '' }}>
-                {{ $tandatangan->namalengkap }}
-            </option>
-        @endforeach
-    </select>
-    @error('tandatangan3_id')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</td>
-
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <button type="button" onclick="closeModal()" class="button-merah button-md">
+                                                <i class="bi bi-x-circle"></i> Ya, Batal
+                                            </button>
                                         </div>
+                                    </div>
+                                </div>
 
+                            </form>
 
-                                <br><br>
-<!-- Tombol Submit -->
-<div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-    <div class="flex justify-end">
-        <button class="button-hijau" type="button" onclick="openModal()">
-        <!-- Ikon SVG Pensil -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-        fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-       </svg>
-        <span style="font-family: 'Poppins', sans-serif;">Buat Berkas</span>
-    </button>
-    </div>
-
-    <!-- Modal Konfirmasi -->
-    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-            <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                Apakah Anda ingin membuat berkas ini?
-            </p>
-
-            <!-- Checkbox Konfirmasi -->
-            <p style="font-size: 14px; margin-top: 10px; text-align: left; display: flex; align-items: center;">
-                <input type="checkbox" id="agreeCheckbox" onchange="toggleSubmitButton()" style="margin-right: 10px;" />
-                <label for="agreeCheckbox" style="margin: 0;">
-                    Data yang dibuat tidak bisa dirubah kembali, harap periksa kembali data anda!!
-                </label>
-            </p>
-
-            <!-- Tombol -->
-            <div style="display: flex; justify-content: center; gap: 12px;">
-                <button id="confirmSubmitBtn"
-                    onclick="submitForm()"
-                    disabled
-                    style="background-color: #DC2626; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px; cursor: not-allowed;"
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                    onmouseout="this.style.backgroundColor=this.disabled ? '#DC2626' : '#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-
-                    <!-- Icon Forbidden Default -->
-                    <svg id="submitIcon" xmlns="http://www.w3.org/2000/svg" height="16" fill="white" viewBox="0 0 512 512">
-                        <path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zM256 432c-97.2 0-176-78.8-176-176 0-38.6 12.5-74.2 33.5-103L359 398.5C330.2 419.5 294.6 432 256 432zM398.5 359L153 113.5C181.8 92.5 217.4 80 256 80c97.2 0 176 78.8 176 176 0 38.6-12.5 74.2-33.5 103z"/>
-                    </svg>
-                    Ya
-                </button>
-
-                <!-- Tombol Batal dengan ikon X (SVG) -->
-                <button type="button"
-                        onclick="closeModal()"
-                        style="background-color: #666363; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                        onmouseout="this.style.backgroundColor='#666363'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                    </svg>
-                    Batal
-                </button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
-    </div>
+
+</section>
+   </main>
+</div>
 </div>
 
-<!-- Script -->
+@include('backend.00_administrator.00_baganterpisah.02_footer')
+
+{{-- ═══ SCRIPT ═══ --}}
 <script>
 function openModal() {
     const modal = document.getElementById("confirmModal");
@@ -463,71 +756,33 @@ function closeModal() {
 function toggleSubmitButton() {
     const checkbox = document.getElementById("agreeCheckbox");
     const btn = document.getElementById("confirmSubmitBtn");
-    const icon = document.getElementById("submitIcon");
 
     if (checkbox.checked) {
         btn.disabled = false;
         btn.style.cursor = 'pointer';
-        btn.style.backgroundColor = '#10B981'; // Hijau
-        // Ganti ikon ke Telegram
-        icon.setAttribute("viewBox", "0 0 448 512");
-        icon.innerHTML = '<path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>';
+        btn.style.backgroundColor = '#13A847';
+        btn.style.borderColor = '#13A847';
+        btn.style.opacity = '1';
+        btn.innerHTML = '<i class="bi bi-check-circle"></i> Ya, Buat';
     } else {
         btn.disabled = true;
         btn.style.cursor = 'not-allowed';
-        btn.style.backgroundColor = '#DC2626'; // Merah
-        // Kembalikan ikon ke Forbidden
-        icon.setAttribute("viewBox", "0 0 512 512");
-        icon.innerHTML = '<path d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zM256 432c-97.2 0-176-78.8-176-176 0-38.6 12.5-74.2 33.5-103L359 398.5C330.2 419.5 294.6 432 256 432zM398.5 359L153 113.5C181.8 92.5 217.4 80 256 80c97.2 0 176 78.8 176 176 0 38.6-12.5 74.2-33.5 103z"/>';
+        btn.style.backgroundColor = '#dc2626';
+        btn.style.borderColor = '#dc2626';
+        btn.style.opacity = '0.7';
+        btn.innerHTML = '<i class="bi bi-slash-circle"></i> Ya, Buat';
     }
 }
 
-
 function submitForm() {
-    // Ambil form element
-    const form = document.querySelector('form');
-    // Submit form jika ditemukan
-    if (form) {
-        form.submit();
-    }
-    // Tutup modal
+    const form = document.getElementById('formBuatBerkas');
+    if (!form) { alert('Form tidak ditemukan.'); return; }
+    const btn = document.getElementById('confirmSubmitBtn');
+    if (btn) { btn.disabled = true; btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Memproses...'; }
     closeModal();
+    form.submit();
 }
 </script>
 
-                            </div>
-                        </form>
-
-
-                                                     </div>
-                        <!--end::Quick Example-->
-                    </div>
-
-
-                    <br><br>
-
-                    <!-- /.card -->
-                    <!-- Button Section -->
-
-                    </div>
-                    <!--end::Row-->
-                    </div>
-
-        </div>
-        <!--end::Row-->
-        </div>
-                  <!--end::Container-->
-        <!--end::App Content Header-->
-        <!--begin::App Content-->
-          <!--end::App Content-->
-
-        </section>
-        </main>
-      <!--end::App Main-->
-    </div>
-    </div>
-
-
-      @include('backend.00_administrator.00_baganterpisah.02_footer')
-
-
+</body>
+</html>

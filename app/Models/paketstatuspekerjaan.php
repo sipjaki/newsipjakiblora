@@ -13,8 +13,12 @@ class paketstatuspekerjaan extends Model
 
     protected $guarded = ['id'];
 
-    public function paketpekerjaanmasjaki()
+    /**
+     * Relasi ke paket pekerjaan masjaki
+     * Nama method: paketpekerjaan (SESUAI dengan withCount di controller)
+     */
+    public function paketpekerjaan()
     {
-        return $this->hasMany(paketpekerjaanmasjaki::class);
+        return $this->hasMany(paketpekerjaanmasjaki::class, 'paketstatuspekerjaan_id');
     }
 }

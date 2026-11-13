@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 
 
 class BujkkonsultanController extends Controller
@@ -142,6 +145,91 @@ public function bebujkkonsultan(Request $request)
 }
 
 
+// public function bebujkkonsultanblora(Request $request)
+// {
+//     $perPage = $request->input('perPage', 10);
+//     $search  = $request->input('search');
+//     $tahun   = $request->input('tahun');
+
+//     $query = bujkkonsultan::query();
+
+//     // =========================================================
+//     // SEARCH
+//     // =========================================================
+//     if ($search) {
+//         $query->where(function ($q) use ($search) {
+//             $q->where('namalengkap', 'LIKE', "%{$search}%")
+//               ->orWhere('alamat', 'LIKE', "%{$search}%")
+//               ->orWhere('no_telepon', 'LIKE', "%{$search}%")
+//               ->orWhere('email', 'LIKE', "%{$search}%")
+//               ->orWhere('nomorindukberusaha', 'LIKE', "%{$search}%")
+//               ->orWhere('pju', 'LIKE', "%{$search}%")
+//               ->orWhere('no_akte', 'LIKE', "%{$search}%")
+//               ->orWhere('tanggal', 'LIKE', "%{$search}%")
+//               ->orWhere('nama_notaris', 'LIKE', "%{$search}%")
+//               ->orWhere('no_pengesahan', 'LIKE', "%{$search}%")
+//               ->orWhereHas('bujkkonsultansub', function ($q2) use ($search) {
+//                   $q2->where('nama_pengurus', 'LIKE', "%{$search}%");
+//               })
+//               ->orWhereHas('asosiasimasjaki', function ($q2) use ($search) {
+//                   $q2->where('namaasosiasi', 'LIKE', "%{$search}%");
+//               });
+//         });
+//     }
+
+//     // =========================================================
+//     // FILTER TAHUN
+//     // =========================================================
+//     if ($tahun) {
+//         $query->whereYear('created_at', $tahun);
+//     }
+
+//     // =========================================================
+//     // DATA UTAMA
+//     // =========================================================
+//     $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+//     // =========================================================
+//     // DAFTAR TAHUN (Untuk Dropdown)
+//     // =========================================================
+//     $daftarTahun = bujkkonsultan::selectRaw('YEAR(created_at) as tahun')
+//         ->whereNotNull('created_at')
+//         ->groupBy('tahun')
+//         ->orderBy('tahun', 'desc')
+//         ->pluck('tahun');
+
+//     // =========================================================
+//     // STATISTIK GLOBAL (Sederhana untuk Konsultan)
+//     // =========================================================
+//     // Karena tabel konsultan tidak memiliki sub-status seperti kontraktor,
+//     // kita buat statistik berdasarkan total data saja.
+//     // Jika ada relasi sub, bisa ditambahkan di sini.
+
+//     $totalData = bujkkonsultan::count();
+//     $statistik = [
+//         'total' => $totalData,
+//     ];
+
+//     // =========================================================
+//     // RESPONSE AJAX
+//     // =========================================================
+//     if ($request->ajax()) {
+//         return response()->json([
+//             'html' => view('backend.04_datajakon.02_bujkkonsultan.partials.table', compact('data'))->render(),
+//             'statistik' => $statistik,
+//         ]);
+//     }
+
+//     return view('backend.04_datajakon.02_bujkkonsultan.bujkkonsultanblora', [
+//         'title'       => 'BUJK Konsultasi Konstruksi',
+//         'data'        => $data,
+//         'perPage'     => $perPage,
+//         'search'      => $search,
+//         'tahun'       => $tahun,
+//         'daftarTahun' => $daftarTahun,
+//         'statistik'   => $statistik,
+//     ]);
+// }
 
 
 
@@ -196,7 +284,7 @@ if ($entry) {
 $entry->delete();
 
 // Redirect atau memberi respons sesuai kebutuhan
-return redirect('/bebujkkonsultan')->with('delete', 'Data Berhasil Di Hapus !');
+return redirect('/bebujkkonsultanblora')->with('delete', 'Data Berhasil Di Hapus !');
 
 }
 
@@ -304,7 +392,7 @@ public function bebujkkonsultancreateupdate(Request $request, $id)
     session()->flash('update', 'Data Berhasil Diupdate!');
 
     // Redirect ke halaman yang sesuai
-    return redirect('/bebujkkonsultan');
+    return redirect('/bebujkkonsultanblora');
 
 }
 
@@ -400,7 +488,7 @@ public function bebujkkonsultancreatenew(Request $request)
     ]);
 
     session()->flash('create', 'Data Berhasil Dibuat!');
-    return redirect('/bebujkkonsultan');
+    return redirect('/bebujkkonsultanblora');
 }
 
 
@@ -425,26 +513,26 @@ public function bebujkkonsultancreateklasifikasicreate(Request $request)
 {
     // Validasi input
     $validated = $request->validate([
-        'nama_pengurus' => 'required|string|max:255',
-        'sub_klasifikasi_layanan' => 'required|string|max:255',
-        'kode' => 'required|string|max:50',
-        'kualifikasi' => 'required|string|max:255',
-        'penerbit' => 'required|string|max:255',
-        'nama_psjk' => 'required|string|max:255',
-        'sub_kualifikasi_bu' => 'required|string|max:255',
-        'tanggal_terbit' => 'required|date',
-        'tanggal_berlaku' => 'required|date',
+        'nama_pengurus' => 'nullable|string|max:255',
+        'sub_klasifikasi_layanan' => 'nullable|string|max:255',
+        'kode' => 'nullable|string|max:50',
+        'kualifikasi' => 'nullable|string|max:255',
+        'penerbit' => 'nullable|string|max:255',
+        'nama_psjk' => 'nullable|string|max:255',
+        'sub_kualifikasi_bu' => 'nullable|string|max:255',
+        'tanggal_terbit' => 'nullable|date',
+        'masa_berlaku' => 'nullable|date',
     ], [
         // Pesan kesalahan custom
-        'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
-        'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
-        'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
-        'kualifikasi.required' => 'Kualifikasi harus diisi.',
-        'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
-        'penerbit.required' => 'Penerbit harus diisi.',
-        'nama_psjk.required' => 'Nama PSJK harus diisi.',
-        'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
-        'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
+        // 'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
+        // 'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
+        // 'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
+        // 'kualifikasi.required' => 'Kualifikasi harus diisi.',
+        // 'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
+        // 'penerbit.required' => 'Penerbit harus diisi.',
+        // 'nama_psjk.required' => 'Nama PSJK harus diisi.',
+        // 'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
+        // 'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
     ]);
 
     // Menyimpan data ke tabel BujkKontraktorSub
@@ -458,14 +546,14 @@ public function bebujkkonsultancreateklasifikasicreate(Request $request)
         'penerbit' => $validated['penerbit'],
         'nama_psjk' => $validated['nama_psjk'],
         'tanggal_terbit' => $validated['tanggal_terbit'],
-        'tanggal_berlaku' => $validated['tanggal_berlaku'],
+        'masa_berlaku' => $validated['masa_berlaku'],
     ]);
 
 // Ambil bujkkonsultan_id yang baru saja disimpan
 $bujkkonsultanId = $bujkkonsultanSub->bujkkonsultan_id;
 
 // Ambil data Bujkkonsultan utama
-$bujkkonsultan = Bujkkonsultan::find($bujkkonsultanId);
+$bujkkonsultan = bujkkonsultan::find($bujkkonsultanId);
 
 // Flash message
 session()->flash('create', 'Data Sub Klasifikasi Layanan berhasil dibuat.');
@@ -499,5 +587,138 @@ public function bebujkkonsultanshowklasifikasidelete($id)
     return redirect()->back();
 }
 
+
+    public function bebujkkonsultanblora(Request $request)
+    {
+        $perPage = $request->input('perPage', 5);
+        $search  = $request->input('search');
+        $tahun   = $request->input('tahun');
+
+        $query = bujkkonsultan::query();
+
+        // SEARCH
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('namalengkap', 'LIKE', "%{$search}%")
+                  ->orWhere('alamat', 'LIKE', "%{$search}%")
+                  ->orWhere('no_telepon', 'LIKE', "%{$search}%")
+                  ->orWhere('email', 'LIKE', "%{$search}%")
+                  ->orWhere('nomorindukberusaha', 'LIKE', "%{$search}%")
+                  ->orWhere('pju', 'LIKE', "%{$search}%")
+                  ->orWhere('no_akte', 'LIKE', "%{$search}%")
+                  ->orWhere('tanggal', 'LIKE', "%{$search}%")
+                  ->orWhere('nama_notaris', 'LIKE', "%{$search}%")
+                  ->orWhere('no_pengesahan', 'LIKE', "%{$search}%")
+                  ->orWhereHas('bujkkonsultansub', function ($q2) use ($search) {
+                      $q2->where('nama_pengurus', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('asosiasimasjaki', function ($q2) use ($search) {
+                      $q2->where('namaasosiasi', 'LIKE', "%{$search}%");
+                  });
+            });
+        }
+
+        // FILTER TAHUN
+        if ($tahun) {
+            $query->whereYear('created_at', $tahun);
+        }
+
+        // DATA UTAMA
+        $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+        // HITUNG STATUS SUB (Berlaku / Tidak / Suspend)
+        $today = Carbon::today();
+        $ids = $data->pluck('id')->toArray();
+
+        $subsByParent = collect();
+        if (!empty($ids)) {
+            $subsByParent = DB::table('bujkkonsultansubs')
+                ->whereIn('bujkkonsultan_id', $ids)
+                ->get()
+                ->groupBy('bujkkonsultan_id');
+        }
+
+        $data->getCollection()->transform(function ($item) use ($subsByParent, $today) {
+            $subs = $subsByParent->get($item->id, collect());
+            $total = $subs->count();
+            $berlaku = 0; $tidak = 0; $suspend = 0;
+
+            foreach ($subs as $sub) {
+                $kualifikasi = strtolower($sub->kualifikasi ?? '');
+                if (str_contains($kualifikasi, 'suspend')) {
+                    $suspend++;
+                } elseif (!empty($sub->masa_berlaku) && Carbon::parse($sub->masa_berlaku)->gte($today)) {
+                    $berlaku++;
+                } else {
+                    $tidak++;
+                }
+            }
+
+            $item->status_total   = $total;
+            $item->status_berlaku = $berlaku;
+            $item->status_tidak   = $tidak;
+            $item->status_suspend = $suspend;
+            return $item;
+        });
+
+        // DAFTAR TAHUN
+        $daftarTahun = bujkkonsultan::selectRaw('YEAR(created_at) as tahun')
+            ->whereNotNull('created_at')
+            ->groupBy('tahun')
+            ->orderBy('tahun', 'desc')
+            ->pluck('tahun');
+
+        // RESPONSE AJAX
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('backend.04_datajakon.02_bujkkonsultan.partials.table', compact('data'))->render(),
+            ]);
+        }
+
+        return view('backend.04_datajakon.02_bujkkonsultan.bujkkonsultanblora', [
+            'title'       => 'BUJK Konsultasi Konstruksi',
+            'data'        => $data,
+            'perPage'     => $perPage,
+            'search'      => $search,
+            'tahun'       => $tahun,
+            'daftarTahun' => $daftarTahun,
+            'user'        => Auth::user(),
+        ]);
+    }
+
+    public function updateKlasifikasikonsultan(Request $request, $id)
+{
+    // 1. Validasi Input
+    $request->validate([
+        'nama_pengurus'           => 'nullable|string|max:255',
+        'sub_klasifikasi_layanan' => 'nullable|string|max:255',
+        'kode'                    => 'nullable|string|max:100',
+        'kualifikasi'             => 'nullable|string|max:255',
+        'penerbit'                => 'nullable|string|max:255',
+        'tanggal_terbit'          => 'nullable|date',
+        'masa_berlaku'            => 'nullable|date',
+        'nama_psjk'               => 'nullable|string|max:255',
+        'sub_kualifikasi_bu'      => 'nullable|string|max:255',
+    ]);
+
+    // 2. Cari data berdasarkan ID (tabel: bujkkonsultansubs)
+    $sub = Bujkkonsultansub::findOrFail($id);
+
+    // 3. Proses Update
+    $sub->update([
+        'nama_pengurus'           => $request->nama_pengurus,
+        'sub_klasifikasi_layanan' => $request->sub_klasifikasi_layanan,
+        'kode'                    => $request->kode,
+        'kualifikasi'             => $request->kualifikasi,
+        'penerbit'                => $request->penerbit,
+        'tanggal_terbit'          => $request->tanggal_terbit,
+        'masa_berlaku'            => $request->masa_berlaku,
+        'nama_psjk'               => $request->nama_psjk,
+        'sub_kualifikasi_bu'      => $request->sub_kualifikasi_bu,
+    ]);
+
+    // 4. Redirect dengan flash session 'update'
+    return redirect()->back()->with('update', 'Data Berhasil Di Update!');
+}
 
 }

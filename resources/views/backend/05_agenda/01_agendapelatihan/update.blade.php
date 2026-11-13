@@ -15,7 +15,7 @@
       <main class="app-main">
         {{-- <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy"> --}}
 
-<section style="background: linear-gradient(to bottom, #a8f0c6, #ffffff); width: 100%; min-height: 100vh;">
+<section style="background: linear-gradient(to bottom, #ffffff, #ffffff); width: 100%; min-height: 100vh;">
 
 
             <!--begin::App Content Header-->
@@ -57,7 +57,7 @@
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/beagendapelatihan">
-                    <button class="button-newvalidasi">
+                    <button class="button-modern">
                     <!-- Ikon Kembali -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -84,8 +84,8 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Nama Kegiatan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kategoripelatihan_id">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="kategoripelatihan_id">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Kategori Pelatihan
                                             </label>
                                             <select id="kategoripelatihan_id" name="kategoripelatihan_id" class="form-control @error('kategoripelatihan_id') is-invalid @enderror">
@@ -101,8 +101,8 @@
                                             @enderror
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label class="form-label" for="user_id">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="user_id">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> LSP Penerbit
                                             </label>
                                             <select id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror">
@@ -127,22 +127,27 @@
                                             @enderror
                                         </div>
 
+<div class="form-modern mb-3">
+    <label class="form-label-modern" for="namakegiatan">
+        <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
+    </label>
 
-                                        {{--  --}}
-                                        <div class="mb-3">
-                                            <label class="form-label" for="namakegiatan">
-                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
-                                            </label>
-                                            <input type="text" id="namakegiatan" name="namakegiatan" class="form-control @error('namakegiatan') is-invalid @enderror" value="{{ old('namakegiatan', $data->namakegiatan) }}" />
-                                            @error('namakegiatan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+    <textarea id="namakegiatan"
+        name="namakegiatan"
+        rows="4"
+        class="form-control @error('namakegiatan') is-invalid @enderror"
+        style="resize: vertical;">{{ old('namakegiatan', $data->namakegiatan) }}</textarea>
+
+    @error('namakegiatan')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
 
                                         <!-- Penyelenggara -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="asosiasimasjaki_id">
-                                                <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Penyelenggara/Asosiasi
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="asosiasimasjaki_id">
+                                                <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Penyelenggara
                                             </label>
                                             <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
                                                 <option value="" disabled selected>Pilih Asosiasi/Penyelenggara</option>
@@ -160,8 +165,8 @@
 
 
                                         <!-- Tanggal Pelaksanaan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="waktupelaksanaan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="waktupelaksanaan">
                                                 <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Waktu Pelaksanaan
                                             </label>
                                             <input type="date" id="waktupelaksanaan" name="waktupelaksanaan" class="form-control @error('waktupelaksanaan') is-invalid @enderror" value="{{ old('waktupelaksanaan', $data->waktupelaksanaan) }}" />
@@ -171,8 +176,8 @@
                                         </div>
 
                                         <!-- Penutupan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="penutupan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="penutupan">
                                                 <i class="bi bi-calendar-check" style="margin-right: 8px; color: navy;"></i> Penutupan
                                             </label>
                                             <input type="date" id="penutupan" name="penutupan" class="form-control @error('penutupan') is-invalid @enderror" value="{{ old('penutupan', $data->penutupan) }}" />
@@ -182,8 +187,8 @@
                                         </div>
 
                                         <!-- Jumlah Peserta -->
-                                                <div class="mb-3">
-                                                    <label class="form-label" for="jumlahpeserta">
+                                                <div class="form-modern mb-3">
+                                                    <label class="form-label-modern" for="jumlahpeserta">
                                                         <i class="bi bi-people" style="margin-right: 8px; color: navy;"></i> Jumlah Peserta
                                                     </label>
                                                     <input type="number" id="jumlahpeserta" name="jumlahpeserta" class="form-control @error('jumlahpeserta') is-invalid @enderror" value="{{ old('jumlahpeserta', $data->jumlahpeserta) }}" />
@@ -193,8 +198,8 @@
                                                 </div>
 
                                         <!-- Lokasi -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="lokasi">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="lokasi">
                                                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Lokasi
                                             </label>
                                             <input type="text" id="lokasi" name="lokasi" class="form-control @error('lokasi') is-invalid @enderror" value="{{ old('lokasi', $data->lokasi) }}" />
@@ -202,24 +207,29 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-
-                                        <!-- Keterangan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="keterangan">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="keterangan">
                                                 <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Keterangan
                                             </label>
-                                            <input type="text" id="keterangan" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" value="{{ old('keterangan', $data->keterangan) }}" />
+
+                                            <textarea id="keterangan"
+                                                name="keterangan"
+                                                rows="4"
+                                                class="form-control @error('keterangan') is-invalid @enderror"
+                                                style="resize: vertical;">{{ old('keterangan', $data->keterangan) }}</textarea>
+
                                             @error('keterangan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+
                                     </div>
 
                                     <!-- Right Column -->
                                     <div class="col-md-6">
                                         <!-- Isi Agenda -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="isiagenda">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="isiagenda">
                                                 <i class="bi bi-journal-text" style="margin-right: 8px; color: navy;"></i> Isi Agenda
                                             </label>
                                             <textarea id="isiagenda" name="isiagenda" class="form-control @error('isiagenda') is-invalid @enderror" style="height: 300px;">{{ old('isiagenda', $data->isiagenda) }}</textarea>
@@ -229,8 +239,8 @@
                                         </div>
 
                                         <!-- Foto -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="foto">
+                                        <div class="form-modern mb-3">
+                                            <label class="form-label-modern" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto Kegiatan
                                             </label>
                                             <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" />
@@ -259,7 +269,7 @@
                                 <div class="flex justify-end">
 <button class="button-berkas" type="button" onclick="openModal()">
     <!-- Ikon Pensil Bootstrap yang sesuai -->
-    <i class="bi bi-pencil-square" style="font-size: 20px; margin-right: 8px;"></i>
+    <i class="bi bi-pencil-square"></i>
     <span style="font-family: 'Poppins', sans-serif;">Perbaikan Data ?</span>
 </button>
 

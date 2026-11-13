@@ -37,6 +37,14 @@ class tandatangan extends Model
     {
         return $this->hasMany(surattertibjakonpemanfaatan1::class);
     }
+    public function surattertibjakonpemanfaatan2()
+    {
+        return $this->hasMany(surattertibjakonpemanfaatan2::class);
+    }
+    public function surattertibjakonpemanfaatan3()
+    {
+        return $this->hasMany(surattertibjakonpemanfaatan3::class);
+    }
 
     public function surattertibjakonpenyelenggaraan1()
     {

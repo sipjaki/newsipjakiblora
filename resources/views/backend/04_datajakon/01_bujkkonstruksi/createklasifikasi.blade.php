@@ -184,11 +184,11 @@
 
                                         <!-- Tanggal Berlaku -->
                                         <div class="form-modern mb-3">
-                                            <label class="form-label-modern" for="tanggal_berlaku">
+                                            <label class="form-label-modern" for="masa_berlaku">
                                                 <i class="bi bi-calendar-event" style="margin-right:8px; color:navy;"></i> Tanggal Berlaku
                                             </label>
-                                            <input type="date" id="tanggal_berlaku" name="tanggal_berlaku" class="form-control @error('tanggal_berlaku') is-invalid @enderror" value="{{ old('tanggal_berlaku') }}">
-                                            @error('tanggal_berlaku')
+                                            <input type="date" id="masa_berlaku" name="masa_berlaku" class="form-control @error('masa_berlaku') is-invalid @enderror" value="{{ old('masa_berlaku') }}">
+                                            @error('masa_berlaku')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

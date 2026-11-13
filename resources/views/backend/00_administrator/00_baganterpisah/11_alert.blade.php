@@ -1,484 +1,400 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+{{-- ============================================================
+     MODAL SESSION – SERAGAM DENGAN TEMA BLORA 3D PREMIUM
+     ============================================================ --}}
+@php
+    /**
+     * Kumpulan session key yang ditampilkan sebagai modal.
+     */
+    $sessionModals = [
+        'daftarpelatihan'            => ['title' => 'Berhasil !', 'type' => 'success',  'link' => '/daftarpesertapelatihan', 'linkText' => 'Peserta'],
+        'daftarpelatihanandroid'     => ['title' => 'Berhasil !', 'type' => 'success',  'link' => '/respesertapelatihan',    'linkText' => 'Lihat Daftar Peserta'],
+        'daftarskk'                  => ['title' => 'Berhasil !', 'type' => 'success',  'link' => '/dashboard',              'linkText' => 'Lihat Status Pendaftaran'],
+        'verifikasikehadiran'        => ['title' => 'Berhasil !', 'type' => 'success'],
+        'validasiberkasskk'          => ['title' => 'Berhasil !', 'type' => 'success'],
+        'create'                     => ['title' => 'Berhasil !', 'type' => 'success'],
+        'info'                       => ['title' => 'Berhasil',   'type' => 'success'],
+        'verifikasipesertapelatihan' => ['title' => 'Berhasil',   'type' => 'verify'],
+        'verifikasipesertaskk'       => ['title' => 'Berhasil',   'type' => 'verify'],
+        'pengesahankrk'              => ['title' => 'Berhasil',   'type' => 'success'],
+        'update'                     => ['title' => 'Berhasil !', 'type' => 'success'],
+                'delete'                     => ['title' => 'Delete Berhasil !', 'type' => 'delete'],
+        'gagaldaftar'                => ['title' => 'Gagal',      'type' => 'delete'],
+        'pertanyaan'                 => ['title' => 'Admin Kami Akan Menghubungi Saudara, Harap Menunggu!', 'type' => 'question'],
+    ];
+@endphp
 
-    * {
-        font-family: 'Poppins', sans-serif;
+@foreach($sessionModals as $key => $cfg)
+    @if(session($key))
+        <div class="modal-session-overlay modal-verify-alert {{ $cfg['type'] === 'question' ? 'modal-question-alert' : '' }}" id="sessionModal-{{ $key }}">
+            <div class="modal-session-box {{ $cfg['type'] === 'question' ? 'modal-box-question' : 'modal-box' }}">
+
+                {{-- Crane animasi --}}
+                <div class="modal-crane"></div>
+
+                {{-- Tombol close (X) --}}
+                <button type="button" class="modal-session-close" onclick="closeSessionModal('sessionModal-{{ $key }}')">
+                    &times;
+                </button>
+
+                {{-- Logo maskot --}}
+                <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Maskot Jakon" class="modal-session-logo">
+
+                {{-- Header instansi --}}
+                {{-- <p class="modal-session-instansi">
+                    @if($cfg['type'] === 'question')
+                        Pemerintah Kabupaten Blora
+                    @else
+                        Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora
+                    @endif
+                </p> --}}
+
+                {{-- Judul --}}
+                <div class="modal-session-title
+                    @if($cfg['type'] === 'success') text-success
+                    @elseif($cfg['type'] === 'update') text-update
+                    @elseif($cfg['type'] === 'delete') text-delete
+                    @elseif($cfg['type'] === 'question') text-question
+                    @else text-verify
+                    @endif
+                ">
+                    {{ $cfg['title'] }}
+                </div>
+
+                {{-- Body / pesan tambahan --}}
+                @if(isset($cfg['link']))
+                    <p class="modal-session-desc">
+                        Silakan klik tautan berikut:
+                    </p>
+                    <p class="modal-session-link">
+                        <a href="{{ $cfg['link'] }}">{{ $cfg['linkText'] }}</a>
+                    </p>
+                @endif
+
+                @if($cfg['type'] === 'question')
+                    <p class="modal-session-note">
+                        Silakan muat ulang halaman ini atau tekan tanda X di pojok kanan atas.
+                    </p>
+                @endif
+
+                {{-- Pesan session --}}
+                <button class="modal-session-btn
+                    @if($cfg['type'] === 'update') button-modern
+                    @elseif($cfg['type'] === 'delete') button-merah
+                    @elseif($cfg['type'] === 'verify') button-baru
+                    @else button-baru
+                    @endif
+                ">
+                    {{ session($key) }}
+                </button>
+
+            </div>
+        </div>
+    @endif
+@endforeach
+
+<!-- ============================================================
+     STYLE MODAL SESSION – TEMA 3D PREMIUM
+     ============================================================ -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    .modal-session-overlay,
+    .modal-session-overlay * {
+        font-family: 'Poppins', sans-serif !important;
+        box-sizing: border-box;
     }
 
-    .modal-verify-alert, .modal-question-alert {
+    .modal-session-overlay {
         display: flex;
         align-items: center;
         justify-content: center;
         position: fixed;
         z-index: 9999;
-        left: 0;
-        top: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         overflow: auto;
-        background: rgba(0,0,0,0.5);
+        padding: 20px;
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(6px);
+        animation: fadeIn 0.3s ease;
     }
 
-    .modal-box {
-        background-color: #fefefe;
-        padding: 20px;
-        border-radius: 10px;
-        width: 500px;
-        height: 500px;
+    /* Card Modal 3D Premium */
+    .modal-session-box {
+        background: #FFFFFF;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 24px;
+        width: 100%;
+        max-width: 420px;
+        padding: 40px 30px 30px 30px;
         position: relative;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        animation: fadeIn 0.5s ease;
+        gap: 12px;
+        box-shadow:
+            0 10px 25px -5px rgba(19, 168, 71, 0.15),
+            0 25px 50px -12px rgba(0, 0, 0, 0.25);
         overflow: hidden;
+        animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    .modal-box-question {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        max-width: 400px;
-        width: 90%;
-        position: relative;
-        text-align: center;
-        animation: fadeIn 0.5s ease;
-        overflow: hidden;
-    }
-
-    /* Animasi Crane untuk Modal */
+    /* Crane animasi (background) */
     .modal-crane {
         position: absolute;
         width: 80px;
         height: 60px;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23298d0d"><path d="M21 6h-4v2h4V6zm-5 0h-4v2h4V6zm-5 0H7v2h4V6zM6 6H2v2h4V6zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2z"/></svg>');
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2316A34A"><path d="M21 6h-4v2h4V6zm-5 0h-4v2h4V6zm-5 0H7v2h4V6zM6 6H2v2h4V6zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2z"/></svg>');
         background-size: contain;
         background-repeat: no-repeat;
-        opacity: 0.2;
+        opacity: 0.08;
         z-index: 0;
         animation: craneFly 15s linear infinite;
+        pointer-events: none;
     }
 
     @keyframes craneFly {
-        0% { transform: translateX(-100px) translateY(0); }
-        25% { transform: translateX(25%) translateY(-20px); }
-        50% { transform: translateX(150%) translateY(0); }
-        75% { transform: translateX(25%) translateY(20px); }
+        0%   { transform: translateX(-100px) translateY(0); }
+        25%  { transform: translateX(25%)   translateY(-20px); }
+        50%  { transform: translateX(150%)  translateY(0); }
+        75%  { transform: translateX(25%)   translateY(20px); }
         100% { transform: translateX(-100px) translateY(0); }
     }
 
-    .modal-content {
-        position: relative;
-        z-index: 1;
-    }
-
-    .btnalert-view {
-        background: none;
+    .modal-session-close {
+        background: #f1f5f9;
         border: none;
-        color: #aaa;
-        font-size: 28px;
-        font-weight: bold;
+        color: #64748b;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1;
         position: absolute;
         top: 15px;
-        right: 20px;
+        right: 15px;
         cursor: pointer;
         z-index: 10;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
     }
 
-    .btnalert-view:hover {
-        color: black;
+    .modal-session-close:hover {
+        background: #fee2e2;
+        color: #ef4444;
+        transform: rotate(90deg);
     }
 
-    .success-text, .success-textupdate {
-        font-size: 36px;
-        font-weight: bold;
-        margin: 20px 0;
-    }
-
-    .success-text { color: #4CAF50; }
-    .success-textupdate { color: navy; }
-
-    .button-text, .button-textupdate {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        font-size: 18px;
-        color: white;
-        cursor: pointer;
-        transition: 0.3s ease;
+    .modal-session-logo {
+        width: 110px !important;
+        height: auto;
+        object-fit: contain;
         position: relative;
         z-index: 1;
-    }
-
-    .button-verifikasi, .button-verifikasi {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        font-size: 18px;
-        color: white;
-        cursor: pointer;
-        transition: 0.3s ease;
-        position: relative;
-        z-index: 1;
-    }
-
-    .button-verifikasi1, .button-verifikasi {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        font-size: 18px;
-        color: white;
-        cursor: pointer;
-        transition: 0.3s ease;
-        position: relative;
-        z-index: 1;
-    }
-
-    .button-verifikasi { background: orangered; }
-    .button-text:hover { background: white; color: black; }
-
-
-    .button-verifikasi1 { background: rgb(0, 17, 168); }
-    .button-text:hover { background: white; color: black; }
-
-    .button-verifikasi1 { background: rgb(0, 94, 97); }
-    .button-text:hover { background: white; color: black; }
-
-    .button-text { background: green; }
-    .button-text:hover { background: white; color: black; }
-
-    .button-textupdate { background: navy; }
-    .button-textupdate:hover { background: white; color: black; }
-
-    .button-delete {
-        background: red;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        font-size: 18px;
-        color: white;
-        transition: 0.3s ease;
-        position: relative;
-        z-index: 1;
-    }
-
-    .button-delete:hover {
-        background: white;
-        color: black;
-    }
-
-    .logo-animate-bounce {
-        width: 70px;
-        height: 70px;
-        object-fit: cover;
-        margin: 20px;
         animation: bounceZoom 2.5s ease-in-out infinite;
-        position: relative;
-        z-index: 1;
+        margin-bottom: 5px;
+        filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
     }
 
     @keyframes bounceZoom {
-        0%, 100% {
-            transform: scale(1) translateY(0);
-        }
-        50% {
-            transform: scale(1.2) translateY(-8px);
-        }
+        0%, 100% { transform: scale(1) translateY(0); }
+        50%      { transform: scale(1.05) translateY(-8px); }
+    }
+
+    .modal-session-instansi {
+        color: #64748b;
+        font-size: 12px;
+        line-height: 1.5;
+        margin: 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .modal-session-title {
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        line-height: 1.3;
+        margin: 5px 0 10px 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .modal-session-title.text-success  { color: #16A34A; }
+    .modal-session-title.text-update   { color: #1D4ED8; }
+    .modal-session-title.text-delete   { color: #DC3545; }
+    .modal-session-title.text-question { color: #B45309; font-size: 16px; line-height: 1.5; padding: 0 10px; }
+    .modal-session-title.text-verify   { color: #0F766E; }
+
+    .modal-session-desc,
+    .modal-session-note {
+        font-size: 14px;
+        color: #475569;
+        margin: 0;
+        line-height: 1.6;
+        position: relative;
+        z-index: 1;
+    }
+
+    .modal-session-note {
+        font-size: 12px;
+        font-style: italic;
+        color: #94A3B8;
+        margin-top: 8px;
+    }
+
+    .modal-session-link {
+        margin: 5px 0 15px 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .modal-session-link a {
+        color: #16A34A;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 14px;
+        background: #ecfdf5;
+        padding: 8px 16px;
+        border-radius: 50px;
+        display: inline-block;
+        transition: all 0.25s ease;
+        border: 1px solid #a7f3d0;
+    }
+
+    .modal-session-link a:hover {
+        background: #16A34A;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+    }
+
+    .modal-session-btn {
+        margin-top: 15px;
+        padding: 12px 25px !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        border-radius: 12px !important;
+        position: relative;
+        z-index: 1;
+        border: none;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        max-width: 280px;
+        line-height: 1.4;
+    }
+
+    /* Warna Tombol */
+    .modal-session-btn.button-baru {
+        background: linear-gradient(135deg, #13A847, #0e7a33) !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 15px rgba(19, 168, 71, 0.3);
+    }
+
+    .modal-session-btn.button-modern {
+        background: linear-gradient(135deg, #1e3a8a, #1e40af) !important;
+        color: #FFFFFF !important;
+        box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+    }
+
+    .modal-session-btn.button-merah {
+        background: linear-gradient(135deg, #ef4444, #b91c1c) !important;
+        color: #FFFFFF !important;
+        box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+    }
+
+    .modal-session-btn:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
     }
 
     @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.95); }
-        to { opacity: 1; transform: scale(1); }
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(30px) scale(0.95); }
+        to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 480px) {
+        .modal-session-box {
+            max-width: 92%;
+            padding: 30px 20px 20px 20px;
+            border-radius: 20px;
+        }
+        .modal-session-logo { width: 90px !important; }
+        .modal-session-title { font-size: 20px; }
+        .modal-session-title.text-question { font-size: 14px; }
+        .modal-session-btn { font-size: 12px !important; padding: 10px 20px !important; }
     }
 </style>
 
+<!-- ============================================================
+     SCRIPT MODAL SESSION – TUTUP SAAT KLIK OVERLAY + CRANE ACAK
+     ============================================================ -->
 <script>
-    // Tutup modal jika klik di luar konten modal
+(function() {
+    'use strict';
+
+    // Fungsi untuk menutup modal berdasarkan ID
+    window.closeSessionModal = function(id) {
+        var modal = document.getElementById(id);
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    // Tutup modal jika klik di luar konten modal (overlay)
     window.addEventListener('click', function(e) {
-        document.querySelectorAll('.modal-verify-alert, .modal-question-alert').forEach(modal => {
+        document.querySelectorAll('.modal-session-overlay').forEach(function(modal) {
             if (e.target === modal) {
                 modal.style.display = 'none';
             }
         });
     });
 
-    // Tambahkan crane ke setiap modal saat dimuat
+    // Tutup modal dengan tombol ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal-session-overlay').forEach(function(modal) {
+                if (modal.style.display !== 'none') {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    });
+
+    // Tambahkan crane ke setiap modal saat dimuat + posisi acak
     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.modal-box, .modal-box-question').forEach(modal => {
-            const crane = document.createElement('div');
-            crane.className = 'modal-crane';
-            modal.prepend(crane);
+        document.querySelectorAll('.modal-session-box').forEach(function(modal) {
+            const crane = modal.querySelector('.modal-crane');
+            if (!crane) return;
 
-            // Posisi crane acak
-            const randomTop = Math.random() * 70 + 10; // 10-80%
-            const randomSize = Math.random() * 40 + 60; // 60-100px
-            const randomSpeed = Math.random() * 10 + 10; // 10-20s
+            const randomTop   = Math.random() * 60 + 15;
+            const randomSize  = Math.random() * 40 + 60;
+            const randomSpeed = Math.random() * 10 + 10;
 
-            crane.style.top = `${randomTop}%`;
-            crane.style.width = `${randomSize}px`;
-            crane.style.height = `${randomSize * 0.75}px`;
-            crane.style.animationDuration = `${randomSpeed}s`;
+            crane.style.top = randomTop + '%';
+            crane.style.width = randomSize + 'px';
+            crane.style.height = (randomSize * 0.75) + 'px';
+            crane.style.animationDuration = randomSpeed + 's';
         });
     });
+})();
 </script>
-
-@if (session('daftarpelatihan'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil !</div>
-        <p style="margin-bottom: 4px;">
-            Silahkan kunjungi link ini untuk mengetahui verifikasi anda!
-        </p>
-        <p style="margin-top: 0;">
-            <a href="/daftarpesertapelatihan">Peserta</a>
-        </p>
-        {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
-        <br>
-        <button class="button-text">{{ session('daftarpelatihan') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('daftarpelatihanandroid'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil !</div>
-        <p style="margin-bottom: 4px;">
-            Daftar Peserta, silakan klik tautan berikut:
-        </p>
-        <p style="margin-top: 0;">
-            <a href="/respesertapelatihan" style="text-decoration: none; color: #007bff;">
-                Lihat Daftar Peserta
-            </a>
-        </p>
-        {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
-        <br>
-        <button class="button-text">{{ session('daftarpelatihan') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('daftarskk'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil !</div>
-        <p style="margin-bottom: 4px;">
-            Status Pendaftaran, silakan klik tautan berikut:
-        </p>
-        <p style="margin-top: 0;">
-            <a href="/dashboard" style="text-decoration: none; color: #007bff;">
-                Lihat Status Pendaftaran
-            </a>
-        </p>
-        {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
-        <br>
-        <button class="button-text">{{ session('daftarskk') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('verifikasikehadiran'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil !</div>
-        {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
-        <br>
-        <button class="button-text">{{ session('verifikasikehadiran') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('validasiberkasskk'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil !</div>
-        {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
-        <br>
-        <button class="button-text">{{ session('validasiberkasskk') }}</button>
-    </div>
-</div>
-@endif
-@if (session('create'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil !</div>
-        {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
-        <br>
-        <button class="button-text">{{ session('create') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('info'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil</div>
-        <button class="button-text">{{ session('info') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('verifikasipesertapelatihan'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil</div>
-        <button class="button-verifikasi">{{ session('verifikasipesertapelatihan') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('verifikasipesertaskk'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil</div>
-        <button class="button-verifikasi1">{{ session('verifikasipesertaskk') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('verifikasipesertapelatihan'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil</div>
-        <button class="button-verifikasi">{{ session('verifikasipesertapelatihan') }}</button>
-    </div>
-</div>
-@endif
-
-
-@if (session('pengesahankrk'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-       <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-text">Berhasil</div>
-        <button class="button-text">{{ session('pengesahankrk') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('update'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div class="success-textupdate">Update Berhasil !</div>
-        <button class="button-textupdate">{{ session('update') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('delete'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div style="font-size: 36px; color: red; font-weight: bold; margin: 20px 0;">Delete Berhasil !</div>
-        <button class="button-delete">{{ session('delete') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('gagaldaftar'))
-<div class="modal-verify-alert">
-    <div class="modal-box">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        {{-- <div style="font-size: 36px; color: red; font-weight: bold; margin: 20px 0;">Anda Salah memasukan berkas dan data diri!</div> --}}
-        <button class="button-delete">{{ session('gagaldaftar') }}</button>
-    </div>
-</div>
-@endif
-
-@if (session('pertanyaan'))
-<div class="modal-question-alert">
-    <div class="modal-box-question">
-        <div class="modal-crane"></div>
-        <button type="button" class="btnalert-view" onclick="this.closest('.modal-question-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 150px !important; height: auto;"
-        class="logo-animate-bounce">
-           <p style="color: black;">Pemerintah Kabupaten Blora</p>
-        <div class="success-text" style="font-size: 18px;">Admin Kami Akan Menghubungi Saudara, Harap Menunggu!</div>
-        <button class="button-text">{{ session('pertanyaan') }}</button>
-        <p style="margin-top: 25px; font-size: 12px; color: #000;">Silakan muat ulang halaman ini atau tekan tanda X di pojok kanan atas.</p>
-    </div>
-</div>
-@endif

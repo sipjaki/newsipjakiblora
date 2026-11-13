@@ -1,0 +1,432 @@
+@include('backend.00_administrator.00_baganterpisah.01_header')
+
+<style>
+/* ==========================================
+   STYLING 3D BACKGROUND & TABLE PREMIUM
+   ========================================== */
+.bg-3d-pattern {
+    background-color: #f4f7f6;
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 20px 20px;
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.card-3d {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 25px -5px rgba(19, 168, 71, 0.15), 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.card-3d:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px -5px rgba(19, 168, 71, 0.25), 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header-custom {
+    background: #ffffff !important;
+    border-bottom: 1px solid #eaeaea !important;
+    padding: 20px 30px !important;
+}
+
+/* ==========================================
+   BANNER TITLE BERKAS (STYLE BARU)
+   ========================================== */
+.berkas-title-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #13A847 0%, #0f8f3a 100%);
+    border-radius: 14px;
+    box-shadow: 0 8px 20px -4px rgba(19, 168, 71, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+.berkas-title-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+.berkas-title-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 22px;
+    flex-shrink: 0;
+    backdrop-filter: blur(4px);
+}
+.berkas-title-text {
+    flex: 1;
+    min-width: 0;
+}
+.berkas-title-label {
+    font-size: 10px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+.berkas-title-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.3;
+    word-wrap: break-word;
+}
+.berkas-title-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+    .berkas-title-banner { flex-wrap: wrap; padding: 14px 16px; }
+    .berkas-title-icon { width: 40px; height: 40px; font-size: 18px; }
+    .berkas-title-name { font-size: 14px; }
+    .berkas-title-count { padding: 4px 10px; font-size: 11px; }
+}
+
+/* ==========================================
+   TABLE MODERN
+   ========================================== */
+.table-responsive-custom {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+}
+.table-custom-modern {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 1400px;
+    white-space: nowrap;
+}
+.table-custom-modern thead th {
+    background: #f8fafc !important;
+    color: #4a5a72 !important;
+    font-weight: 700;
+    padding: 15px 12px !important;
+    text-align: center;
+    border-bottom: 2px solid #e2e8f0 !important;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.table-custom-modern tbody td {
+    padding: 12px !important;
+    color: #1a2b4a;
+    border-bottom: 1px solid #f1f5f9 !important;
+    vertical-align: middle;
+}
+.table-custom-modern tbody tr:nth-child(odd) td { background-color: #ffffff !important; }
+.table-custom-modern tbody tr:nth-child(even) td { background-color: #f1f5f9 !important; }
+.table-custom-modern tbody tr:hover td {
+    background-color: #bbf7d0 !important;
+    border-bottom-color: #86efac !important;
+    cursor: pointer;
+}
+.table-custom-modern tbody tr.empty-row:hover td {
+    background-color: #ffffff !important;
+    cursor: default;
+}
+
+/* EMPTY STATE */
+.empty-state {
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.empty-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #FEF2F2;
+    border: 2px dashed #ef4444;
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+.empty-title { font-size: 16px; font-weight: 700; color: #1A2B4A; margin: 8px 0 0 0; }
+.empty-desc { font-size: 13px; color: #6B7A93; margin: 0; }
+
+@media (max-width: 768px) {
+    .card-header-custom { padding: 16px 18px !important; }
+    .card-3d { border-radius: 16px; margin-bottom: 20px; }
+}
+</style>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+<div class="app-wrapper">
+
+@include('backend.00_administrator.00_baganterpisah.04_navbar')
+@include('backend.00_style.01_cssdashboard.style')
+@include('button')
+@include('backend.00_administrator.00_baganterpisah.03_sidebar')
+
+   <main class="app-main">
+<section class="bg-3d-pattern">
+
+        {{-- ═══ APP CONTENT HEADER ═══ --}}
+        <div class="app-content-header">
+          <div class="container-fluid">
+            <div class="row">
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
+            </div>
+          </div>
+        </div>
+
+        {{-- ═══ MAIN CONTENT ═══ --}}
+        <div class="container-fluid">
+            <div class="row" style="margin-right: 10px; margin-left:10px;">
+
+                <div class="col-md-12">
+                    <div class="card card-3d mb-4">
+                        <div class="card-header card-header-custom">
+
+                                @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
+                                                                {{-- ═══ TOOLBAR: HANYA TOMBOL AKSI ═══ --}}
+                            <div class="toolbar-buttons-row" style="justify-content: flex-end;">
+
+                                <a href="/betertibjakonusaha">
+                                    <button class="button-modern button-md">
+                                        <i class="bi bi-arrow-left" style="margin-right: 6px;"></i>
+                                        Kembali
+                                    </button>
+                                </a>
+
+                                @if ($datasurat->isEmpty())
+                                    <a href="{{ route('betertibjakonusahasurat1newberkas', ['id' => $data->id]) }}">
+                                        <button class="button-berkas button-md">
+                                            <i class="bi bi-file-earmark-plus" style="margin-right: 6px;"></i>
+                                            Buat Berkas
+                                        </button>
+                                    </a>
+                                @endif
+
+                                @if ($datasurat->isNotEmpty())
+                                    <a href="{{ url('betertibjakonusahasurat1/createnew/' . $datasurat_id) }}">
+                                        <button class="button-berkas button-md">
+                                            <i class="bi bi-file-earmark" style="margin-right: 6px;"></i>
+                                            Dokumen
+                                        </button>
+                                    </a>
+                                @endif
+
+                            </div>
+
+                            {{-- ═══ BANNER TITLE BERKAS (DIPISAH, STYLE BARU) ═══ --}}
+                            <div class="berkas-title-banner">
+                                <div class="berkas-title-icon">
+                                    <i class="bi bi-folder2-open"></i>
+                                </div>
+                                <div class="berkas-title-text">
+                                    <div class="berkas-title-label">Berkas Dukung  </div>
+                                    <div class="berkas-title-name">Daftar Simak 1 b.1 {{ $title }}</div>
+                                </div>
+                                <div class="berkas-title-count">
+                                    <i class="bi bi-files"></i>
+                                    {{ $datasurat->count() }} Berkas
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {{-- ═══ TABLE ═══ --}}
+                        <div class="card-body p-0">
+                            <div class="table-responsive-custom">
+                                <table id="tabelSurat" class="table-custom-modern">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 60px; text-align: center;">No</th>
+                                            <th style="width: 350px; text-align: center;">Nama Pekerjaan</th>
+                                            <th style="width: 150px; text-align: center;">Jenis Usaha</th>
+                                            <th style="width: 180px; text-align: center;">Kesesuaian</th>
+                                            <th style="width: 200px; text-align: center;">Kesesuaian SBU</th>
+                                            <th style="width: 200px; text-align: center;">Kesesuaian SBU Sub Klasifikasi</th>
+                                            <th style="width: 200px; text-align: center;">Kesesuaian SBU Layanan Usaha</th>
+                                            <th style="width: 120px; text-align: center;">Aksi</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @forelse($datasurat as $item)
+                                            @php
+                                                $statusList = [
+                                                    $item->kesesuaian ?? 'Surat Belum Di Buat',
+                                                    $item->kesesuaiansbu ?? 'Surat Belum Di Buat',
+                                                    $item->kesesuaianklasifikasi ?? 'Surat Belum Di Buat',
+                                                    $item->kesesuaianlayananusaha ?? 'Surat Belum Di Buat',
+                                                ];
+                                            @endphp
+
+                                            <tr class="align-middle">
+                                                <td style="text-align: center; font-weight: 700;">{{ $loop->iteration }}</td>
+                                                <td style="text-align: left;">{{ $item->namapaketpekerjaan }}</td>
+                                                <td style="text-align: center;">{{ $item->jenisusaha ?? '-' }}</td>
+
+                                                @foreach ($statusList as $status)
+                                                    @php
+                                                        $isSesuai   = $status === 'Sesuai';
+                                                        $tertib     = $isSesuai ? 'TERTIB' : 'BELUM TERTIB';
+                                                        $btnClass   = $isSesuai ? 'button-hijau' : 'button-merah';
+                                                        $icon       = $isSesuai ? 'bi-check-circle' : 'bi-x-circle';
+                                                    @endphp
+                                                    <td style="text-align: center;">
+                                                        <button class="{{ $btnClass }}">
+                                                            <i class="bi {{ $icon }}" style="margin-right: 6px;"></i>
+                                                            {{ $tertib }}
+                                                        </button>
+                                                    </td>
+                                                @endforeach
+
+                                                <td style="text-align: center;">
+                                                    <a href="javascript:void(0)"
+                                                       class="button-merah"
+                                                       title="Delete"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-target="#deleteModal"
+                                                       data-id="{{ $item->id }}"
+                                                       onclick="setDeleteUrl(this)">
+                                                        <i class="bi bi-trash"></i> Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr class="empty-row">
+                                                <td colspan="8">
+                                                    <div class="empty-state">
+                                                        <div class="empty-icon">
+                                                            <i class="bi bi-folder-x"></i>
+                                                        </div>
+                                                        <h5 class="empty-title">Berkas Dukung Tidak Ditemukan</h5>
+                                                        <p class="empty-desc">Silakan buat berkas dukung terlebih dahulu.</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        @if(method_exists($datasurat, 'links') && $datasurat->count() > 0)
+                            <div class="p-3">
+                                {{ $datasurat->links() }}
+                            </div>
+                        @endif
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>
+   </main>
+</div>
+</div>
+
+{{-- ═══ MODAL HAPUS ═══ --}}
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-radius: 20px; border: none; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            <div class="modal-header" style="background: #fef2f2; border-bottom: 1px solid #fecaca; border-radius: 20px 20px 0 0; padding: 20px 25px;">
+                <h5 class="modal-title" id="deleteModalLabel" style="font-weight: 700; color: #991b1b;">
+                    <i class="bi bi-exclamation-triangle-fill" style="margin-right:8px;"></i> Konfirmasi Hapus !
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="padding: 30px; text-align: center;">
+                <div style="width: 80px; height: 80px; background: #fee2e2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <i class="bi bi-exclamation-triangle" style="font-size: 2.5rem; color: #ef4444;"></i>
+                </div>
+                <h5 style="font-weight: 700; color: #1a2b4a; margin-bottom: 10px;">Apakah Anda Yakin?</h5>
+                <p style="font-size: 0.95rem; color: #4a5a72; margin: 0;">Data akan dihapus dan tidak dapat dikembalikan.</p>
+            </div>
+            <div class="modal-footer" style="background: #f8fafc; border-top: 1px solid #eaeaea; border-radius: 0 0 20px 20px; padding: 15px 25px; justify-content: center; gap: 12px;">
+                <button type="button" class="button-modern button-md" data-bs-dismiss="modal">
+                    <i class="bi bi-x"></i> Batal
+                </button>
+                <form id="deleteForm" method="POST" action="" class="m-0">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="button-merah button-md">
+                        <i class="bi bi-trash"></i> Hapus Data
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@include('backend.00_administrator.00_baganterpisah.02_footer')
+
+<script>
+function setDeleteUrl(button) {
+    const id = button.getAttribute('data-id');
+    let deleteUrl = "{{ route('betertibjakonusahadeletejakonusaha', ':id') }}";
+    deleteUrl = deleteUrl.replace(':id', encodeURIComponent(id));
+    document.getElementById('deleteForm').action = deleteUrl;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const today = new Date();
+    document.querySelectorAll('.masa-berlaku').forEach(function (element) {
+        const masaBerlaku = element.getAttribute('data-masaberlaku');
+        const button = element.querySelector('.btn-masa-berlaku');
+        if (!button) return;
+
+        if (!masaBerlaku || masaBerlaku === '') {
+            button.classList.add('btn-suspend');
+            button.textContent = 'SUSPEND';
+        } else {
+            const tgl = new Date(masaBerlaku);
+            if (tgl < today) {
+                button.classList.add('btn-expired');
+                button.textContent = 'TIDAK BERLAKU';
+            } else {
+                button.classList.add('btn-active');
+                button.textContent = 'BERLAKU';
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>

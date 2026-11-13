@@ -5,26 +5,67 @@
         {{-- <div class="header flex flex-col bg-gradient-to-b from-[#28A745] to-[#FFDC00] rounded-b-[50px] overflow-hidden"> --}}
             <!-- Konten lainnya di sini -->
         {{-- </div> --}}
-        <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/halamanutamabarumasjaki.png'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;">
-
+        {{-- <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama2.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;"> --}}
+<div class="header flex flex-col"
+     style="
+       background-image: url('/assets/00_android/iconmenu/menuutama2.jpg');
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+       border-bottom-left-radius: 50px;
+       border-bottom-right-radius: 50px;
+       overflow: hidden;
+     ">
         <nav class="pt-5 px-3 flex justify-between items-center">
             <div class="flex items-center gap-[10px]">
                 <div class="w-10 h-10 flex shrink-0">
                     <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy">
                 </div>
-                <div class="flex flex-col text-white">
-                    <p class="text-xs leading-[18px]" style="color:black">Dinas Pekerjaan Umum dan Penataan Ruang </p>
-                    <p class="font-semibold text-sm" style="color:black">Kabupaten Blora, Provinsi Jawa Tengah</p>
-                </div>
+              <div class="flex flex-col">
+                        <p class="text-xs leading-[18px]"
+                        style="
+                            color: black;
+                            text-shadow:
+                                1px 1px 2px rgba(255,255,255,0.9),
+                                -1px -1px 2px rgba(255,255,255,0.9),
+                                1px -1px 2px rgba(255,255,255,0.9),
+                                -1px 1px 2px rgba(255,255,255,0.9);
+                        ">
+                            Dinas Pekerjaan Umum dan Penataan Ruang
+                        </p>
+
+                        <p class="font-semibold text-sm"
+                        style="
+                            color: black;
+                            text-shadow:
+                                1px 1px 2px rgba(255,255,255,0.9),
+                                -1px -1px 2px rgba(255,255,255,0.9),
+                                1px -1px 2px rgba(255,255,255,0.9),
+                                -1px 1px 2px rgba(255,255,255,0.9);
+                        ">
+                            Kabupaten Blora, Provinsi Jawa Tengah
+                        </p>
+                    </div>
             </div>
-            {{-- <a href="" class="w-10 h-10 flex shrink-0">
-                <img src="/assets/00_android//images/icons/menu.svg" alt="icon" loading="lazy">
-            </a> --}}
+            <a href="" class="w-10 h-10 flex shrink-0">
+                <img src="/assets/icon/pupr.png" alt="icon" loading="lazy">
+            </a>
         </nav>
 
         <div class="z-10" style="margin-top:95px; background-color: rgba(255, 255, 255, 0.6); border-radius: 10px; padding: 20px; max-wi  dth: 600px; margin-left: auto; margin-right: auto;">
-            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
-                Sistem Informasi Pembina  <br> Jasa Konstruksi
+           <h1 class="font-bold leading-[36px] text-center"
+                style="
+                    color: black;
+                    font-size: 20px;
+                    text-shadow:
+                        1px 1px 2px rgba(255,255,255,0.95),
+                    -1px -1px 2px rgba(255,255,255,0.95),
+                        1px -1px 2px rgba(255,255,255,0.95),
+                    -1px 1px 2px rgba(255,255,255,0.95),
+                        2px 3px 4px rgba(0,0,0,0.25);
+                ">
+                Sistem Informasi Pembina <br>
+                Jasa Konstruksi
             </h1>
         </div>
 
@@ -131,7 +172,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/ressatuanhargadasar">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/satuanhargadasarbaru.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                <img src="/assets/00_android/iconmenu/menuutama1.jpg" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -146,7 +187,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/resahspkonstruksi">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/ahspkonstruksiumumbaru.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                <img src="/assets/00_android/iconmenu/menuutama2.jpg" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -160,7 +201,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/resshstblora">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/shstkabblorabaru.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                <img src="/assets/00_android/iconmenu/menuutama3.jpg" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
