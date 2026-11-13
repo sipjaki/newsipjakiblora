@@ -41,120 +41,65 @@ class LoginController extends Controller
     }
 
     public function registernew(Request $request)
-{
-    // =====================================================
-    // 1. VALIDASI INPUT
-    // =====================================================
-    $validated = $request->validate([
-        'name'           => 'required|string|max:255',
-        'username'       => 'required|string|max:255|unique:users,username',
-        'statusadmin_id' => 'required|string',
-        'phone_number'   => 'required|string|max:15',
-        'email'          => 'required|email|max:255|unique:users,email',
-        'password'       => 'required|string|min:8|confirmed',
-    ], [
-        'name.required'           => 'Nama lengkap wajib diisi.',
-        'name.string'             => 'Nama lengkap harus berupa teks.',
-        'name.max'                => 'Nama lengkap maksimal 255 karakter.',
-        'username.required'       => 'Username wajib diisi.',
-        'username.string'         => 'Username harus berupa teks.',
-        'username.max'            => 'Username maksimal 255 karakter.',
-        'username.unique'         => 'Username sudah digunakan, silakan pilih yang lain.',
-        'statusadmin_id.required' => 'Silahkan pilih akun Anda!',
-        'statusadmin_id.integer'  => 'Jenis akun tidak valid.',
-        'statusadmin_id.exists'   => 'Jenis akun yang dipilih tidak tersedia.',
-        'phone_number.required'   => 'Nomor telepon wajib diisi.',
-        'phone_number.string'     => 'Nomor telepon harus berupa teks.',
-        'phone_number.max'        => 'Nomor telepon maksimal 15 digit.',
-        'email.required'          => 'Email wajib diisi.',
-        'email.email'             => 'Format email tidak valid.',
-        'email.unique'            => 'Email sudah terdaftar, silakan gunakan email lain.',
-        'password.required'       => 'Password wajib diisi.',
-        'password.string'         => 'Password harus berupa teks.',
-        'password.min'            => 'Password minimal 8 karakter.',
-        'password.confirmed'      => 'Konfirmasi password tidak sesuai.',
+    {
+        // Validasi input dari form
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users,username',
+            'statusadmin_id' => 'required|string',
+            'phone_number' => 'required|string|max:15',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8|confirmed',
+        ], [
+        // Pesan untuk field name
+        'name.required' => 'Nama lengkap wajib diisi.',
+        'name.string' => 'Nama lengkap harus berupa teks.',
+        'name.max' => 'Nama lengkap maksimal 255 karakter.',
+
+        // Pesan untuk field username
+        'username.required' => 'Username wajib diisi.',
+        'username.string' => 'Username harus berupa teks.',
+        'username.max' => 'Username maksimal 255 karakter.',
+        'username.unique' => 'Username sudah digunakan, silakan pilih yang lain.',
+
+        // Pesan untuk statusadmin_id
+        'statusadmin_id.required' => 'Silahkan Pilih Akun Anda !.',
+        'statusadmin_id.string' => 'Status admin harus berupa teks.',
+
+        // Pesan untuk nomor telepon
+        'phone_number.required' => 'Nomor telepon wajib diisi.',
+        'phone_number.string' => 'Nomor telepon harus berupa teks.',
+        'phone_number.max' => 'Nomor telepon maksimal 15 digit.',
+
+        // Pesan untuk email
+        'email.required' => 'Email wajib diisi.',
+        'email.email' => 'Format email tidak valid.',
+        'email.unique' => 'Email sudah terdaftar, silakan gunakan email lain.',
+
+        // Pesan untuk password
+        'password.required' => 'Password wajib diisi.',
+        'password.string' => 'Password harus berupa teks.',
+        'password.min' => 'Password minimal 8 karakter.',
+        'password.confirmed' => 'Konfirmasi password tidak sesuai.',
     ]);
 
-    // =====================================================
-    // 2. SIMPAN USER BARU (Langsung terverifikasi, TANPA token, TANPA mail)
-    // =====================================================
-    User::create([
-        'name'               => strtoupper($validated['name']),
-        'username'           => $validated['username'],
-        'statusadmin_id'     => $validated['statusadmin_id'],
-        'phone_number'       => $validated['phone_number'],
-        'avatar'             => 'default.jpg',
-        'email'              => $validated['email'],
-        'password'           => Hash::make($validated['password']),
-        'is_email_verified'  => 1,   // ✅ LANGSUNG TERVERIFIKASI
-        // 'verification_token' => ... DIHAPUS
-    ]);
+        // Buat user baru
+        $user = User::create([
+            'name' => $validated['name'],
+            'username' => $validated['username'],
+            'statusadmin_id' => $validated['statusadmin_id'],
+            'phone_number' => $validated['phone_number'],
+            'avatar' => 'default.jpg', // Default avatar, bisa diubah sesuai kebutuhan
+            'email' => $validated['email'],
+            'password' => Hash::make($validated['password']),
+            'verification_token' => Str::random(50),
+        ]);
 
-    // =====================================================
-    // 3. REDIRECT KE LOGIN
-    // =====================================================
-    return redirect('/login')->with('success', 'Akun berhasil dibuat, silakan login!');
-}
-    // public function registernew(Request $request)
-    // {
-    //     // Validasi input dari form
-    //     $validated = $request->validate([
-    //         'name' => 'required|string|max:255',
-    //         'username' => 'required|string|max:255|unique:users,username',
-    //         'statusadmin_id' => 'required|string',
-    //         'phone_number' => 'required|string|max:15',
-    //         'email' => 'required|email|unique:users,email',
-    //         'password' => 'required|string|min:8|confirmed',
-    //     ], [
-    //     // Pesan untuk field name
-    //     'name.required' => 'Nama lengkap wajib diisi.',
-    //     'name.string' => 'Nama lengkap harus berupa teks.',
-    //     'name.max' => 'Nama lengkap maksimal 255 karakter.',
+        Mail::to($user->email)->send(new VerifyEmail($user));
 
-    //     // Pesan untuk field username
-    //     'username.required' => 'Username wajib diisi.',
-    //     'username.string' => 'Username harus berupa teks.',
-    //     'username.max' => 'Username maksimal 255 karakter.',
-    //     'username.unique' => 'Username sudah digunakan, silakan pilih yang lain.',
-
-    //     // Pesan untuk statusadmin_id
-    //     'statusadmin_id.required' => 'Silahkan Pilih Akun Anda !.',
-    //     'statusadmin_id.string' => 'Status admin harus berupa teks.',
-
-    //     // Pesan untuk nomor telepon
-    //     'phone_number.required' => 'Nomor telepon wajib diisi.',
-    //     'phone_number.string' => 'Nomor telepon harus berupa teks.',
-    //     'phone_number.max' => 'Nomor telepon maksimal 15 digit.',
-
-    //     // Pesan untuk email
-    //     'email.required' => 'Email wajib diisi.',
-    //     'email.email' => 'Format email tidak valid.',
-    //     'email.unique' => 'Email sudah terdaftar, silakan gunakan email lain.',
-
-    //     // Pesan untuk password
-    //     'password.required' => 'Password wajib diisi.',
-    //     'password.string' => 'Password harus berupa teks.',
-    //     'password.min' => 'Password minimal 8 karakter.',
-    //     'password.confirmed' => 'Konfirmasi password tidak sesuai.',
-    // ]);
-
-    //     // Buat user baru
-    //     $user = User::create([
-    //         'name' => $validated['name'],
-    //         'username' => $validated['username'],
-    //         'statusadmin_id' => $validated['statusadmin_id'],
-    //         'phone_number' => $validated['phone_number'],
-    //         'avatar' => 'default.jpg', // Default avatar, bisa diubah sesuai kebutuhan
-    //         'email' => $validated['email'],
-    //         'password' => Hash::make($validated['password']),
-    //         'verification_token' => Str::random(50),
-    //     ]);
-
-    //     Mail::to($user->email)->send(new VerifyEmail($user));
-
-    //     // Redirect atau beri notifikasi
-    //     return redirect('/login')->with('success', 'Akun berhasil dibuat, silakan login!');
-    // }
+        // Redirect atau beri notifikasi
+        return redirect('/login')->with('success', 'Akun berhasil dibuat, silakan login!');
+    }
 
 
     public function authenticate(Request $request)
