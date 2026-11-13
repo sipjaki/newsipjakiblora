@@ -546,7 +546,7 @@
 .confirm-btn-no:hover { background: #e2e8f0; }
 
 /* ==========================================
-   MODAL REKAP K.01 (PENYELENGGARAAN)
+   MODAL REKAP K.01
    ========================================== */
 #modalRekapData .modal-dialog { max-width: 95%; width: 95%; }
 #modalRekapData .modal-content {
@@ -607,7 +607,7 @@
 
                         @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
-                        {{-- ═══ CHART ROW (DI ATAS) ═══ --}}
+                        {{-- CHART ROW --}}
                         <div class="chart-row-wrapper">
                             <div class="chart-box-tahunan">
                                 <div class="chart-box-title">
@@ -637,7 +637,7 @@
                             </div>
                         </div>
 
-                        {{-- ═══ SEARCH BAR (DI TENGAH, BAWAH CHART) ═══ --}}
+                        {{-- SEARCH BAR --}}
                         <form method="GET" action="/betertibjakonpenyelenggaraan" id="filterForm">
                         <div class="search-bar-top">
 
@@ -713,7 +713,7 @@
 
                      </div>
 
-                     {{-- ═══ TABLE (DI BAWAH SEARCH BAR) ═══ --}}
+                     {{-- TABLE --}}
                      <div class="card-body p-0">
                         <div style="width: 100%; overflow-x: auto; padding: 0 8px;">
                             <table id="tabeltertibjakonpenyelenggaraan">
@@ -728,6 +728,19 @@
 
                               <tbody id="tabeltertibjakonpenyelenggaraansearc">
                                 @forelse ($data as $item)
+                                @php
+                                    // ============================================================
+                                    // ✅ FIX FINAL: Cek kolom berkasdukung1 s/d berkasdukung6
+                                    // (langsung di tabel INDUK, bukan relasi)
+                                    // ============================================================
+                                    $adaBerkas1 = !empty($item->berkasdukung1);
+                                    $adaBerkas2 = !empty($item->berkasdukung2);
+                                    $adaBerkas3 = !empty($item->berkasdukung3);
+                                    $adaBerkas4 = !empty($item->berkasdukung4);
+                                    $adaBerkas5 = !empty($item->berkasdukung5);
+                                    $adaBerkas6 = !empty($item->berkasdukung6);
+                                @endphp
+
                                 <tr class="item-row {{ $loop->index % 2 == 0 ? '' : 'zebra' }}">
 
                                     {{-- Hidden export data --}}
@@ -736,12 +749,12 @@
                                               data-sektor="{{ $item->penyediastatustertibjakon->penyedia ?? '-' }}"
                                               data-pekerjaan="{{ $item->namapekerjaan ?? '-' }}"
                                               data-kontrak="{{ $item->nomorkontrak ?? '-' }}"
-                                              data-pemilihan="{{ !empty($item->surattertibjakonpenyelenggaraan1) ? 'Berkas Ada' : 'Belum Upload' }}"
-                                              data-kontrak_kerja="{{ !empty($item->surattertibjakonpenyelenggaraan2) ? 'Berkas Ada' : 'Belum Upload' }}"
-                                              data-k3="{{ !empty($item->surattertibjakonpenyelenggaraan3) ? 'Berkas Ada' : 'Belum Upload' }}"
-                                              data-mutu="{{ !empty($item->surattertibjakonpenyelenggaraan4) ? 'Berkas Ada' : 'Belum Upload' }}"
-                                              data-material="{{ !empty($item->surattertibjakonpenyelenggaraan5) ? 'Berkas Ada' : 'Belum Upload' }}"
-                                              data-sumber="{{ !empty($item->surattertibjakonpenyelenggaraan6) ? 'Berkas Ada' : 'Belum Upload' }}"></span>
+                                              data-pemilihan="{{ $adaBerkas1 ? 'Berkas Ada' : 'Belum Upload' }}"
+                                              data-kontrak_kerja="{{ $adaBerkas2 ? 'Berkas Ada' : 'Belum Upload' }}"
+                                              data-k3="{{ $adaBerkas3 ? 'Berkas Ada' : 'Belum Upload' }}"
+                                              data-mutu="{{ $adaBerkas4 ? 'Berkas Ada' : 'Belum Upload' }}"
+                                              data-material="{{ $adaBerkas5 ? 'Berkas Ada' : 'Belum Upload' }}"
+                                              data-sumber="{{ $adaBerkas6 ? 'Berkas Ada' : 'Belum Upload' }}"></span>
                                     </td>
 
                                     <td>{{ $data->firstItem() + $loop->index }}</td>
@@ -750,7 +763,7 @@
                                         {{-- LAYOUT 2 KOLOM UTAMA --}}
                                         <div class="card-layout-main">
 
-                                            {{-- ═══ BOX 1: INFORMASI DATA (GRID 2 KOLOM) ═══ --}}
+                                            {{-- BOX 1: INFORMASI DATA --}}
                                             <div class="box-info">
                                                 <div class="box-title">
                                                     <i class="bi bi-info-circle-fill"></i>
@@ -780,7 +793,7 @@
                                                 </div>
                                             </div>
 
-                                            {{-- ═══ BOX 2: AKSI KEGIATAN (6 TAHAPAN) ═══ --}}
+                                            {{-- BOX 2: AKSI KEGIATAN --}}
                                             <div class="box-kegiatan">
                                                 <div class="box-title">
                                                     <i class="bi bi-clipboard-check-fill"></i>
@@ -795,9 +808,9 @@
                                                             <a href="/betertibjakonpenyelenggaraan1/{{$item->id}}" class="act-btn btn-solid">
                                                                 <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                                             </a>
-                                                            <a href="/beuploadberkaspenyelenggaraan1/{{$item->id}}" class="act-btn {{ !empty($item->surattertibjakonpenyelenggaraan1) ? 'btn-outline' : 'btn-upload' }}">
-                                                                <i class="bi {{ !empty($item->surattertibjakonpenyelenggaraan1) ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
-                                                                {{ !empty($item->surattertibjakonpenyelenggaraan1) ? 'Berkas Ada' : 'Upload' }}
+                                                            <a href="/beuploadberkaspenyelenggaraan1/{{$item->id}}" class="act-btn {{ $adaBerkas1 ? 'btn-outline' : 'btn-upload' }}">
+                                                                <i class="bi {{ $adaBerkas1 ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
+                                                                {{ $adaBerkas1 ? 'Berkas Ada' : 'Upload' }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -809,9 +822,9 @@
                                                             <a href="{{ url('/betertibjakonpenyelenggaraan2/' . $item->id) }}" class="act-btn btn-solid">
                                                                 <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                                             </a>
-                                                            <a href="/beuploadberkaspenyelenggaraan2/{{$item->id}}" class="act-btn {{ !empty($item->surattertibjakonpenyelenggaraan2) ? 'btn-outline' : 'btn-upload' }}">
-                                                                <i class="bi {{ !empty($item->surattertibjakonpenyelenggaraan2) ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
-                                                                {{ !empty($item->surattertibjakonpenyelenggaraan2) ? 'Berkas Ada' : 'Upload' }}
+                                                            <a href="/beuploadberkaspenyelenggaraan2/{{$item->id}}" class="act-btn {{ $adaBerkas2 ? 'btn-outline' : 'btn-upload' }}">
+                                                                <i class="bi {{ $adaBerkas2 ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
+                                                                {{ $adaBerkas2 ? 'Berkas Ada' : 'Upload' }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -823,9 +836,9 @@
                                                             <a href="{{ url('/betertibjakonpenyelenggaraan3/' . $item->id) }}" class="act-btn btn-solid">
                                                                 <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                                             </a>
-                                                            <a href="/beuploadberkaspenyelenggaraan3/{{$item->id}}" class="act-btn {{ !empty($item->surattertibjakonpenyelenggaraan3) ? 'btn-outline' : 'btn-upload' }}">
-                                                                <i class="bi {{ !empty($item->surattertibjakonpenyelenggaraan3) ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
-                                                                {{ !empty($item->surattertibjakonpenyelenggaraan3) ? 'Berkas Ada' : 'Upload' }}
+                                                            <a href="/beuploadberkaspenyelenggaraan3/{{$item->id}}" class="act-btn {{ $adaBerkas3 ? 'btn-outline' : 'btn-upload' }}">
+                                                                <i class="bi {{ $adaBerkas3 ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
+                                                                {{ $adaBerkas3 ? 'Berkas Ada' : 'Upload' }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -837,9 +850,9 @@
                                                             <a href="{{ url('/betertibjakonpenyelenggaraan4/' . $item->id) }}" class="act-btn btn-solid">
                                                                 <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                                             </a>
-                                                            <a href="/beuploadberkaspenyelenggaraan4/{{$item->id}}" class="act-btn {{ !empty($item->surattertibjakonpenyelenggaraan4) ? 'btn-outline' : 'btn-upload' }}">
-                                                                <i class="bi {{ !empty($item->surattertibjakonpenyelenggaraan4) ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
-                                                                {{ !empty($item->surattertibjakonpenyelenggaraan4) ? 'Berkas Ada' : 'Upload' }}
+                                                            <a href="/beuploadberkaspenyelenggaraan4/{{$item->id}}" class="act-btn {{ $adaBerkas4 ? 'btn-outline' : 'btn-upload' }}">
+                                                                <i class="bi {{ $adaBerkas4 ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
+                                                                {{ $adaBerkas4 ? 'Berkas Ada' : 'Upload' }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -851,9 +864,9 @@
                                                             <a href="{{ url('/betertibjakonpenyelenggaraan5/' . $item->id) }}" class="act-btn btn-solid">
                                                                 <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                                             </a>
-                                                            <a href="/beuploadberkaspenyelenggaraan5/{{$item->id}}" class="act-btn {{ !empty($item->surattertibjakonpenyelenggaraan5) ? 'btn-outline' : 'btn-upload' }}">
-                                                                <i class="bi {{ !empty($item->surattertibjakonpenyelenggaraan5) ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
-                                                                {{ !empty($item->surattertibjakonpenyelenggaraan5) ? 'Berkas Ada' : 'Upload' }}
+                                                            <a href="/beuploadberkaspenyelenggaraan5/{{$item->id}}" class="act-btn {{ $adaBerkas5 ? 'btn-outline' : 'btn-upload' }}">
+                                                                <i class="bi {{ $adaBerkas5 ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
+                                                                {{ $adaBerkas5 ? 'Berkas Ada' : 'Upload' }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -865,9 +878,9 @@
                                                             <a href="{{ url('/betertibjakonpenyelenggaraan6/' . $item->id) }}" class="act-btn btn-solid">
                                                                 <i class="bi bi-file-earmark-text"></i> Lihat Surat
                                                             </a>
-                                                            <a href="/beuploadberkaspenyelenggaraan6/{{$item->id}}" class="act-btn {{ !empty($item->surattertibjakonpenyelenggaraan6) ? 'btn-outline' : 'btn-upload' }}">
-                                                                <i class="bi {{ !empty($item->surattertibjakonpenyelenggaraan6) ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
-                                                                {{ !empty($item->surattertibjakonpenyelenggaraan6) ? 'Berkas Ada' : 'Upload' }}
+                                                            <a href="/beuploadberkaspenyelenggaraan6/{{$item->id}}" class="act-btn {{ $adaBerkas6 ? 'btn-outline' : 'btn-upload' }}">
+                                                                <i class="bi {{ $adaBerkas6 ? 'bi-check-circle-fill' : 'bi-cloud-upload' }}"></i>
+                                                                {{ $adaBerkas6 ? 'Berkas Ada' : 'Upload' }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -876,7 +889,7 @@
 
                                         </div>
 
-                                        {{-- ═══ BARIS BAWAH: EDIT & HAPUS ═══ --}}
+                                        {{-- BARIS BAWAH: EDIT & HAPUS --}}
                                         <div class="card-bottom-actions">
                                             <button type="button" class="button-berkas edit-trigger"
                                                     data-item="{{ json_encode($item) }}">
@@ -904,7 +917,7 @@
                             </table>
                           </div>
 
-                     {{-- PAGINATION (CUKUP 1 SAJA) --}}
+                     {{-- PAGINATION --}}
                      <div id="paginationWrapper">
                         @include('backend.00_administrator.00_baganterpisah.07_paginations')
                      </div>
@@ -977,13 +990,10 @@
     </div>
 </div>
 
-{{-- ═══════════════════════════════════════════════════════════════ --}}
-{{-- MODAL REKAP DATA (FORMAT K.01) --}}
-{{-- ═══════════════════════════════════════════════════════════════ --}}
+{{-- MODAL REKAP DATA --}}
 <div class="modal fade" id="modalRekapData" tabindex="-1" aria-labelledby="modalRekapDataLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 95%; width: 95%;">
         <div class="modal-content">
-
             <div class="modal-header">
                 <h5 class="modal-title" id="modalRekapDataLabel">
                     <i class="bi bi-file-earmark-bar-graph" style="color: #3b82f6; font-size: 20px;"></i>
@@ -991,13 +1001,8 @@
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
             <div class="modal-body">
-
-                {{-- FILTER TAMPILAN DATA & TAHUN --}}
                 <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-
-                    {{-- Filter Tampilkan --}}
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <label for="filterEntriesRekap" style="font-weight: 700; color: #334155; margin: 0; font-size: 13px;">
                             <i class="bi bi-list-ol"></i> Tampilkan:
@@ -1010,8 +1015,6 @@
                             <option value="100">100 Data</option>
                         </select>
                     </div>
-
-                    {{-- Filter Tahun --}}
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <label for="filterTahunRekap" style="font-weight: 700; color: #334155; margin: 0; font-size: 13px;">
                             <i class="bi bi-calendar-event"></i> Tahun Pelaksanaan:
@@ -1025,12 +1028,9 @@
                             @endif
                         </select>
                     </div>
-
                 </div>
 
-                {{-- KERTAS DOKUMEN REKAP FORMAT K.01 --}}
                 <div id="printAreaRekap" style="background: #ffffff; padding: 30px; border: 1px solid #cbd5e1; border-radius: 8px; overflow-x: auto;">
-
                     <div style="text-align: center; margin-bottom: 20px;">
                         <h4 style="font-weight: 900; margin: 0; color: #b45309;">FORMAT K.01</h4>
                         <h5 style="font-weight: 800; margin: 5px 0 0 0; color: #0f172a;">REKAPITULASI PENGAWASAN TERTIB PENYELENGGARAAN JASA KONSTRUKSI TAHUNAN</h5>
@@ -1043,7 +1043,6 @@
                                 <th rowspan="3" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Nama Pekerjaan</th>
                                 <th rowspan="3" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Nomor Kontrak</th>
                                 <th rowspan="3" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center; vertical-align: middle;">Penyedia Jasa</th>
-
                                 <th colspan="6" style="border: 1px solid #000; padding: 8px; background: #f8fafc; text-align: center;">Aspek Pengawasan Penyelenggaraan</th>
                             </tr>
                             <tr>
@@ -1071,10 +1070,8 @@
                             <p style="color: #334155; font-size: 12px;">NIP. 19810728 201001 1 014</p>
                         </div>
                     </div>
-
                 </div>
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="button-modern button-md" data-bs-dismiss="modal">
                     <i class="bi bi-x"></i> Tutup
@@ -1086,14 +1083,11 @@
                     <i class="bi bi-printer"></i> Cetak / Print
                 </button>
             </div>
-
         </div>
     </div>
 </div>
 
-{{-- ============================================================ --}}
-{{-- MODAL CREATE PENYELENGGARAAN --}}
-{{-- ============================================================ --}}
+{{-- MODAL CREATE --}}
 <div class="modal fade" id="createTertibJakonModal" tabindex="-1" aria-labelledby="createTertibJakonModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 75%; width: 75%;">
         <div class="modal-content">
@@ -1220,9 +1214,7 @@
     </div>
 </div>
 
-{{-- ============================================================ --}}
 {{-- MODAL EDIT --}}
-{{-- ============================================================ --}}
 <div class="modal fade" id="editTertibJakonModal" tabindex="-1" aria-labelledby="editTertibJakonModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 75%; width: 75%;">
         <div class="modal-content">
@@ -1323,9 +1315,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
 
-{{-- ═══════════════════════════════════════════════════════════ --}}
 {{-- SCRIPT REKAP DATA --}}
-{{-- ═══════════════════════════════════════════════════════════ --}}
 <script id="data-rekap-json" type="application/json">
     {!! json_encode($allDataRekap ?? $data->items()) !!}
 </script>
@@ -1353,10 +1343,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const tahun = filterTahun.value;
         const limit = filterEntries.value;
-
         let filtered = allDataRekap;
 
-        // Filter tahun (pakai created_at karena tidak ada kolom tahun)
         if (tahun) {
             filtered = filtered.filter(item => {
                 if (!item.created_at) return false;
@@ -1375,7 +1363,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let html = '';
         filtered.forEach((item, index) => {
-            // Mengambil status dari kolom langsung di database (jika ada isinya)
             const getStatus = (val) => {
                 if (!val) return '-';
                 const norm = String(val).toLowerCase().trim();
@@ -1441,7 +1428,6 @@ function downloadRekapExcel() {
 }
 </script>
 
-{{-- EXPORT EXCEL UTAMA --}}
 <script>
 function exportSelectedColumnsToExcel(originalTableId, filename = 'data-terpilih') {
     const originalTable = document.getElementById(originalTableId);
@@ -1461,16 +1447,11 @@ function exportSelectedColumnsToExcel(originalTableId, filename = 'data-terpilih
 }
 </script>
 
-{{-- COMBO CHART: BAR + LINE TAHUNAN --}}
 <script>
 (function () {
     'use strict';
     let barChartTahunan = null;
-
-    function destroyBarChart() {
-        if (barChartTahunan) { barChartTahunan.destroy(); barChartTahunan = null; }
-    }
-
+    function destroyBarChart() { if (barChartTahunan) { barChartTahunan.destroy(); barChartTahunan = null; } }
     function renderLegendTahunan(labels, values, percents) {
         const wrap = document.getElementById('chartTahunanLegend');
         if (!wrap) return;
@@ -1492,7 +1473,6 @@ function exportSelectedColumnsToExcel(originalTableId, filename = 'data-terpilih
         });
         wrap.innerHTML = html;
     }
-
     function buildComboData(labels, values, percents) {
         const colors = values.map(function (v, i) {
             const pct = parseFloat(percents[i] || 0);
@@ -1503,92 +1483,41 @@ function exportSelectedColumnsToExcel(originalTableId, filename = 'data-terpilih
         return {
             labels: labels,
             datasets: [
-                {
-                    type: 'bar', label: 'Jumlah Data', data: values,
-                    backgroundColor: colors,
-                    borderColor: colors.map(c => c.replace('0.75', '1').replace('0.6', '1')),
-                    borderWidth: 1.5, borderRadius: 8, borderSkipped: false,
-                    barThickness: 'flex', maxBarThickness: 60, order: 2,
-                },
-                {
-                    type: 'line', label: 'Tren', data: values,
-                    borderColor: '#0f8f3a', backgroundColor: 'rgba(19, 168, 71, 0.1)',
-                    borderWidth: 3, fill: false, tension: 0.35,
-                    pointBackgroundColor: '#13A847', pointBorderColor: '#fff',
-                    pointBorderWidth: 2, pointRadius: 6, pointHoverRadius: 9,
-                    pointHoverBackgroundColor: '#fff', pointHoverBorderColor: '#13A847',
-                    pointHoverBorderWidth: 3, order: 1,
-                }
+                { type: 'bar', label: 'Jumlah Data', data: values, backgroundColor: colors, borderColor: colors.map(c => c.replace('0.75', '1').replace('0.6', '1')), borderWidth: 1.5, borderRadius: 8, borderSkipped: false, barThickness: 'flex', maxBarThickness: 60, order: 2 },
+                { type: 'line', label: 'Tren', data: values, borderColor: '#0f8f3a', backgroundColor: 'rgba(19, 168, 71, 0.1)', borderWidth: 3, fill: false, tension: 0.35, pointBackgroundColor: '#13A847', pointBorderColor: '#fff', pointBorderWidth: 2, pointRadius: 6, pointHoverRadius: 9, pointHoverBackgroundColor: '#fff', pointHoverBorderColor: '#13A847', pointHoverBorderWidth: 3, order: 1 }
             ]
         };
     }
-
     function renderBarChart(labels, values, percents) {
         if (typeof Chart === 'undefined') return;
         destroyBarChart();
         const ctx = document.getElementById('barChartTahunan');
         if (!ctx) return;
         const data = buildComboData(labels, values, percents);
-
         barChartTahunan = new Chart(ctx, {
             type: 'bar', data: data,
             options: {
-                responsive: true, maintainAspectRatio: false,
-                animation: { duration: 700, easing: 'easeOutQuart' },
-                interaction: { mode: 'index', intersect: false },
+                responsive: true, maintainAspectRatio: false, animation: { duration: 700, easing: 'easeOutQuart' }, interaction: { mode: 'index', intersect: false },
                 plugins: {
                     legend: { display: false },
-                    tooltip: {
-                        backgroundColor: 'rgba(15, 23, 42, 0.92)',
-                        titleFont: { size: 12, family: 'Poppins', weight: '700' },
-                        bodyFont: { size: 11, family: 'Poppins' },
-                        padding: 12, cornerRadius: 8,
-                        callbacks: {
-                            title: function (items) { return 'Tahun ' + items[0].label; },
-                            label: function (c) {
-                                if (c.datasetIndex !== 0) return null;
-                                const pct = parseFloat(percents[c.dataIndex] || 0);
-                                let pctText = '';
-                                if (pct > 0) pctText = ' (+' + pct + '%)';
-                                else if (pct < 0) pctText = ' (' + pct + '%)';
-                                else pctText = ' (0%)';
-                                return '  Total: ' + c.parsed.y + ' data' + pctText;
-                            }
-                        }
-                    }
+                    tooltip: { backgroundColor: 'rgba(15, 23, 42, 0.92)', titleFont: { size: 12, family: 'Poppins', weight: '700' }, bodyFont: { size: 11, family: 'Poppins' }, padding: 12, cornerRadius: 8, callbacks: { title: function (items) { return 'Tahun ' + items[0].label; }, label: function (c) { if (c.datasetIndex !== 0) return null; const pct = parseFloat(percents[c.dataIndex] || 0); let pctText = pct > 0 ? ' (+' + pct + '%)' : pct < 0 ? ' (' + pct + '%)' : ' (0%)'; return '  Total: ' + c.parsed.y + ' data' + pctText; } } }
                 },
-                scales: {
-                    x: { grid: { display: false }, ticks: { font: { size: 11, family: 'Poppins', weight: '700' }, color: '#334155' } },
-                    y: {
-                        beginAtZero: true,
-                        ticks: { stepSize: 1, font: { size: 10, family: 'Poppins' }, color: '#64748b', padding: 8 },
-                        grid: { color: 'rgba(203, 213, 225, 0.5)', drawBorder: false },
-                        border: { display: false }
-                    }
-                }
+                scales: { x: { grid: { display: false }, ticks: { font: { size: 11, family: 'Poppins', weight: '700' }, color: '#334155' } }, y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 10, family: 'Poppins' }, color: '#64748b', padding: 8 }, grid: { color: 'rgba(203, 213, 225, 0.5)', drawBorder: false }, border: { display: false } } }
             }
         });
         renderLegendTahunan(labels, values, percents);
     }
-
     window.renderBarChartTahunan = renderBarChart;
     window.destroyBarChartTahunan = destroyBarChart;
-
     document.addEventListener('DOMContentLoaded', function () {
-        renderBarChart(
-            @json($tahunanLabels ?? []),
-            @json($tahunanValues ?? []),
-            @json($tahunanPercents ?? [])
-        );
+        renderBarChart(@json($tahunanLabels ?? []), @json($tahunanValues ?? []), @json($tahunanPercents ?? []));
     });
 })();
 </script>
 
-{{-- LIVE SEARCH + FILTER + PAGINATION --}}
 <script>
 (function () {
     'use strict';
-
     const searchInput  = document.getElementById('searchInput');
     const tahunSelect  = document.getElementById('tahunSelect');
     const sektorSelect = document.getElementById('sektorSelect');
@@ -1598,14 +1527,12 @@ function exportSelectedColumnsToExcel(originalTableId, filename = 'data-terpilih
 
     if (!tbody) return;
     let debounceTimer = null;
-
     function buildFilterUrl() {
         const url = new URL(window.location.origin + '/betertibjakonpenyelenggaraan');
         const search  = searchInput  ? searchInput.value.trim() : '';
         const tahun   = tahunSelect  ? tahunSelect.value        : '';
         const sektor  = sektorSelect ? sektorSelect.value       : '';
         const perPage = perPageSel   ? perPageSel.value         : 10;
-
         if (search)   url.searchParams.set('search', search);
         if (tahun)    url.searchParams.set('tahun', tahun);
         if (sektor)   url.searchParams.set('sektor', sektor);
@@ -1613,240 +1540,94 @@ function exportSelectedColumnsToExcel(originalTableId, filename = 'data-terpilih
         url.searchParams.delete('page');
         return url.toString();
     }
-
     function fetchData(url) {
         const fetchUrl = url || buildFilterUrl();
         tbody.style.opacity = '0.5';
         tbody.style.transition = 'opacity 0.15s ease';
-
-        fetch(fetchUrl, {
-            headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' }
-        })
+        fetch(fetchUrl, { headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' } })
         .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
         .then(data => {
             if (data.rows !== undefined) tbody.innerHTML = data.rows;
             if (data.pagination && paginationW) paginationW.innerHTML = data.pagination;
-
-            if (data.statistik && sektorSelect) {
-                Array.from(sektorSelect.options).forEach(function (opt) {
-                    if (opt.value && data.statistik[opt.value]) {
-                        opt.textContent = data.statistik[opt.value].penyedia + ' (' + data.statistik[opt.value].total + ')';
-                    }
-                });
-            }
-
-            if (window.renderRadarCharts && data.chartLabels) {
-                window.renderRadarCharts(data.chartLabels, data.chartValues);
-            }
-
-            if (data.grandTotal !== undefined) {
-                const gtm = document.getElementById('grandTotalModal');
-                if (gtm) gtm.textContent = data.grandTotal;
-            }
-
-            if (window.renderBarChartTahunan && data.tahunanLabels) {
-                window.renderBarChartTahunan(data.tahunanLabels, data.tahunanValues, data.tahunanPercents);
-            }
-
+            if (data.statistik && sektorSelect) { Array.from(sektorSelect.options).forEach(function (opt) { if (opt.value && data.statistik[opt.value]) { opt.textContent = data.statistik[opt.value].penyedia + ' (' + data.statistik[opt.value].total + ')'; } }); }
+            if (window.renderRadarCharts && data.chartLabels) window.renderRadarCharts(data.chartLabels, data.chartValues);
+            if (data.grandTotal !== undefined) { const gtm = document.getElementById('grandTotalModal'); if (gtm) gtm.textContent = data.grandTotal; }
+            if (window.renderBarChartTahunan && data.tahunanLabels) window.renderBarChartTahunan(data.tahunanLabels, data.tahunanValues, data.tahunanPercents);
             tbody.style.opacity = '1';
             window.history.replaceState({}, '', fetchUrl);
         })
-        .catch(err => {
-            console.error('Fetch error:', err);
-            tbody.style.opacity = '1';
-        });
+        .catch(err => { console.error('Fetch error:', err); tbody.style.opacity = '1'; });
     }
-
-    if (searchInput) {
-        searchInput.addEventListener('input', function () {
-            clearTimeout(debounceTimer);
-            debounceTimer = setTimeout(function () { fetchData(null); }, 400);
-        });
-        searchInput.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') { e.preventDefault(); clearTimeout(debounceTimer); fetchData(null); }
-        });
-    }
-
+    if (searchInput) { searchInput.addEventListener('input', function () { clearTimeout(debounceTimer); debounceTimer = setTimeout(function () { fetchData(null); }, 400); }); searchInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); clearTimeout(debounceTimer); fetchData(null); } }); }
     if (tahunSelect)  tahunSelect.addEventListener('change',  function () { clearTimeout(debounceTimer); fetchData(null); });
     if (sektorSelect) sektorSelect.addEventListener('change', function () { clearTimeout(debounceTimer); fetchData(null); });
     if (perPageSel)   perPageSel.addEventListener('change',   function () { clearTimeout(debounceTimer); fetchData(null); });
-
-    document.addEventListener('click', function (e) {
-        const link = e.target.closest('#paginationWrapper .pagination a, .pagination a');
-        if (!link) return;
-        e.preventDefault();
-        fetchData(link.href);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    window.addEventListener('popstate', function () {
-        fetchData(window.location.href);
-    });
+    document.addEventListener('click', function (e) { const link = e.target.closest('#paginationWrapper .pagination a, .pagination a'); if (!link) return; e.preventDefault(); fetchData(link.href); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    window.addEventListener('popstate', function () { fetchData(window.location.href); });
 })();
 </script>
 
-{{-- CHART MANAGER (RADAR) --}}
 <script>
 (function() {
     'use strict';
     let chartMini = null;
     let chartFull = null;
     const PALETTE = ['#16A34A', '#4ADE80', '#15803D', '#14532D', '#22C55E', '#86EFAC', '#166534', '#BBF7D0'];
-
-    function destroyCharts() {
-        if (chartMini) { chartMini.destroy(); chartMini = null; }
-        if (chartFull) { chartFull.destroy(); chartFull = null; }
-    }
-
+    function destroyCharts() { if (chartMini) { chartMini.destroy(); chartMini = null; } if (chartFull) { chartFull.destroy(); chartFull = null; } }
     function renderLegend(labels, values) {
         const wrap = document.getElementById('radarLegend');
         if (!wrap) return;
-        if (!labels || labels.length === 0) {
-            wrap.innerHTML = '<div class="radar-legend-item-new"><span class="label">Tidak ada data</span></div>';
-            return;
-        }
+        if (!labels || labels.length === 0) { wrap.innerHTML = '<div class="radar-legend-item-new"><span class="label">Tidak ada data</span></div>'; return; }
         let html = '';
-        labels.forEach(function (label, i) {
-            const color = PALETTE[i % PALETTE.length];
-            html += '<div class="radar-legend-item-new" style="border-left:4px solid ' + color + ';">'
-                 + '<span class="label">' + label + '</span>'
-                 + '<span class="value">' + values[i] + '</span></div>';
-        });
+        labels.forEach(function (label, i) { const color = PALETTE[i % PALETTE.length]; html += '<div class="radar-legend-item-new" style="border-left:4px solid ' + color + ';"><span class="label">' + label + '</span><span class="value">' + values[i] + '</span></div>'; });
         const total = values.reduce((a, b) => a + (parseInt(b) || 0), 0);
-        html += '<div class="radar-legend-item-new" style="border-left:4px solid #13A847; background:#f0fdf4;">'
-             + '<span class="label">Total</span>'
-             + '<span class="value" id="grandTotalValue">' + total + '</span></div>';
+        html += '<div class="radar-legend-item-new" style="border-left:4px solid #13A847; background:#f0fdf4;"><span class="label">Total</span><span class="value" id="grandTotalValue">' + total + '</span></div>';
         wrap.innerHTML = html;
     }
-
     function buildChartData(labels, values) {
-        let safeLabels = labels.slice();
-        let safeValues = values.slice();
+        let safeLabels = labels.slice(), safeValues = values.slice();
         while (safeLabels.length < 3) { safeLabels.push(' '); safeValues.push(0); }
-        return {
-            labels: safeLabels,
-            datasets: [{
-                label: 'Jumlah Penyedia',
-                data: safeValues,
-                backgroundColor: 'rgba(22, 163, 74, 0.20)',
-                borderColor: 'rgba(22, 163, 74, 1)',
-                borderWidth: 2,
-                pointBackgroundColor: 'rgba(22, 163, 74, 1)',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 2,
-                pointRadius: 4,
-                pointHoverRadius: 6,
-            }]
-        };
+        return { labels: safeLabels, datasets: [{ label: 'Jumlah Penyedia', data: safeValues, backgroundColor: 'rgba(22, 163, 74, 0.20)', borderColor: 'rgba(22, 163, 74, 1)', borderWidth: 2, pointBackgroundColor: 'rgba(22, 163, 74, 1)', pointBorderColor: '#fff', pointBorderWidth: 2, pointRadius: 4, pointHoverRadius: 6 }] };
     }
-
     function renderCharts(labels, values) {
         if (typeof Chart === 'undefined') return;
         destroyCharts();
         const data = buildChartData(labels, values);
         const maxValue = Math.max(...values, 1);
-
         const miniCtx = document.getElementById('radarChartMini');
-        if (miniCtx) {
-            chartMini = new Chart(miniCtx, {
-                type: 'radar', data: data,
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: { r: {
-                        beginAtZero: true,
-                        grid: { color: 'rgba(22, 163, 74, 0.15)' },
-                        angleLines: { color: 'rgba(22, 163, 74, 0.20)' },
-                        ticks: { display: false },
-                        pointLabels: { color: '#1A2B4A', font: { size: 11, weight: '700' } }
-                    }}
-                }
-            });
-        }
-
+        if (miniCtx) { chartMini = new Chart(miniCtx, { type: 'radar', data: data, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { r: { beginAtZero: true, grid: { color: 'rgba(22, 163, 74, 0.15)' }, angleLines: { color: 'rgba(22, 163, 74, 0.20)' }, ticks: { display: false }, pointLabels: { color: '#1A2B4A', font: { size: 11, weight: '700' } } } } } }); }
         const fullCtx = document.getElementById('radarChartFull');
-        if (fullCtx) {
-            chartFull = new Chart(fullCtx, {
-                type: 'radar', data: data,
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { callbacks: { label: c => c.label.trim() + ': ' + c.parsed.r + ' penyedia' } }
-                    },
-                    scales: { r: {
-                        beginAtZero: true,
-                        ticks: { stepSize: Math.ceil(maxValue / 5) || 1, backdropColor: 'transparent', color: '#6B7A93', font: { size: 10 } },
-                        grid: { color: 'rgba(22, 163, 74, 0.15)' },
-                        angleLines: { color: 'rgba(22, 163, 74, 0.20)' },
-                        pointLabels: { color: '#1A2B4A', font: { size: 13, weight: '600' } }
-                    }}
-                }
-            });
-        }
+        if (fullCtx) { chartFull = new Chart(fullCtx, { type: 'radar', data: data, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => c.label.trim() + ': ' + c.parsed.r + ' penyedia' } } }, scales: { r: { beginAtZero: true, ticks: { stepSize: Math.ceil(maxValue / 5) || 1, backdropColor: 'transparent', color: '#6B7A93', font: { size: 10 } }, grid: { color: 'rgba(22, 163, 74, 0.15)' }, angleLines: { color: 'rgba(22, 163, 74, 0.20)' }, pointLabels: { color: '#1A2B4A', font: { size: 13, weight: '600' } } } } } }); }
         renderLegend(labels, values);
     }
-
     window.renderRadarCharts = renderCharts;
     window.destroyRadarCharts = destroyCharts;
-
-    document.addEventListener('DOMContentLoaded', function () {
-        renderCharts(@json($chartLabels ?? []), @json($chartValues ?? []));
-    });
+    document.addEventListener('DOMContentLoaded', function () { renderCharts(@json($chartLabels ?? []), @json($chartValues ?? [])); });
 })();
 </script>
 
-{{-- SCRIPT MODAL CREATE & EDIT --}}
 <script>
-// --- CREATE ---
-function openConfirmCreateModal() {
-    document.getElementById('confirmCreateModal').style.display = 'flex';
-}
-function closeConfirmCreateModal() {
-    document.getElementById('confirmCreateModal').style.display = 'none';
-}
-function submitCreateForm() {
-    closeConfirmCreateModal();
-    document.getElementById('formCreateTertibJakon').submit();
-}
-
-// --- EDIT ---
-function openConfirmEditModal() {
-    document.getElementById('confirmEditModal').style.display = 'flex';
-}
-function closeConfirmEditModal() {
-    document.getElementById('confirmEditModal').style.display = 'none';
-}
-function submitEditForm() {
-    closeConfirmEditModal();
-    document.getElementById('formEditTertibJakon').submit();
-}
+function openConfirmCreateModal() { document.getElementById('confirmCreateModal').style.display = 'flex'; }
+function closeConfirmCreateModal() { document.getElementById('confirmCreateModal').style.display = 'none'; }
+function submitCreateForm() { closeConfirmCreateModal(); document.getElementById('formCreateTertibJakon').submit(); }
+function openConfirmEditModal() { document.getElementById('confirmEditModal').style.display = 'flex'; }
+function closeConfirmEditModal() { document.getElementById('confirmEditModal').style.display = 'none'; }
+function submitEditForm() { closeConfirmEditModal(); document.getElementById('formEditTertibJakon').submit(); }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Event listener untuk tombol edit
     document.addEventListener('click', function(e) {
         const btn = e.target.closest('.edit-trigger');
         if (!btn) return;
-
         e.preventDefault();
-
-        // 2. Ambil data JSON dari tombol
         const itemData = btn.getAttribute('data-item');
         if (!itemData) return;
-
         const item = JSON.parse(itemData);
-
-        // 3. Isi form modal dengan data
         document.getElementById('edit_penyediastatustertibjakon_id').value = item.penyediastatustertibjakon_id || '';
         document.getElementById('edit_namapekerjaan').value = item.namapekerjaan || '';
         document.getElementById('edit_kegiatankonstruksi').value = item.kegiatankonstruksi || '';
         document.getElementById('edit_nomorkontrak').value = item.nomorkontrak || '';
         document.getElementById('edit_bujk').value = item.bujk || '';
-
-        // 4. Set action URL untuk form update
         document.getElementById('formEditTertibJakon').action = "/betertibjakonpenyelenggaraan/updatecreate/" + item.id;
-
-        // 5. Tampilkan modal
         const modalEl = document.getElementById('editTertibJakonModal');
         if (modalEl && typeof bootstrap !== 'undefined') {
             const modal = new bootstrap.Modal(modalEl);
@@ -1854,7 +1635,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // 6. Handle hapus
     document.addEventListener('click', function (e) {
         const btn = e.target.closest('.delete-trigger');
         if (!btn) return;
@@ -1869,7 +1649,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (deleteModal) new bootstrap.Modal(deleteModal).show();
     });
 
-    // 7. Handle Error di Create (jika validasi gagal)
     const hasError = {{ $errors->any() ? 'true' : 'false' }};
     if (hasError) {
         const modalEl = document.getElementById('createTertibJakonModal');
