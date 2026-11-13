@@ -16,7 +16,7 @@
 
     <style>
         /* ============================================================
-           VARIABEL – HIJAU KHAS BLORA
+           VARIABEL – HIJAU KHAS BLORA + SILVER
            ============================================================ */
         :root {
             --blora-green:        #16A34A;
@@ -32,8 +32,15 @@
             --white:        #FFFFFF;
             --bg-page:      #F1F4F9;
             --bg-soft:      #F8FAFC;
-            --border:       #E9EDF4;
-            --border-hover: #D0D8E3;
+
+            /* === SILVER PALETTE === */
+            --silver-100:   #F5F7FA;
+            --silver-200:   #E8ECF1;
+            --silver-300:   #D5DBE3;
+            --silver-400:   #B8C0CC;
+            --silver-500:   #A0AAB8;
+            --silver-600:   #8892A0;
+            --silver-hover: #C5CCD6;
 
             --text-dark:    #1A2B4A;
             --text-medium:  #4A5A72;
@@ -44,16 +51,101 @@
             --danger-mid:   #FECACA;
         }
 
-        * {
-            font-family: 'Poppins', sans-serif;
+        /* ============================================================
+           GLOBAL FONT – PAKSA SEMUA PAKAI POPPINS
+           ============================================================ */
+        *,
+        *::before,
+        *::after {
+            font-family: 'Poppins', sans-serif !important;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html, body {
-            min-height: 100%;
+        html,
+        body,
+        div,
+        span,
+        p,
+        a,
+        h1, h2, h3, h4, h5, h6,
+        label,
+        strong,
+        small,
+        ul, ol, li,
+        form,
+        fieldset,
+        legend,
+        button,
+        input,
+        select,
+        textarea,
+        optgroup,
+        option {
+            font-family: 'Poppins', sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
+        button,
+        input[type="button"],
+        input[type="submit"],
+        input[type="reset"],
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="search"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        textarea {
+            font-family: 'Poppins', sans-serif !important;
+            font-size: inherit;
+            line-height: inherit;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        select option,
+        select optgroup,
+        datalist option {
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+        }
+
+        /* ============================================================
+           KEMBALIKAN FONT FONTAWESOME (WAJIB)
+           ============================================================ */
+        .fa,
+        .fas,
+        .far,
+        .fal,
+        .fab,
+        .fa-solid,
+        .fa-regular,
+        .fa-brands,
+        .fa::before,
+        .fas::before,
+        .far::before,
+        .fal::before,
+        .fab::before,
+        .fa-solid::before,
+        .fa-regular::before,
+        .fa-brands::before,
+        [class^="fa-"],
+        [class*=" fa-"] {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+            font-weight: 900;
+        }
+
+        /* ============================================================
+           BODY
+           ============================================================ */
+        html, body { min-height: 100%; }
 
         body {
             background: linear-gradient(135deg, #F1F9F3 0%, #E8F5EC 50%, #F0FDF4 100%);
@@ -89,11 +181,7 @@
             -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
         }
 
-        .bg-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(2px);
-        }
+        .bg-blob { position: absolute; border-radius: 50%; filter: blur(2px); }
         .bg-blob-1 {
             width: 500px; height: 500px;
             top: -220px; right: -180px;
@@ -120,17 +208,20 @@
         }
 
         /* ============================================================
-           REGISTER CARD
+           REGISTER CARD – BORDER SILVER TEBAL
            ============================================================ */
         .register-card {
             background: #FFFFFF;
-            border: 1px solid var(--border);
+            border: 2px solid var(--silver-300);
             border-radius: 20px;
             padding: 32px 32px 28px 32px;
-            box-shadow: 0 20px 60px rgba(22, 163, 74, 0.08);
+            box-shadow:
+                0 20px 60px rgba(22, 163, 74, 0.08),
+                0 0 0 4px rgba(213, 219, 227, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
             position: relative;
             overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
         .register-card::before {
@@ -146,6 +237,7 @@
                 var(--blora-green-deep)   100%);
             background-size: 100% 200%;
             animation: sidebarAccent 6s ease-in-out infinite;
+            z-index: 1;
         }
 
         @keyframes sidebarAccent {
@@ -155,7 +247,10 @@
 
         .register-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 24px 72px rgba(22, 163, 74, 0.12);
+            border-color: var(--silver-400);
+            box-shadow:
+                0 24px 72px rgba(22, 163, 74, 0.12),
+                0 0 0 4px rgba(184, 192, 204, 0.40);
         }
 
         /* --- Header --- */
@@ -163,7 +258,7 @@
             text-align: center;
             margin-bottom: 26px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #F0F0F0;
+            border-bottom: 2px solid var(--silver-200);
         }
 
         .logo-section {
@@ -200,11 +295,11 @@
         }
 
         /* ============================================================
-           ALERT GLOBAL
+           ALERT
            ============================================================ */
         .alert-register {
             background: var(--danger-soft);
-            border: 1px solid var(--danger-mid);
+            border: 2px solid var(--danger-mid);
             border-left: 4px solid var(--danger);
             color: #991B1B;
             padding: 12px 16px;
@@ -224,14 +319,8 @@
             margin-top: 1px;
         }
 
-        .alert-register ul {
-            margin: 0;
-            padding-left: 18px;
-        }
-
-        .alert-register ul li {
-            margin-bottom: 2px;
-        }
+        .alert-register ul { margin: 0; padding-left: 18px; }
+        .alert-register ul li { margin-bottom: 2px; }
 
         @keyframes shakeAlert {
             0%, 100% { transform: translateX(0); }
@@ -241,7 +330,7 @@
 
         .alert-success {
             background: #F0FDF4;
-            border: 1px solid #BBF7D0;
+            border: 2px solid var(--silver-300);
             border-left: 4px solid var(--blora-green);
             color: #166534;
             padding: 12px 16px;
@@ -254,18 +343,12 @@
             gap: 10px;
         }
 
-        .alert-success i {
-            color: var(--blora-green);
-            font-size: 1rem;
-        }
+        .alert-success i { color: var(--blora-green); font-size: 1rem; }
 
         /* ============================================================
            FORM
            ============================================================ */
-        .form-group {
-            margin-bottom: 16px;
-            position: relative;
-        }
+        .form-group { margin-bottom: 16px; position: relative; }
 
         .form-label {
             display: block;
@@ -277,79 +360,84 @@
             margin-bottom: 5px;
         }
 
-        .input-wrapper {
-            position: relative;
-        }
+        .input-wrapper { position: relative; }
 
         .input-wrapper .input-icon {
             position: absolute;
             left: 14px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-muted);
+            color: var(--silver-500);
             font-size: 0.9rem;
             pointer-events: none;
             transition: color 0.2s ease;
             z-index: 2;
         }
 
-        .input-wrapper:focus-within .input-icon {
-            color: var(--blora-green);
-        }
+        .input-wrapper:focus-within .input-icon { color: var(--blora-green); }
 
         .form-control {
             width: 100%;
             padding: 10px 14px 10px 40px;
-            border: 1px solid var(--border);
+            border: 2px solid var(--silver-300);
             border-radius: 10px;
-            background: var(--bg-soft);
+            background: #FFFFFF;
             font-size: 0.85rem;
             font-weight: 500;
             color: var(--text-dark);
             transition: all 0.2s ease;
             outline: none;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
         }
 
-        .form-control::placeholder {
-            color: #94A3B8;
-            font-weight: 400;
-        }
+        .form-control::placeholder { color: var(--silver-500); font-weight: 400; }
+        .form-control:hover { border-color: var(--silver-400); }
 
         .form-control:focus {
             border-color: var(--blora-green);
             background: #FFFFFF;
-            box-shadow: 0 0 0 3px var(--blora-green-glow2);
+            box-shadow:
+                0 0 0 3px var(--blora-green-glow2),
+                inset 0 1px 2px rgba(0, 0, 0, 0.03);
         }
 
-        /* Select */
         select.form-control {
             cursor: pointer;
             appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%2316A34A' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #FFFFFF;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%238892A0' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 14px center;
             background-size: 12px;
             padding-right: 36px;
         }
 
-        /* Toggle password */
+        select.form-control option {
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            padding: 10px 12px;
+            color: var(--text-dark);
+            background: #FFFFFF;
+            line-height: 1.5;
+        }
+
         .toggle-password {
             position: absolute;
             right: 14px;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            color: var(--text-muted);
+            color: var(--silver-500);
             font-size: 0.9rem;
             z-index: 3;
             transition: color 0.2s ease;
         }
 
-        .toggle-password:hover {
-            color: var(--blora-green);
-        }
+        .toggle-password:hover { color: var(--blora-green); }
 
-        /* Hint text */
         .hint-text {
             display: block;
             font-size: 0.65rem;
@@ -359,7 +447,6 @@
             line-height: 1.4;
         }
 
-        /* Error message */
         .error-text {
             display: block;
             font-size: 0.68rem;
@@ -385,7 +472,7 @@
             padding: 12px 20px;
             background: var(--blora-green);
             color: #FFFFFF;
-            border: none;
+            border: 2px solid var(--blora-green);
             border-radius: 10px;
             font-size: 0.88rem;
             font-weight: 600;
@@ -393,13 +480,18 @@
             cursor: pointer;
             transition: all 0.2s ease;
             margin-top: 12px;
-            box-shadow: 0 4px 14px var(--blora-green-glow);
+            box-shadow:
+                0 4px 14px var(--blora-green-glow),
+                inset 0 1px 0 rgba(255, 255, 255, 0.20);
         }
 
         .btn-register:hover {
             background: var(--blora-green-dark);
+            border-color: var(--blora-green-dark);
             transform: translateY(-1px);
-            box-shadow: 0 6px 18px var(--blora-green-glow);
+            box-shadow:
+                0 6px 18px var(--blora-green-glow),
+                inset 0 1px 0 rgba(255, 255, 255, 0.20);
             color: #FFFFFF;
         }
 
@@ -409,13 +501,13 @@
         }
 
         /* ============================================================
-           FOOTER LINK
+           FOOTER
            ============================================================ */
         .footer-links {
             text-align: center;
             margin-top: 18px;
             padding-top: 16px;
-            border-top: 1px solid #F0F0F0;
+            border-top: 2px solid var(--silver-200);
             font-size: 0.78rem;
             color: var(--text-muted);
         }
@@ -432,13 +524,10 @@
             text-decoration: underline;
         }
 
-        /* ============================================================
-           INSTITUTIONAL FOOTER
-           ============================================================ */
         .login-footer {
             margin-top: 24px;
             padding-top: 20px;
-            border-top: 1px solid var(--border);
+            border-top: 2px solid var(--silver-200);
             text-align: center;
         }
 
@@ -457,9 +546,7 @@
             transition: transform 0.3s ease;
         }
 
-        .login-footer .logo-wrapper .logo-img:hover {
-            transform: scale(1.05);
-        }
+        .login-footer .logo-wrapper .logo-img:hover { transform: scale(1.05); }
 
         .login-footer p {
             font-size: 0.72rem;
@@ -477,7 +564,7 @@
         .login-footer .login-copyright {
             margin-top: 8px;
             font-size: 0.68rem;
-            color: #B0C4DE;
+            color: var(--silver-500);
             font-weight: 400;
             letter-spacing: 0.2px;
         }
@@ -487,48 +574,17 @@
            ============================================================ */
         @media (max-width: 576px) {
             body { padding: 12px; }
-
-            .register-card {
-                padding: 22px 18px 20px 18px;
-                border-radius: 16px;
-            }
-
+            .register-card { padding: 22px 18px 20px 18px; border-radius: 16px; }
             .register-title { font-size: 1.1rem; }
             .register-subtitle { font-size: 0.7rem; }
             .logo-section img { height: 40px; }
-
-            .form-control {
-                padding: 9px 12px 9px 36px;
-                font-size: 0.8rem;
-            }
-
-            .input-wrapper .input-icon {
-                left: 12px;
-                font-size: 0.82rem;
-            }
-
-            .toggle-password {
-                right: 12px;
-                font-size: 0.82rem;
-            }
-
-            .btn-register {
-                padding: 10px 16px;
-                font-size: 0.82rem;
-            }
-
+            .form-control { padding: 9px 12px 9px 36px; font-size: 0.8rem; }
+            .input-wrapper .input-icon { left: 12px; font-size: 0.82rem; }
+            .toggle-password { right: 12px; font-size: 0.82rem; }
+            .btn-register { padding: 10px 16px; font-size: 0.82rem; }
             .hint-text { font-size: 0.6rem; }
-
-            .login-footer {
-                margin-top: 20px;
-                padding-top: 16px;
-            }
-
-            .login-footer .logo-wrapper .logo-img {
-                width: 80px;
-                height: 80px;
-            }
-
+            .login-footer { margin-top: 20px; padding-top: 16px; }
+            .login-footer .logo-wrapper .logo-img { width: 80px; height: 80px; }
             .login-footer p { font-size: 0.65rem; }
             .login-footer .login-copyright { font-size: 0.62rem; }
         }
@@ -536,21 +592,9 @@
         @media (max-width: 360px) {
             .register-title { font-size: 0.95rem; }
             .logo-section img { height: 34px; }
-
-            .form-control {
-                font-size: 0.75rem;
-                padding: 8px 10px 8px 34px;
-            }
-
-            .btn-register {
-                font-size: 0.75rem;
-                padding: 9px 14px;
-            }
-
-            .login-footer .logo-wrapper .logo-img {
-                width: 70px;
-                height: 70px;
-            }
+            .form-control { font-size: 0.75rem; padding: 8px 10px 8px 34px; }
+            .btn-register { font-size: 0.75rem; padding: 9px 14px; }
+            .login-footer .logo-wrapper .logo-img { width: 70px; height: 70px; }
         }
     </style>
 </head>
@@ -603,8 +647,8 @@
                 </div>
             @endif
 
-            <!-- Form -->
-            <form action="{{ route('daftar.store') }}" method="POST" autocomplete="off">
+            <!-- Form - pakai route('registernew') -->
+            <form action="{{ route('registernew') }}" method="POST" autocomplete="off">
                 @csrf
 
                 {{-- Nama Lengkap --}}
@@ -764,7 +808,7 @@
                 {{-- Login Link --}}
                 <div class="footer-links">
                     Sudah punya akun?
-                    <a href="{{ route('login') }}">Login di sini</a>
+                    <a href="{{ url('/login') }}">Login di sini</a>
                 </div>
 
             </form>
